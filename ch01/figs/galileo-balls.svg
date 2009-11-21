@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.46"
+   sodipodi:docname="galileo-balls.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient3282">
+      <stop
+         style="stop-color:#ebebeb;stop-opacity:1;"
+         offset="0"
+         id="stop3284" />
+      <stop
+         id="stop3290"
+         offset="0.42222223"
+         style="stop-color:#3a3a3a;stop-opacity:1;" />
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="1"
+         id="stop3286" />
+    </linearGradient>
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective10" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3282"
+       id="radialGradient3288"
+       cx="84.188652"
+       cy="449.1965"
+       fx="84.188652"
+       fy="449.1965"
+       r="2.2765245"
+       gradientTransform="matrix(1,0,0,1.0714286,0,-32.147053)"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.3143252"
+     inkscape:cx="93.405823"
+     inkscape:cy="680.48229"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1278"
+     inkscape:window-height="996"
+     inkscape:window-x="3"
+     inkscape:window-y="4" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#dedede;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.53544941pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="rect2383"
+       width="184.25197"
+       height="170.48062"
+       x="3.2957809"
+       y="337.20807" />
+    <path
+       style="fill:none;fill-opacity:0.75000000000000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.875;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 21.640082,348.07589 L 21.640082,438.21309 L 158.27663,438.21309"
+       id="path2380" />
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans"
+       x="10.730619"
+       y="353.97772"
+       id="text3152"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         id="tspan3154"
+         x="10.730619"
+         y="353.97772">t</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans"
+       x="154.52092"
+       y="450.55331"
+       id="text3156"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         id="tspan3158"
+         x="154.52092"
+         y="450.55331">x</tspan></text>
+    <image
+       xlink:href="/home/bcrowell/Documents/writing/books/physics/1np/ch03/figs/galileo-drops-balls.png"
+       sodipodi:absref="/home/bcrowell/Documents/writing/books/physics/1np/ch03/figs/galileo-drops-balls.png"
+       width="46.890221"
+       height="124.17226"
+       id="image3243"
+       x="-492.75092"
+       y="22.648071"
+       transform="matrix(0,-1,1,0,0,0)" />
+    <path
+       style="opacity:1;fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:0.89876091;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="M 30.601002,436.21123 C 30.601002,422.01614 36.631775,408.76422 51.130703,396.2856 C 67.920597,381.83525 73.499417,377.19707 113.541,358.39931 C 121.16345,354.8209 127.69041,352.42217 127.69041,352.42217"
+       id="path3276"
+       sodipodi:nodetypes="cssc" />
+    <path
+       style="opacity:1;fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:0.89876091;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="M 36.042462,436.57075 C 36.042462,422.37566 41.596384,409.79452 55.930199,397.12659 C 71.757146,383.15771 78.940877,377.55659 118.98246,358.75883 C 126.60491,355.18042 129.39268,354.32615 129.39268,354.32615"
+       id="path3278"
+       sodipodi:nodetypes="cssc" />
+    <path
+       sodipodi:type="arc"
+       style="fill:url(#radialGradient3288);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path3280"
+       sodipodi:cx="84.719231"
+       sodipodi:cy="450.05884"
+       sodipodi:rx="2.2765245"
+       sodipodi:ry="2.4391334"
+       d="M 86.995755,450.05884 A 2.2765245,2.4391334 0 1 1 82.442706,450.05884 A 2.2765245,2.4391334 0 1 1 86.995755,450.05884 z"
+       transform="translate(3.932881,-75.952609)" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path3296"
+       sodipodi:cx="85.695404"
+       sodipodi:cy="404.4718"
+       sodipodi:rx="1.0349687"
+       sodipodi:ry="1.0349687"
+       d="M 86.730373,404.4718 A 1.0349687,1.0349687 0 1 1 84.660435,404.4718 A 1.0349687,1.0349687 0 1 1 86.730373,404.4718 z"
+       transform="translate(3.1016538,-34.282809)" />
+  </g>
+</svg>

@@ -1,0 +1,1019 @@
+<%
+  require "eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '05',
+    %q{Vacuum Solutions},
+    'ch:vacuum'
+  )
+%>
+
+In this chapter we investigate general relativiy in regions of space that have no matter to act as sources of
+the gravitational field.
+We will \emph{not}, however, limit ourselves to calculating spacetimes in cases in which the entire \emph{universe}
+has no matter.
+For example, we will be able to calculate general-relativistic effects
+in the region surrounding the earth, including a full calculation of the geodetic effect, which was
+estimated in section \ref{sec:geodetic-effect-estimate} only to within an order of magnitude.
+We can have sources, but we just won't describe the metric in the regions where the sources exist, e.g., inside the earth.
+The advantage of accepting this limitation is that
+in regions of empty space, we don't have to worry about the
+details of the stress-energy tensor or how it relates to curvature. As should be plausible based on the
+physical motivation given in section \ref{sec:tidal-versus-sources}, page \pageref{sec:tidal-versus-sources},
+the field equations in a vacuum are simply $R_{ab}=0$.
+<% marg(65) %>
+<%
+  fig(
+    'coin-with-field-equation',
+    %q{A Swiss commemorative coin shows the vacuum field equation.}
+  )
+%>
+<% end_marg %>
+
+<% begin_sec("Event horizons") %>\label{sec:event-horizons}\index{event horizon}
+
+One seemingly trivial way to generate solutions to the field equations in vaccum is simply to start with
+a flat Lorentzian spacetime and do a change of coordinates. This might seem pointless, since it would
+simply give a new description (and probably a less convenient and descriptive one) of the same old,
+boring, flat spacetime. It turns out, however, that some very interesting things can happen when we
+do this.
+
+
+<% begin_sec("The event horizon of an accelerated observer") %>
+Consider the uniformly
+accelerated observer described in examples \ref{eg:hyperbolic-motion} on page \pageref{eg:hyperbolic-motion}
+and \ref{eg:const-accel-metric} on page \pageref{eg:const-accel-metric}. Recalling these earlier results,
+we have for the ship's equation of motion in an inertial frame
+\begin{equation*}
+  x = \frac{1}{a}\left(\sqrt{1+a^2t^2}-1\right) \qquad ,
+\end{equation*}
+and for the metric in the ship's frame
+\begin{align*}
+  g'_{t't'} &= (1+ax')^2 \\
+  g'_{x'x'} &= -1 \qquad .
+\end{align*}
+Since this metric was derived by a change of coordinates from a flat-space metric, and the Ricci curvature is an intrinsic
+property, we expect that this one also has zero Ricci curvature. This is straightforward to verify. The nonvanishing
+Christoffel symbols are
+\begin{equation*}
+  \Gamma\indices{^{t'}_{x't'}} = \frac{a}{1+ax'} \quad \text{and} \quad \Gamma\indices{^{x'}_{t't'}}=a(1+ax') \qquad .
+\end{equation*}
+The only elements of the Riemann tensor that look like they might be nonzero are $R\indices{^{t'}_{t'x'x'}}$ and $R\indices{^{x'}_{t'x't'}}$,
+but both of these in fact vanish.
+
+Self-check: Verify these facts.
+
+This seemingly routine exercise now leads us into some very interesting territory.
+Way back on page \pageref{no-global-causality}, we conjectured that not all events could be time-ordered: that is,
+that there might exists events in spacetime 1 and 2 such that 1 cannot cause 2, but neither can 2 cause 1.
+We now have enough mathematical tools at our disposal to see that this is indeed the case.
+
+We observe that $x(t)$ approaches the asymptote $x=t-1/a$. This asymptote has a slope of 1, so it can be
+interpreted as the world-line of a photon that chases the ship but never quite catches up to it.
+Any event to the left of this line can never have a causal relationship with any event on the ship's
+world-line. Spacetime, as seen by an observer on the ship, has been divided by a curtain into two causally
+disconnected parts. This boundary is called an \emph{event horizon}. Its existence is relative to the world-line
+of a particular observer. An observer who is not accelerating along with the ship does consider an event horizon
+to exist. Although this particular example of the indefinitely accelerating spaceship has some physically
+implausible features (e.g., the ship would have to run out of fuel someday), event horizons are real things.
+In particular, we will see in section \ref{sec:black-hole-horizon} that black holes have event horizons.
+<% marg(63) %>
+<%
+  fig(
+    'photon-chasing-spaceship',
+    %q{A spaceship (curved world-line) moves with an acceleration perceived as constant by its passengers.
+         The photon (straight world-line) come closer and closer to the ship, but will never quite catch up.}
+  )
+%>
+<% end_marg %>
+
+Interpreting everything in the $(t',x')$ coordinates tied to the ship, the metric's component $g'_{t't'}$
+vanishes at $x'=-1/a$. An observer aboard the ship reasons as follows. If I start out with a head-start
+of $1/a$ relative to some event, then the timelike part of the metric at that event vanishes. If the event
+marks the emission of a material particle, then there is no possible way for that particle's world-line
+to have $\der s^2>0$. If I were to detect a particle emitted at that event, it would violate the laws
+of physics, since material particles must have $\der s^2>0$, so I conclude that I will never observe such a
+particle. Since all of this applies to any material particle, regardless of its mass $m$, it must also apply
+in the limit $m\rightarrow 0$, i.e., to photons and other massless particles. Therefore I can never receive
+a particle emitted from this event, and in fact it appears that there is no way for that event, or any other event behind the
+event horizon, to have any
+effect on me. In my frame of reference, it appears that
+light cones near the horizon are tipped over so far that their future light-cones lie entirely in the
+direction away from me.
+
+We've already seen in example
+\ref{eg:newtonian-black-hole} on page \pageref{eg:newtonian-black-hole} that a naive Newtonian argument
+suggests the existence of black holes; if a body is sufficiently compact, light cannot escape from it.
+In a relativistic treatment, this should be described as an event horizon.
+
+<% end_sec %> % The event horizon of an accelerated observer
+
+<% begin_sec("Information paradox") %>\index{information paradox}\label{information-paradox}
+The existence of event horizons in general relativity has deep implications, and in particular it helps to
+explain why it is so difficult to reconcile general relativity with quantum mechanics, despite nearly a century
+of valiant attempts. Quantum mechanics has a property called unitarity. Mathematically, this says that
+of the state of a quantum mechanical system is given, at a certain time, in the form of a vector, then
+its state at some point in the future can be predicted by applying a unitary matrix to that vector.
+A unitary matrix is the generalization to complex numbers of the ordinary concept of an orthogonal matrix,
+and essentially it just represents a change of basis, in which the basis vectors have unit length and
+are perpendicular to one another.\index{unitarity}
+
+To see what this means physically, consider the following nonexamples. The matrix
+\begin{equation*}
+  \begin{pmatrix}
+    1 & 0 \\
+    0 & 0
+  \end{pmatrix}
+\end{equation*}
+is not unitary, because its rows and columns are not orthogonal vectors with unit lengths. If this matrix
+represented the time-evolution of a quantum mechanical system, then its meaning would be that any particle
+in state number 1 would be left alone, but any particle in state 2 would disappear. Any information carried
+by particles in state 2 is lost forever and can never be retrieved. This also violates the time-reversal
+symmetry of quantum mechanics.
+
+Another nonunitary matrix is:
+\begin{equation*}
+  \begin{pmatrix}
+    1 & 0 \\
+    0 & \sqrt{2}
+  \end{pmatrix}
+\end{equation*}
+Here, any particle in state 2 is increased in amplitude by a factor of $\sqrt{2}$, meaning that it is doubled in probability.
+That is, the particle is cloned. This is the opposite problem compared to the one posed by the first matrix, and
+it is equally problematic in terms of time-reversal symmetry and conservation of information. Actually, if we could
+clone a particle in this way, it would violate the Heisenberg uncertainty principle. We could make two copies of
+the particle, and then measure the position of one copy and the momentum of the other, each with unlimited precision.
+This would violate the uncertainty principle, so we believe that it cannot be done. This is known as the no-cloning
+theorem.\index{no-cloning theorem}\index{cloning of particles}
+
+The existence of event horizons in general relativity violates unitarity, because it allows information to be
+destroyed. If a particle is thrown behind an event horizon, it can never be retrieved.
+<% end_sec %> % Information paradox
+
+<% begin_sec("Radiation from event horizons") %>
+In interesting twist on the situation was introduced by Bill Unruh in 1976. Observer B aboard the accelerating
+spaceship believes in the equivalence principle, so she knows that the local properties of space at the event horizon
+would seem entirely normal and Lorentzian to a local observer A. (The same applies to a black hole's horizon.)
+In particular, B knows that A would see pairs of virtual particles being spontaneously created and destroyed
+in the local vacuum. This is simply a manifestation of the time-energy form of the uncertainty principle,
+$\Delta E \Delta t \lesssim h$. Now suppose that a pair of particles is created, but one is created in front
+of the horizon and one behind it. To A these are virtual particles that will have to be annihilated within the
+time $\Delta t$, but according to B the one created in front of the horizon will eventually catch up with the
+spaceship, and can be observed there, although it will be red-shifted. The amount of redshift is given by
+$\sqrt{g'_{t't'}} = \sqrt{(1+ax')^2}$. Say the pair is created right near the horizon, at $x'=-1/a$.
+By the uncertainty principle, each of the two particles is spread out over a region of space of size
+$\Delta x'$. Since these are photons, which travel at the speed of light, the uncertainty in position
+is essentially the same as the uncertainty in time. The forward-going photon's
+redshift comes out to be $a\Delta x'=a\Delta t'$, which by the uncertainty principle
+should be at least $ha/E$, so that when the photon is observed by B, its energy is $E(ha/E)=ha$.
+<% marg(63) %>
+<%
+  fig(
+    'unruh-photo',
+    %q{Bill Unruh (1945-).}
+  )
+%>
+<% end_marg %>
+
+Now B sees a uniform background of photons, with energies of around $ha$, being emitted randomly from the
+horizon. They are being emitted from empty space, so it seems plausible to believe that they don't encode
+any information at all; they are completely random. A surface emitting a completely random (i.e., maximum-entropy)
+hail of photons is a black-body radiator, so we expect that the photons will have a black-body spectrum,
+with its peak at an energy of about $ha$.\index{black body spectrum}
+This peak is related to the temperature of the black body by $E\sim kT$, where $k$ is Boltzmann's
+constant. We conclude that the horizon acts like a black-body radiator with a temperature $T\sim ha/k$.
+The more careful treatment by Unruh shows that the exact relation is $T= ha/4\pi^2 k$, or $ha/4\pi^2 kc$ in SI units.
+
+An important observation here is that 
+not only do different observers disagree about the
+number of quanta that are present (which is true in the case of ordinary Doppler shifts), but about
+the number of quanta in the vacuum as well. B sees photons that according to A do not exist.
+
+Let's consider some real-world examples of large accelerations:\\
+\begin{tabular}{p{50mm}p{20mm}p{25mm}}
+                                         & \emph{acceleration ($m/s^2$)} & \emph{temperature of horizon (K)} \\
+bullet fired from a gun                  & $10^3$                                  & $10^{-17}$ \\
+electron in a CRT                        & $10^7$                                  & $10^{-13}$ \\
+plasmas produced by intense laser pulses & $10^{21}$                               & $10$ \\
+proton in a helium nucleus               & $10^{27}$                               & $10^8$
+\end{tabular}\\
+To detect Unruh radiation experimentally, we would ideally like to be able to accelerate a detector and let it detect the radiation.
+This is clearly impractical. The third line shows that it is possible to impart very large linear accelerations to subatomic particles, but
+then one can only hope to infer the effect of the Unruh radiation indirectly by its effect on the particles.
+As shown on the final line, examples of extremely large nonlinear accelerations are not hard to find, but the interpretation of
+Unruh radiation for nonlinear motion is unclear. A summary of the prospects for direct experimental detection of this effect
+is given by Rosu.\footnote{\url{http://xxx.lanl.gov/abs/gr-qc/9605032}} This type of experiment is clearly extremely difficult,
+but it is one of the few ways in which one could hope to get direct empirical insight, under controlled conditions,
+into the interface between gravity and quantum mechanics.
+
+<% end_sec %> % Radiation from event horizons
+
+<% end_sec %>
+<% begin_sec("The Schwarzschild metric") %>\label{sec:schwarzschild}
+
+We now set ourselves the goal of finding the metric describing the static spacetime outside a spherically symmetric, nonrotating, body of mass $m$.
+This problem was first solved by Karl Schwarzschild in 1915.\index{Schwarzschild!Karl}
+One byproduct of finding this metric will be the ability to calculate the geodetic effect exactly, but it will
+have more far-reaching consequences, including the existence of black holes.
+
+The problem we are solving is
+similar to calculating the spherically symmetric solution to Gauss's law in a vacuum. The solution to the electrical problem is
+of the form $\hat{\vc{r}}/r^2$, with an arbitrary constant of proportionality that turns out to be proportional
+to the charge creating the field. One big difference, however, is that whereas Gauss's law is linear, the equation
+$R_{ab}=0$ is highly nonlinear, so that the solution cannot simply be scaled up and down in proportion to $m$.
+<% marg(-80) %>
+<%
+  fig(
+    'nonlinearity',
+    %q{The field equations of general relativity are nonlinear.}
+  )
+%>
+<% end_marg %>
+
+The reason for this nonlinearity is fundamental to general relativity.
+For example, when the earth condensed out of the primordial solar nebula, large amounts of heat were
+produced, and this energy was then gradually radiated into outer space, decreasing the total mass of the earth.
+If we pretend, as in figure \figref{nonlinearity}, that this process involved the merging of only two bodies, each with mass $m$, then the
+net result was essentially to take separated masses $m$ and $m$ at rest, and bring them close together
+to form close-neighbor masses $m$ and $m$, again at rest.
+The amount of energy radiated away was proportional to $m^2$, so the gravitational mass of the
+combined system has been reduced from $2m$ to $2m-(\ldots)m^2$, where \ldots is roughly $G/c^2r$. There is a nonlinear dependence
+of the gravitational field on the masses.
+
+Self-check: Verify that any constant metric (including a metric with the ``wrong'' signature, e.g., 2+2 dimensions
+rather than 3+1) is a solution
+to the Einstein field equation in vacuum.
+
+The correspondence principle\index{correspondence principle} tells us that our result must have a Newtonian limit,
+but the only variables involved are $m$ and $r$, so this limit must be the one in which $r/m$ is large. Large compared
+to what? There is nothing else available with which to compare, so it can only be large compared to some expression
+composed of the unitless constants $G$ and $c$. We have already chosen units such that $c=1$, and we will now set
+$G=1$ as well. Mass and distance are now comparable, with the conversion factor being $G/c^2=7\times10^{-28}\ \munit/\kgunit$,
+or about a mile per solar mass. Since the earth's radius is thousands of times more than a mile, and its mass
+hundreds of thousands of times less than the sun's, its $r/m$ is very large, and the Newtonian approximation
+is good enough for all but the most precise applications, such as the GPS network or the Gravity Probe B experiment.
+
+<% begin_sec("The zero-mass case") %>\label{zero-mass-christoffel}
+First let's demonstrate the trivial solution with flat spacetime. In spherical coordinates, we have
+\begin{equation*}
+  \der s^2 = \der t^2 - \der r^2 - r^2 \der\theta^2 - r^2 \sin^2\theta \der\phi^2 \qquad .
+\end{equation*}
+The nonvanishing Christoffel symbols (ignoring swaps of the lower indices) are:
+\begin{align*}
+  \Gamma\indices{^\theta_{r\theta}}  &= \frac{1}{r} \\
+  \Gamma\indices{^\phi_{r\phi}}      &= \frac{1}{r} \\
+  \Gamma\indices{^r_{\theta\theta}}  &= -r  \\
+  \Gamma\indices{^r_{\phi\phi}}      &= -r\sin^2\theta \\
+  \Gamma\indices{^\theta_{\phi\phi}} &= -\sin\theta\cos\theta \\
+  \Gamma\indices{^\phi_{\theta\phi}} &= \cot\theta
+\end{align*}
+
+Self-check: If we'd been using the $(-+++)$ metric instead of $(+---)$, what would have been the effect
+on the Christoffel symbols? What if we'd expressed the metric in different units, rescaling all the coordinates
+by a factor $k$?
+
+<% begin_sec("Use of ctensor") %>
+
+In fact, when I calculated the Christoffel symbols above by hand, I got one of them
+wrong, and missed calculating one other because I thought it was zero. I only found my mistake by comparing
+against a result in a textbook. The computation of the Riemann tensor is an even bigger mess.
+It's clearly a good idea to resort to a computer algebra system here.
+Cadabra, which was discussed earlier, is specifically designed for coordinate-independent calculations,
+so it won't help us here. A good free and open-source choice is \verb@ctensor@, which is one of the standard packages
+distributed along with the computer algebra system Maxima, introduced on page \pageref{introduce-maxima}.\index{ctensor}\index{Maxima}
+
+The following Maxima program calculates the Christoffel symbols found in section \ref{zero-mass-christoffel}.
+
+\begin{listing}{1}
+load(ctensor);
+ct_coords:[t,r,theta,phi];
+lg:matrix([1,0,0,0],
+          [0,-1,0,0],
+          [0,0,-r^2,0],
+          [0,0,0,-r^2*sin(theta)^2]);
+cmetric();
+christof(mcs);
+\end{listing}
+Line 1 loads the \verb@ctensor@ package. Line 2 sets up the names of the coordinates.
+Line 3 defines the $g_{ab}$, with \verb@lg@ meaning ``the version of $g$ with lower indices.''
+Line 7 tells Maxima to do some setup work with $g_{ab}$, including the calculation of
+the inverse matrix $g^{ab}$, which is stored in \verb@ug@. Line 8 says to calculate the
+Christoffel symbols. The notation \verb@mcs@ refers to the tensor ${\Gamma'}\indices{_{bc}^a}$
+with the indices swapped around a little compared to the convention $\Gamma\indices{^a_{bc}}$
+followed in this book. On a Linux system, we put the program in a file \verb@flat.mac@ and
+run it using the command \verb@maxima -b flat.mac@. The relevant part of the output is:
+
+\begin{listing}{1}
+                                             1
+(%t6)                           mcs        = -
+                                   2, 3, 3   r
+
+                                             1
+(%t7)                           mcs        = -
+                                   2, 4, 4   r
+
+(%t8)                          mcs        = - r
+                                  3, 3, 2
+
+                                         cos(theta)
+(%t9)                       mcs        = ----------
+                               3, 4, 4   sin(theta)
+
+                                             2
+(%t10)                   mcs        = - r sin (theta)
+                            4, 4, 2
+
+(%t11)               mcs        = - cos(theta) sin(theta)
+                        4, 4, 3
+\end{listing}
+Adding the command \verb@ricci(true);@ at the end of the program results in the output \verb@THIS SPACETIME IS EMPTY AND/OR FLAT@, which
+saves us hours of tedious computation. The tensor \verb@ric@ (which here happens to be zero) is computed, and all its nonzero elements are printed out.
+There is a similar command \verb@riemann(true);@ to compute the Riemann rensor \verb@riem@. This is stored so that
+\verb@riem[i,j,k,l]@ is what we would call $R\indices{^l_{ikj}}$. Note that $l$ is moved to the end, and $j$ and $k$ are also swapped.
+<% end_sec %> % CAS
+<% end_sec %> % zero mass
+
+<% begin_sec("A large-r limit") %>
+
+Now let's think about how to tackle the real problem of finding the non-flat metric. Although general relativity lets
+us pick any coordinates we like, the spherical symmetry of the problem suggests using coordinates that exploit that
+symmetry. The flat-space coordinates $\theta$ and $\phi$ can stil be defined in the same way, and they have the
+same interpretation. For example, if we drop a test particle toward the mass from some point in space, its
+world-line will have constant $\theta$ and $\phi$. The $r$ coordinate is a little different. In curved spacetime,
+the circumference of a circle is not equal to $2\pi$ times the distance from the center to the circle; in fact,
+the discrepancy between these two is essentially the definition of the Ricci curvature. This gives us a choice of two
+logical ways to define $r$. We'll define it as the circumference divided by $2\pi$, which has the advantage that
+the last two terms of the metric are the same as in flat space: $-r^2 \der\theta^2 - r^2 \sin^2\theta \der\phi^2$.
+Since we're looking for static solutions, none of the elements of the metric can depend on $t$. Also, the solution is
+going to be symmetric under $t \rightarrow -t$, $\theta \rightarrow -\theta$, and $\phi \rightarrow -\phi$, so we
+can't have any off-diagonal elements. The result is that we have narrowed the metric down to something of the
+form
+\begin{equation*}
+  \der s^2 = h(r)\der t^2 - k(r)\der r^2 - r^2 \der\theta^2 - r^2 \sin^2\theta \der\phi^2 \qquad ,
+\end{equation*}
+where both $h$ and $k$ approach 1 for $r\rightarrow\infty$, where spacetime is flat.
+
+For guidance in how to construct $h$ and $k$, let's consider the acceleration of a test particle at $r \gg m$, which we
+know to be $-m/r^2$, since nonrelativistic physics applies there. We have
+\begin{equation*}
+  \nabla_t v^r = \partial_t v^r + \Gamma\indices{^r_{tc}}v^c \qquad .
+\end{equation*}
+An observer free-falling along with the particle observes its acceleration to be zero, and a tensor that is zero in
+one coordinate system is zero in all others. Since the covariant derivative is a tensor, we conclude that $ \nabla_t v^r=0$
+in all coordinate systems, including the $(t,r,\ldots)$ system we're using. If the particle is released from rest,
+then initially its velocity four-vector is $(1,0,0,0)$, so we find that its acceleration in $(t,r)$ coordinates is
+$-\Gamma\indices{^r_{tt}}=-\frac{1}{2}g^{rr}\partial_rg_{tt}=-\frac{1}{2}h'/k$. Setting this equal to
+$-m/r^2$, we find $h'/k=2m/r^2$ for $r \gg m$. Since $k \approx 1$ for large $r$, we have
+\begin{equation*}
+   h' \approx \frac{2m}{r^2} \quad \text{for $r \gg m$} \qquad .
+\end{equation*}
+The interpretation of this calculation is as follows. We assert the equivalence
+principle, by which the acceleration of a free-falling particle can be said to be zero. After some calculations, we find that
+the rate at which time flows (encoded in $h$) is not constant. It is different for observers at different heights in a gravitational
+potential well. But this is something we had already deduced, without the tensor gymnastics, in example
+\ref{eg:pound-rebka} on page \pageref{eg:pound-rebka}.
+
+Integrating, we find that for large $r$, $h=1-2m/r$.
+
+<% end_sec %> % large-r limit
+
+<% begin_sec("The complete solution") %>\label{sec:complete-sch}
+<% begin_sec("A series solution") %>
+
+We've learned some interesting things, but we still have an extremely nasty nonlinear differential equation to solve.
+One way to attack a differential equation, when you have no idea how to proceed, is to try a series solution.
+We have a small parameter $m/r$ to expand around, so let's try to write $h$ and $k$ as series of the form
+\begin{align*}
+  h &= \Sigma_{n=0}^\infty a_k \left(\frac{m}{r}\right)^n \\
+  k &= \Sigma_{n=0}^\infty b_k \left(\frac{m}{r}\right)^n 
+\end{align*}
+
+We already know $a_0$, $a_1$, and $b_0$. Let's try to find $b_1$. 
+In the following Maxima code I omit the factor of $m$ in $h_1$ for convenience. In other words, we're looking
+for the solution for $m=1$.
+
+\begin{listing}{1}
+load(ctensor);
+ct_coords:[t,r,theta,phi];
+lg:matrix([(1-2/r),0,0,0],
+          [0,-(1+b1/r),0,0],
+          [0,0,-r^2,0],
+          [0,0,0,-r^2*sin(theta)^2]);
+cmetric();
+ricci(true);
+\end{listing}
+
+I won't reproduce the entire output of the Ricci tensor, which is voluminous. We want all four of its nonvanishing components
+to vanish as quickly as possible for large values of $r$, so I decided to fiddle with $R_tt$, which looked as simple as any
+of them. It appears to vary as $r^{-4}$ for large $r$, so let's evaluate  $\lim_{r\rightarrow\infty}\left(r^4R_{tt}\right)$:
+\begin{listing}{9}
+limit(r^4*ric[1,1],r,inf);
+\end{listing}
+The result is $(b_1-2)/2$, so let's set $b_1=2$.
+The approximate solution we've found so far (reinserting the $m$'s),
+\begin{equation*}
+  \der s^2 \approx \left(1-\frac{2m}{r}\right)\der t^2 - \left(1+\frac{2m}{r}\right)\der r^2 - r^2 \der\theta^2 - r^2 \sin^2\theta \der\phi^2 \qquad ,
+\end{equation*}
+was first derived by Einstein in 1915, and he used it to solve the problem of the non-Keplerian relativistic correction
+to the orbit of Mercury, which was one of the  first  empirical tests of general relativity.\index{Mercury!orbit of}
+% See Earman, p. 5
+
+Continuing in this fashion, the results are as follows:
+
+\begin{tabular}{ll}
+  $a_0=1$      &      $b_0=1$ \\
+  $a_1=-2$     &      $b_1=2$ \\
+  $a_2=0$     &       $b_2=4$ \\
+  $a_3=0$     &       $b_2=8$ 
+\end{tabular}
+
+<% end_sec %> % series solution
+
+<% begin_sec("The closed-form solution") %>
+
+The solution is unexpectedly simple, and can be put into closed form. The approximate result we found for $h$ was in fact exact.
+For $k$ we have a geometric series $1/(1-2/r)$, and when we reinsert the factor of $m$ in the only way that makes the units
+work, we get $1/(1-2m/r)$. The result for the metric is
+\begin{equation*}
+  \der s^2 = \left(1-\frac{2m}{r}\right)\der t^2 - \left(\frac{1}{1-2m/r}\right)\der r^2 - r^2 \der\theta^2 - r^2 \sin^2\theta \der\phi^2 \qquad .
+\end{equation*}
+A quick calculation in Maxima demonstrates that this is an exact solution for all $r$, i.e., the Ricci tensor vanishes everywhere,
+even at $r<2m$, which is outside the radius of convergence of the geometric series.
+<% end_sec %> % closed-form
+
+<% end_sec %> % complete solution
+
+<% begin_sec("Geodetic effect") %>\label{sec:geodetic-effect-exact}
+As promised in section \ref{sec:geodetic-effect-estimate}, we now calculate the geodetic effect on Gravity
+Probe B, including all the niggling factors of 3 and $\pi$.\index{geodetic effect}\index{Gravity Probe B!geodetic effect calculated}
+
+As a warmup, consider the flat-space case, in plane Euclidean polar coordinates $(r,\phi)$.
+Parallel-transport of a gyroscope's angular momentum around
+a circle of constant $r$ gives
+\begin{align*}
+  \nabla_\phi L^\phi &= 0 \\
+  \nabla_\phi L^r &= 0 \qquad .
+\end{align*}
+Computing the covariant derivatives, and we have
+\begin{align*}
+  0 &= \partial_\phi L^\phi + \Gamma\indices{^\phi_{\phi r}}L^r \\
+  0 &= \partial_\phi L^r    + \Gamma\indices{^r_{\phi \phi}}L^\phi  \qquad .
+\end{align*}
+The Christoffel symbols are $\Gamma\indices{^\phi_{\phi r}}=1/r$ and $\Gamma\indices{^r_{\phi \phi}}=-r$.
+This is all made to look needlessly complicated because $L^\phi$ and $L^r$ are expressed in different
+units. Essentially the vector is staying the same, but we're expressing it in terms of basis vectors in
+the $r$ and $\phi$ directions that are rotating. To see this more transparently, let $r=1$, and write
+$P$ for $L^\phi$ and $Q$ for $L^r$, so that
+\begin{align*}
+  P' &= Q \\
+  Q' &= -P \qquad .
+\end{align*}
+The solution is $P=\sin\phi$, $Q=\cos\phi$. For each orbit ($2\pi$ change in $\phi$), the basis vectors
+rotate by $2\pi$, so the angular momentum vector once again has the same components. In other words, it
+hasn't really changed at all. However, the gyroscopes do \emph{not} return to the same orientation
+relative to a distant reference point, such as the star IM Pegasi that was used by Gravity Probe B.
+Due to Thomas precession (section \ref{sec:thomas-precession}),\index{Thomas precession}
+they precess at the rate $|(1/2)\vc{a}\times\vc{v}|=\omega^3 r^2/2$.
+Integrating this over $n$ periods, $\Delta T=2\pi n/\omega$, gives $n\pi\omega^2r^2=n\pi g r$, where $g$ is the
+acceleration of gravity. Substituting $g=m/r^2$, the Thomas precession is $\Delta\theta=n\pi m/r$. The direction
+of the Thomas precession effect is always counter the direction of motion, i.e., if the satellite is orbiting clockwise, the
+precession is counterclockwise
+The Thomas precession will end up accounting for one third of the total observed effect.
+
+Using the actual Schwarzschild metric, we replace the flat-space Christoffel symbol $\Gamma\indices{^r_{\phi \phi}}=-r$
+with $-r+2m$. The differential equations for the components of the $L$ vector, again evaluated at $r=1$ for
+convenience, are now
+\begin{align*}
+  P' &= Q \\
+  Q' &= -(1-\epsilon)P \qquad ,
+\end{align*}
+where $\epsilon=2m$. The solution is $P=\sin\omega'\phi$, $Q=\omega'\cos\omega'\phi$, where $\omega'=\sqrt{1-\epsilon}$.
+The result is that when the basis vectors rotate by $2\pi$, the components no longer return to their original values;
+they lag by a factor of $\sqrt{1-\epsilon}\approx 1-m$.  Putting the factors of $r$ back in, this is $1-m/r$.
+The effect is in the same direction as the effect of the Thomas precession, and
+the precession accumulated over $n$ periods is $2\pi n m/r$.
+
+Adding the contributions from the Thomas precession and spacetime curvature, we have $3\pi n m/r$. In SI units,
+this is $3\pi n Gm/c^2r$. Using the
+(relatively crude) data from section \ref{sec:thomas-precession}, we find 
+$\Delta\theta=3\times10^{-5}$ radians, in excellent agreement with the data shown in figure \figref{gravity-probe-b-geodetic-graphs}
+on page \pageref{fig:gravity-probe-b-geodetic-graphs}.
+
+<% end_sec %> % geodetic effect
+
+<% begin_sec("Orbits") %>
+The main event of Newton's \emph{Principia Mathematica} is his proof of Kepler's laws. Similarly, Einstein's
+first important application in general relativity, which he began before he even had the exact form of the
+Schwarzschild metric in hand, was to find the non-Newtonian behavior of the planet Mercury. The planets deviate
+from Keplerian behavior for a variety of Newtonian reasons, and in particular there is a long list of reasons
+why the major axis of a planet's elliptical orbit is expected to gradually rotate. When all of these were
+taken into account, however, there was a remaining discrepancy of about 40 seconds of arc per century,
+or $6.6\times 10^{-7}$ radians per orbit. The direction of the effect was in the forward direction, in the sense that if we view Mercury's
+orbit from above the ecliptic, so that it orbits in the counterclockwise direction, then the gradual rotation
+of the major axis is also counterclockwise. In other words, Mercury spends more time near perihelion than
+it should classically. During this time, it sweeps out a greater angle than classically expected, so that
+when it flies back out and away from the sun, its orbit has rotated counterclockwise.
+
+% 43*(1/100)*(1/365.25)*(115.9)*(1/3600)*pi/180
+%    6.61510182764023*10^-7
+
+We can easily understand why there should be such an effect according to general relativity, by passing to
+the limit in which the relativistic effect is very large. Consider the
+orbits of material objects in the vicinity of a black hole. An object that passes through the event horizon
+spends infinite time at its ``perihelion'' and never emerges again. Applying this reasoning to the case of
+Mercury's orbit, we find that an effect in the observed direction is expected.
+
+Based on the examples in section \ref{sec:estimates}, we also expect that the effect will be of order
+$m/r$, where $m$ is the mass of the sun and $r$ is the radius of Mercury's orbit.
+This works out to be $2.5\times10^{-8}$, which is smaller than the observed precession by a factor
+of about 26.
+
+<% begin_sec("Conserved quantities") %>\label{sec:sch-conserved}
+If Einstein had had a computer on his desk, he probably would simply have integrated the motion numerically
+using the geodesic equation.
+But it is possible to simplify the problem enough to attack it with pencil and paper, if we can find
+the relevant conserved quantities of the motion. Classically, these are energy and angular momentum.
+
+Consider a rock falling directly toward the sun. The Schwarzschild metric is of the special form
+\begin{equation*}
+  \der s^2 = h(r)\der t^2 - k(r)\der r^2 - \ldots \qquad .
+\end{equation*}
+The rock's trajectory is a geodesic, so it extremizes the proper time $s$ between any two events fixed in spacetime,
+just as a piece of string stretched across a curved surface extremizes its length. Let the rock pass
+through distance $r_1$ in coordinate time $t_1$, and then through $r_2$ in $t_2$. (These should really
+be notated as $\Delta r_1$, \ldots or $\der r_1$, \ldots, but we avoid the $\Delta$'s or $\der$'s for convenience.)
+Approximating the geodesic using two line segments, the proper time is
+\begin{align*}
+  s &= s_1 + s_2 \\
+    &= \sqrt{h_1 t_1^2-k_1 r_1^2} + \sqrt{h_2 t_2^2-k_2 r_2^2} \\
+    &= \sqrt{h_1 t_1^2-k_1 r_1^2} + \sqrt{h_2 (T-t_1)^2-k_2 r_2^2} \qquad ,
+\end{align*}
+where $T=t_1+t_2$ is fixed. If this is to be extremized with respect to $t_1$, then $\der s/\der t_1=0$,
+which leads to
+\begin{equation*}
+  0 = \frac{h_1t_1}{s_1} - \frac{h_2t_2}{s_2} \qquad ,
+\end{equation*}
+which means that
+\begin{equation*}
+  h\frac{\der t}{\der s} = g_{tt}\frac{\der x^t}{\der s} = \frac{\der x_t}{\der s}
+\end{equation*}
+is a constant of the motion. Except for an irrelevant factor of $m$, this is the same as
+$p_t$, the timelike component of the covariant momentum vector. We've already seen that in special
+relativity, the timelike component of the momentum four-vector is interpreted as the mass-energy $E$,
+and the quantity $p_t$ has a similar interpretation here. Note that no special assumption was made about
+the form of the functions $h$ and $k$. In addition, it turns out that the assumption of purely radial
+motion was unnecessary. All that really mattered was that $h$ and $k$ were independent of $t$.
+Therefore we will have a similar conserved quantity $p_\mu$ any time the
+metric's components, expressed in a particular coordinate system, are independent of $x^\mu$.
+In particular, the Schwarzschild metric's components are independent of $\phi$ as well as $t$, so
+we have a second conserved quantity $p_\phi$, which is interpreted as angular momentum.
+
+Writing these
+two quantities out explicitly in terms of the contravariant coordinates, in the case of the Schwarzschild spacetime,
+we have
+\begin{align*}
+  E &= \left(1-\frac{2m}{r}\right) \frac{\der t}{\der s} \\
+\intertext{and}
+  L &= r^2  \frac{\der \phi}{\der s} \\
+\end{align*}
+for the conserved energy per unit mass and angular momentum per unit mass.\label{no-separate-k-and-u}
+In interpreting the energy $E$, it is important to understand that in the general-relativistic context, there is
+no useful way of separating the rest mass, kinetic energy, and potential energy into separate terms; $E$ includes all of these, and 
+turns out to be less than the rest mass (i.e., less than 1) for a planet orbiting the sun.
+<% end_sec %> % conserved quantities
+
+<% begin_sec("Perihelion advance") %>\label{sec:perihelion-advance}
+For convenience, let the mass
+of the orbiting rock be 1, while $m$ stands for the mass of the gravitating body.
+
+The unit mass of the rock is a third conserved quantity, and
+since the magnitude of the momentum vector equals the square of the mass, we have for
+an orbit in the plane $\theta=\pi/2$,
+\begin{align*}
+  1 &= g^{tt}p_t^2 - g^{rr}p_r^2 - g^{\phi\phi}p_\phi^2 \\
+    &= g^{tt}p_t^2 - g_{rr}(p^r)^2 - g^{\phi\phi}p_\phi^2 \\
+    &= \frac{1}{1-2m/r}E^2 - \frac{1}{1-2m/r} \left(\frac{\der r}{\der s}\right)^2 - \frac{1}{r^2} L^2 \qquad .
+\end{align*}
+Rearranging terms and writing $\dot{r}$ for $\der r/\der s$, this becomes
+\begin{align*}
+  \dot{r}^2 &= E^2-(1-2m/r)(1+L^2/r^2) \\
+\intertext{or}
+  \dot{r}^2 &= E^2-U^2 \\
+\intertext{where}
+  U^2 &= (1-2m/r)(1+L^2/r^2) \qquad .
+\end{align*}
+
+There is a varied and strange family of orbits in the Schwarzschild field, including bizarre knife-edge trajectories
+that take several nearly circular turns before suddenly flying off. We turn our attention instead to the case
+of an orbit such as Mercury's which is nearly classical and nearly circular.
+
+Classically, a circular orbit has radius $r=L^2/m$ and period $T=2\pi L^3/m^2$.
+
+Relativistically, a circular orbit occurs when there is only one turning
+point at which $\dot{r}=0$. This requires that $E^2$ equal the minimum value of $U^2$, which occurs at
+\begin{align*}
+  r &= \frac{L^2}{2m}\left(1+\sqrt{1-12m^2/L^2}\right)\\
+    &\approx \frac{L^2}{m}(1-\epsilon) \qquad ,
+\end{align*}
+where $\epsilon=3(m/L)^2$.
+A planet in a nearly circular orbit oscillates between perihelion and aphelion with a period that depends on
+the curvature of $U^2$ at its minimum. We have
+\begin{align*}
+  k &= \frac{\der^2(U^2)}{\der r^2} \\
+    &= \frac{\der^2}{\der r^2} \left( 1 - \frac{2m}{r} + \frac{L^2}{r^2} - \frac{2mL^2}{r^3} \right) \\
+    &= -\frac{4m}{r^3} + \frac{6L^2}{r^4} - \frac{24mL^2}{r^5} \\
+    &= 2L^{-6}m^4(1+2\epsilon)
+\end{align*}
+The period of the oscillations is
+\begin{align*}
+  \Delta s_{osc} &= 2\pi\sqrt{2/k} \\
+    &= 2\pi L^3m^{-2}(1-\epsilon) \qquad .
+\end{align*}
+The period of the azimuthal motion is
+\begin{align*}
+  \Delta s_{az} &= 2\pi r^2/L \\
+                &= 2\pi L^3 m^{-2} (1-2\epsilon) \qquad .
+\end{align*}
+The periods are slightly mismatched because of the relativistic correction terms. The period of the
+radial oscillations is longer, so that, as expected, the perihelion shift is in the forward direction.
+The mismatch is $\epsilon\Delta s$, and because of it each orbit rotates the major axis by
+an angle $2\pi\epsilon=6\pi(m/L)^2=6\pi m/r$. Plugging in the data for Mercury,
+we obtain $5.8\times10^{-7}$ radians per orbit, which agrees with the observed
+value to within about 10\%. Eliminating some of the approximations we've made brings the
+results in agreement to within the experimental error bars, and Einstein recalled that
+when the calculation came out right, ``for a few days, I was beside myself with
+joyous excitement.''
+
+% calc -e "a=57.9 10^6 km ; e=.206 ; r=a/(1+e) ; m=1.99 10^30 kg ; c=3 10^8 m/s ; G=6.67 10^-11 m3.kg-1.s-2 ; 6piGm/(c^2r)"
+% 5.79036936479973*10^-7
+
+Further attempts were made to improve on the precision of this historically crucial test of general relativity.
+Radar now gives the most precise orbital data for Mercury. At the level of about one part per thousand,
+however, an effect creeps in due to the oblateness of the sun, which is difficult to measure precisely.
+In 1966, Dicke and Goldenberg measured the oblateness optically, and found an unexpectedly high
+value, which would have put Mercury's orbit far out of agreement with general relativity.
+The oblateness turns out to be extremely difficult to measure, and not until about 1990 did
+a consensus arise, based on measurements of oscillations of the solar surface, that the pre-Dicke value was correct.
+In the interim, the confusion had the salutary effect of stimulating the development of
+a variety of alternatives to general relativity. This is important because often if one doesn't
+have an alternative theory, one has no reasonable basis on which to design and interpret
+experiments to test the original theory.
+
+In 1974, astronomers J.H. Taylor and R.A. Hulse of Princeton, working at the Arecibo radio telescope, discovered a binary star system
+whose members are both neutron stars. The detection of the system was made possible because
+one of the neutron stars is a pulsar: a neutron star that emits a strong radio pulse in the direction
+of the earth once per rotational period.\label{hulse-taylor-pulsar}\index{neutron star}\index{pulsar}
+\index{Hulse-Taylor pulsar}\index{Taylor, J.H.}\index{Hulse, R.A.}
+The orbit is highly elliptical, and the minimum separation between the two stars is very small, about the same as the radius of our sun.
+Both because the $r$ is small and because the period is short (about 8 hours), the rate of perihelion advance per unit time is
+very large, about 4.2 degrees per year. The system has been compared in great detail with the 
+predictions of general relativity,\footnote{\url{http://arxiv.org/abs/astro-ph/0407149}}
+giving extremely good agreement, and as a result astronomers have been confident enough to reason in the opposite direction
+and infer properties of the system, such as its total mass, from the general-relativistic analysis. The system's orbit is
+decaying due to the radiation of energy in the form of gravitational waves, which are predicted to exist by relativity.
+
+<% end_sec %> % Perihelion advance
+
+
+<% end_sec %> % orbits
+
+<% begin_sec("Deflection of light") %>\label{sec:deflection-of-light}\index{light!deflection by sun}\index{deflection of light}
+
+As discussed on page \pageref{sec:eddington}, one of the first tests of general relativity was Eddington's measurement of the
+deflection of rays of light by the sun's gravitational field. The deflection measured by Eddington was 1.6 seconds of arc.
+For a light ray that grazes the sun's surface, the only physically relevant parameters are the sun's mass $m$ and radius
+$r$. Since the deflection is unitless, it can only depend on $m/r$, the unitless ratio of the
+sun's mass to its radius. Expressed in SI units, this is $Gm/c^2r$, which comes out to be about $10^{-6}$. 
+Roughly speaking, then, we expect the order of magnitude of the effect to be about this big, and indeed $10^{-6}$ radians
+comes out to be in the same ball-park as a second of arc. We get a similar estimate in Newtonian physics by treating
+a photon as a (massive) particle moving at speed $c$.
+
+It is possible to calculate a precise value for the deflection using methods very much like those used to determine
+the perihelion advance in section \ref{sec:perihelion-advance}. However, some of the details would have to be changed.
+For example, it is no longer possible to parametrize the trajectory using the proper time $s$, since a light ray has
+$\der s=0$; we must use an affine parameter. Let us instead use this an an example of the numerical technique for
+solving the geodesic equation, first demonstrated in section \ref{sec:numerical-geodesic} on page \pageref{sec:numerical-geodesic}.
+Modifying our earlier program, we have the following:
+
+\begin{listing}{1}
+import math
+
+# constants, in SI units:
+G = 6.67e-11         # gravitational constant
+c = 3.00e8           # speed of light
+m_kg = 1.99e30       # mass of sun
+r_m = 6.96e8         # radius of sun
+
+# From now on, all calculations are in units of the
+# radius of the sun.
+
+# mass of sun, in units of the radius of the sun:
+m_sun = (G/c**2)*(m_kg/r_m)
+m = 1000.*m_sun
+print "m/r=",m
+
+# Start at point of closest approach.
+# initial position:
+t=0
+r=1 # closest approach, grazing the sun's surface
+phi=-math.pi/2
+# initial derivatives of coordinates w.r.t. lambda
+vr = 0
+vt = 1
+vphi = math.sqrt((1.-2.*m/r)/r**2)*vt # gives ds=0, lightlike
+
+l = 0    # affine parameter lambda
+l_max = 20000.
+epsilon = 1e-6 # controls how fast lambda varies
+while l<l_max:
+  dl = epsilon*(1.+r**2) # giant steps when farther out
+  l = l+dl
+  # Christoffel symbols:
+  Gttr = m/(r**2-2*m*r)
+  Grtt = m/r**2-2*m**2/r**3
+  Grrr = -m/(r**2-2*m*r)
+  Grphiphi = -r+2*m
+  Gphirphi = 1/r
+  # second derivatives:
+  #  The factors of 2 are because we have, e.g., G^a_{bc}=G^a_{cb}
+  at   = -2.*Gttr*vt*vr
+  ar   = -(Grtt*vt*vt + Grrr*vr*vr + Grphiphi*vphi*vphi)
+  aphi = -2.*Gphirphi*vr*vphi
+  # update velocity:
+  vt = vt + dl*at
+  vr = vr + dl*ar
+  vphi = vphi + dl*aphi
+  # update position:
+  r = r + vr*dl
+  t = t + vt*dl
+  phi = phi + vphi*dl
+
+# Direction of propagation, approximated in asymptotically flat coords.
+# First, differentiate (x,y)=(r cos phi,r sin phi) to get vx and vy:
+vx = vr*math.cos(phi)-r*math.sin(phi)*vphi
+vy = vr*math.sin(phi)+r*math.cos(phi)*vphi
+prop = math.atan2(vy,vx) # inverse tan of vy/vx, in the proper quadrant
+prop_sec = prop*180.*3600/math.pi
+print "final direction of propagation = %6.2f arc-seconds" % prop_sec
+\end{listing}
+
+At line 14, we take the mass to be 1000 times greater than the mass of the sun. This helps
+to make the deflection easier to calculate accurately without running into problems with rounding
+errors. Lines 17-25 set up the initial conditions to be at the point of closest approach, as the
+photon is grazing the sun. This is easier to set up than initial conditions in which the photon
+approaches from far away. Because of this, the deflection angle calculated by the program is cut
+in half. Combining the factors of 1000 and one half, the final result from the program is to be
+interpreted as 500 times the actual deflection angle.
+
+The result is that the deflection angle is predicted to be 870 seconds of arc. As a check, we can
+run the program again with $m=0$; the result is a deflection of $-8$ seconds, which is a measure
+of the accumulated error due to rounding and the finite increment used for $\lambda$.
+
+Dividing by 500, we find that the predicted deflection angle is 1.74 seconds, which, expressed in radians, is exactly
+$4Gm/c^2r$. The unitless factor of 4 is in fact the correct result in the case of small deflections, i.e., for
+$m/r \ll 1$.
+
+% calc -e "G=6.67 10^-11 N.m2/kg2; c=3 10^8 m/s; m=1.99 10^30 kg; r=6.96 10^8 m; (4Gm/(c^2r))*(180.*3600./3.14159)"
+%     1.74828669559045
+
+Although the numerical technique has the disadvantage that it doesn't let us directly prove a nice formula, it
+has some advantages as well. For one thing, we can use it to investigate cases for which the approximation
+$m/r \ll 1$ fails. For $m/r=0.3$, the numerical techique gives a deflection of 222 degrees, whereas the
+weak-field approximation $4Gm/c^2r$ gives only 69 degrees. What is happening here is that we're getting
+closer and closer to the event horizon of a black hole. Black holes are the topic of section
+\ref{sec:black-holes}, but it should be intuitively reasonable that something wildly nonlinear has to happen
+as we get close to the point where the light wouldn't even be able to escape.
+
+The precision of Eddington's original test was only about $\pm$ 30\%, and has never been improved on significantly
+with visible-light astronomy. A better technique is radio astronomy, which allows measurements to be carried
+out without waiting for an eclipse. One merely has to wait for the sun to pass in front of a strong, compact
+radio source such as a quasar. These techniques have now verified the deflection of light predicted by general relativity
+to a relative precision of about $10^{-5}$.\footnote{For a review article on this topic, see
+Clifford Will, ``The Confrontation between General Relativity
+and Experiment,'' \url{http://relativity.livingreviews.org/Articles/lrr-2006-3/}.}
+
+<% end_sec %> % Deflection of light
+<% end_sec %> %  Schwarzschild metric
+<% begin_sec("Black holes") %>\label{sec:black-holes}
+<% begin_sec("Singularities") %>
+A provocative feature of the Schwarzschild metric is that it has elements that blow up at $r=0$ and at $r=2m$. If this is a description of
+the sun, for example, then these singularities are of no physical significance, since we only solved the
+Einstein field equation for the vacuum region outside the sun, whereas $r=2m$ would lie about 3 km from the sun's center.
+Furthermore, it is possible that one or both of these singularities is nothing
+more than a spot where our coordinate system misbehaves. This would be known as a \emph{coordinate singularity}.\index{coordinate singularity}
+For example, the metric of ordinary polar coordinates in a Euclidean plane has $g^{\theta\theta}\rightarrow\infty$ as $r\rightarrow 0$.
+
+One way to test whether a singularity is a coordinate singularity is to calculate a scalar measure of curvature, whose value is independent of
+the coordinate system. We can take the trace of the Ricci tensor, $R\indices{^a_a}$,
+but since the Ricci tensor is zero, it's not surprising that that is zero. A different scalar we can construct
+is the product $R^{abcd}R_{abcd}$ of the Riemann tensor with itself. The Maxima command \verb@lriemann(true)@ displays
+the nonvanishing components of $R_{abcd}$. The component that misbehaves the most severely at $r=0$ is $R_{trrt}=2m/r^3$.
+Because of this, $R^{abcd}R_{abcd}$ blows up like $r^{-6}$ as $r\rightarrow 0$. This shows that the singularity at $r=0$
+is a real, physical singularity.
+
+The singularity at $r=2m$, on the
+other hand, turns out to be only a coordinate singularity. To prove this, we have to use some technique other than
+constructing scalar measures of curvature. Even if every such scalar we construct is finite at $r=2m$, that doesn't
+prove that every such scalar we \emph{could} construct is also well behaved.
+We can instead search for some other coordinate system in which to express the solution to the field equations, one in which
+no such singularity appears. A partially successful change of coordinates for the Schwarzschild metric, found by
+Eddington in 1924, is $t \rightarrow t'=t-2m\ln(r-2m)$
+(see problem \ref{hw:eddington-coordinate-change} on page \pageref{eddington-coordinate-change}).\label{eddington-coordinate-change}
+This makes the covariant metric finite at $r=2m$, although the contravariant metric still blows up there.
+A more complicated change of coordinates that completely eliminates the singularity at $r=2m$ was found
+by Eddington and Finkelstein in 1958, establishing that the singularity was only a coordinate singularity.
+Thus, if an observer is so unlucky as to fall into a black hole, he will not be subjected to infinite tidal stresses
+--- or infinite anything --- at $r=2m$. 
+He may not notice anything special at all about his local environment. (Or he may already be dead because the tidal stresses at $r>2m$, although finite, were
+nevertheless great enough to kill him.)
+
+<% end_sec %> % singularities
+<% begin_sec("Event horizon") %>\label{sec:black-hole-horizon}
+
+Even though $r=2m$ isn't a real singularity, interesting things do happen there. For $r<2m$, the sign of
+$g_{tt}$ becomes negative, while $g_{rr}$ is positive. In our $+---$ signature, this has the following
+interpretation. For the world-line of a material particle, $\der s^2$ is supposed to be the square of
+the particle's proper time, and it must always be positive. If a particle had a constant value of $r$,
+for $r<2m$, it would have $\der s^2<0$, which is impossible.
+
+The timelike and spacelike characters of the $r$ and $t$ coordinates have been swapped, so $r$ acts
+like a time coordinate. 
+
+Thus for an object compact enough that
+$r=2m$ is exterior, $r=2m$ is an event horizon: future light cones tip over so far that they do not allow
+causal relationships to connect with the spacetime outside. In relativity, event horizons do not occur only
+in the context of black holes; their properties, and some of the implications for black holes, have already
+been discussed in section \ref{sec:event-horizons}.
+
+<% end_sec %> % event horizon
+<% begin_sec("Expected formation") %>\label{sec:black-hole-formation}
+
+Einstein and Schwarzschild
+did not believe, however, that any of these features of the Schwarzschild metric were more than a mathematical curiosity, and the term ``black hole'' was
+not invented until the 1967, by John Wheeler.
+Although there is quite a bit of evidence these days that black holes do exist, there is also the related question
+of what sizes they come in.
+
+We might expect naively that since gravity is an attractive force, there would be a tendency for any primordial cloud
+of gas or dust to spontaneously collapse into a black hole. But clouds of less than about $0.1M_\odot$ (0.1 solar masses)
+form planets, which achieve a permanent equilibrium between gravity and internal pressure. Heavier objects initiate
+nuclear fusion, but those with masses above about $100M_\odot$ are immediately torn apart by their own solar winds. In the range from
+0.1 to $100M_\odot$, stars form. As discussed in section \ref{sec:degenerate-matter}, those with masses greater than
+about a few solar are expected to form black holes when they die. We therefore expect, on theoretical grounds, that the universe
+should contain black holes with masses ranging from a few solar masses to a few tens of solar masses.
+
+% http://en.wikipedia.org/wiki/Quasar
+% http://en.wikipedia.org/wiki/Supermassive_black_holes
+
+
+<% end_sec %> % formation of black holes
+
+<% begin_sec("Observational evidence") %>
+A black hole is expected to be a very compact object, with a strong gravitational field, that does not emit any of
+its own light. A bare, isolated black hole would be difficult to detect, except perhaps via its lensing of light
+rays that happen to pass by it. But if a black hole occurs in a binary star system, it is possible for mass to be transferred
+onto the black hole from its companion, if the companion's evolution causes it to expand into a giant and intrude upon
+the black hole's gravity well. The object known as Cygnus X-1\index{Cygnus X-1} is the best-studied example. This X-ray-emitting
+object was discovered by a rocket-based experiment in 1964. It is part of a double-star system, the other member being
+a blue supergiant. They orbit their common center of mass with a period of 5.6 days.
+The orbit is nearly circular, and has a semi-major axis of about 0.2 times the distance from the earth to the sun.
+Applying Kepler's law of periods to these data constrains the sum of the masses, and knowledge of stellar structure
+fixes the mass of the supergiant. The result is that the mass of Cygnus X-1 is greater than about 10 solar masses,
+and this is confirmed by multiple methods. Since this is far above the Tolman-Oppenheimer-Volkoff limit, Cygnus X-1
+is believed to be a black hole, and its X-ray emissions are interpreted as the radiation from the disk of superheated
+material accreting onto it from its companion.
+<% marg(65) %>
+<%
+  fig(
+    'accretion-disk',
+    %q{A black hole accretes matter from a companion star.}
+  )
+%>
+<% end_marg %>
+
+Around the turn of the 21st century, new evidence was found for the prevalence of supermassive black holes
+near the centers of nearly all galaxies, including our own. Near our galaxy's center is an object called Sagittarius A*,
+detected because nearby stars orbit around it. The orbital data show that Sagittarius A*
+has a mass of about four million solar masses, confined within a sphere with a radius less than $2.2\times10^7$ km.
+There is no known astrophysical model that could prevent the collapse of such a compact object into a black hole,
+nor is there any plausible model that would allow this much mass to exist in equilbrium in such a small space,
+without emitting enough light to be observable.
+
+The existence of supermassive black holes is surprising. Gas clouds with masses greater than about 100 solar masses
+cannot form stable stars, so supermassive black holes cannot be the end-point of the evolution of heavy stars.
+Mergers of multiple stars to form more massive objects are generally statistically unlikely, since a star is such a small
+target in relation to the distance between the stars. Once astronomers were confronted with the empirical fact of their
+existence, a variety of mechanisms was proposed for their formation. Little is known about which of these mechanisms
+is correct, although the existence of quasars in the early universe is interpreted as evidence that mass accreted
+rapidly onto supermassive black holes in the early stages of the evolution of the galaxies.
+
+<% end_sec %> % observational
+
+<% begin_sec("Singularities and cosmic censorship") %>\index{singularity}\index{cosmic censorship}
+
+Since we observe that black holes really do exist, maybe we should take the singularity at $r=0$ seriously.
+Physically, it says that the mass density and tidal forces blow up to infinity there.
+
+Generally when a physical theory says that observable
+quantities blow up to infinity at a particular point, it means that the theory has reached the point at which it can no
+longer make physical predictions. For instance, Maxwell's theory of electromagnetism predicts that the electric field
+blows up like $r^{-2}$ near a point charge, and this implies that infinite energy is stored in the field within a finite
+radius around the charge. Physically, this can't be right, because we know it only takes 511 keV of energy to create an
+electron out of nothing, e.g., in nuclear beta decay. The paradox is resolved by quantum electrodynamics, which modifies
+the description of the vacuum around the electron to include a sea of virtual particles popping into and out of existence.
+
+In the case of the singularity at the center of a black hole, it is possible that quantum mechanical effects at the
+Planck scale prevent the formation of a singularity. Unfortunately, we are unlikely to find any empirical evidence
+about this, since black holes always seem to come clothed in event horizons, so we cannot extract any data about
+a singularity inside. In a way, this is a good thing. If a singularity exists, it is a point at which all
+the known laws of physics broke down, and physicists therefore have no way of predicting anything about its
+behavior. As John Earman of the University of Pittsburgh puts it, anything could pop out of a singularity, including green
+slime or your lost socks. In more technical language, a naked singularity would constitute an extreme violation of
+unitarity and an acute instance of the information paradox (see page \pageref{information-paradox}).\index{unitarity}\index{information paradox}\label{slime-and-socks}
+
+As long as singularities are hidden behind event horizons, this has no effect on
+our ability to make predictions about the physical behavior of the universe. There is no obvious built-in reason
+that general relativity should not allow \emph{naked} singularities,\index{singularity!naked}\index{naked singularity}
+but neither do we know of any real-world process by which one could be formed.
+Roger Penrose's\index{Penrose, Roger} 1969 \emph{cosmic censorship}
+hypothesis states that our universe contains no naked singularities other than the Big Bang.
+A reasonably readable treatment of these issues is given in Earman,
+\emph{Bangs, Crunches, Whimpers, and Shrieks: Singularities and Acausalities in Relativistic Spacetimes}, Oxford, 1995;
+he clearly marks the sections that are highly technical and suggests how the non-specialist reader can navigate the
+book and absorb the main points.
+
+<% end_sec %> % singularities
+
+<% begin_sec("Black hole radiation") %>
+Since event horizons are expected to emit blackbody radiation, a black hole should not be entirely black; it should
+radiate. Suppose observer B just outside the event horizon blasts the engines of her rocket ship, producing enough
+acceleration to keep from being sucked in. By the equivalence principle, what she observes cannot depend on whether
+the acceleration she experiences is actually due to a gravitational field. She therefore detects radiation, which she
+interprets as coming from the event horizon below her. As she gets closer and closer to the horizon, the acceleration
+approaches infinity, so the intensity and frequency of the radiation grows without limit.
+
+A distant observer A, however, sees a different picture. According to A, B's time is extremely dilated. A sees B's
+acceleration as being only $\sim 1/m$, where $m$ is the mass of the black hole; A does not perceive this acceleration
+as blowing up to infinity as B approaches the horizon. When A detects the radiation, it is extremely red-shifted, and
+it has the spectrum that one would expect for a horizon characterized by an acceleration $a\sim 1/m$. The result for
+a 10-solar-mass blackhole is $T\sim10^{-8}$ K, which is so low that the black hole is actually absorbing more energy
+from the cosmic microwave background radiation than it emits.
+
+Direct observation of black-hole radiation is therefore probably only possible for black holes of very small masses.
+These may have been produced soon after the big bang, or it is conceivable that they could be created artificially,
+by advanced technology.
+If black-hole radiation does exist, it may help to resolve the information paradox, since it is possible that
+information that goes into a black hole is eventually released via subtle correlations in the
+black-body radiation it emits.
+
+A very difficult question about the relationship between quantum mechanics and general relativity occurs as follows.
+In our example above, observer A detects an extremely red-shifted spectrum of light from the black hole. A interprets
+this as evidence that the space near the event horizon is actually an intense maelstrom of radiation, with the temperature
+approaching infinity as one gets closer and closer to the horizon. If B returns from the region near the horizon, B will
+agree with this description. But suppose that observer C simply drops straight through the horizon. C does not feel
+any acceleration, so by the equivalence principle C does not detect any radiation at all. Passing down through the
+event horizon, C says, ``A and B are liars! There's no radiation at all.'' A and B, however, C see as having entered
+a region of infinitely intense radiation. ``Ah,'' says A, ``too bad. C should have turned back before it got
+too hot, just as I did.'' This is an example of a principle we've encountered before, that when gravity and quantum
+mechanics are combined, different observers disagree on the number of quanta present in the vacuum. We are presented
+with a paradox, because A and B believe in an entirely different version of reality that C. A and B say C was fricasseed,
+but C knows that that didn't happen. One suggestion is that this contradiction shows that the proper logic for describing
+quantum gravity is nonaristotelian, as described on page \pageref{nonaristotelian}. This idea, suggested by Susskind et al.,\index{Susskind, Leonard}
+goes by the name 
+of \emph{black-hole complementarity},\label{black-hole-complementarity}
+by analogy with Niels Bohr's philosophical description of wave-particle duality as being ``complementary'' rather than
+contradictory. In this interpretation, we have to accept the fact that C experiences a qualitatively different reality than
+A and B, and we comfort ourselves by recognizing that the contradiction can never become too acute, since C is lost behind
+the event horizon and can never send information back out.
+
+<% end_sec %> % Black hole radiation
+
+<% end_sec %> % black holes
+
+\begin{hwsection}
+
+<% begin_hw('coordinate-singularity-sphere') %>
+The metric of coordinates $(\theta,\phi)$ on the unit sphere is $\der s^2=\der\theta^2+\sin^2\theta\der\phi^2$.
+(a) Show that there is a singular point at which $g^{ab}\rightarrow\infty$.
+(b) Verify directly that the scalar curvature $R=R^a_a$ constructed from the trace of the Ricci tensor is never infinite.
+(c) Prove that the singularity is a coordinate singularity.
+<% end_hw %>
+
+<% begin_hw('sirius-b-redshift') %>
+The first experimental verification of gravitational redshifts was a measurement in 1925 by W.S. Adams of the spectrum of
+light emitted from the surface of the white dwarf star Sirius B. Sirius B has a mass of $0.98M_\odot$ and a radius
+of $5.9\times10^6$ m. Find the redshift.
+<% end_hw %>
+
+<% begin_hw('eddington-coordinate-change') %>
+Show that, as claimed on page \pageref{eddington-coordinate-change}, applying the change of coordinates $t'=t-2m\ln(r-2m)$
+to the Schwarzschild metric results in a metric for which $g_{rr}$ and $g_{t't'}$ never blow up, but that $g^{t't'}$
+does blow up.
+<% end_hw %>
+
+
+\end{hwsection}
+
+<% end_chapter %>

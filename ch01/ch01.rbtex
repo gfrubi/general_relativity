@@ -1,0 +1,2318 @@
+<%
+  require "eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '01',
+    %q{A Geometrical Theory of Spacetime},
+    'ch:intro'
+  )
+%>
+
+``I always get a slight brain-shiver, now [that] space and time appear conglomerated together in a gray, miserable chaos.'' -- Sommerfeld
+
+Why does the world need yet another book about relativity?
+I had in mind the hope not necessarily of writing the best relativity
+book ever, but perhaps of writing the best \emph{free} book at its level, where ``at its level'' means
+that the book is meant to be accessible to advanced undergraduates, as well as to graduate students
+who put their pants on one leg at a time.
+
+This is mainly a book about general relativity, not special relativity.
+I've heard the sentiment expressed that books on special relativity generally
+do a lousy job on special relativity, compared to books on
+general relativity. This is undoubtedly true, for someone who already has already
+learned special relativity --- but wants to unlearn the parts that are completely wrong
+in the broader context of general relativity. For someone who has \emph{not}
+already learned special relativity, I strongly recommend mastering it first,
+from a book such as Taylor and Wheeler's \emph{Spacetime Physics}.
+Even an advanced student may be able to learn a great deal from
+a masterfully written, nonmathematical treatment at an even lower level,
+such as the ones in Hewitt's, \emph{Conceptual Physics} or
+the inexpensive paperback by Gardner, \emph{Relativity Simply Explained}.
+
+I should reveal at the outset that I am not a professional relativist. My field
+of research was nonrelativistic nuclear physics until I became a community college
+physics instructor. I can only hope that my pedagogical experience will compensate to some
+extent for my shallow background, and that readers who find mistakes will be
+kind enough to let me know about them using the contact information 
+provided at \url{http://www.lightandmatter.com/area4author.html}.
+
+<% begin_sec("Time and causality") %>
+
+Updating Plato's allegory of the cave,
+imagine two superintelligent twins,
+Alice and Betty. They're raised entirely by a robotic tutor on a
+sealed space station, with no access to the outside world. The robot, in accord
+with the latest fad in education, is programmed to encourage them to build
+up a picture of all the laws of physics based on their own
+experiments, without a textbook to tell them the right answers.
+Putting yourself in the twins' shoes, imagine giving up all your
+preconceived ideas about space and time, which may turn out according
+to relativity to be completely wrong, or perhaps only approximations
+that are valid under certain circumstances.
+
+Causality is one thing the twins will notice. Certain events result
+in other events, forming a network of cause and effect. One general
+rule they infer from their observations is that there is an
+unambiguously defined notion of \emph{betweenness}: if Alice observes
+that event 1 causes event 2, and then 2 causes 3, Betty always agrees
+that 2 lies between 1 and 3 in the chain of causality. They find that
+this agreement holds regardless of whether one twin is standing on
+her head (i.e., it's invariant under rotation), and regardless of
+whether one twin is sitting on the couch while the other is zooming
+around the living room in circles on her nuclear fusion scooter
+(i.e., it's also invariant with respect to different states of
+motion).
+
+You may have heard that relativity is a theory that can be
+interpreted using non-Euclidean geometry. The invariance of
+betweenness is a basic geometrical property that is shared by both
+Euclidean and non-Euclidean geometry. We say that they are both
+\emph{ordered} geometries. With this geometrical interpretation in mind, it will be
+useful to think of events not as actual notable occurrences but
+merely as an ambient sprinkling of \emph{points} at which things
+\emph{could} happen. For example, if Alice and Betty are eating
+dinner, Alice could choose to throw her mashed potatoes at Betty.
+Even if she refrains, there was the potential for a causal linkage
+between her dinner and Betty's forehead.
+
+Betweenness is very weak.\label{no-global-causality}
+Alice and Betty may also make a number of
+conjectures that would say much more about causality. For example:
+(i) that the universe's entire network of causality is connected,
+rather than being broken up into separate parts; (ii) that the events
+are globally ordered, so that for \emph{any} two events 1 and 2,
+either 1 could cause 2 or 2 could cause 1, but not both; (iii) not
+only are the events ordered, but the ordering can be modeled by
+sorting the events out along a line, the time axis, and assigning a
+number $t$, time, to each event. To see what these conjectures would
+entail, let's discuss a few examples that may draw on knowledge from
+outside Alice and Betty's experiences.
+
+Example: According to the Big Bang theory, it seems likely that the
+network is connected, since all events would presumably connect back
+to the Big Bang. On the other hand, if (i) were false we might have
+no way of finding out, because the lack of causal connections would
+make it impossible for us to detect the existence of the other
+universes represented by the other parts disconnected from our own
+universe.
+
+Example: If we had a time machine, we could violate (ii), but this
+brings up paradoxes, like the possibility of killing one's own
+grandmother when she was a baby, and in any case nobody knows how to
+build a time machine.
+
+Example: There are nevertheless strong reasons for believing that
+(ii) is false. For example, if we drop Alice into one black hole, and
+Betty into another, they will never be able to communicate again, and
+therefore there is no way to have any cause and effect relationship
+between Alice's events and Betty's.\footnote{This point is revisited in section \ref{sec:event-horizons}.}
+
+Since (iii) implies (ii), we suspect that (iii) is false as well. But
+Alice and Betty build clocks, and these clocks are remarkably
+successful at describing cause-and-effect relationships within the
+confines of the quarters in which they've lived their lives: events
+with higher clock readings never cause events with lower clock
+readings. They announce to their robot tutor that they've discovered
+a universal thing called time, which explains all causal
+relationships, and which their experiments show flows at the same rate
+everywhere within their quarters.
+
+``Ah,'' the tutor sighs, his metallic voice trailing off.
+
+``I know that `ah', Tutorbot,'' Betty says. ``Come on, can't you just
+tell us what we did wrong?''
+
+``You know that my pedagogical programming doesn't allow that.''
+
+``Oh, sometimes I just want to strangle whoever came up with those
+stupid educational theories,'' Alice says.
+
+The twins go on strike, protesting that the time theory works
+perfectly in every experiment they've been able to imagine. Tutorbot
+gets on the commlink with his masters and has a long, inaudible
+argument, which, judging from the hand gestures, the twins imagine to
+be quite heated. He announces that he's gotten approval for a field
+trip for one of the twins, on the condition that she remain in a
+sealed environment the whole time so as to maintain the conditions of
+the educational experiment.
+
+``Who gets to go?'' Alice asks.
+
+``Betty,'' Tutorbot replies, ``because of the mashed potatoes.''
+
+``But I refrained!'' Alice says, stamping her foot.
+
+``Only one time out of the last six that I served them.''
+
+The next day, Betty, smiling smugly, climbs aboard the sealed
+spaceship carrying a duffel bag filled with a large collection of
+clocks for the trip. Each clock has a duplicate left behind with Alice.
+The clock design that they're proudest of consists of a tube with two
+mirrors at the ends. A flash of light bounces back and forth between
+the ends, with each round trip counting as one ``tick,'' one unit of
+time. The twins are convinced that this one will run at a constant
+rate no matter what, since it has no moving parts that could be
+affected by the vibrations and accelerations of the journey.
+
+Betty's field trip is dull. She doesn't get to see any of the outside
+world. In fact, the only way she can tell she's not still at home is
+that she sometimes feels strong sensations of acceleration. (She's
+grown up in zero gravity, so the pressing sensation is novel to her.)
+She's out of communication with Alice,
+and all she has to do during the long voyage is to tend to her
+clocks. As a crude check, she verifies that the light clock seems to
+be running at its normal rate, judged against her own pulse. The
+pendulum clock gets out of synch with the light clock during the
+accelerations, but that doesn't surprise her, because it's a
+mechanical clock with moving parts. All of the nonmechanical clocks
+seem to agree quite well. She gets hungry for breakfast, lunch, and
+dinner at the usual times.
+
+When Betty gets home, Alice asks, ``Well?''
+
+``Great trip, too bad you couldn't come. I met some cute boys, went
+out dancing, \ldots''
+
+``You did not. What about the clocks?''
+
+``They all checked out fine. See, Tutorbot? The time theory still
+holds up.''
+
+``That was an anticlimax,'' Alice says. ``I'm going back to bed now.''
+
+``Bed?'' Betty exclaims. ``It's three in the afternoon.''
+
+The twins now discover that although all of Alice's clocks agree
+among themselves, and similarly for all of Betty's (except for the
+ones that were obviously disrupted by mechanical stresses), Alice's
+and Betty's clocks disagree with one another. A week has passed for
+Alice, but only a couple of days for Betty.
+
+
+<% end_sec %>
+<% begin_sec("Experimental tests of the nature of time") %>\label{sec:time-experiments}
+
+<% begin_sec("The Hafele-Keating experiment") %>\label{sec:hafele-keating}\index{Hafele-Keating experiment}\index{atomic clocks}
+In 1971, J.C. Hafele and R.E. Keating\footnote{Hafele and Keating, Science, 177 (1972), 168}
+of the U.S. Naval Observatory brought atomic clocks aboard commercial
+airliners and went around the world, once from east to west and once from west to east. (The clocks had their
+own tickets, and occupied their own seats.) As in the parable of
+Alice and Betty, Hafele and Keating observed that there was a discrepancy between the times measured by the
+traveling clocks and the times measured by similar clocks that stayed at the lab in Washington.
+The result was that the east-going clock lost an amount of time $\Delta t_E=-59\pm10$ ns, while the west-going one gained $\Delta t_W=+273\pm7$ ns.
+This establishes that time is not universal and absolute.
+
+<% marg(0) %>
+<%
+  fig(
+    'atomic-clock-boarding-plane',
+    %q{The atomic clock has its own ticket and its own seat.}
+  )
+%>
+<% end_marg %>
+Nevertheless, causality was preserved. The
+nanosecond-scale effects observed were small compared to the three-day lengths of the plane trips. There was no
+opportunity for paradoxical situations such as, for example, a scenario in which the east-going experimenter arrived
+back in Washington before he left and then proceeded to convince himself not to take the trip.
+
+Hafele and Keating were testing specific quantitative predictions of relativity, and they verified them to within
+their experiment's error bars. At this point in the book, we aren't in possession of enough relativity to be able
+to make such calculations, but, like Alice and Betty, we can inspect the empirical results for clues as to how 
+time works.
+
+The opposite signs of the two results suggests that the rate at which time flows depends on the motion
+of the observer. The east-going clock was moving in the same direction as the earth's rotation, so its velocity
+relative to the earth's center was greater than that of the ones that remained in Washington, while the west-going clock's velocity was
+correspondingly reduced.\footnote{These differences in velocity are not simply something that can be eliminated by
+choosing a different frame of reference, because the clocks' motion isn't in a straight line. The clocks back
+in Washington, for example, have a certain acceleration toward the earth's axis, which is different from the
+accelerations experienced by the traveling clocks.} The signs of the $\Delta t$'s show that moving clocks
+were slower.
+
+On the other hand, the asymmetry of the results, with $|\Delta t_E| \ne |\Delta t_W|$,
+implies that there was a second effect involved, simply due to the planes' being up in the air. Relativity predicts
+that the time's rate of flow also changes with height in a gravitational field. The deeper reasons for such an
+effect are given in section \ref{sec:pound-rebka} on page \pageref{sec:pound-rebka}.\label{gravity-affects-time}
+
+Although Hafele and Keating's measurements were on the ragged edge of the state of the art in 1971, technology has
+now progressed to the point where similar effects have everyday consequences. The satellites of the Global
+Positioning System (GPS) orbit at a speed of $1.9\times 10^3$ m/s, an order of magnitude faster than a
+commercial jet. Their altitude of 20,000 km is also much greater than that of an aircraft.
+For both these reasons, the relativistic effect on time is stronger than in the Hafele-Keating experiment.
+The atomic clocks aboard the satellites are tuned to a frequency of 10.22999999543 MHz, which is
+perceived on the ground as 10.23 MHz. (This frequency shift will be calculated in example \ref{eg:gps}
+on page \pageref{eg:gps}.
+
+<% end_sec %> % Hafele-Keating
+
+
+<% begin_sec("Muons") %>
+Although the Hafele-Keating experiment is impressively direct, it was not the first verification of relativistic
+effects on time, it did not completely separate the kinematic and gravitational effects, and the effect was small.
+In 1941, Rossi and Hall detected cosmic-ray muons\index{cosmic rays}\index{muon} at the summit and base of
+Mount Washington in New Hampshire. The muon has a mean lifetime of 2.2 $\mu\zu{s}$, and the time of flight
+between the top and bottom of the mountain (about 2 km for muons arriving along a vertical path) at nearly the
+speed of light was about 7 $\mu\zu{s}$, so in the absence of relativistic effects, the flux at the bottom of the mountain
+should have been smaller than the flux at the top by about an order of magnitude. The observed ratio was
+much smaller, indicating that the ``clock'' constituted by nuclear decay processes was dramatically slowed down
+by the motion of the muons.
+<% end_sec %> % muons
+
+<% begin_sec("Gravitational redshifts") %>\label{gravitational-redshifts}
+The first  experiment that isolated the gravitational effect on time was a 1925 measurement by W.S. Adams of the spectrum
+of light emitted from the surface of the white dwarf star Sirius B. The gravitational field at the surface of Sirius B
+is $4\times 10^5 g$, and the gravitational potential is about 3,000 times greater than at the Earth's surface. The emission lines of hydrogen were redshifted,
+i.e., reduced in frequency,
+and this effect was interpreted as a slowing of time at the surface of Sirius 
+relative to the surface of the Earth.\index{redshift!gravitational}\index{Adams, W.S.}\index{Sirius B}
+Historically, the mass and radius of Sirius were not known with better than order of magnitude precision in 1925,
+so this observation did not constitute a good quantitative test.
+
+The first such experiment to be carried out under controlled conditions,
+by Pound and Rebka in 1959, is analyzed quantitatively in example \ref{eg:pound-rebka} on page \pageref{eg:pound-rebka}.\index{Pound-Rebka experiment}
+<%
+  fig(
+    'gravity-probe-a',
+    %q{%
+      Gravity Probe A.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+The first high-precision experiment of this kind was Gravity Probe A, a 1976 experiment\footnote{Vessot at al., Physical Review Letters 45 (1980) 2081} in which
+a space probe was launched vertically from Wallops Island, Virginia, at less than escape velocity, to an altitude of 10,000 km, after which
+it fell back to earth and crashed down in the Atlantic Ocean. The probe carried a hydrogen maser clock which was used to control the frequency of a
+radio signal. The radio signal was received on the ground, the nonrelativistic Doppler shift was subtracted out, and the residual blueshift was
+interpreted as the gravitational effect effect on time, and matched the relativistic prediction to an accuracy of 0.01\%.\index{Gravity Probe A}
+
+
+<% end_sec %> 
+
+<% end_sec %>
+
+<% begin_sec("Non-simultaneity and the maximum speed of cause and effect") %>\label{sec:max-speed-of-cause-and-effect}
+We've seen that time flows at different rates for different observers.
+Suppose that Alice and Betty repeat their Hafele-Keating-style experiment, but this time they are allowed to
+communicate during the trip. Once Betty's ship completes its initial acceleration away from Betty,
+she  cruises at constant speed, and girl has her own equally valid
+inertial frame of reference. Each twin considers herself to be at rest, and says that the other is the one who
+is moving. Each one says that the other's clock is the one that is slow. If they could pull out their phones
+and communicate instantaneously, with no time lag for the propagation of the signals, they could resolve the controversy.
+Alice could ask Betty, ``What time does your clock read right \emph{now}?'' and get an immediate answer back.
+
+By the symmetry of their frames of reference, however, it seems that that Alice and Betty should  \emph{not} be able
+to resolve the controversy \emph{during} Betty's trip. If they could, then they could release two radar beacons that
+would permanently establish two inertial frames of reference, A and B, such that time flowed, say, more slowly in B than in
+A. This would violate the principle that motion is relative, and that all inertial frames of reference are equally valid.
+The best that they can do is to compare clocks once Betty returns, and verify that the net result of the trip was to
+make Betty's clock run more slowly \emph{on the average}.
+
+Alice and Betty can never satisfy their curiosity about exactly when
+during Betty's voyage the discrepancies accumulated or at what rate.
+This is information that they can never obtain, but they could obtain it if they had a system for
+communicating instantaneously. We conclude that instantaneous communication is impossible. There must be some maximum
+speed at which signals can propagate --- or, more generally, a maximum speed at which cause and effect can propagate ---
+and this speed must for example be greater than or equal to the speed at which radio waves propagate.
+It is also evident from these considerations that simultaneity itself cannot be a meaningful concept in
+relativity.
+<% end_sec %>
+
+<% begin_sec("Ordered geometry") %>
+You've probably heard that general relativity is a geometrical theory.
+Let's try to put what we've learned into a general geometrical context.
+
+Euclid's familiar geometry of two-dimensional space has the following
+axioms,\footnote{These axioms are summarized for quick reference in the back of the book on page
+\pageref{euclidean-summary}.} which are expressed in terms of operations that can be carried out with a compass and unmarked straightedge:\label{euclidean-axioms}
+\begin{itemize}
+\item[E1] Two points determine a line.
+\item[E2] Line segments can be extended.
+\item[E3] A unique circle can be constructed given any point as its center and any line segment as its radius.
+\item[E4] All right angles are equal to one another.
+\item[E5] \emph{Parallel postulate:} Given a line and a point not on the line, no more than one line
+          can be drawn through the point and parallel to the given line.\footnote{This is a form known as Playfair's axiom, rather than the version of the
+                   postulate originally given by Euclid.}
+\end{itemize}
+
+The modern style in mathematics is to consider this type of axiomatic
+system as a self-contained sandbox, with the axioms, and any theorems
+proved from them, being true or false only in relation to one another.
+Euclid and his contemporaries, however, believed them to be self-evident
+facts about physical reality. For example, they considered the
+fifth postulate to be less obvious than the first four, because in order
+to verify physically that two lines were parallel, one would theoretically
+have to extend them to an infinite distance and make sure that they never crossed.
+In the first 28 theorems of the \emph{Elements}, Euclid restricts himself entirely
+to propositions that can be proved based on the more secure first four postulates.
+The more
+general geometry defined by omitting the parallel postulate is known as \emph{absolute geometry}.\index{absolute geometry}
+
+What kind of geometry is likely to be applicable to general relativity?
+We can see immediately that Euclidean geometry, or even absolute geometry,
+would be far too specialized. We have in mind the description of events that are points
+in both space and time. Confining ourselves for ease of visualization to one dimension
+worth of space, we can certainly construct a plane described by coordinates $(t,x)$,
+but imposing Euclid's postulates on this plane results in physical nonsense.
+Space and time are physically distinguishable from one another. But postulates 3 and
+4 describe a geometry in which distances measured along non-parallel axes are comparable,
+and figures may be freely rotated without affecting the truth or falsehood of statements
+about them; this is only appropriate for a physical description of different spacelike directions,
+as in an $(x,y)$ plane whose two axes are indistinguishable.
+
+We need to throw most of the specialized apparatus of Euclidean geometry
+overboard. Once we've stripped our geometry to a bare minimum, then we can
+go back and build up a different set of equipment that will be better suited
+to relativity.
+
+The stripped-down geometry we want is called \emph{ordered geometry}, and was
+developed by Moritz Pasch around 1882.\index{Pasch!Moritz} As suggested by the parable of Alice and Betty,
+ordered geometry does not have any global, all-encompassing system of measurement.
+When Betty goes on her trip, she traces out a particular path through the space of
+events, and Alice, staying at home, traces another. Although events play out in
+cause-and-effect order along each of these paths, we do not expect to be able to
+measure times along paths A and B and have them come out the same. This is how
+ordered geometry works: points can be put in a definite order along any particular
+line, but not along different lines.  Of the four
+primitive concepts used in Euclid's E1-E5 --- point, line, circle, and angle ---
+only the non-metrical notions of point (i.e., event) and line are relevant in ordered geometry.
+In a geometry without measurement, there is no concept of measuring distance (hence no
+compasses or circles), or of measuring angles. The notation [ABC] indicates that event B lies on a line
+segment joining A and C, and is strictly between them.
+<% marg(0) %>
+<%
+  fig(
+    'ordered-geometry',
+    %q{Axioms O2 (left) and O3 (right).}
+  )
+%>
+<% end_marg %>
+
+The axioms of ordered geometry are as follows:\footnote{The axioms are summarized for convenient reference in the back
+of the book on page \pageref{ordered-summary}. This is meant to be an informal, readable summary of the system,
+pitched to the same level of looseness as Euclid's E1-E5. Modern mathematicians have found that systems like these actually
+need quite a bit more technical machinery to be perfectly rigorous, so if you look up an axiomatization of ordered geometry,
+or a modern axiomatization of Euclidean geometry,
+you'll typically find a much more lengthy list of axioms than the ones presented here. The axioms I'm omitting take care
+of details like making sure that there are more than two points in the universe, and that
+curves can't cut through one another intersecting. The classic, beautifully written book on these topics is
+H.S.M. Coxeter's \emph{Introduction to Geometry}, which is ``introductory'' in the sense that it's the kind of book a college
+math major might use in a first upper-division course in geometry.}\label{ordered-geometry-axioms}
+\begin{itemize}
+\item[O1] Two events determine a line.
+\item[O2] Line segments can be extended: given A and B, there is at least one event such that [ABC] is true.
+\item[O3] Lines don't wrap around: if [ABC] is true, then [BCA] is false.
+\item[O4] Causality: Any three distinct events A, B, and C lying on the same line can be sorted out in order (and by statement 3, this order is unique).
+\end{itemize}
+
+O1-O2 express the same ideas as Euclid's E1-E2. Not all lines in the system will correspond physically to
+chains of causality; we could have a line segment that describes a snapshot of a steel chain, and O3-O4
+then say that the order of the links is well defined. But O3 and O4 also have clear physical significance for
+lines describing causality.
+O3 forbids time travel paradoxes, like going back in time and killing our own grandmother as a child.
+O4 says that events are guaranteed to have a well-defined cause-and-effect order only if they lie on the same
+line. This is competely different from the attitude expressed in Newton's famous statement: ``Absolute, true and mathematical time, of itself, and
+from its own nature flows equably without regard to anything external \ldots''
+
+If you're dismayed by the austerity of a system of geometry without any notion of measurement, you may be
+even more dismayed to learn that even a system as weak as ordered geometry makes some statements that are too
+strong to be completely correct as a foundation for relativity. For example, if an observer falls into a black
+hole, at some point he will reach a central point of infinite density, called a singularity.\index{singularity}
+At this point, his chain of cause and effect terminates, violating statement 2.
+It is also an open question whether O3's prohibition on time-loops actually holds in general relativity;
+this is Stephen Hawking's playfully named chronology protection conjecture.\index{chronology protection conjecture}\index{Hawking!Stephen}
+We'll also see that in general relativity O1 is almost always true, but there are exceptions.
+<% marg(63) %>
+<%
+  fig(
+    'hawking-photo',
+    %q{Stephen Hawking (1942-).}
+  )
+%>
+<% end_marg %>
+
+<% end_sec %>
+<% begin_sec("The equivalence principle") %>
+
+<% begin_sec("Proportionality of inertial and gravitational mass") %>
+What physical interpretation should we give to the ``lines'' described in ordered geometry?
+Galileo described an experiment (which he may or may not have actually performed) in which he simultaneously
+dropped a cannonball and a musket ball from a tall tower. The two objects hit the ground simultaneously,
+disproving Aristotle's assertion that objects fell at a speed proportional to their weights. On a graph of
+spacetime with $x$ and $t$ axes, the curves traced by the two objects, called their \emph{world-lines},\index{world-line}
+are identical parabolas. (The paths
+of the balls through $x-y-z$ space are straight, not curved.) One way of explaining this observation is that
+what we call ``mass'' is really two separate things, which happen to be equal.
+\emph{Inertial mass}\index{mass!inertial}\index{inertial mass}, which appears in Newton's $a=F/m$, describes
+how difficult it is to accelerate an object. 
+\emph{Gravitational mass}\index{mass!gravitational}\index{gravitational mass} describes the strength with which
+gravity acts. The cannonball has a hundred times more gravitational mass than the musket ball, so the force
+of gravity acting on it is a hundred times greater. But its inertial mass is also precisely a hundred times
+greater, so the two effects cancel out, and it falls with the same acceleration. This is a special property
+of the gravitational force. Electrical forces, for example, do not behave this way. The force that an object
+experiences in an electric field is proportional to its charge, which is unrelated to its inertial mass,
+so different charges placed in the same electric field will in general have \emph{different} motions.
+<% marg(0) %>
+<%
+  fig(
+    'galileo-balls',
+    %q{The cannonball and the musketball have identical parabolic world-lines. On this type of space-time plot,
+        space is conventionally shown on the horizontal axis, so the tower has to be depicted on its side.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'string-on-globe',
+    %q{A piece of string held taut on a globe forms a geodesic from Mexico City to London. Although it appears
+              curved, it is the analog of a straight line in the non-Euclidean geometry confined to the surface
+              of the Earth. Similarly, the world-lines of figure \figref{galileo-balls} appear curved, but
+              they are the analogs of straight lines in the non-Euclidean geometry used to describe gravitational
+              fields in general relativity.}
+  )
+%>
+<% end_marg %>
+<% end_sec %> % Proportionality of inertial and gravitational mass
+
+<% begin_sec("Geometrical treatment of gravity") %>
+Einstein realized that this special property of the gravitational force made it possible to describe
+gravity in purely geometrical terms. We define the
+world-lines of objects acted on by gravity to be the lines described by the axioms of the geometry.
+Since we normally think of the ``lines'' described by Euclidean geometry and its kin as \emph{straight} lines,
+this amounts to a redefinition of what it means for a line to be straight. By analogy, imagine stretching
+a piece of string taut across a globe, as we might do in order to plan an airplane flight or aim a
+directional radio antenna. The string may not appear straight as viewed from the three-dimensional Euclidean
+space in which the globe is embedded, but it is as straight as possible in the sense that it is the path
+followed by a radio wave,\index{Radio waves in the HF band tend to be trapped between the ground and the ionosphere,
+causing them to curve over the horizon, allowing long-distance communication.} or by an airplane pilot who keeps her wings level and her rudder straight.
+The world-``line'' of an object acted on by nongravitational forces is not considered to be a straight ``line''
+in the sense of O1-O4. When necessary, one eliminates this ambiguity in the overloaded term ``line'' by referring
+to the lines of O1-O4 \emph{geodesics}.\index{geodesics}
+The world-line of an object acted on only by gravity is one type of geodesic.
+
+We can now see the deep physical importance of statement O1, that two events determine a line.\label{unique-geodesics}
+To predict the trajectory of a golf ball, we need to have some initial data. For example, we could measure
+event A when the ball breaks contact with the club, and event B an infinitesimal time after
+A.\footnote{Regarding infinitesimals, see p. \pageref{infinitesimals}.}
+This pair of observations can be thought of as fixing the ball's initial position and velocity, which should
+be enough to predict a unique world-line for the ball, since relativity is a deterministic theory.
+With this interpretation, we can also see why it is not necessarily a disaster for the theory if O1 fails
+sometimes. For example, event A could mark the launching of two satellites into circular orbits from the same place on the
+Earth, heading in opposite directions, and B could be their subsequent collision on the opposite side of the planet.
+Although this violates O1, it doesn't violate determinism. Determinism only requires the validity of O1 for
+events infinitesimally close together. Even for randomly chosen events far apart, the probability that they will
+violate O1 is zero.
+<% end_sec %> % Geometrical treatment of gravity
+
+<% begin_sec("E\\\"{o}tv\\\"{o}s experiments") %>
+Einstein's entire system breaks down if there is any violation, no matter how small, of the proportionality
+between inertial and gravitational mass, and it therefore becomes very interesting to search experimentally
+for such a violation. For example, we might wonder whether neutrons and protons had slightly different ratios of
+gravitational and inertial mass, which in a Galileo-style experiment would cause a small difference between
+the acceleration of a lead weight, with a large neutron-to-proton ratio, and a wooden one, which consists
+of light elements with nearly equal numbers of neutrons and protons. The first high-precision experiments
+of this type were performed by E\"{o}tv\"{o}s around the turn of the twentieth century, and they verified
+the equivalence of inertial and gravitational mass to within about one part in $10^8$. Measurements in the
+mid-twentieth century refined this to one part in $10^{12}$. These are generically referred to as E\"{o}tv\"{o}s experiments.\index{E\"{o}tv\"{o}s experiments}
+<% marg(0) %>
+<%
+  fig(
+    'eotvos-portrait',
+    %q{Lor\'{a}nd E\"{o}tv\"{o}s (1848-1919).}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'ep-violating-string-on-globe',
+    %q{If the geodesics defined by an airplane and a radio wave differ from one another, then it is not
+         possible to treat both problems exactly using the same geometrical theory. In general relativity, this
+         would be analogous to a violation of the equivalence principle. General relativity's validity as
+         a purely geometrical theory of gravity requires that the equivalence principle be exactly satisfied in all
+         cases.}
+  )
+%>
+<% end_marg %>
+
+
+Figure \figref{braginskii} shows a strategy for doing E\"{o}tv\"{o}s experiments that has proved successful.
+The top panel is a simplified. The platform is balanced, so the gravitational
+        masses of the two objects are observed to be equal. The objects are made of different substances. If the equivalence of inertial and gravitational mass fails to hold
+        for these two substances, then the force of gravity on each mass will not be exact proportion to its inertia, and the
+        platform will experience a slight torque as the earth spins.
+The bottom panel shows a more realistic drawing of an experiment by Braginskii and Panov.\footnote{V.B. Braginskii and V.I. Panov, Soviet Physics JETP 34, 463 (1972).}
+                      The whole thing was encased in a tall vacuum tube, which was placed in a
+                      sealed basement whose temperature was controlled to within 0.02\degcunit.
+                      The total mass of the platinum and aluminum test masses, plus the tungsten
+                      wire and the balance arms, was only 4.4 g. To detect tiny motions, a laser
+                      beam was bounced off of a mirror attached to the wire. There was so little
+                      friction that the balance would have taken on the order of several years
+                      to calm down completely after being put in place; to stop these vibrations,
+                      static electrical forces were applied through the two circular plates to provide
+                      very gentle twists on the ellipsoidal mass between them.
+<% end_sec %> % Eotvos experiments
+
+<% begin_sec("Equivalence of gravitational fields and accelerations") %>
+One consequence of the E\"{o}tv\"{o}s experiments' null results is that it is not possible to tell the difference between an acceleration and
+a gravitational field. At certain times during Betty's field trip, she feels herself pressed against her seat,
+and she interprets this as evidence that she's in a space vessel that is undergoing violent accelerations
+and decelerations. But it's equally possible that Tutorbot has simply arranged for her capsule to be hung
+from a rope and dangled into the gravitational field of a planet at various times.
+Suppose that the first
+explanation is correct. The capsule is initially at rest in outer space, where there is no gravity.
+Betty can release a pencil and a lead ball in the air inside the cabin, and they will stay in place.
+The capsule then accelerates, and to Betty, who has adopted a frame of reference tied to its deck, ceiling
+and walls, it appears that the pencil and the ball fall to the deck. They are guaranteed to stay side by
+side until they hit the deckplates, because in fact they aren't accelerating; they simply appear to accelerate,
+when in reality it's the deckplates that are coming up and hitting them.
+But now consider the second explanation, that the capsule has been dipped into a gravitational field.
+The ball and the pencil will still fall side by side to the floor, because they have the same ratio of
+gravitational to inertial mass. 
+<% end_sec %> % Equivalence of gravitational fields and accelerations
+
+<% begin_sec("The equivalence principle") %>
+This leads to one way of stating a central principle of relativity known as the \emph{equivalence principle}:
+Accelerations and gravitational fields are equivalent. There is no experiment that can distinguish one from
+the other.\footnote{This statement of the equivalence principle is summarized,
+along with some other forms of it to be encountered later, in the back of the book on page
+\pageref{equivalence-principle-summary}.}\index{equivalence principle!accelerations and fields equivalent}\label{equivalence-a-and-g}
+<% marg(0) %>
+<%
+  fig(
+    'braginskii',
+    %q{An  E\"{o}tv\"{o}s experiment. Top: simplified version. Bottom: realistic version by Braginskii and Panov. (Drawing after Braginskii
+                      and Panov.)}
+  )
+%>
+<% end_marg %>
+
+
+To see what a radical departure this is, we need to compare with the completely different picture presented by
+Newtonian physics and special relativity. Newton's law of inertia states that
+``Every object perseveres in its state of rest, or of uniform motion in a straight
+line, unless it is compelled to change that state by forces impressed 
+thereon.''\footnote{paraphrased from a translation by Motte, 1729}
+Newton's intention here was to clearly state a contradiction of Aristotelian physics, in which objects
+were supposed to naturally stop moving and come to rest in the absence of a force. For Aristotle, ``at rest''
+meant at rest relative to the Earth, which represented a special frame of reference. But if motion doesn't
+naturally stop of its own accord, then there is no longer any way to single out one frame of reference,
+such as the one tied to the Earth, as being special. An equally good frame of reference is a
+car driving in a straight line down the interstate at constant speed. The Earth and the car both represent
+valid \emph{inertial} frames of reference,\index{inertial frame}\index{frame of reference!inertial}
+in which Newton's law of inertia is valid. On the other hand, there are other, noninertial frames of reference,
+in which the law of inertia is violated. For example, if the car decelerates suddenly, then it appears to the people
+in the car as if their bodies are being jerked forward, even though there is no physical object that could be
+exerting any type of forward force on them. This distinction between inertial and noninertial frames of reference
+was carried over by Einstein into his theory of special relativity, published in 1905.
+
+But by the time he published the general theory in 1915, Einstein had
+realized that this distinction between inertial and noninertial frames of reference was fundamentally
+suspect. How do we know that a particular frame of reference is inertial? One way is to verify that its motion
+relative to some other inertial frame, such as the Earth's, is in a straight line and at constant speed.
+But how does the whole process get started? We need to bootstrap the process with at least one frame of reference to
+act as our standard. We can look for a frame in which the law of inertia is valid, but now we run into
+another difficulty. To verify that the law of inertia holds, we have to check that an observer tied
+to that frame doesn't see objects accelerating for no reason. The trouble here is that by the
+equivalence principle, there is no way to determine whether the object is accelerating ``for no reason''
+or because of a gravitational force. Betty, for example, cannot tell by any local measurement (i.e.,
+any measurement carried out within the capsule) whether she is in an inertial or a noninertial frame.
+<%
+  fig(
+    'inertial-frame',
+    %q{%
+      Wouldn't it be nice if we could define the meaning of an inertial frame of reference? Newton makes it sound easy:
+      to define an inertial frame,
+      just find some object that is not accelerating because it is not being acted on by any external forces. But what object would we use?
+      The earth? The ``fixed stars?'' Our galaxy? Our supercluster of galaxies? All of these are accelerating --- relative to something.
+    },
+    {
+      'width'=>'fullpage'
+    }
+  )
+%>
+
+We could hope to resolve the ambiguity by making non-local measurements instead. For example, if Betty
+had been allowed to look out a porthole, she could have tried to tell whether her capsule was
+accelerating relative to the stars. Even this possibility ends up not being satisfactory. The stars
+in our galaxy are moving in circular orbits around the galaxy. On an even larger scale, the universe
+is expanding in the aftermath of the Big Bang. It spent about the first half of its history decelerating
+due to gravitational attraction, but the expansion is now observed to be accelerating, apparently due
+to a poorly understood phenomenon referred to by the catch-all term ``dark energy.''\index{dark energy}
+In general, there is no distant background of physical objects in the universe that is not accelerating.
+
+The conclusion is that we need to abandon the entire distinction between inertial and noninertial
+frames of reference. The best that we can do is to single out certain frames of reference defined
+by the motion of objects that are not subject to any nongravitational forces. A falling rock defines
+such a frame of reference. In this frame, the rock is at rest, and the floor is accelerating.
+The rock's world-line is a straight line of constant $x$ and varying $t$. Such a free-falling frame of reference
+is called a Lorentz frame. The frame of reference defined by a rock sitting on a table is an inertial
+frame of reference according to the Newtonian view, but it is not a Lorentz frame.
+
+In Newtonian physics, inertial frames are preferable because they make motion simple: objects with no
+forces acting on them move along straight world-lines. Similarly, Lorentz frames occupy a privileged position
+in general relativity because they make motion simple: objects move along straight world-lines
+if they have no nongravitational forces acting on them.
+<% end_sec %> % The equivalence principle
+
+<% begin_sec("Locality of Lorentz frames") %>
+It would be nice if we could define a single Lorentz frame that would cover the entire universe, but we can't.
+In figure \figref{local-lorentz-frames}, two girls simultaneously drop down from tree branches --- one in Los
+Angeles and one in Mumbai.
+The girl free-falling in Los Angeles defines a Lorentz frame, and in that frame, other objects falling
+nearby will also have straight world-lines. But in the LA girl's frame of reference, the girl falling in Mumbai
+does not have a straight world-line: she is accelerating up toward the LA girl with an acceleration of about $2g$.
+<% marg(35) %>
+<%
+  fig(
+    'local-lorentz-frames',
+    %q{Two local Lorentz frames.}
+  )
+%>
+<% end_marg %>
+
+A second way of stating the equivalence principle is that it is always possible to define a \emph{local} Lorentz
+frame in a particular neighborhood of spacetime.\footnote{This statement of the equivalence principle is summarized,
+along with some other forms of it, in the back of the book on page
+\pageref{equivalence-principle-summary}.}\index{equivalence principle!spacetime locally Lorentzian}\label{equivalence-locally-lorentzian}
+It is not possible to do so on a universal basis.
+
+The locality of Lorentz frames can be understood in the analogy of the string stretched across the globe.
+We don't notice the curvature of the Earth's surface in everyday life because the radius of curvature
+is thousands of kilometers. On a map of LA, we don't notice any curvature, nor do we detect it on a map
+of Mumbia, but it is not possible to make a flat map that includes both LA and Mumbai without seeing
+severe distortions.
+<% end_sec %> % Locality of Lorentz frames
+
+<% begin_sec("Gravitational redshifts") %>\label{sec:gravitational-redshifts}
+Starting on page \pageref{gravity-affects-time}, we saw experimental evidence that the rate of flow of time
+changes with height in a gravitational field. We can now see that this is required by the equivalence principle.
+
+By the equivalence principle, there is no way to tell the difference between experimental results obtained in an
+accelerating laboratory and those found in a laboratory immersed in a gravitational field. In a laboratory accelerating
+upward, a photon emitted from the floor and would be Doppler-shifted toward lower frequencies when observed at the ceiling, because of the
+change in the receiver's velocity during the photon's time of flight. The effect is given by $\Delta E/E=\Delta f/f=ay/c^2$, where
+$a$ is the lab's acceleration, $y$ is the height from floor to ceiling, and $c$ is the speed of light.
+<% marg(20) %>
+<%
+  fig(
+    'photon-in-elevator',
+    %q{1. A photon is emitted upward from the floor of the elevator. The elevator accelerates upward. 2. By the time the
+            photon is detected at the ceiling, the elevator has changed its velocity, so the photon is detected with a Doppler shift.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'maxwellian-momentum-of-light',
+    %q{An electromagnetic wave strikes an ohmic surface. The wave's electric field excites an oscillating current density $\vc{J}$.
+            The wave's magnetic field then acts on these currents, producing a force in the direction of the wave's propagation.
+            This is a pre-relativistic argument that light must possess inertia.}
+  )
+%>
+<% end_marg %>
+Self-check: Verify this statement.
+
+By the equivalence principle, we find that when such an experiment is done in a gravitational field $g$,\label{grav-redshift-by-ep}
+there should be a gravitational effect on the energy of a photon equal to $\Delta E/E=gy/c^2$. Since the quantity $gy$ is
+the gravitational energy per unit mass, the photon's fractional loss of energy is the same as the (Newtonian) loss of
+energy experienced by a material object of mass $m$ and initial kinetic energy $mc^2$. 
+
+The interpretation is as follows.
+Classical electromagnetism requires that electromagnetic waves have inertia. For example, if a plane wave strikes
+an ohmic surface, as in figure \figref{maxwellian-momentum-of-light}, the wave's electric field excites oscillating currents in the surface. These currents then
+experience a magnetic force from the wave's magnetic field, and application of the right-hand rule shows that
+the resulting force is in the direction of propagation of the wave. Thus the light wave acts as if it has momentum.
+The equivalence principle says that whatever had inertia must also participate in gravitational interactions.
+Therefore light waves must have weight, and the must lose energy when they rise through a gravitational field.
+
+Self-check: Verify the application of the right-hand rule described above.
+
+Further interptretation:
+\begin{itemize}
+\item  The quantity $mc^2$ is famous, even among people who don't know what $m$ and $c$ stand for. This
+           is the first hint of where it comes from. The full story is given in section \ref{sec:momentum-four-vector}.
+\item The relation $p=E/c$ between the energy and momentum of a light wave follows directly from Maxwell's equations,
+           by the argument above; however, we will see in section \ref{sec:momentum-four-vector} that according
+           to relativity this relation must hold for any massless
+           particle
+\item What we have found agrees with Niels Bohr's correspondence principle,\index{correspondence principle}
+           which states that when a new physical theory, such as relativity, replaces an older one, such as
+           Newtonian physics, the new theory must agree with the old one under the experimental conditions in
+           which the old theory had been verified by experiments. The gravitational mass of a beam of light
+           with energy $E$ is $E/c^2$, and since $c$ is a big number, it is not surprising that the weight of
+           light rays had never been detected before.
+\item This book describes one particular theory of gravity, Einstein's theory of general relativity. There are
+           other theories of gravity, and some of these, such as the Brans-Dicke theory,\index{Brans-Dicke theory}
+           do just as well as general relativity in agreeing with the presently available experimental data.
+           Our prediction of gravitational Doppler shifts of light only depended on the equivalence principle,
+           which is one ingredient of general relativity. Experimental tests of this prediction only
+           test the equivalence principle; they do not allow us to distinguish betwen one theory of gravity
+           and another if both theories incorporate the equivalence principle.
+\end{itemize}
+<% end_sec %> %  Gravitational redshifts
+
+<% begin_sec("The Pound-Rebka experiment") %>\label{sec:pound-rebka}\index{Pound-Rebka experiment}\index{gravitational redshift}\index{redshift!gravitational}
+The 1959 Pound-Rebka experiment at Harvard\footnote{Phys. Rev. Lett. 4 (1960) 337} was the first quantitative test of this effect to be carried out
+under controlled conditions, and in this section we will discuss it in detail.
+
+When $y$ is on the order of magnitude of the height of a building, the value of $\Delta E/E=gy/c^2$ is $\sim 10^{-14}$, so
+an extremely high precision experiment is necessary in order to detect a gravitational redshift. A number of other effects are big
+enough to obscure it entirely, and must be eliminated or compensated for somehow. These are listed below, along with their
+orders of magnitude in the experimental design finally settled on by Pound and Rebka.
+
+\begin{tabular}{p{130mm}p{20mm}}
+(1) \emph{Classical Doppler broadening due to temperature.\/} Thermal motion causes Doppler shifts of emitted photons,
+         corresponding to the random component of the emitting atom's velocity vector along the direction of emission.
+      & $\sim 10^{-6}$ \\
+% calc -e "m=1.67 10^-27 kg; k=1.38 10^-23 J; T=290; M=57*m; v=sqrt(kT/M); c=3 10^8 m/s; v/c"
+(2) \emph{The recoil Doppler shift.\/} 
+         When an atom emits a photon with energy $E$ and momentum $p=E/c$, conservation of momentum requires that the
+         atom recoil with momentum $p=-E/c$ and energy $p^2/2m$. This causes a downward Doppler shift of the energy of the emitted photon.
+         A similar effect occurs on absorption, doubling the problem.
+       & $\sim 10^{-12}$ \\
+(3) \emph{Natural line width.\/} The Heisenberg uncertainty principle says that a state with a half-life $\tau$ must have
+         an uncertainty in its energy of at least $\sim h/\tau$, where $h$ is Planck's constant.
+       & $\sim10^{-12}$ \\
+(4) \emph{Special-relativistic Doppler shift due to temperature.\/} Section \ref{sec:time-experiments} presented experimental
+         evidence that time flows at a different rate depending on the motion of the observer. Therefore the thermal
+         motion of an atom emitting a photon has an effect on the frequency of the photon, even if the atom's motion is
+         not along the line of emission. The equations needed in order to calculate this effect will not be derived until
+         section \ref{sec:lorentz-geometry}; a quantitative estimate is given in example \ref{eg:pound-rebka-time-dilation} on page \pageref{eg:pound-rebka-time-dilation}.
+         For now, we only need to know that this leads to a temperature-dependence in
+         the \emph{average} frequency of emission, in addition to the broadening of the bell curve described by (1) above.
+       & $\sim10^{-14}$ per degree C 
+\end{tabular}
+
+The most straightforward way to mitigate effect (1) is to use photons emitted from a solid. At first glance
+this would seem like a bad idea, since electrons in a solid emit a continuous spectrum of light, not a discrete
+spectrum like the ones emitted by gases; this is because we have $N$ electrons, where $N$ is on the order of
+Avogadro's number, all interacting strongly with one another,
+so by the correspondence principle\index{correspondence principle} the discrete quantum-mechanical behavior
+must be averaged out. But the protons and neutrons within one nucleus do not interact much at all with
+those in other nuclei, so the photons emitted by a \emph{nucleus} do have a discrete spectrum. The energy scale
+of nuclear excitations is in the keV or MeV range, so these photons are x-rays or gamma-rays. Furthermore,
+the time-scale of the random vibrations of a nucleus in a solid are extremely short. For a velocity on the
+order of 100 m/s, and vibrations with an amplitude of $\sim 10^{-10}\ \munit$, the time is about $10^{-12}\ \sunit$.
+In many cases, this is much shorter than the half-life of the excited nuclear state emitting the gamma-ray, and
+therefore the Doppler shift averages out to nearly zero.
+<% marg(100) %>
+<%
+  fig(
+    'pound-rebka',
+    %q{The Pound-Rebka experiment.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'level-scheme',
+    %q{Emission of 14 keV gamma-rays by $^{57}\zu{Fe}$. The parent nucleus $^{57}\zu{Co}$ absorbs an electron and undergoes a weak-force
+           decay process that converts it into $^{57}\zu{Fe}$, in an excited state. With 85\\% probability, this state decays to a
+           state just above the ground state, with an excitation energy of 14 keV and a half-life of $10^{-7}$ s. This state finally
+           decays, either by gamma emission or emission of an internal conversion electron, to the ground state.}
+  )
+%>
+<% end_marg %>
+
+Effect (2) is still much bigger than the $10^{-14}$ size of the effect to be measured. It can be avoided by exploiting
+the M\"{o}ssbauer effect,\index{M\"{o}ssbauer effect} in which a nucleus in a solid substance at low temperature
+emits or absorbs a gamma-ray photon, but with significant probability the recoil is
+taken up not by the individual nucleus but by a vibration of the atomic lattice as a whole. Since the recoil energy
+varies as $p^2/2m$, the large mass of the lattice leads to a very small dissipation of energy into the recoiling lattice.
+Thus if a photon is emitted and absorbed by identical nuclei in a solid, and for both emission and absorption
+the recoil momentum is taken up by the
+lattice as a whole, then there is negligible recoil.
+One must pick an isotope that emits photons with energies of about 10-100 keV.
+X-rays with energies lower than about 10 keV tend to be absorbed strongly by matter
+and are difficult to detect, whereas for gamma-ray energies $\gtrsim 100\ \zu{keV}$ the M\"{o}ssbauer effect is not
+sufficient to eliminate the recoil effect completely enough.
+
+If the experiment was carried out in a horizontal plane, then resonant absorption would occur. When the source and
+absorber are aligned vertically, gravitational frequency shifts should cause a mismatch, destroying the resonance.
+One can move the source at a small velocity (typically a few
+mm/s) in order to add a Doppler shift onto the frequency; by determining the velocity that compensates for the
+gravitational effect, one can determine how big the gravitational effect is.
+
+% hyperfine interactions give frequency shifts depending on material, preparation of sample, annealing, etc.
+% http://luth2.obspm.fr/IHP06/lectures/mester-vinet/IHP-2GravRedshift.pdf ... good, detailed explanation of Pound-Rebka
+% http://astrophysics.fic.uni.lodz.pl/100yrs/pdf/07/022.pdf ... PRL paper
+%      hoarded a copy in ~/Papers/rebka_1960.pdf
+% My explanation of the temp-dependence as a transverse Doppler shift is the one P&R give
+%     in PRL 4, 274 (1960).
+% P&R never give actual raw count rates; everything is converted to a frequency effect first.
+% http://ak-guetlich.chemie.uni-mainz.de/Moessbauer_Lectures_web.pdf ... excellent, detailed info on Mossbauer
+%    p. 15 says you don't want natural width too big *or* too small, or the lines won't overlap. I don't understand this
+%         in the case of a width that's too big, although that doesn't really matter for Pound-Rebka.
+
+The typical half-life for deexcitation of a nucleus by emission
+of a gamma-ray with energy $E$ is in the nanosecond range. To measure an gravitational effect at the $10^{-14}$ level,
+one would like to have a natural line width, (3), with $\Delta E/E \lesssim 10^{-14}$, which would require a half-life
+of $\gtrsim 10\ \mu\sunit$. In practice, Pound and Rebka found that other effects, such as (4) and electron-nucleus
+interactions that depended on the preparation of the sample, tended to put nuclei in one sample ``out of tune'' with those
+in another sample at the $10^{-13}$-$10^{-12}$ level, so that resonance could not be achieved unless the natural line width
+gave $\Delta E/E \gtrsim 10^{-12}$. As a result, they
+settled on an experiment in which 14 keV gammas were emitted by $^{57}\zu{Fe}$ nuclei at the top of a 22-meter
+tower, and absorbed by $^{57}\zu{Fe}$ nuclei at the bottom. The 100-ns half-life of the excited state leads to
+$\Delta E/E \sim 10^{-12}$. This is 500 times greater than the gravitational effect to be measured, so, as described
+in more detail below, the experiment
+depended on high-precision measurements of small up-and-down shifts of the bell-shaped resonance curve.
+
+The absorbers were seven iron films isotopically
+enhanced in $^{57}\zu{Fe}$, applied directly to the faces of seven sodium-iodide scintillation detectors.
+When a gamma-ray impinges on the absorbers, a number of different things can happen, of which we can get away with
+considering only the following:
+(a) the gamma-ray is resonantly absorbed in one of the $^{57}\zu{Fe}$ absorbers,
+after which the excited nucleus decays by re-emission of another such photon (or a conversion electron), in a random direction;
+(b) the gamma-ray passes through the absorber and then produces ionization directly in the sodium iodide crystal.
+In case b, the gamma-ray is detected. In case a, there is a 50\% probability that the re-emitted photon will
+come out in the upward direction, so that it cannot be detected. Thus when the conditions are right for resonance,
+a reduction in count rate is expected. The M\"{o}ssbauer effect never occurs with 100\% probability;
+in this experiment, about a third of the gammas incident on the absorbers were resonantly absorbed. 
+
+The choice of $y=22$ m was dictated mainly by systematic errors. The experiment was limited by the strength of the
+gamma-ray source. For a source of a fixed strength, the count rate in the detector at a distance $y$ would be
+proportional to $y^{-2}$, leading to statistical errors proportional to $1/\sqrt{\text{count rate}}\propto y$.
+Since the effect to be measured is also proportional to $y$, the signal-to-noise ratio was independent of $y$.
+However, systematic effects such as (4) were easier to monitor and account for when $y$ was fairly large.
+A lab building at Harvard happened to have a 22-meter tower, which was used for the experiment.
+To reduce the absorption of the gammas in the 22 meters of air, a long, cylindrical mylar bag full of helium
+gas was placed in the shaft.
+<% marg(100) %>
+<%
+  fig(
+    'pound-rebka-v-t',
+    %q{
+      \emph{Top:} A graph of velocity versus time for the source. The velocity has both a constant component
+         and an oscillating one with a frequency of 10-50 Hz. The constant component $v_\zu{o}$ was used as a way of determining the calibration
+         of frequency shift as a function of count rates.
+         Data were acquired during the quarter-cycle periods of maximum oscillatory velocity, 1 and 2.\\
+       \emph{Bottom:} Count rates as a function of velocity, for $v_\zu{o}=0$ and $v_1\ne 0$. The dashed curve
+         and black circles represent the count rates that would have been observed if there were no gravitational
+         effect. The gravitational effect shifts the resonance curve to one side (solid curve), resulting in an asymmetry of the
+         count rates (open circles). The shift, and the resulting asymmetry, are greatly exaggerated for readability; in reality,
+         the gravitational effect was 500 times smaller than the width of the resonance curve.
+    }
+  )
+%>
+<% end_marg %>
+
+The resonance was a bell-shaped curve with a minimum at the natural frequency of emission. Since the curve
+was at a minimum, where its derivative was zero, the sensitivity of the count rate to the gravitational shift would have
+been nearly zero if the source had been stationary. Therefore it was necessary to vibrate the source up and down, so that the emitted photons would be Doppler shifted
+onto the shoulder of the resonance curve, where the slope of the curve was large. The resulting asymmetry in count rates
+is shown in figure \figref{pound-rebka-v-t}. A further effort to cancel out possible systematic effects was made by frequently
+swapping the source and absorber between the top and bottom of the tower.
+
+For $y=22.6\ \munit$, the equivalence principle predicts a fractional frequency shift due to gravity of $2.46\times10^{-15}$.
+Pound and Rebka measured the shift to be $(2.56\pm 0.25)\times10^{-15}$.
+% The values P&R give are 4.92 and 5.13+-.51, which are the doubled frequency shifts
+The results were in statistical agreement with
+theory, and verified the predicted size of the effect to a precision of 10\%.
+<% marg(50) %>
+<%
+  fig(
+    'pound-rebka-photos',
+    %q{Pound and Rebka at the top and bottom of the tower.}
+  )
+%>
+<% end_marg %>
+
+<% end_sec %> %  The Pound-Rebka experiment
+
+<% end_sec %>
+<% begin_sec("Affine properties of Lorentz geometry") %>
+
+The geometrical treatment of space, time, and gravity only requires as its basis the equivalence of
+inertial and gravitational mass. That equivalence holds for Newtonian gravity, so it is indeed possible
+to redo Newtonian gravity as a theory of curved spacetime. This project was carried out by the French mathematician
+Cartan,\index{Cartan!curved-spacetime theory of Newtonian gravity}\label{cartan-newtonian}
+as summarized very readably in section 17.5 of \emph{The Road to Reality} by Roger Penrose.
+The geometry of the local reference frames is very simple.
+The three space dimensions have an approximately Euclidean geometry, and the time dimension is
+entirely separate from them. This is referred to as a Euclidean spacetime with 3+1 dimensions.
+Although the outlook is
+radically different from Newton's, all of the predictions of experimental results are the same.
+
+The experiments in section \ref{sec:time-experiments} show, however, that there are real, experimentally verifiable
+violations of Newton's laws. In Newtonian physics, time is supposed to flow at the same rate everywhere, which
+we have found to be false. 
+The flow of time is actually dependent on the observer's state of motion through space, which shows that the space
+and time dimensions are intertwined somehow. 
+The geometry of the local frames
+in relativity therefore must not be as simple as Euclidean 3+1. Their actual geometry was implicit in Einstein's
+1905 paper on special relativity, and had already been developed mathematically, without the
+full physical interpretation, by Hendrik Lorentz. Lorentz's and Einstein's work were explicitly connected
+by Minkowski in 1907, so a Lorentz frame is often referred to as a Minkowski frame.\index{Minkowski}
+
+To describe this Lorentz geometry, we need to add
+more structure on top of the axioms O1-O4 of ordered geometry, but it will not be the additional
+Euclidean structure of E3-E4, it will be something different.
+<% marg(0) %>
+<%
+  fig(
+    'lorentz-portrait',
+    %q{Hendrik Antoon Lorentz (1853-1928)}
+  )
+%>
+<% end_marg %>
+
+To see how to proceed, let's consider the bare minimum of geometrical apparatus that would be necessary
+in order to set up frames of reference. The following argument shows that the main missing ingredient is merely
+a concept of parallelism.
+We only expect Lorentz frames to be local, but we do need them
+to be big enough to cover at least some amount of spacetime. If Betty does an E\"{o}tv\"{o}s experiment
+by releasing a pencil and a lead ball side by side, she is essentially trying to release them at the same
+event A, so that she can observe them later and determine whether their world-lines stay right on top
+of one another at point B. That was all that was required for the E\"{o}tv\"{o}s experiment, but in order
+to set up a Lorentz frame we need to start dealing with objects that are not right on top of one another.
+Suppose we release two lead balls in two different locations, at rest relative to one another. This could be the first step toward
+adding measurement to our geometry, since the balls mark two points in space that are separated by
+a certain distance, like two marks on a ruler, or the goals at the ends of a soccer field.
+Although the balls are separated by some finite distance, they are still close enough
+together so that if there is a gravitational field in the area, it is very nearly the same in both
+locations, and we expect the distance defined by the gap between them to stay the same.
+Since they are both subject only to gravitational forces, their world-lines are (by definition)
+straight lines (geodesics). The goal here is to end up with some kind of coordinate grid
+defining a $(t,x)$ plane, and on such a grid, the two balls' world-lines are vertical lines.
+If we release them at events P and Q, then observe them again later at R and S, PQRS should
+form a rectangle on such a plot. In the figure, the irregularly spaced tick marks along the
+edges of the rectangle are meant to suggest that although ordered geometry provides us with
+a well-defined ordering along these lines, we have not yet constructed a complete system of measurement.
+
+<% marg(0) %>
+<%
+  fig(
+    'parallel-at-rest',
+    %q{Objects are released at rest at spacetime events P and Q. They remain at rest, and their world-lines define a notion of parallelism.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'parallel-moving',
+    %q{There is no well-define angular measure in this geometry. In a different frame of reference, the angles are not right angles.}
+  )
+%>
+<% end_marg %>
+
+The depiction of PQSR as a rectangle, with right angles at its vertices, might lead us to believe that our geometry would
+have something like the concept of angular measure referred to in Euclid's E4, equality of right angles.
+But this is too naive even for the Euclidean 3+1 spacetime of Newton and Galileo.
+Suppose we switch to a frame that is moving relative to the first one, so that the balls
+are not at rest. In the Euclidean spacetime, time is absolute, so events P and Q
+would remain simultaneous, and so would R and S; the
+top and bottom edges PQ and RS would remain horizontal on the plot, but the balls' world-lines
+PR and QS would become slanted. The result would be a parallelogram. Since observers in different
+states of motion do not agree on what constitutes a right angle, the concept of angular measure
+is clearly not going to be useful here. Similarly, if Euclid had observed that a right angle
+drawn on a piece of paper no longer appeared to be a right angle when the paper was turned around,
+he would never have decided that angular measure was important enough to be enshrined in E4.
+
+In the context of relativity, where time is not absolute, there is not even any reason to believe that different observers
+must agree on the simultaneity of PQ and RS. Our observation that time flows differently depending
+on the observer's state of motion tells us specifically to expect this \emph{not} to happen when we
+switch to a frame moving to the relative one. Thus in general we expect that PQRS will be distorted
+into a form like the one shown in the third panel of the figure. We do expect, however, that it will
+remain a parallelogram; a Lorentz frame is one in which the gravitational field, if any, is constant, so
+the properties of spacetime are uniform, and by symmetry the new frame should still have PR=QS and PQ=RS.
+
+With this motivation, we form the system of \emph{affine geometry}\index{affine geometry} by adding the following axioms
+to set O1-O4.\footnote{The axioms are summarized for convenient reference in the back of the book on page
+\pageref{affine-summary}. This formulation is essentially the one given by Penrose, \emph{The Road to Reality}, in section 14.1.}\label{affine-axioms}
+The notation [PQRS] means that events P, Q, S, and R form a parallelogram, and is defined
+as the statement that the lines determined by PQ and RS never meet at a point, and similarly for PR and QS.
+
+\begin{itemize}
+\item[A1] Constructibility of parallelograms: Given any P, Q, and R, there exists S such that [PQRS], and if P, Q, and R are distinct then S is unique.
+\item[A2] Symmetric treatment of the sides of a parallelogram: If [PQRS], then [QRSP], [QPSR], and [PRQS].
+\item[A3] Lines parallel to the same line are parallel to one another: If [ABCD] and [ABEF], then [CDEF].
+\end{itemize}
+
+The following theorem is a stronger version of Playfair's axiom E5, the interpretation being that affine geometry
+describes a spacetime that is locally flat.
+
+Theorem: Given any line $\ell$ and any point P not on the line, there exists a unique line through P that is parallel
+to $\ell$.
+
+This is stronger than E5, which only guarantees uniqueness, not existence.
+Informally, the idea here is that A1 guarantees the existence of the parallel, and A3 makes it unique.\footnote{
+Proof: Pick any two distinct points A and B on $\ell$, and construct the uniquely determined parallelogram [ABPQ] (axiom A1).
+Points P and Q determine a line (axiom O1), and this line is parallel to $\ell$ (definition of the parallelogram).
+To prove that this line is unique, we argue by contradiction. Suppose some other parallel $m$ to exist.
+If $m$ crosses the infinite line BQ at some point Z, then both [ABPQ] and [ABPZ], so by A1, Q=Z, so the
+$\ell$ and $m$ are the same. The only other possibility is that $m$ is parallel to BQ, but then the following
+chain of parallelisms holds: PQ $\parallel$ AB $\parallel$ $m$ $\parallel$ BQ. By A3, lines parallel to another
+line are parallel to each other, so PQ $\parallel$ BQ, but this is a contradiction, since they have Q in common.}
+
+Although these new axioms do nothing more than to introduce the concept of parallelism lacking in ordered
+geometry, it turns out that they also allow us to build up a concept of measurement. Let $\ell$ be
+a line, and suppose we want to define a number system on this line that measures how far apart events are.
+Depending on the type of line, this could be a measurement of time, of spatial distance, or a mixture of the
+two. First we arbitrarily single out two distinct points on $\ell$ and label them 0 and 1. Next, pick some
+auxiliary point $\zu{q}_0$ not lying on $\ell$. By A1, construct the parallelogram $01\zu{q}_0\zu{q}_1$.
+Next construct $\zu{q}_01\zu{q}_12$. Continuing in this way, we have a scaffolding of parallelograms adjacent
+to the line, determining an infinite lattice of points 1, 2, 3, \ldots on the line, which
+represent the positive integers. Fractions can be defined in a similar way. For example, $\frac{1}{2}$ is defined
+as the the point such that when the initial lattice segment $0\frac{1}{2}$ is extended by the same construction, the next point
+on the lattice is 1. 
+<% marg(50) %>
+<%
+  fig(
+    'lattice-construction',
+    %q{Construction of an affine parameter.}
+  )
+%>
+<% end_marg %>
+
+The continuously varying variable constructed in this way is called an \emph{affine parameter}.\index{affine parameter}
+The time measured by a free-falling clock is an example of an affine parameter, as is the distance measured
+by the tick marks on a free-falling ruler. Since light rays travel along geodesics, the wave crests on a light wave
+can even be used analogously to the ruler's tick marks.
+
+\begin{eg}{Centroids}
+The affine parameter can be used to define the centroid of a set of points. In the simplest
+example, finding the centroid of two points, we simply bisect the line segment as described above in the
+construction of the number  $\frac{1}{2}$. Similarly, the centroid of a triangle can be defined as the
+intersection of its three medians, the lines joining each vertex to the midpoint of the opposite side.
+\end{eg}
+<% marg(10) %>
+<%
+  fig(
+    'centroid',
+    %q{Affine geometry gives a well-defined centroid for the triangle.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Conservation of momentum}
+In nonrelativistic mechanics, the concept of the center of mass is closely related to the law of conservation
+of momentum. For example, a logically complete statement of the law is that
+if a system of particles is not subjected to any external force, and we pick a frame in which its center
+of mass is initially at rest, then its center of mass remains at rest in that frame. Since centroids 
+are well defined in affine geometry, and Lorentz frames have affine properties,
+we have grounds to hope that it might be possible to generalize the definition of
+momentum relativistically so that the generalized version is conserved in a Lorentz frame. 
+On the other hand, we don't expect to be able to define anything like a global Lorentz frame
+for the entire universe, so there is no such natural expectation of being able to define
+a global principle of conservation of momentum. This is an example of a general fact about relativity,
+which is that conservation laws are difficult or impossible to formulate globally.
+\end{eg}
+
+Although the affine parameter gives us a system of measurement for free in a geometry
+whose axioms do not even explicitly mention measurement, there are some restrictions:
+
+\begin{itemize}
+\item[] The affine parameter is defined only along straight lines, i.e., geodesics. Alice's clock defines an affine parameter,
+but Betty's does not, since it is subject to nongravitational forces.
+\item[] We cannot compare distances along two arbitarily chosen lines, only along a single line or two parallel lines.
+\item[] The affine parameter is arbitrary not only in the choice of its origin 0 (which is to be expected in
+any case, since any frame of reference requires such an arbitrary choice) but also in the choice of scale.
+For example, there is no fundamental way of deciding how fast to make a clock tick.
+\end{itemize}
+
+We will eventually want to lift some of these restrictions by adding to our kit a tool called a metric, which
+allows us to define distances along arbitrary curves in space time, and to compare distances in different directions.
+The affine parameter, however, will not be entirely superseded. In particular, we'll find that the metric
+has a couple of properties that are not as nice as those of the affine parameter. The square of a metric
+distance can be negative, and the metric distance measured along a light ray is precisely zero, which is
+not very useful.
+
+Self-check: By the construction of the affine parameter above, affine distances
+on the same line are comparable. By another construction, verify the claim made above that this can be
+extended to distances measured along two different parallel lines.
+<% marg(0) %>
+<%
+  fig(
+    'affine-area-lattice',
+    %q{Example \ref{eg:affine-area-lattice}. The area of the viola can be determined by counting the
+           parallelograms formed by the lattice. The area can be determined to any desired precision,
+           by dividing the parallelograms into fractional parts that are as small as necessary.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'affine-area',
+    %q{Example \ref{eg:affine-area}.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Area and volume}\label{eg:affine-area-lattice}
+It is possible to define area and volume in affine geometry. This is a little surprising,
+since distances along different lines are not even comparable. However, we are already accustomed to multiplying
+and dividing numbers that have different units (a concept that would have given Euclid conniptions), and the
+situation in affine geometry is really no different. To define area, we extend the one-dimensional lattice
+to two dimensions. Any planar figure can be superimposed on such a lattice, and dissected into parallelograms,
+each of which has a standard area.
+\end{eg}
+
+\begin{eg}{Area on a graph of v versus t}\label{eg:affine-area}
+If an object moves at a constant velocity v for time t, the distance it travels can be represented by the
+area of a parallelogram in an affine plane with sides having lengths v and t. These two lengths are measured by affine parameters
+along two different directions, so they are not comparable. For example, it is meaningless to ask whether 1 m/s is greater
+than, less than, or equal to 1 s. If we were graphing velocity as a function of time on a conventional Cartesian graph,
+the v and t axes would be perpendicular, but affine geometry has no notion of angular measure, so this is irrelevant here.
+\end{eg}
+
+Self-check: If multiplication is defined in terms of affine area, prove the commutative property $ab=ba$ and the
+distributive rule $a(b+c)=ab+bc$ from axioms A1-A3.
+<% end_sec %>
+
+
+
+<% begin_sec("Relativistic properties of Lorentz geometry") %>\label{sec:lorentz-geometry}
+
+We now want to pin down the properties of the Lorentz geometry that are left unspecified by the affine treatment.
+This can approached either by looking for an appropriate metric, or by finding the appropriate rules for
+distorting parallelograms when switching from one frame of reference to another frame is in motion relative
+to the first. In either case, we need some further input from experiments in order to show us how to proceed.
+We take the following as empirical facts about flat spacetime:\footnote{These facts are summarized
+for convenience on page \pageref{lorentz-summary} in the back of the book.}
+
+\begin{itemize}\label{lorentz-geometry-postulates}
+\item[L1] \emph{Spacetime is homogeneous and isotropic.} No point has special properties that make it distinguishable from other points, nor is one
+                  direction distinguishable from another.
+\item[L2] \emph{Inertial frames of reference exist.} These are frames in which particles move at constant velocity if not subject to any forces.
+                  We can construct such a frame by using a particular particle, which is not subject to any forces, as a reference point.
+\item[L3] \emph{Equivalence of inertial frames:} If a frame is in constant-velocity translational motion relative to an inertial frame, then it is also an inertial frame.
+              No experiment can distinguish one inertial frame from another.
+\item[L4] \emph{Causality:} Observers in different inertial frames agree on the time-ordering of events.
+\item[L5] \emph{No simultaneity:} The experimental evidence in section \ref{sec:time-experiments} shows that
+           observers in different inertial frames do not agree on the simultaneity of events.
+\end{itemize}
+
+Define affine parameters $t$ and $x$ for time and position, and construct a $(t,x)$ plane. Although
+affine geometry treats all directions symmetrically, we're going beyond the affine aspects of
+the space, and $t$ does play a different role than $x$
+here, as shown, for example, by L4 and L5.
+
+In the $(t,x)$ plane, consider a rectangle with one corner at the origin O. We can imagine its right and left edges
+as representing the world-lines of two objects that are both initially at rest in this frame;
+they remain at rest (L2), so the right and left edges are parallel.
+
+We now define a second frame of reference such that the origins of the two frames coincide, but they
+are in motion relative to one another with velocity $v$. The transformation $L$ from the first frame to
+the second is referred to as a Lorentz boost
+with velocity $v$.\index{boost}\index{Lorentz boost} $L$ depends on $v$.
+
+By homogeneity of spacetime (L1), $L$ must be linear, so the original rectangle will be
+transformed into a parallelogram in the new frame; this is also consistent with L3, which requires that the
+world-lines on the right and left edges remain parallel. The left edge has inverse slope $v$.
+By L5 (no simultaneity), the top and bottom edges are no longer horizontal.
+<% marg(70) %>
+<%
+  fig(
+    'lorentz-boosted-rectangle',
+    %q{Two objects at rest have world-lines that define a rectangle. In a second frame of reference in motion
+        relative to the first one, the rectangle becomes a parallelogram.}
+  )
+%>
+<% end_marg %>
+
+For simplicity, let the original rectangle have unit area. Then the area of the new parallelogram is 
+still 1, by the following argument. Let the new area be $A$, which is a function of $v$.
+By isotropy of spacetime (L1), $A(v)=A(-v)$.
+Furthermore, the function $A(v)$ must have some universal form for all geometrical figures, not just
+for a figure that is initially a particular rectangle; this follows because of our definition of affine area in terms
+of a dissection by a two-dimensional lattice, which we can choose to be a lattice of squares.
+Applying boosts $+v$ and $-v$ one after another results in a transformation back into our original
+frame of reference, and since $A$ is universal for all shapes, it doesn't matter that the second
+transformation starts from a parallelogram rather than a square. Scaling the area once by $A(v)$
+and again by $A(-v)$ must therefore give back the original square with its original unit area,
+$A(v)A(-v)=1$, and since $A(v)=A(-v)$, $A(v)=\pm1$ for any value of $v$. Since $A(0)=1$, we must
+have $A(v)=1$ for all $v$. The argument is independent of the shape of the region, so we conclude
+that all areas are preserved by Lorentz boosts. The argument is also purely one about affine
+geometry (it would apply equally well to a Euclidean space), so there is no reason to expect the area
+$A$ in the $(t,x)$ plane to have any special physical significance in relativity; it is simply a useful
+mathematical tool in the present discussion.
+
+If we consider a boost by an infinitesimal velocity $\der v$, then the vanishing change in area comes
+from the sum of the areas of the four infinitesimally thin slivers where the rectangle lies either
+outside the parallelogram (call this negative area) or inside it (positive). (We don't worry about
+what happens near the corners, because such effects are of order $\der v^2$.) In other words, area flows
+around in the $x-t$ plane, and the flows in and out of the rectangle must cancel. Let $v$ be positive;
+the flow at the sides of the rectangle is then to the right. The flows through the top and bottom
+cannot be in opposite directions (one up, one down) while maintaining the parallelism of the opposite
+sides, so we have the following three possible cases:
+<%
+  fig(
+    'lorentz-boost-area-flow-cases',
+    %q{%
+      Flows of area: (I) a shear that preserves simultaneity, (II) a rotation, (III) upward flow at all edges.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+\begin{itemize}
+\item[I] There is no flow through the top and bottom. This case corresponds to Galilean relativity, in which the rectangle shears horizontally under a boost,
+  and simultaneity is preserved, violating L5.
+\item[II] Area flows downward at both the top and the bottom. The flow is clockwise at both the positive $t$ axis and the positive $x$ axis.
+  This makes it plausible that the flow is clockwise everywhere in the
+  $(t,x)$ plane, and the proof is straightforward.\footnote{Proof: By linearity of $L$, the flow is clockwise at the negative axes as well.
+  Also by linearity, the handedness of the flow is the same at all points on a ray extending
+  out from the origin in the direction $\theta$. If the flow were
+  counterclockwise somewhere, then it would have to switch handedness twice in that quadrant, at $\theta_1$ and $\theta_2$. But by writing out
+  the vector cross product $\vc{r}\times\der\vc{r}$, where $\der\vc{r}$ is the displacement caused by $L(\der v)$, we find that it
+  depends on $\sin(2\theta+\delta)$, which does not oscillate rapidly enough to have two zeroes in the same quadrant.}
+  As $v$ increases, a particular element of area flows continually clockwise.
+  This violates L4, because two events with a cause and effect
+  relationship could be time-reversed by a Lorentz boost.
+\item[III] Area flows upward at both the top and the bottom.
+\end{itemize}
+
+Only case III is possible, and given case III, there must be at least one
+point P in the first quadrant where area flows neither clockwise nor
+counterclockwise.\footnote{This follows from the fact that, as shown in the preceding footnote, the handedness of the flow
+depends only on $\theta$.}
+The boost simply increases P's distance from
+the origin by some factor.
+By the linearity of the transformation, the entire line running through O and P is simply rescaled. This
+special line's inverse slope, which has units of velocity, apparently has some special significance, so we give it a name,
+$c$. We'll see later that $c$ is the maximum speed of cause and effect whose existence we inferred
+in section \ref{sec:max-speed-of-cause-and-effect}. Any world-line with
+a velocity equal to $c$ retains the same velocity as judged by moving observers, and by isotropy the same must
+be true for $-c$.
+
+For convenience, let's adopt time and space units in which $c=1$, and let the original rectangle be a unit square.
+The upper right tip
+of the parallelogram must slide along the line through the origin with slope $+1$, and similarly
+the parallelogram's other diagonal must have a slope of $-1$. Since these diagonals bisected one
+another on the original square, and since bisection is an affine property that is preserved when
+we change frames of reference, the parallelogram must be equilateral.
+
+We can now determine the complete form of the Lorentz transformation. Let unit square PQRS,
+as described above, be transformed to parallelogram $\zu{P}'\zu{Q}'\zu{R}'\zu{S}'$ in the new coordinate system
+$(x',t')$. Let the $t'$ coordinate of $\zu{R}'$ be $\gamma$, interpreted as the ratio between
+the time elapsed on a clock moving from $\zu{P}'$ to $\zu{R}'$ and the corresponding time as measured by
+a clock that is at rest in the $(x',t')$ frame. By the definition of $v$, $\zu{R}'$ has coordinates $(v\gamma,\gamma)$, and
+the other geometrical facts established above place $\zu{Q}'$ symmetrically on
+the other side of the diagonal, at $(\gamma,v\gamma)$. Computing the cross product of vectors
+$\zu{P}'\zu{R}'$ and $\zu{P}'\zu{Q}'$, we find the area of $\zu{P}'\zu{Q}'\zu{R}'\zu{S}'$ to be $\gamma^2(1-v^2)$, and setting this equal
+to 1 gives
+\begin{equation*}
+  \gamma = \frac{1}{\sqrt{1-v^2}} \qquad .
+\end{equation*}
+<% marg(70) %>
+<%
+  fig(
+    'lorentz-boosted-rectangle-quantitative',
+    %q{Unit square PQRS is Lorentz-boosted to the parallelogram $\zu{P}'\zu{Q}'\zu{R}'\zu{S}'$.}
+  )
+%>
+<% end_marg %>
+
+
+Self-check: Interpret the dependence of $\gamma$ on the sign of $v$.
+
+<%
+  fig(
+    'gammagraph',
+    %q{The behavior of the $\gamma$ factor.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+The result for the transformation $L$, a Lorentz boost along the $x$ axis with velocity $v$, is:
+\begin{align*}
+  t' &= \gamma t + v \gamma x \\
+  x' &= v \gamma t + \gamma x
+\end{align*}
+
+The symmetry of $\zu{P}'\zu{Q}'\zu{R}'\zu{S}'$ with respect to reflection across the diagonal indicates that
+the time and space dimensions are treated symmetrically, although they are not entirely
+interchangeable as they would have been in case II.
+Although we defined $\gamma$ in terms of the time coordinate of $\zu{R}'$, we could just as easily have used the spatial
+coordinate of $\zu{Q}'$, so $\gamma$ represents a factor of both time dilation and length contraction.
+(Clearly it wouldn't have made sense to distort one quantity without distorting the other, since the invariant
+velocity $c$ represents a ratio of a distance to a time.) In summary, a clock runs fastest according to an observer
+who is at rest relative to the clock, and a measuring rod likewise appears longest in its own rest frame.
+
+The lack of a universal notion of simultaneity has a similarly symmetric interpretation. In prerelativistic
+physics, points in space have no fixed identity. A brass plaque commemorating a Civil War battle is not
+at the same location as the battle, according to an observer who perceives the Earth has having been hurtling
+through space for the intervening centuries. By symmetry, points in time have no fixed identity either.
+
+In everyday life, we don't notice relativistic effects like time dilation, so apparently $\gamma\approx1$,
+and $v \ll 1$, i.e., the speed $c$ must be very large when expressed in meters per second. By setting $c$ equal
+to 1, we have chosen a the distance unit that is extremely long in proportion to the time unit.
+This is an example of the correspondence principle,\index{correspondence principle}
+which states that when a new physical theory, such as relativity, replaces an old one, such as Galilean relativity, it must remain
+``backward-compatible'' with all the experiments that verified the old theory; that is, it must agree with the old
+theory in the appropriate limit. Despite my coyness, you probably know that the speed of light is also
+equal to $c$. It is important to emphasize, however, that light plays no special role in relativity, nor was
+it necessary to assume the constancy of the speed of light in order to derive the Lorentz transformation; we will
+in fact prove on page \pageref{c-is-speed-of-light} that photons must travel at $c$, and on page
+\pageref{c-is-speed-of-massless-particles} that this must be true for any massless particle.
+
+\begin{eg}{}\label{eg:lorentz-boost-diagonals}
+Let the intersection of the parallelogram's two diagonals be T in the original (rest) frame, and $\zu{T}'$
+in the Lorentz-boosted frame. An observer at T in the original frame simultaneously detects the passing by of the
+two flashes of light emitted at $\zu{P}$ and $\zu{Q}$, and since she is positioned at the midpoint of the diagram
+in space, she infers that $\zu{P}$ and $\zu{Q}$ were simultaneous. Since the arrival of both flashes of light
+at the same point in spacetime is a concrete event, an observer in the Lorentz-boosted frame must agree on their
+simultaneous arrival. (Simultaneity \emph{is} well defined as long as no spatial separation is involved.)
+But the distances traveled by the two flashes in the boosted frame are unequal, and since the speed of light is
+the same in all cases, the boosted observer infers that they were not emitted simultaneously.
+\end{eg}
+<% marg(60) %>
+<%
+  fig(
+    'lorentz-boost-diagonals',
+    %q{Example \ref{eg:lorentz-boost-diagonals}. Flashes of light travel along $\zu{P}'\zu{T}'$ and $\zu{Q}'\zu{T}'$.
+          The observer in this frame of reference judges them to have been emitted at different times, and to have
+          traveled different distances. }
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{}
+A different kind of symmetry is the symmetry between observers. If observer A says observer B's
+time is slow, shouldn't B say that A's time is fast? This is what would happen if B took a pill that slowed
+down all his thought processes: to him, the rest of the world would seem faster than normal. But this can't
+be correct for Lorentz boosts, because it would introduce an asymmetry between observers. There is no
+preferred, ``correct'' frame corresponding to the observer who didn't take a pill; either observer can
+correctly consider himself to be the one who is at rest. It may seem paradoxical that each observer could
+think that the other was the slow one, but the paradox evaporates when we consider the methods available
+to A and B for resolving the controversy. They can either (1) send signals back and forth, or (2)
+get together and compare clocks in person. Signaling doesn't establish one observer as correct and one as
+incorrect, because as we'll see
+in the following section, there is a limit to the speed of propagation of signals; either observer ends
+up being able to explain the other observer's observations by taking into account the finite and
+changing time required for signals to propagate. Meeting in person requires one or both observers
+to accelerate, as in the original story of Alice and Betty, and then we are no longer dealing with
+pure Lorentz frames, which are described by non-accelerating obervers.
+\end{eg}
+
+\begin{eg}{GPS}\label{eg:gps}
+In the Hafele-Keating experiment using atomic clocks aboard airplanes (\pageref{sec:hafele-keating}), both gravity and motion had
+effects on the rate of flow of time. Similarly, both effects must be considered in the case of the GPS system.
+The gravitational effect was found on page \pageref{grav-redshift-by-ep} to be $\Delta E/E=gy$ (with $c=1$), based on the
+equivalence principle. The special-relativistic effect can be found from the Lorentz transformation.
+Let's determine the directions and relative strengths of the two effects in the case of a GPS satellite.
+
+A radio photon emitted by a GPS satellite gains energy as it falls to the earth's surface, so its energy
+and frequency are increased by this effect. The observer on the ground, after accounting for all non-relativistic effects
+such as Doppler shifts and the Sagnac effect, would interpret the frequency shift by saying that time aboard
+the satellite was flowing more quickly than on the ground.
+
+However, the satellite is also moving at orbital speeds, so there is a Lorentz time dilation effect. According
+to the observer on earth, this causes time aboard the satellite to flow more slowly than on the ground.
+
+We can therefore see that the two effects are of opposite sign. Which is stronger?
+
+For a satellite in low earth orbit, we would have $v^2/r=g$, where $r$ is only slightly greater than the radius of the earth.
+Expanding the Lorentz gamma factor in a Taylor series, we find that the relative effect on the flow of time
+is $\gamma-1\approx v^2/2 = gr/2$. The gravitational effect, approximating
+$g$ as a constant, is $-gy$, where $y$ is the satellite's altitude above the earth. For such a satellite,
+the gravitational effect is down by a factor of $2y/r$, so the Lorentz time dilation dominates.
+
+GPS satellites, however, are not in low earth orbit. They orbit at an altitude of about 20,200 km, which is quite a bit
+greater than the radius of the earth. We therefore expect the gravitational effect to dominate. To confirm this,
+we need to generalize the equation $\Delta E/E=gy$ to the case where $g$ is not a constant.
+Integrating the equation $\der E/E = g \der y$, we find that the time dilation factor is equal to $e^{\Delta\Phi}$, where
+$\Phi=\int g\der y$ is the gravitational potential per unit mass. When $\Delta\Phi$ is small, this causes a relative effect
+equal to $\Delta\Phi$. The total effect for a GPS satellite is thus
+(inserting factors of $c$ for calculation with SI units, and using positive signs for blueshifts)
+\begin{equation*}
+  \frac{1}{c^2}\left(+\Delta\Phi-\frac{v^2}{2}\right) = 5.2\times10^{-10} - 0.9\times10^{-10} \qquad ,
+\end{equation*}
+where the first term is gravitational and the second kinematic. A more detailed analysis includes various time-varying
+effects, but this is the constant part. For this reason, the atomic clocks aboard the satellites are set to
+a frequency of 10.22999999543 MHz before launching them into orbit; on the average, this is perceived on the
+ground as 10.23 MHz. A more complete analysis of the general relativity involved in the GPS system can be found
+in the review article by Ashby.\footnote{N. Ashby, ``Relativity in the Global Positioning System,'' \url{http://www.livingreviews.org/lrr-2003-1}}
+% calc -e "ge=9.8 m/s2; re=6370 km; r=re+20200 km; gs=ge(re/r)^2; G=6.67 10^-11 N.m2/kg2; M=5.97 10^24 kg; Phie=-GM/re; Phis=-GM/r; DPhi=Phis-Phie; c=3 10^8 m/s; DPhi/c^2; .5gsr/c^2"
+% calc -e "f=10.23; d=10.22999999543-f; d/f"
+\end{eg}
+
+\begin{eg}{Time dilation in the Pound-Rebka experiment}\label{eg:pound-rebka-time-dilation}
+In the description of the Pound-Rebka experiment on page \pageref{sec:pound-rebka}, I postponed
+the quantitative estimation of the frequency shift due to temperature. Classically, one expects only
+a \emph{broadening} of the line, since the Doppler shift is proportional to $v_\parallel/c$, where
+$v_\parallel$, the component of the emitting atom's velocity along the line of sight, averages to zero.
+But relativity tells us to expect that if the emitting atom is moving, its time will flow more slowly,
+so the frequency of the light it emits will also be systematically shifted downward. This frequency shift should increase
+with temperature. In other words, the Pound-Rebka experiment was designed as a test of general relativity (the equivalence
+principle), but this special-relativistic effect is just as strong as the relativistic one, and needed to be accounted
+for carefully.
+<% marg(50) %>
+<%
+  fig(
+    'pound-rebka-temperature-effect',
+    %q{The change in the frequency of x-ray photons emitted by $^{57}\zu{Fe}$ as a function of temperature, drawn after Pound And Rebka (1960).
+       Dots are experimental measurements. The solid curve is Pound and Rebka's theoretical calculation using the Debye theory of the lattice vibrations
+       with a Debye temperature of 420 degrees C. The dashed line is one with the slope calculated in the text using a simplified treatment of the
+       thermodynamics. There is an arbitrary vertical offset in the experimental data, as well as the theoretical curves.}
+  )
+%>
+<% end_marg %>
+
+In Pound and Rebka's paper describing their experiment,\footnote{Phys. Rev. Lett. 4 (1960) 337}
+they refer to a preliminary measurement\footnote{Phys. Rev. Lett. 4 (1960) 274}
+in which they carefully measured this effect, showed that it was consistent with theory,
+and pointed out that a previous claim by Cranshaw et al. of having measured the gravitational
+frequency shift was vitiated by their failure to control for the temperature dependence.
+
+It turns out that the full Debye treatment of the lattice vibrations is not really necessary
+near room temperature, so we'll simplify the thermodynamics. At absolute temperature $T$,
+the mean translational kinetic energy of each iron nucleus is $(3/2)kT$. The velocity is much less
+than $c(=1)$, so we can use the nonrelativistic expression for kinetic energy,
+$K=(1/2)mv^2$, which gives a mean value for $v^2$ of $3kT/m$. In the limit of $v \ll 1$,
+time dilation produces a change in frequency by a factor of $1/\gamma$, which differs from unity by approximately $-v^2/2$.
+The relative time dilation is therefore $-3kT/2m$, or, in metric units, $-3kT/2mc^2$. The vertical scale on the graph contains
+an arbitary offset, since Pound and Rebka's measurements were the best absolute measurements to date of the frequency.
+The predicted slope of $-3k/2mc^2$, however, is not arbitrary. Plugging in 57 atomic mass units for $m$, we find
+the slope to be $2.4\times10^{-15}$, which, as shown in the figure is an excellent approximation (off by only
+10\%) near room temperature.
+% calc -e "m=1.66 10^-24 g * 57; c=3 10^8 m/s; k=1.381 10^-23 J; 3k/(2mc^2)"
+%    2.43253716620867*10^-15
+
+\end{eg}
+
+<% end_sec %>
+
+
+<% begin_sec("The light cone") %>
+
+Given an event P, we can now classify all the causal relationships in which P can participate.
+In Newtonian physics, these relationships fell into two classes: P could potentially cause any event
+that lay in its future, and could have been caused by any event in its past.
+In a Lorentzian spacetime, we have a trichotomy rather than a dichotomy. There is a third class
+of events that are too far away from P in space, and too close in time, to allow any cause and effect
+relationship, since causality's maximum velocity is $c$. Since we're working in units in which $c=1$,
+the boundary of this set is formed by the lines with slope $\pm1$ on a $(t,x)$ plot. This is referred
+to as the light cone,\index{light cone} and in the generalization from 1+1 to 3+1 dimensions, it literally
+becomes a (four-dimensional) cone. The terminology comes from the fact that light happens to travel at $c$,
+the maximum speed of cause and effect. If we make a cut through the cone defined by a surface of constant time
+in P's future, the resulting section is a sphere (analogous to the circle formed by cutting a three-dimensional
+cone), and this sphere is interpreted as the set of events on which P could have had a causal effect by
+radiating a light pulse outward in all directions.
+<% marg(120) %>
+<%
+  fig(
+    'lightcone',
+    %q{The light cone in 2+1 dimensions.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'light-cone-compared-to-circle',
+    %q{The circle plays a privileged role in Euclidean geometry. When rotated, it stays the same. The pie slice
+                  is not invariant as the circle is. A similar privileged place is occupied by the light
+                  cone in Lorentzian geometry. Under a Lorentz boost, the spacetime parallelograms change,
+                  but the light cone doesn't.}
+  )
+%>
+<% end_marg %>
+
+Events lying inside one another's light cones are said to have a timelike relationship. Events outside each
+other's light cones are spacelike in relation to one another, and in the case where they lie on the surfaces
+of each other's light cones the term is lightlike.\index{spacelike}\index{timelike}\index{lightlike}
+
+The light cone plays the same role in the Lorentzian geometry that the circle plays in Euclidean geometry.
+The truth or falsehood of propositions in Euclidean geometry remains the same regardless of how we rotate
+the figures, and this is expressed by Euclid's E3 asserting the existence of circles, which remain
+invariant under rotation. Similarly, Lorentz boosts preserve light cones and truth of propositions
+in a Lorentz frame.
+
+Self-check: Under what circumstances is the time-ordering of events P and Q preserved under a Lorentz boost?
+
+In a uniform Lorentzian spacetime, all the
+light cones line up like soldiers with their axes parallel with one another. When gravity is present, however,
+this uniformity is disturbed in the vicinity of the masses that constitute the sources.
+The light cones lying near the sources tip toward the sources. Superimposed on top of this
+gravitational tipping together, recent observations have demonstrated a systematic tipping-apart
+effect which becomes significant on cosmological distance scales. The parameter $\Lambda$ that sets
+the strength of this effect is known as the cosmological constant.\index{cosmological constant}
+The cosmological constant is not related to the presence of any sources (such as negative masses),
+and can be interpreted instead as a tendency for space to expand over time on its own initiative.
+In the present era, the cosmological constant has overpowered the gravitation of the universe's
+mass, causing the expansion of the universe to accelerate.
+<% marg(100) %>
+<%
+  fig(
+    'tipping-light-cones',
+    %q{Light cones tip over for two reasons in general relativity: because of the presence of masses, which
+             have gravitational fields, and because of the cosmological constant. The time and distance
+             scales in the bottom figure are many orders of magnitude greater than those in the top.}
+  )
+%>
+<% end_marg %>
+
+Self-check: In the bottom panel of figure \figref{tipping-light-cones}, can an observer look at the
+properties of the spacetime in her immediate vicinity and tell how much her light cones are tipping,
+and in which direction? Compare with figure \figref{local-lorentz-frames} on page \pageref{fig:local-lorentz-frames}.
+
+\begin{eg}{A Newtonian black hole}\label{eg:newtonian-black-hole}
+In the case of a black hole, the light cone tips over so far that the entire future timelike
+region lies within the black hole. If an observer is present at such an event, then that observer's
+entire potential future lies within the black hole, not outside it.
+By expanding on the logical consequences of this statement, we arrive at an example of
+relativity's proper interpretation as a theory of causality, not a theory of objects exerting forces on one another
+as in Newton's vision of action at a distance, or Lorentz's original ether-drag interpretation of the factor $\gamma$,
+in which length contraction arose from a physical strain imposed on the atoms composing a physical body.
+<% marg(0) %>
+<%
+  fig(
+    'bucket-and-black-hole',
+    %q{Matter is lifted out of a Newtonian black hole with a bucket. The dashed line represents the point
+            at which the escape velocity equals the speed of light.}
+  )
+%>
+<% end_marg %>
+
+Imagine a black hole from a Newtonian point of view, as proposed in 1783 by
+geologist John Michell. Setting the escape velocity equal to the speed of
+light, we find that this will occur for any gravitating spherical body compact enough to have $M/r>c^2/2G$.
+(A fully relativistic argument, as given in section \ref{sec:schwarzschild}, agrees on $M/r \propto c^2/G$, which is fixed by units. The correct unitless factor depends
+on the definition of $r$, which is flexible in general relativity.)
+A flash of light emitted from the surface of such a Newtonian black hole would fall back down like water from
+a fountain, but it would nevertheless be possible for physical objects to escape, e.g., if they were lifted
+out in a bucket dangling from a cable. If the cable is to support its own weight, it must have a tensile strength per unit density of at least
+$c^2/2$, which is about ten orders of magnitude greater than that of carbon nanotube fibers. (The factor of $1/2$ is not to be
+taken seriously, since it comes from a nonrelativistic calculation.)
+The cause-and-effect interpretation of relativity tells
+us that this is incorrect. A physical object that approaches to within a distance $r$ of a concentration of
+mass $M$, with $M/r$ sufficiently large, has no causal future lying at larger values of $r$. The conclusion
+is that there is a limit on the tensile strength of any substance, imposed purely by general relativity, and we
+can state this limit without having to know anything about the physical nature of the interatomic forces.
+Cf. homework problem \ref{hw:speed-of-sound} and section \ref{sec:carousel}.
+\end{eg}
+
+<% begin_sec("Velocity addition") %>\label{sec:velocity-addition}
+In classical physics, velocities add in relative motion. For example, if a boat moves relative to
+a river, and the river moves relative to the land, then the boat's velocity relative to the land
+is found by vector addition. This linear behavior cannot hold relativistically. For example,
+if a spaceship is moving at $0.60c$ relative to the earth, and it launches a probe at $0.60c$
+relative to itself, we can't have the probe moving at $1.20c$ relative to the earth, because
+this would be greater than the maximum speed of cause and effect, $c$. To see how to add velocities
+relativistically, we start be rewriting the Lorentz transformation as the matrix
+\begin{equation*}
+  \begin{pmatrix}
+    \cosh\eta  & \sinh\eta \\
+    \sinh\eta & \cosh\eta
+  \end{pmatrix} \qquad ,
+\end{equation*}
+where $\eta=\tanh^{-1} v$ is called the \emph{rapidity}.\index{rapidity}
+We are guaranteed that the matrix can be written in this form, because its area-preserving
+property says that the determinant equals 1, and $\cosh^2\eta-\sinh^2\eta=1$ is an identity
+of the hyperbolic trig functions. It is now straightforward to verify that multiplication
+of two matrices of this form gives a third matrix which is also of this form, with $\eta=\eta_1+\eta_2$.
+In other words, rapidities add linearly; velocities don't. In the example of the spaceship and the
+probe, the rapidities add as $\tanh^{-1}.60+\tanh^{-1}.60=.693+.693=1.386$, giving the probe a velocity of
+$\tanh 1.386=0.88$ relative to the earth. Any number of velocities can be added in this way, $\eta_1+\eta_2+\ldots+\eta_n$.
+<% marg(80) %>
+<%
+  fig(
+    'rapidity',
+    %q{The rapidity, $\eta=\tanh^{-1} v$, as a function of $v$.}
+  )
+%>
+<% end_marg %>
+
+Self-check: Interpret the asymptotes of the graph in figure \figref{rapidity}.
+
+<% end_sec %>
+
+<% begin_sec("Logic") %>
+The trichotomous classification of causal relationships
+has interesting logical implications. In classical Aristotelian logic,\index{logic!Aristotelian}\index{Aristotelian logic}\label{nonaristotelian}
+every proposition is either true or false, but not both, and given propositions $p$ and $q$, we
+can form propositions such as $p \wedge q$ (both $p$ and $q$) or $p \vee q$ (either $p$ or $q$).
+Propositions about physical phenomena can only be verified by observation. Let $p$ be
+the statement that a certain observation carried out at event P gives a certain result, and similarly for
+$q$ at Q. If PQ is spacelike, then the truth or falsehood of $p \wedge q$ cannot be checked by physically
+traveling to P and Q, because no observer would be able to attend both events. The truth-value of
+$p \wedge q$ is unknown to any observer in the universe until a certain time, at which the relevant information has
+been able to propagate back and forth. What if P and Q lie inside two different black holes? Then the truth-value
+of $p \wedge q$ can never be determined by \emph{any} observer. Another example is the case in which P and Q
+are separated by such a great distance that, due to the accelerating expansion of the universe, their future
+light cones do not overlap. We conclude that Aristotelian logic cannot be appropriately applied to
+relativistic observation in this way. Some workers attempting to construct a quantum-mechanical theory of
+gravity have suggested an even more radically observer-dependent logic, in which different observes may
+contradict one another on the truth-value of a single proposition $p_1$, unless they agree in advance
+on the list $p_2$, $p_2$, \ldots of all the other propositions that they intend to test as well. We'll
+return to these questions on page \pageref{black-hole-complementarity}.
+<% end_sec %>
+
+
+<% end_sec %>
+
+<% begin_sec("Experimental tests of Lorentzian geometry") %>
+
+We've already seen, in section \ref{sec:time-experiments}, a variety of evidence for the non-classical
+behavior of spacetime. We're now in a position to discuss tests of relativity more quantitatively.
+
+One such test is that relativity requires the speed of light to be the same in all frames of reference,
+for the following reasons.\label{c-is-speed-of-light} Compare with the speed of sound in air.
+The speed of sound is not the same in all frames of reference, because the wave propagates
+at a fixed speed relative to the air. An observer at who is moving relative to the air will measure
+a different speed of sound. Light, on the other hand isn't a vibration of any physical medium.
+Maxwell's equations predict a definite value for the speed of light, regardless of the motion of the
+source. This speed also can't be relative to any medium. If the speed of light isn't fixed relative to the
+source, and isn't relative to a medium, then it must be fixed relative to any observer.
+The only speed in relativity that is equal in all frames of reference is $c$, so light must propagate at $c$.
+We will see on page \pageref{c-is-speed-of-massless-particles} that there is a deeper reason for this;
+relativity requires that any massless particle propagate at $c$.
+The requirement of $v=c$ for massless particles is so intimately hard-wired into the structure of
+relativity that any violation of it, no matter how tiny, would be of great interest. Essentially,
+such a violation would disprove Lorentz invariance, i.e., the invariance of the laws of physics
+under Lorentz transformations. There are two types of tests we could do: (1) test whether photons
+of all energies travel at the same speed, i.e., whether the vacuum is dispersive;
+(2) test whether observers in all frames of reference measure the same speed of light.
+
+<% begin_sec("Dispersion of the vacuum") %>
+
+Some candidate quantum-mechanical theories of gravity, such as loop quantum gravity,\index{loop quantum gravity}
+predict a granular structure for spacetime at the Planck scale, $\sqrt{\hbar G/c^3}=10^{-35}$ m, which would naturally lead to
+deviations from $v=1$ that would become more and more significant for photons with wavelengths
+getting closer and closer to that scale. Lorentz-invariance would then be an approximation valid
+only at large scales.
+<% marg(0) %>
+<%
+  fig(
+    'gamma-ray-burst',
+    %q{An artists's conception of a gamma-ray burst, resulting from a supernova explosion.}
+  )
+%>
+<% end_marg %>
+
+Presently the best experimental tests of the invariance of
+the speed of light with respect to wavelength come from astronomical observations of gamma-ray bursts, which are sudden
+outpourings of high-energy photons, believed to originate from a supernova explosion in another galaxy. One such observation,
+in 2009,\footnote{\url{http://arxiv.org/abs/0908.1832}} collected photons from such a burst, with a duration of 2 seconds, indicating that the propagation
+time of all the photons differed by no more than 2 seconds out of a total time in flight on the order
+of ten billion years, or about one part in $10^{17}$! A single superlative photon in the burst had an energy of 31 GeV,
+and its arrival within the same 2-second time window demonstrates Lorentz invariance over a vast range of photon energies,
+ruling out some versions of loop quantum gravity.
+
+<% end_sec %>
+
+<% begin_sec("Observer-independence of $c$") %>
+The constancy of the speed of light for observers in all frames of reference
+was originally detected in 1887 when
+Michelson and Morley set up a clever apparatus to
+measure any difference in the speed of light beams traveling
+east-west and north-south. The motion of the earth around
+the sun at 110,000 km/hour (about 0.01\% of the speed of
+light) is to our west during the day. Michelson and Morley
+believed that light was a vibration of a physical medium, the ether, so they expected that the
+speed of light would be a fixed value relative to the ether.
+As the earth moved through the ether, they thought they
+would observe an effect on the velocity of light along an
+east-west line. For instance, if they released a beam of
+light in a westward direction during the day, they expected
+that it would move away from them at less than the normal
+speed because the earth was chasing it through the ether.
+They were surprised when they found that the expected 0.01\%
+change in the speed of light did not occur.\index{Michelson-Morley experiment}\index{ether}
+<%
+  fig(
+    'michelson',
+    %q{The Michelson-Morley experiment, shown in photographs, and drawings from the original 1887 paper.
+       1. A simplified drawing of the apparatus. A beam of light from the source, s, is partially reflected and partially transmitted by the half-silvered
+       mirror $\zu{h}_1$. The two half-intensity parts of the beam are reflected by the mirrors at a and b, reunited,
+       and observed in the telescope, t. If the earth's surface was supposed to be moving through the ether,
+       then the times taken by the two light waves to pass through the moving ether would be unequal, and
+       the resulting time lag would be detectable by observing the interference between the waves when they were reunited.
+       2. In the real apparatus, the light beams were reflected multiple times. The effective length of each arm was
+       increased to 11 meters, which greatly improved its sensitivity to the small expected difference in the speed of light.
+       3. In an earlier version of the experiment, they had run into problems with its ``extreme sensitiveness to vibration,''
+       which was ``so great that it was impossible to see the interference fringes except at brief intervals \ldots even at
+       two o'clock in the morning.'' They therefore mounted the whole thing on a massive stone floating in a pool of mercury,
+       which also made it possible to rotate it easily. 4. A photo of the apparatus. Note that it is underground, in a room
+       with solid brick walls.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'sidepos'=>'t'
+    }
+  )
+%>
+
+Although the Michelson-Morley experiment was nearly two
+dec\-ades in the past by the time Einstein published his first
+paper on relativity in 1905, and Einstein did know about it,\footnote{J. van Dongen, http://arxiv.org/abs/0908.1545} 
+it's unclear how much it influenced him. Michelson
+and Morley themselves were uncertain about whether the result was to be trusted,
+or whether systematic and random errors were masking a real effect from
+the ether. There were a variety of competing theories, each of which could
+claim some support from the shaky data. Some physicists believed
+that the ether could be dragged along by matter moving through it, which inspired
+variations on the experiment that were conducted on mountaintops in thin-walled buildings, (figure),
+or with one arm of the appartus out in the open, and the other surrounded by massive lead walls.
+In the standard sanitized textbook version of the history of science, every scientist does his experiments
+without any preconceived notions about the truth, and any disagreement is quickly settled by
+a definitive experiment. In reality, this period of confusion about the Michelson-Morley
+experiment lasted for four decades, and a few reputable skeptics,
+including Miller, continued to believe that Einstein was wrong, and kept trying different variations
+of the experiment as late as the 1920's. Most of the remaining doubters were convinced
+by an extremely precise version of the experiment performed by Joos in 1930, although you can still
+find kooks on the internet who insist  that Miller was right, and that there was a vast conspiracy to
+cover up his results.
+<%
+  fig(
+    'miller',
+    %q{
+       Dayton Miller thought that the result of the Michelson-Morley experiment
+       could be explained because the ether had been pulled along by the dirt, and the walls of the laboratory. This motivated him
+       to carry out a series of experiments at the top of Mount Wilson, in a building with thin walls. 
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>false
+    }
+  )
+%>
+
+Before Einstein, some physicists who did believe the negative result of the Michelson-Morley experiment came up with
+explanations that preserved the ether. In the period from 1889 to 1895, both Lorentz and George FitzGerald
+suggested that the negative result of the Michelson-Morley
+experiment could be explained if the earth, and every physical
+object on its surface, was contracted slightly by the strain
+of the earth's motion through the ether. Thus although Lorentz developed all the mathematics of Lorentz
+frames, and got them named after himself, he got the interpretation wrong.
+
+<% end_sec %>
+<% end_sec %>
+
+<% begin_sec("Three spatial dimensions") %>
+New and nontrivial phenomena arise when we generalize from 1+1 dimensions to 3+1.
+<% begin_sec("Lorentz boosts in three dimensions") %>\label{lorentz-three-dim}
+How does a Lorentz boost along one axis, say $x$, affect the other two spatial coordinates $y$ and $z$?
+We have
+already proved that area in the $(t,x)$ plane is preserved. The same proof applies to volume in the spaces
+$(t,x,y)$ and $(t,x,z)$, hence lengths in the $y$ and $z$ directions are preserved. (The proof does \emph{not} apply to
+volume in, e.g., $(x,y,z)$ space, because the $x$ transformation depends on $t$, and therefore if we are given
+a region in $(x,y,z)$, we do not have enough information to say how it will change under a Lorentz boost.)
+The complete form of the transformation $L(v\hat{\vc{x}})$, a Lorentz boost along the $x$ axis with velocity $v$, is therefore:
+\begin{align*}
+  t' &= \gamma t + v \gamma x \\
+  x' &= v \gamma t + \gamma x \\
+  y' &= y \\
+  z' &= z
+\end{align*}
+
+Based on the trivial nature of this generalization, it might seem as though no qualitatively new considerations
+would arise in 3+1 dimensions as compared with 1+1.  To see that this is not the case, consider figure \figref{boosts-tangling}.
+A boost along the $x$ axis tangles up the $x$ and $t$ coordinates. A $y$-boost mingles $y$ and $t$. Therefore
+consecutive boosts along $x$ and $y$ can cause $x$ and $y$ to mix. The result, as we'll see in more detail below,
+is that two consecutive boosts along non-collinear axes are not equivalent to a single boost; they are equivalent
+to a boost plus a spatial rotation.
+<% marg(50) %>
+<%
+  fig(
+    'boosts-tangling',
+    %q{A boost along $x$ followed by a boost along $y$ results in tangling up of the $x$ and $y$ coordinates,
+        so the result is not just a boost but a boost plus a rotation.}
+  )
+%>
+<% end_marg %>
+
+<% end_sec %> % Lorentz boosts in three dimensions
+
+<% begin_sec("Gyroscopes and the equivalence principle") %>
+
+To see how this mathematical fact would play out as a physical effect, we need to consider how to make a physical manifestation of
+the concept of a direction in space.
+
+In two space dimensions, we can construct a ring laser,\index{ring laser}
+which in its simplest incarnation is a closed loop of optical fiber with a bidirectional laser
+inserted in one place. Coherent light traverses the loop simultaneously in both directions, interfering
+in a beat pattern, which can be observed by sampling the light at some point along the loop's
+circumference. If the loop is rotated in its own plane, the interference pattern is altered,
+because the beam-sampling device is in a different place, and the path lengths traveled by the
+two beams has been altered. This phase shift is called the Sagnac effect.\index{Sagnac effect}
+The loop senses its own angular acceleration relative to an inertial reference frame.
+If we transport the loop while always carefully adjusting its orientation so as to prevent
+phase shifts, then its orientation has been preserved. 
+The atomic clocks used in the Hafele-Keating atomic-clock experiment\index{Hafele-Keating experiment}\index{atomic clocks}
+described
+on page \pageref{sec:hafele-keating} were sensitive to Sagnac effects, and it was not practical
+to maintain their orientations while they were strapped into seats on a passenger jet, so
+this orientational effect had to be subtracted out of the data at the end of the experiment.
+
+In three spatial dimensions, we could build a spherical cavity with
+a reflective inner surface, and release a photon inside.
+
+\label{types-of-gyroscopes}
+In reality, the photon-in-a-cavity is not very practical. The photon would eventually be
+absorbed or scattered, and it would also be difficult to accurately initialize the device and read it out later. A more practical
+tool is a gyroscope.  For example, one of the classic tests of general relativity is the
+2007 Gravity Probe B\index{Gravity Probe B} experiment (discussed in detail on pages
+\pageref{sec:geodetic-effect-estimate} and \pageref{sec:geodetic-effect-exact}), in which
+four gyroscopes aboard a satellite were observed to precess due to special- and general-relativistic
+effects.
+
+<% marg(50) %>
+<%
+  fig(
+    'photon-in-cavity-and-gyroscope',
+    %q{Inertial devices for maintaining a direction in space: 1. A ring laser. 2. The photon in a perfectly reflective spherical cavity.
+          3. A gyroscope.}
+  )
+%>
+<% end_marg %>
+
+The gyroscope, however, is not so obviously a literal implementation of our basic concept of a direction. How, then,
+can we be sure that its behavior is equivalent to that of the photon-in-a-cavity? We could, for example,
+carry out a complete mathematical development of the angular momentum vector in relativity.\footnote{This is done,
+for example, in Misner, Thorne, and Wheeler, \emph{Gravitation}, pp. 157-159.} The equivalence principle, however,
+allows us to bypass such technical details. Suppose that we seal the two devices inside black boxes, with identical
+external control panels for initializating them and reading them out. We initialize them identically, and then
+transport them along side-by-side world-lines. Classically, both the mechanical gyroscope and the photon-gyroscope
+would maintain absolute, fixed directions in space. Relativistically, they will not necessarily maintain their
+orientations. For example, we've already seen in section \ref{lorentz-three-dim} that there are reasons to
+expect that their orientations will change if they are subjected to accelerations that are not all along the
+same line. Because relativity is a geometrical theory of spacetime, this difference between the classical
+and relativistic behavior must be determinable from purely geometrical considerations, such as the
+shape of the world-line. If it depended on something else, then we could conceivably see a disagreement in the
+outputs of the two instruments, but this would violate the equivalence principle.
+
+Suppose there were such a discrepancy. That discrepancy would be a physically measurable property of the
+space\-time region through which the two gyroscopes had been transported. The effect would have a certain
+magnitude and direction, so by collecting enough data we could map it out as vector field covering that region of spacetime.
+This field evidently causes material particles to accelerate, since it has an effect on the mechanical gyroscope.
+Roughly speaking (the reasoning will be filled
+in more rigorously on page \pageref{tensor-universality}),
+the fact that this field acts differently on the two gyroscopes is like getting a non-null result from
+an E\"{o}tv\"{o}s experiment, and it therefore violates the equivalence principle. 
+We conclude that the two gyroscopes are equivalent. In other words, there can only be one uniquely
+defined notion of direction, and the details of how it is implemented are irrelevant.
+
+<% end_sec %>
+
+<% begin_sec("Boosts causing rotations") %>\label{sec:boosts-causing-rotations}
+
+As a quantitative example, consider the following
+thought experiment. Put a gyroscope in a box, and
+send the box around the square path shown in figure \figref{thomas-hammers}
+at constant speed. The gyroscope defines a local coordinate system, which according to classical
+physics would maintain its orientation. At each corner of the square, the box has its velocity vector changed abruptly,
+as represented by the hammer. We assume that the hits with the hammer are transmitted to the gyroscopes at their centers
+center of mass, so that they do not result in any torque. Classically, if the set of gyroscopes travels once around
+the square, it should end up at the same place and in the same orientation, so that the coordinate system it defines
+is identical with the original one.
+<% marg(50) %>
+<%
+  fig(
+    'thomas-hammers',
+    %q{Classically, the gyroscope should not rotate as long as the forces from the hammer are all transmitted to
+              it at its center of mass.}
+  )
+%>
+<% end_marg %>
+
+For notation, let $L(v\hat{\vc{x}})$ indicate the boost along the $x$ axis described by the transformation
+on page \pageref{lorentz-three-dim}. This is a transformation that changes to a frame of reference moving in the
+\emph{negative} $x$ direction compared to the original frame.
+A particle considered to be at rest in the original frame is described in the new frame as moving in the \emph{positive} $x$ direction.
+Applying such an $L$ to a vector $\vc{p}$, we calculate $L\vc{p}$, which gives the coordinates of the event as measured in the
+new frame. An expression like $ML\vc{p}$ is equivalent by associativity to $M(L\vc{p})$, i.e., $ML$ represents applying $L$ first, and then
+$M$.
+
+In this notation, the hammer strikes can be represented by a series of four Lorentz boosts,
+\begin{equation*}
+  T = L(v\hat{\vc{x}}) \: L(v\hat{\vc{y}}) \: L(-v\hat{\vc{x}}) \: L(-v\hat{\vc{y}}) \qquad ,
+\end{equation*}
+where we assume that the square has negligible size,
+so that all four Lorentz boosts act in a way that preserves the origin of the coordinate systems. (We have no convenient way in
+our notation $L(\ldots)$ to describe a transformation that does not preserve the origin.) The first
+transformation, $L(-v\hat{\vc{y}})$, changes coordinates measured by the original gyroscope-defined frame to new
+coordinates measured by the new gyroscope-defined frame, after the box has been accelerated in the positive $y$ direction.
+<%
+  fig(
+    'einstein-notebook',
+    %q{%
+      A page from one of Einstein's notebooks.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+
+The calculation of $T$ is messy, and to be honest, I made a series of mistakes when I tried to crank it out by hand.
+Calculations in relativity have a reputation for being like this. Figure \figref{einstein-notebook} shows a page from one of
+Einstein's notebooks, written in fountain pen around 1913. At the bottom of the page, he wrote ``zu umstaendlich,''
+meaning ``too involved.'' 
+Luckily we live in an era in which this sort of thing can be handled by computers. Starting at this point in the
+book, I will take appropriate opportunities to demonstrate how to use the
+free and open-source computer algebra system Maxima\index{Maxima}\label{introduce-maxima}
+to keep complicated calculations manageable. The following Maxima program calculates a particular element of the matrix
+$T$.
+% --------- thomas3.mac -------------
+\begin{listing}{1}
+/* For convenience, define gamma in terms of v: */
+gamma:1/sqrt(1-v*v);
+/* Define Lx as L(x-hat), Lmx as L(-x-hat), etc. Each
+   is represented by a matrix: */
+Lx:matrix([gamma,   gamma*v,  0],
+         [gamma*v,  gamma,    0],
+         [0,        0,        1]);
+Ly:matrix([gamma,   0,        gamma*v],
+         [0,        1,        0],
+         [gamma*v,  0,        gamma]);
+Lmx:matrix([gamma,  -gamma*v, 0],
+         [-gamma*v, gamma,    0],
+         [0,        0,        1]);
+Lmy:matrix([gamma,  0,        -gamma*v],
+         [0,        1,        0],
+         [-gamma*v, 0,        gamma]);
+/* Calculate the product of the four matrices: */
+T:Lx.Ly.Lmx.Lmy;
+/* Define a point on the same light-cone as the origin,
+   which is equivalent to defining a direction.
+   This is Maxima's notation for the column vector
+   (1,1,0): */
+P:matrix([1],[1],[0]);
+/* Find the result of T acting on this direction,
+   expressed as a Taylor series to second order in v: */
+taylor(T.P,v,0,2);
+\end{listing}
+Statements are terminated by semicolons, and comments are written like \verb@/* ... */@
+On line 2, we see a symbolic definition of the symbol \verb@gamma@ in terms of the symbol \verb@v@. The colon
+means ``is defined as.''
+Line 2 does not mean, as it would in most programming languages, to take a stored numerical value of $v$ and use it to calculate a numerical
+value of $\gamma$. In fact, $v$ does not have a numerical value defined at this point, nor will it ever have a numerical value defined
+for it throughout this program. Line 2 simply means that whenever Maxima encounters the symbol \verb@gamma@, it should take it
+as an abbreviation for the symbol \verb@v@. Lines 5-16 define some $3\times3$ matrices that represent the $L$ transformations.
+The basis is $\hat{\vc{t}}$, $\hat{\vc{x}}$, $\hat{\vc{y}}$.
+Line 18 calculates the product of the four matrices; the dots represent matrix multiplication.
+Line 23 defines a point in spacetime $\zu{P}=\hat{\vc{t}}+\hat{\vc{x}}$; we have in mind the direction
+that includes the lightlike line OP. P has to be expressed as a column matrix (three rows of one column each)
+so that Maxima will know how to operate using matrix multiplication by $T$.
+
+Finally line 26 outputs\footnote{I've omitted some output generated automatically from the earlier steps in the
+computation. The (\%o9) indicates that this is Maxima's output from the ninth and final step.} the result of $T$ acting on P:
+\begin{listing}{19}
+                               [  1 + . . .   ]
+                               [              ]
+(%o9)/T/                       [  1 + . . .   ]
+                               [              ]
+                               [    2         ]
+                               [ - v  + . . . ]
+\end{listing}
+In other words,
+\begin{equation*}
+  T\begin{pmatrix}1 \\ 1 \\ 0\end{pmatrix} = \begin{pmatrix}1 \\ 1 \\ -v^2\end{pmatrix} + \ldots \qquad ,
+\end{equation*}
+where $\ldots$ represents higher-order terms in $v$.
+The interpretation is as follows.
+Let  $\zu{O}=(0,0,0)$ be the origin. We can interpret OP as defining a direction.
+Since O is not affected by $T$, the transformed version, $\zu{P}\rightarrow T\zu{P}$, output by the program
+represents the same direction, after being acted on by $T$.
+Suppose that we use the initial frame of reference, before $T$ is applied, to determine that
+a particular reference point, such as a distant star, is along the $x$ axis. We represent that
+spatial direction using P. Applying $T$, we get a new vector $T\zu{P}$, which we find has
+a nonvanishing $y$ component approximately equal to $-v^2$. This result is entirely unexpected classically.
+It tells us that the gyroscope, rather than maintaining its original orientation as it
+would have done classically, has rotated slightly. It has precessed in the counterclockwise
+direction in the $x-y$ plane, so that the direction to the star, as measured in the
+coordinate system defined by the gyroscope, appears to have rotated clockwise.
+As the box moved clockwise around the square, the gyroscope has apparently rotated by
+a counterclockwise angle $\chi\approx v^2$ about the $z$ axis.
+We can see that this is a purely relativistic effect, since for
+$v \ll 1$ the effect is small. For historical reasons discussed in section \ref{sec:thomas-precession}, this
+phenomenon is referred to as the Thomas precession.
+
+% The following is a conditional because it's a note to myself, but it can be handy to see it typeset:
+\ifthenelse{\isodd{0}}{
+ This is what I calculated by hand. Checked against maxima output and found and corrected one mistake:
+ \begin{alignat*}{2}
+  t \rightarrow    & (\gamma^4-2v^2\gamma^3)      t  &+    v(-\gamma^3+\gamma^2) x   & +(-v\gamma^4+v(1+v^2)\gamma^3) y \\
+  x \rightarrow    & v(\gamma^4-(1+v^2)\gamma^3) t  &+    (\gamma^2-v^2\gamma^3) x  & +v^2\gamma^3(-\gamma+2)  y \\
+  y \rightarrow    & v(\gamma^3-\gamma^2)        t   &+    (-v^2\gamma^2)         x  & +(\gamma^2-v^2\gamma^3)        y
+ \end{alignat*}
+ Applying it to (0,1,0) gives middle column as result. As a check on the result, I checked that norm squared is exactly -1 after transformation.
+ This is what I get by doing (g,-gv,-gv,g) on ty, then (g,-gv,-gv,g) on tx, (g,gv,gv,g) on ty, (g,gv,gv,g) on tx.
+ see thomas.mac
+The following is the output from maxima:
+\begin{equation*}
+  \begin{pmatrix}
+{{{{1}\over{\left(1-v^2\right)^{{{3}\over{2}}}}}-{{v^2}\over{1-v^2
+ }}}\over{\sqrt{1-v^2}}}-{{v^2}\over{\left(1-v^2\right)^{{{3}\over{2
+ }}}}} &
+{{v}\over{1-v^2}}-{{v}\over{\left(1-v^2\right)^{{{3}\over{2}}}}} &
+{{{{v}\over{1-v^2}}-{{v}\over{\left(1-v^2\right)^{{{3}\over{2}}}}}
+ }\over{\sqrt{1-v^2}}}+{{v^3}\over{\left(1-v^2\right)^{{{3}\over{2}}}
+ }} \\
+{{v\,\left({{1}\over{\left(1-v^2\right)^{{{3}\over{2}}}}}-{{v^2
+ }\over{1-v^2}}\right)}\over{\sqrt{1-v^2}}}-{{v}\over{\left(1-v^2
+ \right)^{{{3}\over{2}}}}} &
+{{1}\over{1-v^2}}-{{v^2}\over{\left(1-v^2\right)^{{{3}\over{2}}}}} &
+{{v\,\left({{v}\over{1-v^2}}-{{v}\over{\left(1-v^2\right)^{{{3
+ }\over{2}}}}}\right)}\over{\sqrt{1-v^2}}}+{{v^2}\over{\left(1-v^2
+ \right)^{{{3}\over{2}}}}} \\
+{{v}\over{\left(1-v^2\right)^{{{3}\over{2}}}}}-{{v}\over{1-v^2}} &
+-{{v^2}\over{1-v^2}} &
+{{1}\over{1-v^2}}-{{v^2}\over{\left(1-v^2\right)^{{{3}\over{2}}}}}
+  \end{pmatrix} 
+\end{equation*}
+}{}
+
+The particular features of this geometry are not necessary. I chose them so that (1) the boosts
+would be along the Cartesian axes, so that we would be able to write them down easuly; (2) it is clear that the effect
+doesn't arise from any asymmetric treatment of the spatial axes; and (3) the change in the orientation of the gyroscope
+can be measured at the same point in space, e.g., by comparing it with a twin gyroscope that stays at home. In general:
+\begin{itemize}
+\item[] A gyroscope transported around a closed loop in flat spacetime changes its orientation compared with
+             one that is not accelerated.
+\item[] This is a purely relativistic effect, since a classical gyroscope does not change its axis of rotation
+       unless subjected to a torque; if the boosts are accomplished by forces that act at the gyroscope's center of mass,
+       then there is no classical explanation for the effect.
+\item[] The effect can occur in the absence of any gravitational fields. That is, this is a phenomenon of special relativity.
+\item[] The composition of two or more Lorentz boosts along different axes is not equivalent to a single boost; it is
+             equivalent to a boost plus a spatial rotation.
+\item[] Lorentz boosts do not commute, i.e., it makes a difference what order we perform them in.
+         Even if there is almost no time lag between the first boost and the second, the order of the boosts matters.
+         If we had applied the boosts in the opposite order, the handedness of the effect would have been reversed.
+\end{itemize}
+
+Self-check: If Lorentz boosts \emph{did} commute, what would be the consequences
+for the expression $L(v\hat{\vc{x}}) \: L(v\hat{\vc{y}}) \: L(-v\hat{\vc{x}}) \: L(-v\hat{\vc{y}})$?
+
+<% begin_sec("The velocity disk") %>
+Figure \figref{velocity-disk} shows a useful way of visualizing the combined effects of boosts and
+rotations in 2+1 dimensions.
+The disk depicts all
+possible states of motion relative to some arbitrarily chosen frame of reference. Lack of motion is represented by the point at the
+center. A point at distance $v$ from the center represents motion at velocity $v$ in a particular direction in the $x-y$ plane.
+By drawing little axes at a particular point, we can represent a particular frame of reference: the frame is in motion at
+some velocity, with its own $x$ and $y$ axes are oriented in a particular way.
+<% marg(20) %>
+<%
+  fig(
+    'velocity-disk',
+    %q{The velocity disk.}
+  )
+%>
+<% end_marg %>
+
+It turns out to be easier to understand the qualitative behavior of our mysterious rotations if we switch from the low-velocity limit
+to the contrary limit of ultrarelativistic velocities.
+Suppose we have a rocket-ship with an inertial navigation system consisting of two gyroscopes at right angles to one another.
+We first accelerate the ship in the $y$ direction, and the acceleration is steady 
+in the sense that it feels constant to observers
+aboard the ship. Since it is rapidities, not velocities, that add linearly, this means that as an observer aboard the ship reads clock
+times $\tau_1$, $\tau_2$, \ldots, all separated by equal intervals $\Delta\tau$, the ship's rapidity changes at a constant
+rate, $\eta_1$, $\eta_2$, \ldots.
+This results in a series of frames of reference that appear closer and closer together as the ship approaches the speed of light,
+at the edge of the disk. We can start over from the center again and repeat the whole process along the $x$ axis, resulting in a
+similar succession of frames. In both cases, the boosts are being applied along a single line, so that there is no rotation of
+the $x$ and $y$ axes.
+<% marg(20) %>
+<%
+  fig(
+    'velocity-disk-accel',
+    %q{Two excursions in a rocket-ship: one along the $y$ axis and one along $x$.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'velocity-disk-loop-question',
+    %q{A round-trip involving ultrarelativistic velocities. All three legs are at constant acceleration.}
+  )
+%>
+<% end_marg %>
+
+Now suppose that the ship were to accelerate along a route like the one shown in figure \figref{velocity-disk-accel-question}.
+It first accelerates along the $y$ axis at a constant
+rate (again, as judged by its own sensors), until its velocity is very close to the speed of light, A. It then accelerates,
+again at a self-perceived constant rate and with thrust in a fixed direction as judged by its own gyroscopes, until it is moving at the
+same ultrarelativistic speed in the $x$ direction, B. Finally, it decelerates in the $x$ direction until it is again at rest, O.
+This motion traces out a clockwise loop on the velocity disk. The motion in space is also clockwise.
+
+We might naively think that the middle leg of the trip, from A to B, would be a straight line on the velocity disk, but this can't be the case.
+First, we know that non-collinear boosts cause rotations. Traveling around a clockwise path causes counterclockwise rotation, and vice-versa.
+Therefore an observer in the rest frame O sees the ship (and its gyroscopes)
+as rotating as it moves from A to B. The ship's trajectory through space is clockwise, so according to O the ship rotates counterclockwise as it goes
+A to B.
+The ship is always firing its engines in a fixed direction as judged by its gyroscopes, but according to O the ship is rotating counterclockwise,
+its thrust is progressively rotating counterclockwise, and therefore its trajectory turns counterclockwise. We conclude that leg AB
+on the velocity disk is concave, rather than being a straight-line hypotenuse of a triangle OAB.
+
+We can also determine, by the following argument, that leg AB is perpendicular to the edge of the disk where it touches the edge of the disk.
+In the transformation from frame A to frame O, $y$ coordinates are dilated by a factor of $\gamma$, which approaches infinity in the limit
+we're presently considering. Observers aboard the rocketship, occupying frame A, believe that their task is to fire the rocket's engines
+at an angle of 45 degrees with respect to the $y$ axis, so as to eliminate their velocity with respect to the origin, and simultaneously
+add an equal amount of velocity in the $x$ direction. This 45-degree angle in frame A, however, is not a 45-degree angle in frame O.
+From the stern of the ship to its bow we have displacements $\Delta x$ and $\Delta y$, and in the transformation from A to O, $\Delta y$
+is magnified almost infinitely. As perceived in frame O, the ship's orientation is almost exactly antiparallel to the $y$ axis.\footnote{Although
+we will not need any more than this for the purposes of our present analysis, a
+longer and more detailed discussion by Rhodes and Semon, \url{www.bates.edu/~msemon/RhodesSemonFinal.pdf}, Am. J. Phys. 72(7)2004, shows that
+this type of inertially guided, constant-thrust motion is always represented on the velocity disk by
+an arc of a circle that is perpendicular to the disk at its edge. (We consider a diameter of the disk to be
+the limiting case of a circle with infinite radius.)}
+<% marg(20) %>
+<%
+  fig(
+    'velocity-disk-loop-filled-in',
+    %q{In the limit where A and B are ultrarelativistic velocities, leg AB is perpendicular to the edge of the velocity disk.
+            The result is that the $x-y$ frame determined by the ship's gyroscopes has rotated by 90 degrees by the time it
+            gets home.}
+  )
+%>
+<% end_marg %>
+
+As the ship travels from A to B, its orientation (as judged in frame O) changes from $-\hat{\vc{y}}$ to $\hat{\vc{x}}$.
+This establishes, in a much more direct fashion, the direction of the Thomas precession: its handedness is contrary to the handedness of the direction of motion.
+We can now also see something new about the fundamental reason for the effect. It has to do with the fact that observers in
+different states of motion disagree on spatial angles. Similarly, imagine that you are a two-dimensional being who was
+told about the existence of a new, third, spatial dimension. You have always believed that the cosine of the angle between
+two unit vectors $\vc{u}$ and $\vc{v}$ is given by the vector dot product $u_xv_x+u_yv_y$. If you were allowed to explore
+a two-dimensional projection of a three-dimensional scene, e.g., on the flat screen of a television, it would seem to you
+as if all the angles had been distorted. You would have no way to interpret the visual conventions of perspective.
+But once you had learned about the existence of a $z$ axis, you would realize that these angular distortions were
+happening because of rotations out of the $x-y$ plane. Such rotations really conserve the quantity $u_xv_x+u_yv_y+u_zv_z$; only
+because you were ignoring the $u_zv_z$ term did it seem that angles were not being preserved. Similarly, the generalization
+from three Euclidean spatial dimensions to 3+1-dimensional spacetime means that three-dimensional dot products are no
+longer conserved.
+
+<% end_sec %> % The velocity disk.
+<% begin_sec("The general low-$v$ limit") %>
+<% marg(0) %>
+<%
+  fig(
+    'thomas-as-area',
+    %q{If the crack between the two areas is squashed flat, the two pieces of the path on the interior coincide, and
+          their contributions to the precession cancel out ($\vc{v}\rightarrow-\vc{v}$, but $\vc{a}\rightarrow +\vc{a}$, 
+          so $\vc{a}\times\vc{v}\rightarrow -\vc{a}\times\vc{v}$). Therefore the precession $\chi$ obtained by going
+          around the outside is equal to the sum $\chi_1+\chi_2$ of the precessions that would have been obtained by
+          going around the two parts.}
+  )
+%>
+<% end_marg %>
+Let's find the low-$v$ limit of the Thomas precession in general, not just in the highly artificial
+special case of $\chi\approx v^2$ for the example involving the four hammer hits.
+To generalize to the case of smooth acceleration, we first note that the rate of precession $\der\chi/\der t$ must have the following properties.
+\begin{itemize}
+\item[] It is odd under a reversal of the direction of motion, $\vc{v}\rightarrow-\vc{v}$. (This corresponds to applying the four hammer hits
+              in the opposite order.)
+\item[] It is odd under a reversal of the acceleration due to the second boost, $\vc{a}\rightarrow-\vc{a}$.
+\item[] It is a rotation about the spatial axis perpendicular to the plane of the $\vc{v}$ and $\vc{a}$ vectors, in the opposite direction compared
+              to the handedness of the curving trajectory.
+\item[] It is approximately linear in $\vc{v}$ and $\vc{a}$, for small $\vc{v}$ and $\vc{a}$.
+\end{itemize}
+The only rotationally invariant mathematical operation that has these symmetry properties is the
+vector cross pross product, so the rate of precession
+must be $k\vc{a}\times\vc{v}$, where $k>0$ is nearly independent of
+$\vc{v}$ and $\vc{a}$ for small $\vc{v}$ and $\vc{a}$.
+
+To pin down the value of $k$, we need to find a connection between our two results: $\chi\approx v^2$ for the four hammer hits,
+and $\der\chi/\der t\approx k\vc{a}\times\vc{v}$ for smooth acceleration. We can do this by considering the physical significance of
+areas on the velocity disk. As shown in figure \figref{thomas-as-area}, the rotation $\chi$ due to carrying the velocity around the boundary of a region is
+additive when adjacent regions are joined together. We can therefore find $\chi$ for any region by breaking the region down into
+elements of area $\der A$ and integrating their contributions $\der\chi$. What is the relationship between $\der A$ and $\der\chi$?
+The velocity disk's structure is nonuniform, in the sense that near the edge of the disk, it takes a larger boost to move a small
+distance. But we're investigating the low-velocity limit, and in the low-velocity region near the center of the disk, the disk's structure
+is approximately uniform. We therefore expect that there is an approximately constant proportionality factor relating $\der A$ and $\der\chi$
+at low velocities. The example of the hammer corresponds geometrically to a square with area $v^2$, so we find that this proportionality factor
+is unity, $\der A\approx\der\chi$.
+
+% Rhodes and Semon have a metric that for small v's is approximately ds=2dv; so area is 4v2; this seems to lead to k=2, which is inconsistent with Jackson
+
+To relate this to smooth acceleration, consider a particle performing
+circular motion with period $T$, which has $|\vc{a}\times\vc{v}|=2\pi v^2/T$.
+Over one full period of the motion, we have $\chi=\int k |\vc{a}\times\vc{v}| \der t=2\pi kv^2$, and the
+particle's velocity vector traces a circle of area $A=\pi v^2$ on the velocity disk. Equating $A$ and $\chi$, we
+find $k=1/2$. The result is that in the limit of low velocities, the rate of rotation is
+\begin{equation*}
+ \boldsymbol{\Omega} \approx \frac{1}{2}\vc{a}\times\vc{v} \qquad ,
+\end{equation*}
+where $\boldsymbol{\Omega}$ is the angular velocity vector of the rotation.
+In the special case of circular motion, this can be written as $\Omega=(1/2)v^2\omega$, where $\omega=2\pi/T$ is
+the angular frequency of the motion.
+
+% This seems to check out with Jackson, p. 546.
+
+<% end_sec %> % The low-velocity limit
+<% end_sec %> % Boosts causing rotations
+
+
+<% begin_sec("An experimental test: Thomas precession in hydrogen") %>\label{sec:thomas-precession}
+If we want to see this precession effect in real life, we should look for a system in which both $v$ and $a$ are large.
+An atom is such a system.
+<% marg(60) %>
+<%
+  fig(
+    'fine-structure',
+    %q{States in hydrogen are labeled with their $\ell$ and $s$ quantum numbers, representing their orbital and spin angular momenta in units of $\hbar$.
+            The state with $s=+1/2$ has its spin angular momentum aligned with its orbital angular momentum, while the $s=-1/2$ state
+            has the two angular momenta in opposite directions. The direction and order of magnitude of the splitting between the two
+            $\ell=1$ states is successfully explained by magnetic interactions with the proton, but the calculated effect is too big by a factor of 2.
+            The relativistic Thomas precession cancels out half of the effect.}
+  )
+%>
+<% end_marg %>
+
+The Bohr model,\index{Bohr model} introduced in 1913, marked the first quantitatively successful, if
+conceptually muddled, description of the atomic energy levels of hydrogen. Continuing to take $c=1$,
+the over-all scale of the energies was calculated to be proportional to $m\alpha^2$, where $m$ is the mass of the
+electron, and $\alpha=ke^2/\hbar\approx1/137$, known as the fine structure constant,\index{fine structure constant}
+is essentially just a unitless way of expressing the coupling constant for electrical forces.
+At higher resolution, each excited energy level is found to be split into several sub-levels. The transitions among
+these close-lying states are in the millimeter region of the microwave spectrum. The energy scale of this fine structure is
+$\sim m\alpha^4$. This is down by a factor of $\alpha^2$ compared to the visible-light transitions,
+hence the name of the constant. Uhlenbeck and Goudsmit\index{Uhlenbeck}\index{Goudsmit} showed in 1926 that a splitting on this order of magnitude
+was to be expected due to the magnetic
+interaction between the proton and the electron's magnetic moment, oriented along its spin. The effect they calculated,
+however, was too big by a factor of two. 
+
+The explanation of the mysterious factor of two had in fact been implicit in a 1916 calculation by
+Willem de Sitter,\index{de Sitter!Willem} one of the first applications of general relativity. De Sitter
+treated the earth-moon system as a gyroscope, and found the precession of its axis of rotation,
+which was partly due to the curvature of spacetime and partly due to the type of rotation described earlier
+in this section.
+The effect on the motion of the moon was noncumulative, and was only about one meter, which was much
+too small to be measured at the time. In 1927, however,  Llewellyn Thomas\index{Thomas!Llewellyn}
+applied similar reasoning to the hydrogen atom, with the electron's spin vector playing the role of gyroscope.
+Since gravity is negligible here, the effect has nothing to do with curvature of spacetime, and Thomas's
+effect corresponds purely to the special-relativistic part of de Sitter's result. It is simply the
+rotation described above, with $\Omega=(1/2)v^2\omega$. Although Thomas was not the first to calculate it,
+the effect is known as Thomas precession.
+Since the electron's spin is $\hbar/2$, the energy splitting is $\pm(\hbar/2)\Omega$, depending on whether the
+electron's spin is in the same direction as its orbital motion, or in the opposite direction. This is less than the
+atom's gross energy scale $\hbar\omega$ by a factor of $v^2/2$, which is $\sim\alpha^2$. The Thomas
+precession cancels out half of the magnetic effect, bringing theory in agreement with experiment.
+
+Uhlenbeck later recalled: ``...when I first heard about [the Thomas precession], it seemed unbelievable that a
+relativistic effect could give a factor of 2 instead of something of order $v/c$...  Even
+the cognoscenti of relativity theory (Einstein included!) were quite surprised.''
+
+
+<% end_sec %>
+<% end_sec %>
+
+\begin{hwsection}
+
+<% begin_hw('speed-of-sound') %>
+Example \ref{eg:newtonian-black-hole} on page \pageref{eg:newtonian-black-hole} discusses
+relativistic bounds on the properties of matter, using the example of pulling a bucket
+out of a black hole. Derive a similar bound by considering the possibility of sending signals
+out of the black hole using longitudinal vibrations of a cable, as in the child's telephone made
+of two tin cans connected by a piece of string. (Surprisingly subtle issues can arise in such
+calculations. See A.Y. Shiekh, Can. J. Phys. 70, 458 (1992).)
+<% end_hw %>
+
+\end{hwsection}
+
+<% end_chapter %>

@@ -1,0 +1,1599 @@
+<%
+  require "eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '04',
+    %q{Curvature},
+    'ch:curvature'
+  )
+%>
+
+General relativity describes gravitation as a curvature of spacetime, with matter acting as the source
+of the curvature in the same way that electric charge acts as the source of electric fields.
+Our goal is to arrive at Einstein's field equations, which relate the local intrinsic curvature to the locally
+ambient matter in the same way that Gauss's law relates the local divergence of the electric field to the
+charge density. The locality of the equations is necessary because relativity has no action at a distance;
+cause and effect propagate at a maximum velocity of $c(=1)$.
+<% marg(20) %>
+<%
+  fig(
+    'field-equations-clouds',
+    %q{The expected structure of the field equations in general relativity.}
+  )
+%>
+<% end_marg %>
+
+The hard part is arriving at the right way of defining curvature. We've already
+seen that it can be tricky to distinguish intrinsic curvature, which is real, from extrinsic curvature, which
+can never produce observable effects. E.g., example \ref{eg:extrinsic-curvature} on page \pageref{eg:extrinsic-curvature}
+showed that spheres have intrinsic curvature, while cylinders do not. The manifestly intrinsic tensor notation protects
+us from being misled in this respect. If we can formulate a definition of curvature expressed using only
+tensors that are expressed without reference to any preordained coordinate system, then we know
+it is physically observable, and not just a superficial feature of a particular model.
+
+As an example, drop two rocks side by side, \figref{dropping-rocks-no-intrinsic-curvature}. Their trajectories are vertical, but on a $(t,x)$ coordinate plot
+rendered in the Earth's frame of reference, they appear as parallel parabolas. The curvature of these parabolas
+is extrinsic. The Earth-fixed frame of reference is defined by an observer who is subject to non-gravitational
+forces, and is therefore not a valid Lorentz frame. In a free-falling Lorentz frame $(t',x')$, the two rocks are
+either motionless or moving at constant velocity in straight lines. We can therefore see that the curvature of
+world-lines in a particular coordinate system is not an intrinsic measure of curvatre; it can arise simply
+from the choice of the coordinate system. What would indicate intrinsic curvature would be, for example, if geodesics
+that were initially parallel were to converge or diverge.
+<% marg(20) %>
+<%
+  fig(
+    'dropping-rocks-no-intrinsic-curvature',
+    %q{Two rocks are dropped side by side. The curvatures of their world-lines are not intrinsic. In a free-falling frame,
+             both would appear straight. If initially parallel world-lines
+             became non-parallel, that would be evidence of inrinsic curvature.}
+  )
+%>
+<% end_marg %>
+
+Nor is the metric is not a measure of intrinsic curvature. In example \ref{eg:const-accel-metric}
+on page \pageref{eg:const-accel-metric}, we found the metric for an accelerated observer to be
+\begin{equation*}
+  g'_{t't'} = (1+ax')^2 \qquad  g_{x'x'} = -1 \qquad ,
+\end{equation*}
+where the primes indicate the accelerated observer's frame.
+The fact that the timelike element is not equal to $-1$ is not an indication of intrinsic curvature. It arises only
+from the choice of the coordinates $(t',x')$ defined by a frame tied to the accelerating rocket ship.
+
+The fact that the above metric has nonvanishing derivatives, unlike a constant Lorentz metric, does indicate the
+presence of a gravitational field. However, a gravitational field is not the same thing as intrinsic curvature.
+The gravitational field seen by an observer aboard the ship is, by the equivalence principle, indistinguishable
+from an acceleration, and indeed the Lorentzian observer in the earth's frame does describe it as arising from
+the ship's acceleration, not from a gravitational field permeating all of space. Both observers must agree
+that ``I got plenty of nothin' '' --- that the region of the universe to which they have access lacks any
+stars, neutrinos, or clouds of dust. The observer aboard the ship must describe the gravitational field
+he detects as arising from some source very far away, perhaps a hypothetical vast sheet of lead lying
+billions of light-years aft of the ship's deckplates. Such a hypothesis is fine, but it is unrelated to
+the structure of our hoped-for field equation, which is to be \emph{local} in nature.
+
+Not only does the metric tensor not represent the gravitational field, but no tensor can represent it.
+By the equivalence principle, any gravitational field seen by observer A can be eliminated
+by switching to the frame of a free-falling observer B who is instantaneously at rest with respect to
+A at a certain time. The structure of the tensor transformation law guarantees that A and B
+will agree on measurements of any tensor at the point in spacetime where they pass by one
+another. Since they agree on all tensors, and disagree on the gravitational field, the gravitational
+field cannot be a tensor.
+
+We therefore conclude
+that a nonzero intrinsic curvature of the type
+that is to be included in the Einstein field equations is not encoded in any simple way in the metric or
+its first derivatives. Since neither $g$ nor its first derivatives indicate curvature, we can reasonably
+conjecture that the curvature might be encoded in its second derivatives.
+
+<% begin_sec("Tidal curvature versus curvature caused by local sources") %>\label{sec:tidal-versus-sources}
+<% marg(0) %>
+<%
+  fig(
+    'comet',
+    %q{Tidal forces disrupt comet Shoemaker-Levy.}
+  )
+%>
+<% end_marg %>
+
+A further complication is the need to distinguish tidal curvature from curvature caused by local sources.
+Figure \figref{comet} shows Comet Shoemaker-Levy, broken up into a string of fragments by Jupiter's tidal forces shortly
+before its spectacular impact with the planet in 1994. Immediately after each fracture,
+the newly separated chunks had almost zero velocity relative to one another, so once the comet finished
+breaking up, the fragments' world-lines were a sheaf of nearly
+parallel lines separated by spatial distances of only $~1$ km. These initially parallel geodesics
+then diverged, eventually fanning out to span millions of kilometers.
+
+If initially parallel lines
+lose their parallelism, that is clearly an indication of intrinsic curvature. We call it a measure of \emph{sectional
+curvature}, because the loss of parallelism occurs within a particular plane, in this case the
+$(t,x)$ plane represented by figure \figref{sectional-curvature}.
+<% marg(0) %>
+<%
+  fig(
+    'sectional-curvature',
+    %q{Tidal forces cause the initially parallel world-lines of the fragments to diverge. The spacetime occupied by the
+           comet has intinsic curvature, but it is not caused by any local mass; it is caused by the distant mass of Jupiter.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'high-and-low-tides',
+    %q{The moon's gravitational field causes the Earth's oceans to be distorted into an ellipsoid. The sign of the sectional
+           curvature is negative in the $x-t$ plane, but positive in the $y-t$ plane.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'earth-ricci-curvature',
+    %q{A cloud of test masses is released at rest in a spherical shell around the earth, shown here as a circle because
+           the $z$ axis is omitted. The volume of the shell contracts over time, which demonstrates that the local curvature
+           of spacetime is generated by a local source --- the earth --- rather than some distant one.}
+  )
+%>
+<% end_marg %>
+
+But this curvature was not caused by a local source lurking in among the fragments, it was caused by a distant source:
+Jupiter. We therefore see that the mere presence of sectional curvature is not enough to demonstrate the
+existence of local sources. Even the sign of the sectional curvature is not a reliable indication. Although
+this example showed a divergence of initially parallel geodesics, referred to as a negative curvature,
+it is also possible for tidal forces exerted by distant masses to create positive curvature. For example, the ocean
+tides on earth oscillate both above and below mean sea level, \figref{high-and-low-tides}.
+
+As an example that really would indicate the presence of a local source, we could release a cloud of test masses
+at rest in a spherical shell around the earth, and allow them to drop, \figref{earth-ricci-curvature}. We would then have positive and equal sectional
+curvature in the $t-x$, $t-y$, and $t-z$ planes. Such an observation cannot be due to a distant mass.
+It demonstrates an over-all contraction of the volume of an initially parallel sheaf of geodesics, which
+can never be induced by tidal forces. The earth's oceans, for example, do not change their total volume due to
+the tides, and this would be true even if the oceans were a gas rather than an incompressible fluid. It is a unique
+property of  $1/r^2$ forces such as gravity that they conserve volume in this way; this is essentially a restatement
+of Gauss's law in a vacuum.
+
+<% end_sec %>
+
+<% begin_sec("The energy-momentum tensor") %>\label{sec:energy-momentum-tensor}
+
+In general, the curvature of spacetime will contain contributions from both tidal forces and local sources, superimposed
+on one another. To develop the right formulation for the Einstein field equations, we need to eliminate the tidal
+part. Roughly speaking, we will do this by averaging the sectional curvature over all three of the planes
+$t-x$, $t-y$, and $t-z$, giving a measure of curvature called the Ricci curvature.\index{Ricci curvature}
+The ``roughly speaking'' is because such a prescription would treat the time
+and space coordinates in an extremely asymmetric manner, which would violate local Lorentz invariance.
+
+To get an idea of how this would work, let's compare with the Newtonian case, where there really is an asymmetry
+between the treatment of time and space. In the Cartan curved-spacetime theory of Newtonian gravity
+(page \pageref{cartan-newtonian}),\index{Cartan!curved-spacetime theory of Newtonian gravity}
+the field equation has a kind of scalar Ricci curvature on one side, and on the other side is the density of mass, which is also a scalar.
+In relativity, however, the source term in the equation clearly cannot be the scalar mass density.
+We know that mass and energy are equivalent in relativity, so for example the curvature of spacetime
+around the earth depends not just on the mass of its atoms but also on all the other forms of energy
+it contains, such as thermal energy and electromagnetic and nuclear binding energy. Can the source
+term in the Einstein field equations therefore be the mass-energy $E$? No, because $E$ is merely the
+timelike component of a particle's momentum four-vector. To single it out would violate Lorentz invariance
+just as much as an asymmetric treatment of time and space in constructing a Ricci measure of curvature.
+To get a properly Lorentz invariant theory, we need to find a way to formulate everything in terms of tensor
+equations that make no explicit reference to coordinates. The proper generalization of the Newtonian
+mass density in relativity is the energy-momentum tensor $T^{ij}$\index{energy-momentum tensor}
+(also known as the stress-energy tensor),\index{stress-energy tensor}
+whose 16 elements measure the local density of mass-energy and momentum, and also the rate of transport of
+these quantities in various directions.
+If we happen to be able to find a frame of reference in which the local matter is
+all at rest, then $T^{00}$ represents the mass density.
+
+For the purposes of the present discussion,
+it's not necessary to introduce the explicit definition of $T$; the point is merely that we should expect the
+Einstein field equations to be tensor equations, which tells us that the definition of curvature we're
+seeking clearly has to be a rank-2 tensor, not a scalar.
+The implications in four-dimensional spacetime are fairly complex.
+We'll end up with a rank-4 tensor that measures the sectional curvature, and a rank-2 Ricci tensor derived
+from it that averages away the tidal effects. The Einstein field equations then relate the Ricci tensor to the energy-momentum
+tensor in a certain way. The energy-momentum tensor is discussed further in section \ref{sec:more-energy-mom-tensor}
+on page \pageref{sec:more-energy-mom-tensor}.
+
+<% end_sec %>
+
+<% begin_sec("Curvature in two spacelike dimensions") %>
+Since the curvature tensors in 3+1 dimensions are complicated, let's start by considering lower dimensions.
+In one dimension, \figref{no-intrinsic-curvature-in-one-dim}, there is no such thing as intrinsic curvature. This is because curvature describes the
+failure of parallelism to behave as in E5, but there is no notion of parallelism in one dimension.
+<% marg(120) %>
+<%
+  fig(
+    'no-intrinsic-curvature-in-one-dim',
+    %q{This curve has no intrinsic curvature.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'heliotrope',
+    %q{A surveyor on a mountaintop uses a heliotrope.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'triangulation-survey',
+    %q{A map of a triangulation survey such as the one Gauss carried out. By measuring the interior angles of the triangles, one can determine not
+            just the two-dimensional projection of the grid but its complete three-dimensional
+            form, including both the curvature of the earth (note the curvature of the lines of latitude) and the height of features above and below sea level. }
+  )
+%>
+<% end_marg %>
+
+The lowest interesting dimension is therefore two, and this case was studied by Carl Friedrich Gauss in the
+ealy nineteenth century. Gauss ran a geodesic survey of the state of Hanover, inventing an optical surveying
+instrument called a heliotrope that in effect was used to cover the Earth's surface with a triangular
+mesh of light rays. If one of the mesh points lies, for example, at the peak of a mountain,
+then the sum $\Sigma\theta$ of the angles of the vertices meeting at that point will be less than $2\pi$, in contradiction
+to Euclid. Although the light rays do travel through the air above the dirt, we can think of them as approximations
+to geodesics painted directly on the dirt, which would be intrinsic rather than extrinsic.
+The angular defect around a vertex now vanishes, because the space is locally Euclidean, but
+we now pick up a different kind of angular defect,
+which is that the interior angles of a triangle no longer add up to the Euclidean value
+of $\pi$.
+<% marg(-5) %>
+<%
+  fig(
+    'soccer-ball',
+    %q{Example \ref{eg:soccer-ball}.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{A polygonal survey of a soccer ball}\label{eg:soccer-ball}
+% -------- see soccer.pl for calculation of angles
+Figure \figref{soccer-ball} applies similar ideas to a soccer ball, the only difference being the use of pentagons and hexagons rather than triangles.
+
+         In \subfigref{soccer-ball}{1}, the survey is extrinsic, because the lines pass below the surface of the sphere.
+         The curvature is detectable because the angles at each vertex add up to $120+120+110=350$ degrees, giving an angular defect of 10 degrees.
+
+In \subfigref{soccer-ball}{2}, the lines have been projected to form arcs of great circles on the surface of the sphere.
+         Because the space is locally Euclidean, the sum of the angles at a vertex has its Euclidean value of 360 degrees. The curvature can be
+         detected, however, because the sum of the internal angles of a polygon is greater than the Euclidean value. For example, each spherical hexagon
+         gives a sum of $6\times 124.31$ degrees, rather than the Euclidean $6\times120$. The angular defect of $6\times4.31$ degrees is an intrinsic measure of curvature.
+\end{eg}
+<% marg(-5) %>
+<%
+  fig(
+    'octant',
+    %q{Example \ref{eg:octant}.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Angular defect on the earth's surface}\label{eg:octant}
+Divide the Earth's northern hemisphere into four octants, with their boundaries running through the north pole.
+These octants have sides that are geodesics, so they are equilateral triangles. Assuming Euclidean
+geometry, the interior angles of an equilateral triangle are each equal to 60 degrees, and, as with any triangle,
+they add up to 180 degrees. The octant-triangle in figure \figref{octant} has angles that are each 90 degrees,
+and the sum is 270. This shows that the
+Earth's surface has intrinsic curvature.
+
+This example suggests another way of measuring intrinsic curvature, in terms of the ratio $C/r$ of the circumference of
+a circle to its radius. In Euclidean geometry, this ratio equals $2\pi$. Let $\rho$ be the radius of the Earth,
+and consider the equator to be a circle centered on the north pole, so that its radius is the length of one of the
+sides of the triangle in figure \figref{octant}, $r=(\pi/2)\rho$.
+(Don't confuse $r$, which is intrinsic, with $\rho$, the radius of the sphere, which is extrinsic
+and not equal to $r$.) Then the ratio $C/r$ is equal to 4, which is smaller than the Euclidean value of $2\pi$.
+\end{eg}
+
+Let $\epsilon=\Sigma\theta-\pi$ be the angular defect of a triangle, and for concreteness let the triangle be in a
+space with an elliptic geometry, so that it has constant curvature and can be modeled as a sphere of radius $\rho$,
+with antipodal points identified.
+
+Self-check: In elliptic geometry, what is the minimum possible value of the quantity $C/r$ discussed in example
+\ref{eg:octant}? How does this differ from the case of spherical geometry?
+
+We want a measure of curvature that is local, but if our space is locally flat, we must have $\epsilon\rightarrow0$ as the size of the triangles
+approaches zero. This is why Euclidean geometry is a good approximation for small-scale maps of the earth.
+The discrete nature of the triangular mesh is just an artifact of the definition, so
+we want a measure of curvature that, unlike $\epsilon$, approaches some finite limit as the scale of
+the triangles approaches zero. Should we expect this scaling to go as $\epsilon\propto \rho$? $\rho^2$?
+Let's determine the scaling. First we prove a classic lemma by Gauss,
+concerning a slightly different version of the angular defect, for a single triangle.
+
+Theorem: In elliptic geometry, the angular defect $\epsilon=\alpha+\beta+\gamma-\pi$
+of a triangle is proportional to its area $A$.\\
+Proof: By axiom E2, extend each side of the triangle to form a line, figure \subfigref{elliptic-geom-triangle-area-proof}{1}.
+Each pair of lines crosses at only one point (E1)
+and divides the plane into two lunes with its two vertices touching at this point, figure \subfigref{elliptic-geom-triangle-area-proof}{2}. The two interior angles
+at the vertex are the same (Euclid I.15).
+The area of a lune is proportional to its interior angle, as follows from dissection into narrower lunes;
+since a lune with an interior angle of $\pi$ covers the entire area $P$ of the plane, the constant
+of proportionality is $P/\pi$.
+The sum of the areas of our three lunes is $(P/\pi)(\alpha+\beta+\gamma)$, but these three areas also cover the entire plane,
+overlapping three times on the given triangle, and therefore their sum also equals $P+2A$.
+Equating the two expressions leads to the desired result.
+<% marg(63) %>
+<%
+  fig(
+    'elliptic-geom-triangle-area-proof',
+    %q{Proof that the angular defect of a triangle in elliptic geometry is proportional to its area. Each white
+            circle represents the entire elliptic plane. The dashed line at the edge is not really a boundary;
+            lines that go off the edge simply wrap back around. In the spherical model, the white circle corresponds
+            to one hemisphere, which is identified with the opposite hemisphere.}
+  )
+%>
+<% end_marg %>
+
+This calculation was purely intrinsic, because it made no use of any model or coordinates. We can therefore
+construct a measure of curvature that we can be assured is intrinsic, $K=\epsilon/A$. This
+is called the Gaussian curvature,\index{Gaussian curvature} and in elliptic geometry it is
+constant rather than varying from point to point. In the model on a sphere of radius $\rho$, we have
+$K=1/\rho^2$.
+
+Self-check: Verify the equation $K=1/\rho^2$ by considering a triangle covering one octant of the sphere,
+as in example \ref{eg:octant}.
+
+It is useful to introduce \emph{normal coordinates},\index{normal coordinates}
+defined as follows. Through point O, construct perpendicular geodesics, and define affine coordinates $x$ and $y$ along
+these. For any point P off the axis, define coordinates by constructing the lines through
+P that cross the axes perpendicularly. For P in a sufficiently small neighborhood of O, these lines exist
+and are uniquely determined. Gaussian polar coordinates can be defined in a similar way.
+<% marg(20) %>
+<%
+  fig(
+    'gaussian-coords-on-sphere',
+    %q{Gaussian normal coordinates on a sphere.}
+  )
+%>
+<% end_marg %>
+
+Here are two useful interpretations of $K$.\label{interpret-gaussian-curvature}
+
+1. The Gaussian curvature measures the failure of parallelism in the following sense. Let line $\ell$
+be constructed so that it crosses the normal $y$ axis at $(0,\der y)$ at an angle that differs from
+perpendicular by the infinitesimal amount $\der\alpha$ (figure \figref{curvature-as-failure-of-parallelism}).
+Construct the line $x'=\der x$, and let $\der\alpha'$ be the angle its perpendicular forms with $\ell$.
+Then\footnote{Proof: Since any two lines cross in elliptic geometry,
+$\ell$ crosses the $x$ axis. The corollary then follows by application of the definition of
+the Gaussian curvature to the right triangles formed by $\ell$, the $x$ axis, and the lines at $x=0$ and $x=\der x$,
+so that $K=\der\epsilon/\der A=\der^2\alpha/\der x\der y$, where third powers of infinitesimals have been discarded.}
+the Gaussian curvature at O is
+\begin{equation*}
+  K=\frac{\der^2\alpha}{\der x\der y} \qquad ,
+\end{equation*}
+where $\der^2\alpha=\der\alpha'-\der\alpha$.
+<% marg(63) %>
+<%
+  fig(
+    'curvature-as-failure-of-parallelism',
+    %q{1. Gaussian curvature can be interpreted as the failure of parallelism represented by $\der^2\alpha/\der x\der y$.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'curvature-as-ray-bundle',
+    %q{2. Gaussian curvature as $L \ne r\theta$.}
+  )
+%>
+<% end_marg %>
+
+2. From a point P, emit a fan of rays at angles filling a certain range $\theta$ of angles in Gaussian polar coordinates (figure \figref{curvature-as-ray-bundle}).
+Let the arc length of this fan at $r$ be $L$, which may not be equal to its Euclidean value $L_E=r\theta$.
+Then\footnote{In the spherical model, $L=\rho\theta\sin u$, where $u$ is the angle subtended at the center of
+the sphere by an arc of length $r$. We then have $L/L_E=\sin u/u$, whose second derivative with respect to $u$ is
+$-1/3$. Since $r=\rho u$, the second derivative of the same quantity with respect to $r$ equals $-1/3\rho^2=-K/3$.}
+\begin{equation*}
+  K=-3\frac{\der^2}{\der r^2} \left(\frac{L}{L_e}\right) \qquad .
+\end{equation*}
+
+Let's now generalize beyond elliptic geometry. Consider a space modeled by a surface embedded in three dimensions, with
+geodesics defined as curves of extremal length, i.e., the curves made by a piece of string stretched taut across the surface. At a particular
+point P, we can always pick a coordinate system $(x,y,z)$ such that the surface
+$z=\frac{1}{2}k_1x^2+\frac{1}{2}k_2y^2$ locally approximates the surface to the level of precision needed
+in order to discuss curvature. The surface is either paraboloidal or hyperboloidal (a saddle), depending on the signs of
+$k_1$ and $k_2$. We might naively think that $k_1$ and $k_2$ could be
+independently determined by intrinsic measurements, but as we've seen in example \ref{eg:extrinsic-curvature} on
+page \pageref{eg:extrinsic-curvature}, a cylinder is locally indistinguishable from a Euclidean plane,
+so if one $k$ is zero, the other $k$ clearly cannot be determined. In fact all that can be measured is the Gaussian
+curvature, which equals the product $k_1k_2$. To see why this should be true, first consider that any measure of curvature
+has units of inverse distance squared, and the $k$'s have units of inverse distance. The only possible intrinsic measures of
+curvature based on the $k$'s are therefore $k_1^2+k_2^2$ and $k_1k_2$. (We can't have, for example, just $k_1^2$, because
+that would change under an extrinsic rotation about the $z$ axis.) Only $k_1k_2$ vanishes on a cylinder, so it is the
+only possible intrinsic curvature.
+
+\begin{eg}{Eating pizza}
+When people eat pizza by folding the slice lengthwise, they are taking advantage of the intrinsic
+nature of the Gaussian curvature. Once $k_1$ is fixed to a nonzero value, $k_2$ can't change without varying $K$,
+so the slice can't droop.
+\end{eg}
+
+\begin{eg}{Elliptic and hyperbolic geometry}
+We've seen that figures behaving according to the axioms of elliptic geometry can be modeled on
+part of a sphere, which is a surface of constant $K>0$. The model can be made into global one satisfying
+all the axioms if the appropriate
+topological properties are ensured by identifying antipodal points. A paraboloidal surface
+$z=k_1x^2+k_2y^2$ can be a good local approximation to a sphere, but for points far from its
+apex, $K$ varies significantly. Elliptic geometry has no parallels; all lines meet if extended far
+enough.
+<% marg(60) %>
+<%
+  fig(
+    'saddle',
+    %q{A triangle in a space with negative curvature has angles that add to less than $\pi$.}
+  )
+%>
+<% end_marg %>
+
+A space of constant negative curvature has a geometry 
+called hyperbolic,\index{geometry!hyperbolic}\index{hyperbolic geometry}
+and is of some interest because it appears to be the one that describes the the spatial dimensions
+of our universe on a cosmological scale.
+A hyperboloidal surface works locally as a model, but its curvature is only approximately
+constant; the surface of constant curvature is a horn-shaped one created by revolving a mountain-shaped curve
+called a tractrix
+about its axis. The tractrix of revolution is not as satisfactory a model as the sphere is for elliptic
+geometry, because lines are cut off at the cusp of the horn. Hyperbolic geometry is richer
+in parallels than Euclidean geometry; given a line $\ell$ and a point P not on $\ell$, there are
+infinitely many lines through P that do not pass through $\ell$.
+\end{eg}
+
+\begin{eg}{A flea on a football}\label{eg:flea-on-football}
+We might imagine that a flea on the surface of an American football could determine by
+intrinsic, local measurements which direction to go in order to get to the nearest tip.
+This is impossible, because the flea would have to determine a vector, and curvature cannot
+be a vector, since $z=\frac{1}{2}k_1x^2+\frac{1}{2}k_2y^2$ is invariant under the parity inversion
+$x \rightarrow -x$, $y \rightarrow -y$. For similar reasons, a measure of curvature can never have
+odd rank.
+<% marg(35) %>
+<%
+  fig(
+    'flea-on-football',
+    %q{A flea on the football cannot orient himself by intrinsic, local measurements.}
+  )
+%>
+<% end_marg %>
+
+Without violating reflection symmetry, it is still conceivable that the flea could determine
+the orientation of the tip-to-tip line running through his position.
+Surprisingly, even this is impossible. The flea can only measure the single number $K$, which carries
+no information about directions in space.
+\end{eg}
+
+<% end_sec %>
+
+<% begin_sec("Curvature tensors") %>
+The example of the flea suggests that if we want to express curvature as a tensor, it should have
+even rank. Also, in a coordinate system in which the coordinates have units of distance (they are not
+angles, for instance, as in spherical coordinates), we expect that the units of curvature will always
+be inverse distance squared. More elegantly, we expect that under a uniform rescaling of coordinates
+by a factor of $\mu$, a curvature tensor should scale down by $\mu^{-2}$.
+
+Combining these two facts, we find that a curvature tensor should have one
+of the forms $R_{ab}$, $R\indices{^a_{bcd}}$, \ldots, i.e., the number of lower indices should be two greater than
+the number of upper indices. The following definition has this property, and is equivalent
+to the earlier definitions of the Gaussian curvature that were not written in tensor notation.
+
+Definition of the Riemann curvature tensor:\label{riemann-curvature-tensor}
+Let $\der p^c$ and $\der q^d$ be two infinitesimal vectors, and use them to form
+a quadrilateral that is a good approximation to a parallelogran.\footnote{Section \ref{sec:torsion} discusses the sense in which this approximation is good enough.}
+Parallel-transport vector $v^b$ all the way around the parallelogram. When it
+comes back to its starting place, it has a new value $v^b \rightarrow v^b+\der v^b$. Then
+the Riemann curvature tensor is defined as the tensor that computes $\der v^a$ according to $\der v^a=R\indices{^a_{bcd}}v^b\der p^c\der q^d$.
+(There is no standardization in the literature of the order of the indices.)\index{Riemann tensor!defined}
+<% marg(35) %>
+<%
+  fig(
+    'riemann-tensor-definition',
+    %q{The definition of the Riemann tensor. The vector $v^b$ changes by $\der v^b$ when parallel-transported around the approximate parallelogram.
+       ($v^b$ is drawn on a scale that makes its length comparable to the infinitesimals $\der p^c$, $\der q^d$, and $\der v^b$; in reality,
+       its size would be greater than theirs by an infinite factor.)}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{A symmetry of the Riemann tensor}
+If vectors $\der p^c$ and $\der q^d$ lie along the same line, then $\der v^a$ must vanish, and interchanging
+$\der p^c$ and $\der q^d$ simply reverses the direction of the circuit around the quadrilateral,
+giving $\der v^a \rightarrow -\der v^a$. This shows that $R\indices{^a_{bcd}}$
+must be antisymmetric under interchange of the indices $c$ and $d$, $R\indices{^a_{bcd}}=-R\indices{^a_{bdc}}$.
+\end{eg}
+
+In local normal coordinates, the interpretation of the Riemann tensor becomes particularly
+transparent. The constant-coordinate lines are geodesics, so when the vector $v^b$ is transported along
+them, it maintains a constant angle with respect to them. Any rotation of the vector after it is brought
+around the perimeter of the quadrilateral can therefore be attributed to something that happens at the
+vertices. In other words, it is simply a measure of the angular defect. We can therefore see that the
+Riemann tensor is really just a tensorial way of writing the Gaussian curvature $K=\der\epsilon/\der A$.
+
+In  normal coordinates, the local geometry is nearly Cartesian, and
+when we take the product of two vectors in an antisymmetric manner, we are essentially measuring the
+area of the parallelogram they span, as in the three-dimensional vector cross product. We can therefore
+see that the Riemann tensor tells us something about the amount of curvature contained within the
+infinitesimal area spanned by $\der p^c$ and $\der q^d$. A finite two-dimensional region can be broken
+down into infinitesimal elements of area, and the Riemann tensor integrated over them. The result is
+equal to the finite change $\Delta v^b$ in a vector transported around the whole boundary of the region.
+
+\begin{eg}{Curvature tensors on a sphere}
+Let's find the curvature tensors on a sphere of radius $\rho$.
+
+Construct normal coordinates $(x,y)$ with origin O, and let vectors  $\der p^c$ and $\der q^d$
+represent infinitesimal displacements along $x$ and $y$, forming a quadrilateral as described above.
+Then $R\indices{^x_{yxy}}$ represents the change in the
+$x$ direction that occurs in a vector that is initially in the $y$ direction. If the vector has unit magnitude,
+then $R\indices{^x_{yxy}}$ equals the angular deficit of the quadrilateral. Comparing with the definition of the
+Gaussian curvature, we find $R\indices{^x_{yxy}}=K=1/\rho^2$. Interchanging $x$ and $y$, we find the same result for
+$R\indices{^y_{xyx}}$. Thus although the Riemann tensor in two dimensions has sixteen components, only these two are
+nonzero, and they are equal to each other.
+
+This result represents the defect in parallel transport around a closed loop per unit area. Suppose we parallel-transport
+a vector around an octant, as shown in figure \figref{riemann-octant}. The area of the octant is $(\pi/2)\rho^2$, and
+multiplying it by the Riemann tensor, we find that the defect in parallel transport is $\pi/2$, i.e., a
+right angle, as is also evident from the figure.
+<% marg(35) %>
+<%
+  fig(
+    'riemann-octant',
+    %q{The change in the vector due to parallel transport around the octant equals the integral of the Riemann tensor over the interior.}
+  )
+%>
+<% end_marg %>
+
+The above treatment may be somewhat misleading in that it may lead you to believe that
+there is a single coordinate system in which the Riemann tensor is always constant. This is not the
+case, since the calculation of the Riemann tensor was only valid near the origin O of the normal
+coordinates. The character of these coordinates becomes quite complicated far from O; we end up with
+all our constant-$x$ lines converging at north and south poles of the sphere, and all the
+constant-$y$ lines at east and west poles.
+
+Angular coordinates $(\phi,\theta)$ are more suitable as a large-scale description of the sphere.
+We can use the tensor transformation law to find the Riemann tensor in these coordinates.
+If O, the origin of the $(x,y)$ coordinates, is at coordinates $(\phi,\theta)$, then
+$\der x/\der \phi=\rho\sin\theta$ and $\der y/\der \theta=\rho$. The result
+is $R\indices{^\phi_{\theta\phi\theta}}=R\indices{^x_{yxy}}(\der y/\der \theta)^2=1$
+and $R\indices{^\theta_{\phi\theta\phi}}=R\indices{^y_{xyx}}(\der x/\der \phi)^2=\sin^2\theta$.
+The variation in $R\indices{^\theta_{\phi\theta\phi}}$ is not due to any variation in the sphere's
+intrinsic curvature; it represents the behavior of the coordinate system.
+
+% The sin^2 theta result matches up with 
+% Carroll, http://nedwww.ipac.caltech.edu/level5/March01/Carroll3/Carroll3.html , at
+% "Let's compute a promising component of the Riemann tensor."
+% Not as certain of the other one.
+\end{eg}
+
+The Riemann tensor only measures curvature within a particular plane, the one defined by $\der p^c$ and $\der q^d$,
+so it is a kind of sectional curvature. Since we're currently working in two dimensions, however, there is only
+one plane, and no real distinction between sectional curvature and Ricci curvature, which is the average of the
+sectional curvature over all planes that include $\der q^d$: $R_{cd}=R\indices{^a_{cad}}$.\index{Ricci curvature!defined}
+The Ricci curvature in two spacelike dimensions, expressed in normal coordinates,
+is simply the diagonal matrix $\zu{diag}(K,K)$.
+
+<% end_sec %>
+<% begin_sec("Some order-of-magnitude estimates") %>\label{sec:estimates}
+As a general proposition, calculating an order-of-magnitude estimate of a physical effect
+requires an understanding of 50\% of the physics, while an exact calculation requires about 75\%.\footnote{This
+statement is itself only a rough estimate. Anyone who has taught physics knows that students will often
+calculate an effect exactly while not understanding the underlying physics at all.}
+We've reached the point where it's reasonable to attempt a variety of order-of-magnitude estimates.
+<% begin_sec("The geodetic effect") %>\label{sec:geodetic-effect-estimate}\index{geodetic effect}
+
+How could we confirm experimentally that parallel transport around a closed path can cause a vector to rotate?
+The rotation is related to the amount of spacetime curvature contained within the path, so it would make sense
+to choose a loop going around a gravitating body. The rotation is a purely relativistic effect, so we expect it
+to be small. To make it easier to detect, we should go around the loop many times, causing the effect to
+accumulate. This is essentially a description of a body orbiting another body. A gyroscope aboard the
+orbiting body is expected to precess. This is known as the geodetic effect. In 1916, shortly after Einstein
+published the general theory of relativity, Willem de Sitter calculated the effect on the earth-moon system.
+The effect was not directly verified until the 1980's, and the first high-precision measurement was
+in 2007, from analysis of the results collected by the Gravity Probe B\index{Gravity Probe B!geodetic effect estimated}
+satellite experiment.  The probe carried four gyroscopes made of quartz, which were the most perfect spheres
+ever manufactured, varying from sphericity by no more than about 40 atoms.
+<% marg(20) %>
+<%
+  fig(
+    'gravity-probe-b-geodetic',
+    %q{The geodetic effect as measured by Gravity Probe B.}
+  )
+%>
+<% end_marg %>
+
+Let's estimate the size of the effect. The first derivative of the metric is, roughly, the gravitational field,
+whereas the second derivative has to do with curvature. The curvature of spacetime around the earth should
+therefore vary as $GMr^{-3}$, where $M$ is the earth's mass and $G$ is the gravitational constant.
+The area enclosed by a circular orbit is proportional to $r^2$, so we expect the
+geodetic effect to vary as $nGM/r$, where $n$ is the number of orbits.
+The angle of precession is unitless, and the only way to make this result unitless is to put
+in a factor of $1/c^2$. In units with $c=1$, this factor is unnecessary. In ordinary metric units,
+the $1/c^2$ makes sense, because it causes the purely relativistic effect to come out to be small.
+The result, up to unitless factors that we didn't pretend to find, is
+\begin{equation*}
+  \Delta \theta \sim \frac{nGM}{c^2r} \qquad .
+\end{equation*}
+There is also a Thomas precession.\index{Thomas precession} Like the spacetime curvature effect, it is proportional to $nGM/c^2r$.
+Since we're not worrying about unitless factors, we can just lump the Thomas precession together with the
+effect already calculated.
+
+The data for Gravity Probe B are $r=r_e+(650\ \zu{km})$ and $n \approx 5000$ (orbiting once every
+90 minutes for the 353-day duration of the experiment), giving $\Delta\theta \sim 3\times10^{-6}$ radians.
+Figure \figref{gravity-probe-b-geodetic-graphs} shows the actual results\footnote{\url{ http://einstein.stanford.edu/content/final_report/GPB_Final_NASA_Report-020509-web.pdf}}
+the four gyroscopes aboard the probe.
+The precession was about 6 arc-seconds, or $3\times10^{-5}$ radians. Our crude estimate was
+on the right order of magnitude. The missing unitless factor on the right-hand side of the
+equation above is $3\pi$, which brings the two results into fairly close quantitative agreement.
+The full derivation, including the factor of $3\pi$, is given on page \pageref{sec:geodetic-effect-exact}.
+<%
+  fig(
+    'gravity-probe-b-geodetic-graphs',
+    %q{%
+      Precession angle as a function of time as measured by the four gyroscopes aboard Gravity Probe B.
+    },
+    {
+      'width'=>'fullpage'
+    }
+  )
+%>
+
+
+% 353 days from 2004 aug 27 (start of science phase) to 2005 aug 15 (end of science phase).
+% > G=6.67 10^-11 m3/kg.s2
+% > M=5.97 10^24 kg
+% > re=6.38 10^3 km
+% > r=re+(650 km)
+% > T=sqrt[(4pi^2r^3)/(GM)]
+% > T/(24*3600)
+% period = 0.06792 days (about right for LEO, which is about 90 min); so n=5000
+% Comparing equation on p. 10 of http://einstein.stanford.edu/content/final_report/GPB_Final_NASA_Report-020509-web.pdf
+% to my expression gives k=3pi for the missing unitless factor on the rhs of my expression.
+
+<% end_sec %> % geodetic effect
+<% begin_sec("Deflection of light rays") %>\label{sec:eddington}\index{light!deflection by sun}\index{deflection of light}
+In the discussion of the momentum four vector in section \ref{sec:momentum-four-vector}, we
+saw that due to the equivalence principle, light must
+be affected by gravity. There are two ways in which such an effect could occur. Light can gain and
+lose momentum as it travels up and down in a gravitational field, or its momentum vector can be
+deflected by a transverse gravitational field. As an example of the latter, a
+ray of starlight can be deflected by the sun's gravity, causing the star's apparent position in the sky
+to be shifted. The detection of this effect
+was one of the first experimental tests of general relativity. Ordinarily the bright light
+from the sun would make it impossible to accurately measure a star's location on the celestial sphere,
+but this problem was sidestepped by Arthur Eddington\index{Eddington} during an eclipse of the sun in 1919.
+<%
+  fig(
+    'eclipse',
+    %q{%
+      One of the photos from Eddington's observations of the 1919 eclipse. This
+      is a photographic negative, so the circle that appears bright is actually the dark face of the moon, and the dark area is really the bright corona
+      of the sun. The stars, marked by lines above and below them, appeared at positions slightly
+      different than their normal ones, indicating that their light had been bent by the sun's gravity on its way to our planet.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'sidepos'=>'b'
+    }
+  )
+%>
+
+Let's estimate the size of this effect.
+We've already seen that the
+Riemann tensor is essentially just a tensorial way of writing the Gaussian curvature $K=\der\epsilon/\der A$.
+Suppose, for the sake of this rough estimate, that the sun, earth, and star form a non-Euclidean triangle with
+a right angle at the sun. Then the angular deflection is the same as the angular defect $\epsilon$ of this triangle,
+and equals the integral of the curvature over the interior of the triangle. Ignoring unitless constants, this
+ends up being exactly the same calculation as in section \ref{sec:geodetic-effect-estimate}, and the result
+is $\epsilon\sim GM/c^2r$, where $r$ is the light ray's distance of closest approach to the sun. The value of $r$
+can't be less than the radius of the sun, so the maximum size of the effect is on the order of $GM/c^2r$, where
+$M$ is the sun's mass, and $r$ is its radius. We find $\epsilon\sim10^{-5}$ radians, or about a second of arc.
+To measure a star's position to within an arc second was well within the state of the art in 1919, under good conditions
+in a comfortable observatory. This observation, however, required that Eddington's team travel to the island of
+Principe, off the coast of West Africa. The weather was cloudy, and only during the last 10 seconds of the
+seven-minute eclipse did the sky clear enough to allow photographic plates to be taken of the Hyades star cluster
+against the background of the eclipse-darkened sky. The observed deflection was 1.6 seconds of arc, in agreement
+with the relativistic prediction. The relativistic prediction is derived on page \pageref{sec:deflection-of-light}.
+
+<% end_sec %> % Deflection of light rays
+<% end_sec %> % order-of-mag estimates
+
+<% begin_sec("The covariant derivative") %>\label{sec:covariant-derivative}
+
+In the preceding section we were able to estimate a nontrivial general relativistic effect,
+the geodetic precession of the gyroscopes aboard Gravity Probe B, up to a unitless constant $3\pi$.
+Let's think about what additional machinery would be needed in order to carry out the calculation in
+detail, including the $3\pi$.
+
+First we would need to know the Einstein field equation, but in a vacuum
+this is fairly straightforward: $R_{ab}=0$. Einstein posited this equation based essentially on the
+considerations laid out in section \ref{sec:tidal-versus-sources}.
+
+But just knowing that a certain tensor vanishes identically in the space surrounding the earth clearly
+doesn't tell us anything explicit about the structure of the spacetime in that region. We want
+to know the metric. As suggested at the beginning of the chapter, we expect that the first derivatives
+of the metric will give a quantity analogous to the gravitational field of Newtonian mechanics,
+but this quantity will not be directly observable, and will not be a tensor. The second derivatives
+of the metric are the ones that we expect to relate to the Ricci tensor $R_{ab}$.
+
+<% begin_sec("The covariant derivative in electromagnetism") %>\label{sec:covariant-derivative-in-em}\index{covariant derivative}\index{derivative!covariant}\index{covariant derivative!in electromagnetism}\index{derivative!covariant!in electromagnetism}
+We're talking blithely about derivatives, but it's not obvious how to
+define a derivative in the context of general relativity in such a way that taking a derivative
+results in well-behaved tensor.
+
+To see how this issue arises, let's retreat to the more familiar terrain of electromagnetism.\index{gauge transformation}
+In quantum mechanics, the phase of a charged particle's wavefunction is unobservable, so that
+for example the transformation $\Psi \rightarrow -\Psi$ does not change the results of experiments.
+As a less trivial example, we can redefine the ground of our electrical potential, $\Phi \rightarrow \Phi+\delta\Phi$,
+and this will add a constant onto the energy of every electron in the universe, causing their phases to oscillate
+at a greater rate due to the quantum-mechanical relation $E=hf$. There are no observable consequences, however, because what is observable is the phase
+of one electron relative to another, as in a double-slit intereference experiment. Since every electron
+has been made to oscillate faster, the effect is simply like letting the conductor of an orchestra wave
+her baton more quickly; every musician is still in step with every other musician.
+The rate of change of the wavefunction, i.e., its derivative, has some built-in ambiguity.
+<% marg(80) %>
+<%
+  fig(
+    'double-slit',
+    %q{A double-slit experiment with electrons. If we add an arbitrary constant to the potential,
+          no observable changes result. The wavelength is shortened, but the relative phase of
+          the two parts of the waves stays the same.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'varying-wavelength',
+    %q{Two wavefunctions with constant wavelengths, and a third with a varying wavelength. None of these are
+             physically distinguishable, provided that the same variation in wavelength is applied to all
+             electrons in the universe at any given point in spacetime. There is not even any unambiguous
+             way to pick out the third one as the one with a varying wavelength. We could choose a different
+             gauge in which the third wave was the only one with a \emph{constant} wavelength.}
+  )
+%>
+<% end_marg %>
+
+For simplicity, let's now restrict ourselves to spin-zero particles, since details of electrons' polarization
+clearly won't tell us anything useful when we make the analogy with relativity.
+For a spin-zero particle, the wavefunction is simply a complex number, and there are no observable
+consequences arising from the transformation
+$\Psi \rightarrow \Psi' = e^{i\alpha} \Psi$, where $\alpha$ is a constant.
+The transformation $\Phi \rightarrow \Phi-\delta\Phi$ is also allowed, and it gives
+$\alpha(t)=(q\delta\Phi/\hbar) t$, so that the phase factor $e^{i\alpha(t)}$
+is a function of time $t$. Now from the point of view of electromagnetism in the age of Maxwell,
+with the electric and magnetic fields imagined as playing their roles against a background of Euclidean
+space and absolute time, the form of this time-dependent phase factor is
+very special and symmetrical; it depends only on the absolute time variable. But to a relativist, there
+is nothing very nice about this function at all, because there is nothing special about a time coordinate.
+If we're going to allow a function of this form, then based on the coordinate-invariance of relativity,
+it seems that we should probably allow $\alpha$ to be any function at all of the 
+spacetime coordinates. The proper generalization of $\Phi \rightarrow \Phi-\delta\Phi$ is
+now $A_b \rightarrow A_b-\partial_b \alpha$, where $A_b$ is the electromagnetic potential four-vector
+(section \ref{sec:em-four-vector}, page \pageref{sec:em-four-vector}).
+
+Self-check: Suppose we said we would allow $\alpha$ to be a function of $t$, but forbid it to depend on
+the spatial coordinates. Prove that this would violate Lorentz invariance.
+
+The transformation has no effect on the electromagnetic fields, which are the direct observables.
+We can also verify that the change of gauge will have no effect on observable behavior of charged particles.
+This is because the phase of a wavefunction can only be determined relative to the phase of another
+particle's wavefunction, when they occupy the same point in space and, for example, interfere. Since the phase shift
+depends only on the location in spacetime, there is no change in the relative phase.
+
+But bad things will happen if we don't make a corresponding adjustment to the derivatives appearing in
+the Schr\"{o}dinger equation. These derivatives are essentially the momentum operators, and they give
+different results when applied to $\Psi'$ than when applied to $\Psi$:
+\begin{align*}
+  \partial_b \Psi & \rightarrow \partial_b \left(e^{i\alpha} \Psi\right) \\
+                &= e^{i\alpha} \partial_b \Psi + i\partial_b\alpha  \left(e^{i\alpha} \Psi\right) \\
+                &= \left(\partial_b + A'_b-A_b \right) \Psi'
+\end{align*}
+ To avoid getting incorrect
+results, we have to do the substitution $\partial_b \rightarrow \partial_b+ieA_b$, where the correction
+term compensates for the change of gauge. We call the operator $\nabla$ defined as
+\begin{equation*}
+  \nabla_b =  \partial_b+ieA_b
+\end{equation*}
+the \emph{covariant derivative}.\index{covariant derivatibe!in electromagnetism}
+It gives the right answer regardless of a change of gauge.
+
+<% end_sec %> % The covariant derivative in electromagnetism
+<% begin_sec("The covariant derivative in general relativity") %>\index{covariant derivative}\index{derivative!covariant}\index{covariant derivative!in relativity}\index{derivative!covariant!in relativity}
+
+Now consider how all of this plays out in the context of general relativity. The gauge transformations
+of general relativity are arbitrary smooth changes of coordinates. One of the most basic properties
+we could require of a derivative operator is that it must give zero on a constant function. A constant
+scalar function remains constant when expressed in a new coordinate system, but the same is not
+true for a constant vector function, or for any tensor of higher rank. This is because the change
+of coordinates changes the units in which the vector is measured, and if the change of coordinates
+is nonlinear, the units vary from point to point.
+<% marg(50) %>
+<%
+  fig(
+    'varying-ruler-spacing',
+    %q{These three rulers represent three choices of coordinates. As in figure \figref{varying-wavelength} on page \pageref{fig:varying-wavelength},
+         switching from one set of coordinates to another has no effect on any experimental observables. It is merely a choice of gauge.}
+  )
+%>
+<% end_marg %>
+
+Consider the one-dimensional case, in which a
+vector $v^a$ has only one component, and the metric is also a single number, so that we can omit the
+indices and simply write $v$ and $g$. (We just have to remember that $v$ is really a covariant vector,
+even though we're leaving out the upper index.)
+If $v$ is constant, its derivative $\der v/\der x$, computed in the ordinary way without any correction term, is zero.
+If we further assume that the coordinate $x$ is a normal coordinate, so that the metric is simply the constant $g=1$, then zero is
+not just the answer but the right answer. (The existence of a preferred, global set of normal coordinates is a special feature of
+a one-dimensional space, because there is no curvature in one dimension. In more than one dimension, there will typically be no possible set of coordinates in which the metric is constant,
+and normal coordinates only give a metric that is approximately constant in the neighborhood around a certain point.
+See figure \figref{gaussian-coords-on-sphere} pn page \pageref{fig:gaussian-coords-on-sphere} for an example
+of normal coordinates on a sphere, which do not have a constant metric.)
+
+Now suppose we transform into a new coordinate system $X$, which is not normal.
+The metric $G$, expressed in this coordinate system, is not constant.
+Applying the tensor
+transformation law, we have $V =  v \:\der X/\der x$, and differentiation
+with respect to $X$ will not give zero, because the factor $\der X/\der x$ isn't constant. This is the wrong answer:
+$V$ isn't really varying, it just appears to vary because $G$ does.
+
+We want to add a correction term onto the derivative operator $\der/\der X$, forming a
+covariant derivative operator $\nabla_X$
+that gives the right answer. This correction term is easy
+to find if we consider what the result ought to be when differentiating the metric itself.
+In general, if a tensor appears to vary, it could vary either because it really does vary
+or because the metric varies. If the metric \emph{itself} varies, it could be either because
+the metric really does vary or \ldots because the metric varies. In other words, there is
+no sensible way to assign a nonzero covariant derivative to the metric itself, so we must have
+$\nabla_X G=0$. The required correction therefore consists of replacing $\der/\der X$ with
+\begin{equation*}
+ \nabla_X=\frac{\der}{\der X}-G^{-1}\frac{\der G}{\der X} \qquad .
+\end{equation*}
+Applying this to $G$ gives zero.
+$G$ is a second-rank contravariant tensor. If we apply the same correction to the derivatives
+of other second-rank contravariant tensors, we will get nonzero results, and they will be the right
+nonzero results. For example, the covariant derivative of the stress-energy tensor $T$ (assuming such a thing
+could have some physical significance in one dimension!) will be
+$ \nabla_X T=\der T/\der X-G^{-1}(\der G/\der X)T$.
+
+Physically, the correction term is a derivative of the metric, and we've already seen that
+the derivatives of the metric (1) are the closest thing we get in general relativity to the gravitational
+field, and (2) are not tensors. In 1+1 dimensions, suppose we observe that a free-falling rock
+has $\der V/\der T=9.8\ \munit/\sunit^2$. This acceleration cannot be a tensor, because we could make it vanish
+by changing from Earth-fixed coordinates $X$ to free-falling (normal, locally Lorentzian) coordinates $x$, and a tensor cannot be made to vanish by a
+change of coordinates. According to a free-falling observer, the vector $v$ isn't changing at all; it is
+only the variation in the Earth-fixed observer's metric $G$ that makes it appear to change.
+
+Mathematically, the form of the derivative is $(1/y)\der y/\der x$, which is known as a logarithmic derivative,
+since it equals $\der(\ln y)/\der x$. It measures the \emph{multiplicative} rate of change of $y$. For example,
+if $y$ scales up by a factor of $k$ when $x$ increases by 1 unit, then the logarithmic derivative of $y$ is
+$\ln k$. The logarithmic derivative of $e^{cx}$ is $c$. The logarithmic nature of the correction term to 
+$\nabla_X$ is a good thing, because it lets us take changes of scale, which are multiplicative changes, and
+convert them to additive corrections to the derivative operator. The additivity of the corrections is
+necessary if the result of a covariant derivative is to be a tensor, since tensors are additive creatures.
+
+What about quantities that are not second-rank covariant tensors? Under a rescaling of contravariant coordinates by a factor of $k$,
+covariant vectors scale by $k^{-1}$, and second-rank covariant tensors by $k^{-2}$. The
+correction term should therefore be half as much for covariant vectors,
+\begin{equation*}
+ \nabla_X=\frac{\der}{\der X}-\frac{1}{2}G^{-1}\frac{\der G}{\der X} \qquad .
+\end{equation*}
+and
+should have an opposite sign for contravariant vectors.
+
+Generalizing the correction term to derivatives of vectors in more than one dimension, we should have something of this form:
+\begin{align*}
+  \nabla_a v^b &= \partial_a v^b + \Gamma\indices{^b_{ac}}v^c\\
+  \nabla_a v_b &= \partial_a v_b - \Gamma\indices{^c_{ba}}v_c \qquad ,
+\end{align*}
+where $\Gamma\indices{^b_{ac}}$, called the Christoffel symbol,\index{Christoffel symbol}
+does not transform like a tensor, and involves derivatives of the metric.
+The explicit computation of the Christoffel symbols from the metric is deferred until
+section \ref{sec:from-metric-to-curvature}, but the intervening sections \ref{sec:geodesic-equation}
+and \ref{sec:torsion} can be omitted on a first reading without loss of continuity.
+
+\begin{eg}{Christoffel symbols on the globe}\label{eg:christoffel-on-globe}
+As a qualitative example, consider the geodesic airplane trajectory shown in figure \figref{christoffel-on-globe},
+from London to Mexico City. In physics it is customary to work with the colatitude, $\theta$, measured down from
+the north pole, rather then the latitude, measured from the equator.
+At P, over the North Atlantic, the plane's colatitude has a minimum. 
+(We can see, without having to take it on faith from the figure, that such a minimum must occur.
+The easiest way to convince oneself of this is to consider a path that goes directly over the pole,
+at $\theta=0$.)
+<% marg(0) %>
+<%
+  fig(
+    'christoffel-on-globe',
+    %q{Example \ref{eg:christoffel-on-globe}.}
+  )
+%>
+<% end_marg %>
+
+At P, the plane's
+velocity vector points directly west. At Q, over New England, its velocity has a large component to the
+south. Since the path is a geodesic and the plane has constant speed, the velocity vector is simply being
+parallel-transported; the vector's covariant derivative is zero. Since we have $v_\theta=0$ at P,
+the only way to explain the nonzero and positive value of $\partial_\phi v^\theta$ is
+that we have a nonzero and negative value of $\Gamma\indices{^\theta_{\phi\phi}}$.
+
+By symmetry, we can infer that $\Gamma\indices{^\theta_{\phi\phi}}$ must have a positive value in
+the southern hemisphere, and must vanish at the equator. 
+
+$\Gamma\indices{^\theta_{\phi\phi}}$ is computed in example \ref{eg:christoffel-on-globe-quantitative}
+on page \pageref{eg:christoffel-on-globe-quantitative}.
+
+Symmetry also requires that this Christoffel symbol be independent of $\phi$, and
+it must also be independent of the radius of the sphere.
+\end{eg}
+
+For higher-rank tensors, we just add more correction terms, e.g.,
+\begin{align*}
+  \nabla_a U_{bc} = \partial_a U_{bc} - \Gamma\indices{^d_{ba}}U_{dc}-\Gamma\indices{^d_{ca}}U_{bd} \\
+\intertext{or}
+  \nabla_a U_b^c = \partial_a U_b^c - \Gamma\indices{^d_{ba}}U_d^c+\Gamma\indices{^c_{ad}}U_b^d            \qquad .
+\end{align*}
+
+With the partial derivative $\partial_a$, it does not make sense to use the metric to raise the index
+and form $\partial^a$. It \emph{does} make sense to do so with covariant derivatives, so $\nabla^a = g^{ab} \nabla_b$
+is a correct identity.
+
+<% begin_sec("Comma and semicolon notation") %>
+Some authors use superscripts with commas and semicolons to indicate partial and covariant derivatives. The following
+equations give equivalent notations for the same derivatives:
+\begin{align*}
+  \partial_a X_b &= X_{b,a} \\
+  \nabla_a   X_b &= X_{b;a} \\
+  \nabla^a   X_b &= X\indices{_b^{;a}} 
+\end{align*}
+<% end_sec %> % Comma and semicolon notation
+<% end_sec %> % covariant derivative in GR
+
+<% end_sec %> % covariant derivative
+
+<% begin_sec("The geodesic equation") %>\label{sec:geodesic-equation}
+In this section, which can be skipped at a first reading, we show how the Christoffel symbols can be used to
+find differential equations that describe geodesics.\index{geodesic!differential equation for}\label{geodesic-diffeq}\index{geodesic equation}
+<% marg(-30) %>
+<%
+  fig(
+    'geodesic-parallel-transports-tangent',
+    %q{The geodesic, 1, preserves tangency under parallel transport. The non-geodesic curve, 2, doesn't have this property; a vector initially tangent
+                   to the curve is no longer tangent to it when parallel-transported along it.}
+  )
+%>
+<% end_marg %>
+
+<% begin_sec("Characterization of the geodesic") %>
+A geodesic can be defined as a world-line that preserves tangency under parallel transport, \figref{geodesic-parallel-transports-tangent}. This is
+essentially a mathematical way of expressing the notion that we have previously expressed more informally in terms of ``staying on course'' or
+moving ``inertially.''
+
+A curve can be specified by giving functions $x^i(\lambda)$ for its coordinates, where $\lambda$ is a real parameter. A vector lying tangent to the
+curve can then be calculated using partial derivatives, $T^i=\partial x^i/\partial\lambda$. There are three ways in which a vector
+function of $\lambda$ could change: (1) it could change for the trivial reason that the metric is changing, so that its components
+changed when expressed in the new metric; (2) it could change its components perpendicular to the curve; or (3) it could change its
+component parallel to the curve. Possibility 1 should not really be considered a change at all, and the definition of the covariant
+derivative is specifically designed to be insensitive to this kind of thing. 2 cannot apply to $T^i$, which is tangent by construction.
+It would therefore be convenient if $T^i$ happened to
+be always the same length. If so, then 3 would not happen either, and
+we could reexpress the definition of a geodesic by saying that the covariant derivative of
+$T^i$ was zero. For this reason, we will assume for the remainder of this section that the parametrization of the curve has
+this property. In a Newtonian context, we could imagine the $x^i$ to be purely spatial coordinates, and $\lambda$ to be
+a universal time coordinate. We would then interpret $T^i$ as the velocity, and the restriction would be to a parametrization
+describing motion with constant speed. In relativity, the restriction is that $\lambda$ must be an affine parameter.
+For example, it could be the proper time of a particle, if the curve in question is timelike.
+<% end_sec %> % Characterization of the geodesic
+
+<% begin_sec("Covariant derivative with respect to a parameter") %>
+The notation of section \ref{sec:covariant-derivative} is not quite adapted to our present purposes, since it allows us to
+express a covariant derivative with respect to one of the coordinates, but not with respect to a parameter such as $\lambda$.
+We would like to notate the covariant derivative of $T^i$ with respect to $\lambda$ as $\nabla_\lambda T^i$, even though
+$\lambda$ isn't a coodinate.
+To connect the two types of derivatives, we can use a total derivative. To make the idea clear, here is how we calculate a total derivative
+for a scalar function $f(x,y)$, without tensor notation:
+\begin{equation*}
+  \frac{\der f}{\der \lambda} = \frac{\partial f}{\partial x}\frac{\partial x}{\partial \lambda} + \frac{\partial f}{\partial y}\frac{\partial y}{\partial \lambda} \qquad .
+\end{equation*}
+This is just the generalization of the chain rule to a function of two variables. For example, if $\lambda$ represents time and $f$ temperature,
+then this would tell us the rate of change of the temperature as a thermometer was carried through space. Applying this to
+the present problem, we express the total covariant derivative as
+\begin{align*}
+  \nabla_\lambda T^i &= (\nabla_b T^i) \frac{\der x^b}{\der\lambda} \\
+                     &= \left(\partial_b T^i + \Gamma\indices{^i_{bc}}T^c\right) \frac{\der x^b}{\der\lambda} \qquad .
+\end{align*}
+<% end_sec %> % Covariant derivative with respect to a parameter
+
+<% begin_sec("The geodesic equation") %>
+Recognizing $\partial_b T^i \der x^b/\der\lambda$ as a total non-covariant derivative, we find
+\begin{equation*}
+  \nabla_\lambda T^i = \frac{\der T^i}{\der\lambda} + \Gamma\indices{^i_{bc}}T^c \frac{\der x^b}{\der\lambda} \qquad .
+\end{equation*}
+Substituting $\partial x^i/\partial\lambda$ for $T^i$, and setting the covariant derivative equal to zero, we obtain
+\begin{equation*}
+  \frac{\der^2 x^i}{\der\lambda^2} + \Gamma\indices{^i_{bc}} \frac{\der x^c}{\der\lambda} \frac{\der x^b}{\der\lambda} = 0 .
+\end{equation*}
+This is known as the geodesic equation.
+
+If this differential equation is satisfied for one affine
+parameter $\lambda$, then it is also satisfied for any other affine parameter $\lambda'=a\lambda+b$, where $a$ and $b$
+are constants (problem \ref{hw:geodesic-affine}).
+Recall that affine parameters are only defined along geodesics, not along arbitrary curves. We can't start by defining
+an affine parameter and then use it to find geodesics using this equation, because we can't define an affine parameter
+without \emph{first} specifying a geodesic. Likewise, we can't do the geodesic first and then the affine parameter, because
+if we already had a geodesic in hand, we wouldn't need the differential equation in order to find a geodesic. The solution
+to this chicken-and-egg conundrum is to write down the differential equations and try to find a solution, without trying to specify either
+the affine parameter or the geodesic in advance.
+We will seldom have occasion to resort to this technique, an exception being example \ref{eg:geodesic-vacuum-dominated} on
+page \pageref{eg:geodesic-vacuum-dominated}.
+<% end_sec %> % The geodesic equation
+
+<% begin_sec("Uniqueness") %>
+The geodesic equation is useful in establishing one of the necessary theoretical foundations of relativity, which is the
+uniqueness of geodesics for a given set of initial conditions. This is related to axiom O1 of ordered geometry, that two
+points determine a line, and is necessary physically for the reasons discussed on page \pageref{unique-geodesics}; briefly,
+if the geodesic were not uniquely determined, then particles would have no way of deciding how to move. The form of the
+geodesic equation guarantees uniqueness. To see this, consider the following algorithm for determining a numerical
+approximation to a geodesic:\label{geodesic-algorithm}
+\begin{enumerate}
+\item Initialize $\lambda$, the $x^i$ and their derivatives $\der x^i/\der\lambda$. Also, set a small step-size $\Delta\lambda$ by which
+        to increment $\lambda$ at each step below.
+\item For each $i$, calculate $\der^2 x^i/\der\lambda^2$ using the geodesic equation.
+\item Add $(\der^2 x^i/\der\lambda^2)\Delta\lambda$ to the currently stored value of $\der x^i/\der\lambda$.
+\item Add $(\der x^i/\der\lambda)\Delta\lambda$ to $x^i$.
+\item Add $\Delta\lambda$ to $\lambda$.
+\item Repeat steps 2-5 until the the geodesic has been extended to the desired affine distance.
+\end{enumerate}
+Since the result of the calculation depends only on the inputs at step 1, we find that the geodesic is uniquely determined.
+
+To see that this is really a valid way of proving uniqueness, it may be helpful to consider how the proof could have
+failed. Omitting some of the details of the tensors and the multidimensionality of the space, the form of the
+geodesic equation is essentially $\ddot{x}+f\dot{x}^2=0$, where dots indicate derivatives with respect to $\lambda$.
+Suppose that it had instead had the form $\ddot{x}^2+f\dot{x}=0$. Then at step 2 we would have had to pick either a
+positive or a negative square root for $\ddot{x}$. Although continuity would usually suffice to maintain a consistent
+sign from one iteration to the next, that would not work if we ever came to a point where $\ddot{x}$ vanished momentarily. An equation 
+of this form therefore would \emph{not} have a unique solution for a given set of initial conditions.
+
+The practical use of this algorithm to compute geodesics numerically is demonstrated in section \ref{sec:numerical-geodesic} on
+page \pageref{sec:numerical-geodesic}.
+<% end_sec %> % Uniqueness
+<% end_sec %> % The geodesic equation
+
+
+<% begin_sec("Torsion") %>\label{sec:torsion}\index{torsion}
+This section describes the concept of gravitational torsion. It can be skipped without loss of continuity,
+provided that you accept the symmetry proporty $\Gamma\indices{^a_{[bc]}}=0$ without worrying about what it means physically or
+what empirical evidence supports it.
+
+Self-check: Interpret the mathematical meaning of the equation $\Gamma\indices{^a_{[bc]}}=0$, which is expressed
+in the notation introduced on page \pageref{symmetry-notation}.
+
+<% begin_sec("Are scalars path-dependent?") %>
+
+It seems clear that something like the covariant derivative is needed for vectors, since they
+have a direction in spacetime, and thus their measures vary when the measure of spacetime itself varies.
+Since scalars don't have a direction in spacetime, the same reasoning doesn't apply to them, and this is reflected
+in our rules for covariant derivatives. The covariant derivative
+has one $\Gamma$ term for every index of the tensor being differentiated, so for a scalar
+there should be no $\Gamma$ terms at all, i.e., $\nabla_a$ is the same as $\partial_a$.
+
+But just because derivatives of scalars don't require special treatment \emph{for this particular reason}, that
+doesn't mean they are guaranteed to behave as we intuitively expect, in the strange world of coordinate-invariant
+relativity.
+
+One possible way for scalars to behave counterintuitively would be by analogy with parallel transport of vectors.
+If we stick a vector in a box (as with, e.g., the gyroscopes aboard Gravity Probe B) and carry it around a closed
+loop, it changes. Could the same happen with a scalar? 
+This is extremely counterintuitive, since there is no reason to imagine such an effect in any of the models we've
+constructed of curved spaces. In fact, it is not just counterintuitive
+but mathematically impossible, according to the following argument. The only reason we can interpret the vector-in-a-box
+effect as arising from the geometry of spacetime is that it applies equally to all vectors. If, for example, it only applied to
+the magnetic polarization vectors of ferromagnetic substances, then we would interpret
+it as a magnetic field living in spacetime, not a property of spacetime itself. If the value of a scalar-in-a-box
+was path-dependent, and this path-dependence was a geometric
+property of spacetime, then it would have to apply to all scalars, including, say, masses and charges of particles.
+Thus if an electron's mass increased by 1\% when transported in a box along a certain path, its charge would
+have to increase by 1\% as well. But then its charge-to-mass ratio would remain invariant, and this is a contradiction,
+since the charge-to-mass ratio is also a scalar, and should have felt the same 1\% effect. Since the varying
+scalar-in-a-box idea leads to a contradiction, it wasn't a coincidence that we couldn't find a model that
+produced such an effect; a theory that lacks self-consistency doesn't have any models.
+
+Self-check: Explain why parallel transporting a vector can only rotate it, not change its magnitude.
+
+There is, however, a different way in which scalars could behave counterintuitively, and this one is mathematically
+self-consistent. Suppose that Helen lives in two spatial dimensions and owns a thermometer. She wants to measure
+the spatial variation of temperature, in particular its mixed second derivative $\partial^2 T/\partial x\partial y$. 
+At home in the morning at point A, she prepares by calibrating her gyrocompass to point north and measuring the temperature.
+Then she travels $\ell=1$ km east along a geodesic to B, consults her gyrocompass, and turns north.
+She continues one kilometer north to C, samples the change in temperature $\Delta T_1$ relative to her home, and then retraces her steps to come home for lunch.
+In the afternoon, she checks her work by carrying out the same process, but this time she interchanges the roles
+of north and east, traveling along ADE. If she were living in a flat space, this would form the other two sides of a square, and her
+afternoon temperature sample $\Delta T_2$ would be at the same point in space C as her morning sample. She actually doesn't recognize
+the landscape, so the sample points C and E are different, but this just confirms what she already knew: the space isn't
+flat.\footnote{This point was mentioned on page \pageref{riemann-curvature-tensor}, in connection with the
+definition of the Riemann tensor.}
+<% marg(80) %>
+<%
+  fig(
+    'torsion-story',
+    %q{Measuring $\partial^2 T/\partial x\partial y$ for a scalar $T$.}
+  )
+%>
+<% end_marg %>
+
+None of this seems surprising yet, but there are now two qualitatively different ways that her analysis of her data
+could turn out, indicating qualitatively different things about the laws of physics in her universe.
+The definition of the derivative as a limit requires that she repeat the experiment at
+smaller scales. As $\ell\rightarrow 0$, the result for $\partial^2 T/\partial x\partial y$ should approach
+a definite limit, and the error should diminish in proportion to $\ell$. In particular the difference between the results inferred from
+$\Delta T_1$ and $\Delta T_2$ indicate an error, and the discrepancy between the second derivatives inferred
+from them should shrink appropriately as $\ell$ shrinks. Suppose this \emph{doesn't} happen.
+Since partial derivatives commute, we conclude that her measuring procedure is not the same as
+a partial derivative. Let's call her measuring procedure $\nabla$, so that she is observing
+a discrepancy between $\nabla_x\nabla_y$ and $\nabla_y\nabla_x$. The fact that the commutator
+$\nabla_x\nabla_y-\nabla_y\nabla_x$ doesn't vanish cannot be explained by the Christoffel symbols, because
+what she's differentiating is a scalar. Since the discrepancy arises entirely from the failure of
+$\Delta T_1-\Delta T_2$ to scale down appropriately, the conclusion is that the distance $\delta$ between the
+two sampling points is not scaling down as quickly as we expect. In our familiar models of two-dimensional
+spaces as surfaces embedded in three-space, we always have $\delta\sim\ell^3$ for small $\ell$,
+but she has found that it only shrinks as quickly as $\ell^2$.
+
+For a clue as to what is going on, note that the commutator $\nabla_x\nabla_y-\nabla_y\nabla_x$ has a particular handedness
+to it. For example, it flips its sign under a reflection across the line $y=x$. 
+When we ``parallel''-transport vectors, they aren't actually staying parallel. In this hypothetical universe,
+a vector in a box transported by a small distance $\ell$ rotates by an angle proportional to $\ell$.
+This effect is called torsion.
+Although no torsion effect shows up in our familiar models, that is not because torsion lacks self-consistency.
+Models of spaces with torsion do exist. In particular, we can see that torsion doesn't lead to the same kind
+of logical contradiction as the varying-scalar-in-a-box idea. Since all vectors twist by the same amount when transported,
+inner products are preserved, so it is not possible to put two vectors in one box and get the scalar-in-a-box
+paradox by watching their inner product change when the box is transported.
+<% marg(83) %>
+<%
+  fig(
+    'torsion-gyroscopes',
+    %q{The gyrocopes both rotate when transported from A to B, causing Helen to navigate along BC, which does not form
+           a right angle with AB. The angle between the two gyroscopes' axes is always the same, so the rotation
+           is not locally observable, but it does produce an observable gap between C and E.}
+  )
+%>
+<% end_marg %>
+
+Note that the
+elbows ABC and ADE are not right angles. If Helen had brought a pair of gyrocompasses with her, one for $x$ and one for
+$y$, she would have found that the right angle between the gyrocompasses was preserved under parallel transport,
+but that a gyrocompass initially tangent to a geodesic did not remain so. There are in fact two inequivalent
+definitions of a geodesic in a space with torsion. The shortest path between two points is not necessarily the same
+as the straightest possible path, i.e., the one that parallel-transports its own tangent vector.
+
+<% end_sec %> % path-dependent scalars?
+<% begin_sec("The torsion tensor") %>\index{torsion!tensor}
+
+Since torsion is odd under parity, it must be represented by an odd-rank tensor, which we call $\tau\indices{^c_{ab}}$ and
+define according to
+\begin{equation*}
+  (\nabla_a\nabla_b-\nabla_b\nabla_a)f = -\tau\indices{^c_{ab}}\nabla_c f \qquad ,
+\end{equation*}
+where $f$ is any scalar field, such as the temperature in the preceding section. There are two different ways in which a space can be non-Euclidean: it can have
+curvature, or it can have torsion. For a full discussion of how to handle the mathematics of a spacetime
+with both curvature and torsion, see the article by Steuard Jensen at \url{http://www.slimy.com/~steuard/teaching/tutorials/GRtorsion.pdf}.
+For our present purposes, the main mathematical fact worth noting is that vanishing torsion is equivalent to the symmetry
+$\Gamma\indices{^a_{bc}}=\Gamma\indices{^a_{cb}}$ of the Christoffel symbols. Using the notation introduced on page \pageref{symmetry-notation},
+$\Gamma\indices{^a_{[bc]}}=0$ if $\tau=0$.
+
+Self-check: Use an argument similar to the one in example \ref{eg:flea-on-football} on page \pageref{eg:flea-on-football}
+to prove that no model of a two-space embedded in a three-space can have torsion.
+
+Generalizing to more dimensions, the torsion tensor is odd under the full spacetime reflection
+$x_a \rightarrow -x_a$, i.e., a parity inversion plus a time-reversal, PT. 
+
+In the story above, we had a torsion that didn't preserve tangent vectors. In three or more dimensions, however, it
+is possible to have torsion that does preserve tangent vectors. For example, transporting a vector along the $x$
+axis could cause only a rotation in the $y$-$z$ plane. This relates to the symmetries of the torsion tensor, which
+for convenience we'll write in an $x$-$y$-$z$ coordinate system and in the fully covariant form $\tau_{\lambda\mu\nu}$.
+The definition of the torsion tensor implies $\tau_{\lambda(\mu\nu)}=0$, i.e., that the torsion tensor is antisymmetric in
+its two final indices. Torsion that does not preserve tangent vectors will have nonvanishing elements such as
+$\tau_{xxy}$, meaning that parallel-transporting a vector along the $x$ axis can change its $x$ component.
+Torsion that preserves tangent vectors will have vanishing $\tau_{\lambda\mu\nu}$ unless $\lambda$, $\mu$, and $\nu$
+are all distinct.\label{symmetry-more-than-rank-two} This is an example of the type of antisymmetry that is familiar from
+the vector cross product, in which the cross products of the basis vectors behave as
+$\vc{x}\times\vc{y}=\vc{z}$, $\vc{y}\times\vc{z}=\vc{x}$, $\vc{y}\times\vc{z}=\vc{x}$. Generalizing the notation
+for symmetrization and antisymmetrization of tensors from page \pageref{symmetry-notation}, we have
+\begin{align*}
+  T_{(abc)} &= \frac{1}{3!}\Sigma T_{abc} \\
+  T_{[abc]} &= \frac{1}{3!}\Sigma\epsilon^{abc}T_{abc} \qquad ,
+\end{align*}
+where the sums are over all permutations of the indices, and in the second line
+the totally antisymmetric Levi-Civita tensor\index{Levi-Civita tensor} is defined by $\epsilon^{abc}=\epsilon^{bca}=\epsilon^{cab}=+1$,
+$\epsilon^{bac}=\epsilon^{acb}=\epsilon^{cba}=-1$, and $\epsilon^{\lambda\mu\nu}=0$ for all other combinations of indices.
+In other words, $\epsilon^{\lambda\mu\nu}$ is $+1$ if $\lambda\mu\nu$ represent an even permutation of $abc$ (i.e., they can be
+obtained from $abc$ by an even number of pairwise swaps), $-1$ for odd permutations, and $0$ otherwise (i.e., if $\lambda\mu\nu$ is
+not a permutation of $abc$).
+In this notation, a totally antisymmetric torsion tensor is one with $\tau_{\lambda\mu\nu=}\tau_{[\lambda\mu\nu]}$, and torsion of this
+type preserves tangent vectors under translation.
+<% marg(150) %>
+<%
+  fig(
+    'torsion-screw',
+    %q{Three gyroscopes are initially aligned with the $x$, $y$, and $z$ axes. After parallel transport along the geodesic $x$ axis, the
+            $x$ gyro is still aligned with the $x$ axis, but the $y$ and $z$ gyros have rotated.}
+  )
+%>
+<% end_marg %>
+
+In two dimensions, there are no totally antisymmetric rank-3 tensors, because we can't write three indices without
+repeating one. In three dimensions, an antisymmetric rank-3 tensor is simply a multiple of the Levi-Civita tensor, so a totally antisymmetric torsion,
+if it exists, is represented by a single number; under translation, vectors rotate like either right-handed or left-handed screws, and
+this number tells us the rate of rotation.
+In four dimensions, we have four independently variable quantities, $\tau_{xyz}$, $\tau_{tyz}$, $\tau_{txz}$, and $\tau_{txy}$.
+In other words, an antisymmetric torsion of 3+1 spacetime can be represented by a four-vector, $\tau^a=\epsilon^{abcd}\tau_{bcd}$.
+
+<% end_sec %> % torsion tensor
+<% begin_sec("Experimental searches for torsion") %>
+
+One way of stating the equivalence principle (see p. \pageref{equivalence-no-preferred-field}) is
+that it forbids spacetime from coming equipped with a vector field that could be
+measured by free-falling observers, i.e., observers in local Lorentz frames. A variety of high-precision tests of the equivalence
+principle have been carried out. From the point of view of an experimenter doing this kind of test, it is important to distinguish
+between fields that are ``built in'' to spacetime and those that live in spacetime. For example, the existence of the earth's magnetic field
+does not violate the equivalence principle, but if an experiment was sensitive to the earth's field, and the experimenter didn't know
+about it, there would appear to be a violation. Antisymmetric torsion in four dimensions acts like a vector. If it constitutes a
+universal background effect built into spacetime, then it violates the equivalence principle. If it instead arises from specific
+material sources, then it may still show up as a measurable effect in experimental tests designed to detect Lorentz-invariance.
+Let's consider the latter possibility.
+
+Since curvature in general relativity comes from mass and energy, as represented by the stress-energy tensor $T_{ab}$,
+we could ask what would be the sources of torsion, if it exists in our universe. The source can't be the rank-2 stress-energy tensor.
+It would have to be an
+odd-rank tensor, i.e., a quantity that is odd under PT, and in theories that include torsion it is commonly assumed that
+the source is the quantum-mechanical angular momentum of subatomic particles. If this is the case, then torsion effects are
+expected to be proportional to $\hbar G$, the product of Planck's constant and the gravitational constant, and they should therefore be
+extremely small and hard to measure. String theory, for example, includes torsion, but nobody has found a way to test
+string theory empirically because it essentially makes predictions about phenomena at the Planck scale,
+$\sqrt{\hbar G/c^3} \sim 10^{-35}\ \munit$, where both gravity and quantum mechanics are strong effects.\index{string theory}\index{Planck scale}
+<% marg(0) %>
+<%
+  fig(
+    'spin-torsion-pendulum',
+    %q{The University of Washington torsion pendulum used to search for torsion. The light gray wedges are Alnico, the darker ones
+          $\zu{Sm}\zu{Co}_5$. The arrows with the filled heads represent the directions of the electron spins, with denser arrows
+          indicating higher polarization. The arrows with the open heads show the direction of the $\vc{B}$ field.}
+  )
+%>
+<% end_marg %>
+
+There are, however, some high-precision experiments that have a reasonable chance of detecting whether our universe has
+torsion. Torsion violates the equivalence principle, and by the turn of the century
+tests of the equivalence principle had reached a level of precision sufficient to rule out some models that include torsion.
+Figure \figref{spin-torsion-pendulum} shows a torsion pendulum used in an experiment by the E\"{o}t-Wash
+group at the University of Washington.\footnote{http://www.npl.washington.edu/eotwash/publications/pdf/lowfrontier2.pdf}
+If torsion exists, then the intrinsic spin $\bsigma$ of an electron should have an energy $\bsigma\cdot\btau$, where
+$\btau$ is the spacelike part of the torsion vector.
+The torsion could be generated by the earth, the sun, or some other object at a greater distance.
+The interaction $\bsigma\cdot\btau$ will modify the behavior of a torsion pendulum if the spins of the electrons in the pendulum are polarized nonrandomly,
+as in a magnetic material. The pendulum will tend to precess around the axis defined by $\btau$.
+
+This type of experiment is extremely difficult, because the pendulum tends to act as an ultra-sensitive magnetic compass,
+resulting in a measurement of the ambient magnetic field rather than the hypothetical torsion field $\btau$.
+To eliminate this source of systematic error, the UW group first eliminated the ambient magnetic field as well as possible,
+using mu-metal shielding and Helmholtz coils. They also constructed the pendulum out of a combination of two magnetic materials, Alnico 5 and
+$\zu{Sm}\zu{Co}_5$, in such a way that the magnetic dipole moment vanished, but the spin dipole moment did not;
+Alnico 5's magnetic field is due almost entirely to electron spin, whereas the magnetic field of $\zu{Sm}\zu{Co}_5$
+contains signficant contributions from orbital motion. The result was a nonmagnetic object whose spins were polarized.
+After four years of data collection, they found $|\btau|\lesssim 10^{-21}\ \zu{eV}$. Models that include torsion typically
+predict such effects to be of the order of $m_e^2/m_P \sim 10^{-17}\ \zu{eV}$, where $m_e$ is the mass of the electron and
+$m_P=\sqrt{\hbar c/G}\approx10^{19}\ \zu{GeV}\approx 20\ \mu\zu{g}$ is the Planck mass.\index{Planck mass} A wide class of these models is therefore ruled out
+by these experiments.
+
+Since there appears to be no experimental evidence for the existence of gravitational
+torsion in our universe, we will assume from now on that it vanishes identically. Einstein made the same assumption
+when he originally created general relativity, although he and Cartan later tinkered with non-torsion-free
+theories in a failed attempt to unify gravity with electromagnetism.\index{Cartan}\index{Einstein-Cartan theory} Some models that include torsion remain viable.
+For example, it has been argued that the torsion tensor should fall off quickly with distance from the
+source.\footnote{Carroll and Field, \url{http://arxiv.org/abs/gr-qc/9403058}}
+<% end_sec %> % experimental searches
+
+<% end_sec %> % torsion
+
+<% begin_sec("From metric to curvature") %>\label{sec:from-metric-to-curvature}
+
+<% begin_sec("Finding $\\Gamma$ given $g$") %>
+We've already found the Christoffel symbol in terms of the metric in one dimension. Expressing it in
+tensor notation, we have
+\begin{align*}
+  \Gamma\indices{^d_{ba}} = \frac{1}{2}g^{cd}\left(\partial_? g_{??}\right) \qquad ,
+\end{align*}
+where inversion of the one-component matrix $G$ has been replaced by matrix inversion, and,
+more importantly, the question marks indicate that there would be more than one way to place
+the subscripts so that the result would be a grammatical tensor equation. The most general form
+for the Christoffel symbol would be 
+\begin{align*}
+  \Gamma\indices{^b_{ac}} = \frac{1}{2}g^{db}\left(L \partial_c g_{ab}+ M \partial_a g_{cb} + N \partial_b g_{ca}\right) \qquad ,
+\end{align*}
+where $L$, $M$, and $N$ are constants. Consistency with the one-dimensional expression requires $L+M+N=1$, and
+vanishing torsion gives $L=M$. The $L$ and $M$ terms have a different
+physical significance than the $N$ term.
+
+Suppose an observer uses coordinates such that all objects are described as lengthening over time, and
+the change of scale accumulated over one day is a factor of $k>1$.
+This is described by the derivative $\partial_t g_{xx}<1$, which affects the $M$ term.
+Since the metric is used to calculate squared distances, the
+$g_{xx}$ matrix element scales down by $1/\sqrt{k}$. To compensate for
+$\partial_t v^x<0$, so we need to add a
+positive correction term, $M>0$, to the covariant derivative.
+When the same observer measures the rate of change of a vector $v^t$ with \emph{respect} to space,
+the rate of change comes out to be too \emph{small}, because the variable she differentiates with
+respect to is too big. This requires $N<0$, and the correction is of the same size as the $M$
+correction, so $|M|=|N|$. We find $L=M=-N=1$.
+
+Self-check: Does the above argument depend on the use of space for one coordinate and time for the other?
+
+The resulting general expression for the Christoffel symbol in terms of the metric is
+\begin{equation*}
+  \Gamma\indices{^c_{ab}} = \frac{1}{2}g^{cd}\left(\partial_a g_{bd}+\partial_b g_{ad}-\partial_d g_{ab}\right) \qquad .
+\end{equation*}
+One can readily go back and check that this gives $\nabla_c g_{ab}=0$. In fact, the calculation is a bit
+tedious. For that matter, tensor calculations in general can be infamously time-consuming and error-prone.
+Any reasonable person living in the 21st century will therefore resort to
+a computer algebra system. The most widely used computer algebra system is Mathematica, but it's
+expensive and proprietary, and it doesn't have extensive built-in facilities for handling tensors.
+It turns out that there is quite a bit of free and open-source tensor software, and it falls into two
+classes: coordinate-based and coordinate-independent. The best open-source coordinate-independent facility available
+appears to be Cadabra, and in fact the verification of $\nabla_c g_{ab}=0$ is the first example given in
+the Leo Brewin's handy guide to applications of Cadabra to general relativity.\footnote{http://arxiv.org/abs/0903.2085}\index{cadabra}
+
+Self-check: In the case of 1 dimension, show that this reduces to
+the earlier result of $-(1/2)\der G/\der X$.
+
+Since $\Gamma$ is not a tensor, it is not obvious that the covariant derivative, which is constructed from it, is a tensor.
+But if it isn't obvious, neither is it surprising --
+the goal of the above derivation was to get results that would be coordinate-independent.
+
+\begin{eg}{Christoffel symbols on the globe, quantitatively}\label{eg:christoffel-on-globe-quantitative}
+In example \ref{eg:christoffel-on-globe} on page \pageref{eg:christoffel-on-globe}, we inferred the following
+properties for the Christoffel symbol $\Gamma\indices{^\theta_{\phi\phi}}$ on a sphere of radius $R$: $\Gamma\indices{^\theta_{\phi\phi}}$
+is independent of $\phi$ and $R$, $\Gamma\indices{^\theta_{\phi\phi}}<0$ in the northern
+hemisphere (colatitude $\theta$ less than $\pi/2$), $\Gamma\indices{^\theta_{\phi\phi}}=0$ on the equator,
+and $\Gamma\indices{^\theta_{\phi\phi}}>0$ in the southern hemisphere.
+
+The metric on a sphere is $\der s^2=R^2\der\theta^2+R^2\sin^2\theta\der\phi^2$.
+The only nonvanishing term in the expression for $\Gamma\indices{^\theta_{\phi\phi}}$ is the one
+involving $\partial_\theta g_{\phi\phi}=2R^2\sin\theta\cos\theta$. The result is
+$\Gamma\indices{^\theta_{\phi\phi}}=-\sin\theta\cos\theta$, which can be verified to have the
+properties claimed above.
+\end{eg}
+
+<% end_sec %>
+
+<% begin_sec("Numerical solution of the geodesic equation") %>\label{sec:numerical-geodesic}
+On page \pageref{geodesic-algorithm} I gave an algorithm that demonstrated the uniqueness of the solutions
+to the geodesic equation. This algorithm can also be used to
+find geodesics in cases where the metric is known. The following program, written in the
+computer language Python, carries out a very simple calculation of this kind, in a case where we know what the answer should
+be; even without any previous familiarity with Python, it shouldn't be difficult to see the correspondence between the
+abstract algorithm presented on page \pageref{geodesic-algorithm} and its concrete realization below.
+For polar coordinates in a Euclidean plane, one can compute $\Gamma\indices{^r_{\phi\phi}}=-r$ and
+$\Gamma\indices{^\phi_{r\phi}}=1/r$ (problem \ref{hw:polar-christoffel}, page \pageref{hw:polar-christoffel}).
+Here we compute the geodesic that starts out tangent to the unit circle at $\phi=0$.
+
+\begin{listing}{1}
+import math
+
+l = 0    # affine parameter lambda
+dl = .001  # change in l with each iteration
+l_max = 100.
+
+# initial position:
+r=1
+phi=0
+# initial derivatives of coordinates w.r.t. lambda
+vr = 0
+vphi = 1
+
+k = 0 # keep track of how often to print out updates
+while l<l_max:
+  l = l+dl
+  # Christoffel symbols:
+  Grphiphi = -r
+  Gphirphi = 1/r
+  # second derivatives:
+  ar   = -Grphiphi*vphi*vphi
+  aphi = -2.*Gphirphi*vr*vphi
+      # ... factor of 2 because G^a_{bc}=G^a_{cb} and b
+      #     is not the same as c
+  # update velocity:
+  vr = vr + dl*ar
+  vphi = vphi + dl*aphi
+  # update position:
+  r = r + vr*dl
+  phi = phi + vphi*dl
+  if k%10000==0: # k is divisible by 10000
+    phi_deg = phi*180./math.pi
+    print "lambda=%6.2f   r=%6.2f   phi=%6.2f deg." % (l,r,phi_deg)
+  k = k+1
+\end{listing}
+% polar_geodesic.py
+
+It is not necessary to worry about all the technical details of the language (e.g., line 1,
+which makes available such conveniences as \verb@math.pi@ for $\pi$). Comments are set off
+by pound signs. Lines 16-34 are indented because they are all to be executed repeatedly,
+until it is no longer true that $\lambda<\lambda_{max}$ (line 15).
+
+Self-check: By inspecting lines 18-22, find the signs of $\ddot{r}$ and $\ddot{\phi}$ at $\lambda=0$.
+Convince yourself that these signs are what we expect geometrically.
+
+The output is as follows:
+
+\begin{listing}{1}
+lambda=  0.00   r=  1.00   phi=  0.06 deg.
+lambda= 10.00   r= 10.06   phi= 84.23 deg.
+lambda= 20.00   r= 20.04   phi= 87.07 deg.
+lambda= 30.00   r= 30.04   phi= 88.02 deg.
+lambda= 40.00   r= 40.04   phi= 88.50 deg.
+lambda= 50.00   r= 50.04   phi= 88.78 deg.
+lambda= 60.00   r= 60.05   phi= 88.98 deg.
+lambda= 70.00   r= 70.05   phi= 89.11 deg.
+lambda= 80.00   r= 80.06   phi= 89.21 deg.
+lambda= 90.00   r= 90.06   phi= 89.29 deg.
+\end{listing}
+
+We can see that $\phi\rightarrow 90\ \zu{deg.}$ as $\lambda\rightarrow\infty$, which makes sense, because
+the geodesic is a straight line parallel to the $y$ axis.
+
+A less trivial use of the technique is demonstrated on page \ref{sec:deflection-of-light}, where we
+calculate the deflection of light rays in a gravitational field, one of the classic observational tests
+of general relativity.
+<% end_sec %> % Numerical solution
+<% begin_sec("The Riemann tensor in terms of the Christoffel symbols") %>
+
+The covariant derivative of a vector can be interpreted as the rate of change of a vector in a certain
+direction, relative to the result of parallel-transporting the original vector in the same direction.
+We can therefore see that the definition of the Riemann curvature tensor on page \pageref{riemann-curvature-tensor}
+is a measure of the failure of covariant derivatives to commute:
+\begin{equation*}
+  (\nabla_a \nabla_b - \nabla_b \nabla_a) A^c = A^d R\indices{^c_{dab}}
+\end{equation*}
+A tedious calculation now gives $R$ in terms of the $\Gamma$s:
+\begin{equation*}
+  R\indices{^a_{bcd}} = \partial_c \Gamma\indices{^a_{db}} - \partial_d \Gamma\indices{^a_{cb}} 
+                        + \Gamma\indices{^a_{ce}}\Gamma\indices{^e_{db}}-\Gamma\indices{^a_{de}}\Gamma\indices{^e_{cb}}
+\end{equation*}
+This is given as another example later in Brewin's manual for applying Cadabra to general relativity.\footnote{http://arxiv.org/abs/0903.2085}\index{cadabra}
+(Brewin writes the upper index in the second slot of $R$.)
+
+<% end_sec %> % The Riemann tensor in terms of the Christoffel symbols
+
+<% begin_sec("Some general ideas about gauge") %>
+Let's step back now for a moment and try to gain some physical insight by looking at the features that the electromagnetic and
+relativistic gauge transformations have in common. We have the following analogies:
+<% marg(-100) %>
+<%
+  fig(
+    'aharonov-bohm',
+    %q{The Aharonov-Bohm effect. An electron enters a beam splitter at P, and is sent out in two different directions.
+          The two parts of the wave are reflected so that they reunite at Q.
+          The arrows represent the vector potential $\vc{A}$. The observable magnetic field $\vc{B}$ is
+          zero everywhere outside the solenoid, and yet the interference observed at Q depends on whether the field
+          is turned on. See page \pageref{fig:vector-potential-of-solenoid} for further discussion of the $\vc{A}$ and $\vc{B}$
+          fields of a solenoid.}
+  )
+%>
+<% end_marg %>
+
+{\renewcommand{\arraystretch}{2}
+\noindent\begin{tabular}{p{35mm}p{30mm}p{30mm}}
+                      & \emph{electromagnetism}            & \emph{differential \linebreak geometry} \\
+global symmetry &
+                      A constant phase shift $\alpha$ has no observable effects. &
+                      Adding a constant onto a coordinate has no observable effects. \\
+local symmetry &
+                      A phase shift $\alpha$ that varies from point to point has no observable effects. &
+                      An arbitrary coordinate transformation has no observable effects.\\
+The gauge is described by \ldots &
+                      \vspace{0.7\baselineskip} $\alpha$ &
+                      \vspace{0.7\baselineskip} $g_{\mu\nu}$\\
+\ldots and differentiation of this gives the gauge field\ldots &
+                      \vspace{1.5\baselineskip} $A_b$ &
+                      \vspace{1.5\baselineskip} $\Gamma\indices{^c_{ab}}$\\
+A second differentiation gives the directly observable field(s) \ldots &
+                      \vspace{2.3\baselineskip} $\vc{E}$ and $\vc{B}$ &
+                      \vspace{2.3\baselineskip} $R\indices{^c_{dab}}$
+\end{tabular}
+}
+
+The interesting thing here is that the directly observable fields do not carry all of the necessary information,
+but the gauge fields are not directly observable. In electromagnetism, we can see this from the Aharonov-Bohm effect.\index{Aharonov-Bohm effect}
+The solenoid in figure \figref{aharonov-bohm} has $\vc{B}=0$ externally, and the electron beams only ever move through the external region, so they
+never experience any magnetic field. Experiments show, however, that turning the solenoid on and off does change the
+interference between the two beams. This is because the vector potential does not vanish outside the solenoid, and
+as we've seen on page \pageref{vector-potential-propagator}, the phase of the beams varies according to the
+path integral of the $A_b$. We are therefore left with an uncomfortable, but unavoidable, situation. The concept of
+a field is supposed to eliminate the need for instantaneous action at a distance, which is forbidden by relativity;
+that is, (1) we want our fields to have only local effects. On the other hand, (2) we would like our fields to be directly
+observable quantities. We cannot have both 1 and 2. The gauge field satisfies 1 but not 2, and the electromagnetic fields
+give 2 but not 1. 
+
+Figure \figref{cone} shows an analog of the Aharonov-Bohm experiment in differential geometry.
+Everywhere but at the tip, the cone has zero curvature, as we can see by cutting it and laying it out flat.
+But even an observer who never visits the tightly curved region at the tip can detect its existence, because
+parallel-transporting a vector around a closed loop can change the vector's direction, provided that the loop
+surrounds the tip.
+<% marg(35) %>
+<%
+  fig(
+    'cone',
+    %q{The cone has zero intrinsic curvature everywhere except at its tip. An observer who never visits the tip
+           can nevertheless detect its existence, because parallel transport around a path that encloses the tip
+           causes a vector to change its direction.}
+  )
+%>
+<% end_marg %>
+
+In the electromagnetic example, integrating $\vc{A}$ around a closed loop reveals, via Stokes' theorem, the existence
+of a magnetic flux through the loop, even though the magnetic field is zero at every location where $\vc{A}$ has to be
+sampled. In the relativistic example, integrating $\Gamma$ around a closed loop shows that there is curvature inside
+the loop, even though the curvature is zero at all the places where $\Gamma$ has to be sampled.
+
+\begin{eg}{Geodetic effect and structure of the source}
+\egquestion
+In section \ref{sec:geodetic-effect-estimate} on page \pageref{sec:geodetic-effect-estimate}, we estimated the geodetic effect
+on Gravity Probe B and found a result that was only off by a factor of $3\pi$. The mathematically pure form of the $3\pi$
+suggests that the geodetic effect is insensitive to the distribution of mass inside the earth. Why should this be so?
+
+\eganswer
+The change in a vector upon parallel transporting it around a closed loop can be expressed in terms of either (1) the
+area integral of the curvature within the loop or (2) the line integral of the Christoffel symbol (essentially the gravitational
+field) on the loop itself. Although I expressed the estimate as 1, it would have been equally valid to use 2.
+By Newton's shell theorem, the gravitational field is not sensitive to anything about its mass distribution other
+than its near spherical symmetry. The earth spins, and this does affect the stress-energy tensor, but since the velocity
+with which it spins is everywhere much smaller than $c$, the resulting effect, called \emph{frame-dragging},\index{frame-dragging}
+is much smaller.
+\end{eg}
+
+<% end_sec %> % 
+
+<% end_sec %> % metric to curvature
+
+\begin{hwsection}
+
+<% begin_hw('polar-christoffel') %>
+Show, as claimed on page \pageref{sec:numerical-geodesic}, that
+for polar coordinates in a Euclidean plane, $\Gamma\indices{^r_{\phi\phi}}=-r$ and
+$\Gamma\indices{^\phi_{r\phi}}=1/r$.
+<% end_hw %>
+
+
+<% begin_hw('partial-and-covariant-commute') %>
+Partial derivatives commute with partial derivatives. Covariant derivatives don't commute
+with covariant derivatives. Do covariant derivatives commute with partial derivatives?
+<% end_hw %>
+
+<% begin_hw('a-dot-v') %>
+(a) For an object moving in a circle at constant speed, the dot product of the classical
+three-vectors $\vc{v}$ and $\vc{a}$ is zero. Give an interpretation in terms of the
+work-kinetic energy theorem.
+(b) In the case of relativistic four-vectors, $v^ia_i=0$ for \emph{any} world-line.
+Give a similar interpretation. Hint: find the rate of change of the four-velocity's squared magnitude.
+<% end_hw %>
+
+<% begin_hw('parity-metric-change') %>
+Starting from coordinates $(t,x)$ having a Lorentzian metric $g$, transform the metric tensor
+into reflected coordinates $(t',x')=(t,-x)$, and verify that $g'$ is the same as $g$.
+<% end_hw %>
+
+<% begin_hw('lorentz-metric-change') %>
+Starting from coordinates $(t,x)$ having a Lorentzian metric $g$, transform the metric tensor
+into Lorentz-boosted coordinates $(t',x')$, and verify that $g'$ is the same as $g$.
+<% end_hw %>
+
+<% begin_hw('const-accel-metric') %>
+Verify the transformation of the metric given in example \ref{eg:const-accel-metric} on page \pageref{eg:const-accel-metric}.
+<% end_hw %>
+
+<% begin_hw('geodesic-affine') %>
+Show that if the differential equation for geodesics on page \pageref{geodesic-diffeq} is satisfied for one affine
+parameter $\lambda$, then it is also satisfied for any other affine parameter $\lambda'=a\lambda+b$, where $a$ and $b$
+are constants.
+<% end_hw %>
+
+<% begin_hw('compton') %>
+For gamma-rays in the MeV range, the most frequent mode of interaction with matter is Compton scattering,\index{Compton scattering}
+in which the photon is scattered by an electron without being absorbed.
+Only part of the gamma's energy is deposited, and the amount is related to the angle of scattering.
+Use conservation of four-momentum to show that
+in the case of scattering at 180 degrees, the scattered photon has energy $E'=E/(1+2E/m)$, where $m$ is the mass of the
+electron.
+<% end_hw %>
+
+\end{hwsection}
+
+<% end_chapter %>
