@@ -10,7 +10,7 @@
   )
 %>
 
-In this chapter we investigate general relativiy in regions of space that have no matter to act as sources of
+In this chapter we investigate general relativity in regions of space that have no matter to act as sources of
 the gravitational field.
 We will \emph{not}, however, limit ourselves to calculating spacetimes in cases in which the entire \emph{universe}
 has no matter.
@@ -34,7 +34,7 @@ the field equations in a vacuum are simply $R_{ab}=0$.
 
 <% begin_sec("Event horizons") %>\label{sec:event-horizons}\index{event horizon}
 
-One seemingly trivial way to generate solutions to the field equations in vaccum is simply to start with
+One seemingly trivial way to generate solutions to the field equations in vacuum is simply to start with
 a flat Lorentzian spacetime and do a change of coordinates. This might seem pointless, since it would
 simply give a new description (and probably a less convenient and descriptive one) of the same old,
 boring, flat spacetime. It turns out, however, that some very interesting things can happen when we
@@ -898,7 +898,7 @@ near the centers of nearly all galaxies, including our own. Near our galaxy's ce
 detected because nearby stars orbit around it. The orbital data show that Sagittarius A*
 has a mass of about four million solar masses, confined within a sphere with a radius less than $2.2\times10^7$ km.
 There is no known astrophysical model that could prevent the collapse of such a compact object into a black hole,
-nor is there any plausible model that would allow this much mass to exist in equilbrium in such a small space,
+nor is there any plausible model that would allow this much mass to exist in equilibrium in such a small space,
 without emitting enough light to be observable.
 
 The existence of supermassive black holes is surprising. Gas clouds with masses greater than about 100 solar masses
@@ -958,7 +958,7 @@ A distant observer A, however, sees a different picture. According to A, B's tim
 acceleration as being only $\sim 1/m$, where $m$ is the mass of the black hole; A does not perceive this acceleration
 as blowing up to infinity as B approaches the horizon. When A detects the radiation, it is extremely red-shifted, and
 it has the spectrum that one would expect for a horizon characterized by an acceleration $a\sim 1/m$. The result for
-a 10-solar-mass blackhole is $T\sim10^{-8}$ K, which is so low that the black hole is actually absorbing more energy
+a 10-solar-mass black hole is $T\sim10^{-8}$ K, which is so low that the black hole is actually absorbing more energy
 from the cosmic microwave background radiation than it emits.
 
 Direct observation of black-hole radiation is therefore probably only possible for black holes of very small masses.

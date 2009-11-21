@@ -62,7 +62,7 @@ is the ordinary three-component velocity vector as defined in classical mechanic
 always exactly 1, even if the particle is not moving at the speed of light.
 
 When we hear something referred to as a ``vector,''
-we usually take this is a statetement that it not only transforms as a vector, but also that it adds as a vector.
+we usually take this is a statement that it not only transforms as a vector, but also that it adds as a vector.
 But we have already seen in section \ref{sec:velocity-addition} on page \pageref{sec:velocity-addition} that even collinear
 velocities in relativity do not add linearly; therefore they clearly cannot add linearly when dressed in the clothing of four-vectors.
 We've also seen in section \ref{sec:boosts-causing-rotations} that the combination of
@@ -183,7 +183,7 @@ contributes a pressure on each wall that is proportional to $|p^\mu|$, where $\m
 In thermal equilibrium, each of these three degrees of freedom carries an equal amount of energy, and since
 momentum and energy are equal for a massless particle, the average momentum along each axis is equal to $\frac{1}{3}E$.
 The resulting equation of state is $P=\frac{1}{3}\rho$. As the universe expanded, the wavelengths of the
-photons expanded in proportion to the stretching fo the space they occupied, resulting in $\lambda \propto a^{-1}$, where
+photons expanded in proportion to the stretching of the space they occupied, resulting in $\lambda \propto a^{-1}$, where
 $a$ is a distance scale describing the universe's intrinsic curvature at a fixed time.
 Since the number density of photons is diluted in proportion to $a^{-3}$, and the mass per photon varies as $a^{-1}$,
 both $\rho$ and $P$ vary as $a^{-4}$.
@@ -663,12 +663,12 @@ in relativity.
 
 We can't.
 
-First, how de we define ``stays constant?'' Simultaneity isn't well-defined, so we can't just
+First, how do we define ``stays constant?'' Simultaneity isn't well-defined, so we can't just
 take two snapshots, call them initial and final, and compare the total amount of, say, electric charge
 in each snapshot. This difficulty isn't insurmountable. As in figure \figref{conservation-spacelike-surfaces}, we can arbitrarily pick out three-dimensional
 spacelike surfaces --- one initial and one final --- and integrate the charge over each one. A law
 of conservation of charge would say that no matter what spacelike surface we picked, the total
-charge on each woule be the same.
+charge on each would be the same.
 
 <% marg(80) %>
 <%
@@ -797,7 +797,7 @@ where $(\ldots)$ again gives the $r$-dependence and $L$ is a constant, interpret
 A detailed treatment is beyond the scope of this book,
 but solutions of this form to the relativistic field equations were found by
 New Zealand-born physicist Roy Kerr in 1963 at the University of Texas at Austin.
-<% marg(20) %>
+<% marg(120) %>
 <%
   fig(
     'frame-dragging-banana',
@@ -830,7 +830,7 @@ to some external factor, or to some kind of interaction between the earth and ot
 
 It also turns out that a gyroscope in such a gravitational field precesses. This effect, called frame dragging, was predicted by
 Lense and Thirring\index{Lense-Thirring effect}\index{frame dragging}
-in 1918, and was finally verfied experimentally in 2008 by analysis of data from the Gravity Probe B experiment,\index{Gravity Probe B!frame dragging}
+in 1918, and was finally verified experimentally in 2008 by analysis of data from the Gravity Probe B experiment,\index{Gravity Probe B!frame dragging}
 to a precision of about 15\%. The experiment was arranged so that the relatively strong 
 geodetic effect (6.6 arc-seconds per year) and the much weaker Lense-Thirring
 effect (.041 arc-sec/yr) produced precessions in perpendicular directions.

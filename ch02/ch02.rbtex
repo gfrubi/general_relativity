@@ -34,8 +34,8 @@ made based on the Lorentz geometry, the resulting discrepancy will not be too la
 $\epsilon$, then we should be able to get the error down that low if we're willing to make the size of our
 laboratory no bigger than $\delta$. This is clearly very similar to the Weierstrass style of defining limits
 and derivatives in calculus. In calculus, the idea expressed by differentiation is that every smooth curve can be
-approximated locally by a line; in general relavity, the equivalence principle tells us that curved spacetime
-can be approximated locally by flat spacetime. But consider that no practioner of calculus habitually solves
+approximated locally by a line; in general relativity, the equivalence principle tells us that curved spacetime
+can be approximated locally by flat spacetime. But consider that no practitioner of calculus habitually solves
 problems by filling sheets of scratch paper with epsilons and deltas. Instead, she uses the Leibniz notation,
 in which $\der y$ and $\der x$ are interpreted as infinitesimally small numbers.
 You may be inclined, based on your previous training, to dismiss infinitesimals as neither rigorous nor necessary.
@@ -255,7 +255,7 @@ $\neg\zu{P}$ based on certain assumptions, then our assumptions must have been w
 both P and $\neg\zu{P}$ \emph{without} making any assumptions, then proof by contradiction allows us
 to establish the truth of \emph{any} randomly chosen proposition. Thus a single contradiction
 is sufficient, in Aristotelian logic, to invalidate the entire system. This goes by the Latin
-rubric \emph{ex falso quodlibet}, meaning ``from a falsehood, whetever you please.'' Thus any
+rubric \emph{ex falso quodlibet}, meaning ``from a falsehood, whatever you please.'' Thus any
 contradiction proves the inconsistency of the entire system.
 
 Proving consistency is harder. If you're mathematically sophisticated, you may be tempted to leap
@@ -335,7 +335,7 @@ Lorentzian, but they still provide us with enough conceptual guidance to come up
     'einsteins-ring',
     %q{An Einstein's ring is formed when there is a chance alignment of a distant source with a closer gravitating body. Here,
            a quasar, MG1131+0456, is seen as a ring due to focusing of light by an unknown object, possibly a supermassive
-           blackhole. Because the entire arrangement lacks perfect axial symmetry, the ring is nonuniform; most of its brightness
+           black hole. Because the entire arrangement lacks perfect axial symmetry, the ring is nonuniform; most of its brightness
            is concentrated in two lumps on opposite sides. This type of gravitational lensing is direct evidence for the curvature of space predicted by gravitational
            lensing. The two geodesics form a lune, which is a  figure that cannot exist in Euclidean geometry.}
   )
@@ -348,7 +348,7 @@ Lorentzian, but they still provide us with enough conceptual guidance to come up
               type is topologically closed. It describes a universe that has finite spatial volume, and that will only exist for a finite time
               before it recontracts in a Big Crunch.\index{Big Crunch} The other type, corresponding to the universe we actually inhabit,
               has infinite spatial volume, will exist for infinite time, and is topologically open.
-\item There is a distance scale set by the size of the sphere, with its inverse being a measure of curvature. In general relavity, we expect
+\item There is a distance scale set by the size of the sphere, with its inverse being a measure of curvature. In general relativity, we expect
               there to be a similar way to measure curvature numerically, although the curvature may vary from point to point.
 \end{itemize}
 
@@ -630,7 +630,7 @@ coordinate system. To make it clear when this is happening, we adopt a conventio
 known as the abstract index notation.\index{abstract index notation}
 In this convention, Latin superscripts and subscripts indicate that an equation is of general validity,
 without regard to any choice of coordinate system, while Greek ones are used for coordinate-dependent equations.
-For example, we can write the general expression for squared differential arc length with latin indices,
+For example, we can write the general expression for squared differential arc length with Latin indices,
 \begin{equation*}
   \der s^2=g_{ij} \der x^i \der x^j \qquad ,
 \end{equation*}
@@ -683,7 +683,7 @@ the two axes are not necessarily the same, $g_{11}\ne g_{22}$.
 The same expression for the element of area holds even if the coordinates are not orthogonal.
 In example \ref{eg:oblique-cartesian}, for instance, we have $\sqrt{|g|}=\sqrt{1-\cos^2\phi}=\sin\phi$,
 which is the right correction factor corresponding to the fact that $\der x^1$ and $\der x^2$ form
-a paralellepiped rather than a rectangle.
+a parallelepiped rather than a rectangle.
 \end{eg}
 
 \begin{eg}{Area of a sphere}
@@ -837,7 +837,7 @@ had some trouble with it.
 Suppose that observer A is on a spinning carousel while observer B stands on the ground.
 B says that A is accelerating, but by the equivalence principle A can say that she is at rest in a
 gravitational field, while B is free-falling out from under her. B measures the radius and circumference
-of the caruosel, and finds that their ratio is $2\pi$. A carries out similar measurements, but when she
+of the carousel, and finds that their ratio is $2\pi$. A carries out similar measurements, but when she
 puts her meter-sticks in the azimuthal direction they become Lorentz-contracted by the factor $\gamma=(1-\omega^2r^2)^{-1/2}$, so she finds that the
 ratio is greater than $2\pi$. In A's coordinates, the geometry is non-Euclidean, and the metric
 differs from the Euclidean one found in example \ref{eg:metric-in-polar-coords} on page \pageref{eg:metric-in-polar-coords}.

@@ -367,7 +367,7 @@ power is about $10^{24}$ watts.
 % G=6.6 10^-11 m3kg-1s-2; c=3 10^8 m/s ;  m=3* 10^30 kg ;  r=10^9 m ; G^4*c^-5(m/r)^5
 %   7.80853333333375*10^21 W
 
-The pulsar's period is observed to be steadily lengthing at a rate of $\alpha=2.418\times 10^{-12}$ seconds per second.
+The pulsar's period is observed to be steadily lengthening at a rate of $\alpha=2.418\times 10^{-12}$ seconds per second.
 To compare this with our crude theoretical estimate, we take the Newtonian energy of the system $Gm^2/r$ and multiply by
 $\omega\alpha$, giving $10^{25}$ W, which checks to within an order of magnitude.
 A full general-relativistic calculation reproduces the observed value of $\alpha$ to within the 0.1\% error bars

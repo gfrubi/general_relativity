@@ -148,7 +148,7 @@ light directed along the $x$ axis. Its momentum is equal to its energy (see page
 so its contributions to the local energy density and pressure are equal.
 Thus its contribution to the energy-momentum tensor is of the form $T\indices{^\mu_\nu}=(\text{constant})\times diag(-1,1,0,0)$.
 The trace vanishes, so its coupling to gravity in the $c_2$ term is zero. But this violates the equivalence
-principle, which requires that all forms of mass-energy contibute equally to gravitational mass.
+principle, which requires that all forms of mass-energy contribute equally to gravitational mass.
 \end{eg}
 
 One way in which we \emph{can} change the field equation without violating any of these is to add a term $\Lambda g_{ab}$, giving
@@ -359,7 +359,7 @@ This can cause the white dwarf to exceed the Chandrasekhar limit (page \pageref{
 resulting in an explosion known as a type Ia supernova. Because the Chandrasekhar limit provides a uniform
 set of initial conditions, the behavior of type Ia supernovae is fairly predictable, and in particular
 their luminosities are approximately equal. They therefore provide a kind of standard candle: since
-the intrinsic brightnes is known, the distance can be inferred from the apparent brightness. Given the
+the intrinsic brightness is known, the distance can be inferred from the apparent brightness. Given the
 distance, we can infer the time that was spent in transit by the light on its way to us, i.e. the
 look-back time. From measurements of Doppler shifts of spectral lines, we can also find the velocity
 at which the supernova was receding from us. The result is that we can measure the universe's
@@ -369,7 +369,7 @@ This picture has been independently verified by measurements of the cosmic micro
 radiation.\index{cosmic microwave background}
 
 With hindsight, we can see that
-in a quantum-mechanical context, it is natural to expect that fluctuations of the vacuum, required by the Heinsenberg
+in a quantum-mechanical context, it is natural to expect that fluctuations of the vacuum, required by the Heisenberg
 uncertainty principle, would contribute to the cosmological constant, and in fact models tend to overpredict $\Lambda$
 by a factor of about $10^{120}$! From this point of view, the mystery is why these effects cancel out so precisely.
 A correct understanding of the cosmological constant presumably requires a full theory
@@ -401,7 +401,7 @@ local property of such a universe is the vacuum energy described by the cosmolog
 always the same, because it is built into the structure of the vacuum. Thus the vacuum-dominated cosmology is
 a special one that maximally symmetric, in the sense that it has not only the symmetries of homogeneity and
 isotropy that we've been assuming all along, but also a symmetry with respect to time: it is a cosmology without
-history, in which all times appear identical to a local oberver. In the special case of this cosmology, the
+history, in which all times appear identical to a local observer. In the special case of this cosmology, the
 time variation of the scaling factor $a(t)$ is unobservable, and may be thought of as the unfortunate result
 of choosing an inappropriate set of coordinates, which obscure the underlying symmetry. When I argued in section
 \ref{sec:observability-of-expansion} for the observability of the universe's expansion, note that all my
@@ -519,7 +519,7 @@ so the Friedmann equations become
 where for compactness $\rho$'s dependence on $a$, with some constant of proportionality, is not shown explicitly.
 A static solution, with constant $a$, is impossible, and $\ddot{a}$ is negative, which we can interpret semiclassically
 in terms of the deceleration of the matter in the universe due to gravitational attraction. There are three cases
-to consider, accoding to the value of $k$.
+to consider, according to the value of $k$.
 
 <% begin_sec("The closed universe") %>
 We've seen that $k=+1$ describes a universe in which the spatial curvature is positive, i.e., the circumference

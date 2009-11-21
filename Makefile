@@ -58,3 +58,6 @@ clean:
 
 preflight:
 	@perl -e 'foreach $$f("scripts/run_eruby.pl","mv_silent") {die "file $$f is not executable; fix this with chmod +x $$f" unless -e $$f && -x $$f}'
+
+post:
+	cp genrel.pdf ~/Lightandmatter/genrel

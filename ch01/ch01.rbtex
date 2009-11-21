@@ -41,7 +41,7 @@ provided at \url{http://www.lightandmatter.com/area4author.html}.
 <% begin_sec("Time and causality") %>
 
 Updating Plato's allegory of the cave,
-imagine two superintelligent twins,
+imagine two super-intelligent twins,
 Alice and Betty. They're raised entirely by a robotic tutor on a
 sealed space station, with no access to the outside world. The robot, in accord
 with the latest fad in education, is programmed to encourage them to build
@@ -416,7 +416,7 @@ then say that the order of the links is well defined. But O3 and O4 also have cl
 lines describing causality.
 O3 forbids time travel paradoxes, like going back in time and killing our own grandmother as a child.
 O4 says that events are guaranteed to have a well-defined cause-and-effect order only if they lie on the same
-line. This is competely different from the attitude expressed in Newton's famous statement: ``Absolute, true and mathematical time, of itself, and
+line. This is completely different from the attitude expressed in Newton's famous statement: ``Absolute, true and mathematical time, of itself, and
 from its own nature flows equably without regard to anything external \ldots''
 
 If you're dismayed by the austerity of a system of geometry without any notion of measurement, you may be
@@ -684,7 +684,7 @@ It is not possible to do so on a universal basis.
 The locality of Lorentz frames can be understood in the analogy of the string stretched across the globe.
 We don't notice the curvature of the Earth's surface in everyday life because the radius of curvature
 is thousands of kilometers. On a map of LA, we don't notice any curvature, nor do we detect it on a map
-of Mumbia, but it is not possible to make a flat map that includes both LA and Mumbai without seeing
+of Mumbai, but it is not possible to make a flat map that includes both LA and Mumbai without seeing
 severe distortions.
 <% end_sec %> % Locality of Lorentz frames
 
@@ -732,7 +732,7 @@ Therefore light waves must have weight, and the must lose energy when they rise 
 
 Self-check: Verify the application of the right-hand rule described above.
 
-Further interptretation:
+Further interpretation:
 \begin{itemize}
 \item  The quantity $mc^2$ is famous, even among people who don't know what $m$ and $c$ stand for. This
            is the first hint of where it comes from. The full story is given in section \ref{sec:momentum-four-vector}.
@@ -751,7 +751,7 @@ Further interptretation:
            do just as well as general relativity in agreeing with the presently available experimental data.
            Our prediction of gravitational Doppler shifts of light only depended on the equivalence principle,
            which is one ingredient of general relativity. Experimental tests of this prediction only
-           test the equivalence principle; they do not allow us to distinguish betwen one theory of gravity
+           test the equivalence principle; they do not allow us to distinguish between one theory of gravity
            and another if both theories incorporate the equivalence principle.
 \end{itemize}
 <% end_sec %> %  Gravitational redshifts
@@ -1109,7 +1109,7 @@ whose axioms do not even explicitly mention measurement, there are some restrict
 \begin{itemize}
 \item[] The affine parameter is defined only along straight lines, i.e., geodesics. Alice's clock defines an affine parameter,
 but Betty's does not, since it is subject to nongravitational forces.
-\item[] We cannot compare distances along two arbitarily chosen lines, only along a single line or two parallel lines.
+\item[] We cannot compare distances along two arbitrarily chosen lines, only along a single line or two parallel lines.
 \item[] The affine parameter is arbitrary not only in the choice of its origin 0 (which is to be expected in
 any case, since any frame of reference requires such an arbitrary choice) but also in the choice of scale.
 For example, there is no fundamental way of deciding how fast to make a clock tick.
@@ -1393,7 +1393,7 @@ in the following section, there is a limit to the speed of propagation of signal
 up being able to explain the other observer's observations by taking into account the finite and
 changing time required for signals to propagate. Meeting in person requires one or both observers
 to accelerate, as in the original story of Alice and Betty, and then we are no longer dealing with
-pure Lorentz frames, which are described by non-accelerating obervers.
+pure Lorentz frames, which are described by non-accelerating observers.
 \end{eg}
 
 \begin{eg}{GPS}\label{eg:gps}
@@ -1473,7 +1473,7 @@ than $c(=1)$, so we can use the nonrelativistic expression for kinetic energy,
 $K=(1/2)mv^2$, which gives a mean value for $v^2$ of $3kT/m$. In the limit of $v \ll 1$,
 time dilation produces a change in frequency by a factor of $1/\gamma$, which differs from unity by approximately $-v^2/2$.
 The relative time dilation is therefore $-3kT/2m$, or, in metric units, $-3kT/2mc^2$. The vertical scale on the graph contains
-an arbitary offset, since Pound and Rebka's measurements were the best absolute measurements to date of the frequency.
+an arbitrary offset, since Pound and Rebka's measurements were the best absolute measurements to date of the frequency.
 The predicted slope of $-3k/2mc^2$, however, is not arbitrary. Plugging in 57 atomic mass units for $m$, we find
 the slope to be $2.4\times10^{-15}$, which, as shown in the figure is an excellent approximation (off by only
 10\%) near room temperature.
@@ -1686,7 +1686,7 @@ only at large scales.
 <%
   fig(
     'gamma-ray-burst',
-    %q{An artists's conception of a gamma-ray burst, resulting from a supernova explosion.}
+    %q{An artist's conception of a gamma-ray burst, resulting from a supernova explosion.}
   )
 %>
 <% end_marg %>
@@ -1755,7 +1755,7 @@ the ether. There were a variety of competing theories, each of which could
 claim some support from the shaky data. Some physicists believed
 that the ether could be dragged along by matter moving through it, which inspired
 variations on the experiment that were conducted on mountaintops in thin-walled buildings, (figure),
-or with one arm of the appartus out in the open, and the other surrounded by massive lead walls.
+or with one arm of the apparatus out in the open, and the other surrounded by massive lead walls.
 In the standard sanitized textbook version of the history of science, every scientist does his experiments
 without any preconceived notions about the truth, and any disagreement is quickly settled by
 a definitive experiment. In reality, this period of confusion about the Michelson-Morley
@@ -1874,7 +1874,7 @@ can we be sure that its behavior is equivalent to that of the photon-in-a-cavity
 carry out a complete mathematical development of the angular momentum vector in relativity.\footnote{This is done,
 for example, in Misner, Thorne, and Wheeler, \emph{Gravitation}, pp. 157-159.} The equivalence principle, however,
 allows us to bypass such technical details. Suppose that we seal the two devices inside black boxes, with identical
-external control panels for initializating them and reading them out. We initialize them identically, and then
+external control panels for initializing them and reading them out. We initialize them identically, and then
 transport them along side-by-side world-lines. Classically, both the mechanical gyroscope and the photon-gyroscope
 would maintain absolute, fixed directions in space. Relativistically, they will not necessarily maintain their
 orientations. For example, we've already seen in section \ref{lorentz-three-dim} that there are reasons to
@@ -2069,7 +2069,7 @@ The following is the output from maxima:
 }{}
 
 The particular features of this geometry are not necessary. I chose them so that (1) the boosts
-would be along the Cartesian axes, so that we would be able to write them down easuly; (2) it is clear that the effect
+would be along the Cartesian axes, so that we would be able to write them down easily; (2) it is clear that the effect
 doesn't arise from any asymmetric treatment of the spatial axes; and (3) the change in the orientation of the gyroscope
 can be measured at the same point in space, e.g., by comparing it with a twin gyroscope that stays at home. In general:
 \begin{itemize}
@@ -2152,7 +2152,7 @@ on the velocity disk is concave, rather than being a straight-line hypotenuse of
 
 We can also determine, by the following argument, that leg AB is perpendicular to the edge of the disk where it touches the edge of the disk.
 In the transformation from frame A to frame O, $y$ coordinates are dilated by a factor of $\gamma$, which approaches infinity in the limit
-we're presently considering. Observers aboard the rocketship, occupying frame A, believe that their task is to fire the rocket's engines
+we're presently considering. Observers aboard the rocket-ship, occupying frame A, believe that their task is to fire the rocket's engines
 at an angle of 45 degrees with respect to the $y$ axis, so as to eliminate their velocity with respect to the origin, and simultaneously
 add an equal amount of velocity in the $x$ direction. This 45-degree angle in frame A, however, is not a 45-degree angle in frame O.
 From the stern of the ship to its bow we have displacements $\Delta x$ and $\Delta y$, and in the transformation from A to O, $\Delta y$
@@ -2213,7 +2213,7 @@ To generalize to the case of smooth acceleration, we first note that the rate of
 \item[] It is approximately linear in $\vc{v}$ and $\vc{a}$, for small $\vc{v}$ and $\vc{a}$.
 \end{itemize}
 The only rotationally invariant mathematical operation that has these symmetry properties is the
-vector cross pross product, so the rate of precession
+vector cross  product, so the rate of precession
 must be $k\vc{a}\times\vc{v}$, where $k>0$ is nearly independent of
 $\vc{v}$ and $\vc{a}$ for small $\vc{v}$ and $\vc{a}$.
 

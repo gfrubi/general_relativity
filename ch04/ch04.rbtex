@@ -38,7 +38,7 @@ rendered in the Earth's frame of reference, they appear as parallel parabolas. T
 is extrinsic. The Earth-fixed frame of reference is defined by an observer who is subject to non-gravitational
 forces, and is therefore not a valid Lorentz frame. In a free-falling Lorentz frame $(t',x')$, the two rocks are
 either motionless or moving at constant velocity in straight lines. We can therefore see that the curvature of
-world-lines in a particular coordinate system is not an intrinsic measure of curvatre; it can arise simply
+world-lines in a particular coordinate system is not an intrinsic measure of curvature; it can arise simply
 from the choice of the coordinate system. What would indicate intrinsic curvature would be, for example, if geodesics
 that were initially parallel were to converge or diverge.
 <% marg(20) %>
@@ -47,7 +47,7 @@ that were initially parallel were to converge or diverge.
     'dropping-rocks-no-intrinsic-curvature',
     %q{Two rocks are dropped side by side. The curvatures of their world-lines are not intrinsic. In a free-falling frame,
              both would appear straight. If initially parallel world-lines
-             became non-parallel, that would be evidence of inrinsic curvature.}
+             became non-parallel, that would be evidence of intrinsic curvature.}
   )
 %>
 <% end_marg %>
@@ -113,7 +113,7 @@ $(t,x)$ plane represented by figure \figref{sectional-curvature}.
   fig(
     'sectional-curvature',
     %q{Tidal forces cause the initially parallel world-lines of the fragments to diverge. The spacetime occupied by the
-           comet has intinsic curvature, but it is not caused by any local mass; it is caused by the distant mass of Jupiter.}
+           comet has intrinsic curvature, but it is not caused by any local mass; it is caused by the distant mass of Jupiter.}
   )
 %>
 \spacebetweenfigs
@@ -224,7 +224,7 @@ failure of parallelism to behave as in E5, but there is no notion of parallelism
 <% end_marg %>
 
 The lowest interesting dimension is therefore two, and this case was studied by Carl Friedrich Gauss in the
-ealy nineteenth century. Gauss ran a geodesic survey of the state of Hanover, inventing an optical surveying
+early nineteenth century. Gauss ran a geodesic survey of the state of Hanover, inventing an optical surveying
 instrument called a heliotrope that in effect was used to cover the Earth's surface with a triangular
 mesh of light rays. If one of the mesh points lies, for example, at the peak of a mountain,
 then the sum $\Sigma\theta$ of the angles of the vertices meeting at that point will be less than $2\pi$, in contradiction
@@ -471,7 +471,7 @@ to the earlier definitions of the Gaussian curvature that were not written in te
 
 Definition of the Riemann curvature tensor:\label{riemann-curvature-tensor}
 Let $\der p^c$ and $\der q^d$ be two infinitesimal vectors, and use them to form
-a quadrilateral that is a good approximation to a parallelogran.\footnote{Section \ref{sec:torsion} discusses the sense in which this approximation is good enough.}
+a quadrilateral that is a good approximation to a parallelogram.\footnote{Section \ref{sec:torsion} discusses the sense in which this approximation is good enough.}
 Parallel-transport vector $v^b$ all the way around the parallelogram. When it
 comes back to its starting place, it has a new value $v^b \rightarrow v^b+\der v^b$. Then
 the Riemann curvature tensor is defined as the tensor that computes $\der v^a$ according to $\der v^a=R\indices{^a_{bcd}}v^b\der p^c\der q^d$.
@@ -718,7 +718,7 @@ for example the transformation $\Psi \rightarrow -\Psi$ does not change the resu
 As a less trivial example, we can redefine the ground of our electrical potential, $\Phi \rightarrow \Phi+\delta\Phi$,
 and this will add a constant onto the energy of every electron in the universe, causing their phases to oscillate
 at a greater rate due to the quantum-mechanical relation $E=hf$. There are no observable consequences, however, because what is observable is the phase
-of one electron relative to another, as in a double-slit intereference experiment. Since every electron
+of one electron relative to another, as in a double-slit interference experiment. Since every electron
 has been made to oscillate faster, the effect is simply like letting the conductor of an orchestra wave
 her baton more quickly; every musician is still in step with every other musician.
 The rate of change of the wavefunction, i.e., its derivative, has some built-in ambiguity.
@@ -785,7 +785,7 @@ term compensates for the change of gauge. We call the operator $\nabla$ defined 
 \begin{equation*}
   \nabla_b =  \partial_b+ieA_b
 \end{equation*}
-the \emph{covariant derivative}.\index{covariant derivatibe!in electromagnetism}
+the \emph{covariant derivative}.\index{covariant derivative!in electromagnetism}
 It gives the right answer regardless of a change of gauge.
 
 <% end_sec %> % The covariant derivative in electromagnetism
@@ -978,7 +978,7 @@ For example, it could be the proper time of a particle, if the curve in question
 The notation of section \ref{sec:covariant-derivative} is not quite adapted to our present purposes, since it allows us to
 express a covariant derivative with respect to one of the coordinates, but not with respect to a parameter such as $\lambda$.
 We would like to notate the covariant derivative of $T^i$ with respect to $\lambda$ as $\nabla_\lambda T^i$, even though
-$\lambda$ isn't a coodinate.
+$\lambda$ isn't a coordinate.
 To connect the two types of derivatives, we can use a total derivative. To make the idea clear, here is how we calculate a total derivative
 for a scalar function $f(x,y)$, without tensor notation:
 \begin{equation*}
@@ -1051,7 +1051,7 @@ page \pageref{sec:numerical-geodesic}.
 
 <% begin_sec("Torsion") %>\label{sec:torsion}\index{torsion}
 This section describes the concept of gravitational torsion. It can be skipped without loss of continuity,
-provided that you accept the symmetry proporty $\Gamma\indices{^a_{[bc]}}=0$ without worrying about what it means physically or
+provided that you accept the symmetry property $\Gamma\indices{^a_{[bc]}}=0$ without worrying about what it means physically or
 what empirical evidence supports it.
 
 Self-check: Interpret the mathematical meaning of the equation $\Gamma\indices{^a_{[bc]}}=0$, which is expressed
@@ -1141,7 +1141,7 @@ paradox by watching their inner product change when the box is transported.
 <%
   fig(
     'torsion-gyroscopes',
-    %q{The gyrocopes both rotate when transported from A to B, causing Helen to navigate along BC, which does not form
+    %q{The gyroscopes both rotate when transported from A to B, causing Helen to navigate along BC, which does not form
            a right angle with AB. The angle between the two gyroscopes' axes is always the same, so the rotation
            is not locally observable, but it does produce an observable gap between C and E.}
   )
@@ -1268,7 +1268,7 @@ To eliminate this source of systematic error, the UW group first eliminated the 
 using mu-metal shielding and Helmholtz coils. They also constructed the pendulum out of a combination of two magnetic materials, Alnico 5 and
 $\zu{Sm}\zu{Co}_5$, in such a way that the magnetic dipole moment vanished, but the spin dipole moment did not;
 Alnico 5's magnetic field is due almost entirely to electron spin, whereas the magnetic field of $\zu{Sm}\zu{Co}_5$
-contains signficant contributions from orbital motion. The result was a nonmagnetic object whose spins were polarized.
+contains significant contributions from orbital motion. The result was a nonmagnetic object whose spins were polarized.
 After four years of data collection, they found $|\btau|\lesssim 10^{-21}\ \zu{eV}$. Models that include torsion typically
 predict such effects to be of the order of $m_e^2/m_P \sim 10^{-17}\ \zu{eV}$, where $m_e$ is the mass of the electron and
 $m_P=\sqrt{\hbar c/G}\approx10^{19}\ \zu{GeV}\approx 20\ \mu\zu{g}$ is the Planck mass.\index{Planck mass} A wide class of these models is therefore ruled out
