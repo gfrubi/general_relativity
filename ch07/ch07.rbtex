@@ -275,7 +275,7 @@ $x$ or $y$. Therefore there is no measurable property of this metric that varies
 
 To show that these waves carry momentum and energy, we can
 use the nonmathematical ``sticky bead
-argument'' (figure ***), which was originated by Feynman in 1957 and later popularized by Bondi.
+argument'' (figure \figref{sticky-bead}), which was originated by Feynman in 1957 and later popularized by Bondi.
 <% marg(0) %>
 <%
   fig(
