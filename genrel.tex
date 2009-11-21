@@ -4,13 +4,42 @@
 
 \begin{document}
 
+\include{cover/cover}
+
+\cleardoublepage
+
+\include{cover/inside-title-page}
+
+\include{cover/copyright}
+
+\pagebreak\vspace{100mm}
+
+\hbox{}\noindent\huge\bfseries\sffamily{}\hspace{-2mm}\ \ Brief Contents\\
+\hspace{-20mm}\noindent\mynormaltype\Large\sffamily{}\begin{tabular}{rl}
+\ref{ch:intro} & A Geometrical Theory of Spacetime \quad \pageref{ch:intro}\\
+\ref{ch:differential-geometry} & Differential Geometry \quad \pageref{ch:differential-geometry}\\
+\ref{ch:tensors} & Tensors \quad \pageref{ch:tensors}\\
+\ref{ch:curvature} & Curvature \quad \pageref{ch:curvature}\\
+\ref{ch:vacuum} & Vacuum Solutions \quad \pageref{ch:vacuum}\\
+\ref{ch:sources} & Sources \quad \pageref{ch:sources}\\
+\ref{ch:waves} & Gravitational Waves \quad \pageref{ch:waves}\\
+\end{tabular}
+\mynormaltype
+
+\vspace{100mm}\pagebreak
+
+\cleardoublepage
+
+\noindent\huge\bfseries\sffamily{}\hspace{-2mm}\ \ Contents\\
+\mynormaltype
+
 \tableofcontents
 
 %========================= main matter =========================
 \mainmatter
 %-- I want the whole book numbered sequentially, arabic:
   \pagenumbering{arabic} 
-  \addtocounter{page}{4} 
+  \addtocounter{page}{8} 
 \parafmt
 \myeqnspacing % Do this early and often, since it gets reset by \normalsize
 %========================= chapters =========================

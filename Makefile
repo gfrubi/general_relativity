@@ -61,3 +61,10 @@ preflight:
 
 post:
 	cp genrel.pdf ~/Lightandmatter/genrel
+
+prepress:
+	pdftk genrel.pdf cat 3-end output temp.pdf
+	# The following makes Lulu not complain about missing fonts. Make sure the version of gs is recent enough so that it won't mess up
+	# ligatures in Helvetica. Also, lulu sometimes chokes if gs version is <8.x.
+	gs -q  -dCompatibilityLevel=1.4 -dSubsetFonts=false -dPDFSETTINGS=/printer -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=genrel_lulu.pdf temp.pdf -c '.setpdfwrite'
+	@rm -f temp.pdf
