@@ -26,9 +26,11 @@ default:
 book:
 	make clean
 	make && make
+	@scripts/check_for_colliding_figures.rb
 
 clean:
 	# Cleaning...
+	@rm -f genrel.pdf genrel_lulu.pdf
 	@rm -f temp.tex
 	@rm -f ch*/ch*temp.tex 
 	@rm -f bk*lulu.pdf simple1.pdf simple2.pdf # lulu files

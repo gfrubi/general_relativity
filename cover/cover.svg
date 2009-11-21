@@ -9,8 +9,8 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="1594.4882"
-   height="1009.8425"
+   width="1584.9375"
+   height="1012.5"
    id="svg2"
    sodipodi:version="0.32"
    inkscape:version="0.46"
@@ -47,17 +47,17 @@
      objecttolerance="10"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.45513158"
-     inkscape:cx="781.61318"
-     inkscape:cy="523.5039"
+     inkscape:zoom="0.28161267"
+     inkscape:cx="30.760335"
+     inkscape:cy="-2.9575396"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     units="mm"
+     units="pt"
      inkscape:window-width="1278"
      inkscape:window-height="996"
-     inkscape:window-x="1"
-     inkscape:window-y="1" />
+     inkscape:window-x="2"
+     inkscape:window-y="2" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -75,44 +75,51 @@
      id="layer1">
     <rect
        style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.875;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect2383"
-       width="1594.4882"
-       height="1009.8425"
+       id="rect2391"
+       width="1584.9375"
+       height="1012.5"
        x="0"
-       y="-7.7927207e-06" />
+       y="-2.6574707" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.875;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect2383"
+       width="1584.9375"
+       height="1003.7938"
+       x="0"
+       y="6.0487432" />
     <image
-       y="2.6162426"
+       y="5.0983467"
        x="0"
        id="image3204"
-       height="1004.746"
-       width="1594.4882"
+       height="998.72772"
+       width="1584.9375"
        sodipodi:absref="/home/bcrowell/Documents/writing/books/genrel/cover/galactic-center.jpg"
        xlink:href="galactic-center.jpg" />
     <text
        xml:space="preserve"
-       style="font-size:36px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans"
-       x="1192.7147"
-       y="76.340424"
+       style="font-size:35.78436661px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans"
+       x="1185.5707"
+       y="81.931908"
        id="text3208"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3210"
-         x="1192.7147"
-         y="76.340424">General Relativity</tspan></text>
+         x="1185.5707"
+         y="81.931908">General Relativity</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#cccccc;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans"
-       x="1193.1639"
-       y="113.80784"
+       style="font-size:27.83228493px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#cccccc;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans"
+       x="1186.0172"
+       y="119.1749"
        id="text3212"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3214"
-         x="1193.1639"
-         y="113.80784">Crowell</tspan></text>
+         x="1186.0172"
+         y="119.1749">Crowell</tspan></text>
     <g
        id="g3228"
-       transform="matrix(0,1,-1,0,2035.4425,123.66048)">
+       transform="matrix(0,0.9940103,-0.9940103,0,2023.2506,128.96853)">
       <text
          sodipodi:linespacing="125%"
          id="text3220"

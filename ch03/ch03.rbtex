@@ -804,7 +804,7 @@ New Zealand-born physicist Roy Kerr in 1963 at the University of Texas at Austin
     %q{Two light rays travel in the earth's equatorial plane from A to B. Due to frame-dragging, the ray
          moving with the earth's rotation is deflected by a greater amount than the one moving contrary
          to it. As a result, the figure has an asymmetric banana shape. Both the deflection and its
-         asymmetry are greatly exaggerated for clarity.}
+         asymmetry are greatly exaggerated.}
   )
 %>
 <% end_marg %>
@@ -840,7 +840,7 @@ orientations of its gyroscopes relative to the guide star IM Pegasi.
 <%
   fig(
     'gravity-probe-b-frame-dragging',
-    %q{Gravity Probe B verified the existence of frame-dragging, 90 years after it was predicted.
+    %q{Gravity Probe B verified the existence of frame-dragging.
         The rotational axis of the gyroscope precesses in two perpendicular planes due to the two separate
         effects: geodetic and frame-dragging.}
   )

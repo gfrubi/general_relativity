@@ -223,7 +223,7 @@ similar to calculating the spherically symmetric solution to Gauss's law in a va
 of the form $\hat{\vc{r}}/r^2$, with an arbitrary constant of proportionality that turns out to be proportional
 to the charge creating the field. One big difference, however, is that whereas Gauss's law is linear, the equation
 $R_{ab}=0$ is highly nonlinear, so that the solution cannot simply be scaled up and down in proportion to $m$.
-<% marg(-80) %>
+<% marg(-10) %>
 <%
   fig(
     'nonlinearity',
