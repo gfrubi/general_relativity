@@ -97,7 +97,7 @@ An observer who is instantaneously at rest with respect to the ship judges is to
 (because the low-velocity limit applies).
 The observer in the $(t,x)$ frame agrees on the magnitude of this vector, so
 \begin{equation*}
-  \Ddot{t}^2-\Ddot{x}^2=-a^2 \qquad .
+  \ddot{t}^2-\ddot{x}^2=-a^2 \qquad .
 \end{equation*}
 The solution of these differential equations is $t=\frac{1}{a}\sinh a\tau$, \linebreak[4] $x=\frac{1}{a}\cosh a\tau$, and eliminating
 $\tau$ gives

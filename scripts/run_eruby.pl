@@ -35,6 +35,42 @@ if ($wopt=~/\-\-modern/) {$xhtml=1}
 
 print "run_eruby.pl, no_write=$no_write, wiki=$wiki, xhtml=$xhtml\n";
 
+# duplicated in translate_to_html.rb, but different number of ../'s
+my $banner_html = <<BANNER;
+  <div class="banner">
+    <div class="banner_contents">
+        <div class="banner_logo" id="logo_div"><img src="http://www.lightandmatter.com/logo.png" alt="Light and Matter logo" id="logo_img"></div>
+        <div class="banner_text">
+          <ul>
+            <li> <a href="../../">home</a> </li>
+            <li> <a href="../../books.html">books</a> </li>
+            <li> <a href="../../software.html">software</a> </li>
+            <li> <a href="../../courses.html">courses</a> </li>
+            <li> <a href="../../area4author.html">contact</a> </li>
+
+          </ul>
+        </div>
+    </div>
+  </div>
+BANNER
+
+my $html_dir = $ENV{HOME} . '/Generated/html_books/genrel';
+
+#---------
+#   Note:
+#     The index is always html, even if we're generating xhtml.
+#     Also, translate_to_html.rb generates links to chapter files named .html, not .xhtml,
+#     even when we're generating xhtml output. This is because mod_rewrite is intended to
+#     redirect users to the .xhtml only if they can handle it.
+#---------
+my $index = $ENV{HOME} . '/Generated/html_books/genrel/index.html';
+if ($web==1 && !$no_write && !$wiki) {
+  open(FILE,">$index") or die "error opening $index";
+  print FILE "<html><head><title>html version of book</title>    <link rel=\"stylesheet\" type=\"text/css\" href=\"http://www.lightandmatter.com/banner.css\" media=\"all\"></head><body>\n";
+  print FILE $banner_html;
+  close FILE;
+}
+
 mkdir "temp" unless -d "temp";
 foreach (<ch*/*.rbtex>) {
   my $file = $_;
@@ -45,6 +81,50 @@ foreach (<ch*/*.rbtex>) {
   my $outfile_base = $o . "temp";
   my $cmd = "BOOK_OUTPUT_FORMAT='print' $eruby $file >$outfile_base.tex"; # is always executed by sh, not bash or whatever
   do_system($cmd,$file,'eruby (print)');
+  if ($web==1) {
+    my $cmd = "BOOK_OUTPUT_FORMAT='web' $eruby $file >$outfile_base.temp"; # is always executed by sh, not bash or whatever
+    do_system($cmd,$file,'eruby (web)');
+    my $html;
+    if ($wiki) {
+      $html = "$o";
+    }
+    else {
+      $html = "$html_dir/$o";
+    }
+    if ($xhtml) {
+      $html = $html . '.xhtml';
+    }
+    else {
+      if ($wiki) {
+        $html = $html . '.wiki';
+      }
+      else {
+        $html = $html . '.html';
+      }
+    }
+    if ($no_write) {$html = '/dev/null'}
+    print STDERR "writing $html\n";
+    $cmd = "mkdir -p $html_dir/ch$ch";
+    do_system($cmd,'','') unless $wiki;
+    my $cmd = "CHAPTER='$ch' scripts/translate_to_html.rb $wopt <$outfile_base.temp >$html";
+    print $cmd,"\n";
+    do_system($cmd,'stdin','translation');
+    if ($xhtml) {
+      local $/; open(F,"<$html"); my $x=<F>; close F;
+      eval {XML::Parser->new->parse($x)};
+      if ($@) {
+        print "fatal error ===============> file $html output by /translate_to_html.rb is not well formed xml\n";
+        XML::Parser->new->parse($x); # will print error message
+        die;
+      }
+    }
+  }
+}
+
+if ($web==1 && !$no_write) {
+  open(FILE,">>$index") or die "error opening $index";
+  print FILE "</body></html>\n";
+  close FILE;
 }
 
 sub do_system {

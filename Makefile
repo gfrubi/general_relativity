@@ -27,6 +27,12 @@ book:
 	make clean
 	make && make
 	@scripts/check_for_colliding_figures.rb
+	@scripts/harvest_aux_files.rb
+
+web:
+	WOPT='$(WOPT) --modern' $(RUN_ERUBY) w #... xhtml
+	$(RUN_ERUBY) w                         #... html
+	# To set options, do, e.g., "WOPT='--no_write' make web". Options are documented in translate_to_html.rb.
 
 clean:
 	# Cleaning...
@@ -59,7 +65,7 @@ clean:
 	@# ... done.
 
 preflight:
-	@perl -e 'foreach $$f("scripts/run_eruby.pl","mv_silent") {die "file $$f is not executable; fix this with chmod +x $$f" unless -e $$f && -x $$f}'
+	@perl -e 'foreach $$f("scripts/run_eruby.pl","scripts/equation_to_image.pl","scripts/latex_table_to_html.pl","scripts/harvest_aux_files.rb","scripts/check_for_colliding_figures.rb","scripts/translate_to_html.rb","mv_silent") {die "file $$f is not executable; fix this with chmod +x $$f" unless -e $$f && -x $$f}'
 
 post:
 	cp genrel.pdf ~/Lightandmatter/genrel
