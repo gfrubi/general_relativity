@@ -62,6 +62,7 @@ clean:
 	@rm -f */*/a.a
 	@rm -f junk
 	@rm -f err
+	@rm -f temp_mathml.html temp_mathml.tex temp.html
 	@# ... done.
 
 preflight:

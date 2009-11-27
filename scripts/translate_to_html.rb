@@ -99,6 +99,11 @@
 #===============================================================================================================================
 #===============================================================================================================================
 
+def fatal_error(message)
+  $stderr.print "error in translate_to_html.rb: #{message}\n"
+  exit(-1)
+end
+
 require 'getoptlong' # pickaxe book, p. 452
 opts = GetoptLong.new(
   [ "--modern",                GetoptLong::NO_ARGUMENT ],
@@ -146,26 +151,41 @@ $br = "<br#{$self_closing_tag}>"
 
 require "digest/md5"
 
-$book = 'genrel'
-$book_title = 'General Relativity'
-$book_url = "http://www.lightandmatter.com/genrel"
+config_file = 'html.config'
+if ! File.exist?(config_file) then fatal_error("error, file #{config_file} does not exist") end
+$config = {
+  'book'=>nil, # a label for the book, is typically the same as the name of the directory the book resides in
+  'title'=>nil, # human-readable title
+  'url'=>nil,
+  # The following directories can have ~ in them, which expands to home directory. The directories must exist.
+    'base_dir'=>nil,'script_dir'=>nil,'html_dir'=>nil,'sty_dir'=>nil,
+  # Sectioning:
+     'number_sections_at_depth'=>nil,'spew_figs_at_level'=>nil,'restart_figs_at_level'=>nil,'highest_section_level'=>nil
+}
+File.open(config_file,'r') { |f|
+  c = f.gets(nil) # nil means read whole file
+  c.scan(/(\w+),(.*)/) { |var,value|
+    if ! $config.has_key?(var) then fatal_error("Error in config file #{config_file}, illegal variable '#{var}'") end
+    if {'base_dir'=>nil,'script_dir'=>nil,'html_dir'=>nil,'sty_dir'=>nil}.has_key?(var) then
+      value.gsub!(/~/,ENV['HOME'])
+      if ! FileTest.directory?(value) then fatal_error("#{var}=#{value}, but #{value} either does not exist or is not a directory") end
+    end
+    if {'number_sections_at_depth'=>nil,'spew_figs_at_level'=>nil,'restart_figs_at_level'=>nil,'highest_section_level'=>nil}.has_key?(var) then
+      value = value.to_i
+    end
+    $config[var] = value
+    $stderr.print "#{var}=#{value} "
+  }
+  $stderr.print "\n"
+}
+$config.keys.each { |k|
+  if $config[k].nil? then fatal_error("error, variable #{k} not given in #{config_file}") end
+}
 
 $chapter_toc = "<div class=\"container\">Contents#{$br}\n"
 
-$base_dir = '..'  # meant to be lm/trunk; need to change this for translations
-$script_dir = 'scripts' # directory scripts are in
-$html_dir = ENV['HOME'] + '/Generated/html_books/genrel'
-
 $section_level_num = {'chapter'=>1,'section'=>2,'subsection'=>3,'subsubsection'=>4,'subsubsubsection'=>5}
-$highest_section_level = 5
-# first alternative is more appropriate when book has long chapters and deep subsections, as in SN
-if true then
-  $spew_figs_at_level = 4
-  $restart_figs_at_level = 2
-else
-  $spew_figs_at_level = 3
-  $restart_figs_at_level = 1
-end
+
 $ch = nil
 $chapter_title = nil
 $count_eg = 0
@@ -254,9 +274,9 @@ end
 
 if $wiki then
 $disclaimer_html = <<DISCLAIMER
-    <p>This is the wiki version of #{$book_title}, by Benjamin Crowell. 
+    <p>This is the wiki version of #{$config['title']}, by Benjamin Crowell. 
     This version may have some formatting problems.
-    For serious reading, you want the printer-friendly <a href="#{$book_url}">Adobe Acrobat version</a>.</p>
+    For serious reading, you want the printer-friendly <a href="#{$config['url']}">Adobe Acrobat version</a>.</p>
     <p>(c) 1998-2009 Benjamin Crowell, licensed under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike license</a>.
      Photo credits are given at the end of the Adobe Acrobat version.</p>
     </div>
@@ -265,9 +285,9 @@ else
 $disclaimer_html = <<DISCLAIMER
     <div class="topstuff">
     #{valid_icon}
-    <p>You are viewing the html version of <b>#{$book_title}</b>, by Benjamin Crowell. This version is only designed for casual browsing, and may have
+    <p>You are viewing the html version of <b>#{$config['title']}</b>, by Benjamin Crowell. This version is only designed for casual browsing, and may have
     some formatting problems.
-    For serious reading, you want the printer-friendly <a href="#{$book_url}">Adobe Acrobat version</a>.</p>
+    For serious reading, you want the printer-friendly <a href="#{$config['url']}">Adobe Acrobat version</a>.</p>
     <p><a href="..">Table of Contents</a></p>
     <p>(c) 1998-2009 Benjamin Crowell, licensed under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike license</a>.
      Photo credits are given at the end of the Adobe Acrobat version.</p>
@@ -291,7 +311,7 @@ $protect_tex_math_for_mediawiki = {}
 #===============================================================================================================================
 
 def html_subdir(subdir)
-  d = $html_dir + '/ch' + $ch + '/' + subdir
+  d = $config['html_dir'] + '/ch' + $ch + '/' + subdir
   if ! File.exist?(d) then
     unless system("mkdir -p #{d}") then $stderr.print "error, #{$?}, creating directory #{d}"; exit(-1) end
   end
@@ -572,6 +592,7 @@ def parse_section(tex)
   }
 
   tex.gsub!(/KEEP_BLANK_LINE/,'')
+  tex.gsub!(/KEEP_PERCENT/,'%')
 
   return tex
 end
@@ -722,7 +743,7 @@ def handle_table_one(original)
           if !File.exist?(temp) then $stderr.print "error, temp file #{temp} doesn't exist"; exit(-1) end
           fmt = 'html'
           if $xhtml then fmt='xhtml' end
-          unless system("#{$script_dir}/latex_table_to_html.pl #{temp} lmmath.sty #{fmt} >/dev/null") then $stderr.print "error, #{$?}"; exit(-1) end
+          unless system("#{$config['script_dir']}/latex_table_to_html.pl #{temp} #{$config['sty_dir']}/lmmath.sty #{fmt} >/dev/null") then $stderr.print "error, #{$?}"; exit(-1) end
           File.open(temp_html,'r') { |f|
             html = f.gets(nil) # nil means read whole file
             html.gsub!(/\n*$/,"\n") # exactly one newline at the end
@@ -966,7 +987,7 @@ def handle_math_one_html(tex,math_type)
       t = 'temp_mathml'
       if surround then original = "\\begin{#{math_type}}" + original + "\\end{#{math_type}}" end
       File.open("#{t}.tex",'w') do |f| f.print original end
-      unless system("footex --prepend-file lmmath.sty --mathml #{t}.tex #{t}.html") then return nil end
+      unless system("footex --prepend-file #{$config['sty_dir']}/lmmath.sty --mathml #{t}.tex #{t}.html") then return nil end
       y = nil
       File.open("#{t}.html",'r') { |f|
         y = "<!-- #{original} -->"
@@ -1040,7 +1061,7 @@ def handle_math_one_bitmap(tex,math_type)
         else
           if ! $no_write then
             if !File.exist?(temp) then $stderr.print "error, temp file #{temp} doesn't exist"; exit(-1) end
-            unless system("#{$script_dir}/equation_to_image.pl #{temp} lmmath.sty >/dev/null") then $stderr.print "error, #{$?}"; exit(-1) end
+            unless system("#{$config['script_dir']}/equation_to_image.pl #{temp} #{$config['sty_dir']}/lmmath.sty >/dev/null") then $stderr.print "error, #{$?}"; exit(-1) end
             unless system("mv #{temp_png} #{eq_file}") then $stderr.print "WARNING, error #{$?}, probably tex4ht isn't installed\n" end
           end
         end
@@ -1242,7 +1263,7 @@ def find_figure(name,width_type)
 
   name.gsub!(/(.*\/)/,'') # get rid of anything before the last slash; if it's shared, we'll figure that out ourselves
 
-  output_dir = "#{$html_dir}/ch#{$ch}/figs"
+  output_dir = "#{$config['html_dir']}/ch#{$ch}/figs"
   do_system("mkdir #{output_dir}") unless File.exist?(output_dir)
 
   search = Dir["#{output_dir}/#{name}.*"]
@@ -1254,8 +1275,8 @@ def find_figure(name,width_type)
   
   dir =  "ch#{$ch}/figs"
   if Dir["ch#{$ch}/figs/#{name}\.*"].empty? then
-    topic = find_topic($ch,$book)
-    if topic==nil then $stderr.print "null topic from shared_fig_dir for ch=#{$ch}, book=#{$book}\n" end
+    topic = find_topic($ch,$config['book'])
+    if topic==nil then $stderr.print "null topic from shared_fig_dir for ch=#{$ch}, book=#{$config['book']}\n" end
     dir = "../9share/#{topic}/figs"
   end
 
@@ -1274,7 +1295,7 @@ def find_figure(name,width_type)
   return '' if result==nil
 
   output_format = {'jpg'=>'jpg','png'=>'png','pdf'=>'png'}[fmt]
-  dest = $html_dir + '/' + "ch#{$ch}/figs/" + name + '.' + output_format
+  dest = $config['html_dir'] + '/' + "ch#{$ch}/figs/" + name + '.' + output_format
   unless File.exist?(dest) then
     # need to call ImageMagick even if input and output formats are the same, to convert to web resolution
     infile = base+fmt
@@ -1327,12 +1348,12 @@ def parse(t,level,current_section)
   # The following is so that text right before or right after an enumerate or itemize will be in its own paragraph:
   tex.gsub!(/(\\end{(enumerate|itemize)})/) {$1+"\n"}
   tex.gsub!(/(\\begin{(enumerate|itemize)})/) {"\n"+$1}
-  if level<=$restart_figs_at_level+1 then $fig_ctr = 0 end
+  if level<=$config['restart_figs_at_level']+1 then $fig_ctr = 0 end
   #------------------------------------------------------------------------------------------------------------------------------------
-  if level>$highest_section_level then return [ [parse_section(tex),''] ] end
+  if level>$config['highest_section_level'] then return [ [parse_section(tex),''] ] end
   #------------------------------------------------------------------------------------------------------------------------------------
   marg_stuff = ''
-  if level==$spew_figs_at_level then
+  if level==$config['spew_figs_at_level'] then
     non_marg_stuff = ''
     tex.gsub!(/END_CAPTION\n*/,"END_CAPTION\n") # the newline is because without it, the code below will eat too much with each regex match
     # The following code assumes that each ZZZWEB thingie is on a separate line; if there aren't newlines between them, it eats too much and goes nuts.
@@ -1373,7 +1394,7 @@ def parse(t,level,current_section)
         label = current_section.join('.') + '.' + secnum.to_s
         s=label
         if level==1 and $chapter_title==nil then $chapter_title=title; s=$ch.to_i.to_s end
-        if level>=3 then s='' end # maybe 4 for SN?
+        if level>=$config['number_sections_at_depth'] then s='' end
         special = ''
         if title=~/^([\*\@\?]+)(.*)/ then special,title=$1,$2 end
         if special=~/\*/ then s='' end # * is a marker to say not to produce a section number
@@ -1414,10 +1435,10 @@ def parse(t,level,current_section)
   }
   #------------------------------------------------------------------------------------------------------------------------------------
   curly = "(?:(?:{[^{}]*}|[^{}]*)*)" # match anything, as long as any curly braces in it are paired properly, and not nested
-  if level==$spew_figs_at_level then
+  if level==$config['spew_figs_at_level'] then
     tex = ''
     result.each { |s|
-      tex = tex + s[0] # guaranteed to have null for s[1] for level==$spew_figs_at_level
+      tex = tex + s[0] # guaranteed to have null for s[1] for level==$config['spew_figs_at_level']
     }
     return [ [tex,marg_stuff] ]
   else
@@ -1465,7 +1486,7 @@ if $test_mode then
 end
 
 $ch = ENV['CHAPTER']
-$want_chapter_toc = !($book=='1np' and $ch=='00') && !$wiki
+$want_chapter_toc = !($config['book']=='1np' and $ch=='00') && !$wiki
 
 tex = $stdin.gets(nil) # nil means read whole file
 
@@ -1486,8 +1507,35 @@ tex.gsub!(/(myoptionalsection)(\[\d\])?{/) {"mysection{?"} # ? marks it as optio
 tex.gsub!(/(myoptionalcalcsection)(\[\d\])?{/) {"mysection{@"} # @ marks it as calc-based, optional
 tex.gsub!(/(mycalcsection)(\[\d\])?{/) {"mysection{@"} # @ marks it as calc-based, optional
 
-# remove comments and indexing (indexing is evil when it occurs inside sectioning, messes everything up)
+curly = "(?:(?:{[^{}]*}|[^{}]*)*)" # match anything, as long as any curly braces in it are paired properly, and not nested
 
+# remove comments and indexing (indexing is evil when it occurs inside sectioning, messes everything up)
+# First, preserve percent signs inside listing and verbatim environments:
+r = {}
+s = {}
+envs = ['listing','verbatim']
+envs.each { |x|
+  pat = x
+  s[x] = "\\\\(?:begin|end){#{pat}}"
+  z = s[x].clone  # workaround for bug in the ruby interpreter, which causes the first 8 bytes of the regex string to be overwritten with garbage
+  r[x] = Regexp.new(z)
+}  
+envs.each { |x|
+  result = ''
+  inside = false # even if the environment starts at the beginning of the string, split() gives us a null string as our first string
+  tex.split(r[x]).each { |d|
+    if !(d=~/\A\s*\Z/) then
+      if inside then
+        d.gsub!(/%/,'KEEP_PERCENT')
+        d = "\\begin{#{x}}" + d + "\\end{#{x}}"
+      end
+      result = result + d
+    end
+    inside = !inside
+  } # end loop over d
+  tex = result
+} # end loop over x
+# Now, finally, get rid of comments:
 tex.gsub!(/\\index{[^}]+}/,'')
 tex.gsub!(/(?<!\\)%[^\n]*(\n?[ \t]*)?/,'')
 
@@ -1502,7 +1550,6 @@ tex.gsub!(/myoptionalsection/,'mysection')
 tex.gsub!(/\\begin{minipage}\[[a-z]\]{\d+[a-z]*}/,'')
 tex.gsub!(/\\end{minipage}/,'')
 # ... and, e.g., make it do something sensible with non-graphical figures, as in EM 1
-curly = "(?:(?:{[^{}]*}|[^{}]*)*)" # match anything, as long as any curly braces in it are paired properly, and not nested
 tex.gsub!(/\\docaption{(#{curly})}/) {"ZZZWEB:fig,zzzfake,narrow,1,#{newlines_to_spaces($1)}END_CAPTION"} # name,width,anon,caption
 
 # split into sections for easier handling
@@ -1612,12 +1659,12 @@ end
 
 if $wiki then
   print <<HEAD
-{{Chapter_header|book_title=#{$book_title}|ch=#{$ch.to_i}|title=#{$chapter_title}}}
+{{Chapter_header|book_title=#{$config['title']}|ch=#{$ch.to_i}|title=#{$chapter_title}}}
 HEAD
 end # if wiki
 
 if $test_mode then
-  $stderr.print "***************** not putting an ad in #{$book}, ch. #{$ch}, for testing purposes\n"
+  $stderr.print "***************** not putting an ad in #{$config['book']}, ch. #{$ch}, for testing purposes\n"
 else
   print $google_ad_html + "\n"
 end
@@ -1631,8 +1678,8 @@ if $wiki then
     tex.gsub!(/<#{x}(\s+[^>]*)?>/,'')
     tex.gsub!(/<\/#{x}>/,'')
   }
-  #tex.gsub!(/<img src="(figs|math)\/([^"]*)"([^>]*)>/) {"[http://www.lightandmatter.com/html_books/#{$book}/ch#{$ch}/#{$1}/#{$2} figure #{$2} needs to be imported]"}
-  tex.gsub!(/<img src="(figs|math)\/([^"]*)"([^>]*)>/) {"{{Missing_fig|book=#{$book}|ch=#{$ch}|file=#{$2}}} - "}
+  #tex.gsub!(/<img src="(figs|math)\/([^"]*)"([^>]*)>/) {"[http://www.lightandmatter.com/html_books/#{$config['book']}/ch#{$ch}/#{$1}/#{$2} figure #{$2} needs to be imported]"}
+  tex.gsub!(/<img src="(figs|math)\/([^"]*)"([^>]*)>/) {"{{Missing_fig|book=#{$config['book']}|ch=#{$ch}|file=#{$2}}} - "}
   tex.gsub!(/(\n+)\s+/) {$1}
   tex.gsub!(/<br>\n?{2,}\s+/,"<br>\n")
 end
@@ -1679,11 +1726,11 @@ if !$wiki then print "</body></html>\n" end
 #   times if we're doing wiki output.
 #---------
 if ! $wiki && ! $no_write then
-File.open("#{$html_dir}/index.html",'a') do |f|
+File.open("#{$config['html_dir']}/index.html",'a') do |f|
   kludge = $ch
   and_more_kludge = $chapter_title
   oh_my_god_another_kludge = $ch.to_i.to_s + '.'
-  if $ch=='00' && $book=='1np' then
+  if $ch=='00' && $config['book']=='1np' then
     if tex=~/We Americans/ then
       kludge = '001'
       and_more_kludge = 'Preface'

@@ -42,10 +42,12 @@ relativity. The real excitement started when they published their result with th
 for the first time, the speed of gravity, and found it to be within 20\% error bars of $c$. Samuel\footnote{\url{http://arxiv.org/abs/astro-ph/0304006}}
 and Will\footnote{\url{http://arxiv.org/abs/astro-ph/0301145}} published refutations, arguing that Kopeikin's
 calculations contained mistakes, and that what had really been measured was the speed of light, not the speed
-of gravity. The reason that the interpretation of this type of experiment is likely to be controversial is that
+of gravity.
+
+The reason that the interpretation of this type of experiment is likely to be controversial is that
 although we do have theories of gravity that are viable alternatives to general relativity (e.g., the Brans-Dicke theory,\index{Brans-Dicke theory}
 in which the gravitational constant is a dynamically changing variable), such theories have generally been carefully designed to agree with general
-relativity in the weak-field limit, and in particular every such theory (or at least ever theory that remains viable given
+relativity in the weak-field limit, and in particular every such theory (or at least every theory that remains viable given
 current experimental data) predicts that gravitational effects
 propagate at $c$ in the weak-field limit. Without an alternative theory to act as a framework --- one that \emph{disagrees} with
 relativity about the speed of gravity --- it is difficult to know whether an observation
@@ -57,14 +59,15 @@ that agrees with relativity is a test of this specific aspect of relativity.
 So we still don't know, a century after Einstein found the field equations, whether gravitational ``ripples'' travel at $c$.
 Nevertheless, we do have strong empirical evidence that such ripples exist. The Hulse-Taylor system (page \pageref{hulse-taylor-pulsar})
 contains two neutron stars orbiting around their common center of mass, and the period of the orbit is observed to be lengthening
-gradually over time, \figref{pulsar-period-increasing}. This is interpreted as evidence that the stars are losing energy to radiation of 
+gradually over time, \figref{pulsar-period-decreasing}. This is interpreted as evidence that the stars are losing energy to radiation of 
 gravitational waves.\footnote{Stairs, ``Testing General Relativity with Pulsar Timing,'' \url{http://relativity.livingreviews.org/Articles/lrr-2003-5/}}
 <%
   fig(
-    'pulsar-period-increasing',
+    'pulsar-period-decreasing',
     %q{%
       The Hulse-Taylor pulsar's orbital motion is gradually losing energy due to the emission of gravitational waves.
-           The linear increase of the period is integrated on this plot, resulting in a parabola.
+           The linear decrease of the period is integrated on this plot, resulting in a parabola. From
+           Weisberg and Taylor, \url{http://arxiv.org/abs/astro-ph/0211217}.
     },
     {
       'width'=>'wide',
@@ -113,7 +116,10 @@ vanishes by symmetry. Therefore this metric must really just be a flat-spacetime
 to a silly change of coordinates.
 % checked using coordinate_wave.mac that this was really flat
 
-To keep the curvature from vanishing, we clearly need to have a metric in which the oscillation is not
+Self-check: Do the Christoffel symbols $\Gamma$ vanish for this metric? Is there a
+reason for paying more attention to one or the other, $R$ or $\Gamma$?
+
+To keep the curvature from vanishing, it looks like we need a metric in which the oscillation is not
 restricted to a single variable. For example, the metric
 \begin{equation*}
   \der s^2 = \der t^2 - \left(1+\frac{1}{10}\sin y\right)\der x^2 - \der y^2 - \der z^2
@@ -311,6 +317,19 @@ in seeing the subject developed in detail is referred to Carroll's \emph{Lecture
 
 <% begin_sec("Rate of radiation") %>\label{sec:rate-of-gravitational-radiation}
 How can we find the rate of gravitational radiation from a system such as the Hulse-Taylor pulsar?
+<% marg(0) %>
+<%
+  fig(
+    'multipoles',
+    %q{The power emitted by a multipole source of order $m$ is proportional to $\omega^{2(m+1)}$, when the size
+           of the source is small compared to the wavelength. The main reason for
+           the $\omega$ dependence is that at low frequencies, the wavelength
+           is long, so the number of wavelengths traveled to a particular
+           point in space is nearly the same from any point in the source;
+           we therefore get strong cancellation.}
+  )
+%>
+<% end_marg %>
 
 Let's proceed by analogy. The simplest source of sound waves is something like the cone of a stereo speaker.
 Since typical sound waves have wavelengths measured in meters, the entire speaker is generally small compared to the wavelength.

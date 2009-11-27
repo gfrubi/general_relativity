@@ -229,7 +229,8 @@ def height_of_marg
     found,lo_y,hi_y = get_low_and_hi!(found,lo_y,hi_y,previous_pos_file(),mine)
   end
   if !found then
-    warn_marg(1,$n_marg,0,"figure not found in height_of_marg, $n_marg=#{$n_marg} $ch=#{$ch}; see comment in eruby_util for more about this")
+    #warn_marg(1,$n_marg,0,"figure not found in height_of_marg, $n_marg=#{$n_marg} $ch=#{$ch}; see comment in eruby_util for more about this")
+    # This happens and is normal for wide figures, which are not in the margin. They appear in chNN.pos, but not in marg.pos.
   end
 
   if !found then return nil end

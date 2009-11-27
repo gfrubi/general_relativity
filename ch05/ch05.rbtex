@@ -569,6 +569,15 @@ Therefore we will have a similar conserved quantity $p_\mu$ any time the
 metric's components, expressed in a particular coordinate system, are independent of $x^\mu$.
 In particular, the Schwarzschild metric's components are independent of $\phi$ as well as $t$, so
 we have a second conserved quantity $p_\phi$, which is interpreted as angular momentum.
+<% marg(200) %>
+<%
+  fig(
+    'conserved-momentum',
+    %q{Proof that if the metric's components are independent of $t$,
+        the geodesic of a test particle conserves $p_t$.}
+  )
+%>
+<% end_marg %>
 
 Writing these
 two quantities out explicitly in terms of the contravariant coordinates, in the case of the Schwarzschild spacetime,

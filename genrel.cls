@@ -41,6 +41,7 @@
 % (chapter stuff is in lmfigs.cls, since it contains a lot of stuff for figures)
   \newcommand{\mysection}[2][4]{\pagebreak[#1]%
 	\section{#2}\myeqnspacing%
+        \setcounter{figctr}{0}
         \setcounter{dqctr}{0}% gets done automatically for subsections, but I need to do it explicitly for sections that have no subsections
   }
   \newcommand{\myoptionalsection}[2][4]{\pagebreak[#1]%

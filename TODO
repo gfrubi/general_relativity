@@ -1,6 +1,5 @@
-fig:velocity-disk-accel-question -- broken ref
-
-overlapping figs, p. 100; why don't scripts warn me?
+in section on geodesic eqn, do an example by 2 techniques: (1) geodesic eqn; (2) path ABC, varying B;
+         I use technique 2 later in book, should probably use 1
 
 I think my problems with toc are related to use of mytocloft instead of the real tocloft.
 

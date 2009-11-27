@@ -35,6 +35,8 @@ extent for my shallow background, and that readers who find mistakes will be
 kind enough to let me know about them using the contact information 
 provided at \url{http://www.lightandmatter.com/area4author.html}.
 
+\pagebreak
+
 <% begin_sec("Time and causality") %>
 
 Updating Plato's allegory of the cave,
@@ -381,14 +383,6 @@ only the non-metrical notions of point (i.e., event) and line are relevant in or
 In a geometry without measurement, there is no concept of measuring distance (hence no
 compasses or circles), or of measuring angles. The notation [ABC] indicates that event B lies on a line
 segment joining A and C, and is strictly between them.
-<% marg(0) %>
-<%
-  fig(
-    'ordered-geometry',
-    %q{Axioms O2 (left) and O3 (right).}
-  )
-%>
-<% end_marg %>
 
 The axioms of ordered geometry are as follows:\footnote{The axioms are summarized for convenient reference in the back
 of the book on page \pageref{ordered-summary}. This is meant to be an informal, readable summary of the system,
@@ -406,6 +400,14 @@ math major might use in a first upper-division course in geometry.}\label{ordere
 \item[O3] Lines don't wrap around: if [ABC] is true, then [BCA] is false.
 \item[O4] Causality: Any three distinct events A, B, and C lying on the same line can be sorted out in order (and by statement 3, this order is unique).
 \end{itemize}
+<% marg(50) %>
+<%
+  fig(
+    'ordered-geometry',
+    %q{Axioms O2 (left) and O3 (right).}
+  )
+%>
+<% end_marg %>
 
 O1-O2 express the same ideas as Euclid's E1-E2. Not all lines in the system will correspond physically to
 chains of causality; we could have a line segment that describes a snapshot of a steel chain, and O3-O4
@@ -516,7 +518,7 @@ of light elements with nearly equal numbers of neutrons and protons. The first h
 of this type were performed by E\"{o}tv\"{o}s around the turn of the twentieth century, and they verified
 the equivalence of inertial and gravitational mass to within about one part in $10^8$. Measurements in the
 mid-twentieth century refined this to one part in $10^{12}$. These are generically referred to as E\"{o}tv\"{o}s experiments.\index{E\"{o}tv\"{o}s experiments}
-<% marg(0) %>
+<% marg(50) %>
 <%
   fig(
     'eotvos-portrait',
@@ -762,7 +764,7 @@ an extremely high precision experiment is necessary in order to detect a gravita
 enough to obscure it entirely, and must be eliminated or compensated for somehow. These are listed below, along with their
 orders of magnitude in the experimental design finally settled on by Pound and Rebka.
 
-\begin{tabular}{p{130mm}p{20mm}}
+\begin{tabular}{p{80mm}p{20mm}}
 (1) \emph{Classical Doppler broadening due to temperature.\/} Thermal motion causes Doppler shifts of emitted photons,
          corresponding to the random component of the emitting atom's velocity vector along the direction of emission.
       & $\sim 10^{-6}$ \\
@@ -781,23 +783,10 @@ orders of magnitude in the experimental design finally settled on by Pound and R
          not along the line of emission. The equations needed in order to calculate this effect will not be derived until
          section \ref{sec:lorentz-geometry}; a quantitative estimate is given in example \ref{eg:pound-rebka-time-dilation} on page \pageref{eg:pound-rebka-time-dilation}.
          For now, we only need to know that this leads to a temperature-dependence in
-         the \emph{average} frequency of emission, in addition to the broadening of the bell curve described by (1) above.
+         the \emph{average} frequency of emission, in addition to the broadening of the bell curve described by effect (1) above.
        & $\sim10^{-14}$ per degree C 
 \end{tabular}
-
-The most straightforward way to mitigate effect (1) is to use photons emitted from a solid. At first glance
-this would seem like a bad idea, since electrons in a solid emit a continuous spectrum of light, not a discrete
-spectrum like the ones emitted by gases; this is because we have $N$ electrons, where $N$ is on the order of
-Avogadro's number, all interacting strongly with one another,
-so by the correspondence principle\index{correspondence principle} the discrete quantum-mechanical behavior
-must be averaged out. But the protons and neutrons within one nucleus do not interact much at all with
-those in other nuclei, so the photons emitted by a \emph{nucleus} do have a discrete spectrum. The energy scale
-of nuclear excitations is in the keV or MeV range, so these photons are x-rays or gamma-rays. Furthermore,
-the time-scale of the random vibrations of a nucleus in a solid are extremely short. For a velocity on the
-order of 100 m/s, and vibrations with an amplitude of $\sim 10^{-10}\ \munit$, the time is about $10^{-12}\ \sunit$.
-In many cases, this is much shorter than the half-life of the excited nuclear state emitting the gamma-ray, and
-therefore the Doppler shift averages out to nearly zero.
-<% marg(100) %>
+<% marg(160) %>
 <%
   fig(
     'pound-rebka',
@@ -815,6 +804,19 @@ therefore the Doppler shift averages out to nearly zero.
   )
 %>
 <% end_marg %>
+
+The most straightforward way to mitigate effect (1) is to use photons emitted from a solid. At first glance
+this would seem like a bad idea, since electrons in a solid emit a continuous spectrum of light, not a discrete
+spectrum like the ones emitted by gases; this is because we have $N$ electrons, where $N$ is on the order of
+Avogadro's number, all interacting strongly with one another,
+so by the correspondence principle\index{correspondence principle} the discrete quantum-mechanical behavior
+must be averaged out. But the protons and neutrons within one nucleus do not interact much at all with
+those in other nuclei, so the photons emitted by a \emph{nucleus} do have a discrete spectrum. The energy scale
+of nuclear excitations is in the keV or MeV range, so these photons are x-rays or gamma-rays. Furthermore,
+the time-scale of the random vibrations of a nucleus in a solid are extremely short. For a velocity on the
+order of 100 m/s, and vibrations with an amplitude of $\sim 10^{-10}\ \munit$, the time is about $10^{-12}\ \sunit$.
+In many cases, this is much shorter than the half-life of the excited nuclear state emitting the gamma-ray, and
+therefore the Doppler shift averages out to nearly zero.
 
 Effect (2) is still much bigger than the $10^{-14}$ size of the effect to be measured. It can be avoided by exploiting
 the M\"{o}ssbauer effect,\index{M\"{o}ssbauer effect} in which a nucleus in a solid substance at low temperature
@@ -834,6 +836,24 @@ absorber are aligned vertically, gravitational frequency shifts should cause a m
 One can move the source at a small velocity (typically a few
 mm/s) in order to add a Doppler shift onto the frequency; by determining the velocity that compensates for the
 gravitational effect, one can determine how big the gravitational effect is.
+<% marg(150) %>
+<%
+  fig(
+    'pound-rebka-v-t',
+    %q{
+      \emph{Top:} A graph of velocity versus time for the source. The velocity has both a constant component
+         and an oscillating one with a frequency of 10-50 Hz. The constant component $v_\zu{o}$ was used as a way of determining the calibration
+         of frequency shift as a function of count rates.
+         Data were acquired during the quarter-cycle periods of maximum oscillatory velocity, 1 and 2.\\
+       \emph{Bottom:} Count rates as a function of velocity, for $v_\zu{o}=0$ and $v_1\ne 0$. The dashed curve
+         and black circles represent the count rates that would have been observed if there were no gravitational
+         effect. The gravitational effect shifts the resonance curve to one side (solid curve), resulting in an asymmetry of the
+         count rates (open circles). The shift, and the resulting asymmetry, are greatly exaggerated for readability; in reality,
+         the gravitational effect was 500 times smaller than the width of the resonance curve.
+    }
+  )
+%>
+<% end_marg %>
 
 % hyperfine interactions give frequency shifts depending on material, preparation of sample, annealing, etc.
 % http://luth2.obspm.fr/IHP06/lectures/mester-vinet/IHP-2GravRedshift.pdf ... good, detailed explanation of Pound-Rebka
@@ -879,24 +899,6 @@ However, systematic effects such as (4) were easier to monitor and account for w
 A lab building at Harvard happened to have a 22-meter tower, which was used for the experiment.
 To reduce the absorption of the gammas in the 22 meters of air, a long, cylindrical mylar bag full of helium
 gas was placed in the shaft.
-<% marg(100) %>
-<%
-  fig(
-    'pound-rebka-v-t',
-    %q{
-      \emph{Top:} A graph of velocity versus time for the source. The velocity has both a constant component
-         and an oscillating one with a frequency of 10-50 Hz. The constant component $v_\zu{o}$ was used as a way of determining the calibration
-         of frequency shift as a function of count rates.
-         Data were acquired during the quarter-cycle periods of maximum oscillatory velocity, 1 and 2.\\
-       \emph{Bottom:} Count rates as a function of velocity, for $v_\zu{o}=0$ and $v_1\ne 0$. The dashed curve
-         and black circles represent the count rates that would have been observed if there were no gravitational
-         effect. The gravitational effect shifts the resonance curve to one side (solid curve), resulting in an asymmetry of the
-         count rates (open circles). The shift, and the resulting asymmetry, are greatly exaggerated for readability; in reality,
-         the gravitational effect was 500 times smaller than the width of the resonance curve.
-    }
-  )
-%>
-<% end_marg %>
 
 The resonance was a bell-shaped curve with a minimum at the natural frequency of emission. Since the curve
 was at a minimum, where its derivative was zero, the sensitivity of the count rate to the gravitational shift would have
@@ -1178,8 +1180,9 @@ for convenience on page \pageref{lorentz-summary} in the back of the book.}
 \item[L2] \emph{Inertial frames of reference exist.} These are frames in which particles move at constant velocity if not subject to any forces.
                   We can construct such a frame by using a particular particle, which is not subject to any forces, as a reference point.
 \item[L3] \emph{Equivalence of inertial frames:} If a frame is in constant-velocity translational motion relative to an inertial frame, then it is also an inertial frame.
-              No experiment can distinguish one inertial frame from another.
-\item[L4] \emph{Causality:} Observers in different inertial frames agree on the time-ordering of events.
+              No experiment can distinguish one preferred inertial frame from all the others.
+\item[L4] \emph{Causality:} If an observer in certain inertial frame observes that event A causes event B, then observers in other inertial frames agree
+              that A causes B, not the other way around.
 \item[L5] \emph{No simultaneity:} The experimental evidence in section \ref{sec:time-experiments} shows that
            observers in different inertial frames do not agree on the simultaneity of events.
 \end{itemize}
@@ -1539,7 +1542,7 @@ The cosmological constant is not related to the presence of any sources (such as
 and can be interpreted instead as a tendency for space to expand over time on its own initiative.
 In the present era, the cosmological constant has overpowered the gravitation of the universe's
 mass, causing the expansion of the universe to accelerate.
-<% marg(100) %>
+<% marg(50) %>
 <%
   fig(
     'tipping-light-cones',
@@ -1679,14 +1682,6 @@ predict a granular structure for spacetime at the Planck scale, $\sqrt{\hbar G/c
 deviations from $v=1$ that would become more and more significant for photons with wavelengths
 getting closer and closer to that scale. Lorentz-invariance would then be an approximation valid
 only at large scales.
-<% marg(0) %>
-<%
-  fig(
-    'gamma-ray-burst',
-    %q{An artist's conception of a gamma-ray burst, resulting from a supernova explosion.}
-  )
-%>
-<% end_marg %>
 
 Presently the best experimental tests of the invariance of
 the speed of light with respect to wavelength come from astronomical observations of gamma-ray bursts, which are sudden
@@ -1696,6 +1691,14 @@ time of all the photons differed by no more than 2 seconds out of a total time i
 of ten billion years, or about one part in $10^{17}$! A single superlative photon in the burst had an energy of 31 GeV,
 and its arrival within the same 2-second time window demonstrates Lorentz invariance over a vast range of photon energies,
 ruling out some versions of loop quantum gravity.
+<% marg(70) %>
+<%
+  fig(
+    'gamma-ray-burst',
+    %q{An artist's conception of a gamma-ray burst, resulting from a supernova explosion.}
+  )
+%>
+<% end_marg %>
 
 <% end_sec %>
 
@@ -2094,11 +2097,25 @@ possible states of motion relative to some arbitrarily chosen frame of reference
 center. A point at distance $v$ from the center represents motion at velocity $v$ in a particular direction in the $x-y$ plane.
 By drawing little axes at a particular point, we can represent a particular frame of reference: the frame is in motion at
 some velocity, with its own $x$ and $y$ axes are oriented in a particular way.
-<% marg(20) %>
+<% marg(70) %>
 <%
   fig(
     'velocity-disk',
     %q{The velocity disk.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'velocity-disk-accel',
+    %q{Two excursions in a rocket-ship: one along the $y$ axis and one along $x$.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'velocity-disk-loop-question',
+    %q{A round-trip involving ultrarelativistic velocities. All three legs are at constant acceleration.}
   )
 %>
 <% end_marg %>
@@ -2115,23 +2132,8 @@ This results in a series of frames of reference that appear closer and closer to
 at the edge of the disk. We can start over from the center again and repeat the whole process along the $x$ axis, resulting in a
 similar succession of frames. In both cases, the boosts are being applied along a single line, so that there is no rotation of
 the $x$ and $y$ axes.
-<% marg(20) %>
-<%
-  fig(
-    'velocity-disk-accel',
-    %q{Two excursions in a rocket-ship: one along the $y$ axis and one along $x$.}
-  )
-%>
-\spacebetweenfigs
-<%
-  fig(
-    'velocity-disk-loop-question',
-    %q{A round-trip involving ultrarelativistic velocities. All three legs are at constant acceleration.}
-  )
-%>
-<% end_marg %>
 
-Now suppose that the ship were to accelerate along a route like the one shown in figure \figref{velocity-disk-accel-question}.
+Now suppose that the ship were to accelerate along a route like the one shown in figure \figref{velocity-disk-loop-question}.
 It first accelerates along the $y$ axis at a constant
 rate (again, as judged by its own sensors), until its velocity is very close to the speed of light, A. It then accelerates,
 again at a self-perceived constant rate and with thrust in a fixed direction as judged by its own gyroscopes, until it is moving at the

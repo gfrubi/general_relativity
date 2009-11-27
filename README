@@ -1,0 +1,51 @@
+=================================================================
+producing pdf output
+=================================================================
+Compiling the book into pdf format is fairly easy on a Linux
+machine. Basically you just need to install some open-source
+software. The following are the relevant packages on a Debian-based
+system such as Ubuntu:
+  texlive-full pdftk m4
+
+You also need Ruby 1.9. As of November 2009, this the stable version,
+but many older Linux distributions have 1.8. To test whether your
+version of ruby is new enough to use, do this:
+  make test_ruby
+If you need to upgrade, you can download 1.9 from:
+  http://www.ruby-lang.org/en/
+
+From the main directory (the one where you found this README), just
+do the command:
+  make
+
+I haven't tried compiling the books on MacOS X or Windows. I suspect
+it could be done on MacOS X without any heroic measures, and I suspect
+that it would be a real pain on Windows.
+
+=================================================================
+producing html output
+=================================================================
+To produce html output requires a little more software. First, you
+need the following additional Debian packages:
+  xpdf imagemagick tex4ht dvipng
+(The xpdf dependency is because of pdftoppm, which comes bundled
+with it.)
+
+You'll also need footex:
+  http://www.lightandmatter.com/footex/footex.html
+
+=================================================================
+translation
+=================================================================
+Currently my plan is to have translators use the wiki versions of the
+books at:
+  http://authors.ck12.org/wiki/index.php/CK12_Books#Ben_Crowell.27s_Physics_Books
+If there is not yet a wiki-formatted version of the book, a first shot
+can be produced by doing:
+  make wiki
+Some of the boilerplate phrases can then be translated like this:
+  ../scripts/translate_boilerplate.pl -l fr <ch00/ch002.wiki >a.wiki
+
+====================
+
+More technical details about the software setup are in INTERNALS.
