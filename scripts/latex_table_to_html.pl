@@ -65,7 +65,7 @@ my  $input = get_input($raw_file);
       }
       if ($fmt eq 'xhtml') {
         my $mm = `footex --prepend-file $sty --mathml $t`;
-        $m=$mm if $mm ne '';
+        $m='<math xmlns="http://www.w3.org/1998/Math/MathML">'.$mm.'</math>' if $mm ne '';
       }
       unlink $t;
       push @emb,$m;
@@ -86,6 +86,9 @@ my $html = $file;
 $html =~ s/\.tex$/\.html/;
 my $final_html = $raw_file;
 $final_html =~ s/\.tex$/\.html/;
+
+#print STDERR "=============\nbefore htlatex, input=\n$input\n===================";
+
 system("cd $temp_dir && htlatex $temp_dir/$file $f >/dev/null && cd -")==0 or die "error in latex_table_to_html";
 File::Copy::move("$temp_dir/$html",$final_html);
 
@@ -94,6 +97,8 @@ local $/;
 my $h = <HTML>;
 close HTML;
 
+#print STDERR "=============\nafter htlatex, html=\n$h\n===================";
+
 #--------------
   for (my $i=0; $i<@emb; $i++) {
     my $o = $emb_octal[$i];
@@ -101,6 +106,7 @@ close HTML;
     $h =~ s/$o/$m/;
   }
 
+#print STDERR "=============\nafter putting math back in, html=\n$h\n===================";
 
 #----------- print $h;
 
@@ -109,10 +115,17 @@ if (!($h=~/<body\s*>(.*)<\/body>/s)) {
   exit(0); # allow it to run
 }
 my $table= $1;
+$table =~ s/<div class="tabular">//;
+$table =~ s/<\/div>\w*\Z//;
+$table =~ s/<div [^>]*>//g;
+$table =~ s/<\/div>//g;
+$table =~ s/id="TBL-[^"]*"//g; # invalid markup if not unique
 $table =~ s/^\s*//;
 $table =~ s/\s*$//;
 $table =~ s/\n{2,}/\n/gs;
 $table =~ s/<td>([^<>]+)<\/t>/<td>$1<\/td>/g; # bug in htlatex?
+
+#print STDERR "=============\nfinal html=\n$table\n===================";
 
 open(HTML,">$final_html") or die "error opening $final_html for output, $!";
 print HTML $table;

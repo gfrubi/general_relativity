@@ -122,10 +122,10 @@ are perpendicular to one another.\index{unitarity}
 
 To see what this means physically, consider the following nonexamples. The matrix
 \begin{equation*}
-  \begin{pmatrix}
+  \left(\begin{array}{cc}
     1 & 0 \\
     0 & 0
-  \end{pmatrix}
+  \end{array}\right)
 \end{equation*}
 is not unitary, because its rows and columns are not orthogonal vectors with unit lengths. If this matrix
 represented the time-evolution of a quantum mechanical system, then its meaning would be that any particle
@@ -135,10 +135,10 @@ symmetry of quantum mechanics.
 
 Another nonunitary matrix is:
 \begin{equation*}
-  \begin{pmatrix}
+  \left(\begin{array}{cc}
     1 & 0 \\
     0 & \sqrt{2}
-  \end{pmatrix}
+  \end{array}\right)
 \end{equation*}
 Here, any particle in state 2 is increased in amplitude by a factor of $\sqrt{2}$, meaning that it is doubled in probability.
 That is, the particle is cloned. This is the opposite problem compared to the one posed by the first matrix, and

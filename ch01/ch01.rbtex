@@ -1172,9 +1172,9 @@ This can approached either by looking for an appropriate metric, or by finding t
 distorting parallelograms when switching from one frame of reference to another frame is in motion relative
 to the first. In either case, we need some further input from experiments in order to show us how to proceed.
 We take the following as empirical facts about flat spacetime:\footnote{These facts are summarized
-for convenience on page \pageref{lorentz-summary} in the back of the book.}
+for convenience on page \pageref{lorentz-summary} in the back of the book.}\label{lorentz-geometry-postulates}
 
-\begin{itemize}\label{lorentz-geometry-postulates}
+\begin{itemize}
 \item[L1] \emph{Spacetime is homogeneous and isotropic.} No point has special properties that make it distinguishable from other points, nor is one
                   direction distinguishable from another.
 \item[L2] \emph{Inertial frames of reference exist.} These are frames in which particles move at constant velocity if not subject to any forces.
@@ -1602,10 +1602,13 @@ relative to itself, we can't have the probe moving at $1.20c$ relative to the ea
 this would be greater than the maximum speed of cause and effect, $c$. To see how to add velocities
 relativistically, we start be rewriting the Lorentz transformation as the matrix
 \begin{equation*}
-  \begin{pmatrix}
+  \left(
+  \begin{array}{cc}
     \cosh\eta  & \sinh\eta \\
     \sinh\eta & \cosh\eta
-  \end{pmatrix} \qquad ,
+  \end{array}
+  \right)
+  \qquad ,
 \end{equation*}
 where $\eta=\tanh^{-1} v$ is called the \emph{rapidity}.\index{rapidity}
 We are guaranteed that the matrix can be written in this form, because its area-preserving
@@ -2012,7 +2015,7 @@ computation. The (\%o9) indicates that this is Maxima's output from the ninth an
 \end{listing}
 In other words,
 \begin{equation*}
-  T\begin{pmatrix}1 \\ 1 \\ 0\end{pmatrix} = \begin{pmatrix}1 \\ 1 \\ -v^2\end{pmatrix} + \ldots \qquad ,
+  T\left(\begin{array}{c}1 \\ 1 \\ 0\end{array}\right) = \left(\begin{array}{c}1 \\ 1 \\ -v^2\end{array}\right) + \ldots \qquad ,
 \end{equation*}
 where $\ldots$ represents higher-order terms in $v$.
 The interpretation is as follows.
@@ -2032,41 +2035,6 @@ a counterclockwise angle $\chi\approx v^2$ about the $z$ axis.
 We can see that this is a purely relativistic effect, since for
 $v \ll 1$ the effect is small. For historical reasons discussed in section \ref{sec:thomas-precession}, this
 phenomenon is referred to as the Thomas precession.
-
-% The following is a conditional because it's a note to myself, but it can be handy to see it typeset:
-\ifthenelse{\isodd{0}}{
- This is what I calculated by hand. Checked against maxima output and found and corrected one mistake:
- \begin{alignat*}{2}
-  t \rightarrow    & (\gamma^4-2v^2\gamma^3)      t  &+    v(-\gamma^3+\gamma^2) x   & +(-v\gamma^4+v(1+v^2)\gamma^3) y \\
-  x \rightarrow    & v(\gamma^4-(1+v^2)\gamma^3) t  &+    (\gamma^2-v^2\gamma^3) x  & +v^2\gamma^3(-\gamma+2)  y \\
-  y \rightarrow    & v(\gamma^3-\gamma^2)        t   &+    (-v^2\gamma^2)         x  & +(\gamma^2-v^2\gamma^3)        y
- \end{alignat*}
- Applying it to (0,1,0) gives middle column as result. As a check on the result, I checked that norm squared is exactly -1 after transformation.
- This is what I get by doing (g,-gv,-gv,g) on ty, then (g,-gv,-gv,g) on tx, (g,gv,gv,g) on ty, (g,gv,gv,g) on tx.
- see thomas.mac
-The following is the output from maxima:
-\begin{equation*}
-  \begin{pmatrix}
-{{{{1}\over{\left(1-v^2\right)^{{{3}\over{2}}}}}-{{v^2}\over{1-v^2
- }}}\over{\sqrt{1-v^2}}}-{{v^2}\over{\left(1-v^2\right)^{{{3}\over{2
- }}}}} &
-{{v}\over{1-v^2}}-{{v}\over{\left(1-v^2\right)^{{{3}\over{2}}}}} &
-{{{{v}\over{1-v^2}}-{{v}\over{\left(1-v^2\right)^{{{3}\over{2}}}}}
- }\over{\sqrt{1-v^2}}}+{{v^3}\over{\left(1-v^2\right)^{{{3}\over{2}}}
- }} \\
-{{v\,\left({{1}\over{\left(1-v^2\right)^{{{3}\over{2}}}}}-{{v^2
- }\over{1-v^2}}\right)}\over{\sqrt{1-v^2}}}-{{v}\over{\left(1-v^2
- \right)^{{{3}\over{2}}}}} &
-{{1}\over{1-v^2}}-{{v^2}\over{\left(1-v^2\right)^{{{3}\over{2}}}}} &
-{{v\,\left({{v}\over{1-v^2}}-{{v}\over{\left(1-v^2\right)^{{{3
- }\over{2}}}}}\right)}\over{\sqrt{1-v^2}}}+{{v^2}\over{\left(1-v^2
- \right)^{{{3}\over{2}}}}} \\
-{{v}\over{\left(1-v^2\right)^{{{3}\over{2}}}}}-{{v}\over{1-v^2}} &
--{{v^2}\over{1-v^2}} &
-{{1}\over{1-v^2}}-{{v^2}\over{\left(1-v^2\right)^{{{3}\over{2}}}}}
-  \end{pmatrix} 
-\end{equation*}
-}{}
 
 The particular features of this geometry are not necessary. I chose them so that (1) the boosts
 would be along the Cartesian axes, so that we would be able to write them down easily; (2) it is clear that the effect

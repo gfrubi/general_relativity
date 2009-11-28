@@ -59,6 +59,11 @@
 
 # keep making sure it validates at http://validator.w3.org/
 #            can apt-get install w3c-markup-validator , but it installs and starts apache , and no man page??
+#            The main program is a perl script called "check", http://dev.w3.org/cvsweb/validator/httpd/cgi-bin/ .
+#            The validator seems to have gotten more strict over time. One thing that has gotten stricter recently is that it complains about
+#            math nested inside mtext, like you get from latex code such as $\text{blah $x^2$ foo}$. This renders fine in firefox, so I'm
+#            not sure it's something I care about fixing. This is actually one of the main features I worked hard to put into footex.
+#            An example where this occurs is the example beginning with "How high does a diving board..." in SN0.
 # Default should be:
 #   - redo any figures whose original source files are newer than the bitmaps
 #   - delete equations that are no longer referred to
@@ -331,10 +336,14 @@ def parse_itty_bitty_stuff!(tex)
   tex.gsub!(/\\verb@([^@]*)@/) {"\\verb{#{$1}}"}  # The \verb{} macro can be given with other delimeters, and I often use \verb@@.
   tex.gsub!(/\\verb\-([^\-]*)\-/) {"\\verb{#{$1}}"}  # ... or \verb--
   tex.gsub!(/\\verb{(#{curly})}/) {"<span class='monospace'>#{$1}</span>"}
-  tex.gsub!(/\\`\{e\}/) {"&egrave;"}
-  tex.gsub!(/\\`e/) {"&egrave;"}
-  tex.gsub!(/\\'\{e\}/) {"&eacute;"}
-  tex.gsub!(/\\'e/) {"&eacute;"}
+  ["a","e","i","o","u"].each { |vowel|
+    accents = {"`"=>'grave',"'"=>'acute','"'=>'uml'}
+    accents.keys.each { |acc|
+      entity = "&"+vowel+accents[acc]+";"
+      tex.gsub!(/\\#{acc}\{#{vowel}\}/) {entity}
+      tex.gsub!(/\\#{acc}#{vowel}/) {entity}
+    }
+  }
   tex.gsub!(/\\\-/,'')
   tex.gsub!(/\\ /,' ')
   tex.gsub!(/\\%/,'%')
@@ -368,8 +377,8 @@ def parse_itty_bitty_stuff!(tex)
   # environments that we don't care about:
   tex.gsub!(/\\(begin|end){(preface|longnoteafterequation|flushleft)}/,'')
 
-  tex.gsub!(/\\anonymousinlinefig{(#{curly})}/) {name = $1; file=find_figure(name,'raw'); "<img src=\"figs/#{file}\"#{$self_closing_tag}>"}
-  tex.gsub!(/\\fullpagewidthfignocaption{(#{curly})}/) {name = $1; file=find_figure(name,'fullpage'); "<img src=\"figs/#{file}\"#{$self_closing_tag}>"}
+  tex.gsub!(/\\anonymousinlinefig{(#{curly})}/) {name = $1; file=find_figure(name,'raw'); "<img src=\"figs/#{file}\" alt=\"#{name}\"#{$self_closing_tag}>"}
+  tex.gsub!(/\\fullpagewidthfignocaption{(#{curly})}/) {name = $1; file=find_figure(name,'fullpage'); "<img src=\"figs/#{file}\" alt=\"#{name}\"#{$self_closing_tag}>"}
 end
 
 def parse_marg_stuff!(m)
@@ -401,6 +410,12 @@ def parse_section(tex)
 
   parse_macros_outside_para!(tex)
   curly = "(?:(?:{[^{}]*}|[^{}]*)*)" # match anything, as long as any curly braces in it are paired properly, and not nested
+
+  # <ol>, <ul>, and <pre> can't occur inside paragraphs, so make sure they're separated into their own paragraphs:
+  ['itemize','enumerate','listing','tabular','verbatim'].each { |x|
+    tex.gsub!(/(\\begin{#{x}})/) {"\n\n#{$1}"}
+    tex.gsub!(/(\\end{#{x}})/) {"#{$1}\n\n"}
+  }
 
   # Optional arguments are confusing, so replace them with {} that are always there.
   envs = ['important','lessimportant']
@@ -570,8 +585,8 @@ def parse_section(tex)
   }
   tex = result
 
-  # Eliminate illegal and unnecessary <p> tags inside <ol> and <ul>.
-  ['ol','ul'].each { |x|
+  # Eliminate illegal and unnecessary <p> tags inside <ol>, <ul>, or <pre>.
+  ['ol','ul','pre'].each { |x|
     result = ''
     inside = false # even if the environment starts at the beginning of the string, split() gives us a null string as our first string
     tex.split(/<\/?#{x}>/).each { |d|
@@ -586,9 +601,12 @@ def parse_section(tex)
       inside = !inside
     }
     tex = result
-    # can't enclose <ol> or <ul> inside <p>:
-    tex.gsub!(/<p><#{x}>/) {"<#{x}>"}
-    tex.gsub!(/<\/#{x}><\/p>/) {"</#{x}>"}
+  }
+
+  # Also can't enclose <ol>, <ul>, <pre>, or <table> inside <p>.
+  ['ol','ul','pre','table'].each { |x|
+    tex.gsub!(/<p>\s*<#{x}([^>]*)>/) {"<#{x}#{$1}>"}
+    tex.gsub!(/<\/#{x}>\s*<\/p>/) {"</#{x}>"}
   }
 
   tex.gsub!(/KEEP_BLANK_LINE/,'')
@@ -757,6 +775,8 @@ def handle_table_one(original)
         if html==nil or html=='' then
           $stderr.print "warning: table generated nil or null string for html"
         else
+          html.gsub!(/<div class="tabular">/,'')
+          html.gsub!(/<\/div>/,'')
           File.open(cache_file,'w') do |f|
             f.print html
           end
@@ -793,7 +813,7 @@ def handle_math(tex,inline_only=false,allow_bitmap=true)
 
   unless inline_only then
 
-  if false then # I think this is no longer necessary now that I'm using footex, and in fact it causes problems. qwe
+  if false then # I think this is no longer necessary now that I'm using footex, and in fact it causes problems.
   #--------------------- locate displayed math with intertext or multiple lines, and split into smaller pieces ----------------------------
   # This has to come before inline ($...$) math, because sometimes displayed math has \text{...$...$...} inside it.
   envs = ['align','equation','multline','gather','align*','equation*','multline*','gather*']
@@ -981,7 +1001,6 @@ def handle_math_one_html(tex,math_type)
     if y!=nil then return y end
 
     if $xhtml then
-      #$stderr.print "((((((((((((((("+tex+")))))))))))))))))\n" # qwe
       # If it's something like an align environment, it may have \\ in it, so we need to surround it with a begin/end block, or else blahtex will get upset.
       surround = (math_type!='inline' && math_type!='equation') 
       t = 'temp_mathml'
@@ -994,10 +1013,10 @@ def handle_math_one_html(tex,math_type)
         y.gsub!(/\n/,' ')
         y = y + "\n" + '<math xmlns="http://www.w3.org/1998/Math/MathML">'+(f.gets(nil))+'</math>' # nil means read whole file
       }
+      y.gsub!(/<mtext>([^<]*)<mtext>([^<]*)<\/mtext>([^<]*)<\/mtext>/) {"<mtext>#{$1}#{$2}#{$3}</mtext>"} #qwe
     end
 
     if $wiki then
-      #$stderr.print "((((((((((((((("+tex+")))))))))))))))))\n" # qwe
       # If it's something like an align environment, it may have \\ in it, so we need to surround it with a begin/end block, or else blahtex will get upset.
       surround = (math_type!='inline' && math_type!='equation') 
       t = 'temp_mathml'
@@ -1114,10 +1133,10 @@ def parse_para(t)
   tex = t.clone
 
   # Do tables before handling math, because otherwise, e.g., \alpha becomes &alpha;, which looks like & in table.
-  # When tex4ht converts the table, it will convert the math inside it as well.
+  # When latex_table_to_html converts the table, it will convert the math inside it as well.
   # However, it may generate bitmaps for complex math, which I don't want it to do inside a table (script can't handle it).
   # Therefore, if a table comes back from tex4ht with bitmaps in it, handle_tables replaces each bitmap with its alt value.
-  tex = handle_tables(tex) 
+  tex = handle_tables(tex)
   tex = handle_math(tex)
   tex = parse_eensy_weensy(tex) # has to be done after handling math (see, e.g., comment about ldots, but other reasons, too, I think)
   return tex
@@ -1132,7 +1151,7 @@ def parse_eensy_weensy(t)
   curly_safe = "(?:[^{}]*)" # can't contain any curlies
 
   # macros we don't care about:
-  tex.gsub!(/\\index{[^}]+}/,'')
+  tex.gsub!(/\\index{#{curly}}/,'') # This actually gets taken care of earlier by duplicated code. Probably not necessary to have it here as well.
   tex.gsub!(/\\noindent/,'') # Should pay attention to this, but it would be really hard.
   # kludge, needed in SN 10:
   tex.gsub!(/\\formatlikecaption{/,'') 
@@ -1536,7 +1555,7 @@ envs.each { |x|
   tex = result
 } # end loop over x
 # Now, finally, get rid of comments:
-tex.gsub!(/\\index{[^}]+}/,'')
+tex.gsub!(/\\index{#{curly}}/,'')
 tex.gsub!(/(?<!\\)%[^\n]*(\n?[ \t]*)?/,'')
 
 # remove whitespace from lines consisting of nothing but whitespace
@@ -1563,18 +1582,12 @@ parse(tex,1,[]).each {|s|
   h = ''
   1.upto(2) { |i|
     if t =~ /^(\s*<h#{i}>(?:<a #{$anchor}=[^>]+><\/a>)?(?:[^<>]+)<\/h#{i}>)((.|\n)*)/ then
-# qwe
-#<div class="margin">
-#          
-#<img src="figs/u-tube.png" alt="u-tube"><a name="fig:u-tube"></a><p class="caption">a / Example <a href="#eg:u-tube">1</a>.</p>
-#</div><h2><a name="Section2.1"></a>2.1 Energy in Vibrations</h2>
       h,t=$1,$2
     end
   }
   result = result + h + m + t # m has to come first, because that causes it to be positioned as close as possible to the top of the section
 }
 tex = result
-
 
 tex.gsub!(/ {2,}/,' ') # multiple spaces
 tex.gsub!(/<p>\s*<\/p>/,'') # peepholer to get rid of <p></p> pairs
@@ -1595,7 +1608,7 @@ end
 if $modern && !$html5 && !$wiki then
   print <<STUFF
 <?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN" "http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd" >
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN" "http://www.w3.org/TR/MathML2/dtd/xhtml-math11-f.dtd" >
 <html xmlns="http://www.w3.org/1999/xhtml">
 STUFF
   mime = 'application/xhtml+xml'
