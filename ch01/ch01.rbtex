@@ -232,17 +232,17 @@ were slower.
 
 On the other hand, the asymmetry of the results, with $|\Delta t_E| \ne |\Delta t_W|$,
 implies that there was a second effect involved, simply due to the planes' being up in the air. Relativity predicts
-that the time's rate of flow also changes with height in a gravitational field. The deeper reasons for such an
+that time's rate of flow also changes with height in a gravitational field. The deeper reasons for such an
 effect are given in section \ref{sec:pound-rebka} on page \pageref{sec:pound-rebka}.\label{gravity-affects-time}
 
 Although Hafele and Keating's measurements were on the ragged edge of the state of the art in 1971, technology has
-now progressed to the point where similar effects have everyday consequences. The satellites of the Global
+now progressed to the point where such effects have everyday consequences. The satellites of the Global
 Positioning System (GPS) orbit at a speed of $1.9\times 10^3$ m/s, an order of magnitude faster than a
 commercial jet. Their altitude of 20,000 km is also much greater than that of an aircraft.
 For both these reasons, the relativistic effect on time is stronger than in the Hafele-Keating experiment.
 The atomic clocks aboard the satellites are tuned to a frequency of 10.22999999543 MHz, which is
 perceived on the ground as 10.23 MHz. (This frequency shift will be calculated in example \ref{eg:gps}
-on page \pageref{eg:gps}.
+on page \pageref{eg:gps}.)
 
 <% end_sec %> % Hafele-Keating
 
@@ -250,7 +250,8 @@ on page \pageref{eg:gps}.
 <% begin_sec("Muons") %>
 Although the Hafele-Keating experiment is impressively direct, it was not the first verification of relativistic
 effects on time, it did not completely separate the kinematic and gravitational effects, and the effect was small.
-In 1941, Rossi and Hall detected cosmic-ray muons\index{cosmic rays}\index{muon} at the summit and base of
+An early experiment demonstrating a large and purely kinematic effect was performed
+in 1941 by Rossi and Hall, who detected cosmic-ray muons\index{cosmic rays}\index{muon} at the summit and base of
 Mount Washington in New Hampshire. The muon has a mean lifetime of 2.2 $\mu\zu{s}$, and the time of flight
 between the top and bottom of the mountain (about 2 km for muons arriving along a vertical path) at nearly the
 speed of light was about 7 $\mu\zu{s}$, so in the absence of relativistic effects, the flux at the bottom of the mountain
@@ -288,7 +289,7 @@ The first high-precision experiment of this kind was Gravity Probe A, a 1976 exp
 a space probe was launched vertically from Wallops Island, Virginia, at less than escape velocity, to an altitude of 10,000 km, after which
 it fell back to earth and crashed down in the Atlantic Ocean. The probe carried a hydrogen maser clock which was used to control the frequency of a
 radio signal. The radio signal was received on the ground, the nonrelativistic Doppler shift was subtracted out, and the residual blueshift was
-interpreted as the gravitational effect effect on time, and matched the relativistic prediction to an accuracy of 0.01\%.\index{Gravity Probe A}
+interpreted as the gravitational effect effect on time, matching the relativistic prediction to an accuracy of 0.01\%.\index{Gravity Probe A}
 
 
 <% end_sec %> 
@@ -299,7 +300,7 @@ interpreted as the gravitational effect effect on time, and matched the relativi
 We've seen that time flows at different rates for different observers.
 Suppose that Alice and Betty repeat their Hafele-Keating-style experiment, but this time they are allowed to
 communicate during the trip. Once Betty's ship completes its initial acceleration away from Betty,
-she  cruises at constant speed, and girl has her own equally valid
+she  cruises at constant speed, and each girl has her own equally valid
 inertial frame of reference. Each twin considers herself to be at rest, and says that the other is the one who
 is moving. Each one says that the other's clock is the one that is slow. If they could pull out their phones
 and communicate instantaneously, with no time lag for the propagation of the signals, they could resolve the controversy.
@@ -323,7 +324,6 @@ relativity.
 <% end_sec %>
 
 <% begin_sec("Ordered geometry") %>
-You've probably heard that general relativity is a geometrical theory.
 Let's try to put what we've learned into a general geometrical context.
 
 Euclid's familiar geometry of two-dimensional space has the following
@@ -342,7 +342,7 @@ axioms,\footnote{These axioms are summarized for quick reference in the back of 
 The modern style in mathematics is to consider this type of axiomatic
 system as a self-contained sandbox, with the axioms, and any theorems
 proved from them, being true or false only in relation to one another.
-Euclid and his contemporaries, however, believed them to be self-evident
+Euclid and his contemporaries, however, believed them to be empirical
 facts about physical reality. For example, they considered the
 fifth postulate to be less obvious than the first four, because in order
 to verify physically that two lines were parallel, one would theoretically
@@ -398,7 +398,7 @@ math major might use in a first upper-division course in geometry.}\label{ordere
 \item[O1] Two events determine a line.
 \item[O2] Line segments can be extended: given A and B, there is at least one event such that [ABC] is true.
 \item[O3] Lines don't wrap around: if [ABC] is true, then [BCA] is false.
-\item[O4] Causality: Any three distinct events A, B, and C lying on the same line can be sorted out in order (and by statement 3, this order is unique).
+\item[O4] Betweenness: For any three distinct events A, B, and C lying on the same line, we can determine whether or not B is between A and C (and by statement 3, this ordering is unique except for a possible over-all reversal to form [CBA]).
 \end{itemize}
 <% marg(50) %>
 <%
@@ -419,7 +419,7 @@ line. This is completely different from the attitude expressed in Newton's famou
 from its own nature flows equably without regard to anything external \ldots''
 
 If you're dismayed by the austerity of a system of geometry without any notion of measurement, you may be
-even more dismayed to learn that even a system as weak as ordered geometry makes some statements that are too
+more appalled to learn that even a system as weak as ordered geometry makes some statements that are too
 strong to be completely correct as a foundation for relativity. For example, if an observer falls into a black
 hole, at some point he will reach a central point of infinite density, called a singularity.\index{singularity}
 At this point, his chain of cause and effect terminates, violating statement 2.
@@ -516,8 +516,8 @@ gravitational and inertial mass, which in a Galileo-style experiment would cause
 the acceleration of a lead weight, with a large neutron-to-proton ratio, and a wooden one, which consists
 of light elements with nearly equal numbers of neutrons and protons. The first high-precision experiments
 of this type were performed by E\"{o}tv\"{o}s around the turn of the twentieth century, and they verified
-the equivalence of inertial and gravitational mass to within about one part in $10^8$. Measurements in the
-mid-twentieth century refined this to one part in $10^{12}$. These are generically referred to as E\"{o}tv\"{o}s experiments.\index{E\"{o}tv\"{o}s experiments}
+the equivalence of inertial and gravitational mass to within about one part in $10^8$.
+These are generically referred to as E\"{o}tv\"{o}s experiments.\index{E\"{o}tv\"{o}s experiments}
 <% marg(50) %>
 <%
   fig(
@@ -539,8 +539,8 @@ mid-twentieth century refined this to one part in $10^{12}$. These are generical
 <% end_marg %>
 
 
-Figure \figref{braginskii} shows a strategy for doing E\"{o}tv\"{o}s experiments that has proved successful.
-The top panel is a simplified. The platform is balanced, so the gravitational
+Figure \figref{braginskii} shows a strategy for doing E\"{o}tv\"{o}s experiments that allowed a test to about one part in $10^{12}$.
+The top panel is a simplified version. The platform is balanced, so the gravitational
         masses of the two objects are observed to be equal. The objects are made of different substances. If the equivalence of inertial and gravitational mass fails to hold
         for these two substances, then the force of gravity on each mass will not be exact proportion to its inertia, and the
         platform will experience a slight torque as the earth spins.
@@ -561,7 +561,7 @@ One consequence of the E\"{o}tv\"{o}s experiments' null results is that it is no
 a gravitational field. At certain times during Betty's field trip, she feels herself pressed against her seat,
 and she interprets this as evidence that she's in a space vessel that is undergoing violent accelerations
 and decelerations. But it's equally possible that Tutorbot has simply arranged for her capsule to be hung
-from a rope and dangled into the gravitational field of a planet at various times.
+from a rope and dangled into the gravitational field of a planet.
 Suppose that the first
 explanation is correct. The capsule is initially at rest in outer space, where there is no gravity.
 Betty can release a pencil and a lead ball in the air inside the cabin, and they will stay in place.
@@ -601,7 +601,7 @@ were supposed to naturally stop moving and come to rest in the absence of a forc
 meant at rest relative to the Earth, which represented a special frame of reference. But if motion doesn't
 naturally stop of its own accord, then there is no longer any way to single out one frame of reference,
 such as the one tied to the Earth, as being special. An equally good frame of reference is a
-car driving in a straight line down the interstate at constant speed. The Earth and the car both represent
+car driving in a straight line down the interstate at constant speed. The earth and the car both represent
 valid \emph{inertial} frames of reference,\index{inertial frame}\index{frame of reference!inertial}
 in which Newton's law of inertia is valid. On the other hand, there are other, noninertial frames of reference,
 in which the law of inertia is violated. For example, if the car decelerates suddenly, then it appears to the people
@@ -613,7 +613,7 @@ But by the time he published the general theory in 1915, Einstein had
 realized that this distinction between inertial and noninertial frames of reference was fundamentally
 suspect. How do we know that a particular frame of reference is inertial? One way is to verify that its motion
 relative to some other inertial frame, such as the Earth's, is in a straight line and at constant speed.
-But how does the whole process get started? We need to bootstrap the process with at least one frame of reference to
+But how does the whole thing get started? We need to bootstrap the process with at least one frame of reference to
 act as our standard. We can look for a frame in which the law of inertia is valid, but now we run into
 another difficulty. To verify that the law of inertia holds, we have to check that an observer tied
 to that frame doesn't see objects accelerating for no reason. The trouble here is that by the
@@ -647,8 +647,8 @@ In general, there is no distant background of physical objects in the universe t
 The conclusion is that we need to abandon the entire distinction between inertial and noninertial
 frames of reference. The best that we can do is to single out certain frames of reference defined
 by the motion of objects that are not subject to any nongravitational forces. A falling rock defines
-such a frame of reference. In this frame, the rock is at rest, and the floor is accelerating.
-The rock's world-line is a straight line of constant $x$ and varying $t$. Such a free-falling frame of reference
+such a frame of reference. In this frame, the rock is at rest, and the ground is accelerating.
+The rock's world-line is a straight line of constant $x=0$ and varying $t$. Such a free-falling frame of reference
 is called a Lorentz frame. The frame of reference defined by a rock sitting on a table is an inertial
 frame of reference according to the Newtonian view, but it is not a Lorentz frame.
 
@@ -659,7 +659,7 @@ if they have no nongravitational forces acting on them.
 <% end_sec %> % The equivalence principle
 
 <% begin_sec("Locality of Lorentz frames") %>
-It would be nice if we could define a single Lorentz frame that would cover the entire universe, but we can't.
+It would be convenient if we could define a single Lorentz frame that would cover the entire universe, but we can't.
 In figure \figref{local-lorentz-frames}, two girls simultaneously drop down from tree branches --- one in Los
 Angeles and one in Mumbai.
 The girl free-falling in Los Angeles defines a Lorentz frame, and in that frame, other objects falling
@@ -726,8 +726,8 @@ Classical electromagnetism requires that electromagnetic waves have inertia. For
 an ohmic surface, as in figure \figref{maxwellian-momentum-of-light}, the wave's electric field excites oscillating currents in the surface. These currents then
 experience a magnetic force from the wave's magnetic field, and application of the right-hand rule shows that
 the resulting force is in the direction of propagation of the wave. Thus the light wave acts as if it has momentum.
-The equivalence principle says that whatever had inertia must also participate in gravitational interactions.
-Therefore light waves must have weight, and the must lose energy when they rise through a gravitational field.
+The equivalence principle says that whatever has inertia must also participate in gravitational interactions.
+Therefore light waves must have weight, and must lose energy when they rise through a gravitational field.
 
 Self-check: Verify the application of the right-hand rule described above.
 
@@ -744,7 +744,7 @@ Further interpretation:
            Newtonian physics, the new theory must agree with the old one under the experimental conditions in
            which the old theory had been verified by experiments. The gravitational mass of a beam of light
            with energy $E$ is $E/c^2$, and since $c$ is a big number, it is not surprising that the weight of
-           light rays had never been detected before.
+           light rays had never been detected before Einstein trying to detect it.
 \item This book describes one particular theory of gravity, Einstein's theory of general relativity. There are
            other theories of gravity, and some of these, such as the Brans-Dicke theory,\index{Brans-Dicke theory}
            do just as well as general relativity in agreeing with the presently available experimental data.
@@ -756,12 +756,12 @@ Further interpretation:
 <% end_sec %> %  Gravitational redshifts
 
 <% begin_sec("The Pound-Rebka experiment") %>\label{sec:pound-rebka}\index{Pound-Rebka experiment}\index{gravitational redshift}\index{redshift!gravitational}
-The 1959 Pound-Rebka experiment at Harvard\footnote{Phys. Rev. Lett. 4 (1960) 337} was the first quantitative test of this effect to be carried out
+The 1959 Pound-Rebka experiment at Harvard\footnote{Phys. Rev. Lett. 4 (1960) 337} was the first quantitative test of the equivalence principle to be carried out
 under controlled conditions, and in this section we will discuss it in detail.
 
 When $y$ is on the order of magnitude of the height of a building, the value of $\Delta E/E=gy/c^2$ is $\sim 10^{-14}$, so
-an extremely high precision experiment is necessary in order to detect a gravitational redshift. A number of other effects are big
-enough to obscure it entirely, and must be eliminated or compensated for somehow. These are listed below, along with their
+an extremely high-precision experiment is necessary in order to detect a gravitational redshift. A number of other effects are big
+enough to obscure it entirely, and must somehow be eliminated or compensated for. These are listed below, along with their
 orders of magnitude in the experimental design finally settled on by Pound and Rebka.
 
 \begin{tabular}{p{80mm}p{20mm}}
@@ -825,14 +825,14 @@ taken up not by the individual nucleus but by a vibration of the atomic lattice 
 varies as $p^2/2m$, the large mass of the lattice leads to a very small dissipation of energy into the recoiling lattice.
 Thus if a photon is emitted and absorbed by identical nuclei in a solid, and for both emission and absorption
 the recoil momentum is taken up by the
-lattice as a whole, then there is negligible recoil.
+lattice as a whole, then there is a negligible energy shift.
 One must pick an isotope that emits photons with energies of about 10-100 keV.
 X-rays with energies lower than about 10 keV tend to be absorbed strongly by matter
 and are difficult to detect, whereas for gamma-ray energies $\gtrsim 100\ \zu{keV}$ the M\"{o}ssbauer effect is not
 sufficient to eliminate the recoil effect completely enough.
 
-If the experiment was carried out in a horizontal plane, then resonant absorption would occur. When the source and
-absorber are aligned vertically, gravitational frequency shifts should cause a mismatch, destroying the resonance.
+If the M\"{o}ssbauer effect is carried out in a horizontal plane, resonant absorption occurs. When the source and
+absorber are aligned vertically, \figref{pound-rebka}, gravitational frequency shifts should cause a mismatch, destroying the resonance.
 One can move the source at a small velocity (typically a few
 mm/s) in order to add a Doppler shift onto the frequency; by determining the velocity that compensates for the
 gravitational effect, one can determine how big the gravitational effect is.
@@ -873,14 +873,14 @@ of $\gtrsim 10\ \mu\sunit$. In practice, Pound and Rebka found that other effect
 interactions that depended on the preparation of the sample, tended to put nuclei in one sample ``out of tune'' with those
 in another sample at the $10^{-13}$-$10^{-12}$ level, so that resonance could not be achieved unless the natural line width
 gave $\Delta E/E \gtrsim 10^{-12}$. As a result, they
-settled on an experiment in which 14 keV gammas were emitted by $^{57}\zu{Fe}$ nuclei at the top of a 22-meter
+settled on an experiment in which 14 keV gammas were emitted by $^{57}\zu{Fe}$ nuclei (figure \figref{level-scheme}) at the top of a 22-meter
 tower, and absorbed by $^{57}\zu{Fe}$ nuclei at the bottom. The 100-ns half-life of the excited state leads to
 $\Delta E/E \sim 10^{-12}$. This is 500 times greater than the gravitational effect to be measured, so, as described
 in more detail below, the experiment
 depended on high-precision measurements of small up-and-down shifts of the bell-shaped resonance curve.
 
 The absorbers were seven iron films isotopically
-enhanced in $^{57}\zu{Fe}$, applied directly to the faces of seven sodium-iodide scintillation detectors.
+enhanced in $^{57}\zu{Fe}$, applied directly to the faces of seven sodium-iodide scintillation detectors (bottom of figure \figref{pound-rebka}).
 When a gamma-ray impinges on the absorbers, a number of different things can happen, of which we can get away with
 considering only the following:
 (a) the gamma-ray is resonantly absorbed in one of the $^{57}\zu{Fe}$ absorbers,
@@ -898,12 +898,12 @@ Since the effect to be measured is also proportional to $y$, the signal-to-noise
 However, systematic effects such as (4) were easier to monitor and account for when $y$ was fairly large.
 A lab building at Harvard happened to have a 22-meter tower, which was used for the experiment.
 To reduce the absorption of the gammas in the 22 meters of air, a long, cylindrical mylar bag full of helium
-gas was placed in the shaft.
+gas was placed in the shaft, \figref{pound-rebka}.
 
 The resonance was a bell-shaped curve with a minimum at the natural frequency of emission. Since the curve
 was at a minimum, where its derivative was zero, the sensitivity of the count rate to the gravitational shift would have
 been nearly zero if the source had been stationary. Therefore it was necessary to vibrate the source up and down, so that the emitted photons would be Doppler shifted
-onto the shoulder of the resonance curve, where the slope of the curve was large. The resulting asymmetry in count rates
+onto the shoulders of the resonance curve, where the slope of the curve was large. The resulting asymmetry in count rates
 is shown in figure \figref{pound-rebka-v-t}. A further effort to cancel out possible systematic effects was made by frequently
 swapping the source and absorber between the top and bottom of the tower.
 

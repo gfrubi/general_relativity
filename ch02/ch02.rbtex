@@ -61,7 +61,7 @@ a certain distance, like two marks on a ruler, or the goals at the ends of a soc
 Although the balls are separated by some finite distance, they are still close enough
 together so that if there is a gravitational field in the area, it is very nearly the same in both
 locations, and we expect the distance defined by the gap between them to stay the same.
-Since they are both subject only to gravitational forces, their world-lines are (by definition)
+Since they are both subject only to gravitational forces, their world-lines are by definition
 straight lines (geodesics). The goal here is to end up with some kind of coordinate grid
 defining a $(t,x)$ plane, and on such a grid, the two balls' world-lines are vertical lines.
 If we release them at events P and Q, then observe them again later at R and S, PQRS should
@@ -69,7 +69,7 @@ form a rectangle on such a plot. In the figure, the irregularly spaced tick mark
 edges of the rectangle are meant to suggest that although ordered geometry provides us with
 a well-defined ordering along these lines, we have not yet constructed a complete system of measurement.
 
-<% marg(0) %>
+<% marg(80) %>
 <%
   fig(
     'parallel-at-rest',
@@ -80,7 +80,15 @@ a well-defined ordering along these lines, we have not yet constructed a complet
 <%
   fig(
     'parallel-moving',
-    %q{There is no well-define angular measure in this geometry. In a different frame of reference, the angles are not right angles.}
+    %q{There is no well-defined angular measure in this geometry. In a different frame of reference, the angles are not right angles.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'parallel-no-simultaneity',
+    %q{Simultaneity is not well defined. The constant-time lines PQ and RS from figure \figref{parallel-at-rest} are not constant-time lines when observed in
+          a different frame of reference.}
   )
 %>
 <% end_marg %>
@@ -102,7 +110,7 @@ In the context of relativity, where time is not absolute, there is not even any 
 must agree on the simultaneity of PQ and RS. Our observation that time flows differently depending
 on the observer's state of motion tells us specifically to expect this \emph{not} to happen when we
 switch to a frame moving to the relative one. Thus in general we expect that PQRS will be distorted
-into a form like the one shown in the third panel of the figure. We do expect, however, that it will
+into a form like the one shown in figure \figref{parallel-no-simultaneity}. We do expect, however, that it will
 remain a parallelogram; a Lorentz frame is one in which the gravitational field, if any, is constant, so
 the properties of spacetime are uniform, and by symmetry the new frame should still have PR=QS and PQ=RS.
 
@@ -534,7 +542,7 @@ so the frequency of the light it emits will also be systematically shifted downw
 with temperature. In other words, the Pound-Rebka experiment was designed as a test of general relativity (the equivalence
 principle), but this special-relativistic effect is just as strong as the relativistic one, and needed to be accounted
 for carefully.
-<% marg(50) %>
+<% marg(70) %>
 <%
   fig(
     'pound-rebka-temperature-effect',
@@ -628,7 +636,7 @@ The cosmological constant is not related to the presence of any sources (such as
 and can be interpreted instead as a tendency for space to expand over time on its own initiative.
 In the present era, the cosmological constant has overpowered the gravitation of the universe's
 mass, causing the expansion of the universe to accelerate.
-<% marg(50) %>
+<% marg(150) %>
 <%
   fig(
     'tipping-light-cones',
@@ -651,15 +659,6 @@ By expanding on the logical consequences of this statement, we arrive at an exam
 relativity's proper interpretation as a theory of causality, not a theory of objects exerting forces on one another
 as in Newton's vision of action at a distance, or Lorentz's original ether-drag interpretation of the factor $\gamma$,
 in which length contraction arose from a physical strain imposed on the atoms composing a physical body.
-<% marg(0) %>
-<%
-  fig(
-    'bucket-and-black-hole',
-    %q{Matter is lifted out of a Newtonian black hole with a bucket. The dashed line represents the point
-            at which the escape velocity equals the speed of light.}
-  )
-%>
-<% end_marg %>
 
 Imagine a black hole from a Newtonian point of view, as proposed in 1783 by
 geologist John Michell. Setting the escape velocity equal to the speed of
@@ -678,6 +677,15 @@ is that there is a limit on the tensile strength of any substance, imposed purel
 can state this limit without having to know anything about the physical nature of the interatomic forces.
 Cf. homework problem \ref{hw:speed-of-sound} and section \ref{sec:carousel}.
 \end{eg}
+<% marg(100) %>
+<%
+  fig(
+    'bucket-and-black-hole',
+    %q{Matter is lifted out of a Newtonian black hole with a bucket. The dashed line represents the point
+            at which the escape velocity equals the speed of light.}
+  )
+%>
+<% end_marg %>
 
 <% begin_sec("Velocity addition") %>\label{sec:velocity-addition}
 In classical physics, velocities add in relative motion. For example, if a boat moves relative to
@@ -1304,18 +1312,6 @@ the angular frequency of the motion.
 <% begin_sec("An experimental test: Thomas precession in hydrogen") %>\label{sec:thomas-precession}
 If we want to see this precession effect in real life, we should look for a system in which both $v$ and $a$ are large.
 An atom is such a system.
-<% marg(60) %>
-<%
-  fig(
-    'fine-structure',
-    %q{States in hydrogen are labeled with their $\ell$ and $s$ quantum numbers, representing their orbital and spin angular momenta in units of $\hbar$.
-            The state with $s=+1/2$ has its spin angular momentum aligned with its orbital angular momentum, while the $s=-1/2$ state
-            has the two angular momenta in opposite directions. The direction and order of magnitude of the splitting between the two
-            $\ell=1$ states is successfully explained by magnetic interactions with the proton, but the calculated effect is too big by a factor of 2.
-            The relativistic Thomas precession cancels out half of the effect.}
-  )
-%>
-<% end_marg %>
 
 The Bohr model,\index{Bohr model} introduced in 1913, marked the first quantitatively successful, if
 conceptually muddled, description of the atomic energy levels of hydrogen. Continuing to take $c=1$,
@@ -1329,6 +1325,18 @@ hence the name of the constant. Uhlenbeck and Goudsmit\index{Uhlenbeck}\index{Go
 was to be expected due to the magnetic
 interaction between the proton and the electron's magnetic moment, oriented along its spin. The effect they calculated,
 however, was too big by a factor of two. 
+<% marg(60) %>
+<%
+  fig(
+    'fine-structure',
+    %q{States in hydrogen are labeled with their $\ell$ and $s$ quantum numbers, representing their orbital and spin angular momenta in units of $\hbar$.
+            The state with $s=+1/2$ has its spin angular momentum aligned with its orbital angular momentum, while the $s=-1/2$ state
+            has the two angular momenta in opposite directions. The direction and order of magnitude of the splitting between the two
+            $\ell=1$ states is successfully explained by magnetic interactions with the proton, but the calculated effect is too big by a factor of 2.
+            The relativistic Thomas precession cancels out half of the effect.}
+  )
+%>
+<% end_marg %>
 
 The explanation of the mysterious factor of two had in fact been implicit in a 1916 calculation by
 Willem de Sitter,\index{de Sitter!Willem} one of the first applications of general relativity. De Sitter
