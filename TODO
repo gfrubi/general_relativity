@@ -1,3 +1,16 @@
+possible hw
+  verify that big bang singularity in Friedmann solutions is a real singularity
+        (text claims that R^a_a diverges and sing occurs at finite proper time in past)
+
+understand Rindler metrics better
+  http://www.physicsforums.com/showthread.php?p=1849982#post1849982
+  http://physicsforums.com/showpost.php?p=2485904&postcount=50
+
+grav waves
+  Should discuss LIGO, etc.
+  Should discuss the possible misconception that LIGO can't work because the photons get stretched:
+    http://www.lightandmatter.com/html_books/genrel/ch08/ch08.html#Section8.2 
+
 ch. 5:
   Show that when a particle is dropped from rest at infinity and falls into a black hole, a shell observer (in the sense
   of the Taylor-Wheeler book) at r observes it to have velocity (2M/r)^1/2 as it goes by. To make this a good hw problem,

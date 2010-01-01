@@ -1256,9 +1256,9 @@ def parse_references!(tex)
   }
 end
 
-def find_topic(ch,book)
+def find_topic(ch,book,own)
 # The following is duplicated in scripts/BookData.pm.
-  return {
+  x = {
     '1np'=>{0=>'intro',1=>'intro',2=>'mechanics',3=>'mechanics',4=>'mechanics',5=>'mechanics',6=>'mechanics',7=>'mechanics',8=>'mechanics',9=>'mechanics',10=>'mechanics',},
     '2cl'=>{1=>'mechanics',2=>'mechanics',3=>'mechanics',4=>'mechanics',5=>'mechanics',6=>'mechanics',},
     '3vw'=>{1=>'mechanics',2=>'mechanics',3=>'waves',4=>'waves',},
@@ -1268,7 +1268,16 @@ def find_topic(ch,book)
     '7cp'=>{1=>'mechanics',2=>'mechanics',3=>'mechanics',4=>'relativity',5=>'em-dc',6=>'em-fields',7=>'optics',8=>'waves'},
     '0sn'=>{0=>'intro',1=>'mechanics',2=>'mechanics',3=>'mechanics',4=>'mechanics',5=>'mechanics',6=>'waves',7=>'relativity',
             8=>'em-general',9=>'em-dc',10=>'em-fields',11=>'em-fields',12=>'optics',13=>'quantum',},
-  }[book][ch.to_i]
+  }[book]
+  if x==nil then return own end
+  own.push("../9share/#{x[ch.to_i]}/figs")
+  # secondary places to look:
+  x = {
+    '7cp'=>{1=>'relativity',5=>'em-general',8=>'mechanics'},
+    '0sn'=>{6=>'mechanics'},
+  }[book]
+  if x!=nil and x[ch.to_i]!=nil then own.push("../9share/#{x[ch.to_i]}/figs") end
+  return own
 end
 
 
@@ -1282,6 +1291,8 @@ def find_figure(name,width_type)
 
   name.gsub!(/(.*\/)/,'') # get rid of anything before the last slash; if it's shared, we'll figure that out ourselves
 
+  if name=='zzzfake' then return nil end
+
   output_dir = "#{$config['html_dir']}/ch#{$ch}/figs"
   do_system("mkdir #{output_dir}") unless File.exist?(output_dir)
 
@@ -1292,28 +1303,39 @@ def find_figure(name,width_type)
     return $1
   end
   
-  dir =  "ch#{$ch}/figs"
-  if Dir["ch#{$ch}/figs/#{name}\.*"].empty? then
-    topic = find_topic($ch,$config['book'])
-    if topic==nil then $stderr.print "null topic from shared_fig_dir for ch=#{$ch}, book=#{$config['book']}\n" end
-    dir = "../9share/#{topic}/figs"
-  end
+  debug = false # debug mechanism for finding where the figure is
+
+  possible_dirs = find_topic($ch,$config['book'],["ch#{$ch}/figs"])
+  allowed_formats = ['jpg','png','pdf']
+  found_in_dir = nil
+  found_in_fmt = nil
+  allowed_formats.each {|fmt|
+    possible_dirs.each {|dir|
+      if Dir["#{dir}/#{name}\.#{fmt}"].empty? then
+        if debug then $stderr.print "debugging: didn't find #{name}.#{fmt} in #{dir}\n" end
+      else
+        if debug then $stderr.print "debugging: found #{name} in #{dir}\n" end
+        found_in_dir = dir
+        found_in_fmt = fmt
+      end
+    }
+  }
+  fmt = found_in_fmt
+  dir = found_in_dir
 
   base = "#{dir}/#{name}."
-  result = nil
-  input_fmt = nil
-  save_fmt = nil
-  ['jpg','png','pdf'].each {|fmt|
-    if result==nil and File.exist?(base+fmt) then
-      result= name+'.'+fmt
-      save_fmt = fmt
-    end
-  }
-  fmt=save_fmt
-  $stderr.print "error finding figure #{name} at #{base}\n" if (result==nil and name!='zzzfake')
+  if dir==nil then
+    $stderr.print "error finding figure #{base}*, not found in any of these dirs: ",possible_dirs.join(','),", relative to cwd=#{Dir.getwd()}\n"
+    exit(-1)
+  else
+    result = "#{dir}/#{name}.#{fmt}"
+  end
   return '' if result==nil
 
   output_format = {'jpg'=>'jpg','png'=>'png','pdf'=>'png'}[fmt]
+  if output_format==nil then $stderr.print "error in translate_to_html.rb, find_figure, output_format is nil, name=#{name}\n"; exit(-1) end
+  if name==nil then $stderr.print "error in translate_to_html.rb, find_figure, name is nil\n"; exit(-1) end
+  if $config['html_dir']==nil then $stderr.print "error in translate_to_html.rb, find_figure, $config['html_dir'] is nil\n"; exit(-1) end
   dest = $config['html_dir'] + '/' + "ch#{$ch}/figs/" + name + '.' + output_format
   unless File.exist?(dest) then
     # need to call ImageMagick even if input and output formats are the same, to convert to web resolution
@@ -1339,9 +1361,16 @@ def find_figure(name,width_type)
     if fmt=='pdf' then
       # Can convert pdf directly to bitmap of the desired resolution using imagemagick, but it messes up on some files (e.g., huygens-1.pdf), so
       # go through pdftoppm first.
+      pdftoppm_command = "pdftoppm -r 440 #{infile} z" # 4x the resolution we actually want
+      do_system(pdftoppm_command) 
       ppm_file = 'z-000001.ppm' # only 1 page in pdf
-      do_system("pdftoppm -r 440 #{infile} z") # 4x the resolution we actually want
-      do_system("convert #{options} #{ppm_file} #{dest} && rm #{ppm_file}") # scale it back down
+      unless File.exist?(ppm_file) then ppm_file = 'z-1.ppm' end # different versions of pdftoppm use different naming conventions
+      if File.exist?(ppm_file) then
+        do_system("convert #{options} #{ppm_file} #{dest} && rm #{ppm_file}") # scale it back down
+      else
+        $stderr.print "Error converting figure #{dest}, no file z-000001.ppm or z-1.ppm created as output by pdftoppm; perhaps pdftoppm isn't installed?"
+        $stderr.print "Command line was #{pdftoppm_command}\n"
+      end
     else
       do_system("convert #{options} #{infile} #{dest}")
     end

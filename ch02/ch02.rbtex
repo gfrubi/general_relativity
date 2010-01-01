@@ -270,7 +270,8 @@ for convenience on page \pageref{lorentz-summary} in the back of the book.}\labe
 
 \begin{itemize}
 \item[L1] \emph{Spacetime is homogeneous and isotropic.} No time or place has special properties that make it distinguishable from other points, nor is one
-                  direction in space distinguishable from another.
+                  direction in space distinguishable from 
+                  another.\footnote{For the experimental evidence on isotropy, see \url{http://www.edu-observatory.org/physics-faq/Relativity/SR/experiments.html#Tests_of_isotropy_of_space}.}
 \item[L2] \emph{Inertial frames of reference exist.} These are frames in which particles move at constant velocity if not subject to any forces.
                   We can construct such a frame by using a particular particle, which is not subject to any forces, as a reference point.
 \item[L3] \emph{Equivalence of inertial frames:} If a frame is in constant-velocity translational motion relative to an inertial frame, then it is also an inertial frame.
@@ -450,6 +451,16 @@ equal to $c$. It is important to emphasize, however, that light plays no special
 it necessary to assume the constancy of the speed of light in order to derive the Lorentz transformation; we will
 in fact prove on page \pageref{c-is-speed-of-light} that photons must travel at $c$, and on page
 \pageref{c-is-speed-of-massless-particles} that this must be true for any massless particle.
+<% marg(-20) %>
+<%
+  fig(
+    'lorentz-boost-diagonals',
+    %q{Example \ref{eg:lorentz-boost-diagonals}. Flashes of light travel along $\zu{P}'\zu{T}'$ and $\zu{Q}'\zu{T}'$.
+          The observer in this frame of reference judges them to have been emitted at different times, and to have
+          traveled different distances. }
+  )
+%>
+<% end_marg %>
 
 \begin{eg}{}\label{eg:lorentz-boost-diagonals}
 Let the intersection of the parallelogram's two diagonals be T in the original (rest) frame, and $\zu{T}'$
@@ -461,16 +472,6 @@ simultaneous arrival. (Simultaneity \emph{is} well defined as long as no spatial
 But the distances traveled by the two flashes in the boosted frame are unequal, and since the speed of light is
 the same in all cases, the boosted observer infers that they were not emitted simultaneously.
 \end{eg}
-<% marg(60) %>
-<%
-  fig(
-    'lorentz-boost-diagonals',
-    %q{Example \ref{eg:lorentz-boost-diagonals}. Flashes of light travel along $\zu{P}'\zu{T}'$ and $\zu{Q}'\zu{T}'$.
-          The observer in this frame of reference judges them to have been emitted at different times, and to have
-          traveled different distances. }
-  )
-%>
-<% end_marg %>
 
 \begin{eg}{}
 A different kind of symmetry is the symmetry between observers. If observer A says observer B's
@@ -532,6 +533,63 @@ in the review article by Ashby.\footnote{N. Ashby, ``Relativity in the Global Po
 % calc -e "f=10.23; d=10.22999999543-f; d/f"
 \end{eg}
 
+Self-check: Suppose that positioning a clock at a certain distance from a certain planet produces a fractional
+change $\delta$ in the rate at which time flows. In other words, the time dilation factor is $1+\delta$. Now suppose
+that a second, identical planet is brought into the picture, at an equal distance from the clock. The clock is positioned
+on the line joining the two planets' centers, so that the gravitational field it experiences is zero. Is the fractional
+time dilation now approximately 0, or approximately $2\delta$? Why is this only an approximation?
+
+<%
+  fig(
+    'cern-muon-storage-ring',
+    %q{Apparatus used for the test of relativistic time dilation described in example \ref{eg:cern-muons}. 
+       The prominent black and white blocks are large magnets surrounding a circular pipe
+       with a vacuum inside. \linebreak (c) 1974 by CERN.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'sidepos'=>'t'
+    }
+  )
+%>
+
+\pagebreak
+
+\begin{eg}{Large time dilation}\label{eg:cern-muons}
+The time dilation effect in the Hafele-Keating experiment was very small. If we want to see a large time dilation
+effect, we can't do it with something the size of the atomic clocks they used; the kinetic energy would be
+greater than the total megatonnage of all the world's nuclear arsenals. We can, however, accelerate subatomic particles
+to speeds at which $\gamma$ is large. An early, low-precision experiment of this kind was
+performed by Rossi and Hall in 1941, using naturally occurring cosmic rays. Figure \figref{cern-muon-storage-ring} shows
+a 1974 experiment\footnote{Bailey at al., Nucl. Phys. B150(1979) 1}
+of a similar type which verified the time dilation predicted by relativity to a precision of about
+one part per thousand.
+<% marg(-4) %>
+<%
+  fig(
+    'cern-muon-graph',
+    %q{Muons accelerated to nearly $c$ undergo radioactive decay much more slowly than they would according to
+       an observer at rest with respect to the muons. The first two data-points (unfilled circles) were subject
+       to large systematic errors.}
+  )
+%>
+<% end_marg %>
+
+Muons were produced by an
+accelerator at CERN, near Geneva. A muon is essentially a heavier version
+of the electron. Muons undergo radioactive decay,
+lasting an average of only 2.197 $\mu\sunit$ before they evaporate into an electron and two neutrinos.
+The 1974 experiment was actually built in order to measure the magnetic properties of muons, but it produced a high-precision
+test of time dilation as a byproduct. Because muons have the same electric charge as electrons, they can be trapped using
+magnetic fields. Muons were injected into the ring shown in figure \figref{cern-muon-storage-ring}, circling around it until they underwent radioactive decay.
+At the speed at which these muons were traveling, they had $\gamma=29.33$, so on the average they lasted 29.33 times
+longer than the normal lifetime. In other words, they were like tiny alarm clocks that self-destructed at a randomly
+selected time. Figure \figref{cern-muon-graph} shows the number of radioactive decays counted, as a function of the
+time elapsed after a given stream of muons was injected into the storage ring. The two dashed lines show the rates
+of decay predicted with and without relativity. The relativistic line is the one that agrees with experiment.
+\end{eg}
+
 \begin{eg}{Time dilation in the Pound-Rebka experiment}\label{eg:pound-rebka-time-dilation}
 In the description of the Pound-Rebka experiment on page \pageref{sec:pound-rebka}, I postponed
 the quantitative estimation of the frequency shift due to temperature. Classically, one expects only
@@ -577,6 +635,14 @@ the slope to be $2.4\times10^{-15}$, which, as shown in the figure is an excelle
 \end{eg}
 
 <% end_sec %>
+<% marg(0) %>
+<%
+  fig(
+    'lightcone',
+    %q{The light cone in 2+1 dimensions.}
+  )
+%>
+<% end_marg %>
 
 
 <% begin_sec("The light cone") %>
@@ -594,14 +660,7 @@ the maximum speed of cause and effect. If we make a cut through the cone defined
 in P's future, the resulting section is a sphere (analogous to the circle formed by cutting a three-dimensional
 cone), and this sphere is interpreted as the set of events on which P could have had a causal effect by
 radiating a light pulse outward in all directions.
-<% marg(120) %>
-<%
-  fig(
-    'lightcone',
-    %q{The light cone in 2+1 dimensions.}
-  )
-%>
-\spacebetweenfigs
+<% marg(80) %>
 <%
   fig(
     'light-cone-compared-to-circle',
@@ -609,6 +668,15 @@ radiating a light pulse outward in all directions.
                   is not invariant as the circle is. A similar privileged place is occupied by the light
                   cone in Lorentz geometry. Under a Lorentz boost, the spacetime parallelograms change,
                   but the light cone doesn't.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'tipping-light-cones',
+    %q{Light cones tip over for two reasons in general relativity: because of the presence of masses, which
+             have gravitational fields, and because of the cosmological constant. The time and distance
+             scales in the bottom figure are many orders of magnitude greater than those in the top.}
   )
 %>
 <% end_marg %>
@@ -636,20 +704,12 @@ The cosmological constant is not related to the presence of any sources (such as
 and can be interpreted instead as a tendency for space to expand over time on its own initiative.
 In the present era, the cosmological constant has overpowered the gravitation of the universe's
 mass, causing the expansion of the universe to accelerate.
-<% marg(150) %>
-<%
-  fig(
-    'tipping-light-cones',
-    %q{Light cones tip over for two reasons in general relativity: because of the presence of masses, which
-             have gravitational fields, and because of the cosmological constant. The time and distance
-             scales in the bottom figure are many orders of magnitude greater than those in the top.}
-  )
-%>
-<% end_marg %>
 
 Self-check: In the bottom panel of figure \figref{tipping-light-cones}, can an observer look at the
 properties of the spacetime in her immediate vicinity and tell how much her light cones are tipping,
 and in which direction? Compare with figure \figref{local-lorentz-frames} on page \pageref{fig:local-lorentz-frames}.
+
+\pagebreak
 
 \begin{eg}{A Newtonian black hole}\label{eg:newtonian-black-hole}
 In the case of a black hole, the light cone tips over so far that the entire future timelike
@@ -659,6 +719,15 @@ By expanding on the logical consequences of this statement, we arrive at an exam
 relativity's proper interpretation as a theory of causality, not a theory of objects exerting forces on one another
 as in Newton's vision of action at a distance, or Lorentz's original ether-drag interpretation of the factor $\gamma$,
 in which length contraction arose from a physical strain imposed on the atoms composing a physical body.
+<% marg(60) %>
+<%
+  fig(
+    'bucket-and-black-hole',
+    %q{Example \ref{eg:newtonian-black-hole}. Matter is lifted out of a Newtonian black hole with a bucket. The dashed line represents the point
+            at which the escape velocity equals the speed of light.}
+  )
+%>
+<% end_marg %>
 
 Imagine a black hole from a Newtonian point of view, as proposed in 1783 by
 geologist John Michell. Setting the escape velocity equal to the speed of
@@ -677,15 +746,6 @@ is that there is a limit on the tensile strength of any substance, imposed purel
 can state this limit without having to know anything about the physical nature of the interatomic forces.
 Cf. homework problem \ref{hw:speed-of-sound} and section \ref{sec:carousel}.
 \end{eg}
-<% marg(100) %>
-<%
-  fig(
-    'bucket-and-black-hole',
-    %q{Matter is lifted out of a Newtonian black hole with a bucket. The dashed line represents the point
-            at which the escape velocity equals the speed of light.}
-  )
-%>
-<% end_marg %>
 
 <% begin_sec("Velocity addition") %>\label{sec:velocity-addition}
 In classical physics, velocities add in relative motion. For example, if a boat moves relative to
@@ -749,10 +809,11 @@ return to these questions on page \pageref{black-hole-complementarity}.
 
 <% end_sec %>
 
-<% begin_sec("Experimental tests of Lorentz geometry") %>
+<% begin_sec("Experimental tests of Lorentz geometry",4) %>
 
 We've already seen, in section \ref{sec:time-experiments}, a variety of evidence for the non-classical
 behavior of spacetime. We're now in a position to discuss tests of relativity more quantitatively.
+An up-to-date review of such tests is given by Mattingly.\footnote{\url{livingreviews.org/lrr-2005-5}}
 
 One such test is that relativity requires the speed of light to be the same in all frames of reference,
 for the following reasons.\label{c-is-speed-of-light} Compare with the speed of sound in air.
@@ -772,13 +833,21 @@ under Lorentz transformations. There are two types of tests we could do: (1) tes
 of all energies travel at the same speed, i.e., whether the vacuum is dispersive;
 (2) test whether observers in all frames of reference measure the same speed of light.
 
-<% begin_sec("Dispersion of the vacuum") %>
+<% begin_sec("Dispersion of the vacuum") %>\label{sec:lorentz-vacuum-dispersion}
 
 Some candidate quantum-mechanical theories of gravity, such as loop quantum gravity,\index{loop quantum gravity}
 predict a granular structure for spacetime at the Planck scale, $\sqrt{\hbar G/c^3}=10^{-35}$ m, which would naturally lead to
 deviations from $v=1$ that would become more and more significant for photons with wavelengths
 getting closer and closer to that scale. Lorentz-invariance would then be an approximation valid
 only at large scales.
+<% marg(0) %>
+<%
+  fig(
+    'gamma-ray-burst',
+    %q{An artist's conception of a gamma-ray burst, resulting from a supernova explosion.}
+  )
+%>
+<% end_marg %>
 
 Presently the best experimental tests of the invariance of
 the speed of light with respect to wavelength come from astronomical observations of gamma-ray bursts, which are sudden
@@ -788,35 +857,10 @@ time of all the photons differed by no more than 2 seconds out of a total time i
 of ten billion years, or about one part in $10^{17}$! A single superlative photon in the burst had an energy of 31 GeV,
 and its arrival within the same 2-second time window demonstrates Lorentz invariance over a vast range of photon energies,
 ruling out some versions of loop quantum gravity.
-<% marg(70) %>
-<%
-  fig(
-    'gamma-ray-burst',
-    %q{An artist's conception of a gamma-ray burst, resulting from a supernova explosion.}
-  )
-%>
-<% end_marg %>
 
 <% end_sec %>
 
-<% begin_sec("Observer-independence of $c$") %>
-The constancy of the speed of light for observers in all frames of reference
-was originally detected in 1887 when
-Michelson and Morley set up a clever apparatus to
-measure any difference in the speed of light beams traveling
-east-west and north-south. The motion of the earth around
-the sun at 110,000 km/hour (about 0.01\% of the speed of
-light) is to our west during the day. Michelson and Morley
-believed that light was a vibration of a physical medium, the ether, so they expected that the
-speed of light would be a fixed value relative to the ether.
-As the earth moved through the ether, they thought they
-would observe an effect on the velocity of light along an
-east-west line. For instance, if they released a beam of
-light in a westward direction during the day, they expected
-that it would move away from them at less than the normal
-speed because the earth was chasing it through the ether.
-They were surprised when they found that the expected 0.01\%
-change in the speed of light did not occur.\index{Michelson-Morley experiment}\index{ether}
+<% begin_sec("Observer-independence of $c$") %>\label{sec:lorentz-michelson-morley}
 <%
   fig(
     'michelson',
@@ -841,6 +885,23 @@ change in the speed of light did not occur.\index{Michelson-Morley experiment}\i
     }
   )
 %>
+The constancy of the speed of light for observers in all frames of reference
+was originally detected in 1887 when
+Michelson and Morley set up a clever apparatus to
+measure any difference in the speed of light beams traveling
+east-west and north-south. The motion of the earth around
+the sun at 110,000 km/hour (about 0.01\% of the speed of
+light) is to our west during the day. Michelson and Morley
+believed that light was a vibration of a physical medium, the ether, so they expected that the
+speed of light would be a fixed value relative to the ether.
+As the earth moved through the ether, they thought they
+would observe an effect on the velocity of light along an
+east-west line. For instance, if they released a beam of
+light in a westward direction during the day, they expected
+that it would move away from them at less than the normal
+speed because the earth was chasing it through the ether.
+They were surprised when they found that the expected 0.01\%
+change in the speed of light did not occur.\index{Michelson-Morley experiment}\index{ether}
 
 Although the Michelson-Morley experiment was nearly two
 dec\-ades in the past by the time Einstein published his first
@@ -884,6 +945,55 @@ experiment could be explained if the earth, and every physical
 object on its surface, was contracted slightly by the strain
 of the earth's motion through the ether. Thus although Lorentz developed all the mathematics of Lorentz
 frames, and got them named after himself, he got the interpretation wrong.
+<%
+  fig(
+    'chung-g',
+    %q{
+       The results of the measurement of $g$ by Chung et al., section \ref{sec:chung}. The experiment was done on the Stanford University campus, surrounded
+       by the Pacific ocean and San Francisco Bay, so it was subject to varying gravitational from both astronomical bodies and the rising and
+       falling ocean tides. Once both of these effects are subtracted out of the data, there is no Lorentz-violating variation in $g$
+       due to the earth's motion through space. Note that the data are broken up into three periods, with gaps of three months and four
+       years separating them. (c) APS, used under the U.S. fair use exception to copyright.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+<% end_sec %>
+
+<% begin_sec("Lorentz violation by gravitational forces") %>\label{sec:chung}
+The tests described in sections \ref{sec:lorentz-vacuum-dispersion} and \ref{sec:lorentz-michelson-morley} both
+involve the behavior of light, i.e., they test whether or not electromagnetism really has the exact Lorentz-invariant
+behavior contained implicitly in Maxwell's equations. In the jargon of the field, they test Lorentz invariance
+in the ``photon sector.'' Since relativity is a theory of gravity, it is natural to ask whether the Lorentz invariance
+holds for gravitational forces as well as electromagnetic ones. If Lorentz invariance is violated by gravity, then
+the strength of gravitational forces might depend on the observer's motion through space, relative to some fixed
+reference frame analogous to that of the ether. Historically, gravitational Lorentz violations have been much more difficult to
+test, since gravitational forces are so weak, and the first high-precision data were obtained by Nordtvedt and Will in 1957,
+70 years after Michelson and Morley. Nordtvedt and Will measured the strength of the earth's gravitational field as a function
+of time, and found that it did not vary on a 24-hour cycle with the earth's rotation, once tidal effects had been accounted for.
+Further constraints come from data on the moon's orbit obtained by reflecting laser beams from a mirror left behind by the
+Apollo astronauts.
+<% marg(0) %>
+<%
+  fig(
+    'chung-interferometer',
+    %q{The matter interferometer used by Chung et al. Each atom's wavefunction is split into two parts, which travel
+       along two different paths (solid and dashed lines).}
+  )
+%>
+<% end_marg %>
+
+A recent high-precision laboratory experiment was done in 2009 by Chung et al.\footnote{\url{arxiv.org/abs/0905.1929}} They constructed
+an interferometer in a vertical plane that is conceptually similar to a Michelson interferometer, except that
+it uses cesium atoms rather than photons. That is, the light waves of the Michelson-Morley experiment are replaced
+by quantum-mechanical matter waves. The roles of the half-silvered and fully silvered mirrors are filled by lasers, which kick
+the atoms electromagnetically. Each atom's wavefunction is split into two parts, which travel by two different paths through spacetime, eventually
+reuniting and interfering. The result is a measurement of $g$ to about one part per billion. The results, shown in figure
+\figref{chung-g}, put a strict limit on violations of Lorentz geometry by gravity.
 
 <% end_sec %>
 <% end_sec %>
