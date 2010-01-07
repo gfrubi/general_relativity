@@ -1,0 +1,101 @@
+#!/usr/bin/perl
+
+# usage:
+#    svg_to_pdf foo.svg
+# converts foo.svg to foo.pdf, with the correct (small) bounding box
+# always uses --export-text-to-path
+# adds some extra margin to keep from chopping off lines
+
+use strict;
+undef $/; # slurp whole file
+
+
+my $svg = $ARGV[0];
+my $debug = 0;
+
+print "starting\n" if $debug;
+
+
+my $inkscape_options = "--export-text-to-path";
+
+if ($svg=~/\.$/) {$svg = $svg . "svg"}
+unless ($svg=~/\.svg/) {
+  $svg = $svg . ".svg";
+}
+
+my $pdf = $svg;
+$pdf =~ s/\.svg/\.pdf/;
+die "input file doesn't end in .svg" if ($pdf eq $svg);
+my $eps = $svg;
+$eps =~ s/\.svg/\.eps/;
+die "input file doesn't end in .svg" if ($eps eq $svg);
+
+die "input file $svg not found" if ! -e $svg;
+
+print "running inkscape" if $debug;
+
+system("inkscape $inkscape_options --print='>$eps' $svg")==0 or die "error running inkscape, $!";
+
+die "error, inkscape doesn't seem to have created $eps" if ! -e $eps;
+
+my $x = `inkscape --query-x $svg`;
+my $y = `inkscape --query-y $svg`;
+my $w = `inkscape --query-width $svg`;
+my $h = `inkscape --query-height $svg`;
+
+print "x=$x, y=$y, w=$w, h=$h (pixels)\n" if $debug;
+
+die "error, width is zero" unless $w;
+die "error, height is zero" unless $h;
+
+die "input file $eps not readable" if ! -r $eps;
+
+open(FILE,"<$eps") or die "error opening file $eps for input, $!";
+my $eps_data = <FILE>;
+close FILE;
+
+# In the following, we're in inkscape's coordinate system, which has origin at top left.
+my $k = .8; # normal ratio of pixels to points for inkscape
+my $extra_margin = 1.; # pt --- good example for testing is em-ear-helmholtz-coil.svg
+my $llx = $x*$k      - $extra_margin;
+my $lly = ($y+$h)*$k + $extra_margin;
+my $urx = ($x+$w)*$k + $extra_margin;
+my $ury = $y*$k      - $extra_margin;
+
+my $paper_ht;
+if ($eps_data =~ /\%\%BoundingBox\: .* .* .* (.*)/) {
+  $paper_ht = $1;
+  print "paper height detected as $paper_ht points" if $debug;
+}
+else {
+  die "unable to detect paper height from %BoundingBox";
+}
+
+
+# Postscript coords have origin at bottom left.
+($lly,$ury) = ($paper_ht-$lly,$paper_ht-$ury);
+
+#  %%BoundingBox: 0 0 596 842
+#  %%HiResBoundingBox: 0.0000000 0.0000000 596.00000 842.00000
+
+my $bbox = '%%'.sprintf('BoundingBox: %d %d %d %d',$llx,$lly,$urx,$ury);
+my $hires_bbox = '%%'.sprintf('HiResBoundingBox: %.7f %.7f %.7f %.7f',$llx,$lly,$urx,$ury);
+
+my $original = $eps_data;
+
+$eps_data =~ s/\%\%BoundingBox\:.*/$bbox/;
+$eps_data =~ s/\%\%HiResBoundingBox\:.*/$hires_bbox/;
+
+if ($original eq $eps_data) {
+  print "Warning: data not changed\n";
+}
+
+open(FILE,">$eps") or die "error opening file $eps for output, $!";
+print FILE $eps_data;
+close FILE;
+
+print "done modifying eps\n" if $debug;
+
+system("epstopdf $eps")==0 or die "error running epstopdf, $!";
+
+unlink($eps);

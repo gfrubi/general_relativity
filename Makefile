@@ -77,3 +77,6 @@ prepress:
 	# ligatures in Helvetica. Also, lulu sometimes chokes if gs version is <8.x.
 	gs -q  -dCompatibilityLevel=1.4 -dSubsetFonts=false -dPDFSETTINGS=/printer -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=genrel_lulu.pdf temp.pdf -c '.setpdfwrite'
 	@rm -f temp.pdf
+
+all_figures:
+	perl -e 'foreach my $f(<*/ch*/figs/*.svg>) {print "$f\n"; "scripts/svg_to_pdf $f"}'

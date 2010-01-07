@@ -344,6 +344,7 @@ def parse_itty_bitty_stuff!(tex)
       tex.gsub!(/\\#{acc}#{vowel}/) {entity}
     }
   }
+  tex.gsub!(/\\O{}/,'&Oslash;')
   tex.gsub!(/\\\-/,'')
   tex.gsub!(/\\ /,' ')
   tex.gsub!(/\\%/,'%')
