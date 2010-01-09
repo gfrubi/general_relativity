@@ -892,7 +892,7 @@ materials so that they are already rotating properly?
 <% end_sec %> % Ehrenfest's paradox
 <% begin_sec("The metric in the rotating frame") %>
 Now let's find the metric according to observer A
-by applying the change of coordinates $\theta \rightarrow \theta'=\theta-\omega t$.
+by applying the change of coordinates $\theta'=\theta-\omega t$.
 First we take the Euclidean metric of example \ref{eg:metric-in-polar-coords} on page \pageref{eg:metric-in-polar-coords} and rewrite it as
 a (globally) Lorentzian metric in spacetime for observer B,
 \begin{equation*}
@@ -934,12 +934,14 @@ completing the square. The result is
 \begin{equation*}
   \der s^2=(1-\omega^2 r^2)\left[\der t+\frac{\omega r^2}{1-\omega^2 r^2}\der\theta'\right]^2 - \der r^2 - \frac{r^2}{1-\omega^2r^2}\der \theta'^2  \qquad .
 \end{equation*}
-We can now interpret the quantity in square brackets as the differential of a new time coordinate
+The quantity in square brackets sort of looks like the differential of a new time coordinate
 \begin{equation*}
   T = t + \frac{\omega r^2}{1-\omega^2 r^2}\theta' \qquad .
 \end{equation*}
-If a meter stick is placed on the carousel, the spacelike negative terms can be
-used to describe its spatial length, with the understanding that this is not the spatial separation of two events
+The $[\ldots]$ term doesn't quite have the form of a total differential of $T$, since we would also pick up a third term, in $\der r$, but
+if we only want to compare times for different points on the circumference of the disk, then we can get away with ignoring that fact.
+If a meter stick is placed on the carousel, the spacelike negative terms in $\der s^2$ can be
+used to describe the stick's spatial length, with the understanding that this is not the spatial separation of two events
 at the same value of the coordinate $t$ but of two events that are at the same $T$.
 The final two terms can now be thought of as the non-Euclidean metric of the space. The factor of
 $(1-\omega^2r^2)^{-1}=\gamma^2$ in the $\der \theta'^2$ term is simply the expected Lorentz-contraction factor.

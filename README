@@ -6,7 +6,7 @@ machine. Basically you just need to install some open-source
 software. The following are the relevant packages on a Debian-based
 system such as Ubuntu:
   texlive-full pdftk m4 inkscape
-Make sure you have at least inkscape 0.46.
+Make sure you have at least inkscape 0.47.
 
 You also need Ruby 1.9. As of November 2009, this the stable version,
 but many older Linux distributions have 1.8. To test whether your

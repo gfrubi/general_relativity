@@ -79,4 +79,5 @@ prepress:
 	@rm -f temp.pdf
 
 all_figures:
-	perl -e 'foreach my $f(<*/ch*/figs/*.svg>) {print "$f\n"; "scripts/svg_to_pdf $f"}'
+	# The following requires Inkscape 0.47 or later.
+	perl -e 'foreach my $$f(<*/ch*/figs/*.svg>) {$$g=$$f; $$g=~s/\.svg$$/.pdf/; print "g=$$g\n"; $$c="inkscape --export-text-to-path --export-pdf=$$g $$f  --export-area-drawing"; print "$$c\n"; system($$c)}'
