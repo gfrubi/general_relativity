@@ -864,7 +864,10 @@ differential geometry.
 % see http://philsci-archive.pitt.edu/archive/00002123/01/annalen.pdf , p. 11, for historical significance of example
 The remainder of this section, which you may want to skip on a first reading,
 goes into more detail on the interpretation and mathematical description of the rotating frame of reference.
+Even more detailed treatments are given by Gr\o{}n\footnote{Relativistic description of a rotating disk, Am. J. Phys. 43 (1975) 869}
+and Dieks.\footnote{Space, Time, and Coordinates in a Rotating World, \url{http://www.phys.uu.nl/igg/dieks}}.
 <% end_sec %> % Non-Euclidean geometry observed in the rotating frame
+
 <% begin_sec("Ehrenfest's paradox") %>
 Ehrenfest\footnote{P. Ehrenfest, Gleichf\"ormige Rotation starrer K\"orper und Relativit\"atstheorie, Z. Phys. 10 (1909) 918}
 described the following paradox.\index{Ehrenfest's paradox} Suppose that observer B, in the lab frame, measures the radius of the disk to be
@@ -885,13 +888,27 @@ infinite velocity, so tapping the disk with a hammer in one place would result i
 information at $v>c$ to other parts of the disk, and then there would exist frames of reference in which
 the information was received before it was transmitted. The same applies if the hammer tap is used to impart
 rotational motion to the disk.
+<% marg(150) %>
+<%
+  fig(
+    'einstein-ehrenfest-piano',
+    %q{Einstein and Ehrenfest.}
+  )
+%>
+<% end_marg %>
 
-Self-check: Can we get around these problems by applying torque uniformly all over the disk, so that the
-rotation starts smoothly and simultaneously everywhere? What if we build the disk by assembling the building
-materials so that they are already rotating properly?
+Self-check: What if we build the disk by assembling the building
+materials so that they are already rotating properly before they are joined together?
+
+
 <% end_sec %> % Ehrenfest's paradox
 <% begin_sec("The metric in the rotating frame") %>
-Now let's find the metric according to observer A
+What if we try to get around these problems by applying torque uniformly all over the disk, so that the
+rotation starts smoothly and simultaneously everywhere? We then run into issues identical to the ones raised
+by Bell's spaceship paradox (p. \pageref{eg:bell-spaceship-paradox}). In fact, Ehrenfest's paradox is nothing
+more than Bell's paradox wrapped around into a circle. The same question of time synchronization comes up.
+
+To spell this out mathematically, let's find the metric according to observer A
 by applying the change of coordinates $\theta'=\theta-\omega t$.
 First we take the Euclidean metric of example \ref{eg:metric-in-polar-coords} on page \pageref{eg:metric-in-polar-coords} and rewrite it as
 a (globally) Lorentzian metric in spacetime for observer B,
@@ -903,7 +920,6 @@ Applying the transformation into A's coordinates, we find
   \der s^2=(1-\omega^2 r^2)\der t^2 - \der r^2 - r^2\der \theta'^2 - 2\omega r^2\der\theta'\der t \qquad .
 \end{equation*}
 %%%%%%%%% See carousel1.mac. Checked that it comes out flat.
-
 Recognizing $\omega r$ as the velocity of one frame relative to another, and
 $(1-\omega^2 r^2)^{-1/2}$ as $\gamma$, we see that we do have a relativistic time dilation effect in the $\der t^2$ term.
 But the $\der r^2$
@@ -919,7 +935,8 @@ the carousel, one clockwise and one counterclockwise, from the same point. If $(
 corresponded to clock and meter-stick measurements, then we would expect that when the cars met up again
 on the far side of the disk, their dashboards would show equal values of the arc length $r\theta'$ on their odometers and equal
 proper times $\der s$ on their clocks. But this is not the case, because the sign of the $\der\theta'\der t$ term is
-opposite for the two world-lines. 
+opposite for the two world-lines. The same effect occurs if we send beams of light in both directions around the
+disk, and this is the Sagnac effect (\pageref{sagnac}).\index{Sagnac effect}
 
 This is a symptom of the fact that the coordinate $t$ is not properly synchronized between different places
 on the disk. We already know that we should not expect to be able to find a universal time coordinate that
@@ -934,37 +951,39 @@ completing the square. The result is
 \begin{equation*}
   \der s^2=(1-\omega^2 r^2)\left[\der t+\frac{\omega r^2}{1-\omega^2 r^2}\der\theta'\right]^2 - \der r^2 - \frac{r^2}{1-\omega^2r^2}\der \theta'^2  \qquad .
 \end{equation*}
-The quantity in square brackets sort of looks like the differential of a new time coordinate
+The interpretation of the quantity in square brackets is as follows. Suppose that two observers situate themselves on the
+edge of the disk, separated by an infinitesimal angle $\der\theta'$. They then synchronize their clocks by exchanging
+light pulses, and the amount by which the clocks must be adjusted turns out to be
 \begin{equation*}
-  T = t + \frac{\omega r^2}{1-\omega^2 r^2}\theta' \qquad .
+  \der t = \frac{\omega r^2}{1-\omega^2 r^2}\der\theta' .
 \end{equation*}
-The $[\ldots]$ term doesn't quite have the form of a total differential of $T$, since we would also pick up a third term, in $\der r$, but
-if we only want to compare times for different points on the circumference of the disk, then we can get away with ignoring that fact.
-If a meter stick is placed on the carousel, the spacelike negative terms in $\der s^2$ can be
-used to describe the stick's spatial length, with the understanding that this is not the spatial separation of two events
-at the same value of the coordinate $t$ but of two events that are at the same $T$.
-The final two terms can now be thought of as the non-Euclidean metric of the space. The factor of
+Substituting this into the metric, we are left with the purely spatial metric
+\begin{equation*}
+  \der s^2= - \der r^2 - \frac{r^2}{1-\omega^2r^2}\der \theta'^2  \qquad .
+\end{equation*}
+The factor of
 $(1-\omega^2r^2)^{-1}=\gamma^2$ in the $\der \theta'^2$ term is simply the expected Lorentz-contraction factor.
 In other words, the circumference is, as expected, greater than $2\pi$ by a factor of $\gamma$.
 
-It might appear that the coordinate $T$ could be interpreted as a time coordinate that was synchronized in
+Is this non-Euclidean spatial geometry the same as the one that A would determine by meter-stick measurements?
+Yes and no. It \emph{can} be interpreted as the one that A would determine by radar measurements.
+Physical meter-sticks, however, present some problems. Meter-sticks rotating with the disk are subject to
+Coriolis and centrifugal forces, and this problem can't be avoided simply by making the meter-sticks
+infinitely rigid, because infinitely rigid objects are forbidden by relativity. In fact, these forces
+will inevitably be strong enough to destroy any meter stick that is brought out to $r=1/\omega$, where
+the speed of the disk becomes equal to the speed of light.
+
+It might appear that we could now define a global coordinate
+\begin{equation*}
+  T = t + \frac{\omega r^2}{1-\omega^2 r^2}\theta'  \qquad ,
+\end{equation*}
+interpreted as a time coordinate that was synchronized in
 a consistent way for all points on the disk. The trouble with this interpretation becomes evident when we
 imagine driving a car around the circumference of the disk, at a speed slow enough so that there is negligible
 time dilation of the car's dashboard clock relative to the clocks tied to the disk. Once the car gets back to
 its original position, $\theta'$ has increased by $2\pi$, so it is no longer possible for the car's clock
 to be synchronized with the clocks tied to the disk. We conclude that it is not possible to synchronize clocks
 in a rotating frame of reference; if we try to do it, we will inevitably have to have a discontinuity somewhere.
-
-Gr\o{}n\footnote{Relativistic description of a rotating disk, Am. J. Phys. 43 (1975) 869} has given a simple
-interpretation of this. Suppose that $n$ clocks are spaced evenly around the circumference of the disk,
-and $n$ is large so that a single Lorentz frame can be used as a good approximation to cover two adjacent clocks.
-As a criterion for judging synchronization, we would like the following to hold. Let observer C in an inertial
-frame of reference fly by the disk so that at a certain time she is momentarily at rest with respect to the
-midpoint between two neighboring clocks. Supposing that the clocks are synchronized, then if flashes of light are emitted
-by the two clocks at equal clock-times, C should receive the two flashes simultaneously. This requires that the
-flashes \emph{not} be emitted simultaneously in the frame of observer B, who is standing on the ground.
-According to B, this discrepancy between neighboring clocks accumulates as we start from clock 1 and go around
-to clock $n$, resulting in a discontinuity in the clock time when we get back to the start.
 <% end_sec %> % Synchronization of clocks
 <% end_sec %> % Einstein's carousel
 

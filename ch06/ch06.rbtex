@@ -1010,6 +1010,23 @@ The metric of coordinates $(\theta,\phi)$ on the unit sphere is $\der s^2=\der\t
 (c) Prove that the singularity is a coordinate singularity.
 <% end_hw %>
 
+<% begin_hw('carousel-singularities') %>
+(a) Section \ref{sec:carousel} (p. \pageref{sec:carousel}) gave a flat-spacetime metric in rotating polar coordinates,
+\begin{equation*}
+  \der s^2=(1-\omega^2 r^2)\der t^2 - \der r^2 - r^2\der \theta'^2 - 2\omega r^2\der\theta'\der t \qquad .
+\end{equation*}
+Identify the two values of $r$ at which singularities occur, and classify them as coordinate or non-coordinate
+singularities.\hwendpart
+(b) Clocks at rest relative to the the disk can be synchronized over some region (not the whole disk), and we
+showed that on a three-dimensional surface of simultaneity, the spatial metric is
+\begin{equation*}
+  \der s^2= - \der r^2 - \frac{r^2}{1-\omega^2r^2}\der \theta'^2 \qquad .
+\end{equation*}
+Identify the two values of $r$ at which singularities occur, and classify them as coordinate or non-coordinate
+singularities.
+\hwsoln
+<% end_hw %>
+
 <% begin_hw('sirius-b-redshift') %>
 The first experimental verification of gravitational redshifts was a measurement in 1925 by W.S. Adams of the spectrum of
 light emitted from the surface of the white dwarf star Sirius B. Sirius B has a mass of $0.98M_\odot$ and a radius

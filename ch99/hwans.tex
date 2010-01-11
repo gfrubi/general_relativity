@@ -1,0 +1,39 @@
+\refstepcounter{appendixctr}\label{hwansappendix}%
+\appendix\chapter{Appendix \ref{hwansappendix}: Hints and Solutions}
+	
+%==================================================================
+%==================================================================
+%========================= Solutions ==============================
+%==================================================================
+%==================================================================
+
+\hwanssection{Solutions to Selected Homework Problems}
+
+\beginsolutions{6}
+
+\hwsolnhdr{carousel-singularities} 
+(a) There are singularities at $r=0$, where $g_{\theta'\theta'}=0$, and $r=1/\omega$,
+where $g_{tt}=0$. These are considered singularities because the inverse of the metric
+blows up. They're coordinate singularities, because they can be removed by a change of
+coordinates back to the original non-rotating frame. (b) This one has singularities in
+the same places. The one at $r=0$ is a coordinate singularity, because at small $r$
+the $\omega$ dependence is negligible, and the metric is simply that of ordinary
+plane polar coordinates in flat space. The one at $r=1/\omega$ is not a coordinate
+singularity. The following Maxima code calculates its scalar curvature $R=R\indices{^a_a}$,
+which is esentially just the Gaussian curvature, since this is a two-dimensional space.
+\begin{listing}{1}
+load(ctensor);
+dim:2;
+ct_coords:[r,theta];
+lg:matrix([-1,0],
+          [0,-r^2/(1-w^2*r^2)]);
+cmetric();   
+ricci(true);
+scurvature();
+\end{listing}
+% carousel-singularities.mac
+The result is $R=6\omega^2/(1-2\omega^2r^2+\omega^4r^4)$.
+This blows up at $r=1/\omega$, which shows that this is not a coordinate
+singularity. The fact that $R$ does not blow up at $r=0$ is consistent with our
+earlier conclusion that $r=0$ is a coordinate singularity, but would not have been
+sufficient to prove that conclusion.

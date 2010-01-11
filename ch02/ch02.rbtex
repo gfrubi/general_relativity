@@ -500,7 +500,7 @@ Let's determine the directions and relative strengths of the two effects in the 
 
 A radio photon emitted by a GPS satellite gains energy as it falls to the earth's surface, so its energy
 and frequency are increased by this effect. The observer on the ground, after accounting for all non-relativistic effects
-such as Doppler shifts and the Sagnac effect, would interpret the frequency shift by saying that time aboard
+such as Doppler shifts and the Sagnac effect (p. \pageref{sagnac}), would interpret the frequency shift by saying that time aboard
 the satellite was flowing more quickly than on the ground.
 
 However, the satellite is also moving at orbital speeds, so there is a Lorentz time dilation effect. According
@@ -783,6 +783,60 @@ $\tanh 1.386=0.88$ relative to the earth. Any number of velocities can be added 
 
 Self-check: Interpret the asymptotes of the graph in figure \figref{rapidity}.
 
+\begin{eg}{Bell's spaceship paradox}\label{eg:bell-spaceship-paradox}
+A difficult philosophical question is whether the time dilation and length contractions predicted by relativity
+are ``real.'' This depends, of course, on what one means by ``real.'' They are frame-dependent, i.e., observers
+in different frames of reference disagree about them. But this doesn't tell us much about their reality, since
+velocities are frame-dependent in Newtonian mechanics, but nobody worries about whether velocities are real.
+John Bell\index{Bell, John} (1928-1990) proposed the following thought experiment to physicists in the CERN cafeteria, and
+found that nearly all of them got it wrong. He took this as evidence that their intuitions had been misguided by
+the standard way of approaching this question of the reality of Lorentz contractions.
+<% marg(0) %>
+<%
+  fig(
+    'bell-spaceship-paradox',
+    %q{Example \ref{eg:bell-spaceship-paradox}.}
+  )
+%>
+<% end_marg %>
+
+Let spaceships A and B accelerate as shown in figure \figref{bell-spaceship-paradox} along a straight line.
+Observer C does not accelerate. The accelerations, as judged by C, are constant for both ships.
+Each ship is equipped with a yard-arm, and a thread is tied between the two arms. Does the thread break, due
+to Lorentz contraction? (We assume that the acceleration is gentle enough that the thread does not break simply
+because of its own inertia.)
+
+The popular answer in the CERN cafeteria was that the thread would not break, the reasoning being that
+Lorentz contraction is a frame-dependent effect, and no such contraction would be observed in A and B's frame.
+The ships maintain a constant difference from one another, so C merely disagrees
+with A and B about the length of the thread, as well as other lengths like the lengths of the spaceships.
+
+The error in this reasoning is that the accelerations of A and B were specified to be equal and constant in C's frame,
+not in A and B's. Bell's interpretation is that the frame-dependence is a distraction, that Lorentz contraction
+is in some sense a real effect, and that it is therefore immediately clear that the thread must break, without
+even having to bother going into any other frame.
+To convince his peers in the cafeteria, however, Bell presumably needed to satisfy them as to the specific
+errors in their reasoning, and this requires that we consider the frame-dependence explicitly.
+
+We can first see that it is impossible, in general, for different observers to agree about what is meant by
+constant acceleration. Suppose that A and B agree with C about the constancy of their acceleration.
+Then A and B experience a voyage in which the rapidities of the stars around them (and of observer C) increase
+linearly with time. As the rapidity approaches infinity, both C and the stars approach the speed of light. But since
+A and C agree on the magnitude of their velocity relative to one another, this means that A's velocity
+as measured by C must approach $c$, and this contradicts the premise that C observes constant
+acceleration for both ships. Therefore A and B do not consider their own accelerations to be constant.
+
+A and B do not agree with C about simultaneity, and since they also do not agree that their accelerations
+are constant, they do not consider their own accelerations to be equal at a given moment of time. Therefore
+the string changes its length, and this is consistent with Bell's original, simple answer, which did not require
+comparing different frames of reference. To establish that the string comes under tension, rather than going
+slack, we can apply the equivalence principle. Let A be the trailing ship and B the leading one. By the equivalence
+principle, any experiments done by A and B give the same results as if they were immersed in a gravitational
+field. B sees A as experiencing a gravitational time dilation. According to B, the slowpoke A isn't accelerating
+as rapidly as it should, causing the string to break.
+\end{eg}
+
+
 <% end_sec %>
 
 <% begin_sec("Logic") %>
@@ -1038,6 +1092,7 @@ to a boost plus a spatial rotation.
 To see how this mathematical fact would play out as a physical effect, we need to consider how to make a physical manifestation of
 the concept of a direction in space.
 
+\label{sagnac}
 In two space dimensions, we can construct a ring laser,\index{ring laser}
 which in its simplest incarnation is a closed loop of optical fiber with a bidirectional laser
 inserted in one place. Coherent light traverses the loop simultaneously in both directions, interfering

@@ -1493,8 +1493,11 @@ A second differentiation gives the directly observable field(s) \ldots &
 }
 
 The interesting thing here is that the directly observable fields do not carry all of the necessary information,
-but the gauge fields are not directly observable. In electromagnetism, we can see this from the Aharonov-Bohm effect.\index{Aharonov-Bohm effect}
-The solenoid in figure \figref{aharonov-bohm} has $\vc{B}=0$ externally, and the electron beams only ever move through the external region, so they
+but the gauge fields are not directly observable. In electromagnetism, we can see this from the Aharonov-Bohm effect, shown
+in figure \figref{aharonov-bohm}.\footnote{We describe the effect here in terms of an idealized, impractical experiment.
+For the actual empirical status of the Aharonov-Bohm effect, see
+Batelaan and Tonomura, Physics Today 62 (2009) 38.}\index{Aharonov-Bohm effect}
+The solenoid has $\vc{B}=0$ externally, and the electron beams only ever move through the external region, so they
 never experience any magnetic field. Experiments show, however, that turning the solenoid on and off does change the
 interference between the two beams. This is because the vector potential does not vanish outside the solenoid, and
 as we've seen on page \pageref{vector-potential-propagator}, the phase of the beams varies according to the
@@ -1597,10 +1600,12 @@ electron.
 <% end_hw %>
 
 <% begin_hw('carousel-cartesian') %>
-Section \ref{sec:carousel} gave a flat-space metric in rotating polar coordinates.
-Reexpress the metric in rotating Cartesian coordinates, and check your answer by
+Section \ref{sec:carousel} (p. \pageref{sec:carousel}) gave a flat-spacetime metric in rotating polar coordinates.
+(a) Verify by explicit computation that this metric represents a flat spacetime.
+(b) Reexpress the metric in rotating Cartesian coordinates, and check your answer by
 verifying that the Riemann tensor vanishes.
 <% end_hw %>
+
 
 \end{hwsection}
 
