@@ -1017,13 +1017,19 @@ The metric of coordinates $(\theta,\phi)$ on the unit sphere is $\der s^2=\der\t
 \end{equation*}
 Identify the two values of $r$ at which singularities occur, and classify them as coordinate or non-coordinate
 singularities.\hwendpart
-(b) Clocks at rest relative to the the disk can be synchronized over some region (not the whole disk), and we
-showed that on a three-dimensional surface of simultaneity, the spatial metric is
+(b) The corresponding spatial metric was found to be
 \begin{equation*}
   \der s^2= - \der r^2 - \frac{r^2}{1-\omega^2r^2}\der \theta'^2 \qquad .
 \end{equation*}
 Identify the two values of $r$ at which singularities occur, and classify them as coordinate or non-coordinate
-singularities.
+singularities.\hwendpart
+(c) Consider the following argument, which is intended to provide an answer to part b without any computation.
+In two dimensions, there is only one measure of curvature, which is equivalent (up to a constant of proportionality)
+to the Gaussian curvature. The Gaussian curvature is proportional to the angular deficit $\epsilon$ of a triangle. Since the
+angular deficit of a triangle in a space with negative curvature satisfies the inequality $-\pi < \epsilon <0$,
+we conclude that the Gaussian curvature can never be infinite. Since there is only one measure of curvature in a two-dimensional
+space, this means that there is no non-coordinate singularity. Is this argument correct, and is the claimed result consistent with
+your answers to part b?
 \hwsoln
 <% end_hw %>
 

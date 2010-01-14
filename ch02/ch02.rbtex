@@ -492,7 +492,7 @@ pure Lorentz frames, which are described by non-accelerating observers.
 \end{eg}
 
 \begin{eg}{GPS}\label{eg:gps}
-In the Hafele-Keating experiment using atomic clocks aboard airplanes (\pageref{sec:hafele-keating}), both gravity and motion had
+In the Hafele-Keating experiment using atomic clocks aboard airplanes (p. \pageref{sec:hafele-keating}), both gravity and motion had
 effects on the rate of flow of time. Similarly, both effects must be considered in the case of the GPS system.
 The gravitational effect was found on page \pageref{grav-redshift-by-ep} to be $\Delta E/E=gy$ (with $c=1$), based on the
 equivalence principle. The special-relativistic effect can be found from the Lorentz transformation.
@@ -624,7 +624,7 @@ the mean translational kinetic energy of each iron nucleus is $(3/2)kT$. The vel
 than $c(=1)$, so we can use the nonrelativistic expression for kinetic energy,
 $K=(1/2)mv^2$, which gives a mean value for $v^2$ of $3kT/m$. In the limit of $v \ll 1$,
 time dilation produces a change in frequency by a factor of $1/\gamma$, which differs from unity by approximately $-v^2/2$.
-The relative time dilation is therefore $-3kT/2m$, or, in metric units, $-3kT/2mc^2$. The vertical scale on the graph contains
+The relative time dilation is therefore $-3kT/2m$, or, in metric units, $-3kT/2mc^2$. The vertical scale in figure \figref{pound-rebka-temperature-effect} contains
 an arbitrary offset, since Pound and Rebka's measurements were the best absolute measurements to date of the frequency.
 The predicted slope of $-3k/2mc^2$, however, is not arbitrary. Plugging in 57 atomic mass units for $m$, we find
 the slope to be $2.4\times10^{-15}$, which, as shown in the figure is an excellent approximation (off by only
@@ -739,8 +739,9 @@ a fountain, but it would nevertheless be possible for physical objects to escape
 out in a bucket dangling from a cable. If the cable is to support its own weight, it must have a tensile strength per unit density of at least
 $c^2/2$, which is about ten orders of magnitude greater than that of carbon nanotube fibers. (The factor of $1/2$ is not to be
 taken seriously, since it comes from a nonrelativistic calculation.)
+
 The cause-and-effect interpretation of relativity tells
-us that this is incorrect. A physical object that approaches to within a distance $r$ of a concentration of
+us that this Newtonian picture is incorrect. A physical object that approaches to within a distance $r$ of a concentration of
 mass $M$, with $M/r$ sufficiently large, has no causal future lying at larger values of $r$. The conclusion
 is that there is a limit on the tensile strength of any substance, imposed purely by general relativity, and we
 can state this limit without having to know anything about the physical nature of the interatomic forces.
@@ -768,7 +769,7 @@ where $\eta=\tanh^{-1} v$ is called the \emph{rapidity}.\index{rapidity}
 We are guaranteed that the matrix can be written in this form, because its area-preserving
 property says that the determinant equals 1, and $\cosh^2\eta-\sinh^2\eta=1$ is an identity
 of the hyperbolic trig functions. It is now straightforward to verify that multiplication
-of two matrices of this form gives a third matrix which is also of this form, with $\eta=\eta_1+\eta_2$.
+of two matrices of this form gives a third matrix that is also of this form, with $\eta=\eta_1+\eta_2$.
 In other words, rapidities add linearly; velocities don't. In the example of the spaceship and the
 probe, the rapidities add as $\tanh^{-1}.60+\tanh^{-1}.60=.693+.693=1.386$, giving the probe a velocity of
 $\tanh 1.386=0.88$ relative to the earth. Any number of velocities can be added in this way, $\eta_1+\eta_2+\ldots+\eta_n$.
@@ -852,18 +853,20 @@ $p \wedge q$ is unknown to any observer in the universe until a certain time, at
 been able to propagate back and forth. What if P and Q lie inside two different black holes? Then the truth-value
 of $p \wedge q$ can never be determined by \emph{any} observer. Another example is the case in which P and Q
 are separated by such a great distance that, due to the accelerating expansion of the universe, their future
-light cones do not overlap. We conclude that Aristotelian logic cannot be appropriately applied to
+light cones do not overlap.
+
+We conclude that Aristotelian logic cannot be appropriately applied to
 relativistic observation in this way. Some workers attempting to construct a quantum-mechanical theory of
-gravity have suggested an even more radically observer-dependent logic, in which different observes may
+gravity have suggested an even more radically observer-dependent logic, in which different observers may
 contradict one another on the truth-value of a single proposition $p_1$, unless they agree in advance
-on the list $p_2$, $p_2$, \ldots of all the other propositions that they intend to test as well. We'll
+on the list $p_2$, $p_3$, \ldots of all the other propositions that they intend to test as well. We'll
 return to these questions on page \pageref{black-hole-complementarity}.
 <% end_sec %>
 
 
 <% end_sec %>
 
-<% begin_sec("Experimental tests of Lorentz geometry",4) %>
+<% begin_sec("Experimental tests of Lorentz geometry") %>
 
 We've already seen, in section \ref{sec:time-experiments}, a variety of evidence for the non-classical
 behavior of spacetime. We're now in a position to discuss tests of relativity more quantitatively.
@@ -873,10 +876,10 @@ One such test is that relativity requires the speed of light to be the same in a
 for the following reasons.\label{c-is-speed-of-light} Compare with the speed of sound in air.
 The speed of sound is not the same in all frames of reference, because the wave propagates
 at a fixed speed relative to the air. An observer at who is moving relative to the air will measure
-a different speed of sound. Light, on the other hand isn't a vibration of any physical medium.
+a different speed of sound. Light, on the other hand, isn't a vibration of any physical medium.
 Maxwell's equations predict a definite value for the speed of light, regardless of the motion of the
 source. This speed also can't be relative to any medium. If the speed of light isn't fixed relative to the
-source, and isn't relative to a medium, then it must be fixed relative to any observer.
+source, and isn't fixed relative to a medium, then it must be fixed relative to anything at all.
 The only speed in relativity that is equal in all frames of reference is $c$, so light must propagate at $c$.
 We will see on page \pageref{c-is-speed-of-massless-particles} that there is a deeper reason for this;
 relativity requires that any massless particle propagate at $c$.
@@ -915,6 +918,24 @@ ruling out some versions of loop quantum gravity.
 <% end_sec %>
 
 <% begin_sec("Observer-independence of $c$") %>\label{sec:lorentz-michelson-morley}
+The constancy of the speed of light for observers in all frames of reference
+was originally detected in 1887 when
+Michelson and Morley set up a clever apparatus to
+measure any difference in the speed of light beams traveling
+east-west and north-south. The motion of the earth around
+the sun at 110,000 km/hour (about 0.01\% of the speed of
+light) is to our west during the day. Michelson and Morley
+believed that light was a vibration of a physical medium, the ether, so they expected that the
+speed of light would be a fixed value relative to the ether.
+As the earth moved through the ether, they thought they
+would observe an effect on the velocity of light along an
+east-west line. For instance, if they released a beam of
+light in a westward direction during the day, they expected
+that it would move away from them at less than the normal
+speed because the earth was chasing it through the ether.
+They were surprised when they found that the expected 0.01\%
+change in the speed of light did not occur.\index{Michelson-Morley experiment}\index{ether}
+
 <%
   fig(
     'michelson',
@@ -939,23 +960,6 @@ ruling out some versions of loop quantum gravity.
     }
   )
 %>
-The constancy of the speed of light for observers in all frames of reference
-was originally detected in 1887 when
-Michelson and Morley set up a clever apparatus to
-measure any difference in the speed of light beams traveling
-east-west and north-south. The motion of the earth around
-the sun at 110,000 km/hour (about 0.01\% of the speed of
-light) is to our west during the day. Michelson and Morley
-believed that light was a vibration of a physical medium, the ether, so they expected that the
-speed of light would be a fixed value relative to the ether.
-As the earth moved through the ether, they thought they
-would observe an effect on the velocity of light along an
-east-west line. For instance, if they released a beam of
-light in a westward direction during the day, they expected
-that it would move away from them at less than the normal
-speed because the earth was chasing it through the ether.
-They were surprised when they found that the expected 0.01\%
-change in the speed of light did not occur.\index{Michelson-Morley experiment}\index{ether}
 
 Although the Michelson-Morley experiment was nearly two
 dec\-ades in the past by the time Einstein published his first
@@ -991,6 +995,7 @@ cover up his results.
     }
   )
 %>
+
 
 Before Einstein, some physicists who did believe the negative result of the Michelson-Morley experiment came up with
 explanations that preserved the ether. In the period from 1889 to 1895, both Lorentz and George FitzGerald
@@ -1031,7 +1036,7 @@ test, since gravitational forces are so weak, and the first high-precision data 
 of time, and found that it did not vary on a 24-hour cycle with the earth's rotation, once tidal effects had been accounted for.
 Further constraints come from data on the moon's orbit obtained by reflecting laser beams from a mirror left behind by the
 Apollo astronauts.
-<% marg(0) %>
+<% marg(50) %>
 <%
   fig(
     'chung-interferometer',
@@ -1050,7 +1055,8 @@ reuniting and interfering. The result is a measurement of $g$ to about one part 
 \figref{chung-g}, put a strict limit on violations of Lorentz geometry by gravity.
 
 <% end_sec %>
-<% end_sec %>
+
+<% end_sec %> % exptl tests
 
 <% begin_sec("Three spatial dimensions") %>
 New and nontrivial phenomena arise when we generalize from 1+1 dimensions to 3+1.
@@ -1068,14 +1074,7 @@ The complete form of the transformation $L(v\hat{\vc{x}})$, a Lorentz boost alon
   y' &= y \\
   z' &= z
 \end{align*}
-
-Based on the trivial nature of this generalization, it might seem as though no qualitatively new considerations
-would arise in 3+1 dimensions as compared with 1+1.  To see that this is not the case, consider figure \figref{boosts-tangling}.
-A boost along the $x$ axis tangles up the $x$ and $t$ coordinates. A $y$-boost mingles $y$ and $t$. Therefore
-consecutive boosts along $x$ and $y$ can cause $x$ and $y$ to mix. The result, as we'll see in more detail below,
-is that two consecutive boosts along non-collinear axes are not equivalent to a single boost; they are equivalent
-to a boost plus a spatial rotation.
-<% marg(50) %>
+<% marg(0) %>
 <%
   fig(
     'boosts-tangling',
@@ -1085,6 +1084,14 @@ to a boost plus a spatial rotation.
 %>
 <% end_marg %>
 
+
+Based on the trivial nature of this generalization, it might seem as though no qualitatively new considerations
+would arise in 3+1 dimensions as compared with 1+1.  To see that this is not the case, consider figure \figref{boosts-tangling}.
+A boost along the $x$ axis tangles up the $x$ and $t$ coordinates. A $y$-boost mingles $y$ and $t$. Therefore
+consecutive boosts along $x$ and $y$ can cause $x$ and $y$ to mix. The result, as we'll see in more detail below,
+is that two consecutive boosts along non-collinear axes are not equivalent to a single boost; they are equivalent
+to a boost plus a spatial rotation.
+
 <% end_sec %> % Lorentz boosts in three dimensions
 
 <% begin_sec("Gyroscopes and the equivalence principle") %>
@@ -1093,7 +1100,7 @@ To see how this mathematical fact would play out as a physical effect, we need t
 the concept of a direction in space.
 
 \label{sagnac}
-In two space dimensions, we can construct a ring laser,\index{ring laser}
+In two space dimensions, we can construct a ring laser,\index{ring laser} \subfigref{photon-in-cavity-and-gyroscope}{1},
 which in its simplest incarnation is a closed loop of optical fiber with a bidirectional laser
 inserted in one place. Coherent light traverses the loop simultaneously in both directions, interfering
 in a beat pattern, which can be observed by sampling the light at some point along the loop's
@@ -1110,7 +1117,7 @@ to maintain their orientations while they were strapped into seats on a passenge
 this orientational effect had to be subtracted out of the data at the end of the experiment.
 
 In three spatial dimensions, we could build a spherical cavity with
-a reflective inner surface, and release a photon inside.
+a reflective inner surface, and release a photon inside, \subfigref{photon-in-cavity-and-gyroscope}{2}.
 
 \label{types-of-gyroscopes}
 In reality, the photon-in-a-cavity is not very practical. The photon would eventually be
@@ -1154,7 +1161,8 @@ Roughly speaking (the reasoning will be filled
 in more rigorously on page \pageref{tensor-universality}),
 the fact that this field acts differently on the two gyroscopes is like getting a non-null result from
 an E\"{o}tv\"{o}s experiment, and it therefore violates the equivalence principle. 
-We conclude that the two gyroscopes are equivalent. In other words, there can only be one uniquely
+We conclude that gyroscopes \subfigref{photon-in-cavity-and-gyroscope}{2} and 
+\subfigref{photon-in-cavity-and-gyroscope}{3} are equivalent. In other words, there can only be one uniquely
 defined notion of direction, and the details of how it is implemented are irrelevant.
 
 <% end_sec %>
@@ -1166,8 +1174,8 @@ thought experiment. Put a gyroscope in a box, and
 send the box around the square path shown in figure \figref{thomas-hammers}
 at constant speed. The gyroscope defines a local coordinate system, which according to classical
 physics would maintain its orientation. At each corner of the square, the box has its velocity vector changed abruptly,
-as represented by the hammer. We assume that the hits with the hammer are transmitted to the gyroscopes at their centers
-center of mass, so that they do not result in any torque. Classically, if the set of gyroscopes travels once around
+as represented by the hammer. We assume that the hits with the hammer are transmitted to the gyroscope at its center
+of mass, so that they do not result in any torque. Classically, if the set of gyroscopes travels once around
 the square, it should end up at the same place and in the same orientation, so that the coordinate system it defines
 is identical with the original one.
 <% marg(50) %>
@@ -1219,7 +1227,7 @@ Luckily we live in an era in which this sort of thing can be handled by computer
 book, I will take appropriate opportunities to demonstrate how to use the
 free and open-source computer algebra system Maxima\index{Maxima}\label{introduce-maxima}
 to keep complicated calculations manageable. The following Maxima program calculates a particular element of the matrix
-$T$.
+$T$.\label{thomas-maxima}
 % --------- thomas3.mac -------------
 \begin{listing}{1}
 /* For convenience, define gamma in terms of v: */
@@ -1255,12 +1263,12 @@ means ``is defined as.''
 Line 2 does not mean, as it would in most programming languages, to take a stored numerical value of $v$ and use it to calculate a numerical
 value of $\gamma$. In fact, $v$ does not have a numerical value defined at this point, nor will it ever have a numerical value defined
 for it throughout this program. Line 2 simply means that whenever Maxima encounters the symbol \verb@gamma@, it should take it
-as an abbreviation for the symbol \verb@v@. Lines 5-16 define some $3\times3$ matrices that represent the $L$ transformations.
+as an abbreviation for the symbol \verb@1/sqrt(1-v*v)@. Lines 5-16 define some $3\times3$ matrices that represent the $L$ transformations.
 The basis is $\hat{\vc{t}}$, $\hat{\vc{x}}$, $\hat{\vc{y}}$.
 Line 18 calculates the product of the four matrices; the dots represent matrix multiplication.
 Line 23 defines a point in spacetime $\zu{P}=\hat{\vc{t}}+\hat{\vc{x}}$; we have in mind the direction
 that includes the lightlike line OP. P has to be expressed as a column matrix (three rows of one column each)
-so that Maxima will know how to operate using matrix multiplication by $T$.
+so that Maxima will know how to operate on it using matrix multiplication by $T$.
 
 Finally line 26 outputs\footnote{I've omitted some output generated automatically from the earlier steps in the
 computation. The (\%o9) indicates that this is Maxima's output from the ninth and final step.} the result of $T$ acting on P:
@@ -1295,7 +1303,7 @@ We can see that this is a purely relativistic effect, since for
 $v \ll 1$ the effect is small. For historical reasons discussed in section \ref{sec:thomas-precession}, this
 phenomenon is referred to as the Thomas precession.
 
-The particular features of this geometry are not necessary. I chose them so that (1) the boosts
+The particular features of this square geometry are not necessary. I chose them so that (1) the boosts
 would be along the Cartesian axes, so that we would be able to write them down easily; (2) it is clear that the effect
 doesn't arise from any asymmetric treatment of the spatial axes; and (3) the change in the orientation of the gyroscope
 can be measured at the same point in space, e.g., by comparing it with a twin gyroscope that stays at home. In general:
@@ -1324,7 +1332,7 @@ possible states of motion relative to some arbitrarily chosen frame of reference
 center. A point at distance $v$ from the center represents motion at velocity $v$ in a particular direction in the $x-y$ plane.
 By drawing little axes at a particular point, we can represent a particular frame of reference: the frame is in motion at
 some velocity, with its own $x$ and $y$ axes are oriented in a particular way.
-<% marg(70) %>
+<% marg(120) %>
 <%
   fig(
     'velocity-disk',
@@ -1355,7 +1363,7 @@ in the sense that it feels constant to observers
 aboard the ship. Since it is rapidities, not velocities, that add linearly, this means that as an observer aboard the ship reads clock
 times $\tau_1$, $\tau_2$, \ldots, all separated by equal intervals $\Delta\tau$, the ship's rapidity changes at a constant
 rate, $\eta_1$, $\eta_2$, \ldots.
-This results in a series of frames of reference that appear closer and closer together as the ship approaches the speed of light,
+This results in a series of frames of reference that appear closer and closer together on the diagram as the ship approaches the speed of light,
 at the edge of the disk. We can start over from the center again and repeat the whole process along the $x$ axis, resulting in a
 similar succession of frames. In both cases, the boosts are being applied along a single line, so that there is no rotation of
 the $x$ and $y$ axes.
@@ -1375,6 +1383,16 @@ A to B.
 The ship is always firing its engines in a fixed direction as judged by its gyroscopes, but according to O the ship is rotating counterclockwise,
 its thrust is progressively rotating counterclockwise, and therefore its trajectory turns counterclockwise. We conclude that leg AB
 on the velocity disk is concave, rather than being a straight-line hypotenuse of a triangle OAB.
+<% marg(-30) %>
+<%
+  fig(
+    'velocity-disk-loop-filled-in',
+    %q{In the limit where A and B are ultrarelativistic velocities, leg AB is perpendicular to the edge of the velocity disk.
+            The result is that the $x-y$ frame determined by the ship's gyroscopes has rotated by 90 degrees by the time it
+            gets home.}
+  )
+%>
+<% end_marg %>
 
 We can also determine, by the following argument, that leg AB is perpendicular to the edge of the disk where it touches the edge of the disk.
 In the transformation from frame A to frame O, $y$ coordinates are dilated by a factor of $\gamma$, which approaches infinity in the limit
@@ -1388,16 +1406,6 @@ longer and more detailed discussion by Rhodes and Semon, \url{www.bates.edu/~mse
 this type of inertially guided, constant-thrust motion is always represented on the velocity disk by
 an arc of a circle that is perpendicular to the disk at its edge. (We consider a diameter of the disk to be
 the limiting case of a circle with infinite radius.)}
-<% marg(20) %>
-<%
-  fig(
-    'velocity-disk-loop-filled-in',
-    %q{In the limit where A and B are ultrarelativistic velocities, leg AB is perpendicular to the edge of the velocity disk.
-            The result is that the $x-y$ frame determined by the ship's gyroscopes has rotated by 90 degrees by the time it
-            gets home.}
-  )
-%>
-<% end_marg %>
 
 As the ship travels from A to B, its orientation (as judged in frame O) changes from $-\hat{\vc{y}}$ to $\hat{\vc{x}}$.
 This establishes, in a much more direct fashion, the direction of the Thomas precession: its handedness is contrary to the handedness of the direction of motion.
@@ -1431,8 +1439,8 @@ Let's find the low-$v$ limit of the Thomas precession in general, not just in th
 special case of $\chi\approx v^2$ for the example involving the four hammer hits.
 To generalize to the case of smooth acceleration, we first note that the rate of precession $\der\chi/\der t$ must have the following properties.
 \begin{itemize}
-\item[] It is odd under a reversal of the direction of motion, $\vc{v}\rightarrow-\vc{v}$. (This corresponds to applying the four hammer hits
-              in the opposite order.)
+\item[] It is odd under a reversal of the direction of motion, $\vc{v}\rightarrow-\vc{v}$. (This corresponds to sending the gyroscope around
+              the square in the opposite direction.)
 \item[] It is odd under a reversal of the acceleration due to the second boost, $\vc{a}\rightarrow-\vc{a}$.
 \item[] It is a rotation about the spatial axis perpendicular to the plane of the $\vc{v}$ and $\vc{a}$ vectors, in the opposite direction compared
               to the handedness of the curving trajectory.
@@ -1538,6 +1546,18 @@ out of the black hole using longitudinal vibrations of a cable, as in the child'
 of two tin cans connected by a piece of string. (Surprisingly subtle issues can arise in such
 calculations. See A.Y. Shiekh, Can. J. Phys. 70, 458 (1992).)
 <% end_hw %>
+
+<% begin_hw('velocity-addition-matrix-taylor') %>
+The Maxima program on page \pageref{thomas-maxima} demonstrates how to multiply matrices
+and find Taylor series. Apply this technique to the following problem. For successive Lorentz
+boosts along the same axis with rapidities $\eta_1$ and $\eta_2$, find the matrix representing
+the combined Lorentz transformation, in a Taylor series up to the first nonclassical terms
+in each matrix element.
+A mixed Taylor series in two variables can be obtained simply by nesting \verb@taylor@
+functions. The \verb@taylor@ function will happily work on matrices, not just scalars.
+\hwsoln
+<% end_hw %>
+
 
 \end{hwsection}
 

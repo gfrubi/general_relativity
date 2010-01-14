@@ -491,7 +491,7 @@ followed by a radio wave,\index{Radio waves in the HF band tend to be trapped be
 causing them to curve over the horizon, allowing long-distance communication.} or by an airplane pilot who keeps her wings level and her rudder straight.
 The world-``line'' of an object acted on by nongravitational forces is not considered to be a straight ``line''
 in the sense of O1-O4. When necessary, one eliminates this ambiguity in the overloaded term ``line'' by referring
-to the lines of O1-O4 \emph{geodesics}.\index{geodesics}
+to the lines of O1-O4 as \emph{geodesics}.\index{geodesics}
 The world-line of an object acted on only by gravity is one type of geodesic.
 
 We can now see the deep physical importance of statement O1, that two events determine a line.\label{unique-geodesics}
@@ -924,5 +924,35 @@ theory, and verified the predicted size of the effect to a precision of 10\%.
 <% end_sec %> %  The Pound-Rebka experiment
 
 <% end_sec %>
+
+
+\begin{hwsection}
+
+<% begin_hw('acceleration-of-gravity') %>
+In classical mechanics, one hears the term ``the acceleration of gravity,'' which doesn't
+literally make sense, since it is \emph{objects} that accelerate. Explain why this term's
+usefulness is dependent on the equivalence principle.
+<% end_hw %>
+
+<% begin_hw('space-probe-redshift') %>
+The New Horizons space probe communicates with the earth using microwaves with a frequency of
+about 10 GHz. Estimate the sizes of the following frequency shifts in this signal, when
+the probe flies by Pluto in 2015, at roughly escape velocity from the solar system:
+(a) the Doppler shift due to the probe's velocity; (b) the 
+Doppler shift due to the Earth's orbital velocity; (c) the gravitational Doppler shift.
+<% end_hw %>
+
+<% begin_hw('ordered-geom-finite-models') %>
+Euclid's axioms E1-E5 (p. \pageref{euclidean-axioms}) do not suffice to prove that there are 
+an infinite number of points in the plane, and therefore they need to be supplemented by
+an extra axiom that states this (unless one finds the nonstandard realizations with finitely
+many points to be interesting enough to study for their own sake). Prove that the axioms of
+ordered geometry O1-O4 on p. \pageref{ordered-geometry-axioms} do not have this problem.
+\hwsoln
+<% end_hw %>
+
+
+
+\end{hwsection}
 
 <% end_chapter %>

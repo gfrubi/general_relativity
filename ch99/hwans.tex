@@ -9,13 +9,62 @@
 
 \hwanssection{Solutions to Selected Homework Problems}
 
+\beginsolutions{1}
+
+\hwsolnhdr{ordered-geom-finite-models}
+
+Pick two points P1 and P2. By O2, there is another point P3 that is distinct
+from P1 and P2. (Recall that the notation [ABC] was defined so that all three
+points must be distinct.) Applying O2 again, there must be a further point
+P4 out beyond P3, and by O3 this can't be the same as P1. Continuing in this
+way, we can produce as many points as there are integers.
+
+\beginsolutions{2}
+
+\hwsolnhdr{velocity-addition-matrix-taylor}
+
+Here is the program:
+\begin{listing}{1}
+L1:matrix([cosh(h1),sinh(h1)],[sinh(h1),cosh(h1)]);
+L2:matrix([cosh(h2),sinh(h2)],[sinh(h2),cosh(h2)]);
+T:L1.L2;
+taylor(taylor(T,h1,0,2),h2,0,2);
+\end{listing}
+The diagonal components of the result are both $1+\eta_1^2/2+\eta_2^2/2+\eta_1\eta_2+\ldots$
+Everything after the 1 is nonclassical. The 
+off-diagonal components are $\eta_1+\eta_2+\eta_1\eta_2^2/2+\eta_2\eta_1^2/2+\ldots$,
+with the third-order terms being nonclassical.
+
+\beginsolutions{3}
+
+\hwsolnhdr{carousel-paradox}
+
+The process that led from the Euclidean metric of example \ref{eg:metric-in-polar-coords} on page \pageref{eg:metric-in-polar-coords}
+to the non-Euclidean one of equation [\ref{eq:rotating-spatial}] on page \pageref{eq:rotating-spatial} was not just a series
+of coordinate transformations. At the final step, we got rid of the variable $t$, reducing the number of dimensions by one.
+Similarly, we could take a Euclidean three-dimensional space and eliminate all the points except for the ones on the surface
+of the unit sphere; the geometry of the embedded sphere is non-Euclidean, because we've redefined geodesics to be lines that
+are ``as straight as they can be'' (i.e., have minimum length) while restricted to the sphere. In the example of the carousel, the final step effectively
+redefines geodesics so that they have minimal length as determined by a chain of radar measurements.
+
+\hwsolnhdr{carousel-metric}
+
+(a) The $\der\theta'^2$ term of the metric blows up here. A geodesic connecting point A, at $r=1/\omega$, with point B, at $r<1/\omega$,
+must have minimum length. This requires that the geodesic be directly radial at A, so that $\der\theta'=0$; for if not, then we could
+vary the curve slightly so as to reduce $|\der\theta'|$, and the resulting increase in the $\der r^2$ term would be negligible
+compared to the decrease in the $\der\theta'^2$ term. (b) The spatial track of a laser beam is nor a geodesic of this metric.
+For example, a laser beam sent outward from the axis would make a track that was straight in the lab frame, but curved in the
+rotating frame. Since the spatial metric in the rotating frame is symmetric with respect to clockwise and counterclockwise,
+the metric can never result in geodesics with a specific handedness.
+
 \beginsolutions{6}
 
 \hwsolnhdr{carousel-singularities} 
 (a) There are singularities at $r=0$, where $g_{\theta'\theta'}=0$, and $r=1/\omega$,
 where $g_{tt}=0$. These are considered singularities because the inverse of the metric
 blows up. They're coordinate singularities, because they can be removed by a change of
-coordinates back to the original non-rotating frame. (b) This one has singularities in
+coordinates back to the original non-rotating frame.\\
+(b) This one has singularities in
 the same places. The one at $r=0$ is a coordinate singularity, because at small $r$
 the $\omega$ dependence is negligible, and the metric is simply that of ordinary
 plane polar coordinates in flat space. The one at $r=1/\omega$ is not a coordinate
@@ -36,4 +85,9 @@ The result is $R=6\omega^2/(1-2\omega^2r^2+\omega^4r^4)$.
 This blows up at $r=1/\omega$, which shows that this is not a coordinate
 singularity. The fact that $R$ does not blow up at $r=0$ is consistent with our
 earlier conclusion that $r=0$ is a coordinate singularity, but would not have been
-sufficient to prove that conclusion.
+sufficient to prove that conclusion.\\
+(c) The argument is incorrect. The Gaussian curvature is not just proportional to
+the angular deficit $\epsilon$, it is proportional to the
+limit of $\epsilon/A$, where $A$ is the area of the triangle. The area of the triangle
+can be small, so there is no upper bound on the ratio $\epsilon/A$.
+Debunking the argument restores consistency with the answer to part b.

@@ -891,7 +891,7 @@ At P, over the North Atlantic, the plane's colatitude has a minimum.
 (We can see, without having to take it on faith from the figure, that such a minimum must occur.
 The easiest way to convince oneself of this is to consider a path that goes directly over the pole,
 at $\theta=0$.)
-<% marg(0) %>
+<% marg(20) %>
 <%
   fig(
     'christoffel-on-globe',
@@ -1600,7 +1600,8 @@ electron.
 <% end_hw %>
 
 <% begin_hw('carousel-cartesian') %>
-Section \ref{sec:carousel} (p. \pageref{sec:carousel}) gave a flat-spacetime metric in rotating polar coordinates.
+Equation [\ref{eq:rotating-lab-metric}] on page \pageref{eq:rotating-lab-metric} gives
+a flat-spacetime metric in rotating polar coordinates.
 (a) Verify by explicit computation that this metric represents a flat spacetime.
 (b) Reexpress the metric in rotating Cartesian coordinates, and check your answer by
 verifying that the Riemann tensor vanishes.

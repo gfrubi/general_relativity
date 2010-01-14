@@ -125,7 +125,10 @@ restricted to a single variable. For example, the metric
   \der s^2 = \der t^2 - \left(1+\frac{1}{10}\sin y\right)\der x^2 - \der y^2 - \der z^2
 \end{equation*}
 does have nonvanishing curvature. In other words, it seems like we should be looking for transverse waves
-rather than longitudinal ones. On the other hand, this metric cannot be a solution to the vacuum field equations,
+rather than longitudinal ones.\footnote{A more careful treatment shows that longitudinal waves can always be
+interpreted as physically unobservable coordinate waves, in the limit of large distances from the source. Longitudinal
+waves near the source are referred to as Type III solutions in a classification scheme due to Petrov.\index{Petrov classification}\index{Type III solution}\index{Type N solution}
+Transverse waves, which are what we could actually observe in practical experiments, are type N.} On the other hand, this metric cannot be a solution to the vacuum field equations,
 since it doesn't preserve volume. It also stands still, whereas we expect that solutions to the field
 equations should propagate at the velocity of light, at least for small amplitudes.
 <% marg(0) %>
