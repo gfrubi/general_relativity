@@ -1,3 +1,9 @@
+chapter on symmetries
+  static and stationary
+  Killing vectors and conserved quantities
+  Birkhoff's theorem ?
+  No hair theorem
+
 idea
   Kerr metric is infamous for being nasty to derive from scratch.
   Expand it in powers of the angular momentum and try to use the series technique I used for Schw. metric

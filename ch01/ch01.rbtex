@@ -438,7 +438,7 @@ We'll also see that in general relativity O1 is almost always true, but there ar
 <% end_sec %>
 <% begin_sec("The equivalence principle") %>
 
-<% begin_sec("Proportionality of inertial and gravitational mass") %>
+<% begin_sec("Proportionality of inertial and gravitational mass") %>\label{ep-mass}
 What physical interpretation should we give to the ``lines'' described in ordered geometry?
 Galileo described an experiment (which he may or may not have actually performed) in which he simultaneously
 dropped a cannonball and a musket ball from a tall tower. The two objects hit the ground simultaneously,
@@ -937,7 +937,7 @@ usefulness is dependent on the equivalence principle.
 <% begin_hw('space-probe-redshift') %>
 The New Horizons space probe communicates with the earth using microwaves with a frequency of
 about 10 GHz. Estimate the sizes of the following frequency shifts in this signal, when
-the probe flies by Pluto in 2015, at roughly escape velocity from the solar system:
+the probe flies by Pluto in 2015, at a velocity of $\sim10$ A.U./year:
 (a) the Doppler shift due to the probe's velocity; (b) the 
 Doppler shift due to the Earth's orbital velocity; (c) the gravitational Doppler shift.
 <% end_hw %>
@@ -951,6 +951,27 @@ ordered geometry O1-O4 on p. \pageref{ordered-geometry-axioms} do not have this 
 \hwsoln
 <% end_hw %>
 
+<% begin_hw('have-spacesuit') %>
+In the science fiction novel \emph{Have Spacesuit --- Will Travel}, by Robert Heinlein,
+Kip, a high school student, answers a radio distress call, encounters a flying saucer,
+and is knocked out and kidnapped by aliens. When he wakes up,
+he finds himself in a locked cell with a young girl named Peewee. Peewee claims
+they're aboard an accelerating spaceship. ``If this was a spaceship,'' Kip thinks.
+``The floor felt as solid as concrete and motionless.''
+
+The equivalence principle can be stated in a variety of ways. On p.~\pageref{ep-mass},
+I stated it as (1) gravitational and inertial mass are always proportional to one
+another. Consider the statement (2) that Kip has no way, by experiments or observarions
+inside his sealed prison cell, to determine whether he's in an accelerating spaceship
+or on the surface of a planet, experiencing its gravitational field.
+
+(a) Show that any violation
+of statement 1 also leads to a violation of statement 2.
+(b) If we'd intended to construct a geometrical theory of gravity roughly along the lines of
+axioms O1-O4 on p.~\pageref{ordered-geometry-axioms}, which axiom is violated in this
+scenario?
+\hwsoln
+<% end_hw %>
 
 
 \end{hwsection}

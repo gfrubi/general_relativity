@@ -1,4 +1,4 @@
-<%
+11<%
   require "eruby_util.rb"
 %>
 
@@ -214,7 +214,9 @@ into the interface between gravity and quantum mechanics.
 <% begin_sec("The Schwarzschild metric") %>\label{sec:schwarzschild}
 
 We now set ourselves the goal of finding the metric describing the static spacetime outside a spherically symmetric, nonrotating, body of mass $m$.
-This problem was first solved by Karl Schwarzschild in 1915.\index{Schwarzschild!Karl}
+This problem was first solved by Karl Schwarzschild in 1915.\index{Schwarzschild!Karl}\footnote{``On the gravitational field of a point mass according to Einstein's theory,''
+Sitzungsberichte der K\:{o}niglich Preussischen Akademie der Wissenschaften 1 (1916) 189.
+An English translation is available at \url{http://arxiv.org/abs/physics/9905030v1}.}
 One byproduct of finding this metric will be the ability to calculate the geodetic effect exactly, but it will
 have more far-reaching consequences, including the existence of black holes.
 

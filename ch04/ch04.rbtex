@@ -133,7 +133,8 @@ spontaneously change its own velocity, which would clearly violate the principle
 mass and energy are equivalent, both inertially and gravitationally. In relativity, neither is separately conserved;
 the conserved quantity is their sum, referred to as the mass-energy, $E$.\index{mass-energy}
 The timelike component of the four-momentum, $m\gamma$, is interpreted as the mass-energy of the particle,
-consisting of its mass $m$ plus its kinetic energy $m(\gamma-1)$. 
+consisting of its mass $m$ plus its kinetic energy $m(\gamma-1)$. An alternative derivation, by Einstein, is given
+in example \ref{eg:einstein-mc2} on page \pageref{eg:einstein-mc2}.
 
 \begin{eg}{Gravitational redshifts}\label{eg:pound-rebka}
 Since a photon's energy $E$ is equivalent to a certain gravitational mass $m$, photons that rise or fall in a gravitational
@@ -231,8 +232,6 @@ Collider in the near future, is essentially a mechanism for wriggling out of thi
 that are responsible for the weak nuclear force; the mechanism cannot, however, be extended to allow a massive photon.
 \end{eg}
 
-\pagebreak
-
 \begin{eg}{Dust and radiation in cosmological models}\label{eg:dust-and-radiation-cosm}
 In cosmological models, one needs an equation of state that relates the pressure $P$ to the mass-energy density $\rho$.
 The pressure is a Lorentz scalar. The mass-energy density is not (since mass-energy is just the timelike component
@@ -274,16 +273,68 @@ size of the universe for the three different regimes. Some of the simpler cases 
 
 <% end_sec %> % momentum 4-vector
 
-<% begin_sec("The frequency four-vector") %>\index{frequency four-vector}
+<% begin_sec("The frequency four-vector and the relativistic Doppler shift") %>\index{frequency four-vector}
 Frequency is to time as the wavenumber\index{wavenumber} $k=1/\lambda$ is to space, so when treating waves relativistically it is
 natural to conjecture that there is a four-frequency $f_a$ made by assembling $(f,\vc{k})$, which behaves as a Lorentz vector. This is correct, since
 we already know that $\partial_a$ transforms as a covariant vector, and for a scalar wave of the form
 $A=A_\zu{o}\exp\left[2\pi i f_ax^a\right]$ the partial derivative operator is identical to multiplication by $2\pi f_a$.
+
+As an application, consider the relativistic Doppler shift of a light wave. For simpicity, let's restrict ourselves to
+one spatial dimension. In Newtonian mechanics, we have
+$f'=(1+v)f$, where $v$ is the velocity of the source relative to the observer; in the source's
+rest frame, we see this as occurring because the observer is either trying to run away from the wave crests ($v<0$)
+or rushing up to meet them ($v>0$). Relativistically, we have additional effects due to time dilation and length
+contraction. The aggregate effect is most easily computed by using the frequency vector.
+For a light wave, $f=k$, so the frequency vector in 1+1 dimensions is simply $(f,f)$. Putting this through a Lorentz
+transformation, we find
+\begin{equation*}
+  f' = (1+v)\gamma f = \sqrt{\frac{1+v}{1-v}} f \qquad ,
+\end{equation*}
+where the second form displays more clearly the symmetic form of the relativistic relationship, such that
+interchanging the roles of source and observer is equivalent to flipping the sign of $v$. That is, the relativistic
+version only depends on the \emph{relative} motion of the source and the observer, whereas the Newtonian one
+also depends on the source's motion relative to the medium (i.e., relative to the preferred frame in which the
+waves have the ``right'' velocity).
+
+\begin{eg}{Einstein's derivation of $E=mc^2$}\label{eg:einstein-mc2}
+On page \pageref{sec:momentum-four-vector}, we showed that the celebrated $E=mc^2$ follows directly from
+the form of the Lorentz transformation. An alternative derivation was given by Einstein in one of his
+classic 1905 papers laying out the theory of special relativity; the paper is short, and is reproduced 
+in English translation on page \pageref{einstein-paper-mc2} of this book. Having laid the groundwork
+of four-vectors and relativistic Doppler shifts, we can give an even shorter version of Einstein's
+argument. The discussion is also streamlined by restricting the discussion to 1+1 dimensions and by
+invoking photons.
+
+Suppose that a lantern, at rest in the lab frame, is floating weightlessly in outer space, and
+simultaneously emits two pulses of light in opposite directions, each with energy $E/2$ and frequency $f$.
+By symmetry, the momentum of the pulses cancels, and the lantern remains at rest. An observer in motion at
+velocity $v$ relative to the lab sees the frequencies of the beams shifted to $f'=(1\pm v)\gamma f$.
+The effect on the energies of the beams can be found purely classically, by transforming the electric and magnetic fields
+to the moving frame, but as a shortcut we can apply the quantum-mechanical relation $E_{ph}=hf$ for the energies
+of the photons making up the beams. The result is that the moving observer finds the total energy of the beams to be
+not $E$ but $(E/2)(1+v)\gamma +(E/2)(1-v)\gamma=E\gamma$.
+
+Both observers agree that the lantern had to use up some
+of the energy stored in its fuel in order to make the two pulses. But the moving observer says that in addition to this
+energy $E$, there was a further energy $E(\gamma-1)$. Where could this energy have come from? It must have come from
+the kinetic energy of the lantern. The lantern's velocity remained constant throughout the
+experiment, so this decrease in kinetic energy seen by the moving observer 
+must have come from a decrease in the lantern's inertial mass --- hence the title of Einstein's paper,
+``Does the inertia of a body depend upon its energy content?''
+
+To figure out how much mass the lantern has lost, we have to decide how we can even define mass in this new
+context. In Newtonian mechanics, we had $K=(1/2)mv^2$, and by the correspondence principle this must still
+hold in the low-velocity limit. Expanding $E(\gamma-1)$ in a Taylor series, we find that it
+equals $E(v^2/2)+\ldots$, and in the low-velocity limit this must be the same as $\Delta K=(1/2)\Delta m v^2$,
+so $\Delta m=E$. Reinserting factors of $c$ to get back to nonrelativistic units, we have
+$E=\Delta m c^2$.
+\end{eg}
+
 <% end_sec %> % frequency four-vector
 
 <% begin_sec("A non-example: electric and magnetic fields") %>
 It is fairly easy to see that the electric and magnetic fields cannot be the spacelike parts of two four-vectors.
-Consider the arrangement shown in figure \subfigref{b-field}{1}. We have a
+Consider the arrangement shown in figure \subfigref{b-field}{1}. We have
 two infinite trains of moving charges superimposed on the same line, and a single charge alongside the line.
 Even though the line charges formed by the two trains
 are moving in opposite directions, their currents don't cancel. A negative charge moving
@@ -378,7 +429,7 @@ relation between the potentials and the fields is
 An excellent discussion of the vector potential from a purely classical point of view
 is given in the classic \emph{Feynman Lectures}.\footnote{\emph{The Feynman Lectures on Physics}, Feynman, Leighton, and Sands, Addison Wesley Longman, 1970}
 Figure \figref{vector-potential-of-solenoid} shows an example.
-<% marg(0) %>
+<% marg(150) %>
 <%
   fig(
     'vector-potential-of-solenoid',
