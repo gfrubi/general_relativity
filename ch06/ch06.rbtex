@@ -1,4 +1,4 @@
-11<%
+<%
   require "eruby_util.rb"
 %>
 
@@ -505,7 +505,7 @@ on page \pageref{fig:gravity-probe-b-geodetic-graphs}.
 
 <% end_sec %> % geodetic effect
 
-<% begin_sec("Orbits") %>
+<% begin_sec("Orbits") %>\label{sec:schwarzschild-orbits}
 The main event of Newton's \emph{Principia Mathematica} is his proof of Kepler's laws. Similarly, Einstein's
 first important application in general relativity, which he began before he even had the exact form of the
 Schwarzschild metric in hand, was to find the non-Newtonian behavior of the planet Mercury. The planets deviate
@@ -663,14 +663,6 @@ joyous excitement.''
 Further attempts were made to improve on the precision of this historically crucial test of general relativity.
 Radar now gives the most precise orbital data for Mercury. At the level of about one part per thousand,
 however, an effect creeps in due to the oblateness of the sun, which is difficult to measure precisely.
-In 1966, Dicke and Goldenberg measured the oblateness optically, and found an unexpectedly high
-value, which would have put Mercury's orbit far out of agreement with general relativity.
-The oblateness turns out to be extremely difficult to measure, and not until about 1990 did
-a consensus arise, based on measurements of oscillations of the solar surface, that the pre-Dicke value was correct.
-In the interim, the confusion had the salutary effect of stimulating the development of
-a variety of alternatives to general relativity. This is important because often if one doesn't
-have an alternative theory, one has no reasonable basis on which to design and interpret
-experiments to test the original theory.
 
 In 1974, astronomers J.H. Taylor and R.A. Hulse of Princeton, working at the Arecibo radio telescope, discovered a binary star system
 whose members are both neutron stars. The detection of the system was made possible because

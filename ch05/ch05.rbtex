@@ -846,7 +846,7 @@ nonzero results. For example, the covariant derivative of the stress-energy tens
 could have some physical significance in one dimension!) will be
 $ \nabla_X T=\der T/\der X-G^{-1}(\der G/\der X)T$.
 
-Physically, the correction term is a derivative of the metric, and we've already seen that
+Physically, the correction term is a derivative of the metric, and we've already seen that\label{g-frame-dependent}
 the derivatives of the metric (1) are the closest thing we get in general relativity to the gravitational
 field, and (2) are not tensors. In 1+1 dimensions, suppose we observe that a free-falling rock
 has $\der V/\der T=9.8\ \munit/\sunit^2$. This acceleration cannot be a tensor, because we could make it vanish
@@ -916,6 +916,15 @@ on page \pageref{eg:christoffel-on-globe-quantitative}.
 Symmetry also requires that this Christoffel symbol be independent of $\phi$, and
 it must also be independent of the radius of the sphere.
 \end{eg}
+
+Example \ref{eg:christoffel-on-globe} is in two spatial dimensions. In spacetime, $\Gamma$ is
+essentially the gravitational field, and early papers in relativity straightforwardly refer to
+it that way. % Schwarzschild 1916
+This may feel like a joyous reunion with our old friend from freshman mechanics, $g=9.8\ \munit/\sunit$.
+But our old friend has changed. In Newtonian mechanics, accelerations like $g$ are frame-invariant (considering only inertial
+frames, which are the only legitimate ones in that theory). In general relativity they are frame-dependent,
+and as we saw on page \pageref{g-frame-dependent}, the acceleration of gravity can be made to equal anything
+we like, based on our choice of a frame of reference.\label{christoffel-as-field}
 
 For higher-rank tensors, we just add more correction terms, e.g.,
 \begin{align*}
@@ -1286,7 +1295,7 @@ source.\footnote{Carroll and Field, \url{http://arxiv.org/abs/gr-qc/9403058}}
 
 <% end_sec %> % torsion
 
-<% begin_sec("From metric to curvature") %>\label{sec:from-metric-to-curvature}
+<% begin_sec("From metric to curvature",4) %>\label{sec:from-metric-to-curvature}
 
 <% begin_sec("Finding $\\Gamma$ given $g$") %>
 We've already found the Christoffel symbol in terms of the metric in one dimension. Expressing it in
@@ -1454,7 +1463,7 @@ This is given as another example later in Brewin's manual for applying Cadabra t
 
 <% end_sec %> % The Riemann tensor in terms of the Christoffel symbols
 
-<% begin_sec("Some general ideas about gauge") %>
+<% begin_sec("Some general ideas about gauge") %>\label{sec:gauge-ideas}
 Let's step back now for a moment and try to gain some physical insight by looking at the features that the electromagnetic and
 relativistic gauge transformations have in common. We have the following analogies:
 <% marg(-100) %>
@@ -1527,6 +1536,12 @@ In the electromagnetic example, integrating $\vc{A}$ around a closed loop reveal
 of a magnetic flux through the loop, even though the magnetic field is zero at every location where $\vc{A}$ has to be
 sampled. In the relativistic example, integrating $\Gamma$ around a closed loop shows that there is curvature inside
 the loop, even though the curvature is zero at all the places where $\Gamma$ has to be sampled.
+
+The fact that $\Gamma$ is a gauge field, and therefore not locally observable, is simply a fancy way of expressing
+the ideas introduced on pp.~\pageref{g-frame-dependent} and \pageref{christoffel-as-field}, that due to the equivalence
+principle, the gravitational field in general relativity is not locally observable. This non-observability is local
+because the equivalence principle is a statement about local Lorentz frames. The example in figure \figref{cone} is
+non-local.
 
 \begin{eg}{Geodetic effect and structure of the source}
 \egquestion

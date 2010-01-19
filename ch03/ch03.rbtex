@@ -868,7 +868,7 @@ Even more detailed treatments are given by Gr\o{}n\footnote{Relativistic descrip
 and Dieks.\footnote{Space, Time, and Coordinates in a Rotating World, \url{http://www.phys.uu.nl/igg/dieks}}.
 <% end_sec %> % Non-Euclidean geometry observed in the rotating frame
 
-<% begin_sec("Ehrenfest's paradox") %>
+<% begin_sec("Ehrenfest's paradox") %>\label{sec:ehrenfest-paradox}
 Ehrenfest\footnote{P. Ehrenfest, Gleichf\"ormige Rotation starrer K\"orper und Relativit\"atstheorie, Z. Phys. 10 (1909) 918}
 described the following paradox.\index{Ehrenfest's paradox} Suppose that observer B, in the lab frame, measures the radius of the disk to be
 $r$ when the disk is at rest, and $r'$ when the disk is spinning. B can also measure the corresponding circumferences
@@ -945,7 +945,7 @@ Can we find a universal time coordinate that will match up with every clock, pro
 is at rest relative to the rotating disk? 
 <% end_sec %> % The metric in the rotating frame
 
-<% begin_sec("The spatial metric and synchronization of clocks") %>
+<% begin_sec("The spatial metric and synchronization of clocks") %>\label{sec:synchronization-on-carousel}
 A trick for improving the situation is to eliminate the $\der\theta'\der t$ cross-term by
 completing the square in the metric [\ref{eq:rotating-lab-metric}]. The result is
 \begin{equation*}
@@ -1076,7 +1076,7 @@ if two test particles sent into the region collide at a point $\vc{x}$ inside th
 changing the point's name to $\vc{x}'$ doesn't change the observable fact that they collided.
 
 <% end_sec %> % The hole argument
-<% begin_sec("A Machian paradox") %>
+<% begin_sec("A Machian paradox") %>\label{einstein-two-planets}
 
 Another type of argument that made Einstein suffer is also resolved by a correct understanding of measurements,
 this time the use of measurements in local Lorentz frames. The earth is in hydrostatic equilibrium, and its
@@ -1114,8 +1114,8 @@ philosopher Ernst Mach. Mach had a somewhat ill-defined idea that since motion i
 when we speak of one object moving relative to another object, the inertia of an object must be caused by the
 influence of all the other matter in the universe. Einstein referred to this as Mach's principle.\index{Mach's principle}
 Einstein's false starts in constructing general relativity were frequently related to his attempts to make
-his theory too ``Machian.''
-
+his theory too ``Machian.'' Section \ref{sec:brans-dicke} on p.~\pageref{sec:brans-dicke} discusses
+an alternative, more Machian theory of gravity proposed by Brans and Dicke in 1951.
 <% end_sec %> % A Machian paradox
 <% end_sec %> % The metric in general relativity
 

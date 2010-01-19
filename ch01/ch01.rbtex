@@ -685,6 +685,60 @@ We don't notice the curvature of the Earth's surface in everyday life because th
 is thousands of kilometers. On a map of LA, we don't notice any curvature, nor do we detect it on a map
 of Mumbai, but it is not possible to make a flat map that includes both LA and Mumbai without seeing
 severe distortions.
+<% begin_sec("Chiao's paradox") %>\label{sec:chiao-paradox}\index{Chiao's paradox}\index{equivalence principle!application to charged particles}
+The equivalence principle is not a single, simple, mathematically well defined statement. As an example
+of an ambiguity that is still somewhat controversial, 90 years after Einstein first proposed the principle,
+consider the question of whether or not it applies to charged particles.
+Raymond Chiao\footnote{arxiv.org/abs/quant-ph/0601193v7} proposes the following thought experiment.
+Let a neutral particle and a charged particle be set, side by side, in orbit around the earth.
+If the equivalence principle applies
+regardless of charge, then these two particles must go on orbiting amicably, side by side.
+But then we have a violation of conservation of energy, since the charged particle, which is
+accelerating, will radiate electromagnetic waves (with very low frequency and amplitude). It seems
+as though the particle's orbit must decay.
+<% marg(100) %>
+<%
+  fig(
+    'chiao-paradox',
+    %q{Chiao's paradox: a charged particle and a neutral particle are in orbit around the earth. Will the charged particle radiate,
+          violating the equivalence principle?}
+  )
+%>
+<% end_marg %>
+
+The resolution of the paradox, as demonstrated by detailed calculations by Gr\o{}n and N\ae{}ss\footnote{arxiv.org/abs/0806.0464v1} is
+interesting because it exemplifies the \emph{local} nature of the equivalence principle.
+When a charged particle moves through a gravitational field, in general it is possible
+for the particle to experience a reaction from its own electromagnetic fields. This might seem
+impossible, since an observer in a frame momentarily at rest with respect to the particle
+sees the radiation fly off in all directions at the speed of light. But there are
+in fact several different mechanisms by which a charged particle can be reunited with its long-lost
+electromagnetic offspring. An example (not directly related to Chiao's scenario) is the following.
+
+Bring a laser very close to a black hole, but not so close that it has strayed inside
+the event horizon, which is the spherical point of no return from within which nothing can escape.
+Example \ref{eg:newtonian-black-hole} on page \pageref{eg:newtonian-black-hole} gives a plausibility
+argument based on Newtonian physics that the radius\footnote{Because relativity
+describes gravitational fields in terms of curvature of spacetime, the Euclidean relationship between
+the radius and circumference of a circle fails here. The $r$ coordinate should be understood here
+not as the radius measured from the center but as the circumference divided by $2\pi$.} of the event horizon should be something like
+$r_H=GM/c^2$, and section \ref{sec:black-hole-horizon} on page \pageref{sec:black-hole-horizon}
+derives the relativistically correct factor of 2 in front, so that $r_H=2GM/c^2$.
+It turns out that at $r=(3/2)R_H$, a ray of light can have a circular orbit around the black hole.
+Since this is greater than $R_H$, we can, at least in theory, hold the laser stationary at this value of $r$ using a powerful
+rocket engine. If we point the laser in the azimuthal direction, its own beam will come back and hit it.
+
+Since matter can experience a back-reaction from its own electromagnetic
+radiation, it becomes plausible how the paradox can be resolved. The equivalence principle holds
+\emph{locally}, i.e., within a small patch of space and time. If Chiao's charged and neutral particle
+are released side by side, then they will obey the equivalence principle for at least a certain amount of
+time --- and ``for at least a certain amount of time'' is all we should expect, since the principle is local.
+But after a while, the charged particle will start to experience a back-reaction from its own radiated
+electromagnetic fields. Since Chiao's particles are orbiting the earth, and the earth is not a black hole,
+the mechanism clearly can't be as simple as the one described above, but Gr\o{}n and N\ae{}ss show that there
+are similar mechanisms that can apply here, e.g., scattering of light waves by the nonuniform gravitational field.
+<% end_sec %> %  Charged particles
+
 <% end_sec %> % Locality of Lorentz frames
 
 <% begin_sec("Gravitational redshifts") %>\label{sec:gravitational-redshifts}
@@ -692,7 +746,9 @@ Starting on page \pageref{gravity-affects-time}, we saw experimental evidence th
 changes with height in a gravitational field. We can now see that this is required by the equivalence principle.
 
 By the equivalence principle, there is no way to tell the difference between experimental results obtained in an
-accelerating laboratory and those found in a laboratory immersed in a gravitational field. In a laboratory accelerating
+accelerating laboratory and those found in a laboratory immersed in a gravitational field.\footnote{Problem
+\ref{hw:have-spacesuit} on p.~\pageref{hw:have-spacesuit} verifies, in one specific example, that this way of stating the equivalence principle
+is implied by the one on p.~\pageref{ep-mass}.} In a laboratory accelerating
 upward, a photon emitted from the floor and would be Doppler-shifted toward lower frequencies when observed at the ceiling, because of the
 change in the receiver's velocity during the photon's time of flight. The effect is given by $\Delta E/E=\Delta f/f=ay/c^2$, where
 $a$ is the lab's acceleration, $y$ is the height from floor to ceiling, and $c$ is the speed of light.
@@ -753,6 +809,17 @@ Further interpretation:
            test the equivalence principle; they do not allow us to distinguish between one theory of gravity
            and another if both theories incorporate the equivalence principle.
 \end{itemize}
+
+\begin{eg}{Chiao's paradox revisited}\label{eg:chiao-energy}\index{Chiao's paradox}\index{equivalence principle!application to charged particles}
+The equivalence principle says that electromag\-netic waves have gravitational mass as well as inertial mass, so it seems clear that the same
+must hold for static fields. In Chiao's paradox (p.~\pageref{sec:chiao-paradox}), the orbiting charged particle has an electric field
+that extends out to infinity. When we measure the mass of a charged particle such as an electron, there is no way to
+separate the mass of this field from a more localized contribution. The electric field ``falls'' through the gravitational
+field, and the equivalence principle, which is local, cannot guarantee that all parts of the field rotate uniformly
+about the earth, even in distant parts of the universe. The electric field pattern becomes distorted, and this distortion
+causes a radiation reaction which back-reacts on the particle, causing its orbit to decay.
+\end{eg}
+
 <% end_sec %> %  Gravitational redshifts
 
 <% begin_sec("The Pound-Rebka experiment") %>\label{sec:pound-rebka}\index{Pound-Rebka experiment}\index{gravitational redshift}\index{redshift!gravitational}
@@ -899,6 +966,14 @@ However, systematic effects such as (4) were easier to monitor and account for w
 A lab building at Harvard happened to have a 22-meter tower, which was used for the experiment.
 To reduce the absorption of the gammas in the 22 meters of air, a long, cylindrical mylar bag full of helium
 gas was placed in the shaft, \figref{pound-rebka}.
+<% marg(-10) %>
+<%
+  fig(
+    'pound-rebka-photos',
+    %q{Pound and Rebka at the top and bottom of the tower.}
+  )
+%>
+<% end_marg %>
 
 The resonance was a bell-shaped curve with a minimum at the natural frequency of emission. Since the curve
 was at a minimum, where its derivative was zero, the sensitivity of the count rate to the gravitational shift would have
@@ -912,18 +987,10 @@ Pound and Rebka measured the shift to be $(2.56\pm 0.25)\times10^{-15}$.
 % The values P&R give are 4.92 and 5.13+-.51, which are the doubled frequency shifts
 The results were in statistical agreement with
 theory, and verified the predicted size of the effect to a precision of 10\%.
-<% marg(50) %>
-<%
-  fig(
-    'pound-rebka-photos',
-    %q{Pound and Rebka at the top and bottom of the tower.}
-  )
-%>
-<% end_marg %>
 
 <% end_sec %> %  The Pound-Rebka experiment
-
 <% end_sec %>
+
 
 
 \begin{hwsection}
@@ -961,7 +1028,7 @@ they're aboard an accelerating spaceship. ``If this was a spaceship,'' Kip think
 
 The equivalence principle can be stated in a variety of ways. On p.~\pageref{ep-mass},
 I stated it as (1) gravitational and inertial mass are always proportional to one
-another. Consider the statement (2) that Kip has no way, by experiments or observarions
+another. An alternative formulation (p.~\pageref{sec:gravitational-redshifts}) is (2) that Kip has no way, by experiments or observarions
 inside his sealed prison cell, to determine whether he's in an accelerating spaceship
 or on the surface of a planet, experiencing its gravitational field.
 

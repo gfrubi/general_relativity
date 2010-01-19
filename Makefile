@@ -28,6 +28,7 @@ book:
 	make && make
 	@scripts/check_for_colliding_figures.rb
 	@scripts/harvest_aux_files.rb
+	make
 
 web:
 	WOPT='$(WOPT) --modern' $(RUN_ERUBY) w #... xhtml

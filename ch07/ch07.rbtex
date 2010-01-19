@@ -134,7 +134,7 @@ very nearly uniquely determined by the following criteria:
 This is not meant to be a rigorous proof, just a general observation that it's not easy to tinker with the
 theory without breaking it.
 
-\begin{eg}{A failed attempt at tinkering}
+\begin{eg}{A failed attempt at tinkering}\label{eg:failed-scalar-tinkering}
 As an example of the lack of ``wiggle room'' in the structure of the field equations, suppose we
 construct the scalar $T\indices{^a_a}$, the trace of the energy-momentum tensor, and try to insert
 it into the field equations as a further source term. The first problem is that the field equation
@@ -908,4 +908,195 @@ an unknown type of exotic non-baryonic matter, known generically as ``dark matte
 
 <% end_sec %> % Cosmological solutions
 
+<% begin_sec("Mach's principle revisited") %>\label{sec:brans-dicke}\index{Mach's principle}
+<% begin_sec("The Brans-Dicke theory") %>
+Mach himself never succeeded in stating his ideas in the form of a precisely testable
+physical theory, and we've seen that to the extent that Einstein's hopes and intuition had been formed by Mach's
+ideas, he often felt that his own theory of gravity came up short. The reader has so far encountered
+Mach's principle in the context of certain thought experiments that are obviously impossible to realize,
+involving a hypothetical universe that is empty except for certain apparatus (e.g., section \ref{einstein-two-planets}, p.~\pageref{einstein-two-planets}).
+It would be easy, then, to get an impression of Mach's principle as one of those theories that is ``not even
+wrong,'' i.e., so ill-defined that it cannot even be falsified by experiment, any more than Christianity can be.
+
+But in 1961, Robert Dicke and his student Carl Brans came up with a theory of gravity that made testable predictions, and
+that was specifically designed to be more Machian than general relativity.\index{Brans-Dicke theory} Their paper\footnote{C. Brans and R. H. Dicke, ``Mach's
+Principle and a Relativistic Theory of Gravitation,'' Physical Review 124 (1961) 925} is extremely readable, even for
+the non-specialist. On the first page,  they propose one of those seemingly foolish
+thought experiments about a nearly empty universe:
+
+\begin{quotation}
+The imperfect expression of [Mach's ideas] in general relativity can be seen by considering the case of a space
+empty except for a lone experimenter in his laboratory. [...] The observer would, according to general relativity,
+observe normal behavior of his apparatus in accordance with the usual laws of physics. However, also according
+to general relativity, the experimenter could set his laboratory rotating by leaning out a window and firing his
+22-caliber rifle tangentially. Thereafter the delicate gyroscope in the laboratory would continue to point in
+a direction nearly fixed relative to the direction of motion of the rapidly receding bullet. The gyroscope would
+rotate relative to the walls of the laboratory. Thus, from the point of view of Mach, the tiny, almost massless,
+very distant bullet seems to be more important than the massive, nearby walls of the laboratory in determining
+inertial coordinate frames and the orientation of the gyroscope.
+\end{quotation}
+
+They then proceed to construct a mathematical and more Machian theory of gravity. From the Machian point of view,
+the correct local definition of an inertial frame must be determined relative to the bulk of the matter in the
+universe. We want to retain the Lorentzian local character of spacetime, so this influence can't be transmitted
+via instantaneous action at a distance.
+It must propagate via some physical field, at a speed less than or equal to $c$. It is implausible that this
+field would be the gravitational field as described by general relativity. Suppose we divide the cosmos up
+into a series of concentric spherical shells centered on our galaxy. In Newtonian mechanics, the gravitational
+field obeys Gauss's law, so the field of such a shell vanishes identically on the interior. In relativity,
+the corresponding statement is Birkhoff's theorem,\index{Birkhoff's theorem} which states that the Schwarzschild
+metric is the unique spherically symmetric solution to the vacuum field equations. Given this solution in the exterior universe,
+we can set a boundary condition at the outside surface of the shell, use the Einstein field equations to extend the solution through it,
+and find a unique solution on the interior, which is simply a flat space.
+
+Since the Machian effect can't be carried by the gravitational field, Brans and Dicke
+took up an idea earlier proposed by Pascual Jordan\footnote{Jordan was a member of the Nazi \emph{Sturmabteilung} or
+``brown shirts'' who nevertheless ran afoul of the Nazis for his close professional relationships with Jews.} of hypothesizing
+an auxiliary field $\phi$. The fact that such a field has never been detected directly suggests that it has no mass or charge.
+If it is massless, it must propagate at exactly $c$, and this also makes sense because if it were to propagate at speeds less than
+$c$, there would be no obvious physical parameter that would determine that speed. How many tensor indices should it have? Since Mach's principle tries to give an account of inertia, and
+inertial mass is a scalar, $\phi$ should presumably be a scalar (quantized by a spin-zero particle). Theories of this type
+are called tensor-scalar theories, because they use a scalar field in addition to the metric tensor.
+
+The wave equation for a scalar field, in the absence of sources, is simply $\nabla_i \nabla^i \phi=0$. The solutions of this
+wave equation fall off as $\phi\sim 1/r$. This is gentler than the $1/r^2$ variation of the gravitational field, so
+results like Newton's shell theorem and Birkhoff's theorem no longer apply. If a spherical shell of mass acts as a source
+of $\phi$, then $\phi$ can be nonzero and varying inside the shell. The $\phi$ that you experience
+right now as you read this book should be a sum of wavelets originating from all the masses whose world-lines
+intersected the surface of your past light-cone. In a static universe, this sum would diverge linearly, so a self-consistency
+requirement for Brans-Dicke gravity is that it should produce cosmological solutions that avoid such a divergence, e.g.,
+ones that begin with Big Bangs.
+
+Masses are the sources of the field $\phi$. How should they couple to it? Since $\phi$ is a scalar, we need to
+construct a scalar as its source, and the only reasonable scalar that can play this role is the trace of the
+stress-energy tensor, $T\indices{^i_i}$. As discussed in example \ref{eg:failed-scalar-tinkering} on page
+\pageref{eg:failed-scalar-tinkering}, this vanishes for light, so only material particles are sources of $\phi$.
+Even so, the Brans-Dicke theory retains a form of the equivalence principle. As discussed on pp.~\pageref{sec:chiao-paradox} and \pageref{eg:chiao-energy},
+the equivalence principle is a statement about the results of local experiments, and $\phi$ at any given location in the
+universe is dominated by contributions from matter lying at cosmological distances.
+Objects of different composition will have differing fractions of their mass that arise from internal electromagnetic
+fields. Two such objects will still follow identical geodesics, since their own effect on the local value of $\phi$
+is negligible. This is unlike the behavior of electrically charged objects, which experience significant back-reaction
+effects in curved space (p.~\pageref{sec:chiao-paradox}). However, the strongest form of the equivalence principle requires that all experiments in free-falling laboratories produce
+identical results, no matter where and when they are carried out. Brans-Dicke gravity violates this, because such experiments
+could detect differences between the value of $\phi$ at different locations --- but of course this is part and parcel of
+the purpose of the theory.
+
+We now need to see how to connect $\phi$ to the local notion of inertia so as to produce an effect of the kind
+that would tend to fulfill Mach's principle. In Mach's original formulation, this would entail some kind of
+local rescaling of all inertial masses, but Brans and Dicke point out that in a theory of gravity, this is
+equivalent to scaling the Newtonian gravitational constant $G$ by the inverse factor. The latter turns out
+to be a better approach.
+For one thing, it has a natural interpretation in terms of units.
+Since $\phi$'s amplitude falls off as $1/r$, we can write $\phi\sim \Sigma m_i/r$, where the sum is over
+the past light cone. If we then make the identification of $\phi$ with $1/G$ (or $c^2/G$ in a system wher $c \ne 1$), the
+units work out properly, and the coupling constant between matter and
+$\phi$ can be unitless. If this coupling constant, notated $1/\omega$, were not unitless, then the theory's predictive value would be weakened, because
+there would be no way to know what value to pick for it. For a unitless constant, however, there is a reasonable
+way to guess what it should be: ``in any sensible theory,'' Brans and Dicke write, ``$\omega$ must be of the general order of magnitude of unity.''
+This is, of course, assuming that the Brans-Dicke theory was correct. In general, there are other reasonable values to
+pick for a unitless number, including zero and infinity.
+The limit of $\omega\rightarrow\infty$ recovers the special case of general relativity. Thus Mach's principle, which
+once seemed too vague to be empirically falsifiable, comes down to measuring a specific number, $\omega$, which
+quantifies how Machian our universe is.\footnote{
+There are also good technical reasons for 
+thinking of $\phi$ as relating to the gravitational constant is that general relativity has a standard prescription for
+describing fields on a background of curved spacetime. The vacuum field equations of general relativity can be derived
+from the principle of least action, and although the details are beyond the scope of this book (see, e.g.,
+Wald, \emph{General Relativity}, appendix E), the general idea is that we define a Lagrangian density
+$\mathcal{L}_G$ that depends on the Ricci scalar curvature, and then extremize its integral over all possible
+histories of the evolution of the gravitational field. If we want to describe some other field, such as matter,
+light, or $\phi$, we simply take the special-relativistic Lagrangian $\mathcal{L}_M$ for that field, change
+all the derivatives to covariant derivatives, and form the sum $(1/G)\mathcal{L}_G+\mathcal{L}_M$. In the Brans-Dicke
+theory, we have three pieces, $(1/G)\mathcal{L}_G+\mathcal{L}_M+\mathcal{L}_\phi$,
+where $\mathcal{L}_M$ is for matter and $\mathcal{L}_\phi$ for $\phi$. If we were to
+interpret $\phi$ as a rescaling of inertia, then we would have to have $\phi$ appearing as a fudge factor
+modifying all the inner workings of $\mathcal{L}_M$. If, on the other hand, we think of $\phi$ as changing
+the value of the gravitational constant $G$, then the necessary modification is extremely simple. Brans and
+Dicke introduce one further modification to $\mathcal{L}_\phi$ so that the coupling constant $\omega$
+between matter and $\phi$ can be unitless. This modification has no effect on the wave equation of $\phi$
+in flat spacetime.}
+<% end_sec %> % The Brans-Dicke theory
+<% begin_sec("Predictions of the Brans-Dicke theory") %>
+
+Returning to the example of the spherical shell of mass, we can see based on considerations of units
+that the value of $\phi$ inside should be $\sim m/r$, where $m$ is the total mass of the shell and $r$ is its
+radius. There may be a unitless factor out in front, which will depend on $\omega$, but for $\omega\sim 1$ we
+expect this constant to be of order 1. Solving the nasty set of field equations that result from their
+Lagrangian, Brans and Dicke indeed found $\phi\approx[2/(3+2\omega)](m/r)$, which is of order unity if $\omega$ is
+of order unity. In the limit of $\omega\rightarrow\infty$, $\phi=0$, and the shell has no physical effect
+on its interior, as predicted by general relativity.
+
+Brans and Dicke were also able to calculate cosmological models, and in a typical model with a nearly spatially flat
+universe, they found $\phi$ would vary according to
+\begin{equation*}
+  \phi = 8\pi \frac{4+3\omega}{6+4\omega} \rho_o t_o^2 \left(\frac{t}{t_o}\right)^{2/(4+3\omega)} \qquad ,
+\end{equation*}
+where $\rho_o$ is the density of matter in the universe at time $t=t_o$.
+When the density of matter is small, $G$ is large, which has the same observational consequences as
+the disappearance of inertia; this is exactly what one expects according to Mach's principle.
+For $\omega\rightarrow\infty$, the gravitational ``constant'' $G= 1/\phi$ really is constant.
+
+Returning to the thought experiment involving the 22-caliber rifle fired out the window, we find
+that in this imaginary universe, with a very small density of matter, $G$ should be very large. This causes
+a frame-dragging effect from the laboratory on the gyroscope, one much stronger than we would
+see in our universe. Brans and Dicke calculated this effect for a laboratory consisting of a spherical
+shell, and although technical difficulties
+prevented the reliable extrapolation of their result to $\rho_o\rightarrow 0$, the trend was that
+as $\rho_o$ became small, the frame-dragging effect would get stronger and stronger, presumably
+eventually forcing the gyroscope to precess in lock-step with the laboratory. There would thus be
+no way to determine, once the bullet was far away, that the laboratory was rotating at all --- in
+perfect agreement with Mach's principle.
+<% end_sec %> % Predictions of the Brans-Dicke theory
+<% begin_sec("Hints of empirical support") %>
+Only six years after the publication of the Brans-Dicke theory, Dicke himself, along with 
+H.M.~Goldenberg\footnote{Dicke and Goldenberg, ``Solar Oblateness and General Relativity,'' Physical Review Letters 18 (1967) 313}
+carried out a measurement that seemed to support the theory empirically. One of the first empirical tests
+of general relativity, which it had seemed to pass with flying colors, was the anomalous perihelion precession of Mercury.
+The word ``anomalous,'' which is often left out in descriptions of this test, is required because there are
+many nonrelativistic reasons why Mercury's orbit precesses, including interactions with the other planets and
+the sun's oblate shape. It is only when these other effects are subtracted out that one sees the general-relativistic
+effect calculated on page \pageref{sec:schwarzschild-orbits} can be seen. The sun's oblateness is difficult to measure
+optically, so the original analysis of the data had proceeded by determining the sun's rotational period by observing
+sunspots, and then assuming that the sun's bulge was the one found for a rotating fluid in static equilibrium. The result
+was an assumed oblateness of about $1\times10^{-5}$. But
+we know that the sun's dynamics are more complicated than this, since it has convection currents and magnetic fields.
+Dicke, who was already a renowned experimentalist, set out to determine the oblateness by direct optical measurements,
+and the result was $(5.0\pm 0.7)\times 10^{-5}$, which, although still very small, was enough to put the observed
+perihelion precession out of agreement with general relativity by about 8\%. The perihelion precession predicted by
+Brans-Dicke gravity differs from the general relativistic result by a factor of $(4+3\omega)/(6+3\omega)$.
+The data therefore appeared to require $\omega\approx 6\pm 1$, which would be inconsistent with general relativity.
+<% marg(110) %>
+<%
+  fig(
+    'dicke-oblateness',
+    %q{The apparatus used by Dicke and Goldenberg to measure the oblateness of the sun was essentially a telescope with
+        a disk inserted in order to black out most of the light from the sun.}
+  )
+%>
+<% end_marg %>
+<% end_sec %> % Hints of empirical support
+<% begin_sec("Mach's principle is false.") %>
+The trouble with the solar oblateness measurements was that they were subject to a large number of possible
+systematic errors, and for this reason it was desirable to find a more reliable test of Brans-Dicke gravity.
+Not until about 1990 did
+a consensus arise, based on measurements of oscillations of the solar surface, that the pre-Dicke value was correct.
+In the interim, the confusion had the salutary effect of stimulating a renaissance of theoretical and
+experimental work in general relativity. Often if one doesn't
+have an alternative theory, one has no reasonable basis on which to design and interpret
+experiments to test the original theory.
+
+Currently, the best bound on $\omega$ is based on measurements\footnote{Bertotti, Iess, and Tortora, ``A test of general relativity using radio links with the Cassini spacecraft,''
+Nature 425 (2003) 374} of the propagation of radio signals between earth and
+the Cassini-Huygens space probe in 2003, which require $\omega>4\times10^4$. This is so much greater than
+unity that it is reasonable to apply Brans and Dicke's statement that ``in any sensible theory, $\omega$ must be of the general order of magnitude of unity.''
+We can now see that Mach's principle, far from being
+a fuzzy piece of philosophical navel-gazing, is a testable hypothesis. It has been tested and found to be false, in the following sense.
+Brans-Dicke gravity is about as natural a formal implementation of Mach's principle as could be hoped for,
+and it gives us a number $\omega$ that parametrizes how Machian the universe is. The empirical value of $\omega$
+is so large that it shows our universe to be essentially as non-Machian as general relativity.
+<% end_sec %> % Mach's principle is false
+
+
+<% end_sec %> % Mach's principle revisited
 <% end_chapter %>

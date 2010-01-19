@@ -451,6 +451,20 @@ equal to $c$. It is important to emphasize, however, that light plays no special
 it necessary to assume the constancy of the speed of light in order to derive the Lorentz transformation; we will
 in fact prove on page \pageref{c-is-speed-of-light} that photons must travel at $c$, and on page
 \pageref{c-is-speed-of-massless-particles} that this must be true for any massless particle.
+
+On the other hand, Einstein did originally develop relativity based on a different set of assumptions than
+our L1-L5. His treatment, given in his 1905 paper ``On the electrodynamics of moving bodies,''  is
+reproduced on p.~\pageref{einstein-relativity}. It starts from the following two postulates:
+\begin{itemize}
+\item[P1] The principle of relativity: ``\ldots the phenomena of electrodynamics as well as of mechanics
+possess no properties corresponding to the idea of absolute rest.''
+\item[P2] ``\ldots light is
+always propagated in empty space with a definite velocity $c$ which is
+independent of the state of motion of the emitting body.''
+\end{itemize}
+Einstein's P1 is essentially the same as our L3 (equivalence of inertial frames). He implicitly assumes
+something equivalent to our L1 (homogeneity and isotropy of spacetime). In his system, our L5 (no simultaneity)
+is a theorem proved from the axioms P1-P2, whereas in our system, his P2 is a theorem proved from the axioms L1-L5.
 <% marg(-20) %>
 <%
   fig(
@@ -461,6 +475,8 @@ in fact prove on page \pageref{c-is-speed-of-light} that photons must travel at 
   )
 %>
 <% end_marg %>
+
+\vfill
 
 \begin{eg}{}\label{eg:lorentz-boost-diagonals}
 Let the intersection of the parallelogram's two diagonals be T in the original (rest) frame, and $\zu{T}'$
@@ -490,6 +506,8 @@ changing time required for signals to propagate. Meeting in person requires one 
 to accelerate, as in the original story of Alice and Betty, and then we are no longer dealing with
 pure Lorentz frames, which are described by non-accelerating observers.
 \end{eg}
+
+\pagebreak
 
 \begin{eg}{GPS}\label{eg:gps}
 In the Hafele-Keating experiment using atomic clocks aboard airplanes (p. \pageref{sec:hafele-keating}), both gravity and motion had
@@ -554,8 +572,6 @@ time dilation now approximately 0, or approximately $2\delta$? Why is this only 
   )
 %>
 
-\pagebreak
-
 \begin{eg}{Large time dilation}\label{eg:cern-muons}
 The time dilation effect in the Hafele-Keating experiment was very small. If we want to see a large time dilation
 effect, we can't do it with something the size of the atomic clocks they used; the kinetic energy would be
@@ -565,16 +581,6 @@ performed by Rossi and Hall in 1941, using naturally occurring cosmic rays. Figu
 a 1974 experiment\footnote{Bailey at al., Nucl. Phys. B150(1979) 1}
 of a similar type which verified the time dilation predicted by relativity to a precision of about
 one part per thousand.
-<% marg(-4) %>
-<%
-  fig(
-    'cern-muon-graph',
-    %q{Muons accelerated to nearly $c$ undergo radioactive decay much more slowly than they would according to
-       an observer at rest with respect to the muons. The first two data-points (unfilled circles) were subject
-       to large systematic errors.}
-  )
-%>
-<% end_marg %>
 
 Muons were produced by an
 accelerator at CERN, near Geneva. A muon is essentially a heavier version
@@ -589,6 +595,16 @@ selected time. Figure \figref{cern-muon-graph} shows the number of radioactive d
 time elapsed after a given stream of muons was injected into the storage ring. The two dashed lines show the rates
 of decay predicted with and without relativity. The relativistic line is the one that agrees with experiment.
 \end{eg}
+<% marg(120) %>
+<%
+  fig(
+    'cern-muon-graph',
+    %q{Muons accelerated to nearly $c$ undergo radioactive decay much more slowly than they would according to
+       an observer at rest with respect to the muons. The first two data-points (unfilled circles) were subject
+       to large systematic errors.}
+  )
+%>
+<% end_marg %>
 
 \begin{eg}{Time dilation in the Pound-Rebka experiment}\label{eg:pound-rebka-time-dilation}
 In the description of the Pound-Rebka experiment on page \pageref{sec:pound-rebka}, I postponed
@@ -600,7 +616,7 @@ so the frequency of the light it emits will also be systematically shifted downw
 with temperature. In other words, the Pound-Rebka experiment was designed as a test of general relativity (the equivalence
 principle), but this special-relativistic effect is just as strong as the relativistic one, and needed to be accounted
 for carefully.
-<% marg(70) %>
+<% marg(63) %>
 <%
   fig(
     'pound-rebka-temperature-effect',
@@ -635,11 +651,21 @@ the slope to be $2.4\times10^{-15}$, which, as shown in the figure is an excelle
 \end{eg}
 
 <% end_sec %>
-<% marg(0) %>
+<% marg(-50) %>
 <%
   fig(
     'lightcone',
     %q{The light cone in 2+1 dimensions.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'light-cone-compared-to-circle',
+    %q{The circle plays a privileged role in Euclidean geometry. When rotated, it stays the same. The pie slice
+                  is not invariant as the circle is. A similar privileged place is occupied by the light
+                  cone in Lorentz geometry. Under a Lorentz boost, the spacetime parallelograms change,
+                  but the light cone doesn't.}
   )
 %>
 <% end_marg %>
@@ -660,26 +686,6 @@ the maximum speed of cause and effect. If we make a cut through the cone defined
 in P's future, the resulting section is a sphere (analogous to the circle formed by cutting a three-dimensional
 cone), and this sphere is interpreted as the set of events on which P could have had a causal effect by
 radiating a light pulse outward in all directions.
-<% marg(80) %>
-<%
-  fig(
-    'light-cone-compared-to-circle',
-    %q{The circle plays a privileged role in Euclidean geometry. When rotated, it stays the same. The pie slice
-                  is not invariant as the circle is. A similar privileged place is occupied by the light
-                  cone in Lorentz geometry. Under a Lorentz boost, the spacetime parallelograms change,
-                  but the light cone doesn't.}
-  )
-%>
-\spacebetweenfigs
-<%
-  fig(
-    'tipping-light-cones',
-    %q{Light cones tip over for two reasons in general relativity: because of the presence of masses, which
-             have gravitational fields, and because of the cosmological constant. The time and distance
-             scales in the bottom figure are many orders of magnitude greater than those in the top.}
-  )
-%>
-<% end_marg %>
 
 Events lying inside one another's light cones are said to have a timelike relationship. Events outside each
 other's light cones are spacelike in relation to one another, and in the case where they lie on the surfaces
@@ -708,8 +714,24 @@ mass, causing the expansion of the universe to accelerate.
 Self-check: In the bottom panel of figure \figref{tipping-light-cones}, can an observer look at the
 properties of the spacetime in her immediate vicinity and tell how much her light cones are tipping,
 and in which direction? Compare with figure \figref{local-lorentz-frames} on page \pageref{fig:local-lorentz-frames}.
-
-\pagebreak
+<% marg(120) %>
+<%
+  fig(
+    'tipping-light-cones',
+    %q{Light cones tip over for two reasons in general relativity: because of the presence of masses, which
+             have gravitational fields, and because of the cosmological constant. The time and distance
+             scales in the bottom figure are many orders of magnitude greater than those in the top.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'bucket-and-black-hole',
+    %q{Example \ref{eg:newtonian-black-hole}. Matter is lifted out of a Newtonian black hole with a bucket. The dashed line represents the point
+            at which the escape velocity equals the speed of light.}
+  )
+%>
+<% end_marg %>
 
 \begin{eg}{A Newtonian black hole}\label{eg:newtonian-black-hole}
 In the case of a black hole, the light cone tips over so far that the entire future timelike
@@ -719,15 +741,6 @@ By expanding on the logical consequences of this statement, we arrive at an exam
 relativity's proper interpretation as a theory of causality, not a theory of objects exerting forces on one another
 as in Newton's vision of action at a distance, or Lorentz's original ether-drag interpretation of the factor $\gamma$,
 in which length contraction arose from a physical strain imposed on the atoms composing a physical body.
-<% marg(60) %>
-<%
-  fig(
-    'bucket-and-black-hole',
-    %q{Example \ref{eg:newtonian-black-hole}. Matter is lifted out of a Newtonian black hole with a bucket. The dashed line represents the point
-            at which the escape velocity equals the speed of light.}
-  )
-%>
-<% end_marg %>
 
 Imagine a black hole from a Newtonian point of view, as proposed in 1783 by
 geologist John Michell. Setting the escape velocity equal to the speed of
@@ -792,7 +805,13 @@ velocities are frame-dependent in Newtonian mechanics, but nobody worries about 
 John Bell\index{Bell, John} (1928-1990) proposed the following thought experiment to physicists in the CERN cafeteria, and
 found that nearly all of them got it wrong. He took this as evidence that their intuitions had been misguided by
 the standard way of approaching this question of the reality of Lorentz contractions.
-<% marg(0) %>
+
+Let spaceships A and B accelerate as shown in figure \figref{bell-spaceship-paradox} along a straight line.
+Observer C does not accelerate. The accelerations, as judged by C, are constant for both ships.
+Each ship is equipped with a yard-arm, and a thread is tied between the two arms. Does the thread break, due
+to Lorentz contraction? (We assume that the acceleration is gentle enough that the thread does not break simply
+because of its own inertia.)
+<% marg(50) %>
 <%
   fig(
     'bell-spaceship-paradox',
@@ -800,12 +819,6 @@ the standard way of approaching this question of the reality of Lorentz contract
   )
 %>
 <% end_marg %>
-
-Let spaceships A and B accelerate as shown in figure \figref{bell-spaceship-paradox} along a straight line.
-Observer C does not accelerate. The accelerations, as judged by C, are constant for both ships.
-Each ship is equipped with a yard-arm, and a thread is tied between the two arms. Does the thread break, due
-to Lorentz contraction? (We assume that the acceleration is gentle enough that the thread does not break simply
-because of its own inertia.)
 
 The popular answer in the CERN cafeteria was that the thread would not break, the reasoning being that
 Lorentz contraction is a frame-dependent effect, and no such contraction would be observed in A and B's frame.
@@ -1036,7 +1049,7 @@ test, since gravitational forces are so weak, and the first high-precision data 
 of time, and found that it did not vary on a 24-hour cycle with the earth's rotation, once tidal effects had been accounted for.
 Further constraints come from data on the moon's orbit obtained by reflecting laser beams from a mirror left behind by the
 Apollo astronauts.
-<% marg(50) %>
+<% marg(0) %>
 <%
   fig(
     'chung-interferometer',
@@ -1091,6 +1104,8 @@ A boost along the $x$ axis tangles up the $x$ and $t$ coordinates. A $y$-boost m
 consecutive boosts along $x$ and $y$ can cause $x$ and $y$ to mix. The result, as we'll see in more detail below,
 is that two consecutive boosts along non-collinear axes are not equivalent to a single boost; they are equivalent
 to a boost plus a spatial rotation.
+
+Self-check: Apply similar reasoning to a Galilean boost.
 
 <% end_sec %> % Lorentz boosts in three dimensions
 
@@ -1332,7 +1347,7 @@ possible states of motion relative to some arbitrarily chosen frame of reference
 center. A point at distance $v$ from the center represents motion at velocity $v$ in a particular direction in the $x-y$ plane.
 By drawing little axes at a particular point, we can represent a particular frame of reference: the frame is in motion at
 some velocity, with its own $x$ and $y$ axes are oriented in a particular way.
-<% marg(120) %>
+<% marg(70) %>
 <%
   fig(
     'velocity-disk',
@@ -1383,16 +1398,6 @@ A to B.
 The ship is always firing its engines in a fixed direction as judged by its gyroscopes, but according to O the ship is rotating counterclockwise,
 its thrust is progressively rotating counterclockwise, and therefore its trajectory turns counterclockwise. We conclude that leg AB
 on the velocity disk is concave, rather than being a straight-line hypotenuse of a triangle OAB.
-<% marg(-30) %>
-<%
-  fig(
-    'velocity-disk-loop-filled-in',
-    %q{In the limit where A and B are ultrarelativistic velocities, leg AB is perpendicular to the edge of the velocity disk.
-            The result is that the $x-y$ frame determined by the ship's gyroscopes has rotated by 90 degrees by the time it
-            gets home.}
-  )
-%>
-<% end_marg %>
 
 We can also determine, by the following argument, that leg AB is perpendicular to the edge of the disk where it touches the edge of the disk.
 In the transformation from frame A to frame O, $y$ coordinates are dilated by a factor of $\gamma$, which approaches infinity in the limit
@@ -1406,6 +1411,16 @@ longer and more detailed discussion by Rhodes and Semon, \url{www.bates.edu/~mse
 this type of inertially guided, constant-thrust motion is always represented on the velocity disk by
 an arc of a circle that is perpendicular to the disk at its edge. (We consider a diameter of the disk to be
 the limiting case of a circle with infinite radius.)}
+<% marg(100) %>
+<%
+  fig(
+    'velocity-disk-loop-filled-in',
+    %q{In the limit where A and B are ultrarelativistic velocities, leg AB is perpendicular to the edge of the velocity disk.
+            The result is that the $x-y$ frame determined by the ship's gyroscopes has rotated by 90 degrees by the time it
+            gets home.}
+  )
+%>
+<% end_marg %>
 
 As the ship travels from A to B, its orientation (as judged in frame O) changes from $-\hat{\vc{y}}$ to $\hat{\vc{x}}$.
 This establishes, in a much more direct fashion, the direction of the Thomas precession: its handedness is contrary to the handedness of the direction of motion.
@@ -1423,7 +1438,7 @@ longer conserved.
 
 <% end_sec %> % The velocity disk.
 <% begin_sec("The general low-$v$ limit") %>
-<% marg(0) %>
+<% marg(20) %>
 <%
   fig(
     'thomas-as-area',

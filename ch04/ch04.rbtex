@@ -192,7 +192,7 @@ thing as proper time for a massless particle. Thus is is not only this specific 
 that is forbidden, but any radioactive decay process involving a massless particle.
 \end{eg}
 
-\begin{eg}{Massive photons}
+\begin{eg}{Massive photons}\index{photon!mass}\label{eg:photon-mass}
 Continuing in the same vein as example \ref{eg:massive-neutrinos}, we can consider the possibility that
 the photon has some nonvanishing mass. A 2003 experiment by
 Luo et al.\footnote{Luo et New Experimental Limit on the Photon Rest Mass with a Rotating Torsion , Phys. Rev. Lett., 90 (2003) 081801.
@@ -273,18 +273,14 @@ size of the universe for the three different regimes. Some of the simpler cases 
 
 <% end_sec %> % momentum 4-vector
 
-<% begin_sec("The frequency four-vector and the relativistic Doppler shift") %>\index{frequency four-vector}
+<% begin_sec("The frequency four-vector and the relativistic Doppler shift") %>\label{sec:doppler}\index{frequency four-vector}
 Frequency is to time as the wavenumber\index{wavenumber} $k=1/\lambda$ is to space, so when treating waves relativistically it is
 natural to conjecture that there is a four-frequency $f_a$ made by assembling $(f,\vc{k})$, which behaves as a Lorentz vector. This is correct, since
 we already know that $\partial_a$ transforms as a covariant vector, and for a scalar wave of the form
 $A=A_\zu{o}\exp\left[2\pi i f_ax^a\right]$ the partial derivative operator is identical to multiplication by $2\pi f_a$.
 
 As an application, consider the relativistic Doppler shift of a light wave. For simpicity, let's restrict ourselves to
-one spatial dimension. In Newtonian mechanics, we have
-$f'=(1+v)f$, where $v$ is the velocity of the source relative to the observer; in the source's
-rest frame, we see this as occurring because the observer is either trying to run away from the wave crests ($v<0$)
-or rushing up to meet them ($v>0$). Relativistically, we have additional effects due to time dilation and length
-contraction. The aggregate effect is most easily computed by using the frequency vector.
+one spatial dimension.
 For a light wave, $f=k$, so the frequency vector in 1+1 dimensions is simply $(f,f)$. Putting this through a Lorentz
 transformation, we find
 \begin{equation*}
@@ -294,7 +290,11 @@ where the second form displays more clearly the symmetic form of the relativisti
 interchanging the roles of source and observer is equivalent to flipping the sign of $v$. That is, the relativistic
 version only depends on the \emph{relative} motion of the source and the observer, whereas the Newtonian one
 also depends on the source's motion relative to the medium (i.e., relative to the preferred frame in which the
-waves have the ``right'' velocity).
+waves have the ``right'' velocity). In Newtonian mechanics, we have
+$f'=f/(1-v)$ for a moving source. Relativistically, there is also a time dilation of the oscillation of the source,
+providing an additional factor of $1/\gamma$.
+
+This analysis is extended to 3+1 dimensions in problem \ref{hw:doppler-three-d}.
 
 \begin{eg}{Einstein's derivation of $E=mc^2$}\label{eg:einstein-mc2}
 On page \pageref{sec:momentum-four-vector}, we showed that the celebrated $E=mc^2$ follows directly from
@@ -332,7 +332,7 @@ $E=\Delta m c^2$.
 
 <% end_sec %> % frequency four-vector
 
-<% begin_sec("A non-example: electric and magnetic fields") %>
+<% begin_sec("A non-example: electric and magnetic fields") %>\label{sec:e-and-b-not-four-vectors}
 It is fairly easy to see that the electric and magnetic fields cannot be the spacelike parts of two four-vectors.
 Consider the arrangement shown in figure \subfigref{b-field}{1}. We have
 two infinite trains of moving charges superimposed on the same line, and a single charge alongside the line.
@@ -959,6 +959,13 @@ orientations of its gyroscopes relative to the guide star IM Pegasi.
 <% end_sec %> % Conservation laws
 
 \begin{hwsection}
+
+<% begin_hw('doppler-three-d') %>
+On page \pageref{sec:doppler}, we found the relativistic Doppler shift in 1+1 dimensions.
+Extend this to 3+1 dimensions, and check your result against the one given by Einstein on
+page \pageref{einstein-doppler}.
+\hwsoln
+<% end_hw %>
 
 <% begin_hw('pulsar') %>
 Derive the equation $T=\sqrt{3\pi/G\rho}$ given on page \pageref{pulsar-density} for the period
