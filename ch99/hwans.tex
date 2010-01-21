@@ -41,7 +41,63 @@ while the deck of the ship accelerates up to hit it.
 identical motion in the future. This fails in the case where Kip releases the
 neutronium keychain side by side with a penny.
 
+\hwsolnhdr{ep-charge}
+(a) In case 1 there is no source of energy, so the particle cannot radiate.
+In case 2-4, the particle radiates, because there are sources of energy (loss of
+gravitational energy in 2 and 3, the rocket fuel in 4).
+
+(b) In 1, Newton says the object is subject to zero net force, so its motion
+is inertial. In 2-4, he says the object is subject to a nonvanishing net force,
+so its motion is noninertial. This matches up with the results of the energy analysis.
+
+(c) The equivalence principle, as discussed on page \pageref{sec:chiao-paradox},
+is vague, and is particularly difficult to apply successful and unambiguously to
+situations involving electrically charged objects, due to the difficulty of
+defining locality. Applying the equivalence principle in the most naive way,
+we predict that there can be no radiation in cases 2 and 3 (because the object is
+following a geodesic, minding its own business).
+In case 4, everyone agrees that there will be radiation observable back on earth
+(although it's possible that it would not be observable to an observer momentarily
+matching velocities with the rocket).
+The naive equivalence principle says that 1 and 4 must give the same result, so
+we should have radiation in 1 as well. These predictions are wrong in two out of
+the four equations, which tells us that we had better either not apply the equivalence
+principle to charged objects, or not apply it in such a naive way.
+
 \beginsolutions{2}
+
+\hwsolnhdr{clock-postulate}
+
+(a) Let $t$ be the time taken in the lab frame for the light to go from one mirror to the other,
+and $t'$ the corresponding interval in the clock's frame. Then $t'=L$, and $(vt)^2+L^2=t^2$,
+where the use of the same $L$ in both equations makes use of our prior knowledge that there
+is no transverse length contraction.
+Eliminating $L$, we find the expected expression for $\gamma$, which is independent of $L$
+(b) If the result of a were independent of $L$, then the relativistic time dilation would depend
+on the details of the construction of the clock measuring the time dilation. We would be forced
+to abandon the geometrical interpretation of special relativity.
+(c) The effect is to replace $vt$ with $vt+at^2/2$ as the quantity inside the parentheses
+in the expression $(\ldots)^2+L^2=t^2$. The resulting correction terms are of higher order in
+$t$ than the ones appearing in the original expression, and can therefore be made as small
+in relative size as desired by shortening the time $t$. But this is exactly what happens when
+we make the clock sufficiently small.
+
+\hwsolnhdr{sagnac-area}
+
+(a) Reinterpret figure \figref{thomas-as-area} on p.~\pageref{fig:thomas-as-area} as a picture of a Sagnac
+ring interferometer. Let light waves 1 and 2 move around the loop in opposite senses. Wave 1 takes time
+$t_{1i}$ to move inward along the crack, and time $t_{1o}$ to come back out. Wave 2 takes times
+$t_{2i}$ and $t_{2o}$. But $t_{1i}=t_{2i}$ (since the two world-lines are identical), and similarly
+$t_{1o}=t_{2o}$. Therefore creating the crack has no effect on the interference between 1 and 2,
+and splitting the big loop into two smaller loops merely splits the total phase shift between them.
+(b) For a circular loop of radius $r$, the time of flight of each wave is proportional to $r$, and
+in this time, each point on the circumference of the rotating interferometer travels a distance
+$v(\text{time})=(\omega r)(\text{time})\propto r^2$. (c) The effect is proportional to area, and
+the area is zero. (d) The light clock in c has its two ends synchronized according to the Einstein
+prescription, and the success of this synchronization verifies Einstein's assumption of commutativity
+in this particular case. If we make a Sagnac interferometer in the shape of a triangle, then the Sagnac
+effect measures the failure of Einstein's assumption that all three corners can be synchronized
+with one another.
 
 \hwsolnhdr{velocity-addition-matrix-taylor}
 
@@ -80,6 +136,13 @@ rotating frame. Since the spatial metric in the rotating frame is symmetric with
 the metric can never result in geodesics with a specific handedness.
 
 \beginsolutions{4}
+
+\hwsolnhdr{lhc-proton-speed}
+To avoid loss of precision in numerical operations like subtracting $v$ from $1$,
+it's better to derive an ultrarelativistic approximation. The velocity corresponding
+to a given $\gamma$ is $v=\sqrt{1-\gamma^{-2}}\approx 1-1/2\gamma^2$, so
+$1-v\approx 1/2\gamma^2=(m/E)^2/2$. Reinserting factors of $c$ so as to make the units
+come out right in the SI system, this becomes $(mc^2/E)^2/2=9\times 10^{-9}$.
 
 \hwsolnhdr{doppler-three-d}
 

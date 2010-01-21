@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
+
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -9,11 +10,11 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="1584.9375"
+   width="1594.6125"
    height="1012.5"
    id="svg2"
    sodipodi:version="0.32"
-   inkscape:version="0.46"
+   inkscape:version="0.47pre4 r22446"
    version="1.0"
    sodipodi:docname="cover.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
@@ -47,9 +48,9 @@
      objecttolerance="10"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.1913568"
-     inkscape:cx="1416.2259"
-     inkscape:cy="800.47501"
+     inkscape:zoom="0.29963697"
+     inkscape:cx="762.02998"
+     inkscape:cy="552.80992"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -57,7 +58,8 @@
      inkscape:window-width="1278"
      inkscape:window-height="996"
      inkscape:window-x="3"
-     inkscape:window-y="3" />
+     inkscape:window-y="3"
+     inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -74,30 +76,30 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.875;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="fill:#000000;fill-opacity:1;stroke:none"
        id="rect2391"
-       width="1586.125"
+       width="1594.6125"
        height="1012.5"
        x="0"
        y="-2.6574707" />
     <rect
-       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.875;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="fill:#000000;fill-opacity:1;stroke:none"
        id="rect2383"
        width="1584.9375"
        height="1003.7938"
        x="0.625"
        y="6.0487432" />
     <image
-       y="5.0983467"
-       x="0.625"
-       id="image3204"
-       height="998.72772"
-       width="1584.9375"
        sodipodi:absref="/home/bcrowell/Documents/writing/books/genrel/cover/galactic-center.jpg"
-       xlink:href="galactic-center.jpg" />
+       xlink:href="galactic-center.jpg"
+       width="1594.6125"
+       height="998.72772"
+       id="image3204"
+       x="0.21844065"
+       y="5.0983467" />
     <text
        xml:space="preserve"
-       style="font-size:35.78436661px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans"
+       style="font-size:35.78436661px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans"
        x="1186.1957"
        y="126.35155"
        id="text3208"
@@ -108,7 +110,7 @@
          y="126.35155">General Relativity</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:27.83228493px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#cccccc;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans"
+       style="font-size:27.83228493px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#cccccc;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans"
        x="1186.6422"
        y="163.59453"
        id="text3212"
@@ -119,13 +121,13 @@
          y="163.59453">Crowell</tspan></text>
     <g
        id="g3228"
-       transform="matrix(0,0.9940103,-0.9940103,0,2023.8756,128.96853)">
+       transform="matrix(0,0.9940103,-0.9940103,0,2027.5011,128.96853)">
       <text
          sodipodi:linespacing="125%"
          id="text3220"
          y="1245.0551"
          x="189.4189"
-         style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans"
+         style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans"
          xml:space="preserve"><tspan
            y="1245.0551"
            x="189.4189"
@@ -136,7 +138,7 @@
          id="text3224"
          y="1245.0551"
          x="449.60971"
-         style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#cccccc;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans"
+         style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#cccccc;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans"
          xml:space="preserve"><tspan
            y="1245.0551"
            x="449.60971"

@@ -686,6 +686,12 @@ is thousands of kilometers. On a map of LA, we don't notice any curvature, nor d
 of Mumbai, but it is not possible to make a flat map that includes both LA and Mumbai without seeing
 severe distortions.
 <% begin_sec("Chiao's paradox") %>\label{sec:chiao-paradox}\index{Chiao's paradox}\index{equivalence principle!application to charged particles}
+The remainder of this subsection deals with the subtle question of whether and how the equivalence
+principle can be applied to charged particles. You may wish to skip it on a first reading. The short
+answer is that using the equivalence principle to make conclusions about charged particles is like
+the attempts by slaveholders and abolitionists in the 19th century U.S. to support their positions
+based on the Bible: you can probably prove whichever conclusion was the one you set out to prove.
+
 The equivalence principle is not a single, simple, mathematically well defined statement. As an example
 of an ambiguity that is still somewhat controversial, 90 years after Einstein first proposed the principle,
 consider the question of whether or not it applies to charged particles.
@@ -733,8 +739,9 @@ radiation, it becomes plausible how the paradox can be resolved. The equivalence
 \emph{locally}, i.e., within a small patch of space and time. If Chiao's charged and neutral particle
 are released side by side, then they will obey the equivalence principle for at least a certain amount of
 time --- and ``for at least a certain amount of time'' is all we should expect, since the principle is local.
-But after a while, the charged particle will start to experience a back-reaction from its own radiated
-electromagnetic fields. Since Chiao's particles are orbiting the earth, and the earth is not a black hole,
+But after a while, the charged particle will start to experience a back-reaction from its own
+electromagnetic fields, and this causes its orbit to decay, satisfying conservation of energy.
+Since Chiao's particles are orbiting the earth, and the earth is not a black hole,
 the mechanism clearly can't be as simple as the one described above, but Gr\o{}n and N\ae{}ss show that there
 are similar mechanisms that can apply here, e.g., scattering of light waves by the nonuniform gravitational field.
 <% end_sec %> %  Charged particles
@@ -752,7 +759,7 @@ is implied by the one on p.~\pageref{ep-mass}.} In a laboratory accelerating
 upward, a photon emitted from the floor and would be Doppler-shifted toward lower frequencies when observed at the ceiling, because of the
 change in the receiver's velocity during the photon's time of flight. The effect is given by $\Delta E/E=\Delta f/f=ay/c^2$, where
 $a$ is the lab's acceleration, $y$ is the height from floor to ceiling, and $c$ is the speed of light.
-<% marg(20) %>
+<% marg(50) %>
 <%
   fig(
     'photon-in-elevator',
@@ -1037,6 +1044,18 @@ of statement 1 also leads to a violation of statement 2.
 (b) If we'd intended to construct a geometrical theory of gravity roughly along the lines of
 axioms O1-O4 on p.~\pageref{ordered-geometry-axioms}, which axiom is violated in this
 scenario?
+\hwsoln
+<% end_hw %>
+
+<% begin_hw('ep-charge') %>
+Consider the following physical situations: (1) a charged object lies on a desk on the planet earth;
+(2) a charged object orbits the earth; (3) a charged object is released above the earth's surface
+and dropped straight down; (4) a charged object is subjected to a constant acceleration by a
+rocket engine in outer space. In each case, we want to know whether the charge radiates.
+Analyze the physics each case (a) based on conservation of energy; (b) by determining whether
+the object's motion is inertial in the sense intended by Isaac Newton; (c) using the most straightforward
+interpretation of the equivalence principle (i.e., not worrying about the issues
+discussed on p.~\label{sec:chiao-paradox} that surround the ambiguous definition of locality).
 \hwsoln
 <% end_hw %>
 

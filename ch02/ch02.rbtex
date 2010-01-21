@@ -1437,19 +1437,7 @@ from three Euclidean spatial dimensions to 3+1-dimensional spacetime means that 
 longer conserved.
 
 <% end_sec %> % The velocity disk.
-<% begin_sec("The general low-$v$ limit") %>
-<% marg(20) %>
-<%
-  fig(
-    'thomas-as-area',
-    %q{If the crack between the two areas is squashed flat, the two pieces of the path on the interior coincide, and
-          their contributions to the precession cancel out ($\vc{v}\rightarrow-\vc{v}$, but $\vc{a}\rightarrow +\vc{a}$, 
-          so $\vc{a}\times\vc{v}\rightarrow -\vc{a}\times\vc{v}$). Therefore the precession $\chi$ obtained by going
-          around the outside is equal to the sum $\chi_1+\chi_2$ of the precessions that would have been obtained by
-          going around the two parts.}
-  )
-%>
-<% end_marg %>
+<% begin_sec("The general low-$v$ limit") %>\label{thomas-low-v-limit}
 Let's find the low-$v$ limit of the Thomas precession in general, not just in the highly artificial
 special case of $\chi\approx v^2$ for the example involving the four hammer hits.
 To generalize to the case of smooth acceleration, we first note that the rate of precession $\der\chi/\der t$ must have the following properties.
@@ -1476,6 +1464,18 @@ distance. But we're investigating the low-velocity limit, and in the low-velocit
 is approximately uniform. We therefore expect that there is an approximately constant proportionality factor relating $\der A$ and $\der\chi$
 at low velocities. The example of the hammer corresponds geometrically to a square with area $v^2$, so we find that this proportionality factor
 is unity, $\der A\approx\der\chi$.
+<% marg(70) %>
+<%
+  fig(
+    'thomas-as-area',
+    %q{If the crack between the two areas is squashed flat, the two pieces of the path on the interior coincide, and
+          their contributions to the precession cancel out ($\vc{v}\rightarrow-\vc{v}$, but $\vc{a}\rightarrow +\vc{a}$, 
+          so $\vc{a}\times\vc{v}\rightarrow -\vc{a}\times\vc{v}$). Therefore the precession $\chi$ obtained by going
+          around the outside is equal to the sum $\chi_1+\chi_2$ of the precessions that would have been obtained by
+          going around the two parts.}
+  )
+%>
+<% end_marg %>
 
 % Rhodes and Semon have a metric that for small v's is approximately ds=2dv; so area is 4v2; this seems to lead to k=2, which is inconsistent with Jackson
 
@@ -1552,6 +1552,48 @@ the cognoscenti of relativity theory (Einstein included!) were quite surprised.'
 <% end_sec %>
 
 \begin{hwsection}
+
+<% begin_hw('clock-postulate') %>
+Suppose that we don't yet know the exact form of the Lorentz transformation, but we know based on the
+Michelson-Morley experiment that the speed of light is the same in all inertial frames, and we've already
+determined, e.g., by arguments like those on p.~\pageref{lorentz-three-dim}, that there can be no length contraction
+in the direction perpendicular to the motion. We construct a ``light clock,''\index{light clock}
+consisting simply of two mirrors facing each other, with a light pulse bouncing back and forth
+between them.\\
+(a) Suppose this light clock is moving at a constant velocity $v$ in the direction perpendicular
+to its own optical arm, which is of length $L$. Use the Pythagorean theorem to prove that the clock
+experiences a time dilation given by $\gamma=1/\sqrt{1-v^2}$, thereby fixing the time-time portion of the Lorentz
+transformation.\hwendpart
+(b) Why is it significant for the interpretation of special relativity that the result from part a is independent
+of $L$?\hwendpart
+(c) Carry out a similar calculation in the case where the clock moves with constant acceleration $a$
+as measured in some inertial frame. Although the result depends on $L$, prove that in the limit of small
+$L$, we recover the earlier constant-velocity result, with no explicit dependence on $a$.\hwendpart
+Remarks: Some authors state a ``clock postulate'' for special relativity, which states that for a clock that is
+sufficiently small, the rate at which
+it runs depends only on $v$, not $a$ (except in the trivial sense that $v$ and $a$ are related by the
+fundamental theorem of calculus). The result of part c shows that the clock ``postulate'' is really
+a theorem, not a statement that is logically independent of the other postulates of special relativity.
+(It is not trivially obvious, however, how to extend the proof to all possible clocks, rather than
+the family of light clocks of various sizes.)\index{clock ``postulate''} Some people get confused by this
+acceleration-independent property of small clocks and think that it contradicts the equivalence
+principle. For a good explanation, see \url{http://math.ucr.edu/home/baez/physics/Relativity/SR/clock.html}.\hwendpart
+\hwsoln
+<% end_hw %>
+
+<% begin_hw('sagnac-area') %>\index{Sagnac effect!proportional to area}
+(a) On p.~\pageref{fig:thomas-as-area} (see figure \figref{thomas-as-area}), we showed that the Thomas precession is
+proportional to area on the velocity disk. Use a similar argument to show that the Sagnac effect (p.~\pageref{sagnac}) is proportional
+to the area enclosed by the loop.\\
+(b) Verify this more directly in the special case of a circular loop.\\
+(c) Show that a light clock of the type described in problem \ref{hw:clock-postulate} is insensitive to rotation
+with constant angular velocity.\\
+(d) Connect these results to the commutativity and transitivity assumptions in the
+Einstein clock synchronization procedure described on p.~\pageref{einstein-sync-comm-trans}.
+\hwsoln
+<% end_hw %>
+
+\pagebreak
 
 <% begin_hw('speed-of-sound') %>
 Example \ref{eg:newtonian-black-hole} on page \pageref{eg:newtonian-black-hole} discusses

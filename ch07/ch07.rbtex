@@ -958,7 +958,7 @@ $c$, there would be no obvious physical parameter that would determine that spee
 inertial mass is a scalar, $\phi$ should presumably be a scalar (quantized by a spin-zero particle). Theories of this type
 are called tensor-scalar theories, because they use a scalar field in addition to the metric tensor.
 
-The wave equation for a scalar field, in the absence of sources, is simply $\nabla_i \nabla^i \phi=0$. The solutions of this
+The wave equation for a massless scalar field, in the absence of sources, is simply $\nabla_i \nabla^i \phi=0$. The solutions of this
 wave equation fall off as $\phi\sim 1/r$. This is gentler than the $1/r^2$ variation of the gravitational field, so
 results like Newton's shell theorem and Birkhoff's theorem no longer apply. If a spherical shell of mass acts as a source
 of $\phi$, then $\phi$ can be nonzero and varying inside the shell. The $\phi$ that you experience
@@ -985,7 +985,7 @@ the purpose of the theory.
 We now need to see how to connect $\phi$ to the local notion of inertia so as to produce an effect of the kind
 that would tend to fulfill Mach's principle. In Mach's original formulation, this would entail some kind of
 local rescaling of all inertial masses, but Brans and Dicke point out that in a theory of gravity, this is
-equivalent to scaling the Newtonian gravitational constant $G$ by the inverse factor. The latter turns out
+equivalent to scaling the Newtonian gravitational constant $G$ \emph{down} by the same factor. The latter turns out
 to be a better approach.
 For one thing, it has a natural interpretation in terms of units.
 Since $\phi$'s amplitude falls off as $1/r$, we can write $\phi\sim \Sigma m_i/r$, where the sum is over
@@ -998,7 +998,7 @@ This is, of course, assuming that the Brans-Dicke theory was correct. In general
 pick for a unitless number, including zero and infinity.
 The limit of $\omega\rightarrow\infty$ recovers the special case of general relativity. Thus Mach's principle, which
 once seemed too vague to be empirically falsifiable, comes down to measuring a specific number, $\omega$, which
-quantifies how Machian our universe is.\footnote{
+quantifies how non-Machian our universe is.\footnote{
 There are also good technical reasons for 
 thinking of $\phi$ as relating to the gravitational constant is that general relativity has a standard prescription for
 describing fields on a background of curved spacetime. The vacuum field equations of general relativity can be derived
@@ -1023,7 +1023,7 @@ Returning to the example of the spherical shell of mass, we can see based on con
 that the value of $\phi$ inside should be $\sim m/r$, where $m$ is the total mass of the shell and $r$ is its
 radius. There may be a unitless factor out in front, which will depend on $\omega$, but for $\omega\sim 1$ we
 expect this constant to be of order 1. Solving the nasty set of field equations that result from their
-Lagrangian, Brans and Dicke indeed found $\phi\approx[2/(3+2\omega)](m/r)$, which is of order unity if $\omega$ is
+Lagrangian, Brans and Dicke indeed found $\phi\approx[2/(3+2\omega)](m/r)$, where the constant in square brackets is of order unity if $\omega$ is
 of order unity. In the limit of $\omega\rightarrow\infty$, $\phi=0$, and the shell has no physical effect
 on its interior, as predicted by general relativity.
 
@@ -1051,12 +1051,12 @@ perfect agreement with Mach's principle.
 <% begin_sec("Hints of empirical support") %>
 Only six years after the publication of the Brans-Dicke theory, Dicke himself, along with 
 H.M.~Goldenberg\footnote{Dicke and Goldenberg, ``Solar Oblateness and General Relativity,'' Physical Review Letters 18 (1967) 313}
-carried out a measurement that seemed to support the theory empirically. One of the first empirical tests
+carried out a measurement that seemed to support the theory empirically. Fifty years before, one of the first empirical tests
 of general relativity, which it had seemed to pass with flying colors, was the anomalous perihelion precession of Mercury.
 The word ``anomalous,'' which is often left out in descriptions of this test, is required because there are
 many nonrelativistic reasons why Mercury's orbit precesses, including interactions with the other planets and
 the sun's oblate shape. It is only when these other effects are subtracted out that one sees the general-relativistic
-effect calculated on page \pageref{sec:schwarzschild-orbits} can be seen. The sun's oblateness is difficult to measure
+effect calculated on page \pageref{sec:schwarzschild-orbits}. The sun's oblateness is difficult to measure
 optically, so the original analysis of the data had proceeded by determining the sun's rotational period by observing
 sunspots, and then assuming that the sun's bulge was the one found for a rotating fluid in static equilibrium. The result
 was an assumed oblateness of about $1\times10^{-5}$. But
@@ -1089,7 +1089,8 @@ experiments to test the original theory.
 Currently, the best bound on $\omega$ is based on measurements\footnote{Bertotti, Iess, and Tortora, ``A test of general relativity using radio links with the Cassini spacecraft,''
 Nature 425 (2003) 374} of the propagation of radio signals between earth and
 the Cassini-Huygens space probe in 2003, which require $\omega>4\times10^4$. This is so much greater than
-unity that it is reasonable to apply Brans and Dicke's statement that ``in any sensible theory, $\omega$ must be of the general order of magnitude of unity.''
+unity that it is reasonable to take Brans and Dicke at their word that ``in any sensible theory, $\omega$ must be of the general order of magnitude of unity.''
+Brans-Dicke fails this test, and is no longer a ``sensible'' candidate for a theory of gravity.
 We can now see that Mach's principle, far from being
 a fuzzy piece of philosophical navel-gazing, is a testable hypothesis. It has been tested and found to be false, in the following sense.
 Brans-Dicke gravity is about as natural a formal implementation of Mach's principle as could be hoped for,

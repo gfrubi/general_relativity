@@ -47,6 +47,22 @@ we calculate the deflection of light rays by the sun, one of the early classic e
 
 Another example of a Lorentz scalar is the pressure of a perfect fluid, which is often assumed
 as a description of matter in cosmological models.
+
+\begin{eg}{Infinitesimals and the clock ``postulate''}\index{clock ``postulate''}
+At the beginning of chapter \ref{ch:differential-geometry}, I motivated the use of infinitesimals
+as useful tools for doing differential geometry in curved spacetime. Even in the context of special
+relativity, however, infinitesimals can be useful. One way of expressing the proper
+time accumulated on a moving clock is
+\begin{align*}
+  s &= \int \der s \\
+    &= \int \sqrt{g_{ij} \der x^i \der x^j} \\
+    &= \int \sqrt{1-\left(\frac{\der x}{\der t}\right)^2-\left(\frac{\der y}{\der t}\right)^2-\left(\frac{\der z}{\der t}\right)^2} \der t \qquad ,
+\end{align*}
+which only contains an explicit dependence on the clock's velocity, not its acceleration.
+This is an example of the clock ``postulate'' referred to in the remark at the end of homework problem \ref{hw:clock-postulate}
+on page \pageref{hw:clock-postulate}. Note that the clock postulate only applies in the limit of a small clock.
+This is represented in the above equation by the use of infinitesimal quantities like $\der x$.
+\end{eg}
 <% end_sec %>
 
 <% begin_sec("Four-vectors") %>\label{sec:four-vectors}
@@ -296,6 +312,8 @@ providing an additional factor of $1/\gamma$.
 
 This analysis is extended to 3+1 dimensions in problem \ref{hw:doppler-three-d}.
 
+\pagebreak
+
 \begin{eg}{Einstein's derivation of $E=mc^2$}\label{eg:einstein-mc2}
 On page \pageref{sec:momentum-four-vector}, we showed that the celebrated $E=mc^2$ follows directly from
 the form of the Lorentz transformation. An alternative derivation was given by Einstein in one of his
@@ -332,7 +350,7 @@ $E=\Delta m c^2$.
 
 <% end_sec %> % frequency four-vector
 
-<% begin_sec("A non-example: electric and magnetic fields") %>\label{sec:e-and-b-not-four-vectors}
+<% begin_sec("A non-example: electric and magnetic fields",4) %>\label{sec:e-and-b-not-four-vectors}
 It is fairly easy to see that the electric and magnetic fields cannot be the spacelike parts of two four-vectors.
 Consider the arrangement shown in figure \subfigref{b-field}{1}. We have
 two infinite trains of moving charges superimposed on the same line, and a single charge alongside the line.
@@ -340,7 +358,7 @@ Even though the line charges formed by the two trains
 are moving in opposite directions, their currents don't cancel. A negative charge moving
 to the left makes a current that goes to the right, so in frame 1,
 the total current is twice that contributed by either line charge.
-<% marg(30) %>
+<% marg(60) %>
 <%
   fig(
     'b-field',
@@ -429,7 +447,7 @@ relation between the potentials and the fields is
 An excellent discussion of the vector potential from a purely classical point of view
 is given in the classic \emph{Feynman Lectures}.\footnote{\emph{The Feynman Lectures on Physics}, Feynman, Leighton, and Sands, Addison Wesley Longman, 1970}
 Figure \figref{vector-potential-of-solenoid} shows an example.
-<% marg(150) %>
+<% marg(50) %>
 <%
   fig(
     'vector-potential-of-solenoid',
@@ -934,7 +952,7 @@ geodetic effect (6.6 arc-seconds per year) and the much weaker Lense-Thirring
 effect (.041 arc-sec/yr) produced precessions in perpendicular directions.
 Again, the presence of an asymptotically flat background was involved, because the probe measured the
 orientations of its gyroscopes relative to the guide star IM Pegasi.
-<% marg(138) %>
+<% marg(110) %>
 <%
   fig(
     'frame-dragging-banana',
@@ -959,6 +977,12 @@ orientations of its gyroscopes relative to the guide star IM Pegasi.
 <% end_sec %> % Conservation laws
 
 \begin{hwsection}
+
+<% begin_hw('lhc-proton-speed') %>
+The Large Hadron Collider is designed to accelerate protons to energies of 7 TeV.
+Find $1-v$ for such a proton.
+\hwsoln
+<% end_hw %>
 
 <% begin_hw('doppler-three-d') %>
 On page \pageref{sec:doppler}, we found the relativistic Doppler shift in 1+1 dimensions.
