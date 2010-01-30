@@ -1247,8 +1247,7 @@ $T$.\label{thomas-maxima}
 \begin{listing}{1}
 /* For convenience, define gamma in terms of v: */
 gamma:1/sqrt(1-v*v);
-/* Define Lx as L(x-hat), Lmx as L(-x-hat), etc. Each
-   is represented by a matrix: */
+/* Define Lx as L(x-hat), Lmx as L(-x-hat), etc.: */
 Lx:matrix([gamma,   gamma*v,  0],
          [gamma*v,  gamma,    0],
          [0,        0,        1]);
@@ -1263,12 +1262,9 @@ Lmy:matrix([gamma,  0,        -gamma*v],
          [-gamma*v, 0,        gamma]);
 /* Calculate the product of the four matrices: */
 T:Lx.Ly.Lmx.Lmy;
-/* Define a point on the same light-cone as the origin,
-   which is equivalent to defining a direction.
-   This is Maxima's notation for the column vector
-   (1,1,0): */
-P:matrix([1],[1],[0]);
-/* Find the result of T acting on this direction,
+/* Define a column vector along the x axis: */
+P:matrix([0],[1],[0]);
+/* Find the result of T acting on this vector,
    expressed as a Taylor series to second order in v: */
 taylor(T.P,v,0,2);
 \end{listing}
@@ -1281,14 +1277,13 @@ for it throughout this program. Line 2 simply means that whenever Maxima encount
 as an abbreviation for the symbol \verb@1/sqrt(1-v*v)@. Lines 5-16 define some $3\times3$ matrices that represent the $L$ transformations.
 The basis is $\hat{\vc{t}}$, $\hat{\vc{x}}$, $\hat{\vc{y}}$.
 Line 18 calculates the product of the four matrices; the dots represent matrix multiplication.
-Line 23 defines a point in spacetime $\zu{P}=\hat{\vc{t}}+\hat{\vc{x}}$; we have in mind the direction
-that includes the lightlike line OP. P has to be expressed as a column matrix (three rows of one column each)
+Line 23 defines a vector along the $x$ axis, expressed as a column matrix (three rows of one column each)
 so that Maxima will know how to operate on it using matrix multiplication by $T$.
 
 Finally line 26 outputs\footnote{I've omitted some output generated automatically from the earlier steps in the
 computation. The (\%o9) indicates that this is Maxima's output from the ninth and final step.} the result of $T$ acting on P:
 \begin{listing}{19}
-                               [  1 + . . .   ]
+                               [  0 + . . .   ]
                                [              ]
 (%o9)/T/                       [  1 + . . .   ]
                                [              ]
@@ -1297,16 +1292,12 @@ computation. The (\%o9) indicates that this is Maxima's output from the ninth an
 \end{listing}
 In other words,
 \begin{equation*}
-  T\left(\begin{array}{c}1 \\ 1 \\ 0\end{array}\right) = \left(\begin{array}{c}1 \\ 1 \\ -v^2\end{array}\right) + \ldots \qquad ,
+  T\left(\begin{array}{c}0 \\ 1 \\ 0\end{array}\right) = \left(\begin{array}{c}0 \\ 1 \\ -v^2\end{array}\right) + \ldots \qquad ,
 \end{equation*}
 where $\ldots$ represents higher-order terms in $v$.
-The interpretation is as follows.
-Let  $\zu{O}=(0,0,0)$ be the origin. We can interpret OP as defining a direction.
-Since O is not affected by $T$, the transformed version, $\zu{P}\rightarrow T\zu{P}$, output by the program
-represents the same direction, after being acted on by $T$.
 Suppose that we use the initial frame of reference, before $T$ is applied, to determine that
-a particular reference point, such as a distant star, is along the $x$ axis. We represent that
-spatial direction using P. Applying $T$, we get a new vector $T\zu{P}$, which we find has
+a particular reference point, such as a distant star, is along the $x$ axis.
+Applying $T$, we get a new vector $T\zu{P}$, which we find has
 a nonvanishing $y$ component approximately equal to $-v^2$. This result is entirely unexpected classically.
 It tells us that the gyroscope, rather than maintaining its original orientation as it
 would have done classically, has rotated slightly. It has precessed in the counterclockwise
@@ -1361,13 +1352,6 @@ some velocity, with its own $x$ and $y$ axes are oriented in a particular way.
     %q{Two excursions in a rocket-ship: one along the $y$ axis and one along $x$.}
   )
 %>
-\spacebetweenfigs
-<%
-  fig(
-    'velocity-disk-loop-question',
-    %q{A round-trip involving ultrarelativistic velocities. All three legs are at constant acceleration.}
-  )
-%>
 <% end_marg %>
 
 It turns out to be easier to understand the qualitative behavior of our mysterious rotations if we switch from the low-velocity limit
@@ -1389,6 +1373,14 @@ rate (again, as judged by its own sensors), until its velocity is very close to 
 again at a self-perceived constant rate and with thrust in a fixed direction as judged by its own gyroscopes, until it is moving at the
 same ultrarelativistic speed in the $x$ direction, B. Finally, it decelerates in the $x$ direction until it is again at rest, O.
 This motion traces out a clockwise loop on the velocity disk. The motion in space is also clockwise.
+<% marg(40) %>
+<%
+  fig(
+    'velocity-disk-loop-question',
+    %q{A round-trip involving ultrarelativistic velocities. All three legs are at constant acceleration.}
+  )
+%>
+<% end_marg %>
 
 We might naively think that the middle leg of the trip, from A to B, would be a straight line on the velocity disk, but this can't be the case.
 First, we know that non-collinear boosts cause rotations. Traveling around a clockwise path causes counterclockwise rotation, and vice-versa.

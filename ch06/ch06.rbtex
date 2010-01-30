@@ -496,30 +496,32 @@ convenience, are now
 \end{align*}
 where $\epsilon=2m$. The solutions rotate with frequency $\omega'=\sqrt{1-\epsilon}$.
 The result is that when the basis vectors rotate by $2\pi$, the components no longer return to their original values;
-they lag by a factor of $\sqrt{1-\epsilon}\approx 1-m$.  Putting the factors of $r$ back in, this is $1-m/r$.
+they lag by a factor of $\sqrt{1-\epsilon}\approx 1-m$.  Putting the factors of $r$ back in, this is $1-m/r$. The deviation
+from unity shows that after one full revolution, the $L$ vector no longer has quite the same components expressed in terms
+of the $(r,\phi)$ basis vectors.
 
-Comparing with the actual results from Gravity Probe B, we see that the direction of the effect is correct: if the satellite is orbiting counterclockwise, the
-precession is clockwise. The magnitude, however, is off.
+To understand the sign of the effect, let's imagine a counterclockwise rotation. The  $(r,\phi)$ rotate counterclockwise,
+so relative to them, the $L$ vector rotates clockwise. After one revolution, it has not rotated clockwise by a full $2\pi$,
+so its orientation is now slightly counterclockwise compared to what it was. Thus the contribution to the geodetic effect
+arising from spatial curvature is in the same direction as the orbit.
+
+Comparing with the actual results from Gravity Probe B, we see that the direction of the effect is correct.
+The magnitude, however, is off.
 The precession accumulated over $n$ periods is $2\pi n m/r$, or,
 in SI units, $2\pi n Gm/c^2r$. Using the
 data from section \ref{sec:thomas-precession}, we find 
 $\Delta\theta=2\times10^{-5}$ radians, which is too small compared to the data shown in figure \figref{gravity-probe-b-geodetic-graphs}
 on page \pageref{fig:gravity-probe-b-geodetic-graphs}.
 
-We can identify the discrepancy between theory and experiment with the missing Thomas precession.
-Due to Thomas precession, a gyroscope moving in a circle at frequency $\omega$ precesses
-at the rate $|(1/2)\vc{a}\times\vc{v}|=\omega^3 r^2/2$.
-Integrating this over $n$ periods, $\Delta T=2\pi n/\omega$, gives $n\pi\omega^2r^2=n\pi g r$, where $g$ is the
-acceleration of gravity. Substituting $g=m/r^2$, the Thomas precession is $\Delta\theta=n\pi m/r$. The direction
-of the Thomas precession is the same as the direction of the spatial curvature effect, so if we add up the two
-effects, we get $3\pi n Gm/c^2r = 3\times10^{-5}$ radians, in excellent agreement with experiment.
 <% end_sec %> % Spatial curvature only
 
 <% begin_sec("2+1 dimensions") %>
-It's distasteful to have to perform an ad hoc addition of the spatial-curvature and Thomas-precession effects as we've done
-above. If we include the time dimension, we can get the correct result from pure parallel transport. The angular momentum
-vector now has components $(L^\phi,L^r,L^t)$. Writing down the
-total derivatives of these, and notating $\der t/\der\phi$ as $\omega^{-1}$, we have
+To reproduce the experimental results correctly, we need to include the time dimension. The angular momentum
+vector now has components $(L^\phi,L^r,L^t)$. The physical interpretation of the $L^t$ component is obscure
+at this point; we'll return to this question later.
+
+Writing down the
+total derivatives of the three components, and notating $\der t/\der\phi$ as $\omega^{-1}$, we have
 \begin{align*}
   \frac{\der L^\phi}{\der\phi} &=  \partial_\phi L^\phi + \omega^{-1}\partial_t L^\phi \\
   \frac{\der L^r   }{\der\phi} &=  \partial_\phi L^r    + \omega^{-1}\partial_t L^r \\
@@ -558,23 +560,33 @@ applying the eigenvalue technique to the relevant $2\times 2$ submatrix.
 To lowest order, we can use the Newtonian relation $\omega^2 r = Gm/r$ and neglect terms of order $\epsilon^2$, so
 that the two new off-diagonal matrix elements are both approximated as $\sqrt{\epsilon/2}$. The three resulting
 eigenfrequencies are zero and $\Omega=\pm[1-(3/2)m/r]$.
-The interpretation of the zero-frequency solution is that a geodesic always parallel-transports its own
-four-velocity vector, so there must be a timelike vector that oscillates with zero frequency. The eigenvectors
-varying as $e^{\pm i\Omega}$ can be superposed to make real-valued spacelike solutions that match the initial
+
+The presence of the mysterious zero-frequency solution can now be understood by recalling the earlier mystery
+of the physical interpretation of the angular momentum's $L^t$ component. Our results come from calculating
+parallel transport, and parallel transport is a purely geometric process, so it gives the same result regardless
+of the physical nature of the four-vector. Suppose that we had instead chosen the velocity four-vector as our
+guinea pig. The definition of a geodesic is that it parallel-transports its own tangent vector, so the
+velocity vector has to stay constant. If we inspect the eigenvector corresponding to the zero-frequency
+eigenfrequency, we find a timelike vector that is parallel to the velocity four-vector. In our 2+1-dimensional
+space, the other two eigenvectors, which are spacelike, span the subspace of spacelike vectors, which are
+the ones that can physically be realized as the angular momentum of a gyroscope.
+These two eigenvectors, which
+vary as $e^{\pm i\Omega}$, can be superposed to make real-valued spacelike solutions that match the initial
 conditions, and these lag the rotation of the basis vectors by $\Delta\Omega=(3/2)mr$.
-The missing factor of $3/2$ has been fixed,
-and we no longer have to add the Thomas precession by hand in order to get agreement with experiment.
+This is greater than the purely spatial result by a factor of 3/2. 
+The resulting precession angle, over $n$ orbits of Gravity Probe B, is $3\pi n Gm/c^2r = 3\times10^{-5}$ radians, in excellent agreement with experiment.
 
 One will see apparently contradictory statements in the literature about whether Thomas precession occurs for a satellite:
 ``The Thomas precession comes into play for a gyroscope on the surface
 of the Earth \ldots, but not for a gyroscope in a freely moving satellite.''\footnote{Misner, Thorne, and Wheeler, \emph{Gravitation}, p.~1118}
 But: ``The total effect, geometrical and Thomas, gives the well-known Fokker-de Sitter precession of $3\pi m/r$, in the same sense as the 
-orbit.''\footnote{Rindler, \emph{Essential Relativity}, 1969, p.~141} These are not really contradictions but simply different ways of
-looking at the physics. There is a Thomas precession for a satellite in the sense that the calculations in 2 and 2+1 dimensions
-differ by an amount that is clearly identifiable as the Thomas precession that \emph{would} have been obtained if the gyroscope
-had been whirled at the end of a rope. There is no Thomas precession for a satellite in the sense that the full 2+1 calculation
-doesn't require it to be added on an ad hoc basis, and the calculation in 2 spatial dimensions is simply not correct
-relativistically. Referring to observation, it is clearly artificial to treat the spatial curvature and Thomas effects separately,
+orbit.''\footnote{Rindler, \emph{Essential Relativity}, 1969, p.~141} 
+The second statement arises from subtracting the purely spatial result from the 2+1-dimensional result, and noting that the
+absolute value of this difference is the same as the Thomas precession that \emph{would} have been obtained if the gyroscope
+had been whirled at the end of a rope. In my opinion this is an unnatural way of looking at the physics, for two reasons.
+(1) The signs don't match, so one is forced to say that the Thomas precession has a different sign depending on whether the
+rotation is the result of gravitational or nongravitational forces. (2) Referring to observation, it is clearly artificial
+to treat the spatial curvature and Thomas effects separately,
 since neither one can be disentangled from the other by varying the quantities $n$, $m$, and $r$.
 
 <% end_sec %> % 2+1 dimensions

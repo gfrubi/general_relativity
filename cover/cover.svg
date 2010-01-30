@@ -10,7 +10,7 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="1594.6125"
+   width="1596.825"
    height="1012.5"
    id="svg2"
    sodipodi:version="0.32"
@@ -48,9 +48,9 @@
      objecttolerance="10"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.29963697"
-     inkscape:cx="762.02998"
-     inkscape:cy="552.80992"
+     inkscape:zoom="0.15844086"
+     inkscape:cx="1575.4045"
+     inkscape:cy="986.6949"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -78,7 +78,7 @@
     <rect
        style="fill:#000000;fill-opacity:1;stroke:none"
        id="rect2391"
-       width="1594.6125"
+       width="1596.825"
        height="1012.5"
        x="0"
        y="-2.6574707" />
@@ -92,11 +92,11 @@
     <image
        sodipodi:absref="/home/bcrowell/Documents/writing/books/genrel/cover/galactic-center.jpg"
        xlink:href="galactic-center.jpg"
-       width="1594.6125"
-       height="998.72772"
+       y="5.0983467"
+       x="1.9935509"
        id="image3204"
-       x="0.21844065"
-       y="5.0983467" />
+       height="998.72772"
+       width="1594.6125" />
     <text
        xml:space="preserve"
        style="font-size:35.78436661px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans"
@@ -121,7 +121,7 @@
          y="163.59453">Crowell</tspan></text>
     <g
        id="g3228"
-       transform="matrix(0,0.9940103,-0.9940103,0,2027.5011,128.96853)">
+       transform="matrix(0,0.9940103,-0.9940103,0,2029.2511,128.96853)">
       <text
          sodipodi:linespacing="125%"
          id="text3220"
