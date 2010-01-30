@@ -414,6 +414,7 @@ it is not obvious how to generalize this operation to the 3+1 dimensions of rela
 cross product is a three-dimensional beast), and even if it were, we could not be assured that it
 would have any intrinsically well defined meaning.
 
+<% begin_sec("Coordinate independence") %>
 To see how to proceed in creating a manifestly intrinsic notation, consider the two types of
 intrinsic observations that are available in general relativity:\label{intrinsic-measurements-in-gr}
 \begin{itemize}
@@ -421,7 +422,8 @@ intrinsic observations that are available in general relativity:\label{intrinsic
 two lines intersect, two events coincide, or an event lies on a certain line.
 \end{itemize}
 Incidence measurements, for example detection of gravitational lensing, are global, but they are the \emph{only}
-global observations we can do. If we were limited entirely to incidence, spacetime would be described by
+global observations we can do.\footnote{Einstein referred to incidence measurements as ``determinations of space-time
+coincidences.'' For his presentation of this idea, see p.~\pageref{einstein-incidence}.} If we were limited entirely to incidence, spacetime would be described by
 the austere system of projective geometry,\index{projective geometry} a geometry without parallels or measurement.
 In projective geometry, all propositions are essentially statements about combinatorics, e.g., that it is impossible to
 plant seven trees so that they form seven lines of three trees each.
@@ -442,8 +444,65 @@ a symbol such as $x$ appears, we need to make sure that nowhere in the notation 
 comes from any particular coordinate system. For example, the equation should still be valid if the generic symbol $x$
 is later taken to represent the distance $r$ from some center of symmetry.
 This coordinate-independence property is also known as general covariance.\index{general covariance}\index{coordinate independence}
+<% end_sec %> % Coordinate independence
+<% begin_sec("Is coordinate independence obvious?") %>
+One often hears statements like the following from relativists: ``Coordinate independence isn't really a physical principle.
+It's merely an obvious statement about the relationship between mathematics and the physical universe. Obviously the universe
+doesn't come equipped with coordinates. We impose those coordinates on it, and the way in which we do so can never be dictated
+by nature.'' The impressionable reader who is tempted to say, ``Ah, yes, that \emph{is} obvious,'' should consider that it was
+far from obvious to Newton (``Absolute, true and mathematical time, of itself, and
+from its own nature flows equably without regard to anything external \ldots''), nor was it obvious to Einstein.
+Levi-Civita\index{Levi-Civita!Tullio} nudged Einstein the direction of coordinate independence in 1912. Einstein
+tried hard to make a coordinate-independent theory, but for reasons described in section \ref{sec:hole-argument} (p.~\pageref{sec:hole-argument}),
+he convinced himself that that was a dead end. In 1914-15 he published theories that were not coordinate-independent, which
+you will hear relativists describe as ``obvious'' dead ends because they lack any geometrical interpretation. It seems to me that it takes a highly
+refined intuition to regard as intuitively ``obvious'' an issue that Einstein struggled with for longer than it took Jacob
+to win his wrestling match with Elohim.
+<% end_sec %> % Is coordinate independence obvious?
+<% begin_sec("Frames moving at $c$?") %>
+A good application of these ideas is to the question of what
+the world would look like in a frame of reference moving at the
+speed of light.
+This question has a long and honorable history. As a young student,
+Einstein tried to imagine what an electromagnetic wave would look
+like from the point of view of a motorcyclist riding alongside it.
+We now know, thanks to Einstein himself, that it really doesn't
+make sense to talk about such observers.
 
-It is instructive to consider this from the point of view of a field theory. Newtonian gravity can be described
+The most straightforward argument is based on the positivist idea
+that concepts only mean something if you can define how to measure
+them operationally. If we accept this philosophical stance (which is
+by no means compatible with every concept we ever discuss in
+physics), then we need to be able to physically realize this frame in
+terms of an observer and measuring devices. But we can't. It would
+take an infinite amount of energy to accelerate Einstein and his
+motorcycle to the speed of light.
+<% marg(-5) %>
+<%
+  fig(
+    'frame-at-c',
+    %q{A series of Lorentz boosts acts on a square.}
+  )
+%>
+<% end_marg %>
+
+Since arguments from positivism can often kill off perfectly
+interesting and reasonable concepts, we might ask whether there are
+other reasons not to allow such frames. There are.
+Recall that we placed two technical conditions on coordinate transformations:
+they are supposed to be smooth and one-to-one. The smoothness condition
+is related to the inability to boost Einstein's motorcycle into the
+speed-of-light frame by any continuous, classical process. (Relativity
+is a classical theory.) But independent of that, we have a problem
+with the one-to-one requirement. Figure \figref{frame-at-c}
+shows what happens if we do a series of Lorentz boosts to higher and
+higher velocities. It should be clear that if we could do a boost up to
+a velocity of $c$, we would have effected a coordinate transformation that
+was not one-to-one. Every point in the plane would be mapped onto a single
+lightlike line.
+<% end_sec %> % Frames moving at c?
+<% begin_sec("Coordinate independence as a choice of gauge") %>
+It is instructive to consider coordinate independence from the point of view of a field theory. Newtonian gravity can be described
 in three equivalent ways: as a gravitational field $\vc{g}$, as a gravitational potential $\phi$, or as a set of
 gravitational field lines. The field lines are never incident on one another, and locally the field satisfies Poisson's equation.
 
@@ -468,7 +527,7 @@ is called a gauge transformation.\index{gauge transformation}
 In relativity,
 the gauge transformations are the smooth coordinate transformations. These gauge transformations distort the
 field lines without making them cut through one another.
-<% marg(80) %>
+<% marg(150) %>
 <%
   fig(
     'star-magnetic-field-lines',
@@ -481,6 +540,7 @@ field lines without making them cut through one another.
 %>
 
 <% end_marg %>
+<% end_sec %> % Coordinate independence as a choice of gauge
 <% end_sec %>
 <% begin_sec("The metric") %>
 
@@ -832,7 +892,8 @@ with curvature, but the scale is different from one point in space to another.
 <% begin_sec("Einstein's carousel") %>\label{sec:carousel}
 <% begin_sec("Non-Euclidean geometry observed in the rotating frame") %>
 The following example was historically important, because Einstein used it to convince himself that general relativity should be
-described by non-Euclidean geometry. Its interpretation is also fairly subtle, and the early relativists
+described by non-Euclidean geometry.\footnote{The example is described in Einstein's paper ``The Foundation of the General Theory of Relativity.''
+An excerpt, which includes the example, is given on p.~\pageref{einstein-foundation}.} Its interpretation is also fairly subtle, and the early relativists
 had some trouble with it.
 
 Suppose that observer A is on a spinning carousel while observer B stands on the ground.
@@ -1042,7 +1103,7 @@ in relativity given on page \pageref{intrinsic-measurements-in-gr}:
 \item We can do measurements in local Lorentz frames.
 \end{enumerate}
 
-<% begin_sec("The hole argument") %>
+<% begin_sec("The hole argument") %>\label{sec:hole-argument}
 The main factor that led Einstein to his false start is known as the hole argument.\index{hole argument}
 Suppose that we know all about the distribution of matter throughout all of spacetime,
 including a particular region of finite size --- the ``hole'' --- which contains no matter. By analogy with other classical field
@@ -1081,7 +1142,8 @@ changing the point's name to $\vc{x}'$ doesn't change the observable fact that t
 Another type of argument that made Einstein suffer is also resolved by a correct understanding of measurements,
 this time the use of measurements in local Lorentz frames. The earth is in hydrostatic equilibrium, and its
 equator bulges due to its rotation. Suppose that the universe was empty except for two planets, each rotating
-about the line connecting their centers. Since there are no stars or other external points of reference,
+about the line connecting their centers.\footnote{The example is described in Einstein's paper ``The Foundation of the General Theory of Relativity.''
+An excerpt, which includes the example, is given on p.~\pageref{einstein-foundation}.} Since there are no stars or other external points of reference,
 the inhabitants of each planet have no external reference points against which to judge their rotation or lack
 of rotation. They can only determine their rotation, Einstein said, relative to the other planet. Now suppose
 that one planet has an equatorial bulge and the other doesn't. This seems to violate determinism, since there is

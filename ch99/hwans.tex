@@ -1,6 +1,18 @@
 \refstepcounter{appendixctr}\label{hwansappendix}%
-\appendix\chapter{Appendix \ref{hwansappendix}: Hints and Solutions}
+\appendix\noindent\formatlikechapter{Appendix \ref{hwansappendix}: Hints and solutions}
 	
+%==================================================================
+%==================================================================
+%========================= Hints ==============================
+%==================================================================
+%==================================================================
+
+\hwanssection{Hints}
+
+\noindent\formatlikesubsection{Hints for Chapter 1}
+
+\hwsolnhdr{tossed-clock} Apply the equivalence principle.\label{hint:tossed-clock}
+
 %==================================================================
 %==================================================================
 %========================= Solutions ==============================
@@ -41,6 +53,13 @@ while the deck of the ship accelerates up to hit it.
 identical motion in the future. This fails in the case where Kip releases the
 neutronium keychain side by side with a penny.
 
+\hwsolnhdr{tossed-clock}
+By the equivalence principle, we can adopt a frame tied to the tossed clock, B, and in this
+frame there is no gravitational field. We see a desk and clock A go by. The desk applies
+a force to clock A, decelerating it and then reaccelerating it so that it comes back.
+We've already established that the effect of motion is to slow down time, so clock
+A reads a smaller time interval.
+
 \hwsolnhdr{ep-charge}
 (a) In case 1 there is no source of energy, so the particle cannot radiate.
 In case 2-4, the particle radiates, because there are sources of energy (loss of
@@ -63,6 +82,32 @@ The naive equivalence principle says that 1 and 4 must give the same result, so
 we should have radiation in 1 as well. These predictions are wrong in two out of
 the four equations, which tells us that we had better either not apply the equivalence
 principle to charged objects, or not apply it in such a naive way.
+
+\hwsolnhdr{dewitt-estimate}
+
+(a) The dominant form of radiation from the orbiting charge will be the lowest-order
+nonvanishing multipole, which in this case is a dipole. The power radiated from
+a dipole scales like $d^2\omega^4$, where $d$ is the dipole moment. For an orbit of
+radius $r$, this becomes $q^2r^2\omega^4$. To find the reaction force on the charged particle,
+we can use the relation $p=E/c$ for electromagnetic waves (section \ref{sec:gravitational-redshifts}),
+which tells us that the force is equal to the power, up to a proportionality constant $c$.
+Therefore $a_r\propto q^2r^2\omega^4/m$. The gravitational acceleration is $a_g=\omega^2 r$,
+so we have $a_r/a_g \propto (q^2/m)\omega^2 r$, or $a_r/a_g \propto (q^2/m)a_g$, where the
+$a_g$ on the right can be taken as an orbital parameter, and for a low-earth orbit is very nearly equal to
+the usual acceleration of gravity at the earth's surface.
+
+(b) In SI units, $a_r/a_g \sim (k/c^4)(q^2/m)a_g$, where $k$ is the Coulomb constant.
+
+(c) The result is $10^{-34}$. If one tried to do this experiment in reality, the effect would be
+impossible to detect, because the proton would be affected much more strongly by ambient electric and
+magnetic fields than by the effect we've calculated.
+
+Remark: It is odd that the result depends on $q^2/m$, rather than on the charge-to-mass ratio $q/m$,
+as is usually the case for a test particle's trajectory. This means that we get a different answer
+if we take two identical objects, place them side by side, and consider them as one big object! This is not as unphysical
+as it sounds. The two side-by-side objects radiate coherently, so the field they radiate is doubled, and the
+radiated power is quadrupled. Each object's rate of orbital decay is doubled, with the extra effect coming
+from electromagnetic interactions with the other object's fields.
 
 \beginsolutions{2}
 
@@ -138,11 +183,20 @@ the metric can never result in geodesics with a specific handedness.
 \beginsolutions{4}
 
 \hwsolnhdr{lhc-proton-speed}
+
 To avoid loss of precision in numerical operations like subtracting $v$ from $1$,
 it's better to derive an ultrarelativistic approximation. The velocity corresponding
 to a given $\gamma$ is $v=\sqrt{1-\gamma^{-2}}\approx 1-1/2\gamma^2$, so
 $1-v\approx 1/2\gamma^2=(m/E)^2/2$. Reinserting factors of $c$ so as to make the units
 come out right in the SI system, this becomes $(mc^2/E)^2/2=9\times 10^{-9}$.
+
+\hwsolnhdr{dirac-sea-invariant}
+
+Such a transformation would take an energy-momentum four-vector $(E,\vc{p})$, with $E>0$, to
+a different four-vector $(E',\vc{p}')$, with $E'<0$. That transformation would also have the
+effect of transforming a timelike displacement vector from the future light cone to the past
+light cone. But the Lorentz transformations were specifically constructed so as to preserve
+causality (property L5 on p.~\pageref{sec:lorentz-geometry}), so this can't happen.
 
 \hwsolnhdr{doppler-three-d}
 

@@ -695,7 +695,8 @@ based on the Bible: you can probably prove whichever conclusion was the one you 
 The equivalence principle is not a single, simple, mathematically well defined statement. As an example
 of an ambiguity that is still somewhat controversial, 90 years after Einstein first proposed the principle,
 consider the question of whether or not it applies to charged particles.
-Raymond Chiao\footnote{arxiv.org/abs/quant-ph/0601193v7} proposes the following thought experiment.
+Raymond Chiao\footnote{arxiv.org/abs/quant-ph/0601193v7} proposes the following thought experiment,
+which I'll refer to as Chiao's paradox.
 Let a neutral particle and a charged particle be set, side by side, in orbit around the earth.
 If the equivalence principle applies
 regardless of charge, then these two particles must go on orbiting amicably, side by side.
@@ -712,7 +713,11 @@ as though the particle's orbit must decay.
 %>
 <% end_marg %>
 
-The resolution of the paradox, as demonstrated by detailed calculations by Gr\o{}n and N\ae{}ss\footnote{arxiv.org/abs/0806.0464v1} is
+The resolution of the paradox, as demonstrated by hairy calculations\footnote{The first detailed calculation
+appears to have been by C\'{e}cile and Bryce DeWitt, ``Falling Charges,'' Physics, 1 (1964) 3. This paper is
+unfortunately very difficult to obtain now. A more recent treatment by
+Gr\o{}n and N\ae{}ss is accessible at \url{arxiv.org/abs/0806.0464v1}. A full exposition of the techniques
+is given by Poisson, ``The Motion of Point Particles in Curved Spacetime,'' \url{www.livingreviews.org/lrr-2004-6}.} is
 interesting because it exemplifies the \emph{local} nature of the equivalence principle.
 When a charged particle moves through a gravitational field, in general it is possible
 for the particle to experience a reaction from its own electromagnetic fields. This might seem
@@ -744,6 +749,10 @@ electromagnetic fields, and this causes its orbit to decay, satisfying conservat
 Since Chiao's particles are orbiting the earth, and the earth is not a black hole,
 the mechanism clearly can't be as simple as the one described above, but Gr\o{}n and N\ae{}ss show that there
 are similar mechanisms that can apply here, e.g., scattering of light waves by the nonuniform gravitational field.
+
+It is worth keeping in mind the DeWitts' caution that ``The questions answered by this investigation are of conceptual
+interest only, since the forces involved are far too small to be detected experimentally'' (see problem \ref{hw:dewitt-estimate},
+p.~\pageref{hw:dewitt-estimate}).
 <% end_sec %> %  Charged particles
 
 <% end_sec %> % Locality of Lorentz frames
@@ -788,7 +797,8 @@ The interpretation is as follows.
 Classical electromagnetism requires that electromagnetic waves have inertia. For example, if a plane wave strikes
 an ohmic surface, as in figure \figref{maxwellian-momentum-of-light}, the wave's electric field excites oscillating currents in the surface. These currents then
 experience a magnetic force from the wave's magnetic field, and application of the right-hand rule shows that
-the resulting force is in the direction of propagation of the wave. Thus the light wave acts as if it has momentum.
+the resulting force is in the direction of propagation of the wave. Thus the light wave acts as if 
+it has momentum.\label{light-has-momentum-1}
 The equivalence principle says that whatever has inertia must also participate in gravitational interactions.
 Therefore light waves must have weight, and must lose energy when they rise through a gravitational field.
 
@@ -1047,6 +1057,12 @@ scenario?
 \hwsoln
 <% end_hw %>
 
+<% begin_hw('tossed-clock') %>
+Clock A sits on a desk. Clock B is tossed up in the air from the same height as the desk and
+then comes back down.  Compare the elapsed times.
+\hwhint{hint:\currenthwlabel} \hwsoln
+<% end_hw %>
+
 <% begin_hw('ep-charge') %>
 Consider the following physical situations: (1) a charged object lies on a desk on the planet earth;
 (2) a charged object orbits the earth; (3) a charged object is released above the earth's surface
@@ -1056,6 +1072,23 @@ Analyze the physics each case (a) based on conservation of energy; (b) by determ
 the object's motion is inertial in the sense intended by Isaac Newton; (c) using the most straightforward
 interpretation of the equivalence principle (i.e., not worrying about the issues
 discussed on p.~\label{sec:chiao-paradox} that surround the ambiguous definition of locality).
+\hwsoln
+<% end_hw %>
+
+<% begin_hw('dewitt-estimate') %>
+Consider the physical situation depicted in figure \figref{chiao-paradox}, p.~\pageref{fig:chiao-paradox}.
+Let $a_g$ be the gravitational acceleration and $a_r$ the acceleration of the charged particle due to
+radiation. Then $a_r/a_g$ measures the violation of the equivalence principle. The goal of this problem is to make an order-of-magnitude estimate of
+this ratio in the case of a neutron and a proton in low earth orbit.\\
+(a) Let $m$ the mass of each particle, and $q$ the charge of
+the charged particle. Without doing a full calculation like the ones by the DeWitts and Gr\o{}n and N\ae{}ss, use
+general ideas about the frequency-scaling of radiation (see section \ref{sec:rate-of-gravitational-radiation},
+p.~\pageref{sec:rate-of-gravitational-radiation}) to find the proportionality that gives
+the dependence of $a_r/a_g$ on $q$, $m$, and any convenient parameters of the orbit.\hwendpart
+(b) Based on considerations of units, insert the necessary universal constants into your answer from part a.\hwendpart
+(c) The result from part b will still be off by some unitless factor, but we expect this to be of order
+unity. Under this assumption, make an order-of-magnitude estimate of the violation of the equivalence
+principle in the case of a neutron and a proton in low earth orbit.\hwendpart
 \hwsoln
 <% end_hw %>
 

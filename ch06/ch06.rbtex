@@ -450,8 +450,10 @@ even at $r<2m$, which is outside the radius of convergence of the geometric seri
 <% begin_sec("Geodetic effect") %>\label{sec:geodetic-effect-exact}
 As promised in section \ref{sec:geodetic-effect-estimate}, we now calculate the geodetic effect on Gravity
 Probe B, including all the niggling factors of 3 and $\pi$.\index{geodetic effect}\index{Gravity Probe B!geodetic effect calculated}
+To make the physics clear, we approach the actual calculation through a series of warmups.
 
-As a warmup, consider the flat-space case, in plane Euclidean polar coordinates $(r,\phi)$.
+<% begin_sec("Flat space") %>
+As a first warmup, consider two spatial dimensions, represented by Euclidean polar coordinates $(r,\phi)$.
 Parallel-transport of a gyroscope's angular momentum around
 a circle of constant $r$ gives
 \begin{align*}
@@ -469,39 +471,113 @@ units. Essentially the vector is staying the same, but we're expressing it in te
 the $r$ and $\phi$ directions that are rotating. To see this more transparently, let $r=1$, and write
 $P$ for $L^\phi$ and $Q$ for $L^r$, so that
 \begin{align*}
-  P' &= Q \\
-  Q' &= -P \qquad .
+  P' &= -Q \\
+  Q' &= P \qquad ,
 \end{align*}
-The solution is $P=\sin\phi$, $Q=\cos\phi$. For each orbit ($2\pi$ change in $\phi$), the basis vectors
+which have solutions such as $P=\sin\phi$, $Q=\cos\phi$. For each orbit ($2\pi$ change in $\phi$), the basis vectors
 rotate by $2\pi$, so the angular momentum vector once again has the same components. In other words, it
-hasn't really changed at all. However, the gyroscopes do \emph{not} return to the same orientation
-relative to a distant reference point, such as the star IM Pegasi that was used by Gravity Probe B.
-Due to Thomas precession (section \ref{sec:thomas-precession}),\index{Thomas precession}
-they precess at the rate $|(1/2)\vc{a}\times\vc{v}|=\omega^3 r^2/2$.
-Integrating this over $n$ periods, $\Delta T=2\pi n/\omega$, gives $n\pi\omega^2r^2=n\pi g r$, where $g$ is the
-acceleration of gravity. Substituting $g=m/r^2$, the Thomas precession is $\Delta\theta=n\pi m/r$. The direction
-of the Thomas precession effect is always counter the direction of motion, i.e., if the satellite is orbiting clockwise, the
-precession is counterclockwise
-The Thomas precession will end up accounting for one third of the total observed effect.
+hasn't really changed at all.
+<% end_sec %> % Flat space
 
-Using the actual Schwarzschild metric, we replace the flat-space Christoffel symbol $\Gamma\indices{^r_{\phi \phi}}=-r$
+<% begin_sec("Spatial curvature only") %>
+The flat-space calculation above differs in two ways from the actual result for an orbiting gyroscope: (1) it
+uses a flat spatial geometry, and (2) it is purely spatial. The purely spatial nature of the calculation
+is manifested in the fact that there is nothing in the result relating to how quickly we've moved the
+vector around the circle. We know that if we whip a gyroscope around in a circle on the end of a rope,
+there will be a Thomas precession (section \ref{sec:thomas-precession}),\index{Thomas precession} which depends on the speed.
+
+As our next warmup, let's curve the spatial geometry, but continue to omit the time dimension.
+Using the Schwarzschild metric, we replace the flat-space Christoffel symbol $\Gamma\indices{^r_{\phi \phi}}=-r$
 with $-r+2m$. The differential equations for the components of the $L$ vector, again evaluated at $r=1$ for
 convenience, are now
 \begin{align*}
-  P' &= Q \\
-  Q' &= -(1-\epsilon)P \qquad ,
+  P' &= -Q \\
+  Q' &= (1-\epsilon)P \qquad ,
 \end{align*}
-where $\epsilon=2m$. The solution is $P=\sin\omega'\phi$, $Q=\omega'\cos\omega'\phi$, where $\omega'=\sqrt{1-\epsilon}$.
+where $\epsilon=2m$. The solutions rotate with frequency $\omega'=\sqrt{1-\epsilon}$.
 The result is that when the basis vectors rotate by $2\pi$, the components no longer return to their original values;
 they lag by a factor of $\sqrt{1-\epsilon}\approx 1-m$.  Putting the factors of $r$ back in, this is $1-m/r$.
-The effect is in the same direction as the effect of the Thomas precession, and
-the precession accumulated over $n$ periods is $2\pi n m/r$.
 
-Adding the contributions from the Thomas precession and spacetime curvature, we have $3\pi n m/r$. In SI units,
-this is $3\pi n Gm/c^2r$. Using the
-(relatively crude) data from section \ref{sec:thomas-precession}, we find 
-$\Delta\theta=3\times10^{-5}$ radians, in excellent agreement with the data shown in figure \figref{gravity-probe-b-geodetic-graphs}
+Comparing with the actual results from Gravity Probe B, we see that the direction of the effect is correct: if the satellite is orbiting counterclockwise, the
+precession is clockwise. The magnitude, however, is off.
+The precession accumulated over $n$ periods is $2\pi n m/r$, or,
+in SI units, $2\pi n Gm/c^2r$. Using the
+data from section \ref{sec:thomas-precession}, we find 
+$\Delta\theta=2\times10^{-5}$ radians, which is too small compared to the data shown in figure \figref{gravity-probe-b-geodetic-graphs}
 on page \pageref{fig:gravity-probe-b-geodetic-graphs}.
+
+We can identify the discrepancy between theory and experiment with the missing Thomas precession.
+Due to Thomas precession, a gyroscope moving in a circle at frequency $\omega$ precesses
+at the rate $|(1/2)\vc{a}\times\vc{v}|=\omega^3 r^2/2$.
+Integrating this over $n$ periods, $\Delta T=2\pi n/\omega$, gives $n\pi\omega^2r^2=n\pi g r$, where $g$ is the
+acceleration of gravity. Substituting $g=m/r^2$, the Thomas precession is $\Delta\theta=n\pi m/r$. The direction
+of the Thomas precession is the same as the direction of the spatial curvature effect, so if we add up the two
+effects, we get $3\pi n Gm/c^2r = 3\times10^{-5}$ radians, in excellent agreement with experiment.
+<% end_sec %> % Spatial curvature only
+
+<% begin_sec("2+1 dimensions") %>
+It's distasteful to have to perform an ad hoc addition of the spatial-curvature and Thomas-precession effects as we've done
+above. If we include the time dimension, we can get the correct result from pure parallel transport. The angular momentum
+vector now has components $(L^\phi,L^r,L^t)$. Writing down the
+total derivatives of these, and notating $\der t/\der\phi$ as $\omega^{-1}$, we have
+\begin{align*}
+  \frac{\der L^\phi}{\der\phi} &=  \partial_\phi L^\phi + \omega^{-1}\partial_t L^\phi \\
+  \frac{\der L^r   }{\der\phi} &=  \partial_\phi L^r    + \omega^{-1}\partial_t L^r \\
+  \frac{\der L^t   }{\der\phi} &=  \partial_\phi L^t    + \omega^{-1}\partial_t L^t 
+\end{align*}
+Setting the covariant derivatives equal to zero gives
+\begin{align*}
+  0 &= \partial_\phi L^\phi + \Gamma\indices{^\phi_{\phi r}} L^r \\
+  0 &= \partial_\phi L^r    + \Gamma\indices{^r   _{\phi \phi}} L^\phi \\
+  0 &= \partial_t L^r       + \Gamma\indices{^r   _{t t}} L^t \\
+  0 &= \partial_t L^t       + \Gamma\indices{^t_{t r}} L^r  \qquad .
+\end{align*}
+
+Self-check: There are not just four but six covariant derivatives that could in principle have occurred, and in these six covariant
+derivatives we could have had a total of 18 Christoffel symbols. Of these 18, only four are nonvanishing. Explain based on symmetry
+arguments why the following Christoffel symbols must vanish: $\Gamma\indices{^\phi_{\phi t}}$, $\Gamma\indices{^t_{t t}}$.
+
+Putting all this together in matrix form, we have $L'=ML$, where
+\begin{equation*}
+  M = 
+  \left(
+  \begin{array}{ccc}
+    0 & -1 & 0 \\
+    1-\epsilon & 0 & -\epsilon(1-\epsilon)/2\omega \\
+    0 & -\epsilon/2\omega(1-\epsilon) & 0
+  \end{array}
+  \right)
+  \qquad .
+\end{equation*}
+The solutions of this differential equation oscillate like $e^{i \Omega t}$, where $i\Omega$ is an
+eigenvalue of the matrix.
+
+Self-check: The frequency in the purely spatial calculation was found by inspection. Verify the result by
+applying the eigenvalue technique to the relevant $2\times 2$ submatrix.
+
+To lowest order, we can use the Newtonian relation $\omega^2 r = Gm/r$ and neglect terms of order $\epsilon^2$, so
+that the two new off-diagonal matrix elements are both approximated as $\sqrt{\epsilon/2}$. The three resulting
+eigenfrequencies are zero and $\Omega=\pm[1-(3/2)m/r]$.
+The interpretation of the zero-frequency solution is that a geodesic always parallel-transports its own
+four-velocity vector, so there must be a timelike vector that oscillates with zero frequency. The eigenvectors
+varying as $e^{\pm i\Omega}$ can be superposed to make real-valued spacelike solutions that match the initial
+conditions, and these lag the rotation of the basis vectors by $\Delta\Omega=(3/2)mr$.
+The missing factor of $3/2$ has been fixed,
+and we no longer have to add the Thomas precession by hand in order to get agreement with experiment.
+
+One will see apparently contradictory statements in the literature about whether Thomas precession occurs for a satellite:
+``The Thomas precession comes into play for a gyroscope on the surface
+of the Earth \ldots, but not for a gyroscope in a freely moving satellite.''\footnote{Misner, Thorne, and Wheeler, \emph{Gravitation}, p.~1118}
+But: ``The total effect, geometrical and Thomas, gives the well-known Fokker-de Sitter precession of $3\pi m/r$, in the same sense as the 
+orbit.''\footnote{Rindler, \emph{Essential Relativity}, 1969, p.~141} These are not really contradictions but simply different ways of
+looking at the physics. There is a Thomas precession for a satellite in the sense that the calculations in 2 and 2+1 dimensions
+differ by an amount that is clearly identifiable as the Thomas precession that \emph{would} have been obtained if the gyroscope
+had been whirled at the end of a rope. There is no Thomas precession for a satellite in the sense that the full 2+1 calculation
+doesn't require it to be added on an ad hoc basis, and the calculation in 2 spatial dimensions is simply not correct
+relativistically. Referring to observation, it is clearly artificial to treat the spatial curvature and Thomas effects separately,
+since neither one can be disentangled from the other by varying the quantities $n$, $m$, and $r$.
+
+<% end_sec %> % 2+1 dimensions
 
 <% end_sec %> % geodetic effect
 

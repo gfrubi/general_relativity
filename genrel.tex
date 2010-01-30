@@ -36,6 +36,13 @@
 
 \tableofcontents
 
+\vspace{5mm}
+
+\noindent {\sffamily{} \noindent
+Appendix \ref{einstein-papers}: Excerpts from three papers by Einstein \dotfill \pageref{einstein-papers}\\
+Appendix \ref{hwansappendix}: Hints and solutions                      \dotfill \pageref{hwansappendix}
+}
+
 %========================= main matter =========================
 \mainmatter
 %-- I want the whole book numbered sequentially, arabic:
@@ -56,6 +63,10 @@
 
 %=================================================================================================================================
 
+\formatchtoc{\large}{\quad\contentspage}{0mm} % This has to go before first appendix.
+\renewcommand{\chaptermark}[1]%
+    {\markboth{\textsf{\thechapter\hspace{\myfooterspace}#1}}{}}
+\blankchaptermarks
 \vfill\pagebreak
 % Einstein papers
         \onecolumn\include{ch99/einstein}

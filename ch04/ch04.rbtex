@@ -67,7 +67,7 @@ This is represented in the above equation by the use of infinitesimal quantities
 
 <% begin_sec("Four-vectors") %>\label{sec:four-vectors}
 
-<% begin_sec("The velocity and acceleration four-vectors") %>
+<% begin_sec("The velocity and acceleration four-vectors") %>\label{sec:v-four-vector}
 Our basic Lorentz vector is the spacetime displacement $\der x^i$. Any other quantity that has the same behavior
 as $\der x^i$ under rotations and boosts is also a valid Lorentz vector. Consider a particle moving through space,
 as described in a Lorentz frame. Since the particle may be subject to nongravitational forces, the Lorentz frame
@@ -126,6 +126,7 @@ As $t$ approaches infinity, $\der x/\der t$ approaches the speed of light.
 <% end_sec %> % v and a
 
 <% begin_sec("The momentum four-vector") %>\label{sec:momentum-four-vector}
+In subsection \ref{sec:v-four-vector}, we obtained the velocity four-vector. 
 Multiplying by the particle's mass, we have the four-momentum $p^i=mv^i$, which in Lorentz coordinates is
 $(m\gamma,m\gamma v^1,m\gamma v^2,m\gamma v^3)$. The spacelike components look like the classical momentum vector
 multiplied by a factor of $\gamma$, the interpretation being that to an observer in this frame, the moving particle's
@@ -165,7 +166,7 @@ principle, and verified experimentally by Pound and Rebka as described in sectio
 Since the momentum four-vector was obtained from the magni\-tude-1 velocity four-vector through multiplication by $m$,
 its squared magnitude $p^ip_i$ is equal to the square of the particle's mass.
 Writing $p$ for the magnitude of the momentum three-vector, and $E$ for the mass-energy, we
-find the useful relation $p^2-E^2=m^2$.
+find the useful relation $E^2-p^2=m^2$.
 
 A common source of confusion for beginners in relativity is the distinction between quantities that are conserved and
 quantities that are the same in all frames. There is nothing relativistic about this distinction. Before Einstein,
@@ -176,10 +177,25 @@ you're sitting in is millions of joules in a frame of reference tied to the axis
 is frame-invariant (i.e., a Lorentz scalar), but the conserved quantity is the momentum four-vector, which is not
 frame-invariant.
 
-Applying $p^2-E^2=m^2$ to the special case of a massless particle, we have $|p|=E$,
+Applying $E^2-p^2=m^2$ to the special case of a massless particle, we have $|p|=E$,
 which demonstrates, for example, that a beam of light exerts pressure when it is absorbed or reflected by
-a surface. A massless particle must also travel at exactly the speed of light, since $|p| \rightarrow E$
+a surface.\label{light-has-momentum-2}\footnote{cf.~p.~\pageref{light-has-momentum-1}}
+A massless particle must also travel at exactly the speed of light, since $|p| \rightarrow E$
 requires $m\gamma v \rightarrow m\gamma $; conversely, a massive particle always has $|v|<1$.\label{c-is-speed-of-massless-particles}
+
+\begin{eg}{The Dirac sea}\label{eg:dirac-sea}\index{Dirac sea}\index{Gell-Mann, Murray}
+A great deal of physics can be derived from the T.H.~White's principle that ``whatever is not forbidden in compulsory'' --- originally
+intended for ants but applied to particles by Gell-Mann.
+In quantum mechanics, any process that is not forbidden by a conservation law is supposed to occur. 
+The relativistic relation $E=\pm\sqrt{p^2+m^2}$ has two roots, a
+positive one and a negative one.
+The positive-energy and negative-energy states are separated by a no-man's land of width $2m$, so no continuous classical
+process can lead from one side to the other. But quantum-mechanically,
+if an electron exists with energy $E=+\sqrt{p^2+m^2}$, it should be able to make a quantum leap into a state with
+$E=-\sqrt{p^2+m^2}$, emitting the energy difference of $2E$ in the form of photons. Why doesn't 
+this happen? One explanation is that the states with $E<0$ are all already occupied. This is the ``Dirac sea,'' which
+we now interpret as being full of electrons. A vacancy in the sea manifests itself as an antielectron.
+\end{eg}
 
 \begin{eg}{Massive neutrinos}\label{eg:massive-neutrinos}
 Neutrinos were long thought to be massless, but are now believed to have masses in the eV range.
@@ -211,8 +227,9 @@ that is forbidden, but any radioactive decay process involving a massless partic
 \begin{eg}{Massive photons}\index{photon!mass}\label{eg:photon-mass}
 Continuing in the same vein as example \ref{eg:massive-neutrinos}, we can consider the possibility that
 the photon has some nonvanishing mass. A 2003 experiment by
-Luo et al.\footnote{Luo et New Experimental Limit on the Photon Rest Mass with a Rotating Torsion , Phys. Rev. Lett., 90 (2003) 081801.
-The interpretation of such experiments is difficult, and this paper attracted a series of comments.}
+Luo et al.\footnote{Luo et al., ``New Experimental Limit on the Photon Rest Mass with a Rotating Torsion Balance,'' Phys. Rev. Lett. 90 (2003) 081801.
+The interpretation of such experiments is difficult, and this paper attracted a series of comments. A weaker but more universally accepted
+bound is $8\times10^{-52}\ \kgunit$, Davis, Goldhaber, and Nieto, Phys. Rev. Lett. 35 (1975) 1402.}
 has placed a limit of about $10^{-54}\ \kgunit$ on this mass. This is incredibly small, but
 suppose that future experimental work using improved techniques shows that the mass is less than this, but actually nonzero.
 A naive reaction to this scenario is that it would shake relativity to its core, since relativity is based
@@ -241,7 +258,7 @@ that the necessary change to Gauss's law would be of the form $\nabla\cdot \vc{E
 where $\Phi$ is the electrical potential, and (\ldots) indicates factors that depend on the choice of units. 
 This tells us that $\Phi$, which in classical electromagnetism can only be measured
 in terms of differences between different points in space, can now be measured in absolute terms. Gauge symmetry has
-been broken. But gauge symmetry is indispensible in creating well-behaved relativistic field heories, and
+been broken. But gauge symmetry is indispensible in creating well-behaved relativistic field theories, and
 this is the reason that, in general, particle physicists have a hard time with
 forces arising from the exchange of massive particles. The hypothetical Higgs particle, which may be observed at the Large Hadron
 Collider in the near future, is essentially a mechanism for wriggling out of this difficulty in the case of the massive W and Z particles
@@ -312,8 +329,6 @@ providing an additional factor of $1/\gamma$.
 
 This analysis is extended to 3+1 dimensions in problem \ref{hw:doppler-three-d}.
 
-\pagebreak
-
 \begin{eg}{Einstein's derivation of $E=mc^2$}\label{eg:einstein-mc2}
 On page \pageref{sec:momentum-four-vector}, we showed that the celebrated $E=mc^2$ follows directly from
 the form of the Lorentz transformation. An alternative derivation was given by Einstein in one of his
@@ -350,7 +365,7 @@ $E=\Delta m c^2$.
 
 <% end_sec %> % frequency four-vector
 
-<% begin_sec("A non-example: electric and magnetic fields",4) %>\label{sec:e-and-b-not-four-vectors}
+<% begin_sec("A non-example: electric and magnetic fields") %>\label{sec:e-and-b-not-four-vectors}
 It is fairly easy to see that the electric and magnetic fields cannot be the spacelike parts of two four-vectors.
 Consider the arrangement shown in figure \subfigref{b-field}{1}. We have
 two infinite trains of moving charges superimposed on the same line, and a single charge alongside the line.
@@ -981,6 +996,28 @@ orientations of its gyroscopes relative to the guide star IM Pegasi.
 <% begin_hw('lhc-proton-speed') %>
 The Large Hadron Collider is designed to accelerate protons to energies of 7 TeV.
 Find $1-v$ for such a proton.
+\hwsoln
+<% end_hw %>
+
+<% begin_hw('pe-vacuum') %>
+Prove that a photon in a vacuum cannot absorb a photon. (This is the reason that the ability of
+materials to absorb gamma-rays is strongly dependent on atomic number $Z$. The case of $Z=0$
+corresponds to the vacuum.)
+<% end_hw %>
+
+<% begin_hw('matrix-noncommutative') %>
+Assume the metric $g=diag(+1,+1,+1)$. Which of the following correctly expresses the noncommutative
+property of ordinary matrix multiplication?
+\begin{align*}
+  A\indices{_i^j}B\indices{_{jk}} & \ne B\indices{_{jk}}A\indices{_i^j} \\
+  A\indices{_i^j}B\indices{_{jk}} & \ne B\indices{_i^j}A\indices{_{jk}} 
+\end{align*}
+<% end_hw %>
+
+<% begin_hw('dirac-sea-invariant') %>\index{Dirac sea}
+Example \ref{eg:dirac-sea} on page \pageref{eg:dirac-sea} introduced the Dirac sea, whose existence is implied
+by the two roots of the relativistic relation $E=\pm\sqrt{p^2+m^2}$. Prove that a Lorentz boost
+will never transform a positive-energy state into a negative-energy state.
 \hwsoln
 <% end_hw %>
 

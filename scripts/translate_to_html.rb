@@ -345,6 +345,8 @@ def parse_itty_bitty_stuff!(tex)
     }
   }
   tex.gsub!(/\\O{}/,'&Oslash;')
+  tex.gsub!(/\\ae{}/,'&aelig;')
+  tex.gsub!(/\.~/,'. ')
   tex.gsub!(/\\\-/,'')
   tex.gsub!(/\\ /,' ')
   tex.gsub!(/\\%/,'%')
