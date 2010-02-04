@@ -175,7 +175,7 @@ redefines geodesics so that they have minimal length as determined by a chain of
 (a) The $\der\theta'^2$ term of the metric blows up here. A geodesic connecting point A, at $r=1/\omega$, with point B, at $r<1/\omega$,
 must have minimum length. This requires that the geodesic be directly radial at A, so that $\der\theta'=0$; for if not, then we could
 vary the curve slightly so as to reduce $|\der\theta'|$, and the resulting increase in the $\der r^2$ term would be negligible
-compared to the decrease in the $\der\theta'^2$ term. (b) The spatial track of a laser beam is nor a geodesic of this metric.
+compared to the decrease in the $\der\theta'^2$ term. (b) The spatial track of a laser beam is not a geodesic of this metric.
 For example, a laser beam sent outward from the axis would make a track that was straight in the lab frame, but curved in the
 rotating frame. Since the spatial metric in the rotating frame is symmetric with respect to clockwise and counterclockwise,
 the metric can never result in geodesics with a specific handedness.
@@ -189,6 +189,18 @@ it's better to derive an ultrarelativistic approximation. The velocity correspon
 to a given $\gamma$ is $v=\sqrt{1-\gamma^{-2}}\approx 1-1/2\gamma^2$, so
 $1-v\approx 1/2\gamma^2=(m/E)^2/2$. Reinserting factors of $c$ so as to make the units
 come out right in the SI system, this becomes $(mc^2/E)^2/2=9\times 10^{-9}$.
+
+\hwsolnhdr{hafele-frame-indept}
+
+The time on the clock is given by $s=\int \der s$, where the integral is over the clock's
+world-line. The quantity $\der s$ is our prototypical Lorentz scalar, so it's frame-independent.
+An integral is just a sum, and the tensor transformation laws are linear, so the integral of
+a Lorentz scalar is still a Lorentz scalar. Therefore $s$ is frame-independent. There is
+no requirement that we use an inertial frame. It would also work fine, for example, in a frame
+rotating with the earth. We don't even need to have a frame of reference.
+All of the above applies equally well to any
+coordinate system at all, even one that doesn't have any sensible interpretation as some
+observer's frame of reference.
 
 \hwsolnhdr{dirac-sea-invariant}
 
@@ -242,3 +254,32 @@ the angular deficit $\epsilon$, it is proportional to the
 limit of $\epsilon/A$, where $A$ is the area of the triangle. The area of the triangle
 can be small, so there is no upper bound on the ratio $\epsilon/A$.
 Debunking the argument restores consistency with the answer to part b.
+
+\beginsolutions{8}
+
+\hwsolnhdr{why-geodesics-for-test-particles}
+(a) The members of the Hulse-Taylor system are spiraling toward one another as they lose energy to
+gravitational radiation. If one of them were replaced with a low-mass test particle, there
+would be negligible radiation, and the motion would no longer be a spiral. This is similar
+to the issues encountered on pp.~\pageref{sec:chiao-paradox}ff because the neutron stars in
+the Hulse-Taylor system suffer a back-reaction from their own gravitational radiation.
+
+(b) If this occurred, then the particle's world-line would be displaced in space relative
+to a geodesic of the spacetime that would have existed without the presence of the particle.
+What would determine the direction of that displacement?
+It can't be determined by properties of this preexisting, ambient spacetime, because
+the Riemann tensor is that spacetime's only local, intrinsic, observable property.
+At a fixed point in spacetime, the Riemann tensor is even under spatial reflection, so there's no way it can distinguish
+a certain direction in space from the opposite direction.
+
+What else could determine this mysterious displacement?
+By assumption, it's not determined by a preexisting, ambient electromagnetic field.
+If the particle had charge, the direction could be one imposed by the back-reaction from the electromagnetic
+radiation it had emitted in the past. If the particle had a lot of mass, then we could have
+something similar with gravitational radiation, or some other nonlinear interaction of the
+particle's gravitational field with the ambient field. But these nonlinear or back-reaction
+effects are proportional to $q^2$ and $m^2$, so they vanish when $q=0$ and $m\rightarrow 0$.
+
+The only remaining possibility is that the result violates the symmetry of space expressed by L1 on p.~\pageref{sec:lorentz-geometry};
+the Lorentzian geometry is the result of L1-L5, so violating L1 should be considered a violation of Lorentz
+invariance.

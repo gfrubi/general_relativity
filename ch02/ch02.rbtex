@@ -1103,7 +1103,8 @@ would arise in 3+1 dimensions as compared with 1+1.  To see that this is not the
 A boost along the $x$ axis tangles up the $x$ and $t$ coordinates. A $y$-boost mingles $y$ and $t$. Therefore
 consecutive boosts along $x$ and $y$ can cause $x$ and $y$ to mix. The result, as we'll see in more detail below,
 is that two consecutive boosts along non-collinear axes are not equivalent to a single boost; they are equivalent
-to a boost plus a spatial rotation.
+to a boost plus a spatial rotation. The remainder of this section discusses this effect, known as Thomas precession,
+in more detail; it can be omitted on a first reading.
 
 Self-check: Apply similar reasoning to a Galilean boost.
 
@@ -1561,16 +1562,20 @@ of $L$?\hwendpart
 (c) Carry out a similar calculation in the case where the clock moves with constant acceleration $a$
 as measured in some inertial frame. Although the result depends on $L$, prove that in the limit of small
 $L$, we recover the earlier constant-velocity result, with no explicit dependence on $a$.\hwendpart
-Remarks: Some authors state a ``clock postulate'' for special relativity, which states that for a clock that is
-sufficiently small, the rate at which
-it runs depends only on $v$, not $a$ (except in the trivial sense that $v$ and $a$ are related by the
-fundamental theorem of calculus). The result of part c shows that the clock ``postulate'' is really
-a theorem, not a statement that is logically independent of the other postulates of special relativity.
-(It is not trivially obvious, however, how to extend the proof to all possible clocks, rather than
-the family of light clocks of various sizes.)\index{clock ``postulate''} Some people get confused by this
-acceleration-independent property of small clocks and think that it contradicts the equivalence
-principle. For a good explanation, see \url{http://math.ucr.edu/home/baez/physics/Relativity/SR/clock.html}.\hwendpart
 \hwsoln
+\hwremark{Some authors state a ``clock postulate'' for special relativity, which says that for a clock that is
+sufficiently small, the rate at which
+it runs depends only on $v$, not $a$ (except in the trivial sense that $v$ and $a$ are related by calculus).
+The result of part c shows that the clock ``postulate'' is really
+a theorem, not a statement that is logically independent of the other postulates of special relativity.\index{clock ``postulate''} 
+Although this argument only applies to a particular family  of light clocks of various sizes,
+one can also make any small clock into an acceleration-insensitive clock, by attaching an accelerometer to it
+and applying an appropriate correction to compensate for the clock's observed sensitivity to acceleration.
+(It's still necessary for the clock to be small, since otherwise the lack of simultaneity in relativity makes
+it impossible to describe the whole clock as having a certain acceleration at a certain instant.)
+Some people get confused by this
+acceleration-independent property of small clocks and think that it contradicts the equivalence
+principle. For a good explanation, see \url{http://math.ucr.edu/home/baez/physics/Relativity/SR/clock.html}.}
 <% end_hw %>
 
 <% begin_hw('sagnac-area') %>\index{Sagnac effect!proportional to area}

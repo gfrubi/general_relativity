@@ -23,7 +23,7 @@ will in general diverge, approach,
 or even cross. Thus, neither the existence nor the uniqueness of parallels can be assumed. We can't describe this
 lack of parallelism as arising from the curvature of the world-lines, because we're using the world-lines of
 free-falling particles as our definition of a ``straight'' line. Instead, we describe the effect as coming
-from the curvature of spacetime itself. The Lorentzian geometry is description of the case in which this
+from the curvature of spacetime itself. The Lorentzian geometry is a description of the case in which this
 curvature is negligible.
 
 What about the word \emph{differential}? The equivalence principle states that even in the presence of gravitational
@@ -173,20 +173,6 @@ the segments $n\zu{q}_n$ drift more and more out of alignment with the curve.
 
 <% end_sec %> % only along geodesics
 
-<% begin_sec("Parallel transport compared to Thomas precession") %>\index{parallel transport!compared to Thomas precession}\index{Thomas precession!compared to parallel transport}
-We've now seen two reasons why the orientation of a gyroscope is dependent on the world-line it has been transported along.
-The path-dependence of parallel transport shows that the gyroscope's orientation can be affected by the curvature of the spacetime.
-In addition, it can be affected by Thomas precession. These are completely separate effects. In a flat, Lorentzian spacetime,
-only Thomas precession can occur. On the other hand, we could do geometry on the surface of a sphere, in which case there
-would be nontrivial effects from parallel transport, but Thomas precession would not exist. This is because Thomas
-precession is a property of Lorentzian geometry, but a sphere is locally Euclidean, not locally Lorentzian.
-
-Both effects can occur simultaneously, if we have a spacetime that is both curved and locally Lorentzian. When they
-both occur, the effects add. As an example, both effects applied to the Gravity Probe B experiment, as we will
-analyze to within an order of magnitude on page \pageref{sec:estimates}, and using an exact treatment
-on page \pageref{sec:geodetic-effect-exact}.
-<% end_sec %> % Parallel transport compared to Thomas precession
-
 <% end_sec %> % parallel transport
 
 <% end_sec %>
@@ -323,7 +309,7 @@ the infinitesimal quantities compose a hierarchy, so that for example $7d$ is in
 $d$, while $d^2$ is like a ``lesser flea'' in Swift's doggerel: ``Big fleas have little fleas/ On their backs to ride 'em,/
 and little fleas have lesser fleas,/And so, ad infinitum.''
 
-These two spherical models are not valid models of a general-relativistic spacetime, since they is locally Euclidean rather than
+These two spherical models are not valid models of a general-relativistic spacetime, since they are locally Euclidean rather than
 Lorentzian, but they still provide us with enough conceptual guidance to come up with some ideas that might never have occurred to us otherwise: 
 \begin{itemize}
 \item In spherical geometry, we can have a two-sided polygon called a lune\index{lune} that encloses a nonzero area. In general relativity, a lune
@@ -444,21 +430,6 @@ a symbol such as $x$ appears, we need to make sure that nowhere in the notation 
 comes from any particular coordinate system. For example, the equation should still be valid if the generic symbol $x$
 is later taken to represent the distance $r$ from some center of symmetry.
 This coordinate-independence property is also known as general covariance.\index{general covariance}\index{coordinate independence}
-<% end_sec %> % Coordinate independence
-<% begin_sec("Is coordinate independence obvious?") %>
-One often hears statements like the following from relativists: ``Coordinate independence isn't really a physical principle.
-It's merely an obvious statement about the relationship between mathematics and the physical universe. Obviously the universe
-doesn't come equipped with coordinates. We impose those coordinates on it, and the way in which we do so can never be dictated
-by nature.'' The impressionable reader who is tempted to say, ``Ah, yes, that \emph{is} obvious,'' should consider that it was
-far from obvious to Newton (``Absolute, true and mathematical time, of itself, and
-from its own nature flows equably without regard to anything external \ldots''), nor was it obvious to Einstein.
-Levi-Civita\index{Levi-Civita!Tullio} nudged Einstein the direction of coordinate independence in 1912. Einstein
-tried hard to make a coordinate-independent theory, but for reasons described in section \ref{sec:hole-argument} (p.~\pageref{sec:hole-argument}),
-he convinced himself that that was a dead end. In 1914-15 he published theories that were not coordinate-independent, which
-you will hear relativists describe as ``obvious'' dead ends because they lack any geometrical interpretation. It seems to me that it takes a highly
-refined intuition to regard as intuitively ``obvious'' an issue that Einstein struggled with for longer than it took Jacob
-to win his wrestling match with Elohim.
-<% end_sec %> % Is coordinate independence obvious?
 <% begin_sec("Frames moving at $c$?") %>
 A good application of these ideas is to the question of what
 the world would look like in a frame of reference moving at the
@@ -501,46 +472,8 @@ a velocity of $c$, we would have effected a coordinate transformation that
 was not one-to-one. Every point in the plane would be mapped onto a single
 lightlike line.
 <% end_sec %> % Frames moving at c?
-<% begin_sec("Coordinate independence as a choice of gauge") %>
-It is instructive to consider coordinate independence from the point of view of a field theory. Newtonian gravity can be described
-in three equivalent ways: as a gravitational field $\vc{g}$, as a gravitational potential $\phi$, or as a set of
-gravitational field lines. The field lines are never incident on one another, and locally the field satisfies Poisson's equation.
 
-The electromagnetic field has polarization
-properties different from those of the gravitational field,
-so we describe it using either the two fields $(\vc{E},\vc{B})$, a pair of potentials,\footnote{There is the familiar
-electrical potential $\phi$, measured in volts, but also a vector potential $\vc{A}$, which you may or may not have encountered.
-Briefly, the electric field is given not by $-\nabla\phi$ but by $-\nabla\phi-\partial\vc{A}/\partial t$,
-while the magnetic field is the curl of $\vc{A}$. This is introduced at greater
-length in section \ref{sec:em-four-vector} on page \pageref{sec:em-four-vector}.}\label{em-gauge-first-mentioned}
-or two sets of field
-lines. There are similar incidence conditions and local field equations (Maxwell's equations).
-
-Gravitational fields in relativity have polarization properties unknown to Newton, but the situation is qualitatively
-similar to the two foregoing cases. Now consider the analogy between electromagnetism and relativity.
-In electromagnetism, it is the fields that are
-directly observable, so we expect the potentials to have some extrinsic properties. We can, for example, redefine
-our electrical ground, $\Phi \rightarrow \Phi+C$, without any observable consequences.
-As discussed in more detail in section \ref{sec:covariant-derivative-in-em} on page \pageref{sec:covariant-derivative-in-em}, it is even possible to modify the
-electromagnetic potentials in an entirely arbitrary and nonlinear way that changes from point to point in spacetime. This
-is called a gauge transformation.\index{gauge transformation}
-In relativity,
-the gauge transformations are the smooth coordinate transformations. These gauge transformations distort the
-field lines without making them cut through one another.
-<% marg(150) %>
-<%
-  fig(
-    'star-magnetic-field-lines',
-    %q{Since magnetic field lines can never intersect, a magnetic field pattern contains coordinate-independent information
-       in the form of the knotting of the lines.
-       This figure shows the magnetic field pattern of the star SU Aurigae, as measured by Zeeman-Doppler imaging (Petit at al.).
-       White lines represent magnetic field lines that close upon themselves in the immediate vicinity of the star;
-       blue lines are those that extend out into the interstellar medium.}
-  )
-%>
-
-<% end_marg %>
-<% end_sec %> % Coordinate independence as a choice of gauge
+<% end_sec %> % Coordinate independence
 <% end_sec %>
 <% begin_sec("The metric") %>
 
@@ -1028,7 +961,8 @@ The factor of
 $(1-\omega^2r^2)^{-1}=\gamma^2$ in the $\der \theta'^2$ term is simply the expected Lorentz-contraction factor.
 In other words, the circumference is, as expected, greater than $2\pi r$ by a factor of $\gamma$.
 
-Is the metric [\ref{eq:rotating-spatial}] non-Euclidean spatial geometry the same as the one that A, rotating with the disk, would determine by meter-stick measurements?
+Does the metric [\ref{eq:rotating-spatial}] represent the same
+non-Euclidean spatial geometry that A, rotating with the disk, would determine by meter-stick measurements?
 Yes and no. It \emph{can} be interpreted as the one that A would determine by radar measurements.
 That is, if A measures a round-trip travel time $\der t$ for a light signal between points separated by
 coordinate distances $\der r$ and $\der\theta'$, then A can say that the spatial separation is $\der t/2$,
@@ -1057,17 +991,19 @@ impossibility of synchronization, e.g., the Sagnac affect, are proportional to t
 synchronization is attempted. Since we were only synchronizing two nearby points, the area enclosed by the light
 rays was zero.
 <% end_sec %> % The spatial metric and synchronization of clocks
-<% begin_sec("Impossibility of rigid rotation, even with external forces") %>
+<% begin_sec("Impossibility of rigid rotation, even with external forces") %>\label{no-born-rigidity}
 The determination of the spatial metric with rulers at rest relative to the disk is appealing because of its
 conceptual simplicity compared to complicated procedures involving radar, and this was presumably why Einstein
-presented the concept using ruler measurements in his popularization 
-of general relativity.\footnote{Einstein, Relativity: The Special and General Theory, 1920, ch. 23, available online at \url{en.wikisource.org}}
+presented the concept using ruler measurements in his 1916 paper laying out the general theory of relativity.\footnote{The
+paper is reproduced in the back of the book, and the relevant part is on p.~\pageref{einstein-foundations-carousel}.}
 In an effort to recover this simplicity, we could propose using external forces to compensate for the centrifugal
 and Coriolis forces to which the rulers would be subjected, causing them to stay straight and maintain their correct
 lengths. Something of this kind is carried out with the large mirrors of some telescopes, which have active systems
 that compensate for gravitational deflections and other effects. The first issue to worry about is that one would
 need some way to monitor a ruler's length and straightness. The monitoring system would presumably be based on
-measurements with beams of light, in which case the physical rulers themselves would become superfluous. In addition,
+measurements with beams of light, in which case the physical rulers themselves would become superfluous.
+
+In addition,
 we would need to be able to manipulate the rulers in order to place them where we wanted them, and these manipulations
 would include angular accelerations. If such a thing was possible, then it would also amount to a loophole in the
 resolution of the Ehrenfest paradox. Could Ehrenfest's rotating disk be accelerated and decelerated with help
@@ -1075,7 +1011,8 @@ from external forces, which would keep it from contorting into a potato chip? Th
 a strategy is one of clock synchronization. When it was time to impart an angular acceleration to the disk, all
 of the control systems would have to be activated simultaneously. But we have already seen that global clock
 synchronization cannot be realized for an object with finite area, and therefore there is a logical contradiction
-in this proposal.
+in this proposal. This makes it impossible to apply rigid angular acceleration to the disk, but not necessarily the rulers, which could
+in theory be one-dimensional.
 <% end_sec %>
 <% end_sec %> % Einstein's carousel
 
@@ -1180,7 +1117,102 @@ his theory too ``Machian.'' Section \ref{sec:brans-dicke} on p.~\pageref{sec:bra
 an alternative, more Machian theory of gravity proposed by Brans and Dicke in 1951.
 <% end_sec %> % A Machian paradox
 <% end_sec %> % The metric in general relativity
+<% begin_sec("Interpretation of coordinate independence") %>
+This section discusses some of the issues that arise in the interpretation of coordinate independence. It can be
+skipped on a first reading.
+<% begin_sec("Is coordinate independence obvious?") %>
+One often hears statements like the following from relativists: ``Coordinate independence isn't really a physical principle.
+It's merely an obvious statement about the relationship between mathematics and the physical universe. Obviously the universe
+doesn't come equipped with coordinates. We impose those coordinates on it, and the way in which we do so can never be dictated
+by nature.'' The impressionable reader who is tempted to say, ``Ah, yes, that \emph{is} obvious,'' should consider that it was
+far from obvious to Newton (``Absolute, true and mathematical time, of itself, and
+from its own nature flows equably without regard to anything external \ldots''), nor was it obvious to Einstein.
+Levi-Civita\index{Levi-Civita!Tullio} nudged Einstein the direction of coordinate independence in 1912. Einstein
+tried hard to make a coordinate-independent theory, but for reasons described in section \ref{sec:hole-argument} (p.~\pageref{sec:hole-argument}),
+he convinced himself that that was a dead end. In 1914-15 he published theories that were not coordinate-independent, which
+you will hear relativists describe as ``obvious'' dead ends because they lack any geometrical interpretation. It seems to me that it takes a highly
+refined intuition to regard as intuitively ``obvious'' an issue that Einstein struggled with like Jacob
+wrestling with Elohim.
+<% end_sec %> % Is coordinate independence obvious?
 
+<% begin_sec("Is coordinate independence trivial?") %>\label{covariance-trivial}
+It has also been alleged that coordinate independence is trivial. To gauge the justice of this complaint,
+let's distinguish between two reasons for caring about coordinate independence:
+\begin{enumerate}
+\item Coordinate independence tells us that when we solve problems, we should avoid writing down any equations
+         in notation that isn't manifestly intrinsic, and avoid interpreting those equations as if the coordinates had
+         intrinsic meaning. Violating this advice doesn't guarantee that you've made a mistake, but it makes it
+         much harder to tell whether or not you have.
+\item Coordinate independence can be used as a criterion for judging whether a particular theory is likely to be
+         successful.
+\end{enumerate}
+Nobody questions the first justification. The second is a little trickier. Laying out the general
+theory systematically in a 1916 paper,\footnote{see p.~\pageref{einstein-covariance}} Einstein wrote
+``The general laws of nature are to be expressed by equations which
+hold good for all the systems of coordinates, that is, are
+covariant with respect to any substitutions whatever (generally covariant).''
+In other words, he was explaining why, with hindsight, his 1914-1915 coordinate-dependent theory had to be a dead end.
+
+The only trouble with this is that Einstein's way of posing the criterion didn't quite hit the nail on the head mathematically.
+As Hilbert famously remarked, ``Every boy in the streets of G\"ottingen understands more
+about four-dimensional geometry than Einstein. Yet, in spite of that, Einstein did the work and not the mathematicians.''
+What Einstein had in mind was that a theory like Newtonian mechanics not only lacks coordinate independence,
+but would also be impossible to put into a coordinate-independent form without making it look hopelessly
+complicated and ugly, like putting lipstick on a pig. But Kretschmann showed in 1917 that any theory could be
+put in coordinate independent form, and Cartan demonstrated in 1923 that this could be done for Newtonian mechanics
+in a way that didn't come out particularly ugly. Physicists today are more apt to pose the distinction in terms
+of ``background independence'' (meaning that a theory should not be phrased in terms of an assumed geometrical
+background) or lack of a ``prior geometry'' (meaning that the curvature of spacetime should come from the solution of field
+equations rather than being imposed by fiat).\index{background independence}\index{prior geometry}
+But these concepts as well have resisted precise mathematical 
+formulation.\footnote{Giulini, ``Some remarks on the notions of general covariance and background independence,'' \url{arxiv.org/abs/gr-qc/0603087v1}}
+My feeling is that this general idea of coordinate independence or background independence is like the equivalence principle: a crucial conceptual
+principle that doesn't lose its importance just because we can't put it in a mathematical box with a ribbon and a bow.
+For example, string theorists take it as a serious criticism of their theory that it is not manifestly background independent,
+and one of their goals is to show that it has a background independence that just isn't obvious on the surface.
+<% end_sec %> % Is coordinate independence trivial?
+
+<% begin_sec("Coordinate independence as a choice of gauge") %>
+It is instructive to consider coordinate independence from the point of view of a field theory. Newtonian gravity can be described
+in three equivalent ways: as a gravitational field $\vc{g}$, as a gravitational potential $\phi$, or as a set of
+gravitational field lines. The field lines are never incident on one another, and locally the field satisfies Poisson's equation.
+
+The electromagnetic field has polarization
+properties different from those of the gravitational field,
+so we describe it using either the two fields $(\vc{E},\vc{B})$, a pair of potentials,\footnote{There is the familiar
+electrical potential $\phi$, measured in volts, but also a vector potential $\vc{A}$, which you may or may not have encountered.
+Briefly, the electric field is given not by $-\nabla\phi$ but by $-\nabla\phi-\partial\vc{A}/\partial t$,
+while the magnetic field is the curl of $\vc{A}$. This is introduced at greater
+length in section \ref{sec:em-four-vector} on page \pageref{sec:em-four-vector}.}\label{em-gauge-first-mentioned}
+or two sets of field
+lines. There are similar incidence conditions and local field equations (Maxwell's equations).
+
+Gravitational fields in relativity have polarization properties unknown to Newton, but the situation is qualitatively
+similar to the two foregoing cases. Now consider the analogy between electromagnetism and relativity.
+In electromagnetism, it is the fields that are
+directly observable, so we expect the potentials to have some extrinsic properties. We can, for example, redefine
+our electrical ground, $\Phi \rightarrow \Phi+C$, without any observable consequences.
+As discussed in more detail in section \ref{sec:covariant-derivative-in-em} on page \pageref{sec:covariant-derivative-in-em}, it is even possible to modify the
+electromagnetic potentials in an entirely arbitrary and nonlinear way that changes from point to point in spacetime. This
+is called a gauge transformation.\index{gauge transformation}
+In relativity,
+the gauge transformations are the smooth coordinate transformations. These gauge transformations distort the
+field lines without making them cut through one another.
+<% marg(150) %>
+<%
+  fig(
+    'star-magnetic-field-lines',
+    %q{Since magnetic field lines can never intersect, a magnetic field pattern contains coordinate-independent information
+       in the form of the knotting of the lines.
+       This figure shows the magnetic field pattern of the star SU Aurigae, as measured by Zeeman-Doppler imaging (Petit at al.).
+       White lines represent magnetic field lines that close upon themselves in the immediate vicinity of the star;
+       blue lines are those that extend out into the interstellar medium.}
+  )
+%>
+
+<% end_marg %>
+<% end_sec %> % Coordinate independence as a choice of gauge
+<% end_sec %> % Interpretation of coordinate independence
 \begin{hwsection}
 
 <% begin_hw('carousel-paradox') %>

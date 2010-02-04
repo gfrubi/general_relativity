@@ -1005,6 +1005,13 @@ materials to absorb gamma-rays is strongly dependent on atomic number $Z$. The c
 corresponds to the vacuum.)
 <% end_hw %>
 
+<% begin_hw('hafele-frame-indept') %>
+A skeptic claims that the Hafele-Keating experiment can only be explained correctly by relativity
+in a frame in which the earth's axis is at rest. Prove mathematically that this is incorrect.
+Does it matter whether the frame is inertial?
+\hwsoln
+<% end_hw %>
+
 <% begin_hw('matrix-noncommutative') %>
 Assume the metric $g=diag(+1,+1,+1)$. Which of the following correctly expresses the noncommutative
 property of ordinary matrix multiplication?

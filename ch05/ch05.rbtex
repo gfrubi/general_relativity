@@ -604,7 +604,7 @@ The result, up to unitless factors that we didn't pretend to find, is
 \begin{equation*}
   \Delta \theta \sim \frac{nGM}{c^2r} \qquad .
 \end{equation*}
-There is also a Thomas precession.\index{Thomas precession} Like the spacetime curvature effect, it is proportional to $nGM/c^2r$.
+We might also expect a Thomas precession.\index{Thomas precession} Like the spacetime curvature effect, it would be proportional to $nGM/c^2r$.
 Since we're not worrying about unitless factors, we can just lump the Thomas precession together with the
 effect already calculated.
 

@@ -404,6 +404,17 @@ of the data.
 
 \begin{hwsection}
 
+<% begin_hw('why-geodesics-for-test-particles') %>\index{geodesics!as world-lines of test particles}
+(a) Starting on page \pageref{sec:geometrical-gravity}, we have associated geodesics with the world-lines of low-mass
+objects (test particles). Use the Hulse-Taylor pulsar as an example to show that the assumption of low mass was a necessary one.
+How is this similar to the issues encountered on pp.~\pageref{sec:chiao-paradox}ff involving charged particles?\hwendpart
+(b) Show that if low-mass, uncharged particles did not follow geodesics (in a spacetime with no ambient electromagnetic
+fields), it would violate Lorentz invariance.
+Make sure that your argument explicitly invokes the low mass and the lack of charge, because otherwise your
+argument is wrong.
+\hwsoln
+<% end_hw %>
+
 <% begin_hw('real-exponential') %>
 Show that the metric $\der s^2 = \der t^2 -A\der x^2  -B\der y^2 - \der z^2$ with
 \begin{align*}
