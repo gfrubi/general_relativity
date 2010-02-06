@@ -230,7 +230,7 @@ mesh of light rays. If one of the mesh points lies, for example, at the peak of 
 then the sum $\Sigma\theta$ of the angles of the vertices meeting at that point will be less than $2\pi$, in contradiction
 to Euclid. Although the light rays do travel through the air above the dirt, we can think of them as approximations
 to geodesics painted directly on the dirt, which would be intrinsic rather than extrinsic.
-The angular defect around a vertex now vanishes, because the space is locally Euclidean, but
+The angular defect\index{angular defect} around a vertex now vanishes, because the space is locally Euclidean, but
 we now pick up a different kind of angular defect,
 which is that the interior angles of a triangle no longer add up to the Euclidean value
 of $\pi$.

@@ -451,13 +451,13 @@ four-vector to form $f_b\der x^b$, which can also be expressed as
 $f_b v^b \der \tau=\gamma(f-\vc{k}\cdot\vc{v})\der\tau$. If the charge is at rest and there are no magnetic fields, then the quantity in parentheses
 is $f=E/h=(q/h)\Phi$. The correct relativistic generalization is clearly $f_b=(q/h)A_b$.\label{vector-potential-propagator}
 
-Since $A_b$'s spacelike part, $\vc{A}$, results
+Since $A_b$'s spacelike part, $\vc{A}$, results\label{potential-to-fields}
 in the velocity-dependent effects, we conclude that $\vc{A}$ is a kind of potential that relates to the magnetic field, in the same
 way that the potential $\Phi$ relates to the electric field. $\vc{A}$ is known as the vector potential, and the
 relation between the potentials and the fields is
 \begin{align*}
   \vc{E} &= -\nabla\Phi - \frac{\partial\vc{A}}{\partial t} \\
-  \vc{B} &= \nabla\vc{B} \qquad .
+  \vc{B} &= \nabla\vc{A} \qquad .
 \end{align*}
 An excellent discussion of the vector potential from a purely classical point of view
 is given in the classic \emph{Feynman Lectures}.\footnote{\emph{The Feynman Lectures on Physics}, Feynman, Leighton, and Sands, Addison Wesley Longman, 1970}
@@ -586,6 +586,17 @@ Applying the tensor transformation law gives (problem \ref{hw:const-accel-metric
   g'_{x'x'} &= -1
 \end{align*}
 Unlike the result of example \ref{eg:bogus-accel-metric}, this one never misbehaves.
+\end{eg}
+
+\begin{eg}{Accurate timing signals}\index{electromagnetic potential four-vector}
+The relation between the potential $\vc{A}$ and the fields $\vc{E}$ and $\vc{B}$ given on page \pageref{potential-to-fields}
+can be written in manifestly covariant form as $F_{ij}=\partial_{[i} A_{j]}$, where $F$, called the electromagnetic tensor,\index{electromagnetic tensor}
+is an antisymmetric rank-two tensor whose six independent components correspond in a certain way with the components of the $\vc{E}$ and $\vc{B}$
+three-vectors. If $F$ vanishes completely at a certain point in spacetime, then the linear form of the tensor transformation laws guarantees
+that it will vanish in all coordinate systems, not just one. The GPS system\index{GPS!timing signals} takes advantage of this fact
+in the transmission of timing signals from the satellites to the users. The electromagnetic wave is modulated so that the bits
+it transmits are represented by phase reversals of the wave. At these phase reversals, $F$ vanishes, and this vanishing holds true
+regardless of the motion of the user's unit or its position in the earth's gravitational field.
 \end{eg}
 
 <% end_sec %>
@@ -887,6 +898,15 @@ so we can unambiguously define a notion of parallel-transporting all the contrib
 flux to one arbitrarily chosen point P and then adding them. Asymptotic flatness also allows
 us to define an approximate notion of a global Lorentz frame, so that the choice of P doesn't
 matter.
+<% marg(0) %>
+<%
+  fig(
+    'relativistic-jet',
+    %q{A relativistic jet.}
+  )
+%>
+<% end_marg %>
+% http://en.wikipedia.org/wiki/File:M87_jet.jpg
 
 As an example, figure \figref{relativistic-jet} shows a jet of matter being ejected from the galaxy M87 at
 ultrarelativistic fields. The blue color of the jet in the visible-light image comes from synchrotron radiation,
@@ -901,15 +921,6 @@ preferred axis. What aspect of the initial conditions in the formation of the ho
 The most likely candidate is the angular momentum. We are thus led to suspect that black holes can possess angular
 momentum, that the angular momentum preserves information about their formation, and that the angular momentum
 is externally detectable via its effect on the spacetime metric.
-<% marg(50) %>
-<%
-  fig(
-    'relativistic-jet',
-    %q{A relativistic jet.}
-  )
-%>
-% http://en.wikipedia.org/wiki/File:M87_jet.jpg
-<% end_marg %>
 
 What would the form of such a metric be? Spherical coordinates in flat spacetime give a metric
 like this:

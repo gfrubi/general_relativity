@@ -496,9 +496,9 @@ followed by a radio wave,\index{Radio waves in the HF band tend to be trapped be
 causing them to curve over the horizon, allowing long-distance communication.} or by an airplane pilot who keeps her wings level and her rudder straight.
 The world-``line'' of an object acted on by nongravitational forces is not considered to be a straight ``line''
 in the sense of O1-O4. When necessary, one eliminates this ambiguity in the overloaded term ``line'' by referring
-to the lines of O1-O4 as \emph{geodesics}.\index{geodesics}\index{geodesics!as world-lines of test particles}
+to the lines of O1-O4 as \emph{geodesics}.\index{geodesic}\index{geodesic!as world-line of a test particle}
 The world-line of a low-mass object acted on only by gravity is one type of geodesic.\footnote{For more justification of this statement,
-see ch. \ref{ch:}, problem \ref{hw:why-geodesics-for-test-particles}, on page \pageref{hw:why-geodesics-for-test-particles}.}
+see ch. \ref{ch:waves}, problem \ref{hw:why-geodesics-for-test-particles}, on page \pageref{hw:why-geodesics-for-test-particles}.}
 
 We can now see the deep physical importance of statement O1, that two events determine a line.\label{unique-geodesics}
 To predict the trajectory of a golf ball, we need to have some initial data. For example, we could measure

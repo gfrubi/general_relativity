@@ -404,7 +404,7 @@ of the data.
 
 \begin{hwsection}
 
-<% begin_hw('why-geodesics-for-test-particles') %>\index{geodesics!as world-lines of test particles}
+<% begin_hw('why-geodesics-for-test-particles') %>\index{geodesic!as world-line of a test particle}
 (a) Starting on page \pageref{sec:geometrical-gravity}, we have associated geodesics with the world-lines of low-mass
 objects (test particles). Use the Hulse-Taylor pulsar as an example to show that the assumption of low mass was a necessary one.
 How is this similar to the issues encountered on pp.~\pageref{sec:chiao-paradox}ff involving charged particles?\hwendpart

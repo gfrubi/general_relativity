@@ -518,7 +518,7 @@ Let's determine the directions and relative strengths of the two effects in the 
 
 A radio photon emitted by a GPS satellite gains energy as it falls to the earth's surface, so its energy
 and frequency are increased by this effect. The observer on the ground, after accounting for all non-relativistic effects
-such as Doppler shifts and the Sagnac effect (p. \pageref{sagnac}), would interpret the frequency shift by saying that time aboard
+such as Doppler shifts and the Sagnac effect (p. \pageref{sagnac}),\index{Sagnac effect!in GPS} would interpret the frequency shift by saying that time aboard
 the satellite was flowing more quickly than on the ground.
 
 However, the satellite is also moving at orbital speeds, so there is a Lorentz time dilation effect. According
@@ -1087,7 +1087,7 @@ The complete form of the transformation $L(v\hat{\vc{x}})$, a Lorentz boost alon
   y' &= y \\
   z' &= z
 \end{align*}
-<% marg(0) %>
+<% marg(80) %>
 <%
   fig(
     'boosts-tangling',
@@ -1114,6 +1114,15 @@ Self-check: Apply similar reasoning to a Galilean boost.
 
 To see how this mathematical fact would play out as a physical effect, we need to consider how to make a physical manifestation of
 the concept of a direction in space.
+<% marg(-50) %>
+<%
+  fig(
+    'photon-in-cavity-and-gyroscope',
+    %q{Inertial devices for maintaining a direction in space: 1. A ring laser. 2. The photon in a perfectly reflective spherical cavity.
+          3. A gyroscope.}
+  )
+%>
+<% end_marg %>
 
 \label{sagnac}
 In two space dimensions, we can construct a ring laser,\index{ring laser} \subfigref{photon-in-cavity-and-gyroscope}{1},
@@ -1122,7 +1131,10 @@ inserted in one place. Coherent light traverses the loop simultaneously in both 
 in a beat pattern, which can be observed by sampling the light at some point along the loop's
 circumference. If the loop is rotated in its own plane, the interference pattern is altered,
 because the beam-sampling device is in a different place, and the path lengths traveled by the
-two beams has been altered. This phase shift is called the Sagnac effect.\index{Sagnac effect}
+two beams has been altered. This phase shift is called the Sagnac effect,\index{Sagnac effect!defined}
+after M. Georges Sagnac, who observed the effect in 1913 and interpreted it, incorrectly, as evidence for the existence
+of the aether.\footnote{Comptes rendus de l'Acad\'{e}mie des science 157 (1913) 708}
+% translation in Rizzi and Ruggiero anthology
 The loop senses its own angular acceleration relative to an inertial reference frame.
 If we transport the loop while always carefully adjusting its orientation so as to prevent
 phase shifts, then its orientation has been preserved. 
@@ -1143,16 +1155,6 @@ tool is a gyroscope.  For example, one of the classic tests of general relativit
 \pageref{sec:geodetic-effect-estimate} and \pageref{sec:geodetic-effect-exact}), in which
 four gyroscopes aboard a satellite were observed to precess due to special- and general-relativistic
 effects.
-
-<% marg(50) %>
-<%
-  fig(
-    'photon-in-cavity-and-gyroscope',
-    %q{Inertial devices for maintaining a direction in space: 1. A ring laser. 2. The photon in a perfectly reflective spherical cavity.
-          3. A gyroscope.}
-  )
-%>
-<% end_marg %>
 
 The gyroscope, however, is not so obviously a literal implementation of our basic concept of a direction. How, then,
 can we be sure that its behavior is equivalent to that of the photon-in-a-cavity? We could, for example,

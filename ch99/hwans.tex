@@ -160,6 +160,43 @@ with the third-order terms being nonclassical.
 
 \beginsolutions{3}
 
+\hwsolnhdr{cylinder-spacetime}
+
+(a) As discussed in example \ref{eg:extrinsic-curvature} on page \pageref{eg:extrinsic-curvature}, a cylinder has local,
+intrinsic properties identical to those of flat space. The cylindrical model therefore has the same properties L1-L5
+as our standard model of Lorentzian space, provided that L1-L5 are taken as purely local statements.
+
+(b) The cylindrical model does violate L3. In this model, the doubly-intersecting world-lines
+described by property G will not occur if the world-lines are oriented exactly parallel to the cylinder. This picks
+out a preferred direction in space, violating L3 if L3 is interpreted globally. Frames moving parallel to the axis have
+different properties from frames moving perpendicular to the axis.
+
+But just because this particular model violates the
+global interpretation of L3, that doesn't mean that all models of G violate it. We could instead construct a model in
+which space wraps around in every direction. In the 2+1-dimensional case, we can visualize the spatial part of such a model as the surface
+of a doughnut embedded in three-space, with the caveat that we don't want to think of the doughnut hole's circumference as being
+shorter than the doughnut's outer radius. Giving up the idea of a visualizable model embedded in a higher-dimensional space,
+we can simply take a three-dimensional cube and identify its opposite faces. Does this model violate L3? It's not quite as
+obvious, but actually it does. The spacelike great-circle geodesics of this model come in different circumferences, with the shortest
+being those parallel to the cube's axes.
+
+We can't prove by constructing a finite number of models that every possible model of G violates L3. The two models we've found, however,
+can make us suspect that this is true, and can give us insight into how to prove it. For any pair of world-lines that
+provide an example of G, we can fix a coordinate system K in which the two particles started out at A by flying off back-to-back.
+In this coordinate system, we can measure the sum of the distances traversed by the two particles from A to B. (If homegeneity, L1,
+holds, then they make equal contributions to this sum.) The fact that the world-lines were traversed by material particles
+means that we can, at least in principle, visit every point on them and measure the total distance using rigid rulers.
+We call this the circumference of the great circle AB, as measured in a particular frame.
+The set of all such circumferences has some greatest lower bound. If this bound is zero, then such geodesics can exist locally, and
+this would violate even the local interpretation of L1-L5. If the bound is nonzero, then let's fix a circle that has
+this minimum circumference. Mark the spatial points this circle passes through, in the frame of reference defined above.
+This set of points is a spacelike circle of minimum radius. Near a given point on the circle, the circle looks like
+a perfectly straight axis, whose orientation is presumably random. Now let some observer $\zu{K}'$ travel around this circle at a velocity
+$v$ relative to K, measuring the circumference with a Lorentz-contracted ruler. The circumference is greater than the minimal
+one measured by K. Therefore for any axis with a randomly chosen orientation, we have a preferred rest frame in which the
+corresponding great circle has minimum circumference. This violates L3. Thanks to physicsforums user atyy for suggesting this
+argument.
+
 \hwsolnhdr{carousel-paradox}
 
 The process that led from the Euclidean metric of example \ref{eg:metric-in-polar-coords} on page \pageref{eg:metric-in-polar-coords}
@@ -172,13 +209,21 @@ redefines geodesics so that they have minimal length as determined by a chain of
 
 \hwsolnhdr{carousel-metric}
 
-(a) The $\der\theta'^2$ term of the metric blows up here. A geodesic connecting point A, at $r=1/\omega$, with point B, at $r<1/\omega$,
-must have minimum length. This requires that the geodesic be directly radial at A, so that $\der\theta'=0$; for if not, then we could
-vary the curve slightly so as to reduce $|\der\theta'|$, and the resulting increase in the $\der r^2$ term would be negligible
-compared to the decrease in the $\der\theta'^2$ term. (b) The spatial track of a laser beam is not a geodesic of this metric.
-For example, a laser beam sent outward from the axis would make a track that was straight in the lab frame, but curved in the
+(a) No.
+The track is straight in the lab frame, but curved in the
 rotating frame. Since the spatial metric in the rotating frame is symmetric with respect to clockwise and counterclockwise,
 the metric can never result in geodesics with a specific handedness.
+(b) The $\der\theta'^2$ term of the metric blows up here. A geodesic connecting point A, at $r=1/\omega$, with point B, at $r<1/\omega$,
+must have minimum length. This requires that the geodesic be directly radial at A, so that $\der\theta'=0$; for if not, then we could
+vary the curve slightly so as to reduce $|\der\theta'|$, and the resulting increase in the $\der r^2$ term would be negligible
+compared to the decrease in the $\der\theta'^2$ term. (c) No. As we found in part a, laser beams can't be used to form geodesics.
+
+\hwsolnhdr{gps-t-discontinuity}
+
+The coordinate $T$ would have a discontinuity of $2\pi\omega r^2/(1-\omega^2 r^2)$. Reinserting factors of $c$ to make it work
+out in SI units, we have $2\pi\omega r^2 c^{-2}/(1-\omega^2 r^2 c^{-2}) \approx 207\ \zu{ns}$. The exact error in position that
+would result is dependent on the geometry of the current position of the satellites, but it would be on the order of $c\Delta T$,
+which is $\sim 100\ \munit$. This is considerably worse than civilian GPS's 20-meter error bars.
 
 \beginsolutions{4}
 
