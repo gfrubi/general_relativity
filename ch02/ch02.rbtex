@@ -797,7 +797,7 @@ $\tanh 1.386=0.88$ relative to the earth. Any number of velocities can be added 
 
 Self-check: Interpret the asymptotes of the graph in figure \figref{rapidity}.
 
-\begin{eg}{Bell's spaceship paradox}\label{eg:bell-spaceship-paradox}
+\begin{eg}{Bell's spaceship paradox}\label{eg:bell-spaceship-paradox}\index{spaceship paradox}\index{Bell, John!spaceship paradox}
 A difficult philosophical question is whether the time dilation and length contractions predicted by relativity
 are ``real.'' This depends, of course, on what one means by ``real.'' They are frame-dependent, i.e., observers
 in different frames of reference disagree about them. But this doesn't tell us much about their reality, since
@@ -822,7 +822,7 @@ because of its own inertia.)
 
 The popular answer in the CERN cafeteria was that the thread would not break, the reasoning being that
 Lorentz contraction is a frame-dependent effect, and no such contraction would be observed in A and B's frame.
-The ships maintain a constant difference from one another, so C merely disagrees
+The ships maintain a constant distance from one another, so C merely disagrees
 with A and B about the length of the thread, as well as other lengths like the lengths of the spaceships.
 
 The error in this reasoning is that the accelerations of A and B were specified to be equal and constant in C's frame,
@@ -844,10 +844,13 @@ A and B do not agree with C about simultaneity, and since they also do not agree
 are constant, they do not consider their own accelerations to be equal at a given moment of time. Therefore
 the string changes its length, and this is consistent with Bell's original, simple answer, which did not require
 comparing different frames of reference. To establish that the string comes under tension, rather than going
-slack, we can apply the equivalence principle. Let A be the trailing ship and B the leading one. By the equivalence
+slack, we can apply the equivalence principle. By the equivalence
 principle, any experiments done by A and B give the same results as if they were immersed in a gravitational
-field. B sees A as experiencing a gravitational time dilation. According to B, the slowpoke A isn't accelerating
+field. The leading ship B sees A as experiencing a gravitational time dilation. According to B, the slowpoke A isn't accelerating
 as rapidly as it should, causing the string to break.
+
+These ideas are closely related to the fact that general relativity does not admit any spacetime that
+can be interpreted as a uniform gravitational field (see problem \ref{hw:uniform-field}, p.~\pageref{hw:uniform-field}).
 \end{eg}
 
 

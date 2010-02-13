@@ -337,6 +337,18 @@ There is a similar command \verb@riemann(true);@ to compute the Riemann rensor \
 <% end_sec %> % CAS
 <% end_sec %> % zero mass
 
+<% begin_sec("Geometrized units") %>\index{geometrized units}\index{gravitational constant}\index{units!geometrized}
+If the mass creating the gravitational field \emph{isn't} zero, then we need to decide what units to measure it in.
+It has already proved very convenient to adopt units with $c=1$, and we will now also set the gravitational constant $G=1$.
+Previously, with only $c$ set to 1, the units of time and length were the same,
+$[T]=[L]$, and so were the units of mass and energy, $[M]=[E]$. With $G=1$, all of these become the same units,
+$[T]=[L]=[M]=[E]$.
+
+Self-check: Verify this statement by combining Newton's law of gravity with Newton's second law of motion.
+
+The resulting system is referred to as geometrized, because units like mass that had formerly belonged to the province of
+mechanics are now measured using the same units we would use to do geometry.
+<% end_sec %> % Geometrized units
 <% begin_sec("A large-r limit") %>
 
 Now let's think about how to tackle the real problem of finding the non-flat metric. Although general relativity lets
@@ -1084,6 +1096,11 @@ the event horizon and can never send information back out.
 <% end_sec %> % black holes
 
 \begin{hwsection}
+
+<% begin_hw('geometrized-power') %>
+Show that in geometrized units, power is unitless. Find the equivalent in watts of
+a power that equals 1 in geometrized units.
+<% end_hw %>
 
 <% begin_hw('coordinate-singularity-sphere') %>
 The metric of coordinates $(\theta,\phi)$ on the unit sphere is $\der s^2=\der\theta^2+\sin^2\theta\der\phi^2$.

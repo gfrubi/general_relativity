@@ -918,8 +918,11 @@ it must also be independent of the radius of the sphere.
 \end{eg}
 
 Example \ref{eg:christoffel-on-globe} is in two spatial dimensions. In spacetime, $\Gamma$ is
-essentially the gravitational field, and early papers in relativity straightforwardly refer to
-it that way. % Schwarzschild 1916
+essentially the gravitational field (see problem \ref{hw:uniform-field}, p.~\pageref{hw:uniform-field}),
+and early papers in relativity essentially refer to
+it that way.\footnote{``On the gravitational field of a point mass according
+to Einstein's theory,'' Sitzungsberichte der K\"{o}niglich Preussischen Akademie der Wissenschaften 1 (1916) 189,
+translated in \url{arxiv.org/abs/physics/9905030v1}.}
 This may feel like a joyous reunion with our old friend from freshman mechanics, $g=9.8\ \munit/\sunit$.
 But our old friend has changed. In Newtonian mechanics, accelerations like $g$ are frame-invariant (considering only inertial
 frames, which are the only legitimate ones in that theory). In general relativity they are frame-dependent,
@@ -1577,41 +1580,10 @@ Partial derivatives commute with partial derivatives. Covariant derivatives don'
 with covariant derivatives. Do covariant derivatives commute with partial derivatives?
 <% end_hw %>
 
-<% begin_hw('a-dot-v') %>
-(a) For an object moving in a circle at constant speed, the dot product of the classical
-three-vectors $\vc{v}$ and $\vc{a}$ is zero. Give an interpretation in terms of the
-work-kinetic energy theorem.
-(b) In the case of relativistic four-vectors, $v^ia_i=0$ for \emph{any} world-line.
-Give a similar interpretation. Hint: find the rate of change of the four-velocity's squared magnitude.
-<% end_hw %>
-
-<% begin_hw('parity-metric-change') %>
-Starting from coordinates $(t,x)$ having a Lorentzian metric $g$, transform the metric tensor
-into reflected coordinates $(t',x')=(t,-x)$, and verify that $g'$ is the same as $g$.
-<% end_hw %>
-
-<% begin_hw('lorentz-metric-change') %>
-Starting from coordinates $(t,x)$ having a Lorentzian metric $g$, transform the metric tensor
-into Lorentz-boosted coordinates $(t',x')$, and verify that $g'$ is the same as $g$.
-<% end_hw %>
-
-<% begin_hw('const-accel-metric') %>
-Verify the transformation of the metric given in example \ref{eg:const-accel-metric} on page \pageref{eg:const-accel-metric}.
-<% end_hw %>
-
 <% begin_hw('geodesic-affine') %>
 Show that if the differential equation for geodesics on page \pageref{geodesic-diffeq} is satisfied for one affine
 parameter $\lambda$, then it is also satisfied for any other affine parameter $\lambda'=a\lambda+b$, where $a$ and $b$
 are constants.
-<% end_hw %>
-
-<% begin_hw('compton') %>
-For gamma-rays in the MeV range, the most frequent mode of interaction with matter is Compton scattering,\index{Compton scattering}
-in which the photon is scattered by an electron without being absorbed.
-Only part of the gamma's energy is deposited, and the amount is related to the angle of scattering.
-Use conservation of four-momentum to show that
-in the case of scattering at 180 degrees, the scattered photon has energy $E'=E/(1+2E/m)$, where $m$ is the mass of the
-electron.
 <% end_hw %>
 
 <% begin_hw('carousel-cartesian') %>
@@ -1620,6 +1592,38 @@ a flat-spacetime metric in rotating polar coordinates.
 (a) Verify by explicit computation that this metric represents a flat spacetime.
 (b) Reexpress the metric in rotating Cartesian coordinates, and check your answer by
 verifying that the Riemann tensor vanishes.
+<% end_hw %>
+
+<% begin_hw('uniform-field') %>
+The purpose of this problem is to explore the difficulties inherent in finding anything
+in general relativity that represents a uniform gravitational field $g$. In example
+\ref{eg:gps} on page \pageref{eg:gps}, we found, based on elementary arguments about
+the equivalence principle and photons in elevators, that gravitational time dilation
+must be given by $e^\Phi$, where $\Phi=gz$ is the gravitational potential.
+This results in a metric
+\begin{equation}\label{eq:uniform-field-metric-exp}
+  \der s^2 = e^{2gz}\der t^2-\der z^2 \qquad .
+\end{equation}
+On the other hand, example \ref{eg:const-accel-metric} on page \pageref{eg:const-accel-metric}
+derived the metric
+\begin{equation}\label{eq:uniform-field-metric-rindler}
+  \der s^2 = (1+gz)^2  \der t^2 - \der z^2 \qquad .
+\end{equation}
+by transforming from a Lorentz frame to a frame whose origin moves with constant proper acceleration $g$.
+(These are known as Rindler coordinates.)\index{Rindler coordinates}
+Prove the following facts. None of the calculations are so complex as to require symbolic math software.
+\hwendpart
+(a) The metrics [\ref{eq:uniform-field-metric-exp}] and [\ref{eq:uniform-field-metric-rindler}]
+are approximately consistent with one another for $z$ near 0.\hwendpart
+(b) When a test particle is released from rest in either of these metrics, its initial proper acceleration is $g$.\hwendpart
+(c) The two metrics are not exactly equivalent to one another under any change of coordinates.\hwendpart
+(d) Both spacetimes are uniform in the sense that the curvature is constant. (In both cases, this can be proved without
+an explicit computation of the Riemann tensor.)\hwendpart
+\hwsoln
+\hwremark{The incompatibility between [\ref{eq:uniform-field-metric-exp}] and [\ref{eq:uniform-field-metric-rindler}]
+can be interpreted as showing that general relativity does not admit any spacetime that has all the global properties
+we would like for a uniform gravitational field. This is related to Bell's
+spaceship paradox (example \ref{eg:bell-spaceship-paradox}, p.~\pageref{eg:bell-spaceship-paradox}).}\index{Bell, John!spaceship paradox}\index{spaceship paradox}
 <% end_hw %>
 
 

@@ -1240,7 +1240,7 @@ field lines without making them cut through one another.
 Consider a spacetime that is locally exactly like the standard Lorentzian spacetime described in ch.~\ref{ch:flat}, but that
 has a global structure differing in the following way from the one we have implicitly assumed. This spacetime has global
 property G: Let two material particles
-have world-lines that coincide at event A, with some nonzero relative velocity: then there may be some event B in the future
+have world-lines that coincide at event A, with some nonzero relative velocity; then there may be some event B in the future
 light-cone of A at which the particles' world-lines coincide again. This sounds like a description of something that
 we would expect to happen in curved spacetime, but let's see whether that is necessary. We want to know whether this violates 
 the flat-space properties L1-L5 on page \pageref{lorentz-geometry-postulates}, if those properties are taken as local.\\
@@ -1248,6 +1248,14 @@ the flat-space properties L1-L5 on page \pageref{lorentz-geometry-postulates}, i
 (b) Now consider the possibility of interpreting L1-L5 as \emph{global} statements.
 Do spacetimes with property G always violate L3 if L3 is taken globally?
 \hwsoln
+<% end_hw %>
+
+<% begin_hw('gps-t-discontinuity') %>
+Example \ref{eg:gps-rotating-frame} on page \pageref{eg:gps-rotating-frame} discusses the discontinuity that
+would result if one attempted to define a time coordinate for the GPS system that was synchronized globally
+according to observers in the rotating frame, in the sense that neighboring observers could verify the
+synchronization by exchanging electromagnetic signals. Calculate this discontinuity at the equator, and
+estimate the resulting error in position that would be experienced by GPS users.
 <% end_hw %>
 
 <% begin_hw('carousel-paradox') %>
@@ -1278,13 +1286,6 @@ are detected. Will this work?
 \hwsoln
 <% end_hw %>
 
-<% begin_hw('gps-t-discontinuity') %>
-Example \ref{eg:gps-rotating-frame} on page \pageref{eg:gps-rotating-frame} discusses the discontinuity that
-would result if one attempted to define a time coordinate for the GPS system that was synchronized globally
-according to observers in the rotating frame, in the sense that neighboring observers could verify the
-synchronization by exchanging electromagnetic signals. Calculate this discontinuity at the equator, and
-estimate the resulting error in position that would be experienced by GPS users.
-<% end_hw %>
 
 \end{hwsection}
 

@@ -586,6 +586,9 @@ Applying the tensor transformation law gives (problem \ref{hw:const-accel-metric
   g'_{x'x'} &= -1
 \end{align*}
 Unlike the result of example \ref{eg:bogus-accel-metric}, this one never misbehaves.
+
+The closely related topic of a uniform gravitational field in general relativity is considered in
+problem \ref{hw:uniform-field} on page \pageref{hw:uniform-field}.
 \end{eg}
 
 \begin{eg}{Accurate timing signals}\index{electromagnetic potential four-vector}
@@ -1016,6 +1019,28 @@ materials to absorb gamma-rays is strongly dependent on atomic number $Z$. The c
 corresponds to the vacuum.)
 <% end_hw %>
 
+<% begin_hw('a-dot-v') %>
+(a) For an object moving in a circle at constant speed, the dot product of the classical
+three-vectors $\vc{v}$ and $\vc{a}$ is zero. Give an interpretation in terms of the
+work-kinetic energy theorem.
+(b) In the case of relativistic four-vectors, $v^ia_i=0$ for \emph{any} world-line.
+Give a similar interpretation. Hint: find the rate of change of the four-velocity's squared magnitude.
+<% end_hw %>
+
+<% begin_hw('parity-metric-change') %>
+Starting from coordinates $(t,x)$ having a Lorentzian metric $g$, transform the metric tensor
+into reflected coordinates $(t',x')=(t,-x)$, and verify that $g'$ is the same as $g$.
+<% end_hw %>
+
+<% begin_hw('lorentz-metric-change') %>
+Starting from coordinates $(t,x)$ having a Lorentzian metric $g$, transform the metric tensor
+into Lorentz-boosted coordinates $(t',x')$, and verify that $g'$ is the same as $g$.
+<% end_hw %>
+
+<% begin_hw('const-accel-metric') %>
+Verify the transformation of the metric given in example \ref{eg:const-accel-metric} on page \pageref{eg:const-accel-metric}.
+<% end_hw %>
+
 <% begin_hw('hafele-frame-indept') %>
 A skeptic claims that the Hafele-Keating experiment can only be explained correctly by relativity
 in a frame in which the earth's axis is at rest. Prove mathematically that this is incorrect.
@@ -1044,6 +1069,15 @@ On page \pageref{sec:doppler}, we found the relativistic Doppler shift in 1+1 di
 Extend this to 3+1 dimensions, and check your result against the one given by Einstein on
 page \pageref{einstein-doppler}.
 \hwsoln
+<% end_hw %>
+
+<% begin_hw('compton') %>
+For gamma-rays in the MeV range, the most frequent mode of interaction with matter is Compton scattering,\index{Compton scattering}
+in which the photon is scattered by an electron without being absorbed.
+Only part of the gamma's energy is deposited, and the amount is related to the angle of scattering.
+Use conservation of four-momentum to show that
+in the case of scattering at 180 degrees, the scattered photon has energy $E'=E/(1+2E/m)$, where $m$ is the mass of the
+electron.
 <% end_hw %>
 
 <% begin_hw('pulsar') %>

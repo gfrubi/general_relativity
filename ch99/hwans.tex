@@ -197,15 +197,8 @@ one measured by K. Therefore for any axis with a randomly chosen orientation, we
 corresponding great circle has minimum circumference. This violates L3. Thanks to physicsforums user atyy for suggesting this
 argument.
 
-\hwsolnhdr{carousel-paradox}
-
-The process that led from the Euclidean metric of example \ref{eg:metric-in-polar-coords} on page \pageref{eg:metric-in-polar-coords}
-to the non-Euclidean one of equation [\ref{eq:rotating-spatial}] on page \pageref{eq:rotating-spatial} was not just a series
-of coordinate transformations. At the final step, we got rid of the variable $t$, reducing the number of dimensions by one.
-Similarly, we could take a Euclidean three-dimensional space and eliminate all the points except for the ones on the surface
-of the unit sphere; the geometry of the embedded sphere is non-Euclidean, because we've redefined geodesics to be lines that
-are ``as straight as they can be'' (i.e., have minimum length) while restricted to the sphere. In the example of the carousel, the final step effectively
-redefines geodesics so that they have minimal length as determined by a chain of radar measurements.
+More detailed discussions of these issues are given in Bansal et al., \url{arxiv.org/abs/gr-qc/0503070v1},
+and Barrow and Levin, \url{arxiv.org/abs/gr-qc/0101014v1}.
 
 \hwsolnhdr{carousel-metric}
 
@@ -217,6 +210,16 @@ the metric can never result in geodesics with a specific handedness.
 must have minimum length. This requires that the geodesic be directly radial at A, so that $\der\theta'=0$; for if not, then we could
 vary the curve slightly so as to reduce $|\der\theta'|$, and the resulting increase in the $\der r^2$ term would be negligible
 compared to the decrease in the $\der\theta'^2$ term. (c) No. As we found in part a, laser beams can't be used to form geodesics.
+
+\hwsolnhdr{carousel-paradox}
+
+The process that led from the Euclidean metric of example \ref{eg:metric-in-polar-coords} on page \pageref{eg:metric-in-polar-coords}
+to the non-Euclidean one of equation [\ref{eq:rotating-spatial}] on page \pageref{eq:rotating-spatial} was not just a series
+of coordinate transformations. At the final step, we got rid of the variable $t$, reducing the number of dimensions by one.
+Similarly, we could take a Euclidean three-dimensional space and eliminate all the points except for the ones on the surface
+of the unit sphere; the geometry of the embedded sphere is non-Euclidean, because we've redefined geodesics to be lines that
+are ``as straight as they can be'' (i.e., have minimum length) while restricted to the sphere. In the example of the carousel, the final step effectively
+redefines geodesics so that they have minimal length as determined by a chain of radar measurements.
 
 \hwsolnhdr{gps-t-discontinuity}
 
@@ -264,6 +267,23 @@ $(f,f\cos\theta,f\sin\theta)$, where $\theta$ is interpreted as the angle betwee
 propagation and the relative velocity. Putting this through a Lorentz boost along the $x$ axis,
 we find $f'=\gamma f(1+v\cos\theta)$, which agrees with Einstein's equation on page
 \pageref{einstein-doppler}, except for the arbitrary convention involved in defining the sign of $v$.
+
+\beginsolutions{5}
+
+\hwsolnhdr{uniform-field}
+
+(a) Expanding in a Taylor series, they both have $g_{tt}=1+2gz+\ldots$
+
+(b) In [\ref{eq:uniform-field-metric-exp}], the nonvanishing Christoffel symbols (ignoring permutations of the lower indices) are $\Gamma\indices{^t_{zt}}=g$ and $\Gamma\indices{^z_{tt}}=-g$.
+We can apply the geodesic equation with the affine parameter taken to be the proper time, and this gives the desired result.
+The same property holds for [\ref{eq:uniform-field-metric-rindler}] automatically because of the way it was constructed.
+
+(c) [\ref{eq:uniform-field-metric-rindler}] was constructed by performing a change of coordinates on a flat-space metric, so it is flat. 
+The Riemann tensor of [\ref{eq:uniform-field-metric-exp}] has $R\indices{^t_{ztz}}=-g^2$, so [\ref{eq:uniform-field-metric-exp}] isn't flat.
+Therefore the two can't be the same under a change of coordinates.
+
+(d) [\ref{eq:uniform-field-metric-rindler}] is flat, so its curvature is constant. [\ref{eq:uniform-field-metric-exp}] has Christoffel
+symbols that are all either zero or constant, so its Riemann tensor must also be constant.
 
 \beginsolutions{6}
 
