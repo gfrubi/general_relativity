@@ -276,10 +276,10 @@ we find $f'=\gamma f(1+v\cos\theta)$, which agrees with Einstein's equation on p
 
 (b) This property holds for [\ref{eq:uniform-field-metric-rindler}] automatically because of the way it was constructed.
 In [\ref{eq:uniform-field-metric-exp}], the nonvanishing Christoffel
-symbols (ignoring permutations of the lower indices) are $\Gamma\indices{^t_{zt}}=g$ and $\Gamma\indices{^z_{tt}}=-ge^{2gz}$.
+symbols (ignoring permutations of the lower indices) are $\Gamma\indices{^t_{zt}}=g$ and $\Gamma\indices{^z_{tt}}=ge^{2gz}$.
 We can apply the geodesic equation with the affine parameter taken to be the proper time, and this gives 
-$\ddot{z}=ge^{2gz}\dot{t}^2$, where dots represent differentiation with respect to proper time.
-For a particle instantaneously at rest, $\dot{t}=1/\sqrt{g_{tt}}=e^{-2gz}$, so $\ddot{z}=g$.
+$\ddot{z}=-ge^{2gz}\dot{t}^2$, where dots represent differentiation with respect to proper time.
+For a particle instantaneously at rest, $\dot{t}=1/\sqrt{g_{tt}}=e^{-2gz}$, so $\ddot{z}=-g$.
 
 (c) [\ref{eq:uniform-field-metric-rindler}] was constructed by performing a change of coordinates on a flat-space metric, so it is flat. 
 The Riemann tensor of [\ref{eq:uniform-field-metric-exp}] has $R\indices{^t_{ztz}}=-g^2$, so [\ref{eq:uniform-field-metric-exp}] isn't flat.
@@ -330,8 +330,44 @@ Debunking the argument restores consistency with the answer to part b.
 
 (a) The Ricci tensor is $R_{tt}=g^2e^{2gz}$, $R_{zz}=-g^2$. The scalar curvature is $2g^2$, which is constant, as expected.
 
-(b) The Einstein tensor is $G_{tt}=0$, $G_{zz}=-g^2(1+e^{2gz})$. It is unphysical because it has a zero mass-energy density,
-and a negative pressure.
+(b) Both $G_{tt}$ and $G_{zz}$ vanish by a straightforward computation.
+
+(c) The Einstein tensor is $G_{tt}=0$, $G_{xx}=G_{yy}=g^2$, $G_{zz}=0$. It is unphysical because it has a zero mass-energy density,
+but a nonvanishing pressure.
+
+\hwsolnhdr{petrov-curvature}
+
+The following Maxima code does the calculation:
+\begin{listing}{1}
+load(ctensor); 
+ct_coords:[t,r,phi,z];
+c: cos(sqrt(3)*r);
+s: sin(sqrt(3)*r);
+tt : exp(r)*c;
+phit : exp(r)*s;
+lg:matrix([tt,0,phit,0],
+          [0,-1,0,0],
+          [phit,0,-tt,0],
+          [0,0,0,-exp(-2*r)]
+);
+cmetric();
+scurvature(); /* scalar curvature */
+leinstein(true); /* Einstein tensor with lower indices, display=true */
+\end{listing}
+Note that our definition of \verb@phit@ omits the factor of 2 from the line element, because we're
+using it to set two different off-diagonal elements of the metric, and we don't want to double-count.
+% petrov_curvature.mac
+
+The output of \verb@leinstein@ is silent, despite our setting the display flag to \verb@true@; this is because
+$G_{ab}$'s elements are all zero, and the function only outputs any nonzero elements. We can verify this by
+explicitly asking for output of the components \verb@lein[1,1]@, etc.
+
+Maxima computes the scalar curvature $R$ and outputs it, but isn't smart enough to simplify it completely.
+It is smart enough, however, to show us that it does not depend on $t$, $\phi$, or $z$.
+A good way to get around this problem is to expand $R$ in a Taylor series as a function of $r$.
+For example, a call to \verb@taylor(scurvature(),r,0,12)@ shows that the first 12 terms of the
+Taylor series all vanish.
+
 
 \beginsolutions{8}
 

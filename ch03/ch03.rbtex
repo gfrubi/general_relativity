@@ -823,7 +823,7 @@ with curvature, but the scale is different from one point in space to another.
 <% end_sec %> % Isometry, inner products, and the Erlangen Program
 
 <% begin_sec("Einstein's carousel") %>\label{sec:carousel}
-<% begin_sec("Non-Euclidean geometry observed in the rotating frame") %>
+<% begin_sec("Non-Euclidean geometry observed in the rotating frame") %>\index{rotating frame of reference}
 The following example was historically important, because Einstein used it to convince himself that general relativity should be
 described by non-Euclidean geometry.\footnote{The example is described in Einstein's paper ``The Foundation of the General Theory of Relativity.''
 An excerpt, which includes the example, is given on p.~\pageref{einstein-foundation}.} Its interpretation is also fairly subtle, and the early relativists

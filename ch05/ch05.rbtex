@@ -1594,7 +1594,7 @@ a flat-spacetime metric in rotating polar coordinates.
 verifying that the Riemann tensor vanishes.
 <% end_hw %>
 
-<% begin_hw('uniform-field') %>\label{uniform gravitational field}\label{gravitational field!uniform}
+<% begin_hw('uniform-field') %>\index{uniform gravitational field}\index{gravitational field!uniform}
 The purpose of this problem is to explore the difficulties inherent in finding anything
 in general relativity that represents a uniform gravitational field $g$. In example
 \ref{eg:gps} on page \pageref{eg:gps}, we found, based on elementary arguments about
@@ -1611,7 +1611,8 @@ derived the metric
 \end{equation}
 by transforming from a Lorentz frame to a frame whose origin moves with constant proper acceleration $g$.
 (These are known as Rindler coordinates.)\index{Rindler coordinates}
-Prove the following facts. None of the calculations are so complex as to require symbolic math software.
+Prove the following facts. None of the calculations are so complex as to require symbolic math software,
+so you might want to perform them by hand first, and then check yourself on a computer.
 \hwendpart
 (a) The metrics [\ref{eq:uniform-field-metric-exp}] and [\ref{eq:uniform-field-metric-rindler}]
 are approximately consistent with one another for $z$ near 0.\hwendpart
@@ -1624,8 +1625,8 @@ an explicit computation of the Riemann tensor.)\hwendpart
 can be interpreted as showing that general relativity does not admit any spacetime that has all the global properties
 we would like for a uniform gravitational field. This is related to Bell's
 spaceship paradox (example \ref{eg:bell-spaceship-paradox}, p.~\pageref{eg:bell-spaceship-paradox}).}\index{Bell, John!spaceship paradox}\index{spaceship paradox}
-Some further properties of the metric [\ref{eq:uniform-field-metric-exp}] are analyzed in problem \ref{hw:uniform-field-sources}
-on page \pageref{hw:uniform-field-sources}.
+Some further properties of the metric [\ref{eq:uniform-field-metric-exp}] are analyzed in
+example \ref{eg:uniform-field-kasner} on page \pageref{eg:uniform-field-kasner}.
 <% end_hw %>
 
 

@@ -265,7 +265,7 @@ Collider in the near future, is essentially a mechanism for wriggling out of thi
 that are responsible for the weak nuclear force; the mechanism cannot, however, be extended to allow a massive photon.
 \end{eg}
 
-\begin{eg}{Dust and radiation in cosmological models}\label{eg:dust-and-radiation-cosm}
+\begin{eg}{Dust and radiation in cosmological models}\label{eg:dust-and-radiation-cosm}\index{dust}
 In cosmological models, one needs an equation of state that relates the pressure $P$ to the mass-energy density $\rho$.
 The pressure is a Lorentz scalar. The mass-energy density is not (since mass-energy is just the timelike component
 of a particular vector), but in a coordinate system without any net flow of mass, we can approximate it as one.

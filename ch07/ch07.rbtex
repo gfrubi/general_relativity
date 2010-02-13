@@ -92,6 +92,98 @@ the negative $x$ direction, but there is nothing that would allow such a distinc
 are associated with the pressure, $P$. The form of the tensor with mixed upper and lower indices has the
 simple form $T\indices{^\mu_\nu}=diag(-\rho,P,P,P)$.
 
+\begin{eg}{The uniform gravitational field revisited}\label{eg:uniform-field-kasner}\index{uniform gravitational field}\index{gravitational field!uniform}
+In problem \ref{hw:uniform-field} on page \pageref{hw:uniform-field}, we made a wish list of desired properties
+for a uniform gravitational field, and found that they could not all be satisfied at once. That is, there is no
+global solution to the Einstein field equations that uniquely and satisfactorily embodies all of our Newtonian
+ideas about a uniform field. We now revisit this question in the light of our new knowledge about sources
+and the stress-energy tensor.
+
+The 1+1-dimensional metric
+\begin{equation*}
+  \der s^2 = e^{2gz}\der t^2-\der z^2
+\end{equation*}
+is the one that uniquely satisfies our expectations based on the equivalence principle, and it is a vacuum solution.
+We might logically try to generalize this to 3+1 dimensions as follows:
+\begin{equation*}
+  \der s^2 = e^{2gz}\der t^2-\der x^2 - \der y^2 - \der z^2 \qquad .
+\end{equation*}
+But a funny thing happens now --- simply by slapping on the two new Cartesian axes $x$ and $y$, it turns out
+that we have made our vacuum solution into a non-vacuum solution, and not only that, but the
+resulting energy-momentum tensor is unphysical (problem \ref{hw:uniform-field-sources},
+p.~\pageref{hw:uniform-field-sources}).
+
+For physical motivation in how to get past this obstacle, consider the following argument by
+Born.\footnote{Max Born, \emph{Einstein's Theory of Relativity}, Dover, 1962, p.~320}
+Take a frame of reference tied to a rotating disk, as in the example from which Einstein originally took much of the
+motivation for creating a geometrical theory of gravity (subsection \ref{sec:carousel}, p.~\pageref{sec:carousel}).\index{rotating frame of reference}
+Clocks near the edge of the disk run slowly, and by the equivalence principle, on observer on the disk
+interprets this as a gravitational time dilation. But this is not the only relativistic effect seen by
+such an observer. Her rulers are also Lorentz contracted as seen by a non-rotating observer, and
+she interprets this as evidence of a non-Euclidean spatial geometry. There are some physical differences
+between the rotating disk and our default conception of a uniform field, specifically in the question
+of whether the metric should be static (i.e., lacking in cross-terms between the space and time variables).
+But even so, these considerations make it natural to hypothesize that the correct 3+1-dimensional
+metric should have transverse spatial coefficients that decrease with height.
+
+With this motivation, let's consider a metric of the form
+\begin{equation*}
+  \der s^2 = e^{2z}\der t^2-e^{-2jz}\der x^2 - e^{-2kz}\der y^2 - \der z^2 \qquad ,
+\end{equation*}
+where $j$ and $k$ are constants, and I've taken $g=1$ for convenience.\footnote{A metric of this general form is referred to as a Kasner
+metric. One usually sees it written with a logarithmic change of variables, so that $z$ appears in the base rather than
+in the exponent.}\index{Kasner metric} The following Maxima code
+calculates the scalar curvature and the Einstein tensor:
+\begin{listing}{1}
+load(ctensor);
+ct_coords:[t,x,y,z];
+lg:matrix([exp(2*z),0,0,0],
+          [0,-exp(-2*j*z),0,0],
+          [0,0,-exp(-2*k*z),0],
+          [0,0,0,-1]
+);
+cmetric();   
+scurvature();
+leinstein(true);
+\end{listing}
+% kasner.mac
+The scalar curvature is constant, which is a necessary condition for any spacetime that we want to think of
+as representing a uniform field.
+To get $G_{xx}$ and $G_{yy}$ to vanish, we need $j$ and $k$ to be $(1 \pm \sqrt{3} i)/2$.
+By trial and error, we find that assigning the complex-conjugate values to $j$ and $k$ makes $G_{tt}$ and $G_{zz}$ vanish as well,
+so that we have a vacuum solution. This solution is, unfortunately, complex, so it is not of any obvious value as a physically
+meaningful result. Since the field equations are nonlinear, we can't use the usual trick of forming real-valued superpositions
+of the complex solutions. We could try simply taking the real part of the metric. This gives
+$g_{xx}=e^{-z}\cos(\sqrt{3}z)$ and $g_{yy}=e^{-z}\sin(\sqrt{3}z)$, and is unsatisfactory because the metric becomes
+degenerate (has a zero determinant) at $z=n \pi/2\sqrt{3}$, where $n$ is an integer.
+
+It turns out, however, that there is a very similar solution, found by Petrov in
+1962,\footnote{Petrov, in \emph{Recent Developments in General Relativity}, 1962, Pergamon, p. 383. For a presentation that
+is freely accessible online, see Gibbons and Gielen,
+``The Petrov and Kaigorodov-Ozsv\'{a}th Solutions: Spacetime as a Group Manifold,'' \url{arxiv.org/abs/0802.4082}.} that is real-valued.
+The Petrov metric,\index{Petrov metric} which describes a spacetime with cylindrical symmetry, is:
+\begin{equation*}
+  \der s^2 = -\der r^2 - e^{-2r}\der z^2+e^r[2\sin\sqrt{3}r \der \phi \der t-\cos\sqrt{3}r(\der \phi^2-\der t^2)]
+\end{equation*}
+Note that it has many features in common with the complex oscillatory solution we found above. There are transverse
+length contractions that decay and oscillate in exactly the same way.
+The presence of the $ \der \phi \der t$ term tells us that this is a non-static,
+rotating solution --- exactly like the one that Einstein and Born had in mind in their prototypical example! The Petrov solution can be
+interpreted as the spacetime that exists in the vacuum on the exterior of an infinite, rigidly rotating cylinder of ``dust''\index{dust} ---
+``dust'' in the sense of material particles with an energy-momentum tensor of the form $T\indices{^\mu_\nu}=diag(-\rho,0,0,0)$.
+
+In our attempt at constructing the Cartesian version of this metic, we ran into the problem that the metric became
+degenerate at $z=n \pi/2\sqrt{3}$. The presence of the $ \der \phi \der t$ prevents this from happening in Petrov's
+cylindrical version; two of the metric's diagonal components can vanish at certain values of $r$, but the presence of the off-diagonal component
+prevents the determinant from going to zero. But by examining these values of $r$, we can see that something very strange happens.
+At such a value of $r$, construct a world-line of the form $(t=\text{constant},r=\text{constant},\phi,z=\text{constant})$.
+This world-line is a closed curve, and its proper length is zero, i.e., it is lightlike. This violates causality.
+Gibbons and Gielen have shown, however, that this spacetime satisfies the chronology protection conjecture:\index{chronology protection conjecture}
+``In the context of causality violation we have shown that one cannot create CTCs by spinning up a cylinder beyond
+its critical angular velocity by shooting in particles on timelike or null curves.'' Some other properties of the Petrov
+metric are explored in problem \ref{hw:petrov-curvature} on page \pageref{hw:petrov-curvature}.
+\end{eg}
+
 <% end_sec %> % The energy-momentum tensor
 
 <% begin_sec("The cosmological constant") %>\label{sec:cosmological-constant}% Is a sub-sub-section, so only refer to it by page, not by section number.
@@ -187,7 +279,6 @@ Looking at the role played by $r$ in the estimate, we see that the
 upper bound could have been made tighter by increasing $r$. Observations on galactic scales, for example, constrain it much
 more tightly. This justifies the description of $\Lambda$ as cosmological:
 the larger the scale, the more significant the effect of a nonzero $\Lambda$ would be.
-
 <% end_sec %> % The cosmological constant
 <% end_sec %> % The Einstein field equation
 <% end_sec %> % Sources in general relativity
@@ -1103,17 +1194,28 @@ is so large that it shows our universe to be essentially as non-Machian as gener
 
 \begin{hwsection}
 
-<% begin_hw('uniform-field-sources') %>\label{uniform gravitational field}\label{gravitational field!uniform}
+<% begin_hw('uniform-field-sources') %>\index{uniform gravitational field}\index{gravitational field!uniform}
 In problem \ref{hw:uniform-field} on page \pageref{hw:uniform-field}, we analyzed the properties of the metric
 \begin{equation*}
   \der s^2 = e^{2gz}\der t^2-\der z^2 \qquad .
 \end{equation*}
 (a) In that problem we found that this metric had the same properties at all points in space.
 Verify in particular that it has the same scalar curvature $R$ at all points in space.\hwendpart
-(b) Show that this metric requires an Einstein tensor with unphysical  properties.\hwendpart
+(b) Show that this is a vacuum solution in the two-dimensional $(t,z)$ space.\hwendpart
+(c) Suppose we try to generalize this metric to four dimensions as
+$\der s^2 = e^{2gz}\der t^2-\der x^2 - \der y^2 - \der z^2$.\hwendpart
+Show that this requires an Einstein tensor with unphysical  properties.\hwendpart
+\hwsoln
+<% end_hw %>
+
+<% begin_hw('petrov-curvature') %>\index{Petrov metric}
+Example \ref{eg:uniform-field-kasner} on page \pageref{eg:uniform-field-kasner} presented the Petrov metric.
+Use symbolic math software such as Maxima to verify that it is a vacuum solution, and that its
+scalar curvature is constant (as we expect for a spacetime whose properties are supposed to be uniform).
 \hwsoln
 <% end_hw %>
 \end{hwsection}
+
 
 
 <% end_chapter %>
