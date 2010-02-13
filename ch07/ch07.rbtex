@@ -1100,4 +1100,20 @@ is so large that it shows our universe to be essentially as non-Machian as gener
 
 
 <% end_sec %> % Mach's principle revisited
+
+\begin{hwsection}
+
+<% begin_hw('uniform-field-sources') %>\label{uniform gravitational field}\label{gravitational field!uniform}
+In problem \ref{hw:uniform-field} on page \pageref{hw:uniform-field}, we analyzed the properties of the metric
+\begin{equation*}
+  \der s^2 = e^{2gz}\der t^2-\der z^2 \qquad .
+\end{equation*}
+(a) In that problem we found that this metric had the same properties at all points in space.
+Verify in particular that it has the same scalar curvature $R$ at all points in space.\hwendpart
+(b) Show that this metric requires an Einstein tensor with unphysical  properties.\hwendpart
+\hwsoln
+<% end_hw %>
+\end{hwsection}
+
+
 <% end_chapter %>

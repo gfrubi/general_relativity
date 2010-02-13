@@ -1594,7 +1594,7 @@ a flat-spacetime metric in rotating polar coordinates.
 verifying that the Riemann tensor vanishes.
 <% end_hw %>
 
-<% begin_hw('uniform-field') %>
+<% begin_hw('uniform-field') %>\label{uniform gravitational field}\label{gravitational field!uniform}
 The purpose of this problem is to explore the difficulties inherent in finding anything
 in general relativity that represents a uniform gravitational field $g$. In example
 \ref{eg:gps} on page \pageref{eg:gps}, we found, based on elementary arguments about
@@ -1624,9 +1624,12 @@ an explicit computation of the Riemann tensor.)\hwendpart
 can be interpreted as showing that general relativity does not admit any spacetime that has all the global properties
 we would like for a uniform gravitational field. This is related to Bell's
 spaceship paradox (example \ref{eg:bell-spaceship-paradox}, p.~\pageref{eg:bell-spaceship-paradox}).}\index{Bell, John!spaceship paradox}\index{spaceship paradox}
+Some further properties of the metric [\ref{eq:uniform-field-metric-exp}] are analyzed in problem \ref{hw:uniform-field-sources}
+on page \pageref{hw:uniform-field-sources}.
 <% end_hw %>
 
 
 \end{hwsection}
+
 
 <% end_chapter %>
