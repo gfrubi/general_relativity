@@ -91,8 +91,12 @@ such a frame. For example, if we had $T_{tx}\ne 0$, then the positive $x$ direct
 the negative $x$ direction, but there is nothing that would allow such a distinction. The spacelike components
 are associated with the pressure, $P$. The form of the tensor with mixed upper and lower indices has the
 simple form $T\indices{^\mu_\nu}=diag(-\rho,P,P,P)$.
+<% end_sec %> % The energy-momentum tensor
+<% end_sec %> % The Einstein field equation
 
-\begin{eg}{The uniform gravitational field revisited}\label{eg:uniform-field-kasner}\index{uniform gravitational field}\index{gravitational field!uniform}
+<% begin_sec("The uniform gravitational field revisited") %>\label{sec:uniform-field-kasner}\index{uniform gravitational field}\index{gravitational field!uniform}
+This subsection is illustrative, and is not necessary in order to understand the later material.
+
 In problem \ref{hw:uniform-field} on page \pageref{hw:uniform-field}, we made a wish list of desired properties
 for a uniform gravitational field, and found that they could not all be satisfied at once. That is, there is no
 global solution to the Einstein field equations that uniquely and satisfactorily embodies all of our Newtonian
@@ -103,7 +107,7 @@ The 1+1-dimensional metric
 \begin{equation*}
   \der s^2 = e^{2gz}\der t^2-\der z^2
 \end{equation*}
-is the one that uniquely satisfies our expectations based on the equivalence principle, and it is a vacuum solution.
+is the one that uniquely satisfies our expectations based on the equivalence principle (example \ref{eg:gps}, p.~\pageref{eg:gps}), and it is a vacuum solution.
 We might logically try to generalize this to 3+1 dimensions as follows:
 \begin{equation*}
   \der s^2 = e^{2gz}\der t^2-\der x^2 - \der y^2 - \der z^2 \qquad .
@@ -113,11 +117,22 @@ that we have made our vacuum solution into a non-vacuum solution, and not only t
 resulting energy-momentum tensor is unphysical (problem \ref{hw:uniform-field-sources},
 p.~\pageref{hw:uniform-field-sources}).
 
-For physical motivation in how to get past this obstacle, consider the following argument by
-Born.\footnote{Max Born, \emph{Einstein's Theory of Relativity}, Dover, 1962, p.~320}
+One way to proceed would be to relax our insistence on making the spacetime one that exactly
+embodies the equivalence principle's requirements for a uniform field.\footnote{Thanks to physicsforums.com user
+Mentz114 for suggesting this approach and demonstrating the following calculation.%http://physicsforums.com/showthread.php?t=377254
+} This can be done by
+taking $g_{tt}=e^{2\Phi}$, where $\Phi$ is not necessarily equal to $2gz$. By requiring that the metric be a 3+1 vacuum
+solution, we arrive at a differential equation whose solution is $\Phi=\ln(z+k_1)+k_2$, which recovers
+the flat-space metric that we found in example \ref{eg:const-accel-metric} on page \pageref{eg:const-accel-metric}
+by applying a change of coordinates to the Lorentz metric.
+
+What if we want to carry out the generalization from 1+1 to 3+1 without violating the equivalence principle?
+For physical motivation in how to get past this obstacle, consider the following argument made by
+Born in 1920.\footnote{Max Born, \emph{Einstein's Theory of Relativity}, 1920. In the 1962 Dover edition, the relevant passage
+is on p.~320}
 Take a frame of reference tied to a rotating disk, as in the example from which Einstein originally took much of the
 motivation for creating a geometrical theory of gravity (subsection \ref{sec:carousel}, p.~\pageref{sec:carousel}).\index{rotating frame of reference}
-Clocks near the edge of the disk run slowly, and by the equivalence principle, on observer on the disk
+Clocks near the edge of the disk run slowly, and by the equivalence principle, an observer on the disk
 interprets this as a gravitational time dilation. But this is not the only relativistic effect seen by
 such an observer. Her rulers are also Lorentz contracted as seen by a non-rotating observer, and
 she interprets this as evidence of a non-Euclidean spatial geometry. There are some physical differences
@@ -147,14 +162,14 @@ scurvature();
 leinstein(true);
 \end{listing}
 % kasner.mac
-The scalar curvature is constant, which is a necessary condition for any spacetime that we want to think of
-as representing a uniform field.
-To get $G_{xx}$ and $G_{yy}$ to vanish, we need $j$ and $k$ to be $(1 \pm \sqrt{3} i)/2$.
+The output from line 9 shows that the scalar curvature is constant, which is a necessary condition for any spacetime that we want to think of
+as representing a uniform field. Inspecting the Einstein tensor output by line 10, we find that
+in order to get $G_{xx}$ and $G_{yy}$ to vanish, we need $j$ and $k$ to be $(1 \pm \sqrt{3} i)/2$.
 By trial and error, we find that assigning the complex-conjugate values to $j$ and $k$ makes $G_{tt}$ and $G_{zz}$ vanish as well,
 so that we have a vacuum solution. This solution is, unfortunately, complex, so it is not of any obvious value as a physically
 meaningful result. Since the field equations are nonlinear, we can't use the usual trick of forming real-valued superpositions
 of the complex solutions. We could try simply taking the real part of the metric. This gives
-$g_{xx}=e^{-z}\cos(\sqrt{3}z)$ and $g_{yy}=e^{-z}\sin(\sqrt{3}z)$, and is unsatisfactory because the metric becomes
+$g_{xx}=e^{-z}\cos\sqrt{3}z$ and $g_{yy}=e^{-z}\sin\sqrt{3}z$, and is unsatisfactory because the metric becomes
 degenerate (has a zero determinant) at $z=n \pi/2\sqrt{3}$, where $n$ is an integer.
 
 It turns out, however, that there is a very similar solution, found by Petrov in
@@ -162,7 +177,7 @@ It turns out, however, that there is a very similar solution, found by Petrov in
 is freely accessible online, see Gibbons and Gielen,
 ``The Petrov and Kaigorodov-Ozsv\'{a}th Solutions: Spacetime as a Group Manifold,'' \url{arxiv.org/abs/0802.4082}.} that is real-valued.
 The Petrov metric,\index{Petrov metric} which describes a spacetime with cylindrical symmetry, is:
-\begin{equation*}
+\begin{equation*}\label{eq:petrov-metric}
   \der s^2 = -\der r^2 - e^{-2r}\der z^2+e^r[2\sin\sqrt{3}r \der \phi \der t-\cos\sqrt{3}r(\der \phi^2-\der t^2)]
 \end{equation*}
 Note that it has many features in common with the complex oscillatory solution we found above. There are transverse
@@ -179,12 +194,77 @@ prevents the determinant from going to zero. But by examining these values of $r
 At such a value of $r$, construct a world-line of the form $(t=\text{constant},r=\text{constant},\phi,z=\text{constant})$.
 This world-line is a closed curve, and its proper length is zero, i.e., it is lightlike. This violates causality.
 Gibbons and Gielen have shown, however, that this spacetime satisfies the chronology protection conjecture:\index{chronology protection conjecture}
-``In the context of causality violation we have shown that one cannot create CTCs by spinning up a cylinder beyond
+``In the context of causality violation we have shown that one cannot create CTCs [closed timelike curves] by spinning up a cylinder beyond
 its critical angular velocity by shooting in particles on timelike or null curves.'' Some other properties of the Petrov
 metric are explored in problem \ref{hw:petrov-curvature} on page \pageref{hw:petrov-curvature}.
-\end{eg}
 
-<% end_sec %> % The energy-momentum tensor
+<% end_sec %> % uniform field
+
+<% begin_sec("Energy conditions") %>\index{energy conditions}
+The field equations are agnostic on the question of what kinds of matter fields contribute to the energy-momentum tensor.
+In fact, any spacetime at all is a solution to the Einstein field equations, provided we're willing to admit the
+corresponding energy-momentum tensor. Suppose that we want to prove all-encompassing theorems about general relativity.
+For instance, we may want to reassure ourselves that general relativity will never lead to violations of causality
+such as the closed timelike curves exhibited by the Petrov metric (p.~\pageref{eq:petrov-metric}). We can never make
+this type of general proof without assuming something about the energy-momentum tensor.
+
+In example \ref{eg:dust-and-radiation-cosm} on page \pageref{eg:dust-and-radiation-cosm}, we saw that
+radiation has $P=\rho/3$ and dust has $P=0$. Both have $\rho\ge0$. If the universe is made out of nothing but dust and radiation, then
+we can obtain the following four constraints on the energy-momentum tensor:
+
+\begin{tabular}{ll}
+trace energy condition   &  $\rho-3P \ge 0$ \\
+strong energy condition  &  $\rho+3P \ge 0$ and $\rho+P \ge 0$ \\
+dominant energy condition & $\rho \ge 0$ and $|P| \le \rho$ \\
+weak energy condition    &  $\rho \ge 0$ and $\rho+P \ge 0$ \\
+null energy condition    &  $\rho+P \ge 0$ \\
+\end{tabular}
+
+\noindent These are arranged roughly in order from strongest to weakest.
+They all have to do with the idea that negative mass-energy doesn't seem to exist in our universe, i.e., that
+gravity is always attractive rather than repulsive. With this motivation, it would seem that there should only
+be one way to state an energy condition: $\rho > 0$. But the symbols $\rho$ and $P$ refer to the form of the
+energy-momentum tensor in a special frame of reference, interpreted as the one that is at rest relative to the
+average motion of the ambient matter. In this frame, the tensor is diagonal. Switching to some other frame
+of reference, the $\rho$ and $P$ parts of the tensor would mix, and it might be possible to end up with
+a negative energy density. The weak energy condition is the constraint we need in order to make sure that
+the energy density is never negative in any frame.
+
+The dominant energy condition is like the weak energy condition, but it also guarantees that no observer
+will see a flux of energy flowing at speeds greater than $c$.
+
+As an example of the use of the energy conditions, Hawking and Ellis
+have proved that under the assumption of the strong energy condition, 
+any body that becomes sufficiently compact will end up forming a singularity. In other words,
+we might imagine that the formation of a black hole would be a delicate thing, requiring perfectly
+symmetric initial conditions in order to end up with the perfectly symmetric Schwarzschild metric.
+Many early relativists thought so, for good reasons. If we look around the universe at various scales, we find that collisions
+between astronomical bodies are extremely rare. This is partly because the distances are vast compared to the sizes
+of the objects, but also because conservation of angular momentum has a tendency to make objects swing past one another
+rather than colliding head-on. Starting with a cloud of objects, e.g., a globular cluster,
+Newton's laws make it extremely difficult, regardless of the attractive nature of gravity, to pick initial conditions that will make them all collide the future.
+For one thing, they would have to have exactly zero total angular momentum.
+
+Most relativists now believe that this is not the case. General relativity describes gravity in terms of the tipping of light cones. When the field
+is strong enough, there is a tendency for the light cones to tip over so far that either the entire future light-cone
+converges at the source of the field. Any lumpiness or rotation in the initial conditions becomes irrelevant, because every particle's
+entire future world-line lies inward rather than outward. A possible loophole in this argument is the question of whether the light cones
+will really tip over far enough. We could imagine that under extreme
+conditions of high density and temperature, matter might demonstrate unusual behavior, perhaps
+including a negative energy density, which would then give rise to a gravitational repulsion.
+Gravitational repulsion would tend to make the light cones tip outward rather than inward, possibly preventing the collapse to a singularity.
+We can close this loophole by assuming an appropriate energy condition.
+Penrose and Hawking have formalized the above argument in the form of a series of
+theorems, known as the singularity theorems.\index{singularity theorems}\index{Penrose-Hawking singularity theorems}
+One of these applies to the formation of black holes, and another one to cosmological singularities such as the
+Big Bang.
+
+The current status of the energy conditions is shaky.
+Although it is clear that all of them hold in a variety of situations, there are strong reasons to believe that
+they are violated at both microscopic and cosmological scales, for reasons both classical
+and quantum-mechanical.\footnote{Barcelo and Visser, ``Twilight for the energy conditions?,'' \url{http://arxiv.org/abs/gr-qc/0205066v1}.}
+We will see such a violation in the following section.
+<% end_sec %> % Energy conditions
 
 <% begin_sec("The cosmological constant") %>\label{sec:cosmological-constant}% Is a sub-sub-section, so only refer to it by page, not by section number.
 
@@ -279,8 +359,13 @@ Looking at the role played by $r$ in the estimate, we see that the
 upper bound could have been made tighter by increasing $r$. Observations on galactic scales, for example, constrain it much
 more tightly. This justifies the description of $\Lambda$ as cosmological:
 the larger the scale, the more significant the effect of a nonzero $\Lambda$ would be.
+
+Since the right-hand side of the field equation is $8\pi T_{ab} + \Lambda g_{ab}$, it is possible to consider
+the cosmological constant as a type of matter contributing to the energy-momentum tensor.\index{energy conditions!violated by cosmological constant}
+Its negative pressure causes a violation of the strong energy condition. If the cosmological constant is a product of the
+quantum-mechanical structure of the vacuum, then this is not too surprising, because quantum fields are known to display
+negative energy. For example, the energy density between two parallel conducting plates is negative due to the Casimir effect.\index{Casimir effect}
 <% end_sec %> % The cosmological constant
-<% end_sec %> % The Einstein field equation
 <% end_sec %> % Sources in general relativity
 
 <% begin_sec("Cosmological solutions") %>\label{sec:cosmological-solutions}
@@ -445,30 +530,11 @@ If this singularity in the model corresponds to a singularity in the real univer
 a singularity that is hidden behind an event horizon. It lies in our past light-cone, and our own world-lines
 emerged from it.
 
-We may ask, however, whether this singularity is merely an unrealistic artifact of the model. Early relativists
-suspected, with good reason, that it was. If we look around the universe at various scales, we find that collisions
-between astronomical bodies are extremely rare. This is partly because the distances are vast compared to the sizes
-of the objects, but also because conservation of angular momentum has a tendency to make objects swing past one another
-rather than colliding head-on. Starting with a cloud of objects, e.g., a globular cluster,
-Newton's laws make it extremely difficult, regardless of the attractive nature of gravity, to pick initial conditions that will make them all collide the future.
-For one thing, they would have to have exactly zero total angular momentum.
-Since Newton's laws have time-reversal symmetry, the same is true for the past: if we choose
-a random set of present positions and velocities for a set of particles interacting gravitationally, there is zero
-probability that extrapolation into the past will show them having come out of an explosion from a single point.
-It is therefore natural to be skeptical about the Big Bang singularity implied by the Friedmann equations, since the
-Friedmann equations were derived under the unrealistic assumption that the universe was perfectly symmetric. For many decades,
-there was thus a suspicion that the Big Bang might not have been a singularity at all, but rather a moment at which
-all the matter and radiation in the universe came very close together before flying apart again.
-
-We now know that this is not the case, and the reasons are very similar to the reasons why we know that black hole
-singularities occur generically, not just when the star's collapse is calculated in some unrealistically
-symmetric model. General relativity describes gravity in terms of the tipping of light cones. When the field
-is strong enough, there is a tendency for the light cones to tip over so far that either the entire future light-cone
-or the entire past light-cone converges at the source of the field. This statement is formalized by a series of
-theorems by Penrose and Hawking, known as the singularity theorems.\index{singularity theorems}\index{Penrose-Hawking singularity theorems}
-The detailed statement of these theorems is technical and beyond the scope of this book, but they prove the existence
-of a Big Bang singularity, provided that the cosmological constant is not too large; but regarding this point, see page
-\pageref{bb-singularity-with-lambda}.\label{bb-singularity-without-lambda}
+One of the Penrose-Hawking singularity theorems\index{Penrose-Hawking singularity theorems} proves that the
+Big Bang singularity is not just a product of the unrealistic assumption of perfect symmetry  that went into the
+FRW cosmology. The only loophole is that if the cosmological constant is large enough, it violates the strong
+energy equation, and we can have a Big Bounce rather than a Big Bang (see page
+\pageref{bb-singularity-with-lambda}).\label{bb-singularity-without-lambda}\label{big-bang-singularity-inevitable}
 
 <% end_sec %> % A singularity at the Big Bang
 
@@ -1209,7 +1275,7 @@ Show that this requires an Einstein tensor with unphysical  properties.\hwendpar
 <% end_hw %>
 
 <% begin_hw('petrov-curvature') %>\index{Petrov metric}
-Example \ref{eg:uniform-field-kasner} on page \pageref{eg:uniform-field-kasner} presented the Petrov metric.
+Subsection \ref{sec:uniform-field-kasner} on page \pageref{eg:uniform-field-kasner} presented the Petrov metric.
 Use symbolic math software such as Maxima to verify that it is a vacuum solution, and that its
 scalar curvature is constant (as we expect for a spacetime whose properties are supposed to be uniform).
 \hwsoln

@@ -160,7 +160,7 @@ einstein(true);
 \end{listing}
 For a representative component of the Einstein tensor, we find
 \begin{equation*}
-  G_{tt} = -\frac{\cos^2(z-t)}{2+4A\sin(z-t)+2A^2\sin^2(z-t)} A^2
+  G_{tt} = -\frac{A^2\cos^2(z-t)}{2+4A\sin(z-t)+2A^2\sin^2(z-t)}
 \end{equation*}
 For small values of $A$, we have $|G_{tt}| \lesssim A^2/2$. The vacuum field equations require $G_{tt}=0$, so
 this isn't an exact solution. But all the components of $G$, not just $G_{tt}$, are of order $A^2$, so
@@ -204,9 +204,9 @@ where $f=A\sin (z-t)$. This doesn't seem likely to be an exact solution for larg
 the $x$ and $y$ coordinates are treated asymmetrically. In the extreme case of $|A| \ge 1$, there
 would be singularities in $g_{yy}$, but not in $g_{xx}$. Clearly the metric will have to have some
 kind of nonlinear dependence on $f$, but we just haven't found quite the right nonlinear dependence.
-Suppose we try something of the form
+Suppose we try something of this form:
 \begin{equation*}
-  \der s^2 = \der t^2 - \left(1+f+cf^2\right)\der x^2 - \frac{\der y^2}{1-f+df^2} - \der z^2 \qquad .
+  \der s^2 = \der t^2 - \left(1+f+cf^2\right)\der x^2 - \left(1-f+df^2\right)\der y^2 - \der z^2
 \end{equation*}
 This approximately conserves volume, since $(1+f+\ldots)(1-f+\ldots)$ equals unity, up to terms of
 order $f^2$. The following program tests this form.

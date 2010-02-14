@@ -1626,7 +1626,7 @@ can be interpreted as showing that general relativity does not admit any spaceti
 we would like for a uniform gravitational field. This is related to Bell's
 spaceship paradox (example \ref{eg:bell-spaceship-paradox}, p.~\pageref{eg:bell-spaceship-paradox}).}\index{Bell, John!spaceship paradox}\index{spaceship paradox}
 Some further properties of the metric [\ref{eq:uniform-field-metric-exp}] are analyzed in
-example \ref{eg:uniform-field-kasner} on page \pageref{eg:uniform-field-kasner}.
+subsection \ref{sec:uniform-field-kasner} on page \pageref{sec:uniform-field-kasner}.
 <% end_hw %>
 
 
