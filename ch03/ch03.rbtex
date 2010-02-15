@@ -18,7 +18,7 @@ The \emph{geometry} of spacetime is non-Euclidean, not just in the sense that th
 Lorentz frames is different than that of 4 interchangeable Euclidean dimensions, but also in the sense that
 parallels do not behave in the way described by E5 or A1-A3. In a Lorentz frame, which describes space without
 any gravitational fields, particles whose world-lines are initially parallel will continue along their parallel
-world-lines forever. In the presence of gravitational fields, initially parallel world-lines of free-falling particles
+world-lines forever. But in the presence of gravitational fields, initially parallel world-lines of free-falling particles
 will in general diverge, approach,
 or even cross. Thus, neither the existence nor the uniqueness of parallels can be assumed. We can't describe this
 lack of parallelism as arising from the curvature of the world-lines, because we're using the world-lines of
@@ -70,7 +70,7 @@ depended on the existence and uniqueness of parallels expressed by A1, so we mig
 imagine that there was no point in trying to generalize the construction to curved spacetime. But the equivalence principle tells
 us that spacetime is locally affine to some approximation. Concretely, clock-time is one example of an affine parameter, and the
 curvature of spacetime clearly can't prevent us from building a clock and releasing it on a free-fall trajectory.
-To generalize the recipe for the construction, the first obstacle is the ambiguity of the 
+To generalize the recipe for the construction (figure \figref{affine-par-in-curved-spacetime}), the first obstacle is the ambiguity of the 
 instruction to construct parallelogram $01\zu{q}_0\zu{q}_1$, which requires us to draw $1\zu{q}_1$ parallel to
 $0\zu{q}_0$. Suppose we construe this as an instruction to make the two segments initially parallel, i.e.,
 parallel as they depart the line at 0 and 1. By the time they get to $\zu{q}_0$ and $\zu{q}_1$, they may be converging
@@ -212,12 +212,12 @@ extrinsic elements, such as the existence of a third dimension, that are not con
 being modeled. 
 
 Let's focus first on consistency. In general, what can we say about the self-consistency of a mathematical system?
-To start with, we can never prove anything about the consistency of lack of consistency of something that
+To start with, we can never prove anything about the consistency or lack of consistency of something that
 is not a well-defined formal system, e.g., the Bible. Even Euclid's \emph{Elements}, which was a model of
 formal rigor for thousands of years, is loose enough to allow considerable ambiguity. If you're inclined
 to scoff at the silly Renaissance mathematicians who kept trying to prove the parallel postulate E5 from
 postulates E1-E4, consider the following argument. Suppose that we replace E5 with $\zu{E}5'$, which states that
-parallels don't exist: given a line and a point not on the line, no line can ever be drawn through the point
+parallels \emph{don't} exist: given a line and a point not on the line, no line can ever be drawn through the point
 and parallel to the given line. In the new system of plane geometry $\zu{E}'$ consisting of E1-E4 plus $\zu{E}5'$, we can prove a
 variety of theorems, and one of them is that there is an upper limit on the area of any figure. This imposes
 a limit on the size of circles, and that appears to contradict E3, which says we can construct a circle with
@@ -227,13 +227,13 @@ So what's wrong with this supposed proof of its lack of self-consistency? The is
 E3 does not say that we can construct a circle given any real number as its radius. Euclid could not have intended any
 such interpretation, since he had no notion of
 real numbers. To Euclid, geometry was primary, and numbers were geometrically constructed objects, being represented
-as lengths of line segments, angles, areas, and volumes. A literal translation of Euclid's statement of the
+as lengths, angles, areas, and volumes. A literal translation of Euclid's statement of the
 axiom is ``To describe a circle with any center and distance.''\footnote{Heath, pp. 195-202} ``Distance'' means
 a line segment. There is therefore no contradiction in $\zu{E}'$, because $\zu{E}'$ has a limit on the lengths of line segments.
 
 Now suppose that such ambiguities have been eliminated from the system's basic definitions and axioms.
 In general, we expect it to be easier to prove an inconsistent system's inconsistency than to demonstrate the
-consistency of a consistent one. In the former case, we can start cranking out propositions, and if we can
+consistency of a consistent one. In the former case, we can start cranking out theorems, and if we can
 find a way to prove both proposition P and its negation $\neg\zu{P}$, then obviously something is wrong
 with the system. One might wonder whether such a contradiction could remain contained within one corner
 of the system, like nuclear waste. It can't. Aristotelian logic allows proof by contradiction: if we prove both P and
@@ -309,7 +309,7 @@ the infinitesimal quantities compose a hierarchy, so that for example $7d$ is in
 $d$, while $d^2$ is like a ``lesser flea'' in Swift's doggerel: ``Big fleas have little fleas/ On their backs to ride 'em,/
 and little fleas have lesser fleas,/And so, ad infinitum.''
 
-These two spherical models are not valid models of a general-relativistic spacetime, since they are locally Euclidean rather than
+Spherical and elliptic geometry are not valid models of a general-relativistic spacetime, since they are locally Euclidean rather than
 Lorentzian, but they still provide us with enough conceptual guidance to come up with some ideas that might never have occurred to us otherwise: 
 \begin{itemize}
 \item In spherical geometry, we can have a two-sided polygon called a lune\index{lune} that encloses a nonzero area. In general relativity, a lune
@@ -354,14 +354,14 @@ The existence of lunes is clearly an intrinsic feature of non-Euclidean geometri
 was defined before any model has even been proposed.
 
 \begin{eg}{Curvature in elliptic geometry}\label{eg:elliptic-geom-intrinsic-curvature}
-What about curvature? In the hemispherical model
+What about curvature? In the spherical model
 of elliptic geometry, the size of the sphere is an inverse measure of curvature. Is this a valid intrinsic
 quantity, or is it extrinsic? It seems suspect, because it is a feature of the model. If we try to define
 ``size'' as the radius $R$ of the sphere, there is clearly reason for concern, because this seems to refer to
 the center of the sphere, but existence of a three-dimensional Euclidean space inside and outside the surface is
 clearly an extrinsic feature of the model. There is, however, a way in which a creature confined to the surface
 can determine $R$, by constructing geodesic and an affine parameter along that geodesic, and measuring the distance $\lambda$
-accumulated until the geodesic until it returns to the initial point. Since antipodal points are identified, $\lambda$ equals half
+accumulated until the geodesic returns to the initial point. Since antipodal points are identified, $\lambda$ equals half
 the circumference of the sphere, not its whole circumference, so $R=\lambda/\pi$, by wholly intrinsic methods.
 \end{eg}
 
@@ -369,8 +369,8 @@ the circumference of the sphere, not its whole circumference, so $R=\lambda/\pi$
 Euclid's axioms E1-E5 refer to explicit constructions. If a two-dimensional being can
 physically verify them all as descriptions of the two-dimensional space she inhabits, then she knows that her space is
 Euclidean, and that propositions such as the Pythagorean theorem are physically valid in her universe.
-But the diagram (figure \subfigref{pythagorean}{1}) illustrating illustrating the proof of the Pythagorean theorem in Euclid's \emph{Elements} (proposition I.47) is equally
-valid if the page is rolled up into a cylinder, 2, or formed into a wavy corrugated shape, 3.
+But the diagram in \subfigref{pythagorean}{1} illustrating illustrating the proof of the Pythagorean theorem in Euclid's \emph{Elements} (proposition I.47) is equally
+valid if the page is rolled onto a cylinder, 2, or formed into a wavy corrugated shape, 3.
 These types of curvature, which can be achieved without tearing or crumpling the surface, are extrinsic
 rather than intrinsic. Of the curved surfaces in figure \figref{pythagorean}, only the sphere, 4, has intrinsic curvature;
 the diagram can't be plastered onto the sphere without folding or cutting and pasting.
@@ -528,7 +528,7 @@ The vectors drawn below the curve are called the contravariant vectors, notated 
 above it are the covariant vectors, $\der x_\mu$. It's not particularly important to keep track of
 which is which, since the relationship between them is symmetric, like the relationship between row
 and column vectors. Each is the dual of the other. The arc length is given by $\int \der s =\int \sqrt{\der x^\mu \der x_\mu}$,
-or, equivalently we say $\der s^2=\der x^\mu \der x_\mu$.
+or, equivalently we say $\der s^2=\der x^\mu \der x_\mu$. (Remember, $\mu=0$.)
 
 Given a $\der x^\mu$, how do we find its dual $\der x_\mu$, and vice versa? In one dimension, we simply need to introduce
 a real number $g$ as a correction factor. If one of the vectors is shorter than it should be in a certain region,
@@ -724,7 +724,7 @@ which element of the metric to make positive and which to make negative. In this
 so that $g=diag(+1,-1)$. This has the advantage that any line segment representing the timelike world-line of a physical object
 has a positive squared magnitude; the forward flow of time is represented as a positive number, in keeping with the
 philosophy that relativity is basically a theory of how causal relationships work. With this sign convention, spacelike vectors have positive
-squared magnitudes, and timelike ones have negative.
+squared magnitudes,  timelike ones  negative.
 The same convention is followed,
 for example, by Penrose. The opposite version, with $g=diag(-1,+1)$ is used by authors such as Wald and Misner, Thorne, and
 Wheeler.
@@ -748,12 +748,12 @@ space, because it amounts to a statement that space has the same properties ever
 
 The set of all transformations that can be built out of successive translations, rotations, and
 reflections is called the group of isometries.\index{isometry} It can also be defined as the
-group that preserves dot products, or the group\index{group}\footnote{In mathematics, a group is defined
+group\footnote{In mathematics, a group is defined
 as a binary operation that has an identity, inverses, and associativity. For example, addition of
 integers is a group. In the present context, the members of the group are not numbers but the
 transformations applied to the Euclidean plane. The group operation on transformations $T_1$ and
 $T_2$ consists of finding the transformation that results from doing one and then the other, i.e.,
-composition of functions.} that preserves congruence of triangles.
+composition of functions.} that preserves dot products, or the group\index{group} that preserves congruence of triangles.
 
 In Lorentzian geometry, we usually avoid the Euclidean term dot product and
 refer to the corresponding operation by the more general term inner product.\index{inner product}
@@ -784,7 +784,7 @@ In Lorentzian geometry, the situation is different. Let $\vc{b}$ and $\vc{c}$ be
 they represent possible world-lines. Then the relation $\vc{a}=\vc{b}+\vc{c}$ suggests the existence of two
 observers who take two different paths from one event to another. A goes by a direct route while B takes
 a detour. The magnitude of each timelike vector represents the time elapsed on a clock carried by the
-observer moving along that vector. The triangle equality is now reversed, becoming now becomes $|\vc{b}+\vc{c}|>|\vc{b}|+|\vc{c}|$.
+observer moving along that vector. The triangle equality is now reversed, becoming $|\vc{b}+\vc{c}|>|\vc{b}|+|\vc{c}|$.
 The difference from the Euclidean case arises because inner products are no longer necessarily maximized if vectors
 are in the same direction.
 E.g., for two lightlike vectors, $b^ic_j$ vanishes entirely if $\vc{b}$ and $\vc{c}$
@@ -833,7 +833,7 @@ Suppose that observer A is on a spinning carousel while observer B stands on the
 B says that A is accelerating, but by the equivalence principle A can say that she is at rest in a
 gravitational field, while B is free-falling out from under her. B measures the radius and circumference
 of the carousel, and finds that their ratio is $2\pi$. A carries out similar measurements, but when she
-puts her meter-sticks in the azimuthal direction they become Lorentz-contracted by the factor $\gamma=(1-\omega^2r^2)^{-1/2}$, so she finds that the
+puts her meter-stick in the azimuthal direction it becomes Lorentz-contracted by the factor $\gamma=(1-\omega^2r^2)^{-1/2}$, so she finds that the
 ratio is greater than $2\pi$. In A's coordinates, the spatial geometry is non-Euclidean, and the metric
 differs from the Euclidean one found in example \ref{eg:metric-in-polar-coords} on page \pageref{eg:metric-in-polar-coords}.
 <% marg(50) %>
@@ -1063,7 +1063,7 @@ in relativity given on page \pageref{intrinsic-measurements-in-gr}:
 
 <% begin_sec("The hole argument") %>\label{sec:hole-argument}
 The main factor that led Einstein to his false start is known as the hole argument.\index{hole argument}
-Suppose that we know all about the distribution of matter throughout all of spacetime,
+Suppose that we know about the distribution of matter throughout all of spacetime,
 including a particular region of finite size --- the ``hole'' --- which contains no matter. By analogy with other classical field
 theories, such as electromagnetism, we expect that the metric will be a solution to some kind of
 differential equation, in which matter acts as the source term. We find

@@ -235,8 +235,8 @@ will see a flux of energy flowing at speeds greater than $c$.
 
 As an example of the use of the energy conditions, Hawking and Ellis
 have proved that under the assumption of the strong energy condition, 
-any body that becomes sufficiently compact will end up forming a singularity. In other words,
-we might imagine that the formation of a black hole would be a delicate thing, requiring perfectly
+any body that becomes sufficiently compact will end up forming a singularity.
+We might imagine that the formation of a black hole would be a delicate thing, requiring perfectly
 symmetric initial conditions in order to end up with the perfectly symmetric Schwarzschild metric.
 Many early relativists thought so, for good reasons. If we look around the universe at various scales, we find that collisions
 between astronomical bodies are extremely rare. This is partly because the distances are vast compared to the sizes
@@ -246,8 +246,9 @@ Newton's laws make it extremely difficult, regardless of the attractive nature o
 For one thing, they would have to have exactly zero total angular momentum.
 
 Most relativists now believe that this is not the case. General relativity describes gravity in terms of the tipping of light cones. When the field
-is strong enough, there is a tendency for the light cones to tip over so far that either the entire future light-cone
-converges at the source of the field. Any lumpiness or rotation in the initial conditions becomes irrelevant, because every particle's
+is strong enough, there is a tendency for the light cones to tip over so far that the entire future light-cone
+points at the source of the field. If this occurs on an entire surface surrounding the source, it is referred to
+as a trapped surface.\index{trapped surface}  Any lumpiness or rotation in the initial conditions becomes irrelevant, because every particle's
 entire future world-line lies inward rather than outward. A possible loophole in this argument is the question of whether the light cones
 will really tip over far enough. We could imagine that under extreme
 conditions of high density and temperature, matter might demonstrate unusual behavior, perhaps

@@ -808,13 +808,14 @@ solar masses end up as black holes; see section \ref{sec:black-hole-formation}.
 <% end_sec %> % exptl tests
 
 <% begin_sec("Conservation laws") %>
+<% begin_sec("No general conservation laws") %>
 Some of the first tensors we discussed were mass and charge, both rank-0 tensors, and the rank-1 momentum tensor, which
 contains both the classical energy and the classical momentum. Physicists originally decided that
 mass, charge, energy, and momentum were interesting because these things were found to be conserved. This makes it natural
 to ask how conservation laws can be formulated in relativity. We're used to stating conservation laws
 casually in terms of the amount of something in the whole universe, e.g., that classically the total amount of
 mass in the universe stays constant. Relativity does allow us to make physical models of the universe
-as a whole, so it seems as though we ought to be able to talk about conservation laws in this way
+as a whole, so it seems as though we ought to be able to talk about conservation laws
 in relativity.
 
 We can't.
@@ -866,7 +867,7 @@ we do not even expect to be able to define a smooth, well-behaved coordinate sys
 entire universe, and even if we did, it would not make sense to add a vector expressed in that
 coordinate system at point A to another vector from point B; the best we could do would be
 to parallel-transport the vectors to one point and then add them, but parallel transport is
-path dependent. (Similar issues occur with angular momentum.)
+path-dependent. (Similar issues occur with angular momentum.)
 For this reason, let's restrict ourselves to the easier case of a scalar, such as
 electric charge.
 
@@ -888,8 +889,9 @@ circumstances. We do not have anything like over-arching principles of conservat
 
 As an example, section \ref{sec:sch-conserved} shows how to define conserved quantities, which
 behave like energy and momentum, for the
-motion of a test particle in a particular metric.
-
+motion of a test particle in a particular metric that has a certain symmetry.
+<% end_sec %> % No general conservation laws
+<% begin_sec("Conservation of angular momentum and frame dragging") %>
 Another special case where conservation laws work is that if the spacetime we're studying gets very flat at large distances
 from a small system we're studying, then we can define a far-away boundary that surrounds the system,
 measure the flux through that boundary, and find the system's charge.
@@ -922,7 +924,7 @@ hole comes from its external gravitational (and possibly electromagnetic) fields
 the spacetime metric surrounding this black hole breaks spherical symmetry, but preserves symmetry about some
 preferred axis. What aspect of the initial conditions in the formation of the hole could have determined such an axis?
 The most likely candidate is the angular momentum. We are thus led to suspect that black holes can possess angular
-momentum, that the angular momentum preserves information about their formation, and that the angular momentum
+momentum, that angular momentum preserves information about their formation, and that angular momentum
 is externally detectable via its effect on the spacetime metric.
 
 What would the form of such a metric be? Spherical coordinates in flat spacetime give a metric
@@ -941,10 +943,10 @@ spherically symmetric, non-rotating body, such as the moon. Now what about the m
 We expect it to have the following properties:
 \begin{enumerate}
 \item It has terms that are odd under time-reversal, corresponding to reversal of the body's angular momentum.
-\item Similarly, it has terms that are odd under reversal of the azimuthal coordinate $\phi$.
+\item Similarly, it has terms that are odd under reversal of the differential $\der\phi$ of the azimuthal coordinate.
 \item The metric should have axial symmetry, i.e., it should be independent of $\phi$.
 \end{enumerate}
-Restricting our attention to the equatorial plane $\theta=\pi/2$, and
+Restricting our attention to the equatorial plane $\theta=\pi/2$,
 the simplest modification that has these three properties is to add a term of the form
 \begin{equation*}
   f(\ldots) L\:\der\phi\:\der t \qquad ,
@@ -1002,7 +1004,7 @@ orientations of its gyroscopes relative to the guide star IM Pegasi.
 %>
 <% end_marg %>
 
-
+<% end_sec %> % Conservation of angular momentum and frame dragging
 <% end_sec %> % Conservation laws
 
 \begin{hwsection}

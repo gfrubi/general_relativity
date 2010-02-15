@@ -52,7 +52,7 @@ that were initially parallel were to converge or diverge.
 %>
 <% end_marg %>
 
-Nor is the metric is not a measure of intrinsic curvature. In example \ref{eg:const-accel-metric}
+Nor is the metric a measure of intrinsic curvature. In example \ref{eg:const-accel-metric}
 on page \pageref{eg:const-accel-metric}, we found the metric for an accelerated observer to be
 \begin{equation*}
   g'_{t't'} = (1+ax')^2 \qquad  g_{x'x'} = -1 \qquad ,
@@ -76,14 +76,14 @@ Not only does the metric tensor not represent the gravitational field, but no te
 By the equivalence principle, any gravitational field seen by observer A can be eliminated
 by switching to the frame of a free-falling observer B who is instantaneously at rest with respect to
 A at a certain time. The structure of the tensor transformation law guarantees that A and B
-will agree on measurements of any tensor at the point in spacetime where they pass by one
+will agree on whether a given tensor is zero at the point in spacetime where they pass by one
 another. Since they agree on all tensors, and disagree on the gravitational field, the gravitational
 field cannot be a tensor.
 
 We therefore conclude
 that a nonzero intrinsic curvature of the type
 that is to be included in the Einstein field equations is not encoded in any simple way in the metric or
-its first derivatives. Since neither $g$ nor its first derivatives indicate curvature, we can reasonably
+its first derivatives. Since neither the metric nor its first derivatives indicate curvature, we can reasonably
 conjecture that the curvature might be encoded in its second derivatives.
 
 <% begin_sec("Tidal curvature versus curvature caused by local sources") %>\label{sec:tidal-versus-sources}
@@ -135,7 +135,7 @@ $(t,x)$ plane represented by figure \figref{sectional-curvature}.
 %>
 <% end_marg %>
 
-But this curvature was not caused by a local source lurking in among the fragments, it was caused by a distant source:
+But this curvature was not caused by a local source lurking in among the fragments. It was caused by a distant source:
 Jupiter. We therefore see that the mere presence of sectional curvature is not enough to demonstrate the
 existence of local sources. Even the sign of the sectional curvature is not a reliable indication. Although
 this example showed a divergence of initially parallel geodesics, referred to as a negative curvature,
