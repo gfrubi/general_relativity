@@ -430,7 +430,7 @@ a symbol such as $x$ appears, we need to make sure that nowhere in the notation 
 comes from any particular coordinate system. For example, the equation should still be valid if the generic symbol $x$
 is later taken to represent the distance $r$ from some center of symmetry.
 This coordinate-independence property is also known as general covariance.\index{general covariance}\index{coordinate independence}
-<% begin_sec("Frames moving at $c$?") %>
+<% begin_sec("Frames moving at $c$?") %>\label{sec:frames-at-c}
 A good application of these ideas is to the question of what
 the world would look like in a frame of reference moving at the
 speed of light.
@@ -525,7 +525,8 @@ use of the odd-looking superscripts, rather than subscripts, will become clear s
 <% end_marg %>
 
 The vectors drawn below the curve are called the contravariant vectors, notated $\der x^\mu$, and the ones
-above it are the covariant vectors, $\der x_\mu$. It's not particularly important to keep track of
+above it are the covariant vectors, $\der x_\mu$.\index{covariant vector}\index{vector!covariant}\index{contravariant vector}\index{vector!contravariant}
+It's not particularly important to keep track of
 which is which, since the relationship between them is symmetric, like the relationship between row
 and column vectors. Each is the dual of the other. The arc length is given by $\int \der s =\int \sqrt{\der x^\mu \der x_\mu}$,
 or, equivalently we say $\der s^2=\der x^\mu \der x_\mu$. (Remember, $\mu=0$.)

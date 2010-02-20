@@ -325,6 +325,18 @@ can be small, so there is no upper bound on the ratio $\epsilon/A$.
 Debunking the argument restores consistency with the answer to part b.
 
 \beginsolutions{7}
+\hwsolnhdr{petrov-strength}
+
+Under these special conditions, the geodesic equations become $\ddot{r}=\Gamma\indices{^r_{tt}}\dot{t}^2$,
+$\ddot{\phi}=0$, $\ddot{t}=0$,
+where the dots can in principle represent differentation with respect to any affine parameter we like, but
+we intend to use the proper time $s$.
+By symmetry, there will be no motion in the $z$ direction.
+The Christoffel symbol equals $-(1/2)e^r(\cos\sqrt{3}r-\sqrt{3}\sin\sqrt{3}r)$. At a location where
+the cosine equals 1, this is simply $-e^r/2$. For $\dot{t}$, we have $\der t/\der s=1/\sqrt{g_{tt}}=e^{-r/2}$.
+The result of the calculation is simply $\ddot{r}=-1/2$, which is independent of $r$.
+
+\beginsolutions{8}
 
 \hwsolnhdr{uniform-field-sources}
 
@@ -335,41 +347,7 @@ Debunking the argument restores consistency with the answer to part b.
 (c) The Einstein tensor is $G_{tt}=0$, $G_{xx}=G_{yy}=g^2$, $G_{zz}=0$. It is unphysical because it has a zero mass-energy density,
 but a nonvanishing pressure.
 
-\hwsolnhdr{petrov-curvature}
-
-The following Maxima code does the calculation:
-\begin{listing}{1}
-load(ctensor); 
-ct_coords:[t,r,phi,z];
-c: cos(sqrt(3)*r);
-s: sin(sqrt(3)*r);
-tt : exp(r)*c;
-phit : exp(r)*s;
-lg:matrix([tt,0,phit,0],
-          [0,-1,0,0],
-          [phit,0,-tt,0],
-          [0,0,0,-exp(-2*r)]
-);
-cmetric();
-scurvature(); /* scalar curvature */
-leinstein(true); /* Einstein tensor with lower indices, display=true */
-\end{listing}
-Note that our definition of \verb@phit@ omits the factor of 2 from the line element, because we're
-using it to set two different off-diagonal elements of the metric, and we don't want to double-count.
-% petrov_curvature.mac
-
-The output of \verb@leinstein@ is silent, despite our setting the display flag to \verb@true@; this is because
-$G_{ab}$'s elements are all zero, and the function only outputs any nonzero elements. We can verify this by
-explicitly asking for output of the components \verb@lein[1,1]@, etc.
-
-Maxima computes the scalar curvature $R$ and outputs it, but isn't smart enough to simplify it completely.
-It is smart enough, however, to show us that it does not depend on $t$, $\phi$, or $z$.
-A good way to get around this problem is to expand $R$ in a Taylor series as a function of $r$.
-For example, a call to \verb@taylor(scurvature(),r,0,12)@ shows that the first 12 terms of the
-Taylor series all vanish.
-
-
-\beginsolutions{8}
+\beginsolutions{9}
 
 \hwsolnhdr{why-geodesics-for-test-particles}
 (a) The members of the Hulse-Taylor system are spiraling toward one another as they lose energy to

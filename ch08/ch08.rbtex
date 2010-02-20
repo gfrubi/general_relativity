@@ -5,444 +5,1172 @@
 <%
   chapter(
     '08',
-    %q{Gravitational Waves},
-    'ch:waves'
+    %q{Sources},
+    'ch:sources'
   )
 %>
 
-<% begin_sec("The speed of gravity") %>\label{sec:speed-of-gravity}
+<% begin_sec("Sources in general relativity") %>
+<% begin_sec("Point sources in a background-independent theory") %>
+Schr\"{o}dinger equation and Maxwell's equations treat spacetime as a stage on which particles and
+fields act out their roles. General relativity, however, is essentially a theory of spacetime itself.
+The role played by atoms or rays of light is so peripheral that by the time Einstein had derived
+an approximate version of the Schwarzschild metric, and used it to find the precession of Mercury's
+perihelion, he still had only vague ideas of how light and matter would fit into the picture. In his calculation,
+Mercury played the role of a test particle: a lump of mass so tiny that it can be tossed into spacetime
+in order to measure spacetime's curvature, without worrying about its effect on the spacetime, which is
+assumed to be negligible. Likewise the sun was treated as in one of those orchestral pieces in which
+some of the brass play from off-stage, so as to produce the effect of a second band heard from a distance.
+Its mass appears simply as an adjustable parameter $m$ in the metric, and if we had never heard of the Newtonian
+theory we would have had no way of knowing how to interpret $m$.
 
-In Newtonian gravity, gravitational effects are assumed to propagate at infinite speed, so that for example the
-lunar tides correspond at any time to the position of the moon at the same instant. This clearly can't be
-true in relativity, since simultaneity isn't something that different observers even agree on.
-Not only should the ``speed of gravity'' be finite, but 
-it seems implausible
-that that it would be greater than $c$; in section \ref{sec:lorentz-geometry} (p. \pageref{sec:lorentz-geometry}),
-we argued based on empirically well established principles that there must be a maximum speed of cause and
-effect. Although the argument was only applicable to special relativity, i.e., to a flat, Lorentzian space,
-it seems likely to apply to general
-relativity as well, at least for ripples in spacetime that are relatively weak, so that space is approximately
-Lorentzian. As early as 1913, before Einstein had even developed the full theory of general relativity, he
-had carried out calculations in the weak-field limit that showed that gravitational effects should propagate
-at $c$. This seems eminently reasonable, since (a) it is likely to be consistent with causality, and (b) $G$ and $c$ are the
-only constants with units that appear in the field equations (obscured by our choice of units, in which $G=1$ and $c=1$),
-and the only velocity-scale that can be constructed from
-these two constants is $c$ itself.
+When Schwarzschild published his exact solution to the vacuum field equations, Einstein suffered from philosophical
+indigestion. His strong belief in Mach's principle\index{Mach's principle} led him to believe that there was
+a paradox implicit in an exact spacetime with only one mass in it. If Einstein's field equations were to mean
+anything, he believed that they had to be interpreted in terms of the motion of one body relative to another.
+In a universe with only one massive particle, there would be no relative motion, and so, it seemed to him,
+no motion of any kind, and no meaningful interpretation for the surrounding spacetime.
 
-Although extremely well founded theoretically, this turns out to be extremely difficult to test empirically.
-In a 2003 experiment,\footnote{\url{http://arxiv.org/abs/astro-ph/0302294}}
-Fomalont and Kopeikin used a world-wide array of radio telescopes to observe a conjunction in which Jupiter passed within $3.7'$ of a quasar,
-so that the quasar's radio waves came within about 3 light-seconds of the planet on their way to the earth.
-Since Jupiter moves with $v=4\times10^{-5}$, one expects naively that
-the radio waves passing by it should be deflected by the field produced by Jupiter at the position it \emph{had} 3 seconds earlier.
-This position differs from its present position by about $10^{-4}$ light-seconds, and the result should be a difference in
-propagation time, which should be different when observed from different locations on earth. Fomalont and Kopeikin measured
-these phase differences with picosecond precision, and found them to be in good agreement with the predictions of general
-relativity. The real excitement started when they published their result with the interpretation that they had measured,
-for the first time, the speed of gravity, and found it to be within 20\% error bars of $c$. Samuel\footnote{\url{http://arxiv.org/abs/astro-ph/0304006}}
-and Will\footnote{\url{http://arxiv.org/abs/astro-ph/0301145}} published refutations, arguing that Kopeikin's
-calculations contained mistakes, and that what had really been measured was the speed of light, not the speed
-of gravity.
+Not only that, but Schwarzschild's solution had a singularity at its center. When a classical field theory
+contains singularities, Einstein believed, it contains the seeds of its own destruction. As we've seen on page
+\pageref{slime-and-socks}, this issue is still far from being resolved, a century later.
 
-The reason that the interpretation of this type of experiment is likely to be controversial is that
-although we do have theories of gravity that are viable alternatives to general relativity (e.g., the Brans-Dicke theory,\index{Brans-Dicke theory}
-in which the gravitational constant is a dynamically changing variable), such theories have generally been carefully designed to agree with general
-relativity in the weak-field limit, and in particular every such theory (or at least every theory that remains viable given
-current experimental data) predicts that gravitational effects
-propagate at $c$ in the weak-field limit. Without an alternative theory to act as a framework --- one that \emph{disagrees} with
-relativity about the speed of gravity --- it is difficult to know whether an observation
-that agrees with relativity is a test of this specific aspect of relativity.
-<% end_sec %> % The speed of gravity
+However much he might have liked to disown it, Einstein was now in possession of a solution to his field
+equations for a point source. In a linear, background-dependent theory like electromagnetism, knowledge of such
+a solution leads directly to the ability to write down the field equations with sources included. If Coulomb's
+law tells us the $1/r^2$ variation of the electric field of a point charge, then we can infer Gauss's law.
+The situation in general relativity is not this simple. The field equations of general relativity, unlike
+the Gauss's law, are nonlinear, so we can't simply say that a planet or a star is a solution
+to be found by adding up a large number of point-source solutions. It's also not clear how one could
+represent a moving source, since the singularity is a point that isn't even part of the continuous structure
+of spacetime (and its location is also hidden behind an event horizon, so it can't be observed from the outside).
+<% end_sec %> % Point sources in a background-independent theory
 
-<% begin_sec("Gravitational radiation") %>
-<% begin_sec("Empirical evidence") %>
-So we still don't know, a century after Einstein found the field equations, whether gravitational ``ripples'' travel at $c$.
-Nevertheless, we do have strong empirical evidence that such ripples exist. The Hulse-Taylor system (page \pageref{hulse-taylor-pulsar})
-contains two neutron stars orbiting around their common center of mass, and the period of the orbit is observed to be lengthening
-gradually over time, \figref{pulsar-period-decreasing}. This is interpreted as evidence that the stars are losing energy to radiation of 
-gravitational waves.\footnote{Stairs, ``Testing General Relativity with Pulsar Timing,'' \url{http://relativity.livingreviews.org/Articles/lrr-2003-5/}}
+<% begin_sec("The Einstein field equation") %>
+<% begin_sec("The Einstein tensor") %>
+Given these difficulties, it's not surprising that Einstein's first attempt at incorporating sources into
+his field equation was a dead end. He postulated that the field equation would have the Ricci tensor on
+one side, and the energy-momentum tensor $T^{ab}$ (page \pageref{sec:energy-momentum-tensor}) on the other,
+\begin{equation*}
+  R_{ab} = 8\pi T_{ab} \qquad ,
+\end{equation*}
+where a factor of $G/c^4$ on the right is suppressed by our choice of units, and the $8\pi$ is determined on
+the basis of consistency with Newtonian gravity in the limit of weak fields and low velocities. The problem
+with this version of the field equations can be demonstrated by counting variables. $R$ and $T$ are
+symmetric tensors, so the field equation contains 10 constraints on the metric: 4 from the diagonal
+elements and 6 from the off-diagonal ones. In addition, conservation of mass-energy requires the divergence-free
+property $\nabla_b T^{ab}=0$,
+because otherwise, for example, we could have a mass-energy tensor that varied as $T^{00}=kt$, describing
+a region of space in which mass was uniformly appearing or disappearing at a constant rate. But this adds
+4 more constraints on the metric, for a total of 14. The metric, however, is a symmetric rank-2 tensor itself,
+so it only has 10 independent components. This overdetermination of the metric suggests that the proposed field equation
+will not in general allow a solution to be evolved forward in time from a set of initial conditions given on
+a spacelike surface, and this turns out to be true. It can in fact be shown that the only possible solutions
+are those in which the traces $R=R\indices{^a_a}$ and $T=T\indices{^a_a}$ are constant throughout spacetime.
+
+The solution is to replace $R_{ab}$ in the field equations with the a different tensor $G_{ab}$, called the
+Einstein tensor,\index{Einstein tensor} defined by $G_{ab}=R_{ab}-(1/2)Rg_{ab}$,
+\begin{equation*}
+  G_{ab} = 8\pi T_{ab} \qquad .
+\end{equation*}
+The Einstein tensor is constructed exactly so that it is divergence-free, $\nabla_b G^{ab}=0$. (This is not obvious,
+but can be proved by direct computation.) Therefore any energy-momentum tensor that satisfies the field equation
+is automatically divergenceless, and thus no additional constraints need to be applied in order to guarantee
+conservation of mass-energy.
+
+Self-check: Does replacing $R_{ab}$ with $G_{ab}$ invalidate the Schwarzschild metric?
+<% end_sec %> % The Einstein tensor
+<% begin_sec("Further interpretation of the energy-momentum tensor") %>\label{sec:more-energy-mom-tensor}\index{energy-momentum tensor}
+The energy-momentum tensor was briefly introduced in section \ref{sec:energy-momentum-tensor} on page \pageref{sec:energy-momentum-tensor}.
+By applying the Newtonian limit of the field equation to the Schwarzschild metric, we find that
+$T_{tt}$ is to be identified as the mass density. The Schwarzschild metric describes a spacetime using coordinates
+in which the mass is at rest. In the cosmological applications we'll be considering shortly,
+it also makes sense to adopt a frame of reference in which the local mass-energy is, on average, at rest,
+so we can continue to think of $T_{tt}$ as the (average) mass density. By symmetry, $T$ must be diagonal in
+such a frame. For example, if we had $T_{tx}\ne 0$, then the positive $x$ direction would be distinguished from
+the negative $x$ direction, but there is nothing that would allow such a distinction. The spacelike components
+are associated with the pressure, $P$. The form of the tensor with mixed upper and lower indices has the
+simple form $T\indices{^\mu_\nu}=diag(-\rho,P,P,P)$.
+<% end_sec %> % The energy-momentum tensor
+<% end_sec %> % The Einstein field equation
+
+<% begin_sec("Energy conditions") %>\index{energy conditions}
+The field equations are agnostic on the question of what kinds of matter fields contribute to the energy-momentum tensor.
+In fact, any spacetime at all is a solution to the Einstein field equations, provided we're willing to admit the
+corresponding energy-momentum tensor. Suppose that we want to prove all-encompassing theorems about general relativity.
+For instance, we may want to reassure ourselves that general relativity will never lead to violations of causality
+such as the closed timelike curves exhibited by the Petrov metric (p.~\pageref{eq:petrov-metric}). We can never make
+this type of general proof without assuming something about the energy-momentum tensor.
+
+In example \ref{eg:dust-and-radiation-cosm} on page \pageref{eg:dust-and-radiation-cosm}, we saw that
+radiation has $P=\rho/3$ and dust has $P=0$. Both have $\rho\ge0$. If the universe is made out of nothing but dust and radiation, then
+we can obtain the following four constraints on the energy-momentum tensor:
+
+\begin{tabular}{ll}
+trace energy condition   &  $\rho-3P \ge 0$ \\
+strong energy condition  &  $\rho+3P \ge 0$ and $\rho+P \ge 0$ \\
+dominant energy condition & $\rho \ge 0$ and $|P| \le \rho$ \\
+weak energy condition    &  $\rho \ge 0$ and $\rho+P \ge 0$ \\
+null energy condition    &  $\rho+P \ge 0$ \\
+\end{tabular}
+
+\noindent These are arranged roughly in order from strongest to weakest.
+They all have to do with the idea that negative mass-energy doesn't seem to exist in our universe, i.e., that
+gravity is always attractive rather than repulsive. With this motivation, it would seem that there should only
+be one way to state an energy condition: $\rho > 0$. But the symbols $\rho$ and $P$ refer to the form of the
+energy-momentum tensor in a special frame of reference, interpreted as the one that is at rest relative to the
+average motion of the ambient matter. In this frame, the tensor is diagonal. Switching to some other frame
+of reference, the $\rho$ and $P$ parts of the tensor would mix, and it might be possible to end up with
+a negative energy density. The weak energy condition is the constraint we need in order to make sure that
+the energy density is never negative in any frame.
+
+The dominant energy condition is like the weak energy condition, but it also guarantees that no observer
+will see a flux of energy flowing at speeds greater than $c$.
+
+As an example of the use of the energy conditions, Hawking and Ellis
+have proved that under the assumption of the strong energy condition, 
+any body that becomes sufficiently compact will end up forming a singularity.
+We might imagine that the formation of a black hole would be a delicate thing, requiring perfectly
+symmetric initial conditions in order to end up with the perfectly symmetric Schwarzschild metric.
+Many early relativists thought so, for good reasons. If we look around the universe at various scales, we find that collisions
+between astronomical bodies are extremely rare. This is partly because the distances are vast compared to the sizes
+of the objects, but also because conservation of angular momentum has a tendency to make objects swing past one another
+rather than colliding head-on. Starting with a cloud of objects, e.g., a globular cluster,
+Newton's laws make it extremely difficult, regardless of the attractive nature of gravity, to pick initial conditions that will make them all collide the future.
+For one thing, they would have to have exactly zero total angular momentum.
+
+Most relativists now believe that this is not the case. General relativity describes gravity in terms of the tipping of light cones. When the field
+is strong enough, there is a tendency for the light cones to tip over so far that the entire future light-cone
+points at the source of the field. If this occurs on an entire surface surrounding the source, it is referred to
+as a trapped surface.\index{trapped surface}  Any lumpiness or rotation in the initial conditions becomes irrelevant, because every particle's
+entire future world-line lies inward rather than outward. A possible loophole in this argument is the question of whether the light cones
+will really tip over far enough. We could imagine that under extreme
+conditions of high density and temperature, matter might demonstrate unusual behavior, perhaps
+including a negative energy density, which would then give rise to a gravitational repulsion.
+Gravitational repulsion would tend to make the light cones tip outward rather than inward, possibly preventing the collapse to a singularity.
+We can close this loophole by assuming an appropriate energy condition.
+Penrose and Hawking have formalized the above argument in the form of a series of
+theorems, known as the singularity theorems.\index{singularity theorems}\index{Penrose-Hawking singularity theorems}
+One of these applies to the formation of black holes, and another one to cosmological singularities such as the
+Big Bang.
+
+The current status of the energy conditions is shaky.
+Although it is clear that all of them hold in a variety of situations, there are strong reasons to believe that
+they are violated at both microscopic and cosmological scales, for reasons both classical
+and quantum-mechanical.\footnote{Barcelo and Visser, ``Twilight for the energy conditions?,'' \url{http://arxiv.org/abs/gr-qc/0205066v1}.}
+We will see such a violation in the following section.
+<% end_sec %> % Energy conditions
+
+<% begin_sec("The cosmological constant") %>\label{sec:cosmological-constant}% Is a sub-sub-section, so only refer to it by page, not by section number.
+
+Having included the source term in the Einstein field equations, our most important application will be to cosmology.
+Some of the relevant ideas originate long before Einstein.
+Once Newton had formulated a theory of gravity as a universal attractive force, he realized that there would be a tendency for the universe
+to collapse. He resolved this difficulty by assuming that the universe was infinite in spatial extent, so that it would have
+no center of symmetry, and therefore no preferred point to collapse toward. The trouble with this argument is that the
+equilibrium it describes is unstable. Any perturbation of the uniform density of matter breaks the symmetry, leading to
+the collapse of some pocket of the universe. If the radius of such a collapsing region is $r$, then its gravitational is
+proportional to $r^3$, and its gravitational field is proportional to $r^3/r^2=r$. Since its acceleration is proportional
+to its own size, the time it takes to collapse is independent of its size. The prediction is that the universe will
+have a self-similar structure, in which the clumping on small scales behaves in the same way as clumping on large scales;
+zooming in or out in such a picture gives a landscape that appears the same. With modern hindsight, this is actually not
+in bad agreement with reality. We observe that the universe has a hierarchical structure consisting of solar systems,
+galaxies, clusters of galaxies, superclusters, and so on. Once such a structure starts to condense, the collapse tends
+to stop at some point because of conservation of angular momentum. This is what happened, for example, when our own
+solar system formed out of a cloud of gas and dust.
+
+Einstein confronted similar issues, but in a more acute form. Newton's symmetry argument, which failed only because of
+its instability, fails even more badly in relativity: the entire spacetime can simply contract uniformly over time,
+without singling out any particular point as a center. Furthermore, it is not obvious that angular momentum
+prevents total collapse in relativity in the same way that it does classically, and even if it did, how would
+that apply to the universe as a whole? Einstein's Machian orientation would have led him to reject the idea that
+the universe as a whole could be in a state of rotation, and in any case it was sensible to start the study of
+relativistic cosmology with the simplest and most symmetric possible models, which would have no preferred axis
+of rotations.
+
+Because of these issues, Einstein decided to try to patch up his field equation so that it would allow a static
+universe.
+Looking back over the considerations that led us to this form of the equation, we see that it is
+very nearly uniquely determined by the following criteria:
+\begin{itemize}
+\item The equivalence principle is satisfied.
+\item It should be coordinate-independent.
+\item It should be equivalent to Newtonian gravity in the appropriate limit.
+\item It should not be overdetermined.
+\end{itemize}
+This is not meant to be a rigorous proof, just a general observation that it's not easy to tinker with the
+theory without breaking it.
+
+\begin{eg}{A failed attempt at tinkering}\label{eg:failed-scalar-tinkering}
+As an example of the lack of ``wiggle room'' in the structure of the field equations, suppose we
+construct the scalar $T\indices{^a_a}$, the trace of the energy-momentum tensor, and try to insert
+it into the field equations as a further source term. The first problem is that the field equation
+involves rank-2 tensors, so we can't just add a scalar. To get around this, suppose we multiply by the
+metric. We then have something like $G_{ab} = c_1 T_{ab}+c_2 g_{ab} T\indices{^c_c}$, where
+the two constants $c_1$ and $c_2$ would be constrained by the requirement that the theory agree
+with Newtonian gravity in the classical limit.
+
+This particular attempt fails, because it violates the equivalence principle. Consider a beam of
+light directed along the $x$ axis. Its momentum is equal to its energy (see page \pageref{sec:momentum-four-vector}),
+so its contributions to the local energy density and pressure are equal.
+Thus its contribution to the energy-momentum tensor is of the form $T\indices{^\mu_\nu}=(\text{constant})\times diag(-1,1,0,0)$.
+The trace vanishes, so its coupling to gravity in the $c_2$ term is zero. But this violates the equivalence
+principle, which requires that all forms of mass-energy contribute equally to gravitational mass.
+\end{eg}
+
+One way in which we \emph{can} change the field equation without violating any of these is to add a term $\Lambda g_{ab}$, giving
+\begin{equation*}
+  G_{ab} = 8\pi T_{ab} + \Lambda g_{ab} \qquad ,
+\end{equation*}
+which is what we will refer to as the Einstein field equation.\footnote{In books that use a $-+++$ metric rather then our
+$+---$, the sign of the cosmological constant term is reversed relative to ours.}
+The universal constant $\Lambda$ is called the cosmological constant.\index{cosmological constant}\index{Einstein field equation}
+Einstein originally introduced a positive cosmological constant because he wanted relativity to be able to describe a static universe.
+To see why it would have this effect, compare its behavior with that of an ordinary fluid.
+When an ordinary fluid, such as the exploding air-gas mixture in a car's cylinder, expands, it does work on its environment,
+and therefore by conservation of energy its own internal energy is reduced. A positive cosmological constant,
+however, acts like a certain amount of mass-energy built into every cubic meter of vacuum. Thus when it
+expands, it \emph{releases} energy. Its pressure is negative.
+
+Now consider the following pseudo-classical argument.
+Although we've already seen (page \pageref{no-separate-k-and-u}) that there is no useful way to separate the
+roles of kinetic and potential energy in general relativity, suppose that there are some quantities analogous
+to them in the description of the universe as a whole. (We'll see below that the universe's contraction and
+expansion is indeed described by a set of differential equations that can be interpreted in essentially this way.)
+If the universe contracts, a cubic meter of space becomes less than a cubic meter.
+The cosmological-constant energy associated with that volume is reduced, so some energy has been consumed.
+The kinetic energy of the collapsing matter goes down, and the collapse is decelerated.
+
+The addition of the $\Lambda$ term constitutes a change to the \emph{vacuum} field equations, and the good agreement
+between theory and experiment in the case of, e.g., Mercury's orbit puts an upper limit on $\Lambda$ then implies
+that $\Lambda$ must be small. For an
+order-of-magnitude estimate, consider that $\Lambda$ has units of mass density, and the only parameters with units
+that appear in the description of Mercury's orbit are the mass of the sun, $m$, and the radius of Mercury's orbit, $r$.
+The relativistic corrections to Mercury's orbit are on the order of $v^2$, or about $10^{-8}$, and they come out right.
+Therefore we can estimate  that the cosmological constant could not have been greater than about $(10^{-8})m/r^3 \sim 10^{-10}\ \kgunit/\munit^3$,
+or it would have caused noticeable discrepancies. This is a very poor bound; if $\Lambda$ was this big, we might even be
+able to detect its effects in laboratory experiments.
+Looking at the role played by $r$ in the estimate, we see that the
+upper bound could have been made tighter by increasing $r$. Observations on galactic scales, for example, constrain it much
+more tightly. This justifies the description of $\Lambda$ as cosmological:
+the larger the scale, the more significant the effect of a nonzero $\Lambda$ would be.
+
+Since the right-hand side of the field equation is $8\pi T_{ab} + \Lambda g_{ab}$, it is possible to consider
+the cosmological constant as a type of matter contributing to the energy-momentum tensor.\index{energy conditions!violated by cosmological constant}
+Its negative pressure causes a violation of the strong energy condition. If the cosmological constant is a product of the
+quantum-mechanical structure of the vacuum, then this is not too surprising, because quantum fields are known to display
+negative energy. For example, the energy density between two parallel conducting plates is negative due to the Casimir effect.\index{Casimir effect}
+<% end_sec %> % The cosmological constant
+<% end_sec %> % Sources in general relativity
+
+<% begin_sec("Cosmological solutions") %>\label{sec:cosmological-solutions}
+We are thus led to pose two interrelated questions. First, what can empirical observations about the universe tell us about
+the laws of physics, such as the zero or nonzero value of the cosmological constant? Second, what can the laws of physics
+tell us about the large-scale structure of the universe, its origin, and its fate?
+
+Surveys of distant quasars show that the universe has very little structure at scales greater than a few times $10^{25}$ m.
+(This can be seen on a remarkable logarithmic map  constructed by Gott et al., \url{astro.princeton.edu/universe}.)
+This suggests that we can, to a good approximation, model the universe as being 
+isotropic (the same in all spatial directions) and homogeneous (the same at all
+locations in space).
+
+Motivated by Hubble's observation that the universe is expanding, we hypothesize the existence of solutions of the
+field equation in which the properties of space are homogeneous and isotropic,
+but the over-all scale of space is increasing as described by some scale function $a(t)$. Because of
+coordinate invariance, the metric can still be written in a variety of forms. One such form is
+\begin{equation*}
+  \der s^2 = \der t^2 - a(t)\der\ell^2 \qquad ,
+\end{equation*}
+where the spatial part is
+\begin{equation*}
+  \der\ell^2 = f(r)\der r^2 + r^2 \der\theta^2 + r^2 \sin^2\theta \der\phi^2 \qquad .
+\end{equation*}
+In these coordinates, the time $t$ is interpreted as the proper time of a particle that has always been at rest. Events
+that are simultaneous according to this $t$ are events at which the local properties of the universe --- i.e., its curvature ---
+are the same. These coordinates are referred as the ``standard'' cosmological coordinates; one will also encounter
+other choices, such as the comoving and conformal coordinates, which are more convenient for certain purposes.
+Historically, the solution for the functions $a$ and $f$ was found by de 
+Sitter in 1917.\index{de Sitter}\index{standard cosmological coordinates}\index{comoving cosmological coordinates}\index{conformal cosmological coordinates}
+\index{cosmological coordinates!standard}\index{cosmological coordinates!comoving}\index{cosmological coordinates!conformal}\label{standard-cosm-coords}
+
+The unknown function $f(r)$ has to make the 3-space metric $\der\ell^2$ have a constant Einstein curvature tensor.
+The following Maxima program computes the curvature.
+\begin{listing}{1}
+load(ctensor);
+dim:3;
+ct_coords:[r,theta,phi];
+depends(f,t);
+lg:matrix([f,0,0],
+          [0,r^2,0],
+          [0,0,r^2*sin(theta)^2]);
+cmetric();
+einstein(true);
+\end{listing}
+% constant_curvature.mac
+Line 2 tells Maxima that we're working in a space with three dimensions rather than its default of four.
+Line 4 tells it that $f$ is a function of time.  Line 9 uses its built-in function for computing the Einstein tensor $G\indices{^a_b}$. The result has only one nonvanishing
+component, $G\indices{^t_t}=(1-1/f)/r^2$. This has to be constant, and since scaling can be absorbed in the factor $a(t)$ in the
+3+1-dimensional metric, we can just set the value of $G_{tt}$ more or less arbitrarily, except for its sign.
+The result is $f=1/(1-kr^2)$, where $k=-1$, 0, or 1. The form of $\der\ell^2$ shows us that $k$ can be interpreted
+in terms of the sign of the spatial curvature. The $k=0$ case gives a flat space. For negative $k$, a circle of radius $r$ centered
+on the origin has a circumference $2\pi r f(r)$ that is less than its Euclidean value of $2\pi r$. The opposite occurs for
+$k>0$.
+The resulting metric, called the Robertson-Walker metric, is
+\begin{equation*}
+  \der s^2 = \der t^2 - a^2\left(\frac{\der r^2}{1-kr^2} + r^2 \der\theta^2 + r^2 \sin^2\theta \der\phi^2\right) \qquad .
+\end{equation*}
+
+Having fixed $f(r)$, we can now see what the field equation tells us about $a(t)$.
+The next program computes the Einstein tensor for the full four-dimensional spacetime:
+\begin{listing}{1}
+load(ctensor);
+ct_coords:[t,r,theta,phi];
+depends(a,t);
+lg:matrix([1,0,0,0],
+          [0,-a^2/(1-k*r^2),0,0],
+          [0,0,-a^2*r^2,0],
+          [0,0,0,-a^2*r^2*sin(theta)^2]);
+cmetric();
+einstein(true);
+\end{listing}
+% cosmology.mac
+The result is
+\begin{align*}
+  G\indices{^t_t} &= 3\left(\frac{\dot{a}}{a}\right)^2 + 3ka^{-2} \\
+  G\indices{^r_r} = G\indices{^\theta_\theta} = G\indices{^\phi_\phi} &= 2\frac{\ddot{a}}{a} + \left(\frac{\dot{a}}{a}\right)^2 + ka^{-2} \qquad ,
+\end{align*}
+where dots indicate differentiation with respect to time.
+
+Since we have $G\indices{^a_b}$ with mixed upper and lower indices, we either have to convert it into $G_{ab}$, or write out the
+field equations in this mixed form. The latter turns out to be simpler. In terms of mixed indices, $g\indices{^a_b}$ is always simply
+$diag(1,1,1,1)$. Arbitrarily singling out $r=0$ for simplicity, we have $g=diag(1,-a^2,0,0)$. The energy-momentum tensor is
+$T\indices{^\mu_\nu}=diag(-\rho,P,P,P)$.
+Substituting into $G\indices{^a_b}=8\pi T\indices{^a_b}+\Lambda g\indices{^a_b}$, we find
+\begin{align*}
+  3\left(\frac{\dot{a}}{a}\right)^2 + 3ka^{-2} - \Lambda                     &= 8\pi\rho \\
+  2\frac{\ddot{a}}{a} + \left(\frac{\dot{a}}{a}\right)^2 + ka^{-2} - \Lambda &= -8\pi P \qquad .
+\end{align*}
+Rearranging a little, we have a set of differential equations known as the Friedmann equations,\index{Friedmann equations}
+\begin{align*}
+  \frac{\ddot{a}}{a}   \quad          &= \frac{1}{3}\Lambda - \frac{4\pi}{3}(\rho+3P) \\
+  \left(\frac{\dot{a}}{a}\right)^2    &= \frac{1}{3}\Lambda + \frac{8\pi}{3}\rho-k a^{-2} \qquad .
+\end{align*}
+
+% This now checks out against Carroll, \url{http://nedwww.ipac.caltech.edu/level5/March01/Carroll3/Carroll8.html }, except for the
+%       lambda terms, which he doesn't include.
+
+The cosmology that results from a solution of these differential equations is known as the
+Friedmann-Robertson-Walker (FRW) or Friedmann-Lema\^{i}tre-Robertson-Walker (FLRW) cosmology.\index{Friedmann-Robertson-Walker cosmology}
+
+<% begin_sec("Evidence for expansion of the universe") %>\label{evidence-for-expansion}
+By 1929, Edwin Hubble\index{Hubble, Edwin} at Mount Wilson had determined that the universe was expanding rather than static, so
+that Einstein's original goal of allowing a static cosmology became pointless. The universe, it seemed, had
+originated in a Big Bang\index{Big Bang} (a concept that originated with the Belgian Roman Catholic priest
+Georges Le\-ma\^{i}tre).
+This now appears natural, since the Friedmann equations would only
+allow a constant $a$ in the case where $\Lambda$ was perfectly tuned relative to the other parameters. 
+Einstein later referred
+to the cosmological constant as the ``greatest blunder of my life,'' and for the next 70 years it was
+commonly assumed that $\Lambda$ was exactly zero.
+
+Self-check: Why is it not correct to think of the Big Bang as an explosion that occurred at a specific
+point in space?
+
+The existence of the Big Bang is confirmed directly by looking up in the sky and seeing it.
+In 1964, Penzias and Wilson\index{Penzias, Arno}\index{Wilson, Robert} at Bell Laboratories in New Jersey detected a mysterious background of microwave radiation
+using a directional horn antenna. As with many accidental
+discoveries in science, the important thing was to pay attention to the surprising observation
+rather than giving up and moving on when it confounded attempts to understand it. They pointed
+the antenna at New York City, but the signal didn't increase. The radiation didn't
+show a 24-hour periodicity, so it couldn't be from a source in a certain direction in the sky.
+They even went so far as to sweep out the pigeon droppings inside.
+It was eventually established that the radiation was
+coming uniformly from all directions in the
+sky and had a black-body spectrum with a temperature of about 3 K.
+
+This is now interpreted as follows. Soon after the Big Bang, the universe was hot enough to
+ionize matter. An ionized gas is opaque to light, since the oscillating fields of an electromagnetic
+wave accelerate the charged particles, depositing kinetic energy into them. Once the universe
+became cool enough, however, matter became electrically neutral, and the universe became
+transparent. Light from this time is the most long-traveling light that we can detect now.
+The latest data show that transparency set in around $4\times 10^5$ years after the big bang,
+when the temperature was about 3000 K. The surface we see, dating back to this time, is known
+as the surface of last scattering.\index{surface of last scattering} Since then, the universe has expanded by about a factor
+of 1000, causing the wavelengths of photons to be stretched by the same amount due to the
+expansion of the underlying space. This is equivalent to a Doppler shift due to the source's
+motion away from us; the two explanations are equivalent. We therefore see the 3000 K optical
+black-body radiation red-shifted to 3 K, in the microwave region.
+
+<% end_sec %> % evidence for expansion of the universe
+
+<% begin_sec("A singularity at the Big Bang") %>
+In section \ref{sec:black-hole-singularity}, we saw that a black hole contains a singularity.
+However, it appears that black hole singularities are always hidden behind event horizons, so that
+we can never observe them from the outside. Now if we extrapolate the Friedmann equations
+backward in time, we find that they always have $a=0$ at some point in the past, and this
+occurs regardless of the details of what we assume about the matter and radiation that
+fills the universe. To see this, note that, as discussed in example \ref{eg:dust-and-radiation-cosm}
+on page \pageref{eg:dust-and-radiation-cosm}, radiation is expected to dominate the early universe, for
+generic reasons that are not sensitive to the (substantial) observational uncertainties about the universe's present-day mixture of ingredients.
+Under radiation-dominated conditions, we can approximate $\Lambda=0$ and $P=0$ in the first Friedmann equation,
+finding
+\begin{equation*}
+  \frac{\ddot{a}}{a} = - \frac{4\pi}{3}\rho 
+\end{equation*}
+where $\rho$ is the density of mass-energy due to radiation. Since $\ddot{a}/a$ is always negative,
+the graph of $a(t)$ is always concave down, and since $a$ is currently increasing, there must be some
+time in the past when $a=0$. One can readily verify that this is not just a coordinate singularity;
+the Ricci scalar curvature $R\indices{^a_a}$ diverges, and the singularity occurs at a finite proper time in the past.
+If this singularity in the model corresponds to a singularity in the real universe, then it is not
+a singularity that is hidden behind an event horizon. It lies in our past light-cone, and our own world-lines
+emerged from it.
+
+One of the Penrose-Hawking singularity theorems\index{Penrose-Hawking singularity theorems} proves that the
+Big Bang singularity is not just a product of the unrealistic assumption of perfect symmetry  that went into the
+FRW cosmology. The only loophole is that if the cosmological constant is large enough, it violates the strong
+energy equation, and we can have a Big Bounce rather than a Big Bang (see page
+\pageref{bb-singularity-with-lambda}).\label{bb-singularity-without-lambda}\label{big-bang-singularity-inevitable}
+
+<% end_sec %> % A singularity at the Big Bang
+
+<% begin_sec("Observability of expansion") %>\label{sec:observability-of-expansion}
+<% begin_sec("Brooklyn is not expanding!") %>
+The proper interpretation of the expansion of the universe, as described by the Friedmann equations,
+can be tricky. It might seem as though the expansion would be undetectable, in the sense that
+general relativity is coordinate-independent, and therefore does not pick out any preferred distance scale.
+That is, if all our meter-sticks expand, and the rest of the universe expands as well, we would
+have no way to detect the expansion. The flaw in this reasoning is that the Friedmann equations
+only describe the average behavior of spacetime. As dramatized in the classic Woody Allen movie
+``Annie Hall:'' ``Well, the universe is everything, and if it's expanding, someday it will break apart and that would be the end of everything!''
+``What has the universe got to do with it? You're here in Brooklyn! Brooklyn is not expanding!''
+
+To organize our thoughts, let's consider the following hypotheses:
+\begin{enumerate}
+\item The distance between one galaxy and another increases at the rate given by $a(t)$ (assuming the galaxies are sufficiently
+distant from one another that they are not gravitationally bound within the same galactic cluster, supercluster, etc.).
+\item The wavelength of a photon increases according to $a(t)$ as it travels cosmological distances.
+\item The size of the solar system increases at this rate as well (i.e., gravitationally bound systems get bigger, including
+the earth and the Milky Way).
+\item The size of Brooklyn increases at this rate (i.e., electromagnetically bound systems get bigger).
+\item The size of a helium nucleus increases at this rate (i.e., systems bound by the strong nuclear force get bigger).
+\end{enumerate}
+
+We can imagine that:
+\begin{itemize}
+\item All the above hypotheses are true.
+\item All the above hypotheses are false, and in fact none of these sizes increases at all.
+\item Some are true and some false.
+\end{itemize}
+
+If all five hypotheses were true, the expansion would be undetectable, because all available meter-sticks would be
+expanding together. Likewise if no sizes were increasing, there would be nothing to detect. These two possibilities
+are really the same cosmology, described in two different coordinate systems.
+But the Ricci and
+Einstein tensors were carefully constructed so as to be intrinsic. The fact that the expansion
+affects the Einstein tensor shows that it cannot interpreted as a mere coordinate expansion.
+Specifically, suppose someone tells you that the FRW metric can be made into a flat-space metric
+by a change of coordinates. (I have come across this claim on internet forums.)
+The linear structure of the tensor transformation equations guarantees that a nonzero tensor
+can never be made into a zero tensor by a change of coordinates. Since the Einstein tensor
+is nonzero for an FRW metric, and zero for a flat-space metric, the claim is false.
+
+We can now see some of the limitations of a common metaphor used to explain cosmic
+expansion, in which the universe is visualized as the surface of an expanding balloon. The metaphor
+correctly gets across several ideas: that the Big Bang is not an explosion that occurred at a preexisting
+point in empty space; that hypothesis 1 above holds; and that the rate of recession of one galaxy
+relative to another is proportional to the distance between them. Nevertheless the metaphor may be misleading,
+because if we take a laundry marker and draw any structure on the balloon, that structure will expand
+at the same rate. But this implies that hypotheses 1-5 all hold, which cannot be true.
+
+Since some of the five hypotheses must be true and some false, and we would like to sort out which are which.
+It should also be clear by now that these are not five independent hypotheses. For example, we can
+test empirically whether the ratio of Brooklyn's size to the distances between galaxies changes like $a(t)$,
+remains constant, or changes with some other time dependence, but it is only the ratio that is
+actually observable.
+
+Empirically, we find that hypotheses 1 and 2 are true (i.e., the photon's wavelength maintains a constant
+ratio with the intergalactic distance scale), while 3, 4, and 5 are false. For example, the orbits of
+the planets in our solar system have been measured extremely accurately by radar reflection and by
+signal propagation times to space probes, and no expanding trend is detected.
+<% end_sec %> % Brooklyn is not expanding!
+<% begin_sec("General-relativistic predictions") %>
+Does general relativity correctly reproduce these observations? General relativity is mainly a theory of
+gravity, so it should be well within its domain to explain why the solar system does not expand while
+intergalactic distances do. It is impractical to solve the Einstein field equations exactly so as to describe the
+internal structure of all the bodies that occupy the universe: galaxies, superclusters, etc.
+We can, however, handle simple cases, as in example
+\ref{eg:sch-de-sitter} on page \pageref{eg:sch-de-sitter}, where we display an exact solution
+for the case of a universe containing only two things: an isolated black hole, and an energy density described
+by a cosmological constant. We find that
+the characteristic scale of the black hole, e.g., the radius of its event horizon, is still set by the constant mass $m$, so
+we can see that cosmological expansion does not affect the size of this gravitationally bound system. We can also imagine
+putting a test particle in a circular orbit around the black hole. Since the metric near the black hole is very nearly the same
+as an ordinary Schwarzschild metric, we find that the test particle's orbit does not expand by any significant amount.
+Estimates have also been carried out for more
+realistic cosmologies and for actual systems of interest such as the solar system.\footnote{\url{http://arxiv.org/abs/astro-ph/9803097v1}} For example,
+the predicted general-relativistic effect on the radius of the earth's orbit since the
+time of the dinosaurs is calculated to be about as big as the diameter of an atomic nucleus;
+if the earth's orbit had expanded according to $a(t)$, the increase would have been millions of
+kilometers.
+
+It is more difficult to demonstrate by explicit calculation that atoms and nuclei do not expand, since we do not
+have a theory of quantum gravity at our disposal. It is, however, easy to see that such an expansion would
+violate either the equivalence principle or the basic properties of quantum mechanics. One way of stating
+the equivalence principle is that the local geometry of spacetime is always approximately Lorentzian, so that
+the the laws of physics do not depend on one's position or state of motion. Among these laws of physics are
+the principles of quantum mechanics, which imply that an atom or a nucleus has a well-defined ground state,
+with a certain size that depends only on fundamental constants such as Planck's constant and the masses
+of the particles involved.
+
+This is different from the case of a photon traveling across the
+universe. The argument given above fails, because the photon does not have a ground state.
+The photon \emph{does} expand, and this is required
+by the correspondence principle. If the photon did not expand, then its wavelength would
+remain constant, and this would be inconsistent with the classical theory of
+electromagnetism, which predicts a Doppler shift due to the relative motion of the
+source and the observer. One can choose to describe cosmological redshifts either as
+Doppler shifts or as expansions of wavelength due to cosmological expansion.
+<% end_sec %> % General-relativistic predictions
+<% begin_sec("More than one dimension required") %>
+Another good way of understanding why a photon expands, while an atom does not, is to recall that
+a one-dimensional space can never have any intrinsic curvature. If the expansion of atoms were to be
+detectable, we would need to detect it by comparing against some other meter-stick. Let's suppose
+that a hydrogen atom expands more, while a more tightly bound uranium atom expands less, so that
+over time, we can detect a change in the ratio of the two atoms' sizes. The world-lines of the
+two atoms are one-dimensional curves in spacetime. They are housed in a laboratory, and although
+the laboratory does have some spatial extent, the equivalence principle guarantees that to a good
+approximation, this small spatial extent doesn't matter. This implies an intrinsic curvature in a
+one-dimensional space, which is mathematically impossible, so we have a proof by contradiction that
+atoms do not expand.
+
+Now why does this one-dimensionality argument fail for photons and galaxies? For a pair of galaxies, it
+fails because the galaxies are not sufficiently close together to allow them both to be covered
+by a single Lorentz frame, and therefore the set of world-lines comprising the observation cannot
+be approximated well as lying within a one-dimensional space. Similar reasoning applies for
+cosmological redshifts of photons received from distant galaxies. One could instead propose
+flying along in a spaceship next to an electromagnetic wave, and monitoring the change in its
+wavelength while it is in flight. All the world-lines involved in such an experiment would indeed be
+confined to a one-dimensional space. The experiment is impossible, however, because the measuring apparatus
+cannot be accelerated to the speed of light. In reality, the speed of the light wave relative to the
+measuring apparatus will always equal $c$, so the two world-lines involved in the experiment
+will diverge, and will not be confined to a one-dimensional region of spacetime.
+
+\begin{eg}{\O{}stvang's quasi-metric relativity}
+Over the years, a variety of theories of gravity have been proposed as alternatives to general
+relativity. Some of these, such as the Brans-Dicke theory, remain viable, i.e., they are consistent
+with all the available experimental data that have been used to test general relativity.
+One of the most important reasons for trying to construct such theories is that it can
+be impossible to interpret tests of general relativity's predictions unless one also possesses
+a theory that predicts something different. This issue, for example, has made it impossible
+to test Einstein's century-old prediction that gravitational effects propagate at $c$, since
+there is no viable  theory available that predicts any other speed for them (see section \ref{sec:speed-of-gravity}).
+
+\O{}stvang (\url{arxiv.org/abs/gr-qc/0112025v6}) has proposed an alternative theory of
+gravity, called quasi-metric relativity, which, unlike general relativity,
+predicts a significant cosmological expansion of the solar system,
+and which is claimed to be able to explain the observation of small, unexplained accelerations of the Pioneer space
+probes that remain after all accelerations due to known effects have been subtracted (the ``Pioneer anomaly'').\index{Pioneer anomaly}
+We've seen above that there are a variety of arguments against such an expansion of the solar system,
+and that many of these arguments do not require detailed technical calculations but only knowledge of
+certain fundamental principles, such as the structure of differential geometry (no intrinsic curvature
+in one dimension), the equivalence principle, and the existence of ground states in quantum mechanics.
+We therefore expect that \O{}stvang's theory, if it is logically self-consistent, will probably violate
+these assumptions, but that the violations must be relatively small if the theory is claimed to be
+consistent with existing observations. This is in fact the case. The theory violates the strictest
+form of the equivalence principle.
+
+Over the years, a variety of explanations have been proposed for
+the Pioneer anomaly, including both glamorous ones (a modification of the $1/r^2$ law of gravitational
+forces) and others more pedestrian (effects due to outgassing of fuel or radiation pressure from sunlight).
+Calculations by Iorio\footnote{\url{http://arxiv.org/abs/0912.2947v1}} in 2006-2009
+show that if the force law for gravity is modified in order to explain the Pioneer anomalies, and if
+gravity obeys the equivalence principle, then the results are inconsistent with the observed orbital motion
+of the satellites of Neptune. This makes gravitational explanations unlikely, but does not obviously rule
+out \O{}stvang's theory, since the theory is not supposed to obey the equivalence principle.
+\O{}stvang says\footnote{private communication, Jan.~4, 2010} that his theory predicts an expansion of
+$\sim 1\munit/\zu{yr}$ in the orbit of Triton's moon Nereid, which is consistent with observation.
+\end{eg}
+
+<% end_sec %> % More than one dimension required
+<% begin_sec("Does space expand?") %>
+Finally, the balloon metaphor encourages us to interpret cosmological expansion as a phenomenon in which
+space itself expands, or perhaps one in which new space is produced. Does space really expand?
+Without posing the question in terms of more rigorously defined, empirically observable quantities,
+we can't say yes or no. It is merely a matter of which definitions one chooses and which conceptual framework
+one finds easier and more natural to work within. Bunn and Hogg have stated the minority view
+against expansion of space\footnote{\url{http://arxiv.org/abs/0808.1081v2}}, while the opposite
+opinion is given by Francis et al.\footnote{\url{http://arxiv.org/abs/0707.0380v1}}
+As an example of a self-consistent set of definitions that lead to the conclusion that space
+does expand, Francis et al. give the following. Define eight observers positioned at the corners
+of a cube, at cosmological distances from one another. Let each observer be at rest relative to the
+local matter and radiation that were used as ingredients in the FRW cosmology. (For example, we know that our own
+solar system is \emph{not} at rest in this sense, because we observe that the cosmic microwave
+background radiation is slightly Doppler shifted in our frame of reference.) Then these eight observers
+will observe that, over time, the volume of the cube grows according to the function $a(t)$ in the FRW model.
+<% end_sec %> % Does space expand?
+<% end_sec %> % Observability of expansion
+
+<% begin_sec("The vacuum-dominated solution") %>\label{sec:vacuum-dominated}
+For 70 years after Hubble's discovery of cosmological expansion, the standard picture was one in
+which the universe expanded, but the expansion must be decelerating. The deceleration is predicted
+by the special cases of the FRW cosmology that were believed to be applicable, and even if we didn't
+know anything about general relativity, it would be reasonable to expect a deceleration due to the
+mutual Newtonian gravitational attraction of all the mass in the universe.
+
+But observations of distant supernovae starting around 1998 introduced a further twist in the plot.
+In a binary star system consisting of a white dwarf and a non-degenerate star, as the non-degenerate
+star evolves into a red giant, its size increases, and it can begin dumping mass onto the white dwarf.
+This can cause the white dwarf to exceed the Chandrasekhar limit (page \pageref{chandrasekhar-limit}),
+resulting in an explosion known as a type Ia supernova. Because the Chandrasekhar limit provides a uniform
+set of initial conditions, the behavior of type Ia supernovae is fairly predictable, and in particular
+their luminosities are approximately equal. They therefore provide a kind of standard candle: since
+the intrinsic brightness is known, the distance can be inferred from the apparent brightness. Given the
+distance, we can infer the time that was spent in transit by the light on its way to us, i.e. the
+look-back time. From measurements of Doppler shifts of spectral lines, we can also find the velocity
+at which the supernova was receding from us. The result is that we can measure the universe's
+rate of expansion as a function of time. Observations show that this rate of expansion has been
+accelerating. The Friedmann equations show that this can only occur for $\Lambda \gtrsim 4\rho$.
+This picture has been independently verified by measurements of the cosmic microwave background (CMB)
+radiation.\index{cosmic microwave background} A more detailed discussion of the supernova and
+CMB data is given in section \ref{sec:cosmology-observation} on page \pageref{sec:cosmology-observation}.
+
+With hindsight, we can see that
+in a quantum-mechanical context, it is natural to expect that fluctuations of the vacuum, required by the Heisenberg
+uncertainty principle, would contribute to the cosmological constant, and in fact models tend to overpredict $\Lambda$
+by a factor of about $10^{120}$! From this point of view, the mystery is why these effects cancel out so precisely.
+A correct understanding of the cosmological constant presumably requires a full theory
+of quantum gravity, which is presently far out of our reach.
+
+The latest data show that our universe, in the present epoch, is dominated by the cosmological constant,
+so as an approximation we can write the Friedmann equations as
+\begin{align*}
+  \frac{\ddot{a}}{a}   \quad          &= \frac{1}{3}\Lambda  \\
+  \left(\frac{\dot{a}}{a}\right)^2    &= \frac{1}{3}\Lambda  \qquad .
+\end{align*}
+This is referred to as a vacuum-dominated universe.
+The solution is
+\begin{equation*}
+  a = \exp\left[\sqrt{\frac{\Lambda}{3}} \: t\right] \qquad .
+\end{equation*}
+The implications for the fate of the universe are depressing. All parts of the universe will accelerate
+away from one another faster and faster as time goes on. The relative separation between two objects, say galaxy A
+and galaxy B, will eventually be increasing faster than the speed of light. (The Lorentzian character of spacetime
+is local, so relative motion faster than $c$ is only forbidden between objects that are passing right by one another.)
+At this point, an observer in either galaxy will say that the other one has passed behind an event horizon.
+If intelligent observers do actually exist in the far future, they may have no way to tell that the cosmos even exists.
+They will perceive themselves as living in island universes, such as we believed our own galaxy to be a hundred years ago.
+
+When I introduced the standard cosmological coordinates on page \pageref{standard-cosm-coords}, I described them
+as coordinates in which events that are simultaneous according to this $t$ are events at which the local properties of the universe are the same.
+In the case of a perfectly vacuum-dominated universe, however, this notion loses its meaning. The only observable
+local property of such a universe is the vacuum energy described by the cosmological constant, and its density is
+always the same, because it is built into the structure of the vacuum. Thus the vacuum-dominated cosmology is
+a special one that maximally symmetric, in the sense that it has not only the symmetries of homogeneity and
+isotropy that we've been assuming all along, but also a symmetry with respect to time: it is a cosmology without
+history, in which all times appear identical to a local observer. In the special case of this cosmology, the
+time variation of the scaling factor $a(t)$ is unobservable, and may be thought of as the unfortunate result
+of choosing an inappropriate set of coordinates, which obscure the underlying symmetry. When I argued in section
+\ref{sec:observability-of-expansion} for the observability of the universe's expansion, note that all my
+arguments assumed the presence of matter or radiation. These are completely absent in a perfectly
+vacuum-dominated cosmology.
+
+For these reasons de Sitter originally proposed this solution as a static universe in 1927. But by 1920
+it was realized that this was an oversimplification. The argument above only shows that the time variation
+of $a(t)$ does not allow us to distinguish one epoch of the universe from another. That is, we can't
+look out the window and infer the date (e.g., from the temperature of the cosmic microwave background
+radiation). It does not, however, imply that the universe is static in the
+sense that had been assumed until Hubble's observations.
+The $r$-$t$ part of the metric is
+\begin{equation*}
+  \der s^2 = \der t^2 - a^2 \der r^2 \qquad ,
+\end{equation*}
+where $a$ blows up exponentially with time, and the $k$-dependence has been
+neglected, as it was in the approximation to the Friedmann equations
+used to derive $a(t)$.\footnote{A computation of the Einstein tensor with $\der s^2 = \der t^2 - a^2(1-kr^2)^{-1} \der r^2$ shows
+that $k$ enters only via a factor the form $(\ldots)e^{(\ldots)t}+(\ldots)k$. For large $t$, the $k$ term
+becomes negligible, and the Einstein tensor becomes $G\indices{^a_b}=g\indices{^a_b}\Lambda$,
+This is consistent with the approximation we used in deriving the solution, which was to
+ignore both the source terms and the $k$ term in the Friedmann equations. The exact solutions with $\Lambda>0$ and
+$k=-1$, 0, and 1 turn out in fact to be equivalent except for a change of coordinates.}
+Let a test particle travel in the radial direction, starting at event $\zu{A}=(0,0)$ and ending at
+$\zu{B}=(t',r')$. In flat space, a world-line of the linear form $r=vt$ would be a geodesic connecting
+A and B; it would maximize the particle's proper time.
+But in the this metric, it cannot be a geodesic. The curvature of geodesics relative to a line on
+an $r$-$t$ plot is most easily understood in the limit where $t'$ is fairly long compared to the
+time-scale $T=\sqrt{3/\Lambda}$ of the exponential, so that $a(t')$ is huge. The particle's best strategy for maximizing
+its proper time is to make sure that its $\der r$ is extremely small when $a$ is extremely large.
+The geodesic must therefore have nearly constant $r$ at the end. This makes it sound as though the
+particle was decelerating, but in fact the opposite is true. If $r$ is constant, then the particle's
+spacelike distance from the origin is just $r a(t)$, which blows up exponentially. The near-constancy of
+the coordinate $r$ at large $t$ actually means that the particle's motion at large $t$ isn't really
+due to the particle's inertial memory of its original motion, as in Newton's first law. What happens
+instead is that the particle's initial motion allows it to move some distance away from the origin during a
+time on the order of $T$, but after that, the expansion of the universe has become so rapid that the
+particle's motion simply streams outward because of the expansion of space itself. Its initial motion only
+mattered because it determined how far out the particle got before being swept away by the exponential expansion.
+
+\begin{eg}{Geodesics in a vacuum-dominated universe}\label{eg:geodesic-vacuum-dominated}
+In this example we confirm the above interpretation in the special case where the particle, rather
+than being released in motion at the origin, is released at some nonzero radius $r$, with $\der r/\der t=0$ initially.
+First we recall the geodesic equation
+\begin{equation*}
+  \frac{\der^2 x^i}{\der\lambda^2} = \Gamma\indices{^i_{jk}} \frac{\der x^j}{\der\lambda} \frac{\der x^k}{\der\lambda} \qquad .
+\end{equation*}
+from page \pageref{geodesic-diffeq}. The nonvanishing Christoffel symbols for the 1+1-dimensional metric 
+$\der s^2 = \der t^2 - a^2 \der r^2$ are $\Gamma\indices{^r_{tr}}=\dot{a}/a$ and $\Gamma\indices{^t_{rr}}=-\dot{a}a$.
+Setting $T=1$ for convenience, we have $\Gamma\indices{^r_{tr}}=1$ and $\Gamma\indices{^t_{rr}}=-e^{-2t}$.
+% geodesic_vacuum_dominated.mac
+
+We conjecture that the particle remains at the same value of $r$. Given this conjecture, the particle's
+proper time $\int \der s$ is simply the same as its time coordinate $t$, and we can therefore use $t$ as
+an affine coordinate.
+Letting $\lambda=t$, we have
+\begin{align*}
+  & \frac{\der^2 t}{\der t^2}-\Gamma\indices{^t_{rr}}\left(\frac{\der r}{\der t}\right)^2 = 0\\
+  &0-\Gamma\indices{^t_{rr}}\dot{r}^2 = 0 \\
+  & \dot{r} = 0 \\
+  & r = \text{constant}
+\end{align*}
+This confirms the self-consistency of the conjecture that $r=\text{constant}$ is a geodesic.
+
+Note that we never actually had to use the actual expressions for the Christoffel symbols; we only needed to know
+which of them vanished and which didn't. The conclusion
+depended only on the fact that the metric had the form $\der s^2 = \der t^2 - a^2 \der r^2$ for some function
+$a(t)$. This provides a rigorous justification for the interpretation of the cosmological scale factor $a$
+as giving a universal time-variation on all distance scales.
+
+The calculation also confirms that there is nothing special about $r=0$. A particle released with $r=0$ and $\dot{r}=0$
+initially stays at $r=0$, but a particle released at any other value of $r$ also stays at that $r$.
+This cosmology is homogeneous, so any point could have been
+chosen as $r=0$. If we sprinkle test particles, all at rest, across the surface of a sphere centered on this arbitrarily
+chosen point, then they will all accelerate outward \emph{relative to one another}, and the volume of the sphere will increase. This is exactly what
+we expect. The Ricci curvature is interpreted as the second derivative of the volume of a region of space defined by
+test particles in this way. The fact that the second derivative is positive rather than negative tells us that we
+are observing the kind of repulsion provided by the cosmological constant, not the attraction that results from the
+existence of material sources.
+\end{eg}
+
+
+\begin{eg}{Schwarzschild-de Sitter space}\label{eg:sch-de-sitter}
+
+% http://en.wikipedia.org/wiki/De_Sitter%E2%80%93Schwarzschild
+
+The metric
+\begin{equation*}
+  \der s^2 = \left(1-\frac{2m}{r}-\frac{1}{3}\Lambda r^2\right)\der t^2 - \frac{\der r^2}{1-\frac{2m}{r}-\frac{1}{3}\Lambda r^2} - r^2\der\theta^2-r^2\sin^2\theta\der\phi^2
+\end{equation*}
+is an exact solution to the Einstein field equations with cosmological constant $\Lambda$, and can be interpreted as a universe in which the
+only mass is a black hole of mass $m$ located at $r=0$. Near the black hole, the $\Lambda$ terms become negligible, and this is simply
+the Schwarzschild metric. As argued in section \ref{sec:observability-of-expansion}, page \pageref{sec:observability-of-expansion},
+this is a simple example of how cosmological expansion does not cause all structures in the universe to grow at the same rate.
+\end{eg}
+% sch_de_sitter.mac
+
+<% begin_sec("The Big Bang singularity in a universe with a cosmological constant") %>\label{bb-singularity-with-lambda}
+On page \pageref{bb-singularity-without-lambda} we discussed the possibility that the Big Bang singularity was an artifact of the
+unrealistically perfect symmetry assumed by our cosmological models, and we found that this was not the case: the Penrose-Hawking singularity theorems
+demonstrate that the singularity is real, provided that the cosmological constant is zero. The cosmological constant is \emph{not}
+zero, however. Models with a very large positive cosmological constant can also display a Big Bounce rather than a Big Bang. If we imagine using the Friedmann
+equations to evolve the universe backward in time from its present state, the scaling arguments of  example \ref{eg:dust-and-radiation-cosm}
+on page \pageref{eg:dust-and-radiation-cosm}
+suggest that at early enough times, radiation and matter should dominate over the cosmological constant.
+For a large enough value of the cosmological constant, however, it can happen that this switch-over never happens.
+In such a model, the universe is and always has been dominated by the cosmological constant, and we get
+a Big Bounce in the past because of the cosmological constant's repulsion. In this book I will only develop simple
+cosmological models in which the universe is dominated by a single component; for a discussion of bouncing models
+with both matter and a cosmological constant, see Carroll, ``The Cosmological Constant,'' \url{http://www.livingreviews.org/lrr-2001-1}.
+By 2008, a variety of observational data had pinned down the cosmological constant well enough to rule out the
+possibility of a bounce caused by a very strong cosmological constant.
+<% end_sec %>
+
+<% end_sec %> % The vacuum-dominated solution
+
+<% begin_sec("The matter-dominated solution") %>\label{sec:matter-dominated}
+Our universe is not perfectly vacuum-dominated, and in the past it was even less so. Let us consider the matter-dominated
+epoch, in which the cosmological constant was negligible compared to the material sources. 
+The equations of state
+for nonrelativistic matter (p. \pageref{eg:dust-and-radiation-cosm}) are
+\begin{align*}
+ P&=0 \\
+ \rho &\propto a^{-3}
+\end{align*}
+so the Friedmann equations become
+\begin{align*}
+  \frac{\ddot{a}}{a}   \quad          &=  - \frac{4\pi}{3}\rho \\
+  \left(\frac{\dot{a}}{a}\right)^2    &= \frac{8\pi}{3}\rho-k a^{-2} \qquad ,
+\end{align*}
+where for compactness $\rho$'s dependence on $a$, with some constant of proportionality, is not shown explicitly.
+A static solution, with constant $a$, is impossible, and $\ddot{a}$ is negative, which we can interpret semiclassically
+in terms of the deceleration of the matter in the universe due to gravitational attraction. There are three cases
+to consider, according to the value of $k$.
+
+<% begin_sec("The closed universe") %>
+We've seen that $k=+1$ describes a universe in which the spatial curvature is positive, i.e., the circumference
+of a circle is less than its Euclidean value. By analogy with a sphere, which is the two-dimensional surface of constant positive curvature,
+we expect that the total volume of this universe is finite.
+
+The second Friedmann equation also shows us that at some value of
+$a$, we will have $\dot{a}=0$. The universe will expand, stop, and then recollapse, eventually coming back together
+in a ``Big Crunch'' which is the time-reversed version of the Big Bang. 
+
+Suppose we were to describe an initial-value problem in this cosmology, in which the initial conditions are
+given for all points in the universe on some spacelike surface, say $t=\text{constant}$. Since the universe
+is assumed to be homogeneous at all times, there are really only three numbers to specify, $a$, $\dot{a}$, and $\rho$:
+how big is the universe, how fast is it expanding, and how much matter is in it?
+But these three pieces of data may or may not be consistent with the second Friedmann equation. That is, the
+problem is overdetermined. In particular, we can see that for small enough values of $\rho$, we do not have
+a valid solution, since the square of $\dot{a}/a$ would have to be negative. Thus a closed universe requires
+a certain amount of matter in it. The present observational evidence (from supernovae and the cosmic microwave
+background, as described above) is sufficient to show that our universe does not contain this much matter.
+<% end_sec %> % The closed universe
+
+<% begin_sec("The flat universe") %>
+The case of $k=0$ describes a universe that is spatially flat. It represents a knife-edge case lying between the
+closed and open universes. In a semiclassical analogy, it represents the case in which the universe is moving
+exactly at escape velocity; as $t$ approaches infinity, we have $a \rightarrow\infty$, $\rho\rightarrow 0$, and
+$\dot{a}\rightarrow 0$. This case, unlike the others, allows an easy closed-form solution to the motion.
+Let the constant of proportionality in the equation of state $\rho \propto a^{-3}$ be fixed by setting
+$-4\pi\rho/3=-ca^{-3}$. The Friedmann equations are
+\begin{align*}
+  \ddot{a} &= -ca^{-2} \\
+  \dot{a} &= \sqrt{2c} a^{-1/2} \qquad .
+\end{align*}
+Looking for a solution of the form $a\propto t^p$, we find that by choosing $p=2/3$ we can simultaneously
+satisfy both equations. The constant $c$ is also fixed, and we can investigate this most transparently
+by recognizing that $\dot{a}/a$ is interpreted as the Hubble constant, $H$,\index{Hubble constant}
+which is the constant of proportionality relating a far-off galaxy's velocity to its distance.
+Note that $H$ is a ``constant'' in the sense that it is the same for all galaxies, in this particular model
+with a vanishing cosmological constant; it does not stay
+constant with the passage of cosmological time.
+Plugging back into the original form of the Friedmann equations, we find that the flat universe can
+only exist if the density of matter satisfies $\rho=\rho_{crit}=2H^2/8\pi=2H^2/8\pi G$.
+The observed value of the Hubble constant is about $1/(14\times10^9\ \text{years})$, which is roughly
+interpreted as the age of the universe, i.e., the proper time experienced by a test particle since
+the Big Bang. This gives $\rho_{crit}\sim 10^{-26}\ \kgunit/\munit^3$.
+
+% G=6.7 10^-11 m3kg-1s-2
+% t=14 10^9 * 365.25 *24 * (3600 s)
+% H=1/t
+%  2H^2/(8piG)
+%    6.08487033002423*10^-27 kg/m3
+
+<% end_sec %> % The flat universe
+
+<% begin_sec("The open universe") %>
+The $k=-1$ case represents a universe that has negative spatial curvature, is spatially infinite, and is also infinite in time,
+i.e., even if the cosmological constant had been zero, the expansion of the universe would have had too little matter in it
+to cause it to recontract and end in a Big Crunch.
+
+
+<% end_sec %> % The open universe
+
+<% end_sec %> % The matter-dominated solution
+
+<% begin_sec("Observation") %>\label{sec:cosmology-observation}
+Historically, it was very difficult
+to determine the universe's average density, even to within an order of magnitude. Most of the matter in the universe
+probably doesn't emit light, making it difficult to detect. Astronomical distance scales are also very poorly calibrated
+against absolute units such as the SI.
+
+A strong constraint on the models comes from accurate measurements of the cosmic microwave
+background, especially by the 1989-1993 COBE probe, and its 2001-2009 successor, the Wilkinson Microwave Anisotropy Probe,
+positioned at the L2 Lagrange point of the earth-sun system, beyond the Earth on the line
+connecting sun and earth.
+The temperature of the cosmic microwave background radiation is not the same in all directions, and
+its can be measured at different angles.
+In a universe with negative spatial
+curvature, the sum of the interior angles of a triangle is less than the Euclidean value of 180 degrees.
+Therefore if we observe a variation in the CMB over some angle, the distance between two points on
+the surface of last scattering is actually greater than would have been inferred from Euclidean geometry.
+The distance scale of such variations is limited by the speed of sound in the early universe, so
+one can work backward and infer the universe's spatial curvature based on the angular scale of the
+anisotropies. The measurements of spatial curvature are usually stated in terms of the parameter
+$\Omega$, defined as the total average density of all source terms in the Einstein field equations,
+divided by the critical density that results in a flat universe. $\Omega$ includes contributions
+from matter, $\Omega_M$, the cosmological constant, $\Omega_\Lambda$, and radiation (negligible in the
+present-day unverse). The results from WMAP, combined with other data from other methods, gives
+$\Omega=1.005\pm .006$. In other words, the universe is very nearly spatially flat.
+<% marg(60) %>
 <%
   fig(
-    'pulsar-period-decreasing',
-    %q{%
-      The Hulse-Taylor pulsar's orbital motion is gradually losing energy due to the emission of gravitational waves.
-           The linear decrease of the period is integrated on this plot, resulting in a parabola. From
-           Weisberg and Taylor, \url{http://arxiv.org/abs/astro-ph/0211217}.
-    },
-    {
-      'width'=>'wide',
-      'sidecaption'=>true
-    }
-  )
-%>
-
-More dramatic, if less clearcut, evidence is provided by
-Komossa, Zhou, and Lu's observation\url{http://arxiv.org/abs/0804.4585} of a supermassive black hole
-that appears to be recoiling from its parent galaxy at a velocity of 2650 km/s (projected along the line of
-sight). They interpret this as evidence for the following scenario. In the early universe, galaxies form with
-supermassive black holes at their centers. When two such galaxies collide, the black holes can merge. The
-merger is a violent process in which intense gravitational waves are emitted, and these waves carry a large
-amount of momentum, causing the black holes to recoil at a velocity greater than the escape velocity of the
-merged galaxy.
-
-<% end_sec %> % Empirical evidence
-
-<% begin_sec("Expected properties") %>
-To see what properties we should expect for such radiation, first consider the reasoning that led to the construction of
-the Ricci and Einstein tensors. If a certain volume of space is filled with test particles, then the Ricci and Einstein
-tensors measure the tendency for this volume to ``accelerate;'' i.e., $-\der^2 V/\der t^2$ is a measure of the attraction of
-any mass lying inside the volume. A distant mass, however, will exert only tidal forces, which distort a region without
-changing its volume. This suggests that as a gravitational wave passes through a certain region of space, it should distort the shape
-of a given region, without changing its volume.
-
-When the idea of gravitational waves was first discussed, there was some skepticism about whether they represented
-an effect that was observable, even in principle. The most naive such doubt is of the same flavor as the one
-discussed in section \ref{sec:observability-of-expansion} about the observability of the universe's expansion: if
-everything distorts, then don't our meter-sticks distort as well, making it impossible to measure the effect?
-The answer is the same as before in section \ref{sec:observability-of-expansion}; systems that are gravitationally
-or electromagnetically bound do not have their scales distorted by an amount equal to the change in the elements
-of the metric.
-
-A less naive reason to be skeptical about gravitational waves is that just because a metric looks oscillatory, that
-doesn't mean its oscillatory behavior is observable. Consider the following example.
-\begin{equation*}
-  \der s^2 = \der t^2 - \left(1+\frac{1}{10}\sin x\right)\der x^2 - \der y^2 - \der z^2
-\end{equation*}
-The Christoffel symbols depend on derivatives of the form $\partial_a g_{bc}$, so here the only nonvanishing
-Christoffel symbol is $\Gamma\indices{^x_{xx}}$. It is then straightforward to check that 
-the Riemann tensor $  R\indices{^a_{bcd}} = \partial_c \Gamma\indices{^a_{db}} - \partial_d \Gamma\indices{^a_{cb}} 
-                        + \Gamma\indices{^a_{ce}}\Gamma\indices{^e_{db}}-\Gamma\indices{^a_{de}}\Gamma\indices{^e_{cb}}$
-vanishes by symmetry. Therefore this metric must really just be a flat-spacetime metric that has been subjected
-to a silly change of coordinates.
-% checked using coordinate_wave.mac that this was really flat
-
-Self-check: Do the Christoffel symbols $\Gamma$ vanish for this metric? Is there a
-reason for paying more attention to one or the other, $R$ or $\Gamma$?
-
-To keep the curvature from vanishing, it looks like we need a metric in which the oscillation is not
-restricted to a single variable. For example, the metric
-\begin{equation*}
-  \der s^2 = \der t^2 - \left(1+\frac{1}{10}\sin y\right)\der x^2 - \der y^2 - \der z^2
-\end{equation*}
-does have nonvanishing curvature. In other words, it seems like we should be looking for transverse waves
-rather than longitudinal ones.\footnote{A more careful treatment shows that longitudinal waves can always be
-interpreted as physically unobservable coordinate waves, in the limit of large distances from the source. Longitudinal
-waves near the source are referred to as Type III solutions in a classification scheme due to Petrov.\index{Petrov classification}\index{Type III solution}\index{Type N solution}
-Transverse waves, which are what we could actually observe in practical experiments, are type N.} On the other hand, this metric cannot be a solution to the vacuum field equations,
-since it doesn't preserve volume. It also stands still, whereas we expect that solutions to the field
-equations should propagate at the velocity of light, at least for small amplitudes.
-<% marg(0) %>
-<%
-  fig(
-    'gravitational-wave',
-    %q{As the gravitational wave propagates in the $z$ direction, the metric oscillates in the $x$ and $y$
-            directions, preserving volume.}
+    'cmb-geometry',
+    %q{The angular scale of fluctuations in the cosmic microwave background can be used to infer the curvature of the universe.}
   )
 %>
 <% end_marg %>
 
-Based on what we've found out, the following seems like a metric that might have a fighting chance of
-representing a real gravitational wave:
-\begin{equation*}
-  \der s^2 = \der t^2 - \left(1+A\sin (z-t)\right)\der x^2 - \frac{\der y^2}{1+A\sin (z-t)} - \der z^2
-\end{equation*}
-It is transverse, it propagates at $c(=1)$, and the fact that $g_{xx}$ is the reciprocal of $g_{yy}$ makes
-it volume-conserving. The following Maxima program calculates its Einstein tensor:
-\begin{listing}{1}
-load(ctensor);
-ct_coords:[t,x,y,z];
-lg:matrix([1,0,0,0],
-          [0,-(1+A*sin(z-t)),0,0],
-          [0,0,-1/(1+A*sin(z-t)),0],
-          [0,0,0,-1]);
-cmetric();
-einstein(true);
-\end{listing}
-For a representative component of the Einstein tensor, we find
-\begin{equation*}
-  G_{tt} = -\frac{A^2\cos^2(z-t)}{2+4A\sin(z-t)+2A^2\sin^2(z-t)}
-\end{equation*}
-For small values of $A$, we have $|G_{tt}| \lesssim A^2/2$. The vacuum field equations require $G_{tt}=0$, so
-this isn't an exact solution. But all the components of $G$, not just $G_{tt}$, are of order $A^2$, so
-this \emph{is} an \emph{approximate} solution to the equations.
+The supernova data described on page \pageref{sec:vacuum-dominated} complement the CMB data because they are
+mainly sensitive to the difference $\Omega_\Lambda-\Omega_M$, rather than their sum $\Omega=\Omega_\Lambda+\Omega_M$.
+This is because these data measure the acceleration or deceleration of the universe's expansion. Matter produces
+deceleration, while the cosmological constant gives acceleration. Figure \figref{supernova-graph} shows some recent
+supernova data.\footnote{Riess et al., 2007, \url{arxiv.org/abs/astro-ph/0611572}} The horizontal axis gives the redshift
+factor $z=(\lambda'-\lambda)/\lambda$, where $\lambda'$ is the wavelength observed on earth and $\lambda$ the wavelength
+originally emitted. It measures how fast the supernova's galaxy is receding from us. The vertical axis is
+$\Delta(m-M)=(m-M)-(m-M)_{empty}$, where $m$ is the apparent magnitude, $M$ is the absolute magnitude, and
+$(m-M)_{empty}$ is the value expected in a model of an empty universe, with $\Omega=0$. The difference $m-M$ is
+a measure of distance, so essentially this is a graph of distance versus recessional velocity, of the same general
+type used by Hubble in his original discovery of the expansion of the universe. Subtracting $(m-M)_{empty}$ on the
+vertical axis makes it easier to see small differences. Since the WMAP data require $\Omega=1$, we need to fit the
+supernova data with values of $\Omega_M$ and $\Omega_\Lambda$ that add up to one. Attempting to do so with
+$\Omega_M=1$ and $\Omega_\Lambda=0$ is clearly inconsistent with the data, so we can conclude that the cosmological
+constant is definitely positive.
 
-It is also straightforward to check that propagation at approximately $c$ was a necessary feature.
-For example, if we replace the factors of $\sin(z-t)$ in the metric with $\sin(z-2t)$, we get
-a $G_{xx}$ that is of order unity, not of order $A^2$.
-
-To prove that gravitational waves are an observable effect, we would like to be able to display
-a metric that (1) is an exact solution of the vacuum field equations; (2) is not merely a coordinate wave;
-and (3) carries momentum and energy.
-As late as 1936, Einstein and Rosen published a paper claiming that gravitational waves were
-a mathematical artifact, and did not actually exist.\footnote{Some of the history is related at
-\url{http://en.wikipedia.org/wiki/Sticky_bead_argument}.}
-
-<% end_sec %> % Expected properties
-
-<% begin_sec("Some exact solutions") %>
-
-In this section we study several examples of exact solutions to the field equations.
-Each of these can readily be shown not to be a mere coordinate wave, since
-in each case the Riemann tensor has nonzero elements.
-
-\begin{eg}{An exact solution}
-We've already seen, e.g., in the derivation of the Schwarzschild metric in section \ref{sec:complete-sch},
-that once we have an approximate solution to the equations of general relativity, we may be able to
-find a series solution. Historically this approach was only used as a last resort, because the lack of
-computers made the calculations too complex to handle, and the tendency was to look for tricks that
-would make a closed-form solution possible. But today the series method has the advantage that any mere
-mortal can have some reasonable hope of success with it --- and there is nothing more boring (or demoralizing)
-than laboriously learning someone else's special trick that only works for a specific problem.
-In this example, we'll see that such an approach comes tantalizingly close to providing an exact,
-oscillatory plane wave solution to the field equations.
-
-Our best solution so far was of the form
-\begin{equation*}
-  \der s^2 = \der t^2 - \left(1+f\right)\der x^2 - \frac{\der y^2}{1+f} - \der z^2 \qquad ,
-\end{equation*}
-where $f=A\sin (z-t)$. This doesn't seem likely to be an exact solution for large amplitudes, since
-the $x$ and $y$ coordinates are treated asymmetrically. In the extreme case of $|A| \ge 1$, there
-would be singularities in $g_{yy}$, but not in $g_{xx}$. Clearly the metric will have to have some
-kind of nonlinear dependence on $f$, but we just haven't found quite the right nonlinear dependence.
-Suppose we try something of this form:
-\begin{equation*}
-  \der s^2 = \der t^2 - \left(1+f+cf^2\right)\der x^2 - \left(1-f+df^2\right)\der y^2 - \der z^2
-\end{equation*}
-This approximately conserves volume, since $(1+f+\ldots)(1-f+\ldots)$ equals unity, up to terms of
-order $f^2$. The following program tests this form.
-\begin{listing}{1}
-load(ctensor);
-ct_coords:[t,x,y,z];
-f : A*exp(%i*k*(z-t)); 
-lg:matrix([1,0,0,0],
-          [0,-(1+f+c*f^2),0,0],      
-          [0,0,-(1-f+d*f^2),0],     
-          [0,0,0,-1]);
-cmetric();
-einstein(true);
-\end{listing}
-% wave_series.mac
-In line 3, the motivation for using the complex exponential rather than a sine wave in $f$ is the usual
-one of obtaining simpler expressions; as we'll see, this ends up causing problems. In lines 5 and 6, the symbols $c$ and $d$ have not
-been defined, and have not been declared as depending on other variables, so Maxima treats them
-as unknown constants. The result is $G_{tt} \sim (4 d + 4 c - 3)A^2$ for small $A$, so we can make
-the $A^2$ term disappear by an appropriate choice of $d$ and $c$. For symmetry, we choose $c=d=3/8$.
-With these values of the constants, the result for $G_{tt}$ is of order $A^4$.
-This technique can be extended to higher and higher orders of approximation, resulting in an exact series
-solution to the field equations.
-
-Unfortunately, the whole story ends up being too good to be true. The resulting metric has complex-valued
-elements. If general relativity were a linear field theory, then we could apply the usual technique of
-forming linear combinations of expressions of the form $e^{+i\ldots}$ and $e^{-i\ldots}$, so as to give
-a real result. Unfortunately the field equations of general relativity are nonlinear, so the resulting
-linear combination is no longer a solution. The best we can do is to make a non-oscillatory real exponential
-solution (problem \ref{hw:real-exponential}).
-\end{eg}
-
-\begin{eg}{An exact, oscillatory, non-monochromatic solution}\label{eg:rindler-pq}
-Assume a metric of the form
-\begin{equation*}
-  \der s^2 = \der t^2 - p(z-t)^2\der x^2 - q(z-t)^2\der y^2 - \der z^2 \qquad ,
-\end{equation*}
-where $p$ and $q$ are arbitrary functions. Such a metric would clearly represent
-some kind of transverse-polarized plane wave traveling at velocity $c(=1)$ in the $z$ direction.
-The following Maxima code calculates its Einstein tensor.
-\begin{listing}{1}
-load(ctensor);
-ct_coords:[t,x,y,z];
-depends(p,[z,t]);
-depends(q,[z,t]);
-lg:matrix([1,0,0,0],
-          [0,-p^2,0,0],
-          [0,0,-q^2,0],
-          [0,0,0,-1]);
-cmetric();
-einstein(true);
-\end{listing}
-The result is proportional to $\ddot{q}/q+\ddot{p}/p$, so any functions $p$ and $q$
-that satisfy the differential equation $\ddot{q}/q+\ddot{p}/p=0$ will result in
-a solution to the field equations.
-Setting $p(u)=1+A\cos u$, for example, we find that $q$ is oscillatory, but with a period longer than
-$2\pi$ (problem \ref{hw:rindler-pq}).
-\end{eg}
-
-\begin{eg}{An exact, plane, monochromatic wave}\label{eg:exact-plane}
-Any metric of the form
-\begin{equation*}
-  \der s^2 = (1-h)\der t^2 - \der x^2 - \der y^2 - (1+h)\der z^2 +2h\der z\der t \qquad ,
-\end{equation*}
-where $h=f(z-t)xy$, and $f$ is any function, is an exact solution of the field equations (problem \ref{hw:exact-plane}).
-
-Because $h$ is proportional to $xy$, this does not appear at first glance to be a uniform plane wave.
-One can verify, however, that all the components of the Riemann tensor depend only on $z-t$, not on
-$x$ or $y$. Therefore there is no measurable property of this metric that varies with $x$ and $y$.
-\end{eg}
-
-<% end_sec %> % Some exact solutions
-
-<% begin_sec("Energy content") %>
-
-To show that these waves carry momentum and energy, we can
-use the nonmathematical ``sticky bead
-argument'' (figure \figref{sticky-bead}), which was originated by Feynman in 1957 and later popularized by Bondi.
-<% marg(30) %>
+<% marg(60) %>
 <%
   fig(
-    'sticky-bead',
-    %q{The sticky bead argument for the reality of gravitational waves. As a gravitational wave with the appropriate
-            polarization passes by, the bead vibrates back and forth on the rod. Friction creates heat. This
-            demonstrates that gravitational waves carry energy, and are thus real, observable phenomena.}
+    'supernova-graph',
+    %q{A Hubble plot for distant supernovae. Each data point represents an average over several different supernovae with
+          nearly the same $z$.}
+  )
+%>
+<% end_marg %>
+Figure \figref{cosmology-parameters} summarizes what we can conclude about our universe, parametrized in terms of a
+model with both $\Omega_M$ and $\Omega_\Lambda$ nonzero. \footnote{See Carroll, ``The Cosmological Constant,'' \url{http://www.livingreviews.org/lrr-2001-1}
+for a full mathematical treatment of such models.} We can tell that it
+originated in a Big Bang singularity, that it will go on expanding forever, and that it is very nearly flat.
+Note that in a cosmology with nonzero values for both $\Omega_M$ and $\Omega_\Lambda$, there is no strict
+linkage between the spatial curvature and the question of recollapse, as there is in a model with only
+matter and no cosmological constant; therefore even though we know that the universe will not recollapse,
+we do not know whether its spatial curvature is slightly positive (closed) or negative (open).
+
+Astrophysical considerations provide further constraints and consistency checks. In the era before the advent
+of high-precision cosmology, estimates of the age of the universe ranged from 10 billion to 20 billion years, and the
+low end was inconsistent with the age of the oldest globular clusters. This was believed to be a problem either for
+observational cosmology or for the astrophysical models used to estimate the age of the clusters: ``You can't be
+older than your ma.'' Current data have shown that the low estimates of the age were incorrect, so consistency is
+restored.
+<% marg(60) %>
+<%
+  fig(
+    'cosmology-parameters',
+    %q{The cosmological parameters of our universe, after Perlmutter et al., \url{arxiv.org/abs/astro-ph/9812133}.}
   )
 %>
 <% end_marg %>
 
-We would next like to find an expression for the energy of the wave in terms of its amplitude.
-Alas, this was not meant to be. 
+Another constraint comes from models of nucleosynthesis during the era shortly after the Big Bang (before the
+formation of the first stars). The observed relative abundances of hydrogen, helium, and deuterium cannot be
+reconciled with the density of ``dust'' (i.e., nonrelativistic matter) inferred from the observational
+data. If the inferred mass density were entirely due to normal ``baryonic'' matter (i.e., matter whose mass
+consisted mostly of protons and neutrons), then nuclear reactions in the dense early universe should have
+proceeded relatively efficiently, leading to a much higher ratio of helium to hydrogen, and a much lower
+abundance of deuterium. The conclusion is that most of the matter in the universe must be made of
+an unknown type of exotic non-baryonic matter, known generically as ``dark matter.''\index{dark matter}
+<% end_sec %> % observation
 
-It seems like it ought to be straightforward. We have such expressions in other classical field theories.
-In electromagnetism, we have energy densities $+(1/8\pi k) |\vc{E}|^2$ and $+(1/2\mu_\zu{o})  |\vc{B}|^2$
-associated with the electric and magnetic fields.
-In Newtonian gravity, we can assign an energy density
-$-(1/8\pi G)|\vc{g}|^2$ to the gravitational field $\vc{g}$; the minus sign indicates that when masses
-glom onto each other, they produce a greater field, and energy is released.
+<% end_sec %> % Cosmological solutions
 
-In general relativity, however, the equivalence principle tells us that for any gravitational field measured
-by one observer, we can find another observer, one who is free-falling, who says that the local field is zero.
-It follows that we cannot associate an energy with the curvature of a particular region of spacetime in
-any exact way. The best we can do is to find expressions that give the energy density (1) in the limit of
-weak fields, and (2) when averaged over a region of space that is large compared to the wavelength.
-These expressions are not unique. There are a number of ways to write them in terms of the metric and
-its derivatives, and they all give the same result in the appropriate limit. The reader who is interested
-in seeing the subject developed in detail is referred to Carroll's \emph{Lecture Notes on General Relativity},
-\url{http://arxiv.org/abs/gr-qc/?9712019}.
+<% begin_sec("Mach's principle revisited") %>\label{sec:brans-dicke}\index{Mach's principle}
+<% begin_sec("The Brans-Dicke theory") %>
+Mach himself never succeeded in stating his ideas in the form of a precisely testable
+physical theory, and we've seen that to the extent that Einstein's hopes and intuition had been formed by Mach's
+ideas, he often felt that his own theory of gravity came up short. The reader has so far encountered
+Mach's principle in the context of certain thought experiments that are obviously impossible to realize,
+involving a hypothetical universe that is empty except for certain apparatus (e.g., section \ref{einstein-two-planets}, p.~\pageref{einstein-two-planets}).
+It would be easy, then, to get an impression of Mach's principle as one of those theories that is ``not even
+wrong,'' i.e., so ill-defined that it cannot even be falsified by experiment, any more than Christianity can be.
 
-<% end_sec %> % Energy content
+But in 1961, Robert Dicke and his student Carl Brans came up with a theory of gravity that made testable predictions, and
+that was specifically designed to be more Machian than general relativity.\index{Brans-Dicke theory} Their paper\footnote{C. Brans and R. H. Dicke, ``Mach's
+Principle and a Relativistic Theory of Gravitation,'' Physical Review 124 (1961) 925} is extremely readable, even for
+the non-specialist. On the first page,  they propose one of those seemingly foolish
+thought experiments about a nearly empty universe:
 
-<% begin_sec("Rate of radiation") %>\label{sec:rate-of-gravitational-radiation}
-How can we find the rate of gravitational radiation from a system such as the Hulse-Taylor pulsar?
-<% marg(0) %>
+\begin{quotation}
+The imperfect expression of [Mach's ideas] in general relativity can be seen by considering the case of a space
+empty except for a lone experimenter in his laboratory. [...] The observer would, according to general relativity,
+observe normal behavior of his apparatus in accordance with the usual laws of physics. However, also according
+to general relativity, the experimenter could set his laboratory rotating by leaning out a window and firing his
+22-caliber rifle tangentially. Thereafter the delicate gyroscope in the laboratory would continue to point in
+a direction nearly fixed relative to the direction of motion of the rapidly receding bullet. The gyroscope would
+rotate relative to the walls of the laboratory. Thus, from the point of view of Mach, the tiny, almost massless,
+very distant bullet seems to be more important than the massive, nearby walls of the laboratory in determining
+inertial coordinate frames and the orientation of the gyroscope.
+\end{quotation}
+
+They then proceed to construct a mathematical and more Machian theory of gravity. From the Machian point of view,
+the correct local definition of an inertial frame must be determined relative to the bulk of the matter in the
+universe. We want to retain the Lorentzian local character of spacetime, so this influence can't be transmitted
+via instantaneous action at a distance.
+It must propagate via some physical field, at a speed less than or equal to $c$. It is implausible that this
+field would be the gravitational field as described by general relativity. Suppose we divide the cosmos up
+into a series of concentric spherical shells centered on our galaxy. In Newtonian mechanics, the gravitational
+field obeys Gauss's law, so the field of such a shell vanishes identically on the interior. In relativity,
+the corresponding statement is Birkhoff's theorem,\index{Birkhoff's theorem} which states that the Schwarzschild
+metric is the unique spherically symmetric solution to the vacuum field equations. Given this solution in the exterior universe,
+we can set a boundary condition at the outside surface of the shell, use the Einstein field equations to extend the solution through it,
+and find a unique solution on the interior, which is simply a flat space.
+
+Since the Machian effect can't be carried by the gravitational field, Brans and Dicke
+took up an idea earlier proposed by Pascual Jordan\footnote{Jordan was a member of the Nazi \emph{Sturmabteilung} or
+``brown shirts'' who nevertheless ran afoul of the Nazis for his close professional relationships with Jews.} of hypothesizing
+an auxiliary field $\phi$. The fact that such a field has never been detected directly suggests that it has no mass or charge.
+If it is massless, it must propagate at exactly $c$, and this also makes sense because if it were to propagate at speeds less than
+$c$, there would be no obvious physical parameter that would determine that speed. How many tensor indices should it have? Since Mach's principle tries to give an account of inertia, and
+inertial mass is a scalar, $\phi$ should presumably be a scalar (quantized by a spin-zero particle). Theories of this type
+are called tensor-scalar theories, because they use a scalar field in addition to the metric tensor.
+
+The wave equation for a massless scalar field, in the absence of sources, is simply $\nabla_i \nabla^i \phi=0$. The solutions of this
+wave equation fall off as $\phi\sim 1/r$. This is gentler than the $1/r^2$ variation of the gravitational field, so
+results like Newton's shell theorem and Birkhoff's theorem no longer apply. If a spherical shell of mass acts as a source
+of $\phi$, then $\phi$ can be nonzero and varying inside the shell. The $\phi$ that you experience
+right now as you read this book should be a sum of wavelets originating from all the masses whose world-lines
+intersected the surface of your past light-cone. In a static universe, this sum would diverge linearly, so a self-consistency
+requirement for Brans-Dicke gravity is that it should produce cosmological solutions that avoid such a divergence, e.g.,
+ones that begin with Big Bangs.
+
+Masses are the sources of the field $\phi$. How should they couple to it? Since $\phi$ is a scalar, we need to
+construct a scalar as its source, and the only reasonable scalar that can play this role is the trace of the
+stress-energy tensor, $T\indices{^i_i}$. As discussed in example \ref{eg:failed-scalar-tinkering} on page
+\pageref{eg:failed-scalar-tinkering}, this vanishes for light, so only material particles are sources of $\phi$.
+Even so, the Brans-Dicke theory retains a form of the equivalence principle. As discussed on pp.~\pageref{sec:chiao-paradox} and \pageref{eg:chiao-energy},
+the equivalence principle is a statement about the results of local experiments, and $\phi$ at any given location in the
+universe is dominated by contributions from matter lying at cosmological distances.
+Objects of different composition will have differing fractions of their mass that arise from internal electromagnetic
+fields. Two such objects will still follow identical geodesics, since their own effect on the local value of $\phi$
+is negligible. This is unlike the behavior of electrically charged objects, which experience significant back-reaction
+effects in curved space (p.~\pageref{sec:chiao-paradox}). However, the strongest form of the equivalence principle requires that all experiments in free-falling laboratories produce
+identical results, no matter where and when they are carried out. Brans-Dicke gravity violates this, because such experiments
+could detect differences between the value of $\phi$ at different locations --- but of course this is part and parcel of
+the purpose of the theory.
+
+We now need to see how to connect $\phi$ to the local notion of inertia so as to produce an effect of the kind
+that would tend to fulfill Mach's principle. In Mach's original formulation, this would entail some kind of
+local rescaling of all inertial masses, but Brans and Dicke point out that in a theory of gravity, this is
+equivalent to scaling the Newtonian gravitational constant $G$ \emph{down} by the same factor. The latter turns out
+to be a better approach.
+For one thing, it has a natural interpretation in terms of units.
+Since $\phi$'s amplitude falls off as $1/r$, we can write $\phi\sim \Sigma m_i/r$, where the sum is over
+the past light cone. If we then make the identification of $\phi$ with $1/G$ (or $c^2/G$ in a system wher $c \ne 1$), the
+units work out properly, and the coupling constant between matter and
+$\phi$ can be unitless. If this coupling constant, notated $1/\omega$, were not unitless, then the theory's predictive value would be weakened, because
+there would be no way to know what value to pick for it. For a unitless constant, however, there is a reasonable
+way to guess what it should be: ``in any sensible theory,'' Brans and Dicke write, ``$\omega$ must be of the general order of magnitude of unity.''
+This is, of course, assuming that the Brans-Dicke theory was correct. In general, there are other reasonable values to
+pick for a unitless number, including zero and infinity.
+The limit of $\omega\rightarrow\infty$ recovers the special case of general relativity. Thus Mach's principle, which
+once seemed too vague to be empirically falsifiable, comes down to measuring a specific number, $\omega$, which
+quantifies how non-Machian our universe is.\footnote{
+There are also good technical reasons for 
+thinking of $\phi$ as relating to the gravitational constant is that general relativity has a standard prescription for
+describing fields on a background of curved spacetime. The vacuum field equations of general relativity can be derived
+from the principle of least action, and although the details are beyond the scope of this book (see, e.g.,
+Wald, \emph{General Relativity}, appendix E), the general idea is that we define a Lagrangian density
+$\mathcal{L}_G$ that depends on the Ricci scalar curvature, and then extremize its integral over all possible
+histories of the evolution of the gravitational field. If we want to describe some other field, such as matter,
+light, or $\phi$, we simply take the special-relativistic Lagrangian $\mathcal{L}_M$ for that field, change
+all the derivatives to covariant derivatives, and form the sum $(1/G)\mathcal{L}_G+\mathcal{L}_M$. In the Brans-Dicke
+theory, we have three pieces, $(1/G)\mathcal{L}_G+\mathcal{L}_M+\mathcal{L}_\phi$,
+where $\mathcal{L}_M$ is for matter and $\mathcal{L}_\phi$ for $\phi$. If we were to
+interpret $\phi$ as a rescaling of inertia, then we would have to have $\phi$ appearing as a fudge factor
+modifying all the inner workings of $\mathcal{L}_M$. If, on the other hand, we think of $\phi$ as changing
+the value of the gravitational constant $G$, then the necessary modification is extremely simple. Brans and
+Dicke introduce one further modification to $\mathcal{L}_\phi$ so that the coupling constant $\omega$
+between matter and $\phi$ can be unitless. This modification has no effect on the wave equation of $\phi$
+in flat spacetime.}
+<% end_sec %> % The Brans-Dicke theory
+<% begin_sec("Predictions of the Brans-Dicke theory") %>
+
+Returning to the example of the spherical shell of mass, we can see based on considerations of units
+that the value of $\phi$ inside should be $\sim m/r$, where $m$ is the total mass of the shell and $r$ is its
+radius. There may be a unitless factor out in front, which will depend on $\omega$, but for $\omega\sim 1$ we
+expect this constant to be of order 1. Solving the nasty set of field equations that result from their
+Lagrangian, Brans and Dicke indeed found $\phi\approx[2/(3+2\omega)](m/r)$, where the constant in square brackets is of order unity if $\omega$ is
+of order unity. In the limit of $\omega\rightarrow\infty$, $\phi=0$, and the shell has no physical effect
+on its interior, as predicted by general relativity.
+
+Brans and Dicke were also able to calculate cosmological models, and in a typical model with a nearly spatially flat
+universe, they found $\phi$ would vary according to
+\begin{equation*}
+  \phi = 8\pi \frac{4+3\omega}{6+4\omega} \rho_o t_o^2 \left(\frac{t}{t_o}\right)^{2/(4+3\omega)} \qquad ,
+\end{equation*}
+where $\rho_o$ is the density of matter in the universe at time $t=t_o$.
+When the density of matter is small, $G$ is large, which has the same observational consequences as
+the disappearance of inertia; this is exactly what one expects according to Mach's principle.
+For $\omega\rightarrow\infty$, the gravitational ``constant'' $G= 1/\phi$ really is constant.
+
+Returning to the thought experiment involving the 22-caliber rifle fired out the window, we find
+that in this imaginary universe, with a very small density of matter, $G$ should be very large. This causes
+a frame-dragging effect from the laboratory on the gyroscope, one much stronger than we would
+see in our universe. Brans and Dicke calculated this effect for a laboratory consisting of a spherical
+shell, and although technical difficulties
+prevented the reliable extrapolation of their result to $\rho_o\rightarrow 0$, the trend was that
+as $\rho_o$ became small, the frame-dragging effect would get stronger and stronger, presumably
+eventually forcing the gyroscope to precess in lock-step with the laboratory. There would thus be
+no way to determine, once the bullet was far away, that the laboratory was rotating at all --- in
+perfect agreement with Mach's principle.
+<% end_sec %> % Predictions of the Brans-Dicke theory
+<% begin_sec("Hints of empirical support") %>
+Only six years after the publication of the Brans-Dicke theory, Dicke himself, along with 
+H.M.~Goldenberg\footnote{Dicke and Goldenberg, ``Solar Oblateness and General Relativity,'' Physical Review Letters 18 (1967) 313}
+carried out a measurement that seemed to support the theory empirically. Fifty years before, one of the first empirical tests
+of general relativity, which it had seemed to pass with flying colors, was the anomalous perihelion precession of Mercury.
+The word ``anomalous,'' which is often left out in descriptions of this test, is required because there are
+many nonrelativistic reasons why Mercury's orbit precesses, including interactions with the other planets and
+the sun's oblate shape. It is only when these other effects are subtracted out that one sees the general-relativistic
+effect calculated on page \pageref{sec:schwarzschild-orbits}. The sun's oblateness is difficult to measure
+optically, so the original analysis of the data had proceeded by determining the sun's rotational period by observing
+sunspots, and then assuming that the sun's bulge was the one found for a rotating fluid in static equilibrium. The result
+was an assumed oblateness of about $1\times10^{-5}$. But
+we know that the sun's dynamics are more complicated than this, since it has convection currents and magnetic fields.
+Dicke, who was already a renowned experimentalist, set out to determine the oblateness by direct optical measurements,
+and the result was $(5.0\pm 0.7)\times 10^{-5}$, which, although still very small, was enough to put the observed
+perihelion precession out of agreement with general relativity by about 8\%. The perihelion precession predicted by
+Brans-Dicke gravity differs from the general relativistic result by a factor of $(4+3\omega)/(6+3\omega)$.
+The data therefore appeared to require $\omega\approx 6\pm 1$, which would be inconsistent with general relativity.
+<% marg(110) %>
 <%
   fig(
-    'multipoles',
-    %q{The power emitted by a multipole source of order $m$ is proportional to $\omega^{2(m+1)}$, when the size
-           of the source is small compared to the wavelength. The main reason for
-           the $\omega$ dependence is that at low frequencies, the wavelength
-           is long, so the number of wavelengths traveled to a particular
-           point in space is nearly the same from any point in the source;
-           we therefore get strong cancellation.}
+    'dicke-oblateness',
+    %q{The apparatus used by Dicke and Goldenberg to measure the oblateness of the sun was essentially a telescope with
+        a disk inserted in order to black out most of the light from the sun.}
   )
 %>
 <% end_marg %>
+<% end_sec %> % Hints of empirical support
+<% begin_sec("Mach's principle is false.") %>
+The trouble with the solar oblateness measurements was that they were subject to a large number of possible
+systematic errors, and for this reason it was desirable to find a more reliable test of Brans-Dicke gravity.
+Not until about 1990 did
+a consensus arise, based on measurements of oscillations of the solar surface, that the pre-Dicke value was correct.
+In the interim, the confusion had the salutary effect of stimulating a renaissance of theoretical and
+experimental work in general relativity. Often if one doesn't
+have an alternative theory, one has no reasonable basis on which to design and interpret
+experiments to test the original theory.
 
-Let's proceed by analogy. The simplest source of sound waves is something like the cone of a stereo speaker.
-Since typical sound waves have wavelengths measured in meters, the entire speaker is generally small compared to the wavelength.
-The speaker cone is a surface of oscillating displacement $x=x_\zu{o}\sin\omega t$. 
-Idealizing such a source to a radially pulsating spherical surface, we have an oscillating monopole that radiates sound waves
-uniformly in all directions. To find the power radiated, we note that the velocity of the source-surface is
-proportional to $x_\zu{o}\omega$, so the kinetic energy of the air immediately in contact with it is proportional
-to $\omega^2 x_\zu{o}^2$. The power radiated is therefore proportional to $\omega^2 x_\zu{o}^2$.
-
-In electromagnetism, conservation of charge forbids the existence of an oscillating electric monopole.
-The simplest radiating source is therefore an oscillating electric dipole $q=q_\zu{o}\sin\omega t$. If the dipole's physical size
-is small compared to a wavelength of the radiation, then the radiation is an inefficient process; at any
-point in space, there is only a small difference in path length between the positive and negative portions of the dipole,
-so there tends to be strong cancellation of their contributions, which were emitted with opposite phases.
-The result is that the wave's electromagnetic potential four-vector (section \ref{sec:em-four-vector}) is proportional
-to $q_\zu{o}\omega$, the fields to $q_\zu{o}\omega^2$, and the radiated power to $q_\zu{o}^2\omega^4$. The factor of
-$\omega^4$ can be broken down into $(\omega^2)(\omega^2)$, where the first factor of $\omega^2$ occurs for
-reasons similar to the ones that explain the $\omega^2$ factor for the monopole radiation of sound, while the
-second $\omega^2$ arises because the smaller $\omega$
-is, the longer the wavelength, and the greater the inefficiency in radiation caused by the small size of the source
-compared to the wavelength.
-
-Since our universe doesn't seem to have particles with negative mass, we can't form a gravitational dipole by
-putting positive and negative masses on opposite ends of a stick --- and furthermore, such a stick will not spin freely
-about its center, because its center of mass does not lie at its center! In a more realistic system, such as the
-Hulse-Taylor pulsar, we have two unequal masses orbiting about their common center of mass. By conservation of
-momentum, the mass dipole moment of such a system is constant, so we cannot have an oscillating mass dipole.
-The simplest source of gravitational radiation is therefore an oscillating mass quadrupole, $Q=Q_\zu{o}\sin\omega t$.
-As in the case of the oscillating electric dipole, the radiation is suppressed if, as is usually the case,
-the source is small compared to the wavelength. The suppression is even stronger in the case of a quadrupole,
-and the result is that the radiated power is proportional to $Q_\zu{o}^2\omega^6$.
-
-The general pattern we have observed is that for multipole radiation of order $m$ (0=monopole, 1=dipole, 2=quadrupole),
-the radiated power depends on $\omega^{2(m+1)}$. Since gravitational radiation must always have $m=2$ or higher, we
-have the very steep $\omega^6$ dependence of power on frequency.
-This demonstrates that if
-we want to see strong gravitational radiation, we need to look at systems that are oscillating extremely rapidly.
-For a binary system with unequal masses of order $m$, with orbits having radii of order $r$, we have $Q_\zu{o}\sim mr^2$.
-Newton's laws give $\omega\sim m^{1/2} r^{-3/2}$, which is essentially Kepler's law of periods. The result is
-that the radiated power should depend on $(m/r)^5$. In units with $G=1$ and $c=1$, power is unitless, so the units
-of this expression check out. Reinserting the proper constants to give an equation that allows practical calculation
-in SI units, we have
-\begin{equation*}
-  P = k \frac{G^4}{c^5} \left(\frac{m}{r}\right)^5 \qquad ,
-\end{equation*}
-where $k$ is a unitless constant of order unity.
-
-For the Hulse-Taylor pulsar,\footnote{\url{http://arxiv.org/abs/astro-ph/0407149}}\index{Hulse-Taylor pulsar}
-we have $m \sim 3\times 10^{30}\ \kgunit$ (about one and a half solar masses)
-and $r \sim 10^9\ \munit$. The binary pulsar is made to order our purposes, since $m/r$ is
-extremely large compared to what one sees in almost any other astronomical system. The resulting estimate for the
-power is about $10^{24}$ watts.
-
-% G=6.6 10^-11 m3kg-1s-2; c=3 10^8 m/s ;  m=3* 10^30 kg ;  r=10^9 m ; G^4*c^-5(m/r)^5
-%   7.80853333333375*10^21 W
-
-The pulsar's period is observed to be steadily lengthening at a rate of $\alpha=2.418\times 10^{-12}$ seconds per second.
-To compare this with our crude theoretical estimate, we take the Newtonian energy of the system $Gm^2/r$ and multiply by
-$\omega\alpha$, giving $10^{25}$ W, which checks to within an order of magnitude.
-A full general-relativistic calculation reproduces the observed value of $\alpha$ to within the 0.1\% error bars
-of the data.
+Currently, the best bound on $\omega$ is based on measurements\footnote{Bertotti, Iess, and Tortora, ``A test of general relativity using radio links with the Cassini spacecraft,''
+Nature 425 (2003) 374} of the propagation of radio signals between earth and
+the Cassini-Huygens space probe in 2003, which require $\omega>4\times10^4$. This is so much greater than
+unity that it is reasonable to take Brans and Dicke at their word that ``in any sensible theory, $\omega$ must be of the general order of magnitude of unity.''
+Brans-Dicke fails this test, and is no longer a ``sensible'' candidate for a theory of gravity.
+We can now see that Mach's principle, far from being
+a fuzzy piece of philosophical navel-gazing, is a testable hypothesis. It has been tested and found to be false, in the following sense.
+Brans-Dicke gravity is about as natural a formal implementation of Mach's principle as could be hoped for,
+and it gives us a number $\omega$ that parametrizes how Machian the universe is. The empirical value of $\omega$
+is so large that it shows our universe to be essentially as non-Machian as general relativity.
+<% end_sec %> % Mach's principle is false
 
 
-<% end_sec %> % Rate of radiation
-
-
-<% end_sec %> % gravitational radiation
-
+<% end_sec %> % Mach's principle revisited
 
 \begin{hwsection}
 
-<% begin_hw('why-geodesics-for-test-particles') %>\index{geodesic!as world-line of a test particle}
-(a) Starting on page \pageref{sec:geometrical-gravity}, we have associated geodesics with the world-lines of low-mass
-objects (test particles). Use the Hulse-Taylor pulsar as an example to show that the assumption of low mass was a necessary one.
-How is this similar to the issues encountered on pp.~\pageref{sec:chiao-paradox}ff involving charged particles?\hwendpart
-(b) Show that if low-mass, uncharged particles did not follow geodesics (in a spacetime with no ambient electromagnetic
-fields), it would violate Lorentz invariance.
-Make sure that your argument explicitly invokes the low mass and the lack of charge, because otherwise your
-argument is wrong.
+<% begin_hw('uniform-field-sources') %>\index{uniform gravitational field}\index{gravitational field!uniform}
+In problem \ref{hw:uniform-field} on page \pageref{hw:uniform-field}, we analyzed the properties of the metric
+\begin{equation*}
+  \der s^2 = e^{2gz}\der t^2-\der z^2 \qquad .
+\end{equation*}
+(a) In that problem we found that this metric had the same properties at all points in space.
+Verify in particular that it has the same scalar curvature $R$ at all points in space.\hwendpart
+(b) Show that this is a vacuum solution in the two-dimensional $(t,z)$ space.\hwendpart
+(c) Suppose we try to generalize this metric to four dimensions as
+$\der s^2 = e^{2gz}\der t^2-\der x^2 - \der y^2 - \der z^2$.\hwendpart
+Show that this requires an Einstein tensor with unphysical  properties.\hwendpart
 \hwsoln
 <% end_hw %>
 
-<% begin_hw('real-exponential') %>
-Show that the metric $\der s^2 = \der t^2 -A\der x^2  -B\der y^2 - \der z^2$ with
-\begin{align*}
-  A &= 1-f+\frac{3}{8}f^2-\frac{25}{416}f^3+\frac{15211}{10729472}f^5 \\
-  B &= 1+f+\frac{3}{8}f^2+\frac{25}{416}f^3-\frac{15211}{10729472}f^5 \\
-  f &= A e^{k(t-z)}
-\end{align*}
-is an approximate solution to the vacuum field equations, provided that $k$ is real --- which prevents this from being
-a physically realistic, oscillating wave. Find the next nonvanishing term in each series.
-% wave_real_exponential_series.mac
-<% end_hw %>
-
-<% begin_hw('rindler-pq') %>
-Verify the claims made in example \ref{eg:rindler-pq}. Characterize the (somewhat complex) behavior of the
-function $q$ obtained when $p(u)=1+A\cos u$.
-% rindler_pq_integrate.pl
-% rindler_pq_beats.mac
-<% end_hw %>
-
-<% begin_hw('exact-plane') %>
-Verify the claims made in example \ref{eg:exact-plane} using Maxima. Although the result holds for any function $f$,
-you may find it more convenient to use some specific form of $f$, such as a sine wave, so that Maxima will be able
-to simplify the result to zero at the end. Note that when the metric is expressed in terms of the line element, there
-is a factor of 2 in the $2h\der z\der t$ term, but when expressing it as a matrix, the 2 is not present in the matrix
-elements, because there are two elements in the matrix that each contribute an equal amount.
-% wave_exact_plane.mac
-<% end_hw %>
-
 \end{hwsection}
+
+
 
 <% end_chapter %>
