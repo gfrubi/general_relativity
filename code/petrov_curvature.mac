@@ -10,5 +10,9 @@ lg:matrix([tt,0,phit,0],
           [0,0,0,-exp(-2*r)]
 );
 cmetric();
-scurvature(); /* scalar curvature */
-leinstein(true); /* Einstein tensor with lower indices, display=true */
+lriemann(false);
+uriemann(false);
+R:scurvature(); /* scalar curvature */
+k:rinvariant (); /* Kretchmann */
+taylor(R,r,0,12);
+taylor(k,r,0,12);

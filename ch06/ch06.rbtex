@@ -911,9 +911,10 @@ For example, the metric of ordinary polar coordinates in a Euclidean plane has $
 One way to test whether a singularity is a coordinate singularity is to calculate a scalar measure of curvature, whose value is independent of
 the coordinate system. We can take the trace of the Ricci tensor, $R\indices{^a_a}$,
 but since the Ricci tensor is zero, it's not surprising that that is zero. A different scalar we can construct
-is the product $R^{abcd}R_{abcd}$ of the Riemann tensor with itself. The Maxima command \verb@lriemann(true)@ displays
+is the product $R^{abcd}R_{abcd}$ of the Riemann tensor with itself. This is known as the Kretchmann invariant.\index{Kretchmann invariant}
+The Maxima command \verb@lriemann(true)@ displays
 the nonvanishing components of $R_{abcd}$. The component that misbehaves the most severely at $r=0$ is $R_{trrt}=2m/r^3$.
-Because of this, $R^{abcd}R_{abcd}$ blows up like $r^{-6}$ as $r\rightarrow 0$. This shows that the singularity at $r=0$
+Because of this, the Kretchmann invariant blows up like $r^{-6}$ as $r\rightarrow 0$. This shows that the singularity at $r=0$
 is a real, physical singularity.
 
 The singularity at $r=2m$, on the

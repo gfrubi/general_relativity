@@ -254,15 +254,52 @@ its critical angular velocity by shooting in particles on timelike or null curve
 
 
 \begin{hwsection}
+
+<% begin_hw('constant-curvature-invariants') %>
+If a spacetime has a certain symmetry, then we expect that symmetry to be detectable in the behavior
+of curvature scalars such as the scalar curvature $R=R\indices{^a_a}$ and the Kretchmann invariant $k=R^{abcd}R_{abcd}$.\index{Kretchmann invariant}\\
+(a) Show that the metric
+\begin{equation*}
+  \der s^2 = e^{2gz}\der t^2-\der x^2 - \der y^2 - \der z^2
+\end{equation*}
+from page \pageref{sec:uniform-field-kasner} has constant values of $R=1/2$ and $k=1/4$. Note that Maxima's ctensor package has
+built-in functions for these; you have to call the \verb@lriemann@ and \verb@uriemann@ before calling them.\hwendpart
+(b) Similarly, show that the Petrov metric
+\begin{equation*}
+  \der s^2 = -\der r^2 - e^{-2r}\der z^2+e^r[2\sin\sqrt{3}r \der \phi \der t-\cos\sqrt{3}r(\der \phi^2-\der t^2)]
+\end{equation*}
+(p.~\pageref{eq:petrov-metric}) has $R=0$ and $k=0$.\hwendpart
+\hwremark{Surprisingly, one can have a spacetime on which every possible curvature invariant vanishes identically,
+and yet which is not flat. See Coley, Hervik, and Pelavas, ``Spacetimes characterized by their scalar curvature invariants,''
+\url{arxiv.org/abs/0901.0791v2}.}
+<% end_hw %>
+% constant-curvature-invariants.mac
+
+<% begin_hw('cosmology-killing') %>
+We will not formally discuss cosmological spacetimes until ch.~\ref{ch:sources}, but based on your general
+knowledge of Big Bang models, how many Killing vectors would you expect such a spacetime to have?
+How many discrete symmetries? Would you expect it to be stationary? Static?
+\hwsoln
+<% end_hw %>
+
+
 <% begin_hw('petrov-strength') %>\index{Petrov metric}
 Section \ref{sec:uniform-field-kasner} on page \pageref{sec:uniform-field-kasner} presented the Petrov metric.
 The purpose of this problem is to verify that the gravitational field it represents does not fall off with distance.
 For simplicity, let's restrict our attention to a particle released at an $r$ such that $\cos\sqrt{3}r=1$, so that
 $t$ is the timelike coordinate. Let the particle be released at rest in the sense that initially it has
-$\dot{\phi}=\dot{r}=\dot{\phi}=0$, where dots represent differentiation with respect to the particle's
+$\dot{z}=\dot{r}=\dot{\phi}=0$, where dots represent differentiation with respect to the particle's
 proper time. Show that the magnitude of the proper acceleration is independent of $r$.
 \hwsoln
 <% end_hw %>
+
+<% begin_hw('rotation-with-no-center') %>
+The idea that a frame is ``rotating'' in general relativity can be formalized by saying
+that the frame is stationary but not static. Suppose someone says that any rotation must have a center.
+Give a counterexample.
+\hwsoln
+<% end_hw %>
+
 \end{hwsection}
 
 <% end_chapter %>

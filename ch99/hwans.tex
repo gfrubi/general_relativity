@@ -325,6 +325,14 @@ can be small, so there is no upper bound on the ratio $\epsilon/A$.
 Debunking the argument restores consistency with the answer to part b.
 
 \beginsolutions{7}
+
+\hwsolnhdr{cosmology-killing}
+Of course the universe is lumpy, so strictly speaking it has no Killing vectors at all, but we're speaking
+of the symmetries of a model, not the real universe. If the universe is homogeneous, then we expect it to
+have three Killing vectors, corresponding to the three spatial dimensions. Since the Big Bang had different
+properties than later times, we expect that there will be no timelike Killing vector, and it is not stationary
+or static.
+
 \hwsolnhdr{petrov-strength}
 
 Under these special conditions, the geodesic equations become $\ddot{r}=\Gamma\indices{^r_{tt}}\dot{t}^2$,
@@ -335,6 +343,20 @@ By symmetry, there will be no motion in the $z$ direction.
 The Christoffel symbol equals $-(1/2)e^r(\cos\sqrt{3}r-\sqrt{3}\sin\sqrt{3}r)$. At a location where
 the cosine equals 1, this is simply $-e^r/2$. For $\dot{t}$, we have $\der t/\der s=1/\sqrt{g_{tt}}=e^{-r/2}$.
 The result of the calculation is simply $\ddot{r}=-1/2$, which is independent of $r$.
+
+\hwsolnhdr{rotation-with-no-center}
+
+The Petrov metric is one example. The metric has no singularities anywhere, so the $r$ coordinate
+can be extended from $-\infty$ to $+\infty$, and there is no point that can be considered the center.
+The existence of a $\der\phi \der t$ term in the metric shows that it is not static.
+
+A simpler example is a spacetime made by taking a flat Lorentzian space and making it wrap around topologically
+into a cylinder, as in problem \ref{hw:cylinder-spacetime} on p.~\pageref{hw:cylinder-spacetime}. As discussed
+in the solution to that problem, this spacetime has a preferred state of rest in the azimuthal direction.
+In a frame that is moving azimuthally relative to this state of rest, the Lorentz transformation requires that
+the phase of clocks be adjusted linearly as a function of the azimuthal coordinate $\phi$. As described
+in section \ref{sec:carousel}, this will cause a discontinuity once we wrap around by $2\pi$, and therefore
+clock synchronization fails, and this frame is not static.
 
 \beginsolutions{8}
 
