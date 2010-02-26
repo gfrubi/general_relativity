@@ -698,14 +698,18 @@ answer is that using the equivalence principle to make conclusions about charged
 the attempts by slaveholders and abolitionists in the 19th century U.S. to support their positions
 based on the Bible: you can probably prove whichever conclusion was the one you set out to prove.
 
-The equivalence principle is not a single, simple, mathematically well defined statement. As an example
+The equivalence principle is not a single, simple, mathematically well defined 
+statement.\footnote{A good recent discussion of this is
+``Theory of gravitation theories: a no-progress report,''
+Sotiriou,  Faraoni, and Liberati, \url{http://arxiv.org/abs/0707.2748}}\index{equivalence principle!not mathematically well defined}
+As an example
 of an ambiguity that is still somewhat controversial, 90 years after Einstein first proposed the principle,
 consider the question of whether or not it applies to charged particles.
 Raymond Chiao\footnote{arxiv.org/abs/quant-ph/0601193v7} proposes the following thought experiment,
 which I'll refer to as Chiao's paradox.
 Let a neutral particle and a charged particle be set, side by side, in orbit around the earth.
-Assume that the earth has no electric or magnetic field (or, more realistically, that the charged particle
-is surrounded by a Faraday cage and mu-metal shielding).
+Assume (unrealistically)
+that the space around the earth has no electric or magnetic field.
 If the equivalence principle applies
 regardless of charge, then these two particles must go on orbiting amicably, side by side.
 But then we have a violation of conservation of energy, since the charged particle, which is

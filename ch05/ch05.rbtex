@@ -929,7 +929,7 @@ frames, which are the only legitimate ones in that theory). In general relativit
 and as we saw on page \pageref{g-frame-dependent}, the acceleration of gravity can be made to equal anything
 we like, based on our choice of a frame of reference.\label{christoffel-as-field}
 
-For higher-rank tensors, we just add more correction terms, e.g.,
+To compute the covariant derivative of a higher-rank tensor, we just add more correction terms, e.g.,
 \begin{align*}
   \nabla_a U_{bc} = \partial_a U_{bc} - \Gamma\indices{^d_{ba}}U_{dc}-\Gamma\indices{^d_{ca}}U_{bd} \\
 \intertext{or}

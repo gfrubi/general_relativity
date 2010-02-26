@@ -104,7 +104,8 @@ this type of general proof without assuming something about the energy-momentum 
 
 In example \ref{eg:dust-and-radiation-cosm} on page \pageref{eg:dust-and-radiation-cosm}, we saw that
 radiation has $P=\rho/3$ and dust has $P=0$. Both have $\rho\ge0$. If the universe is made out of nothing but dust and radiation, then
-we can obtain the following four constraints on the energy-momentum tensor:
+we can obtain the following four constraints on the energy-momentum 
+tensor:\index{trace energy condition}\index{strong energy condition}\index{dominant energy condition}\index{weak energy condition}\index{null energy condition}
 
 \begin{tabular}{ll}
 trace energy condition   &  $\rho-3P \ge 0$ \\
@@ -265,15 +266,85 @@ negative energy. For example, the energy density between two parallel conducting
 
 <% begin_sec("Cosmological solutions") %>\label{sec:cosmological-solutions}
 We are thus led to pose two interrelated questions. First, what can empirical observations about the universe tell us about
-the laws of physics, such as the zero or nonzero value of the cosmological constant? Second, what can the laws of physics
+the laws of physics, such as the zero or nonzero value of the cosmological constant? Second, what can the laws of physics, combined with observation,
 tell us about the large-scale structure of the universe, its origin, and its fate?
 
+
+<% begin_sec("Evidence for expansion of the universe") %>\label{evidence-for-expansion}
+By 1929, Edwin Hubble\index{Hubble, Edwin} at Mount Wilson had determined that the universe was expanding rather than static, so
+that Einstein's original goal of allowing a static cosmology became pointless. 
+Einstein later referred
+to the cosmological constant as the ``greatest blunder of my life,'' and for the next 70 years it was
+commonly assumed that $\Lambda$ was exactly zero.
+
+If the universe is currently observed to be expanding and cooling, then it is natural to imagine that in the past it might have been
+very dense and very hot.
+This is confirmed directly by looking up in the sky and seeing radiation from the hot early universe.\index{cosmic microwave background!discovery of}
+In 1964, Penzias and Wilson\index{Penzias, Arno}\index{Wilson, Robert} at Bell Laboratories in New Jersey detected a mysterious background of microwave radiation
+using a directional horn antenna. As with many accidental
+discoveries in science, the important thing was to pay attention to the surprising observation
+rather than giving up and moving on when it confounded attempts to understand it. They pointed
+the antenna at New York City, but the signal didn't increase. The radiation didn't
+show a 24-hour periodicity, so it couldn't be from a source in a certain direction in the sky.
+They even went so far as to sweep out the pigeon droppings inside.
+It was eventually established that the radiation was
+coming uniformly from all directions in the
+sky and had a black-body spectrum with a temperature of about 3 K.
+
+This is now interpreted as follows. At one time, the universe was hot enough to
+ionize matter. An ionized gas is opaque to light, since the oscillating fields of an electromagnetic
+wave accelerate the charged particles, depositing kinetic energy into them. Once the universe
+became cool enough, however, matter became electrically neutral, and the universe became
+transparent. Light from this time is the most long-traveling light that we can detect now.
+The latest data show that transparency set in
+when the temperature was about 3000 K. The surface we see, dating back to this time, is known
+as the surface of last scattering.\index{surface of last scattering} Since then, the universe has expanded by about a factor
+of 1000, causing the wavelengths of photons to be stretched by the same amount due to the
+expansion of the underlying space. This is equivalent to a Doppler shift due to the source's
+motion away from us; the two explanations are equivalent. We therefore see the 3000 K optical
+black-body radiation red-shifted to 3 K, in the microwave region.
+
+<% end_sec %> % evidence for expansion of the universe
+
+
+<% begin_sec("Evidence for homogeneity and isotropy") %>\label{sec:evidence-for-homogeneity}
+These observations demonstrate that the universe is not homogeneous in time, i.e., that one can observe the present conditions of the
+universe (such as its temperature and density), and infer what epoch of the universe's evolution we inhabit.
+A different question is the Copernican one of whether the universe is homogeneous in space.
 Surveys of distant quasars show that the universe has very little structure at scales greater than a few times $10^{25}$ m.
 (This can be seen on a remarkable logarithmic map  constructed by Gott et al., \url{astro.princeton.edu/universe}.)
 This suggests that we can, to a good approximation, model the universe as being 
 isotropic (the same in all spatial directions) and homogeneous (the same at all
 locations in space).
 
+Further evidence comes from the extreme uniformity of the cosmic microwave background radiation,\index{cosmic microwave background!isotropy of}
+once one subtracts out the dipole anisotropy due to the Doppler shift arising from our galaxy's motion relative to the CMB.
+When the CMB was first discovered, there was doubt about whether it was cosmological in origin (rather than, say,
+being associated with our galaxy), and it was expected that its isotropy would be as large as 10\%.
+As physicists began to be convinced that it really was a relic of the early universe, interest focused
+on measuring this anisotropy, and a series of measurements put tighter and tighter upper bounds on it.
+
+Other than the dipole term, there are two ways in which one might naturally expect anisotropy to
+occur. There might have been some lumpiness in the early universe, which might have served as seeds for
+the condensation of galaxy clusters out of the cosmic medium. Furthermore, we might wonder whether the
+universe as a whole is rotating. The general-relativistic notion of rotation is very different from the
+Newtonian one, and in particular, it is possible to have a cosmology that is rotating without having any
+center of rotation (see problem \ref{hw:rotation-with-no-center}, p.~\pageref{hw:rotation-with-no-center}).
+In fact one of the first exact solutions discovered for the Einstein field equations was the
+G\"{o}del metric,\index{G\"{o}del metric} which described a bizarre rotating universe with closed timelike curves,
+i.e., one in which causality was violated. In a rotating universe, one expects that radiation received from
+great cosmological distances will have a transverse Doppler shift, i.e., a shift due to the time dilation
+due to the motion of the distant matter across the sky. This shift would be greatest for sources lying in
+the plane of rotation relative to us, and would vanish for sources lying along the axis of rotation.
+The CMB would therefore show variation with the form of a quadrupole term, $3\cos^2\theta-1$.
+In 1977 a U-2 spyplane (the same type involved in the 1960 U.S.-Soviet incident) was used by Smoot et al.\footnote{G. F. Smoot, M. V. Gorenstein, and R. A. Muller, ``Detection of Anisotropy in the Cosmic Blackbody Radiation,'' Phys. Rev. Lett. 39 (1977) 898}
+to search for anisotropies in the CMB. This experiment was the first to definitively succeed in detecting
+the dipole anisotropy. After subtraction of the dipole component, the CMB was found to be uniform at the
+level of $\sim 3\times 10^{-4}$. This provided strong support for homogeneous cosmological models, and ruled
+out rotation of the universe with $\omega \gtrsim 10^{-22}\ \zu{Hz}$.
+<% end_sec %>
+
+<% begin_sec("The FRW cosmologies") %>
 Motivated by Hubble's observation that the universe is expanding, we hypothesize the existence of solutions of the
 field equation in which the properties of space are homogeneous and isotropic,
 but the over-all scale of space is increasing as described by some scale function $a(t)$. Because of
@@ -361,52 +432,15 @@ Rearranging a little, we have a set of differential equations known as the Fried
 
 The cosmology that results from a solution of these differential equations is known as the
 Friedmann-Robertson-Walker (FRW) or Friedmann-Lema\^{i}tre-Robertson-Walker (FLRW) cosmology.\index{Friedmann-Robertson-Walker cosmology}
-
-<% begin_sec("Evidence for expansion of the universe") %>\label{evidence-for-expansion}
-By 1929, Edwin Hubble\index{Hubble, Edwin} at Mount Wilson had determined that the universe was expanding rather than static, so
-that Einstein's original goal of allowing a static cosmology became pointless. The universe, it seemed, had
-originated in a Big Bang\index{Big Bang} (a concept that originated with the Belgian Roman Catholic priest
-Georges Le\-ma\^{i}tre).
-This now appears natural, since the Friedmann equations would only
-allow a constant $a$ in the case where $\Lambda$ was perfectly tuned relative to the other parameters. 
-Einstein later referred
-to the cosmological constant as the ``greatest blunder of my life,'' and for the next 70 years it was
-commonly assumed that $\Lambda$ was exactly zero.
-
-Self-check: Why is it not correct to think of the Big Bang as an explosion that occurred at a specific
-point in space?
-
-The existence of the Big Bang is confirmed directly by looking up in the sky and seeing it.
-In 1964, Penzias and Wilson\index{Penzias, Arno}\index{Wilson, Robert} at Bell Laboratories in New Jersey detected a mysterious background of microwave radiation
-using a directional horn antenna. As with many accidental
-discoveries in science, the important thing was to pay attention to the surprising observation
-rather than giving up and moving on when it confounded attempts to understand it. They pointed
-the antenna at New York City, but the signal didn't increase. The radiation didn't
-show a 24-hour periodicity, so it couldn't be from a source in a certain direction in the sky.
-They even went so far as to sweep out the pigeon droppings inside.
-It was eventually established that the radiation was
-coming uniformly from all directions in the
-sky and had a black-body spectrum with a temperature of about 3 K.
-
-This is now interpreted as follows. Soon after the Big Bang, the universe was hot enough to
-ionize matter. An ionized gas is opaque to light, since the oscillating fields of an electromagnetic
-wave accelerate the charged particles, depositing kinetic energy into them. Once the universe
-became cool enough, however, matter became electrically neutral, and the universe became
-transparent. Light from this time is the most long-traveling light that we can detect now.
-The latest data show that transparency set in around $4\times 10^5$ years after the big bang,
-when the temperature was about 3000 K. The surface we see, dating back to this time, is known
-as the surface of last scattering.\index{surface of last scattering} Since then, the universe has expanded by about a factor
-of 1000, causing the wavelengths of photons to be stretched by the same amount due to the
-expansion of the underlying space. This is equivalent to a Doppler shift due to the source's
-motion away from us; the two explanations are equivalent. We therefore see the 3000 K optical
-black-body radiation red-shifted to 3 K, in the microwave region.
-
-<% end_sec %> % evidence for expansion of the universe
+<% end_sec %>
 
 <% begin_sec("A singularity at the Big Bang") %>
-In section \ref{sec:black-hole-singularity}, we saw that a black hole contains a singularity.
-However, it appears that black hole singularities are always hidden behind event horizons, so that
-we can never observe them from the outside. Now if we extrapolate the Friedmann equations
+The Friedmann equations only
+allow a constant $a$ in the case where $\Lambda$ is perfectly tuned relative to the other parameters.
+This is consistent with the observation that the universe's characteristics are changing over time.
+What happens if we use general relativity to extrapolate farther and farther back in time?
+
+If we extrapolate the Friedmann equations
 backward in time, we find that they always have $a=0$ at some point in the past, and this
 occurs regardless of the details of what we assume about the matter and radiation that
 fills the universe. To see this, note that, as discussed in example \ref{eg:dust-and-radiation-cosm}
@@ -421,15 +455,30 @@ where $\rho$ is the density of mass-energy due to radiation. Since $\ddot{a}/a$ 
 the graph of $a(t)$ is always concave down, and since $a$ is currently increasing, there must be some
 time in the past when $a=0$. One can readily verify that this is not just a coordinate singularity;
 the Ricci scalar curvature $R\indices{^a_a}$ diverges, and the singularity occurs at a finite proper time in the past.
-If this singularity in the model corresponds to a singularity in the real universe, then it is not
-a singularity that is hidden behind an event horizon. It lies in our past light-cone, and our own world-lines
-emerged from it.
 
+In section \ref{sec:black-hole-singularity}, we saw that a black hole contains a singularity,
+but it appears that such singularities are always hidden behind event horizons, so that
+we can never observe them from the outside. The FRW singularity, however, is not
+hidden behind an event horizon. It lies in our past light-cone, and our own world-lines
+emerged from it.
+The universe, it seems,
+originated in a Big Bang\index{Big Bang} (a concept that originated with the Belgian Roman Catholic priest
+Georges Le\-ma\^{i}tre).
+
+Self-check: Why is it not correct to think of the Big Bang as an explosion that occurred at a specific
+point in space?
+
+Does the FRW singularity represent something real about our universe?
 One of the Penrose-Hawking singularity theorems\index{Penrose-Hawking singularity theorems} proves that the
 Big Bang singularity is not just a product of the unrealistic assumption of perfect symmetry  that went into the
-FRW cosmology. The only loophole is that if the cosmological constant is large enough, it violates the strong
-energy equation, and we can have a Big Bounce rather than a Big Bang (see page
-\pageref{bb-singularity-with-lambda}).\label{bb-singularity-without-lambda}\label{big-bang-singularity-inevitable}
+FRW cosmology.\footnote{Hawking and Ellis, ``The Cosmic Black-Body Radiation and the Existence of Singularities in Our Universe,''
+Astrophysical Journal, 152 (1968) 25. Available online at \url{articles.adsabs.harvard.edu}.}
+This particular singularity theorm requires three conditions: (1) the strong energy condition holds; (2) there are no closed timelike curves; and
+(3) a trapped surface exists in the past timelike geodesics originating at some point.
+The requirement of a trapped surface can fail if the universe is inhomogeneous to $\gtrsim 10^{-4}$, but observations
+of the cosmic microwave background rule out any inhomogeneity this large (see p.~\pageref{sec:evidence-for-homogeneity}). The other possible failure of the assumptions is that if the cosmological constant is large enough, it violates the strong
+energy equation, and we can have a Big Bounce rather than a Big Bang (see 
+p.~\pageref{bb-singularity-with-lambda}).\label{bb-singularity-without-lambda}\label{big-bang-singularity-inevitable}
 
 <% end_sec %> % A singularity at the Big Bang
 
