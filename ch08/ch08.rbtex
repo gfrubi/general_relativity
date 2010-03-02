@@ -1204,6 +1204,23 @@ is so large that it shows our universe to be essentially as non-Machian as gener
 
 \begin{hwsection}
 
+<% begin_hw('field-equations-parity') %>
+The Einstein field equations are
+\begin{equation*}
+  G_{ab} = 8\pi T_{ab} + \Lambda g_{ab} \qquad ,
+\end{equation*}
+and when it is possible to adopt a frame of reference in which the local mass-energy is at rest on average,
+we can interpret the energy-momentum tensor as
+\begin{equation*}
+  T\indices{^\mu_\nu}=diag(-\rho,P,P,P) \qquad ,
+\end{equation*}
+where $\rho$ is the mass-energy density and $P$ is the pressure.
+Fix some point as the origin of a local Lorentzian coordinate system.
+Analyze the properties of these relations under
+a reflection such as $x \rightarrow -x$ or $t \rightarrow -t$.
+\hwsoln
+<% end_hw %>
+
 <% begin_hw('uniform-field-sources') %>\index{uniform gravitational field}\index{gravitational field!uniform}
 In problem \ref{hw:uniform-field} on page \pageref{hw:uniform-field}, we analyzed the properties of the metric
 \begin{equation*}
@@ -1213,7 +1230,9 @@ In problem \ref{hw:uniform-field} on page \pageref{hw:uniform-field}, we analyze
 Verify in particular that it has the same scalar curvature $R$ at all points in space.\hwendpart
 (b) Show that this is a vacuum solution in the two-dimensional $(t,z)$ space.\hwendpart
 (c) Suppose we try to generalize this metric to four dimensions as
-$\der s^2 = e^{2gz}\der t^2-\der x^2 - \der y^2 - \der z^2$.\hwendpart
+\begin{equation*}
+\der s^2 = e^{2gz}\der t^2-\der x^2 - \der y^2 - \der z^2 \qquad .
+\end{equation*}
 Show that this requires an Einstein tensor with unphysical  properties.\hwendpart
 \hwsoln
 <% end_hw %>

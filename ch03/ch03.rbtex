@@ -766,7 +766,7 @@ transformations of spatial reflection and time reversal are not included in the 
 Poincar\'{e} group, although they do preserve inner products. General relativity has symmetry
 under spatial reflection (called P for parity), time reversal (T), and charge inversion (C), but the standard
 model of particle physics is only invariant under the composition of all three, CPT, not under any
-of these symmetries individually.}
+of these symmetries individually.}\index{parity}\index{time reversal}\index{charge inversion}
 from these two sets is called the Poincar\'{e} group.\index{Poincar\'{e} group}
 The Poincar\'{e} group is not the symmetry group of all of spacetime, since curved spacetime has
 different properties in different locations. The equivalence principle tells us, however, that
