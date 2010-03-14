@@ -1082,6 +1082,14 @@ page \pageref{einstein-doppler}.
 \hwsoln
 <% end_hw %>
 
+<% begin_hw('classical-electron-radius') %>
+Estimate the energy contained in the electric field of an electron, if the electron's radius is $r$.
+Classically (i.e., assuming relativity but no quantum mechanics), this energy contributes to the electron's
+rest mass, so it must be less than the rest mass. Estimate the resulting lower limit on $r$, which is known
+as the classical electron radius.
+\hwsoln
+<% end_hw %>
+
 <% begin_hw('compton') %>
 For gamma-rays in the MeV range, the most frequent mode of interaction with matter is Compton scattering,\index{Compton scattering}
 in which the photon is scattered by an electron without being absorbed.

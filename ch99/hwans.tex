@@ -268,6 +268,18 @@ propagation and the relative velocity. Putting this through a Lorentz boost alon
 we find $f'=\gamma f(1+v\cos\theta)$, which agrees with Einstein's equation on page
 \pageref{einstein-doppler}, except for the arbitrary convention involved in defining the sign of $v$.
 
+\hwsolnhdr{classical-electron-radius}
+
+The exact result depends on how one assumes the charge is distributed, so this can't be any more than a rough
+estimate. The energy density is $(1/8\pi k)E^2 \sim ke^2/r^4$, so the total energy is an integral of the form
+$\int r^{-4} \der V \sim \int r^{-2} \der r$, which diverges like $1/r$ as the lower limit of integration approaches
+zero. This tells us that most of the energy is at small values of $r$, so to a rough approximation we can just
+take the volume of integration to be $r^3$ and multiply by a fixed energy density of $ke^2/r^4$. This gives
+an energy of $\sim ke^2/r$. Setting this equal to $mc^2$ and solving for $r$, we find $r \sim ke^2/mc^2 \sim 10^{-15}\ \munit$.
+
+Remark: Since experiments have shown that electrons do \emph{not} have internal structure on this scale, we conclude that
+quantum-mechanical effects must prevent the energy from blowing up as $r\rightarrow 0$.
+
 \beginsolutions{5}
 
 \hwsolnhdr{uniform-field}

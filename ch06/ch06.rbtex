@@ -114,7 +114,7 @@ In a relativistic treatment, this should be described as an event horizon.
 The existence of event horizons in general relativity has deep implications, and in particular it helps to
 explain why it is so difficult to reconcile general relativity with quantum mechanics, despite nearly a century
 of valiant attempts. Quantum mechanics has a property called unitarity. Mathematically, this says that
-of the state of a quantum mechanical system is given, at a certain time, in the form of a vector, then
+if the state of a quantum mechanical system is given, at a certain time, in the form of a vector, then
 its state at some point in the future can be predicted by applying a unitary matrix to that vector.
 A unitary matrix is the generalization to complex numbers of the ordinary concept of an orthogonal matrix,
 and essentially it just represents a change of basis, in which the basis vectors have unit length and
@@ -1050,9 +1050,11 @@ book and absorb the main points.
 
 <% end_sec %> % singularities
 
-<% begin_sec("Black hole radiation") %>
+<% begin_sec("Hawking radiation") %>
+<% begin_sec("Radiation from black holes") %>
 Since event horizons are expected to emit blackbody radiation, a black hole should not be entirely black; it should
-radiate. Suppose observer B just outside the event horizon blasts the engines of her rocket ship, producing enough
+radiate. This is called Hawking radiation.\index{Hawking radiation}
+Suppose observer B just outside the event horizon blasts the engines of her rocket ship, producing enough
 acceleration to keep from being sucked in. By the equivalence principle, what she observes cannot depend on whether
 the acceleration she experiences is actually due to a gravitational field. She therefore detects radiation, which she
 interprets as coming from the event horizon below her. As she gets closer and closer to the horizon, the acceleration
@@ -1071,7 +1073,24 @@ by advanced technology.
 If black-hole radiation does exist, it may help to resolve the information paradox, since it is possible that
 information that goes into a black hole is eventually released via subtle correlations in the
 black-body radiation it emits.
+<% end_sec %> % Radiation from black holes
+<% begin_sec("Particle physics") %>
+Hawking radiation has some intriguing properties from the point of view of particle physics.
+In a particle accelerator, the list of particles one can create in appreciable quantities is determined
+by coupling constants. In Hawking radiation, however, we expect to see a representative sampling of all
+types of particles, biased only by the fact that massless or low-mass particles are more likely to be produced
+than massive ones. For example, it has been speculated that some of the universe's dark matter exists in the
+form of ``sterile'' particles that do not couple to any force except for gravity. Such particles would
+never be produced in particle accelerators, but would be seen in radiation.
 
+Hawking radiation would violate many cherished conservation laws of particle physics. Let a hydrogen atom
+fall into a black hole. We've lost a lepton and a baryon, but if we want to preserve conservation of lepton
+number and baryon number, we cover this up with a fig leaf by saying that the black hole has simply increased its lepton number and baryon
+number by $+1$ each. But eventually the black hole evaporates, and the evaporation is probably mostly into
+zero-mass particles such as photons. Once the hole has evaporated completely, our fig leaf has evaporated as
+well. There is now no physical object to which we can attribute the $+1$ units of lepton and baryon number.
+<% end_sec %> % Particle physics
+<% begin_sec("Black-hole complementarity") %>
 A very difficult question about the relationship between quantum mechanics and general relativity occurs as follows.
 In our example above, observer A detects an extremely red-shifted spectrum of light from the black hole. A interprets
 this as evidence that the space near the event horizon is actually an intense maelstrom of radiation, with the temperature
@@ -1091,6 +1110,7 @@ by analogy with Niels Bohr's philosophical description of wave-particle duality 
 contradictory. In this interpretation, we have to accept the fact that C experiences a qualitatively different reality than
 A and B, and we comfort ourselves by recognizing that the contradiction can never become too acute, since C is lost behind
 the event horizon and can never send information back out.
+<% end_sec %> % Black-hole complementarity
 
 <% end_sec %> % Black hole radiation
 

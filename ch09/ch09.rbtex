@@ -59,8 +59,10 @@ that agrees with relativity is a test of this specific aspect of relativity.
 So we still don't know, a century after Einstein found the field equations, whether gravitational ``ripples'' travel at $c$.
 Nevertheless, we do have strong empirical evidence that such ripples exist. The Hulse-Taylor system (page \pageref{hulse-taylor-pulsar})
 contains two neutron stars orbiting around their common center of mass, and the period of the orbit is observed to be lengthening
-gradually over time, \figref{pulsar-period-decreasing}. This is interpreted as evidence that the stars are losing energy to radiation of 
+gradually over time (figure \figref{pulsar-period-decreasing}). This is interpreted as evidence that the stars are losing energy to radiation of 
 gravitational waves.\footnote{Stairs, ``Testing General Relativity with Pulsar Timing,'' \url{http://relativity.livingreviews.org/Articles/lrr-2003-5/}}
+As we'll see in section \ref{sec:rate-of-gravitational-radiation}, the rate of energy loss is in excellent agreement with the predictions
+of general relativity.
 <%
   fig(
     'pulsar-period-decreasing',
@@ -76,8 +78,35 @@ gravitational waves.\footnote{Stairs, ``Testing General Relativity with Pulsar T
   )
 %>
 
-More dramatic, if less clearcut, evidence is provided by
-Komossa, Zhou, and Lu's observation\url{http://arxiv.org/abs/0804.4585} of a supermassive black hole
+Although the energy loss from systems such as the Hulse-Taylor binary provide strong evidence that gravitational waves
+exist and carry enery, we would also like to detect them directly. This would not only be a definitive
+test of a century-old prediction of general relativity, it would also open a window into a completely new method of
+astronomical observation. A series of attempts is under way to observe gravitational waves directly using interferometers,
+which detect oscillations in the lengths of their own arms. These can be either ground-based or space-based.
+The early iterations of the ground-based LIGO interferometer did not detect gravitational waves, but a new version, Advanced LIGO, is under construction.
+A space-based system, LISA, has been proposed for launch in 2020, but its funding is uncertain.
+The two devices would operate in complementary frequency ranges (figure \figref{ligo-and-lisa-sensitivities}).
+A selling point of LISA is that if it is launched, there are a number of known sources in the sky that
+are known to be easily within its range of sensitivity.\footnote{G. Nelemans, ``The Galactic Gravitational wave foreground,''
+\url{arxiv.org/abs/0901.1778v1}} One excellent candidate is
+HM Cancri, a pair of white dwarfs with an orbital period of 5.4 minutes, shorter than that of any 
+other known binary star.\footnote{Roelofs et al., ``Spectroscopic Evidence for a 5.4-Minute Orbital Period in HM Cancri,''
+\url{arxiv.org/abs/1003.0658v1}} 
+<%
+  fig(
+    'ligo-and-lisa-sensitivities',
+    %q{%
+      Predicted sensitivities of LISA and LIGO to gravitational waves of various frequences.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+An even more dramatic, if less clearcut, piece of evidence is
+Komossa, Zhou, and Lu's observation\footnote{\url{http://arxiv.org/abs/0804.4585}} of a supermassive black hole
 that appears to be recoiling from its parent galaxy at a velocity of 2650 km/s (projected along the line of
 sight). They interpret this as evidence for the following scenario. In the early universe, galaxies form with
 supermassive black holes at their centers. When two such galaxies collide, the black holes can merge. The
