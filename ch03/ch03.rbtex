@@ -365,7 +365,7 @@ accumulated until the geodesic returns to the initial point. Since antipodal poi
 the circumference of the sphere, not its whole circumference, so $R=\lambda/\pi$, by wholly intrinsic methods.
 \end{eg}
 
-\begin{eg}{Extrinsic curvature}\label{eg:extrinsic-curvature}
+\begin{eg}{Extrinsic curvature}\label{eg:extrinsic-curvature}\label{blurtzy}%2nd version of label is necessary in order to avoid an error in the caption to fig:pythagorean
 Euclid's axioms E1-E5 refer to explicit constructions. If a two-dimensional being can
 physically verify them all as descriptions of the two-dimensional space she inhabits, then she knows that her space is
 Euclidean, and that propositions such as the Pythagorean theorem are physically valid in her universe.
@@ -379,7 +379,7 @@ the diagram can't be plastered onto the sphere without folding or cutting and pa
 <%
   fig(
     'pythagorean',
-    %q{Example \pageref{eg:extrinsic-curvature}.},
+    %q{Example \pageref{blurtzy}.},
     {
       'width'=>'fullpage',
     }
