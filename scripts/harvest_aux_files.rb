@@ -3,6 +3,8 @@
 # The purpose of this script is to save the information in the aux files so we don't have
 # to run pdftex three times every time we want to make html output. It collects all the
 # aux files, parses them, and saves them in save.ref .
+# I also use this in eruby_util.rb for a workaround for a bug in latex that sometimes
+# makes it impossible to use a pageref ("Missing \endcsname inserted").
 
 files = Dir["ch*/*.aux"]
 

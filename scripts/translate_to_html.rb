@@ -270,7 +270,7 @@ end
 
 # In the following, the main point of the icon is to allow me to tell, for testing purposes, whether I'm seeing the xhtml version
 # or the html version. I'm not displaying any icon for the html version, since that would just clutter up the page.
-if $modern then
+if $modern and !$html5 then
   valid_icon = '<p><img src="http://www.w3.org/Icons/valid-xhtml11-blue.png" alt="Valid XHTML 1.1 Strict" height="31" width="88"/></p>'
 else
   #valid_icon = '<p><img src="http://www.w3.org/Icons/valid-html401-blue" alt="Valid HTML 4.01 Strict" height="31" width="88"/></p>'
@@ -1514,7 +1514,7 @@ end
 
 
 
-
+# Code similar to this is duplicated in eruby_util.rb.
 refs_file = 'save.ref'
 unless File.exist?(refs_file) then
   $stderr.print "File #{refs_file} doesn't exist. Do a 'make book' to create it."

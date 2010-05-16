@@ -16,6 +16,7 @@
 #       <% 3.times do %> rah <% end %>
 #       <% if foo %> foo <% end %>
 #     Every block has to be a syntactically self-contained piece of ruby code.
+#     Variables assigned to in one piece of code *are* available in later pieces of code.
 #     This type of thing has to be accomplished by using a single block of ruby code,
 #     with print statements inside it.
 # Bugs:

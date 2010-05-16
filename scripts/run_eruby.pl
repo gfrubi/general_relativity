@@ -32,6 +32,8 @@ my $wiki = 0;
 if ($wopt=~/\-\-wiki/) {$wiki=1}
 my $xhtml = 0;
 if ($wopt=~/\-\-modern/) {$xhtml=1}
+my $html5 = 0;
+if ($wopt=~/\-\-html5/) {$html5=1}
 
 print "run_eruby.pl, no_write=$no_write, wiki=$wiki, xhtml=$xhtml\n";
 
@@ -99,7 +101,12 @@ foreach (<ch*/*.rbtex>) {
         $html = $html . '.wiki';
       }
       else {
-        $html = $html . '.html';
+        if ($html5) {
+          $html = $html . '.html5';
+        }
+        else {
+          $html = $html . '.html';
+        }
       }
     }
     if ($no_write) {$html = '/dev/null'}

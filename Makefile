@@ -32,6 +32,7 @@ book:
 
 web:
 	WOPT='$(WOPT) --modern' $(RUN_ERUBY) w #... xhtml
+	WOPT='$(WOPT) --html5' $(RUN_ERUBY) w  #... html 5
 	$(RUN_ERUBY) w                         #... html
 	# To set options, do, e.g., "WOPT='--no_write' make web". Options are documented in translate_to_html.rb.
 

@@ -1,5 +1,11 @@
-# This is a cut-down version of the one used for LM and SN.
+# See INTERNALS for documentation on all the files: geom.pos, marg.pos, chNN.pos,
+# figfeedbackNN, all.pos.
 
+$n_code_listing = 0
+$hw_number = 0
+$hw = []
+$hw_has_solution = []
+$hw_names_referred_to = []
 $tex_points_to_mm = (25.4)/(65536.*72.27)
 $n_marg = 0
 $in_marg = false
@@ -28,10 +34,51 @@ $web_command_marker = 'ZZZWEB:'
 
 $count_section_commands = 0
 $section_level = -1
-$hw_number = 0
-$hw = []
-$hw_has_solution = []
-$hw_names_referred_to = []
+
+#--------------------------------------------------------------------------
+# The following code is a workaround for a bug in latex. The symptom is that I get
+# "Missing \endcsname inserted" in a few isolated cases where I use a pageref inside
+# the caption of a figure. See meki latex notes for more details. In these cases, I
+# can get the refs using eruby instead of latex. See pageref_workaround() and ref_workaround() below.
+
+#qwe
+# Code similar to this is duplicated in translate_to_html.rb:
+refs_file = 'save.ref'
+$ref = {}
+if File.exist?(refs_file) then # It's not an error if the file doesn't exist yet; references are just not defined yet, and that's normal for the first time on a fresh file.
+  File.open(refs_file,'r') do |f|
+    # lines look like this:
+    #    fig:entropygraphb,h,255
+    t = f.gets(nil) # nil means read whole file
+    t.scan(/(.*),(.*),(.*)/) { |label,number,page|
+      $ref[label] = [number,page.to_i]
+    }
+  end
+end
+
+def ref_workaround(label)
+  return $ref[label][0]
+end
+
+def pageref_workaround(label)
+  return $ref[label][1].to_s
+end
+
+#--------------------------------------------------------------------------
+
+# set by run_eruby.pl
+# tells whether the book is calculus-based
+# if set, ignore markers on hw and section in L&M for optional calc-based material
+def calc
+  return ENV['CALC']=='1'
+end
+
+# set by run_eruby.pl
+# for use when generating screen-resolution figures
+# e.g., ../9share/optics
+def shared_figs
+  return [ENV['SHARED_FIGS'],ENV['SHARED_FIGS2']]
+end
 
 def is_print
   return ENV['BOOK_OUTPUT_FORMAT']!='web'
@@ -184,7 +231,6 @@ def pos_file_exists
   return $pos_exists
 end
 
-# looks at global variable $n_marg to see which margin-group we're working on
 # returns height in mm, or nil if the all.pos file doesn't exist yet, or figure not listed in it
 def height_of_marg
   #debug = ($ch.to_i==4 and $n_marg==6)
@@ -192,7 +238,7 @@ def height_of_marg
   if !(File.exist?($marg_file)) then return nil end
   if !pos_file_exists() then return nil end
   # First, figure out what figures are associated with the current margin block.
-  mine = Hash.new # keys are, e.g., "fig:atomic-clock-boarding-plane"
+  mine = Hash.new
   File.open($marg_file,'r') do |f|
     # The file grows by appending with each iteration. If the user isn't modifying the tex file (drastically) between
     # runs, then it should all just be exact repetition. If not, then we just use the freshest available data. At any given
@@ -259,6 +305,8 @@ end
 
 def figure_exists_in_my_own_dir?(name)
   ch = $ch
+  if $ch=='001' then ch='00' end
+  if $ch=='002' then ch='00' end
   return (File.exist?("ch#{ch}/figs/#{name}.pdf") or File.exist?("ch#{ch}/figs/#{name}.jpg") or File.exist?("ch#{ch}/figs/#{name}.png"))
 end
 
@@ -320,6 +368,14 @@ def fig(name,caption=nil,options={})
     options['anonymous']=(!caption)
   end
   dir = "\\figprefix\\chapdir/figs"
+  if !figure_exists_in_my_own_dir?(name) then
+    # bug: doesn't support \figprefix
+    s = shared_figs()
+    dir = s[0]
+    unless (File.exist?("#{dir}/#{name}.pdf") or File.exist?("#{dir}/#{name}.jpg") or File.exist?("#{dir}/#{name}.png")) then
+      dir = s[1]
+    end
+  end
   #------------------------------------------------------------
   if is_print then fig_print(name,caption,options,dir) end
   #------------------------------------------------------------
@@ -487,6 +543,31 @@ def die(name,message)
   exit(-1)
 end
 
+def begin_hw(name,difficulty=1,options={})
+  if difficulty==nil then difficulty=1 end # why doesn't this happen by default?
+  if calc() then options['calc']=false end
+  calc = ''
+  if options['calc'] then calc='1' end
+  print "\\begin{homework}{#{name}}{#{difficulty}}{#{calc}}"
+  $hw_number += 1
+  $hw[$hw_number] = name
+  $hw_has_solution[$hw_number] = false
+end
+
+def hw_solution()
+  $hw_has_solution[$hw_number] = true
+  print "\\hwsoln"
+end
+
+def hw_ref(name)
+  print "\\ref{hw:#{name}}"
+  $hw_names_referred_to.push(name)
+end
+
+def end_hw()
+  print "\\end{homework}"
+end
+
 def end_sec()
   $count_section_commands += 1
   $section_level -= 1
@@ -497,7 +578,7 @@ def begin_sec(title,pagebreak=nil,label='',options={})
   $section_level += 1
   # In LM, section level 1=section, 2=subsection, 3=subsubsection; 0 would be chapter, but chapters aren't done with begin_sec()
   if $section_level==0 then
-    $stderr.print "warning, at #{$count_section_commands}th begin/end section command, ch #{$ch}, section #{title}, section level=#{$section_level}, zero section level (happens in NP Preface)\n"
+    $stderr.print "warning, at #{$count_section_commands}th section command, ch #{$ch}, section #{title}, section level=#{$section_level}, zero section level (happens in NP Preface)\n"
     $section_level = 1
   end
   if pagebreak==nil then pagebreak=4-$section_level end
@@ -507,9 +588,13 @@ def begin_sec(title,pagebreak=nil,label='',options={})
   if $section_level>=3 then pagebreak = '' end
   macro = ''
   label_level = ''
+  if calc() then options['calc']=false end
   if $section_level==1 then
+    if options['calc'] and options['optional'] then macro='myoptionalcalcsection' end
+    if options['calc'] and !options['optional'] then macro='mycalcsection' end
+    if !options['calc'] and options['optional'] then macro='myoptionalsection' end
+    if !options['calc'] and !options['optional'] then macro='mysection' end
     label_level = 'sec'
-    macro = 'mysection'
   end
   if $section_level==2 then
     if options['toc']==false then
@@ -523,15 +608,85 @@ def begin_sec(title,pagebreak=nil,label='',options={})
     macro = 'subsubsection'
     label_level = 'subsubsec'
   end
+  #$stderr.print "level=#{$section_level}, title=#{title}\n"
+  # In LM, sections are supposed to be titlecase.
+  # May be a section in LM, but a subsection in SN, and that's why we may need to change to and from titlecase automatically, and it's not an error
+  # that should be reported to the user.
+  if $section_level>=2 then
+    title = remove_titlecase(title) 
+  else
+    title = add_titlecase(title)
+  end
   if label != '' then label="\\label{#{label_level}:#{label}}" end
   print "\\#{macro}#{pagebreak}{#{title}}#{label}\n"
+end
+
+def add_titlecase(title)
+  foo = title.clone
+  # Examples:
+  #   Current-conducting -> Current-Conducting
+  foo.gsub!(/(?<![\w'"`{}\\])(\w)/) {$1.upcase}              # Change every initial letter to uppercase. Handle Bob's, Schr\"odinger, Amp\`{e}re's
+  [ 'a','the','and','or','if','for','of','on','by' ].each { |tiny| # Change specific short words back to lowercase.
+    foo.gsub!(/(?<!\w)#{tiny}(?!\w)/i) {tiny} 
+  }
+  foo = initial_cap(foo)                            # Make sure initial word ends up capitalized.
+  acronyms_and_symbols_uppercase(foo)               # E.g., FWHM.
+  #if title != foo then $stderr.print "changing title from #{title} to #{foo}\n" end
+  return foo  
+end
+
+def remove_titlecase(title)
+  foo = title.clone
+  foo = initial_cap(foo.downcase) # first letter is capital, everything after that lowercase
+  # restore caps on proper nouns:
+  [ 'Cartesian','Kepler','Big Bang','Gauss','Amp\\`{e}re','Maxwell','Faraday',
+    'Huygens','Schr\\"odinger','Schr\\\"odinger','Greek','Biot','Savart','Doppler','Lorentz','Michelson','Morley' ].each { |proper|
+    foo.gsub!(/(?<!\w)#{proper}/i) {|x| initial_cap(x)}
+           # ... the negative lookbehind prevents, e.g., damped and example from becoming DAmped and ExAmple
+           # If I had a word like "amplification" in a title, I'd need to special-case that below and change it back.
+  }
+  acronyms_and_symbols_uppercase(foo) # e.g., FWHM
+  return foo
+end
+
+def acronyms_and_symbols_uppercase(foo)
+  # Acronyms and symbols that need to be uppercase no matter what:
+  foo.gsub!(/(?<!\w)(q|fwhm)(?!\w)/) {$1.upcase}
+end
+
+def initial_cap(x)
+  # Note that we have some subsections like "2. The medium is not transported with the wave.", where the initial cap is not the first character.
+  # These are handled correctly because it's sub(), not gsub(), so it just changes the first a-zA-Z character.
+  # The A-Z case is the one where it's already got an initial cap (e.g., don't want to end up with "HEllo".
+  return x.sub(/([a-zA-Z])/) {|x| x.upcase}
 end
 
 def end_chapter
   $section_level -= 1
   if $section_level != -1 then
-    $stderr.print "warning,  at end_chapter, ch #{$ch}, section level at end of chapter is #{$section_level}, should be -1; probably begin_sec's and end_sec's are not properly balanced (happens in NP preface)\n"
+    $stderr.print "warning, at end_chapter, ch #{$ch}, section level at end of chapter is #{$section_level}, should be -1; probably begin_sec's and end_sec's are not properly balanced (happens in NP preface)\n"
   end
+  $hw_names_referred_to.each { |name|
+    $stderr.print "hwref:#{name}\n"
+  }
+  File.open("ch#{$ch}_problems.csv",'w') { |f|
+    # book,ch,num,name
+    book = ENV['BK']
+    chnum = $ch.to_i
+    if $ch=='002' then chnum=0 end
+    1.upto($hw_number) { |i|
+      name = $hw[i]
+      f.print "#{book},#{chnum},#{i},#{name},#{$hw_has_solution[i]?'1':'0'}\n"
+    }
+  }
+end
+
+def code_listing(filename,code)
+  print code  
+  $n_code_listing = $n_code_listing+1
+  File.open("code_listing_ch#{$ch}_#{$n_code_listing}_#{filename}",'w') { |f|
+    f.print code
+  }
 end
 
 def chapter(number,title,label,caption='',options={})
@@ -554,11 +709,29 @@ def chapter(number,title,label,caption='',options={})
   }
   opener = options['opener']
   if opener!='' then
+    if !figure_exists_in_my_own_dir?(opener) then
+      # bug: doesn't support \figprefix
+      # ! LaTeX Error: File `ch02/figs/../9share/mechanics/figs/pool' not found.
+      s = shared_figs()
+      dir = s[0]
+      unless (File.exist?("#{dir}/#{opener}.pdf") or File.exist?("#{dir}/#{opener}.jpg") or File.exist?("#{dir}/#{opener}.png")) then
+        dir = s[1]
+      end
+      options['opener']="../../#{dir}/#{opener}"
+    end
     if options['anonymous']=='default' then
       options['anonymous']=(caption=='')
     end
   end
-  chapter_print(number,title,label,caption,options)
+  if is_print then chapter_print(number,title,label,caption,options) end
+  if is_web   then   chapter_web(number,title,label,caption,options) end
+end
+
+def chapter_web(number,title,label,caption,options)
+  if options['opener']!='' then
+    process_fig_web(options['opener'],caption,options)
+  end
+  print "\\mychapter{#{title}}\n"
 end
 
 def chapter_print(number,title,label,caption,options)
@@ -608,16 +781,4 @@ def chapter_print(number,title,label,caption,options)
     exit(-1)
   end
   print "#{result}\\label{#{label}}\n"
-end
-
-def begin_hw(name,difficulty=1,options={})
-  if difficulty==nil then difficulty=1 end # why doesn't this happen by default?
-  print "\\begin{homework}{#{name}}{#{difficulty}}{}"
-  $hw_number += 1
-  $hw[$hw_number] = name
-  $hw_has_solution[$hw_number] = false
-end
-
-def end_hw()
-  print "\\end{homework}"
 end

@@ -1101,6 +1101,14 @@ scalar-in-a-box idea leads to a contradiction, it wasn't a coincidence that we c
 produced such an effect; a theory that lacks self-consistency doesn't have any models.
 
 Self-check: Explain why parallel transporting a vector can only rotate it, not change its magnitude.
+<% marg(0) %>
+<%
+  fig(
+    'torsion-story',
+    %q{Measuring $\partial^2 T/\partial x\partial y$ for a scalar $T$.}
+  )
+%>
+<% end_marg %>
 
 There is, however, a different way in which scalars could behave counterintuitively, and this one is mathematically
 self-consistent. Suppose that Helen lives in two spatial dimensions and owns a thermometer. She wants to measure
@@ -1114,14 +1122,6 @@ afternoon temperature sample $\Delta T_2$ would be at the same point in space C 
 the landscape, so the sample points C and E are different, but this just confirms what she already knew: the space isn't
 flat.\footnote{This point was mentioned on page \pageref{riemann-curvature-tensor}, in connection with the
 definition of the Riemann tensor.}
-<% marg(80) %>
-<%
-  fig(
-    'torsion-story',
-    %q{Measuring $\partial^2 T/\partial x\partial y$ for a scalar $T$.}
-  )
-%>
-<% end_marg %>
 
 None of this seems surprising yet, but there are now two qualitatively different ways that her analysis of her data
 could turn out, indicating qualitatively different things about the laws of physics in her universe.
