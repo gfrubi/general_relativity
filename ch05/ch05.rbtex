@@ -379,7 +379,7 @@ Then\footnote{In the spherical model, $L=\rho\theta\sin u$, where $u$ is the ang
 the sphere by an arc of length $r$. We then have $L/L_E=\sin u/u$, whose second derivative with respect to $u$ is
 $-1/3$. Since $r=\rho u$, the second derivative of the same quantity with respect to $r$ equals $-1/3\rho^2=-K/3$.}
 \begin{equation*}
-  K=-3\frac{\der^2}{\der r^2} \left(\frac{L}{L_e}\right) \qquad .
+  K=-3\frac{\der^2}{\der r^2} \left(\frac{L}{L_E}\right) \qquad .
 \end{equation*}
 
 Let's now generalize beyond elliptic geometry. Consider a space modeled by a surface embedded in three dimensions, with

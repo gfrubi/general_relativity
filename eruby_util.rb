@@ -639,19 +639,21 @@ def remove_titlecase(title)
   foo = title.clone
   foo = initial_cap(foo.downcase) # first letter is capital, everything after that lowercase
   # restore caps on proper nouns:
-  [ 'Cartesian','Kepler','Big Bang','Gauss','Amp\\`{e}re','Maxwell','Faraday',
+  [ 'Cartesian','Kepler','Gauss','Amp\\`{e}re','Maxwell','Faraday','Brans','Dicke','Einstein',
     'Huygens','Schr\\"odinger','Schr\\\"odinger','Greek','Biot','Savart','Doppler','Lorentz','Michelson','Morley' ].each { |proper|
     foo.gsub!(/(?<!\w)#{proper}/i) {|x| initial_cap(x)}
            # ... the negative lookbehind prevents, e.g., damped and example from becoming DAmped and ExAmple
            # If I had a word like "amplification" in a title, I'd need to special-case that below and change it back.
   }
+  foo.gsub!(/big bang/) {'Big Bang'} # logic above can't handle multi-word patterns
   acronyms_and_symbols_uppercase(foo) # e.g., FWHM
+  #if title != foo then $stderr.print "changing title from #{title} to #{foo}\n" end
   return foo
 end
 
 def acronyms_and_symbols_uppercase(foo)
   # Acronyms and symbols that need to be uppercase no matter what:
-  foo.gsub!(/(?<!\w)(q|fwhm)(?!\w)/) {$1.upcase}
+  foo.gsub!(/(?<!\w)(q|fwhm|frw)(?!\w)/) {$1.upcase}
 end
 
 def initial_cap(x)

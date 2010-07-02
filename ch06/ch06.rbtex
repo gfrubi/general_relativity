@@ -1165,6 +1165,11 @@ to the Schwarzschild metric results in a metric for which $g_{rr}$ and $g_{t't'}
 does blow up.
 <% end_hw %>
 
+<% begin_hw('schwarzschild-circular-orbit') %>
+Use the geodesic equation to show that, in the case of a circular orbit in a Schwarzschild metric,
+$\der^2 t/\der s^2=0$. Explain why this makes sense.
+<% end_hw %>
+
 
 \end{hwsection}
 

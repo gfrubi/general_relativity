@@ -58,7 +58,7 @@ that agrees with relativity is a test of this specific aspect of relativity.
 <% begin_sec("Empirical evidence") %>
 So we still don't know, a century after Einstein found the field equations, whether gravitational ``ripples'' travel at $c$.
 Nevertheless, we do have strong empirical evidence that such ripples exist. The Hulse-Taylor system (page \pageref{hulse-taylor-pulsar})
-contains two neutron stars orbiting around their common center of mass, and the period of the orbit is observed to be lengthening
+contains two neutron stars orbiting around their common center of mass, and the period of the orbit is observed to be decreasing
 gradually over time (figure \figref{pulsar-period-decreasing}). This is interpreted as evidence that the stars are losing energy to radiation of 
 gravitational waves.\footnote{Stairs, ``Testing General Relativity with Pulsar Timing,'' \url{http://relativity.livingreviews.org/Articles/lrr-2003-5/}}
 As we'll see in section \ref{sec:rate-of-gravitational-radiation}, the rate of energy loss is in excellent agreement with the predictions
@@ -77,6 +77,16 @@ of general relativity.
     }
   )
 %>
+
+Even without performing the calculations for this system, it is easy to show that if such waves exist, they must be
+capable of carrying energy. Consider two equal masses in highly elliptical orbits about their common center of mass.
+As the masses recede from one another, they feel a delayed version of the gravitational force originating from a time when they were closer together
+and the force was stronger. The result is that in the near-Newtonian limit, they lose more kinetic and gravitational energy than they
+would have lost in the purely Newtonian theory. Now they come back inward in their orbits. As they approach one another, the time-delayed
+force is anomalously weak, so they gain less mechanical energy than expected. The result is that with each cycle, mechanical energy
+is lost. We expect that this energy is carried by the waves, in the same way that radio waves carry the energy lost by a transmitting antenna.
+The analysis in the case of circular motion is a little trickier, but the result is 
+the same (problem \ref{hw:circular-radiation}).\label{elliptical-radiation}
 
 Although the energy loss from systems such as the Hulse-Taylor binary provide strong evidence that gravitational waves
 exist and carry enery, we would also like to detect them directly. This would not only be a definitive
@@ -145,8 +155,8 @@ vanishes by symmetry. Therefore this metric must really just be a flat-spacetime
 to a silly change of coordinates.
 % checked using coordinate_wave.mac that this was really flat
 
-Self-check: Do the Christoffel symbols $\Gamma$ vanish for this metric? Is there a
-reason for paying more attention to one or the other, $R$ or $\Gamma$?
+Self-check: $R$ vanishes, but $\Gamma$ doesn't. Is there a
+reason for paying more attention to one or the other?
 
 To keep the curvature from vanishing, it looks like we need a metric in which the oscillation is not
 restricted to a single variable. For example, the metric
@@ -374,12 +384,12 @@ proportional to $x_\zu{o}\omega$, so the kinetic energy of the air immediately i
 to $\omega^2 x_\zu{o}^2$. The power radiated is therefore proportional to $\omega^2 x_\zu{o}^2$.
 
 In electromagnetism, conservation of charge forbids the existence of an oscillating electric monopole.
-The simplest radiating source is therefore an oscillating electric dipole $q=q_\zu{o}\sin\omega t$. If the dipole's physical size
+The simplest radiating source is therefore an oscillating electric dipole $D=D_\zu{o}\sin\omega t$. If the dipole's physical size
 is small compared to a wavelength of the radiation, then the radiation is an inefficient process; at any
 point in space, there is only a small difference in path length between the positive and negative portions of the dipole,
 so there tends to be strong cancellation of their contributions, which were emitted with opposite phases.
 The result is that the wave's electromagnetic potential four-vector (section \ref{sec:em-four-vector}) is proportional
-to $q_\zu{o}\omega$, the fields to $q_\zu{o}\omega^2$, and the radiated power to $q_\zu{o}^2\omega^4$. The factor of
+to $D_\zu{o}\omega$, the fields to $D_\zu{o}\omega^2$, and the radiated power to $D_\zu{o}^2\omega^4$. The factor of
 $\omega^4$ can be broken down into $(\omega^2)(\omega^2)$, where the first factor of $\omega^2$ occurs for
 reasons similar to the ones that explain the $\omega^2$ factor for the monopole radiation of sound, while the
 second $\omega^2$ arises because the smaller $\omega$
@@ -432,8 +442,16 @@ of the data.
 
 <% end_sec %> % gravitational radiation
 
+\vfill
 
 \begin{hwsection}
+
+<% begin_hw('circular-radiation') %>
+On page \pageref{elliptical-radiation}, I argued that when two bodies are in highly elliptical orbits about their
+common center of mass, delays in the propagation of gravitational effects lead to a loss of energy, which can be
+explained by gravitational radiation. Extend the argument to the case of circular orbits.
+\hwsoln
+<% end_hw %>
 
 <% begin_hw('why-geodesics-for-test-particles') %>\index{geodesic!as world-line of a test particle}
 (a) Starting on page \pageref{sec:geometrical-gravity}, we have associated geodesics with the world-lines of low-mass
