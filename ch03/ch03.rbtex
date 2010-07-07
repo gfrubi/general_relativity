@@ -872,7 +872,7 @@ out with his meter sticks,
 and therefore the Euclidean relations $C=2\pi r$ and $C'=2\pi r'$ both hold. The radial lines are perpendicular
 to their own motion, and they therefore have no length contraction, $r=r'$, implying $C=C'$. The outer edge of the disk, however,
 is everywhere tangent to its own direction of motion, so it is Lorentz contracted, and therefore $C'<C$.
-The resolution of the paradox is that it rests on the incorrect assumption that a rigid disk can be made to rotate.
+The resolution of the paradox is that it rests on the incorrect assumption that a rigid disk can be made to rotate.\index{rotation!rigid}\index{rigid-body rotation}
 If a perfectly rigid disk was initially not rotating, one would have to distort it in
 order to set it into rotation, because once it was rotating its outer edge would no longer have a length equal to
 $2\pi$ times its radius. Therefore if the disk is perfectly rigid, it can never be rotated.
@@ -1284,6 +1284,37 @@ center of the disk in a certain direction. Does the spatial track of the pulse f
 surface of the disk proposes to verify the non-Euclidean nature of the metric by doing local tests
 in which right triangles are formed out of laser beams, and violations of the Pythagorean theorem
 are detected. Will this work?
+\hwsoln
+<% end_hw %>
+
+<% begin_hw('penrose-generalization') %>
+In the early decades of relativity, many physicists were in the habit of speaking as if the Lorentz
+transformation described what an observer would actually ``see'' optically, e.g., with an eye or a camera.
+This is not the case, because there is an additional effect due to optical aberration: observers in different
+states of motion disagree about the direction from which a light ray originated. This is analogous to the
+situation in which a person driving in a convertible observes raindrops falling from the sky at an angle,
+even if an observer on the sidewalk sees them as falling vertically. In 1959, Terrell and Penrose independently
+provided correct analyses,\footnote{
+James Terrell, ``Invisibility of the Lorentz Contraction,'' Physical Review 116 (1959) 1045. 
+Roger Penrose, ``The Apparent Shape of a Relativistically Moving Sphere,'' Proceedings of the Cambridge Philosophical Society 55 (1959) 139.
+}
+showing that in reality an object may appear contracted, expanded, or rotated, depending on whether it is approaching the
+observer, passing by, or receding.\index{Terrell!James}\index{Penrose!Roger}\index{aberration}\index{optical effects}
+The case of a sphere is especially interesting. Consider the following four cases:
+
+\begin{itemize}
+\item[A] The sphere is not rotating. The sphere's center is at rest. The observer is moving in a straight line.
+
+\item[B] The sphere is not rotating, but its center is moving in a straight line. The observer is at rest.
+
+\item[C] The sphere is at rest and not rotating. The observer moves around it in a circle whose center coincides with that of the sphere.
+
+\item[D] The sphere is rotating, with its center at rest. The observer is at rest.
+\end{itemize}
+
+Penrose showed that in case A, the outline of the sphere is still seen to be a circle, although regions on the sphere's surface appear distorted.
+
+What can we say about the generalization to cases B, C, and D?
 \hwsoln
 <% end_hw %>
 

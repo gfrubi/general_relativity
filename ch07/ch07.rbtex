@@ -237,6 +237,7 @@ its world-line must be timelike, so it is swept along in the $-\phi$ direction.
 Gibbons and Gielen show that the particle will now come back inward, and continue forever by oscillating
 back and forth between two radii at which the cosine vanishes.
 
+<% begin_sec("Closed timelike curves") %>\label{sec:ctc}\index{closed timelike curve}
 This oscillation still doesn't sound like the motion of a particle in a uniform field, but another strange thing happens,
 as we can see by taking another look at the values of $r$ at which the cosine vanishes.
 At such a value of $r$, construct a curve of the form $(t=\text{constant},r=\text{constant},\phi,z=\text{constant})$.
@@ -246,9 +247,23 @@ Something similarly weird hapens to the test particle described above: whereas i
 is always falling down --- but sometimes it achieves this by falling up while moving backward in time!
 
 Although the Petov metric violates causality,
-Gibbons and Gielen have shown that it satisfies the chronology protection conjecture:\index{chronology protection conjecture}\index{closed timelike curve}
+Gibbons and Gielen have shown that it satisfies the chronology protection conjecture:\index{chronology protection conjecture}
 ``In the context of causality violation we have shown that one cannot create CTCs [closed timelike curves] by spinning up a cylinder beyond
 its critical angular velocity by shooting in particles on timelike or null curves.''
+
+We have an exact vacuum solution to the Einstein field equations that violates causality. This raises troublesome questions
+about the logical self-consistency of general relativity. 
+A very readable and entertaining overview of these issues is given in the final chapter of Kip Thorne's \emph{Black Holes and Time Warps:
+Einstein's Outrageous Legacy}. In a toy model constructed by Thorne's students, involving a billiard ball and a wormhole, it turned out that there always
+seemed to be self-consistent solutions to the ball's equations of motion, but they were not unique, and they often involved
+disquieting possibilities in which the ball went back in time and collided with its earlier self. Among other things, this is
+a clear violation of conservation of mass-energy, since no mass was put into the system to create extra copies of the ball;
+this provides yet another demonstration of the fact that, as discussed in section \ref{sec:no-conservation-laws}, general
+relativity does not admit global conservation laws. There are various conjectures about the ways in which quantum-mechanical
+effects might affect the picture.
+<% end_sec %> % closed timelike curves
+
+
 <% end_sec %> % uniform field
 
 

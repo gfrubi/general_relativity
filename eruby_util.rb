@@ -640,7 +640,7 @@ def remove_titlecase(title)
   foo = initial_cap(foo.downcase) # first letter is capital, everything after that lowercase
   # restore caps on proper nouns:
   [ 'Cartesian','Kepler','Gauss','Amp\\`{e}re','Maxwell','Faraday','Brans','Dicke','Einstein',
-    'Huygens','Schr\\"odinger','Schr\\\"odinger','Greek','Biot','Savart','Doppler','Lorentz','Michelson','Morley' ].each { |proper|
+    'Huygens','Schr\\"odinger','Schr\\\"odinger','Greek','Biot','Savart','Doppler','Lorentz','Michelson','Morley','Euclid','Euclidean','Erlangen' ].each { |proper|
     foo.gsub!(/(?<!\w)#{proper}/i) {|x| initial_cap(x)}
            # ... the negative lookbehind prevents, e.g., damped and example from becoming DAmped and ExAmple
            # If I had a word like "amplification" in a title, I'd need to special-case that below and change it back.

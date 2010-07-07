@@ -817,7 +817,7 @@ solar masses end up as black holes; see section \ref{sec:black-hole-formation}.
 <% end_sec %> % exptl tests
 
 <% begin_sec("Conservation laws") %>\index{conservation laws}
-<% begin_sec("No general conservation laws") %>
+<% begin_sec("No general conservation laws") %>\label{sec:no-conservation-laws}
 Some of the first tensors we discussed were mass and charge, both rank-0 tensors, and the rank-1 momentum tensor, which
 contains both the classical energy and the classical momentum. Physicists originally decided that
 mass, charge, energy, and momentum were interesting because these things were found to be conserved. This makes it natural
@@ -894,9 +894,9 @@ either. The boundary curve has a small circumference, but it contains a very lar
 region.
 
 The conclusion is that conservation laws only make sense in relativity under very special
-circumstances. We do not have anything like over-arching principles of conservation.
-
-As an example, section \ref{sec:sch-conserved} shows how to define conserved quantities, which
+circumstances.\footnote{For another argument leading to the same conclusion, see subsection \ref{sec:ctc}.} We do not have anything like over-arching, global
+principles of conservation.
+As an example of the appropriate special circumstances, section \ref{sec:sch-conserved} shows how to define conserved quantities, which
 behave like energy and momentum, for the
 motion of a test particle in a particular metric that has a certain symmetry.
 <% end_sec %> % No general conservation laws
