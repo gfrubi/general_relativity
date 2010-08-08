@@ -146,7 +146,8 @@ it is equally problematic in terms of time-reversal symmetry and conservation of
 clone a particle in this way, it would violate the Heisenberg uncertainty principle. We could make two copies of
 the particle, and then measure the position of one copy and the momentum of the other, each with unlimited precision.
 This would violate the uncertainty principle, so we believe that it cannot be done. This is known as the no-cloning
-theorem.\index{no-cloning theorem}\index{cloning of particles}
+theorem.\footnote{Ahn et al. have shown that the no-cloning theorem is violated in the presence of closed
+timelike curves: \url{arxiv.org/abs/1008.0221v1}}\index{no-cloning theorem}\index{cloning of particles}\index{closed timelike curves!violate no-cloning theorem}
 
 The existence of event horizons in general relativity violates unitarity, because it allows information to be
 destroyed. If a particle is thrown behind an event horizon, it can never be retrieved.

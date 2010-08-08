@@ -65,9 +65,9 @@ This is represented in the above equation by the use of infinitesimal quantities
 \end{eg}
 <% end_sec %>
 
-<% begin_sec("Four-vectors") %>\label{sec:four-vectors}
+<% begin_sec("Four-vectors") %>\label{sec:four-vectors}\index{four-vector}
 
-<% begin_sec("The velocity and acceleration four-vectors") %>\label{sec:v-four-vector}
+<% begin_sec("The velocity and acceleration four-vectors") %>\label{sec:v-four-vector}\index{four-vector!velocity}
 Our basic Lorentz vector is the spacetime displacement $\der x^i$. Any other quantity that has the same behavior
 as $\der x^i$ under rotations and boosts is also a valid Lorentz vector. Consider a particle moving through space,
 as described in a Lorentz frame. Since the particle may be subject to nongravitational forces, the Lorentz frame
@@ -96,7 +96,7 @@ but an object at rest does not have a vanishing four-velocity. It has a four-vel
 of $(1,0,0,0)$.
 \end{eg}
 
-The four-acceleration is found by taking a second derivative with respect to proper time.
+The four-acceleration is found by taking a second derivative with respect to proper time.\index{four-vector!acceleration}
 Its squared magnitude is
 only approximately equal to minus the squared magnitude of the classical acceleration three-vector, in the limit of small velocities.
 
@@ -125,12 +125,21 @@ As $t$ approaches infinity, $\der x/\der t$ approaches the speed of light.
 
 <% end_sec %> % v and a
 
-<% begin_sec("The momentum four-vector") %>\label{sec:momentum-four-vector}
+<% begin_sec("The momentum four-vector") %>\label{sec:momentum-four-vector}\index{momentum four-vector}\index{four-vector!momentum}
+If we hope to find something
+that plays the role of momentum in relativity, then the momentum three-vector clearly needs to be generalized to some
+kind of four-vector, and if it is to satisfy the correspondence principle then its definition should probably
+look as much as possible like the nonrelativistic one.
 In subsection \ref{sec:v-four-vector}, we obtained the velocity four-vector. 
 Multiplying by the particle's mass, we have the four-momentum $p^i=mv^i$, which in Lorentz coordinates is
-$(m\gamma,m\gamma v^1,m\gamma v^2,m\gamma v^3)$. The spacelike components look like the classical momentum vector
+$(m\gamma,m\gamma v^1,m\gamma v^2,m\gamma v^3)$. There is no \emph{a priori} guarantee that this is right, but it's
+the most reasonable thing to guess. It needs to be checked against experiment, and also for consistency with
+the other parts of our theory.
+
+The spacelike components look like the classical momentum vector
 multiplied by a factor of $\gamma$, the interpretation being that to an observer in this frame, the moving particle's
-inertia is increased relative to its classical value. This is why particle accelerators are so big and expensive.
+inertia is increased relative to its classical value. Such an effect is indeed observed experimentally.
+This is why particle accelerators are so big and expensive.
 As the particle approaches the speed of light, $\gamma$ diverges, so greater and greater forces are needed in order
 to produce the same acceleration. 
 
@@ -138,7 +147,7 @@ The momentum four-vector has locked within it the reason for Einstein's famous
 $E=mc^2$, which in our relativistic units becomes simply $E=m$. To see why, consider the experimentally measured
 inertia of a physical object made out of atoms. The subatomic particles are all moving, and many of the velocities,
 e.g., the velocities of the electrons, are quite relativistic. This has the effect of increasing the experimentally
-determined inertial mass, by a factor of $\gamma-1$ averaged over all the particles.
+determined inertial mass, by a factor of $\gamma$ averaged over all the particles.
 The same must be true for the gravitational mass, based on the equivalence principle
 as verified by E\"{o}tv\"{o}s experiments. If the object is heated, the velocities will increase on the average,
 resulting in a further increase in its mass. Thus, a certain amount of heat energy is equivalent to a certain amount

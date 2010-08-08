@@ -237,7 +237,7 @@ its world-line must be timelike, so it is swept along in the $-\phi$ direction.
 Gibbons and Gielen show that the particle will now come back inward, and continue forever by oscillating
 back and forth between two radii at which the cosine vanishes.
 
-<% begin_sec("Closed timelike curves") %>\label{sec:ctc}\index{closed timelike curve}
+<% begin_sec("Closed timelike curves") %>\label{sec:ctc}\index{closed timelike curves}
 This oscillation still doesn't sound like the motion of a particle in a uniform field, but another strange thing happens,
 as we can see by taking another look at the values of $r$ at which the cosine vanishes.
 At such a value of $r$, construct a curve of the form $(t=\text{constant},r=\text{constant},\phi,z=\text{constant})$.

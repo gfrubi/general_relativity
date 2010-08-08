@@ -102,7 +102,11 @@ make it impossible for us to detect the existence of the other
 universes represented by the other parts disconnected from our own
 universe.
 
-Example: If we had a time machine, we could violate (ii), but this
+Example: If we had a time machine,\footnote{The possibility of having time come back again to the same point is often
+referred to by physicists as a closed timelike curve (CTC). Kip Thorne, in his popularization \emph{Black Holes and Time Warps},
+recalls experiencing some anxiety after publishing a paper with ``Time Machines'' in the title, and later being embarrassed
+when a later paper on the topic was picked up by the National Enquirer with the headline PHYSICISTS PROVE TIME MACHINES EXIST.
+``CTC'' is safer because nobody but physicists know what it means.}\index{closed timelike curves} we could violate (ii), but this
 brings up paradoxes, like the possibility of killing one's own
 grandmother when she was a baby, and in any case nobody knows how to
 build a time machine.
@@ -396,7 +400,7 @@ need quite a bit more technical machinery to be perfectly rigorous, so if you lo
 or a modern axiomatization of Euclidean geometry,
 you'll typically find a much more lengthy list of axioms than the ones presented here. The axioms I'm omitting take care
 of details like making sure that there are more than two points in the universe, and that
-curves can't cut through one another intersecting. The classic, beautifully written book on these topics is
+curves can't cut through one another without intersecting. The classic, beautifully written book on these topics is
 H.S.M. Coxeter's \emph{Introduction to Geometry}, which is ``introductory'' in the sense that it's the kind of book a college
 math major might use in a first upper-division course in geometry.}\label{ordered-geometry-axioms}
 \begin{itemize}
@@ -418,7 +422,8 @@ O1-O2 express the same ideas as Euclid's E1-E2. Not all lines in the system will
 chains of causality; we could have a line segment that describes a snapshot of a steel chain, and O3-O4
 then say that the order of the links is well defined. But O3 and O4 also have clear physical significance for
 lines describing causality.
-O3 forbids time travel paradoxes, like going back in time and killing our own grandmother as a child.
+O3 forbids time travel paradoxes, like going back in time and killing our own grandmother as a child;
+figure \figref{ordered-geometry} illustrates why a violation of O3 is referred to as a closed timelike curve.\index{closed timelike curves}
 O4 says that events are guaranteed to have a well-defined cause-and-effect order only if they lie on the same
 line. This is completely different from the attitude expressed in Newton's famous statement: ``Absolute, true and mathematical time, of itself, and
 from its own nature flows equably without regard to anything external \ldots''
@@ -427,7 +432,7 @@ If you're dismayed by the austerity of a system of geometry without any notion o
 more appalled to learn that even a system as weak as ordered geometry makes some statements that are too
 strong to be completely correct as a foundation for relativity. For example, if an observer falls into a black
 hole, at some point he will reach a central point of infinite density, called a singularity.\index{singularity}
-At this point, his chain of cause and effect terminates, violating statement 2.
+At this point, his chain of cause and effect terminates, violating O2.
 It is also an open question whether O3's prohibition on time-loops actually holds in general relativity;
 this is Stephen Hawking's playfully named chronology protection conjecture.\index{chronology protection conjecture}\index{Hawking!Stephen}
 We'll also see that in general relativity O1 is almost always true, but there are exceptions.

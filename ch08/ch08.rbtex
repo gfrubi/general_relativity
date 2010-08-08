@@ -333,11 +333,16 @@ center of rotation (see problem \ref{hw:rotation-with-no-center}, p.~\pageref{hw
 In fact one of the first exact solutions discovered for the Einstein field equations was the
 G\"{o}del metric,\index{G\"{o}del metric} which described a bizarre rotating universe with closed timelike curves,
 i.e., one in which causality was violated. In a rotating universe, one expects that radiation received from
-great cosmological distances will have a transverse Doppler shift, i.e., a shift due to the time dilation
+great cosmological distances will have a transverse Doppler shift, i.e., a shift originating from the time dilation
 due to the motion of the distant matter across the sky. This shift would be greatest for sources lying in
 the plane of rotation relative to us, and would vanish for sources lying along the axis of rotation.
 The CMB would therefore show variation with the form of a quadrupole term, $3\cos^2\theta-1$.
-In 1977 a U-2 spyplane (the same type involved in the 1960 U.S.-Soviet incident) was used by Smoot et al.\footnote{G. F. Smoot, M. V. Gorenstein, and R. A. Muller, ``Detection of Anisotropy in the Cosmic Blackbody Radiation,'' Phys. Rev. Lett. 39 (1977) 898}
+In 1977 a U-2 spyplane (the same type involved in the 1960 U.S.-Soviet incident) was used by
+Smoot et al.\footnote{G. F. Smoot, M. V. Gorenstein, and R. A. Muller, ``Detection of Anisotropy in the Cosmic Blackbody Radiation,'' Phys. Rev. Lett. 39 (1977) 898.
+The interpretation of the CMB measurements is somewhat model-dependent; in the early years of observational cosmology,
+it was not even universally accepted that the CMB has a cosmological origin. The best model-independent
+limit on the rotation of the universe comes from observations of the solar system,
+Clemence, ``Astronomical Time,'' Rev. Mod. Phys. 29 (1957) 2.}
 to search for anisotropies in the CMB. This experiment was the first to definitively succeed in detecting
 the dipole anisotropy. After subtraction of the dipole component, the CMB was found to be uniform at the
 level of $\sim 3\times 10^{-4}$. This provided strong support for homogeneous cosmological models, and ruled
@@ -480,12 +485,49 @@ of the cosmic microwave background rule out any inhomogeneity this large (see p.
 energy equation, and we can have a Big Bounce rather than a Big Bang (see 
 p.~\pageref{bb-singularity-with-lambda}).\label{bb-singularity-without-lambda}\label{big-bang-singularity-inevitable}
 
+<% begin_sec("An exceptional case: the Milne universe") %>\index{Milne universe}
+There is a loophole in our conclusion that the Big Bang singularity must have existed. Consider the special
+case of the FRW analysis, found by Milne in 1932 (long before FRW), in which the universe is completely empty, with $\rho=0$ and $\Lambda=0$. This is of course not
+consistent with the fact that the universe contains stars and galaxies, but we might wonder whether it could tell us
+anything interesting as a simplified approximation to a very dilute universe. The result is that the scale factor $a$
+varies linearly with time (problem \ref{hw:verify-milne}, p.~\pageref{hw:verify-milne}). If $a$ is not constant, then
+there exists a time at which $a=0$, but this doesn't turn out to be a real singularity (which isn't surprising, since there
+is no matter to create gravitational fields). Let this universe have a scattering of test particles whose masses are too
+small to invalidate the approximation of $\rho=0$, and let the test particles be at rest in the $(r,\theta,\phi)$ coordinates.
+The linear dependence of $a$ on $t$ means that these particles simply move inertially and without any gravitational
+interactions, spreading apart from one another
+at a constant rate like the raisins in a rising loaf of raisin bread. The FRW equations require $k=-1$, so the spatial
+geometry is one of constant negative curvature.
+
+The Milne universe is in fact flat spacetime described in tricky coordinates. The connection can be made as follows.
+Let a spherically symmetric cloud of test particles be emitted by an explosion that occurs at some arbitrarily
+chosen event in flat spacetime. Make the cloud's density be nonuniform in a certain specific way, so that
+every observer moving along with a test particle (called a comoving observer) sees the same local conditions in his own frame;
+due to Lorentz contraction by a factor $\gamma$, this requires that the density be proportional to $\gamma$
+as described by the observer O who remained at the origin. This scenario turns out to be identical to the Milne
+universe under the change of coordinates from spatially flat coordinates
+$(T,R)$ to FRW coordinates $(t,r)$, where $t=T/\gamma$ is the proper time
+and $r=v\gamma$.
+
+The Milne universe may be useful as an innoculation against the common misconception that the Big Bang was
+an explosion of matter spreading out into a preexisting vacuum. Such a description seems obviously incompatible
+with homogeneity, since, for example, an observer at the edge of the cloud sees the cloud filling only half of the sky.
+But isn't this a logical contradiction, since the Milne universe \emph{does} have an explosion into vacuum,
+and yet it was derived as a special case of the FRW analysis, which explicitly assumed homogeneity?
+It is not a contradiction, because a comoving observer never actually sees an edge. In the limit as we approach
+the edge, the density of the cloud (as seen by the observer who stayed at the origin) approaches infinity, and
+the Lorentz contraction also approaches infinity, so that O considers them to be like Hamlet saying, 
+``I could be bounded in a nutshell, and count myself a king of infinite space.'' This logic \emph{only} works
+in the case of the Milne universe. The explosion-into-preexisting-vacuum interpretation fails in Big Bang cosmologies
+with $\rho \ne 0$.
+<% end_sec %>
+
 <% end_sec %> % A singularity at the Big Bang
 
 <% begin_sec("Observability of expansion") %>\label{sec:observability-of-expansion}
 <% begin_sec("Brooklyn is not expanding!") %>
 The proper interpretation of the expansion of the universe, as described by the Friedmann equations,
-can be tricky. It might seem as though the expansion would be undetectable, in the sense that
+can be tricky. The example of the Milne universe encourages us to imagine that the expansion would be undetectable, in the sense that
 general relativity is coordinate-independent, and therefore does not pick out any preferred distance scale.
 That is, if all our meter-sticks expand, and the rest of the universe expands as well, we would
 have no way to detect the expansion. The flaw in this reasoning is that the Friedmann equations
@@ -522,6 +564,9 @@ by a change of coordinates. (I have come across this claim on internet forums.)
 The linear structure of the tensor transformation equations guarantees that a nonzero tensor
 can never be made into a zero tensor by a change of coordinates. Since the Einstein tensor
 is nonzero for an FRW metric, and zero for a flat-space metric, the claim is false.
+
+Self-check: The reasoning above implicitly assumed a non-empty universe. Convince yourself that it
+fails in the special case of the Milne universe.
 
 We can now see some of the limitations of a common metaphor used to explain cosmic
 expansion, in which the universe is visualized as the surface of an expanding balloon. The metaphor
@@ -1204,6 +1249,11 @@ is so large that it shows our universe to be essentially as non-Machian as gener
 
 \begin{hwsection}
 
+<% begin_hw('verify-milne') %>
+Verify the claim made on p.~\pageref{milne} that $a$ is a linear function of time in the case
+of the Milne universe, and that $k=-1$.
+<% end_hw %>
+
 <% begin_hw('field-equations-parity') %>
 The Einstein field equations are
 \begin{equation*}
@@ -1236,6 +1286,17 @@ Verify in particular that it has the same scalar curvature $R$ at all points in 
 Show that this requires an Einstein tensor with unphysical  properties.\hwendpart
 \hwsoln
 <% end_hw %>
+
+<% begin_hw('milne-chain') %>
+Consider the following proposal for defeating relativity's prohibition on velocities greater than $c$.
+Suppose we make a chain billions of light-years long and attach one end of the chain to a particular
+galaxy. At its other end, the chain is free, and it sweeps past the local galaxies at a very high speed.
+This speed is proportional to the length of the chain, so by making the chain long enough, we can
+make the speed exceed $c$.
+
+Debunk this proposal in the special case of the Milne universe.
+<% end_hw %>
+
 
 \end{hwsection}
 
