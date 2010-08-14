@@ -60,42 +60,125 @@ the timelike Killing vector of the Schwarzschild metric can be notated simply as
 \begin{equation*}
       \xi =  \partial_t \qquad .
 \end{equation*}
+It can be shown that an equivalent condition for a field to be a Killing vector is $\nabla_a \xi_b+\nabla_b \xi_a = 0$.
+Since this is written without reference to any coordinate system, it follows that a Killing vector is still
+a Killing vector when we change coordinates. Statements such as ``the spacetime has a timelike Killing vector''
+are therefore intrinsic, since both the timelike property and the property of being a Killing vector are
+coordinate-independent.
 
-Although everything so far as been phrased in terms of a particular coordinate system, the existence of
-Killing vectors is in fact an intrinsic property of the spacetime. This can be seen from the fact that
-the condition for a field to be a Killing field can be written as $\nabla_a \xi_b+\nabla_b \xi_a = 0$.
+When a spacetime has more than one Killing vector, any linear combination of them is also a Killing vector.
+This means that although the existence of certain types of Killing vectors may be intrinsic, the exact
+choice of those vectors is not. 
+
+\begin{eg}{The Euclidean plane}
+The Euclidean plane has Killing vectors $(1,0)$ and $(0,1)$, but
+these same vectors could be expressed as $(1,1)$ and $(1,-1)$ in coordinate system that was rescaled and
+rotated by 45 degrees.
+\end{eg}
+
 Whenever a spacetime has a Killing vector, geodesics have a constant value of $v^b \xi_a$, where $v^b$ is
 the velocity four-vector. For example, because the Schwarzschild metric has a Killing vector $\xi = \partial_t$,
 test particles have a conserved value of $v^t$, and therefore we also have conservation of $p^t$, interpreted
 as the mass-energy.
 
 Self-check: Find another Killing vector of the Schwarzschild metric.
+
+\begin{eg}{Energy-momentum in flat 1+1 spacetime}
+A flat 1+1-dimensional spacetime has Killing vectors $\partial_x$ and $\partial_t$.
+Corresponding to these are the conserved momentum and mass-energy, $p$ and $E$. If we do a Lorentz boost, these
+two Killing vectors get mixed together by a linear transformation, corresponding to
+a transformation of $p$ and $E$ into a new frame.
+\end{eg}
+
 <% end_sec %> % Killing vectors
 
 
-<% begin_sec("Static and stationary spacetimes") %>
-A spacetime, such as the Schwarzschild spacetime, that has a timelike Killing vector is said to be stationary.\index{stationary spacetime}
-Essentially this means that it is possible to find a coordinate $t$ such that the metric can be
-expressed without any $t$-dependence in its components. Alternatively, such a spacetime allows us
-to set up a master clock A somewhere, and synchronize another clock B to its frequency using radio waves.
-Although an observer at B may perceive A's signals as being distorted by gravitational time dilation,
-the synchronization is at least unambiguously defined, and all observers agree that local observables
-(e.g., curvature) remain constant as a function of this time coordinate.
+<% begin_sec("Static and stationary spacetimes") %>\label{sec:static-and-stationary}
+When we set out to describe a generic spacetime, the Alice in Wonderland quality of the experience is partly
+because coordinate invariance allows our time and distance scales to be arbitrarily rescaled, but also
+partly because the landscape can change from one moment to the next. The situation is drastically
+simplified when the spacetime has a timelike Killing vector. Such a spacetime is said to be stationary.\index{stationary spacetime}
+Some examples are flat spacetime, the Schwarzschild metric, and the spacetime surrounding the rotating earth (in which
+there is a frame-dragging effect). Non-examples include the solar system, cosmological models, gravitational
+waves, and a black hole in the process of formation.
+
+<% begin_sec("A stationary field with no other symmetries") %>
+Consider the most general stationary case, in which the only Killing vector is the timelike one.
+The only ambiguity in the choice of this vector is a rescaling; its direction is fixed.
+At any given point in space, we therefore have a notion of being at rest, which is to have a
+velocity vector parallel to the Killing vector. An observer at rest detects no time-dependence in
+quantities such as tidal forces.
+
+Points in space thus have a permanent identity. The gravitational field,
+which the equivalence principle tells us is normally an elusive, frame-dependent concept, now becomes
+more concrete: it is the proper acceleration required in order to stay in one place. We can therefore
+use phrases like ``a stationary field,'' without the usual caveats about the meaning of ``field.''
+
+Space can be
+sprinkled with identical clocks, all at rest. Furthermore, we can compare the rates of these clocks,
+and even compensate for mismatched rates, by the following procedure. Since the spacetime is static,
+experiments are reproducible. If we send a photon or a material particle from a point A in space to
+a point B, then identical particles emitted at later times will follow identical trajectories. The
+time lag between the arrival of two such particls tells an observer at B the amount of time at B
+that corresponds to a certain interval at A. If we wish, we can adjust all the clocks so that their
+rates are matched. An example of such rate-matching is the GPS satellite system, in which
+the satellites' clocks are tuned to 10.22999999543 MHz, matching the ground-based clocks at 10.23 MHz.
+(Strictly speaking, this example is out of place in this subsection, since the earth's field has
+an additional azimuthal symmetry.)
+
+It is tempting to conclude that this type of spacetime comes equipped with a naturally preferred time
+coordinate that is unique up to a global affine transformation $t\rightarrow at+b$. But to construct such a time
+coordinate, we would have to match not just the rates of the clocks, but also their phases.
+The best method relativity allows for doing this is 
+Einstein synchronization (p.~\pageref{einstein-synch}),\index{Einstein synchronization}\index{synchronization!Einstein convention}
+which involves trading a photon back and forth between clocks A and B and adjusting the clocks
+so that they agree that each clock gets the photon at the mid-point in time between its arrivals
+at the other clock. The trouble is that for a general stationary spacetime, this procedure is not
+transitive: synchronization of A with B, and of B with C, does not guarantee agreement between A with C.
+This is because the time it takes a photon to travel clockwise around triangle ABCA may be different
+from the time it takes for the counterclockwise itinerary ACBA. In other words, we may have a Sagnac effect,\index{Sagnac effect}
+which is generally interpreted as a sign of rotation. Such an effect will occur, for example,
+in the field of the rotating earth, and it cannot be eliminated by choosing a frame that rotates
+along with the earth, because the surrounding space experiences a frame-dragging effect, which
+falls off gradually with distance.
+
+Although a stationary spacetime does not have a uniquely preferred time, it does prefer some time
+coordinates over others. In a stationary spacetime, it is always possible to find a ``nice'' $t$
+such that the metric can be expressed without any $t$-dependence in its components.
+<% end_sec %> % A stationary field with no other symmetries
+
+<% begin_sec("A stationary field with additional symmetries") %>
+Most of the results given above for a stationary field with no other symmetries also hold in the
+special case where additional symmetries are present. The main difference is that we can make
+linear combinations of a particular timelike Killing vector with the other Killing vectors, so
+the timelike Killing vector is not unique. This means that there is no preferred notion of
+being at rest. For example, in a flat spacetime we cannot define an observer to be at rest
+if she observes no change in the local observables over time, because that is true for
+any inertial observer. Since there is no preferred rest frame, we can't define the gravitational
+field in terms of that frame, and there is no longer any preferred definition of the gravitational
+field.
+<% end_sec %> % A stationary field with additional symmetries
+
+<% begin_sec("Static spacetimes") %>\index{static spacetime}
+
 
 In addition to synchronizing all clocks to the same frequency, we might also like to be able to
-match all their phases. This can only be accomplished in a spacetime in which synchronization
-has the following transitive property for both frequency and phase: if clock A is synchronized with clock B, and B with C, then
-C is also synchronized with A. A spacetime in which this holds is called static.\index{static spacetime}
-This property is frame-dependent. For example, flat Lorentzian space is static if we use the usual
-coordinates. However, if we change into a rotating frame of reference, transitivity fails (see p.~\pageref{sec:carousel}),
-so the rotating frame is not static. If a frame is static, then the metric can be diagonalized in the coordinate
-lattice that defines that frame. Since there are no space-time cross-terms like $\der x\der t$ in the metric, such
-a spacetime is invariant under time reversal. Roughly speaking, a non-static spacetime is one in which there
-is some kind of rotation.
+match all their phases using Einstein synchronization, which requires transitivity.
+Transitivity is frame-dependent. For example, flat spacetime allows transitivity if we use the usual
+coordinates. However, if we change into a rotating frame of reference, transitivity fails (see p.~\pageref{sec:carousel}).
+If coordinates exist in which a particular spacetime has transitivity, then that spacetime is said to be static.\index{static spacetime}
+In these coordinates, the metric is diagonalized, and since there are no space-time cross-terms like $\der x\der t$ in the metric, such
+a spacetime is invariant under time reversal. Roughly speaking, a static spacetime is one in which there
+is no rotation.
+<% end_sec %> % Static spacetimes
 
-Birkhoff's theorm\index{Birkhoff's theorem} states that if a vacuum spacetime is spherically symmetric, it must be
-static. As a corollary, the Schwarzschild solution, which was derived only under the assumptions of spherical
-symmetry and staticity, is unique. That is, suppose we have a spherically symmetric mass distribution.
+<% begin_sec("Birkhoff's theorem") %>
+Birkhoff's theorm\index{Birkhoff's theorem}\label{birkhoff} states that if a vacuum spacetime is spherically symmetric, it must be
+static. An important corollary can be derived by listing the assumptions that went into our derivation of the
+Schwarzschild metric. These were: (1) the vacuum field equations, (2) spherical symmetry, (3) staticity, (4) curvature approaching zero far from the origin,
+and (5) a certain choice of coordinates.
+We can therefore conclude from Birkhoff's theorem that the Schwarzschild solution is unique up to a choice of coordinates.
+That is, suppose we have a spherically symmetric mass distribution that is isolated in space. (This isolation is encapsulated in assumption 4.)
 Even if the mass distribution contracts and expands over time, the exterior solution is still the Schwarzschild solution.
 Loosely, Birkhoff's theorem holds because gravitational waves are transverse, not longitudinal (see p.~\pageref{grav-waves-transverse}),
 so the mass distribution's throbbing cannot generate a gravitational wave. Birkhoff's theorem can be viewed
@@ -103,6 +186,55 @@ as the simplest of the no-hair theorems describing black holes.\index{no-hair th
 The most general no-hair theorem states that a black hole is completely characterized by its mass, charge, and
 angular momentum. Other than these three numbers, nobody on the outside can recover any information that was possessed by the matter and
 energy that were sucked into the black hole.
+<% end_sec %> % Birkhoff's theorem
+
+<% begin_sec("The gravitational potential") %>
+When Pound and Rebka made the first observation of gravitational redshifts, these shifts were
+interpreted as evidence of gravitational time dilation, i.e., a mismatch in the rates of
+clocks. We are accustomed to connecting these two ideas by using the expression $e^{-\Delta\Phi}$ for
+the ratio of the rates of two clocks, where $\Phi$ is a function of the spatial coordinates,
+and this is in fact the most general possible definition of
+a gravitational potential $\Phi$ in relativity. Since a stationary field allows us to compare
+rates of clocks, it seems that we should be able to define a gravitational potential for any
+stationary field. There is a problem, however, because when we talk about a potential, we normally
+have in mind something that has encoded within it all there is to know about the field. We would
+therefore expect to be able to find the metric from the potential. But the
+example of the rotating earth shows that this need not be the case for a general stationary field.
+In that example, there are effects like frame-dragging that clearly cannot be deduced from $\Phi$;
+for by symmetry, $\Phi$ is independent of azimuthal angle, and therefore it cannot distinguish
+between the direction of rotation and the contrary direction. The best we can do in a general
+stationary spacetime is to specify a pair of scalar potentials, sometimes known as Hansen's 
+potentials,\index{potential!not defined in arbitrary spacetimes}\index{potential!Hansen's}
+one analogous to $\Phi$ and the other giving information about angular momentum. Only
+a static spacetime can be described by a single potential.
+
+It is also important to step back and think about why relativity does not offer a gravitational
+potential with the same general utility as its Newtonian counterpart.\index{potential!relativistic vs. Newtonian}
+There are two main issues.
+
+The Einstein field equations are nonlinear. Therefore one cannot, in general, find the field
+created by a given set of sources by adding up the potentials. At best this is a possible
+weak-field approximation. In particular, although Birkhoff's theorem\index{Birkhoff's theorem}
+is in some ways analogous to the Newtonian shell theorem, it cannot be used to find the metric
+of an arbitrary spherically symmetric mass distribution by breaking it up into spherical shells.
+
+It is also not meaningful to talk about any kind of gravitational potential for spacetimes that aren't static or stationary.
+For example, consider a cosmological model describing our expanding universe. Such models are
+usually constructed according to the Copernican principle that no position in the universe occupies
+a privileged place. In other words, they are homogeneous in the sense that they have Killing vectors
+describing arbitrary translations and rotations. Because of this high degree of symmetry, a gravitational
+potential for such a model would have to be independent of position, and then it clearly could not
+encode any information about the spatial part of the metric. Even if we were willing to make the
+potential a function of time, $\Phi(t)$, the results would still be nonsense. The gravitational
+potential is defined in terms of rate-matching of clocks, so a potential that was purely a function
+of time would describe a situation in which all clocks, everywhere in the universe, were changing
+their rates in a uniform way. But this is clearly just equivalent to a redefinition of the time
+coordinate, which has no observable consequences because general relativity is coordinate-invariant.
+A corollary is that in a cosmological spacetime, it is not possible to give a natural prescription for deciding whether a
+particular redshift is gravitational (measured by $\Phi$) or kinematic, or some combination of the two\label{potential-cosm}
+(see also p.~\pageref{split-kin-grav}).\index{red-shift!cosmological!kinematic versus gravitational}
+<% end_sec %> % The gravitational potential
+
 <% end_sec %> % Static and stationary spacetimes
 
 <% begin_sec("The uniform gravitational field revisited") %>\label{sec:uniform-field-kasner}\index{uniform gravitational field}\index{gravitational field!uniform}
@@ -297,6 +429,16 @@ How many discrete symmetries? Would you expect it to be stationary? Static?
 \hwsoln
 <% end_hw %>
 
+<% begin_hw('birkhoff-hole') %>
+(a) On p.~\pageref{birkhoff}, I argued that as a corollary to Birkhoff's theorem, the external field of
+a spherically symmetric, isolated mass distribution must be the Schwarzschild spacetime. Use a similar
+argument to prove that for a spherically symmetric distribution of matter with a cavity at its center,
+the spacetime inside the cavity is flat.\hwendpart
+(b) Combining the results from p.~\pageref{birkhoff} and part a of this problem, we have something
+closely analogous to the gravitational shell theorem from Newtonian mechanics. The shell theorem allows
+us to find the gravitational field in spherically symmetric cases by summing over the fields of the shells
+that are interior to a given point. Can we do something similar in relativity?
+<% end_hw %>
 
 <% begin_hw('petrov-strength') %>\index{Petrov metric}
 Section \ref{sec:uniform-field-kasner} on page \pageref{sec:uniform-field-kasner} presented the Petrov metric.

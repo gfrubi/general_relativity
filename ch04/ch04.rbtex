@@ -1027,6 +1027,11 @@ orientations of its gyroscopes relative to the guide star IM Pegasi.
 
 \begin{hwsection}
 
+<% begin_hw('photon-four-velocity') %>
+Describe the four-velocity of a photon.
+\hwsoln
+<% end_hw %>
+
 <% begin_hw('lhc-proton-speed') %>
 The Large Hadron Collider is designed to accelerate protons to energies of 7 TeV.
 Find $1-v$ for such a proton.

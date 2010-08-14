@@ -485,7 +485,7 @@ of the cosmic microwave background rule out any inhomogeneity this large (see p.
 energy equation, and we can have a Big Bounce rather than a Big Bang (see 
 p.~\pageref{bb-singularity-with-lambda}).\label{bb-singularity-without-lambda}\label{big-bang-singularity-inevitable}
 
-<% begin_sec("An exceptional case: the Milne universe") %>\index{Milne universe}
+<% begin_sec("An exceptional case: the Milne universe") %>\index{Milne universe}\label{milne}
 There is a loophole in our conclusion that the Big Bang singularity must have existed. Consider the special
 case of the FRW analysis, found by Milne in 1932 (long before FRW), in which the universe is completely empty, with $\rho=0$ and $\Lambda=0$. This is of course not
 consistent with the fact that the universe contains stars and galaxies, but we might wonder whether it could tell us
@@ -527,8 +527,10 @@ with $\rho \ne 0$.
 <% begin_sec("Observability of expansion") %>\label{sec:observability-of-expansion}
 <% begin_sec("Brooklyn is not expanding!") %>
 The proper interpretation of the expansion of the universe, as described by the Friedmann equations,
-can be tricky. The example of the Milne universe encourages us to imagine that the expansion would be undetectable, in the sense that
-general relativity is coordinate-independent, and therefore does not pick out any preferred distance scale.
+can be tricky. The example of the Milne universe encourages us to imagine that the expansion would be undetectable,
+since the Milne universe can be described as either expanding or not expanding, depending on the choice of
+coordinates. A more general consequence of
+coordinate-independence is that relativity does not pick out any preferred distance scale.
 That is, if all our meter-sticks expand, and the rest of the universe expands as well, we would
 have no way to detect the expansion. The flaw in this reasoning is that the Friedmann equations
 only describe the average behavior of spacetime. As dramatized in the classic Woody Allen movie
@@ -559,11 +561,11 @@ are really the same cosmology, described in two different coordinate systems.
 But the Ricci and
 Einstein tensors were carefully constructed so as to be intrinsic. The fact that the expansion
 affects the Einstein tensor shows that it cannot interpreted as a mere coordinate expansion.
-Specifically, suppose someone tells you that the FRW metric can be made into a flat-space metric
+Specifically, suppose someone tells you that the FRW metric can be made into a flat metric
 by a change of coordinates. (I have come across this claim on internet forums.)
 The linear structure of the tensor transformation equations guarantees that a nonzero tensor
 can never be made into a zero tensor by a change of coordinates. Since the Einstein tensor
-is nonzero for an FRW metric, and zero for a flat-space metric, the claim is false.
+is nonzero for an FRW metric, and zero for a flat metric, the claim is false.
 
 Self-check: The reasoning above implicitly assumed a non-empty universe. Convince yourself that it
 fails in the special case of the Milne universe.
@@ -649,6 +651,17 @@ cannot be accelerated to the speed of light. In reality, the speed of the light 
 measuring apparatus will always equal $c$, so the two world-lines involved in the experiment
 will diverge, and will not be confined to a one-dimensional region of spacetime.
 
+\begin{eg}{A cosmic girdle}\label{eg:girdle}
+Since cosmic expansion has no significant effect on Brooklyn, nuclei, and solar systems, we might be
+tempted to infer that its effect on any solid body would also be negligible. To see that this
+is not true, imagine that we live in a closed universe, and the universe has a leather belt wrapping
+around it on a closed spacelike geodesic. All parts of the belt are initially at rest relative to the
+local galaxies, and the tension is initially zero everywhere. The belt must stretch and eventually
+break: for if not, then it could not remain everywhere at rest with respect to the local galaxies, and
+this would violate the symmetry of the initial conditions, since there would be no way to pick the
+direction in which a certain part of the belt should begin accelerating.
+\end{eg}
+
 \begin{eg}{\O{}stvang's quasi-metric relativity}
 Over the years, a variety of theories of gravity have been proposed as alternatives to general
 relativity. Some of these, such as the Brans-Dicke theory, remain viable, i.e., they are consistent
@@ -694,13 +707,70 @@ we can't say yes or no. It is merely a matter of which definitions one chooses a
 one finds easier and more natural to work within. Bunn and Hogg have stated the minority view
 against expansion of space\footnote{\url{http://arxiv.org/abs/0808.1081v2}}, while the opposite
 opinion is given by Francis et al.\footnote{\url{http://arxiv.org/abs/0707.0380v1}}
+
 As an example of a self-consistent set of definitions that lead to the conclusion that space
-does expand, Francis et al. give the following. Define eight observers positioned at the corners
+does expand, Francis et al.~give the following. Define eight observers positioned at the corners
 of a cube, at cosmological distances from one another. Let each observer be at rest relative to the
 local matter and radiation that were used as ingredients in the FRW cosmology. (For example, we know that our own
 solar system is \emph{not} at rest in this sense, because we observe that the cosmic microwave
 background radiation is slightly Doppler shifted in our frame of reference.) Then these eight observers
-will observe that, over time, the volume of the cube grows according to the function $a(t)$ in the FRW model.
+will observe that, over time, the volume of the cube grows as expected according to the cube of the function $a(t)$ in the FRW model.
+
+This establishes that expansion of space is a plausible interpretation. To see that it is not the only\label{split-kin-grav}
+possible interpretation, consider the following example. A photon is observed after having traveled
+to earth from a distant galaxy G, and is found to be red-shifted. Alice, who likes expansion, will
+explain this by saying that while the photon was in flight, the space it occupied expanded, lengthening its
+wavelength. Betty, who dislikes expansion, wants to interpret it as a kinematic red shift, arising from
+the motion of galaxy G relative to the Milky Way Malaxy, M. If Alice and Betty's disagreement
+is to be decided as a matter of absolute truth, then we need some objective method for resolving an
+observed redshift into two terms, one kinematic and one gravitational. But we've seen in section \ref{sec:static-and-stationary}
+on page \pageref{sec:static-and-stationary} that this is only possible for a stationary spacetime, and
+cosmological spacetimes are not stationary: regardless of an observer's state of motion, he sees a change
+over time in observables such as density of matter and curvature of spacetime. As an extreme example,
+suppose that Betty, in galaxy M, receives a photon without realizing that she lives in a closed universe,
+and the photon has made a circuit of the cosmos, having been emitted from her own galaxy in the distant past.
+If she insists on interpreting this as a kinematic red shift, the she must conclude that her galaxy M is moving
+at some extremely high velocity relative to itself. This is in fact not an impossible interpretation, if we
+say that M's high velocity is relative to itself \emph{in the past}. An observer who sets up a frame of reference
+with its origin fixed at galaxy G will happily confirm that M has been accelerating over the eons. What this
+demonstrates is that we can split up a cosmological red shift into kinematic and gravitational parts in any way
+we like, depending on our choice of coordinate system (see also p.~\pageref{potential-cosm}).\index{red-shift!cosmological!kinematic versus gravitational}
+
+\begin{eg}{A cosmic whip}\label{eg:whip}
+The cosmic girdle of example \ref{eg:girdle} on p.~\pageref{eg:girdle} does not transmit any information from one part of the universe to another, for
+its state is the same everywhere by symmetry, and therefore an observer near one part of the belt
+gets no information that is any different from what would be available to an observer anywhere else.
+
+Now suppose that the universe is open rather than closed, but we have a rope that, just like the belt, stretches out over
+cosmic distances along a spacelike geodesic. If the rope is initially at rest with respect to
+a particular galaxy G (or, more strictly speaking, with respect to the locally averaged cosmic medium),
+then by symmetry the rope will always remain at rest with respect to G,
+since there is no way for the laws of physics to pick a direction in which it should accelerate.
+Now the residents of G cut the rope, release half of it, and tie the other half securely
+to one of G's spiral arms using a square knot. If they do this smoothly, without
+varying the rope's tension, then no vibrations will propagate, and everything will
+be as it was before on that half of the rope. (We assume that G is so massive relative
+to the rope that the rope does not cause it to accelerate significantly.)
+
+Can observers at distant points observe the tail of the rope whipping by at a certain speed, and thereby
+infer the velocity of G relative to them? This would produce all kinds of strange conclusions.
+For one thing, the Hubble law says that this velocity is directly proportional to the length
+of the rope, so by making the rope long enough we could make this velocity exceed the speed of light.
+We've also convinced ourselves that the relative velocity of cosmologically distant objects is not even
+well defined in general relativity, so it clearly can't make sense to interpret the rope-end's
+velocity in that way.
+
+The way out of the paradox is to recognize that disturbances can only propagate along the rope at a certain
+speed $v$. Let's say that the information is transmitted in the form of longitudinal vibrations, in which case
+it propagates at the speed of sound. For a rope made out of any known material, this is far less than
+the speed of light, and we've also seen in example \ref{eg:newtonian-black-hole} on page \pageref{eg:newtonian-black-hole}
+and in problem \ref{hw:speed-of-sound} on page \pageref{hw:speed-of-sound} that relativity places fundamental limits
+on the properties of all possible materials, guaranteeing $v<c$. We can now see that all we've accomplished with the rope is to
+recapitulate using slower sound waves the discussion that was carried out on page \pageref{split-kin-grav}
+using light waves. The sound waves may perhaps preserve some information about the state of motion
+of galaxy G long ago, but all the same ambiguities apply to its interpretation as in the case of
+light waves --- and in addition, we suspect that the rope has long since parted somewhere along its length.
+\end{eg}
 <% end_sec %> % Does space expand?
 <% end_sec %> % Observability of expansion
 
@@ -1252,6 +1322,13 @@ is so large that it shows our universe to be essentially as non-Machian as gener
 <% begin_hw('verify-milne') %>
 Verify the claim made on p.~\pageref{milne} that $a$ is a linear function of time in the case
 of the Milne universe, and that $k=-1$.
+<% end_hw %>
+
+<% begin_hw('milne-rope') %>
+Examples \ref{eg:girdle} on page \pageref{eg:girdle} and \ref{eg:whip} on page \pageref{eg:whip}
+discussed ropes with cosmological lengths. Reexamine these examples in the case of the Milne
+universe.
+\hwsoln
 <% end_hw %>
 
 <% begin_hw('field-equations-parity') %>

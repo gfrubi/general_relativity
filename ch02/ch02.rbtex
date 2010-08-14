@@ -758,7 +758,8 @@ us that this Newtonian picture is incorrect. A physical object that approaches t
 mass $M$, with $M/r$ sufficiently large, has no causal future lying at larger values of $r$. The conclusion
 is that there is a limit on the tensile strength of any substance, imposed purely by general relativity, and we
 can state this limit without having to know anything about the physical nature of the interatomic forces.
-Cf. homework problem \ref{hw:speed-of-sound} and section \ref{sec:carousel}.
+Cf. homework problem \ref{hw:speed-of-sound} and section \ref{sec:carousel}, as well as some references given in
+the remark following problem \ref{hw:speed-of-sound}.
 \end{eg}
 
 <% begin_sec("Velocity addition") %>\label{sec:velocity-addition}
@@ -1602,8 +1603,10 @@ Example \ref{eg:newtonian-black-hole} on page \pageref{eg:newtonian-black-hole} 
 relativistic bounds on the properties of matter, using the example of pulling a bucket
 out of a black hole. Derive a similar bound by considering the possibility of sending signals
 out of the black hole using longitudinal vibrations of a cable, as in the child's telephone made
-of two tin cans connected by a piece of string. (Surprisingly subtle issues can arise in such
-calculations. See A.Y. Shiekh, Can. J. Phys. 70, 458 (1992).)
+of two tin cans connected by a piece of string.
+\hwremark{Surprisingly subtle issues can arise in such
+calculations; see A.Y. Shiekh, Can. J. Phys. 70, 458 (1992). For a quantitative treatment of
+a dangling rope in relativity, see Greg Egan, ``The Rindler Horizon,'' \url{http://gregegan.customer.netspace.net.au/SCIENCE/Rindler/RindlerHorizon.html}.}
 <% end_hw %>
 
 <% begin_hw('velocity-addition-matrix-taylor') %>

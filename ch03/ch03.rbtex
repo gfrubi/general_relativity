@@ -24,7 +24,7 @@ or even cross. Thus, neither the existence nor the uniqueness of parallels can b
 lack of parallelism as arising from the curvature of the world-lines, because we're using the world-lines of
 free-falling particles as our definition of a ``straight'' line. Instead, we describe the effect as coming
 from the curvature of spacetime itself. The Lorentzian geometry is a description of the case in which this
-curvature is negligible.
+curvature is negligible.\index{curvature!of spacetime}
 
 What about the word \emph{differential}? The equivalence principle states that even in the presence of gravitational
 fields, local Lorentz frames exist. How local is ``local?'' If we use a microscope to zoom in on smaller and smaller
@@ -356,7 +356,7 @@ was defined before any model has even been proposed.
 \begin{eg}{Curvature in elliptic geometry}\label{eg:elliptic-geom-intrinsic-curvature}
 What about curvature? In the spherical model
 of elliptic geometry, the size of the sphere is an inverse measure of curvature. Is this a valid intrinsic
-quantity, or is it extrinsic? It seems suspect, because it is a feature of the model. If we try to define
+quantity, or is it extrinsic?\index{curvature!intrinsic versus extrinsic} It seems suspect, because it is a feature of the model. If we try to define
 ``size'' as the radius $R$ of the sphere, there is clearly reason for concern, because this seems to refer to
 the center of the sphere, but existence of a three-dimensional Euclidean space inside and outside the surface is
 clearly an extrinsic feature of the model. There is, however, a way in which a creature confined to the surface

@@ -238,6 +238,13 @@ you can't impart an angular acceleration to a perfectly rigid body in relativity
 
 \beginsolutions{4}
 
+\hwsolnhdr{photon-four-velocity}
+
+The four-velocity of a photon (or of any massless particle) is undefined.
+One way to see this is that $\der\tau=0$ for a massless particle, so $v^i=\der x^i/\der\tau$
+involves division by zero. Alternatively, $p^i=mv^i$ would always give an energy and momentum
+of zero if $v^i$ were well defined, yet we know that massless particles can have both energy and momentum.
+
 \hwsolnhdr{lhc-proton-speed}
 
 To avoid loss of precision in numerical operations like subtracting $v$ from $1$,
@@ -353,6 +360,11 @@ have three Killing vectors, corresponding to the three spatial dimensions. Since
 properties than later times, we expect that there will be no timelike Killing vector, and it is not stationary
 or static.
 
+\hwsolnhdr{birkhoff-hole}
+(a) The argument is completely analogous. We just substitute flat spacetime into the role formerly played
+by the Schwarzschild spacetime. (b) No. The field equations of general relativity aren't linear, so we
+can't find the solution corresponding to a set of sources by summing over the sources.
+
 \hwsolnhdr{petrov-strength}
 
 Under these special conditions, the geodesic equations become $\ddot{r}=\Gamma\indices{^r_{tt}}\dot{t}^2$,
@@ -379,6 +391,32 @@ in section \ref{sec:carousel}, this will cause a discontinuity once we wrap arou
 clock synchronization fails, and this frame is not static.
 
 \beginsolutions{8}
+
+\hwsolnhdr{milne-rope}
+Example \ref{eg:girdle} on page \pageref{eg:girdle}, the cosmic girdle, showed that a rope
+that stretches over cosmological distances does expand significantly, unlike Brooklyn, nuclei, and solar systems.
+Since the Milne universe is nothing but a flat spacetime described in funny coordinates, something about
+that argument must fail. The argument used in that example relied on the use of a closed cosmology,
+but the Milne universe is not closed. This is not a completely satisfying resolution, however, because
+we expect that a rope in an open universe will also expand, except in the special case of the Milne universe.
+
+In a nontrivial open universe, every galaxy is accelerating relative to every other galaxy. By the equivalence
+principle, these accelerations can also be seen as gravitational fields, and tidal forces are what
+stretch the rope. In the special case of the Milne universe, there is no acceleration of test particles
+relative to other test particles, so the rope doesn't stretch.
+
+Example \ref{eg:whip} on page \pageref{eg:whip}, the cosmic whip, resulted in the conclusion that the
+velocity of the rope-end passing by cannot be interpreted as a measure of the velocity of the distant
+galaxy to which the rope's other end is hitched, which makes sense because cosmological solutions are
+nonstationary, so there is no uniquely defined notion of the relative velocity of distant objects.
+The Milne universe, however, is stationary, so such velocities are well defined. The key here is that
+nothing is accelerating, so the time delays in the propagation of information do not lead to ambiguities
+in extrapolating to a distant object's velocity ``now.''
+
+The Milne case also avoids the paradox in which we could imagine that if the rope is sufficiently long,
+its end would be moving at more than the speed of light. Although there is no limit to the length of
+a rope in the Milne universe (there being no tidal forces), the Hubble law cannot be extrapolated arbitrarily,
+since the expanding cloud of test particles has an edge, beyond which there is only vacuum.
 
 \hwsolnhdr{field-equations-parity}
 The cosmological constant is a scalar, so it doesn't change under reflection. The metric is also invariant

@@ -8,7 +8,7 @@
     %q{Curvature},
     'ch:curvature'
   )
-%>
+%>\index{curvature}
 
 General relativity describes gravitation as a curvature of spacetime, with matter acting as the source
 of the curvature in the same way that electric charge acts as the source of electric fields.
@@ -86,7 +86,7 @@ that is to be included in the Einstein field equations is not encoded in any sim
 its first derivatives. Since neither the metric nor its first derivatives indicate curvature, we can reasonably
 conjecture that the curvature might be encoded in its second derivatives.
 
-<% begin_sec("Tidal curvature versus curvature caused by local sources") %>\label{sec:tidal-versus-sources}
+<% begin_sec("Tidal curvature versus curvature caused by local sources") %>\label{sec:tidal-versus-sources}\index{curvature!tidal versus local sources}
 <% marg(0) %>
 <%
   fig(
@@ -106,7 +106,8 @@ then diverged, eventually fanning out to span millions of kilometers.
 
 If initially parallel lines
 lose their parallelism, that is clearly an indication of intrinsic curvature. We call it a measure of \emph{sectional
-curvature}, because the loss of parallelism occurs within a particular plane, in this case the
+curvature},\index{curvature!sectional}
+because the loss of parallelism occurs within a particular plane, in this case the
 $(t,x)$ plane represented by figure \figref{sectional-curvature}.
 <% marg(0) %>
 <%
@@ -158,7 +159,7 @@ of Gauss's law in a vacuum.
 In general, the curvature of spacetime will contain contributions from both tidal forces and local sources, superimposed
 on one another. To develop the right formulation for the Einstein field equations, we need to eliminate the tidal
 part. Roughly speaking, we will do this by averaging the sectional curvature over all three of the planes
-$t-x$, $t-y$, and $t-z$, giving a measure of curvature called the Ricci curvature.\index{Ricci curvature}
+$t-x$, $t-y$, and $t-z$, giving a measure of curvature called the Ricci curvature.\index{Ricci curvature}\index{curvature!Ricci}
 The ``roughly speaking'' is because such a prescription would treat the time
 and space coordinates in an extremely asymmetric manner, which would violate local Lorentz invariance.
 
@@ -194,9 +195,9 @@ on page \pageref{sec:more-energy-mom-tensor}.
 
 <% end_sec %>
 
-<% begin_sec("Curvature in two spacelike dimensions") %>
+<% begin_sec("Curvature in two spacelike dimensions") %>\index{curvature!in two spacelike dimensions}
 Since the curvature tensors in 3+1 dimensions are complicated, let's start by considering lower dimensions.
-In one dimension, \figref{no-intrinsic-curvature-in-one-dim}, there is no such thing as intrinsic curvature. This is because curvature describes the
+In one dimension, \figref{no-intrinsic-curvature-in-one-dim}, there is no such thing as intrinsic curvature.\index{curvature!none in one dimension} This is because curvature describes the
 failure of parallelism to behave as in E5, but there is no notion of parallelism in one dimension.
 <% marg(120) %>
 <%
@@ -321,7 +322,7 @@ Equating the two expressions leads to the desired result.
 
 This calculation was purely intrinsic, because it made no use of any model or coordinates. We can therefore
 construct a measure of curvature that we can be assured is intrinsic, $K=\epsilon/A$. This
-is called the Gaussian curvature,\index{Gaussian curvature} and in elliptic geometry it is
+is called the Gaussian curvature,\index{Gaussian curvature}\index{curvature!Gaussian} and in elliptic geometry it is
 constant rather than varying from point to point. In the model on a sphere of radius $\rho$, we have
 $K=1/\rho^2$.
 
@@ -457,7 +458,7 @@ no information about directions in space.
 
 <% end_sec %>
 
-<% begin_sec("Curvature tensors") %>
+<% begin_sec("Curvature tensors") %>\index{curvature!tensors}
 The example of the flea suggests that if we want to express curvature as a tensor, it should have
 even rank. Also, in a coordinate system in which the coordinates have units of distance (they are not
 angles, for instance, as in spherical coordinates), we expect that the units of curvature will always
@@ -469,7 +470,7 @@ of the forms $R_{ab}$, $R\indices{^a_{bcd}}$, \ldots, i.e., the number of lower 
 the number of upper indices. The following definition has this property, and is equivalent
 to the earlier definitions of the Gaussian curvature that were not written in tensor notation.
 
-Definition of the Riemann curvature tensor:\label{riemann-curvature-tensor}
+Definition of the Riemann curvature tensor:\label{riemann-curvature-tensor}\index{curvature!Riemann tensor}\index{Riemann curvature tensor}
 Let $\der p^c$ and $\der q^d$ be two infinitesimal vectors, and use them to form
 a quadrilateral that is a good approximation to a parallelogram.\footnote{Section \ref{sec:torsion} discusses the sense in which this approximation is good enough.}
 Parallel-transport vector $v^b$ all the way around the parallelogram. When it
