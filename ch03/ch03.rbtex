@@ -988,7 +988,7 @@ in a rotating frame of reference; if we try to do it, we will inevitably have to
 This problem is present even locally, as demonstrated by the possibility of measuring the Sagnac effect with
 apparatus that is small compared to the disk. The only reason we were able to get away with time synchronization
 in order to establish the metric [\ref{eq:rotating-spatial}] is that all the physical manifestations of the
-impossibility of synchronization, e.g., the Sagnac affect, are proportional to the area of the region in which
+impossibility of synchronization, e.g., the Sagnac effect, are proportional to the area of the region in which
 synchronization is attempted. Since we were only synchronizing two nearby points, the area enclosed by the light
 rays was zero.
 

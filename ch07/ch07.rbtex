@@ -92,6 +92,58 @@ a transformation of $p$ and $E$ into a new frame.
 
 <% end_sec %> % Killing vectors
 
+<% begin_sec("Spherical symmetry") %>
+A little more work is required if we want to link the existence of Killing vectors to the existence
+of a specific symmetry such as spherical symmetry. When we talk about spherical symmetry in the context
+of Newtonian gravity or Maxwell's equations, we may say, ``The fields only depend on
+$r$,'' implicitly assuming that there is an $r$ coordinate that has a definite meaning for a given choice
+of origin. But coordinates in relativity are not guaranteed to have any particular physical
+interpretation such as distance from a particular origin. The origin may not even exist as part of the spacetime, as in the Schwarzschild metric,
+which has a singularity at the center.
+Another possibility is that the origin
+may not be unique, as on a Euclidean two-sphere like the earth's surface, where a circle centered
+on the north pole is also a circle centered on the south pole; this can also occur
+in certain cosmological spacetimes that describe a universe that wraps around on itself spatially.
+
+We therefore define spherical symmetry as follows. A spacetime $S$ is spherically symmetric if we can
+write it as a union $S=\cup s_{r,t}$ of subsets $s_{r,t}$,
+where each $s$ has the structure of a two-sphere, and the real numbers $r$ and $t$ have
+no preassigned physical interpretation, but $s_{r,t}$ is required to vary smoothly as a function of them.
+By ``has the structure of a two-sphere,'' we mean that no intrinsic measurement on $s$ will produce any
+result different from the result we would have obtained on some two-sphere. A two-sphere has only
+two intrinsic properties: (1) it is spacelike, i.e., locally its geometry is approximately that of the Euclidean plane;
+(2) it has a certain nonzero Gaussian radius of curvature, which is constant. If we like, we can require that the parameter $r$ be
+this radius of curvature, in which case $t$ is some timelike coordinate.
+
+To link this definition to Killing vectors, we note that condition 2 is equivalent to the following alternative condition:
+($2'$) The set $s$ should have three Killing vectors (which by condition 1 are both spacelike), and it should be possible to choose these
+Killing vectors such that algebraically they act the same as rotations of a sphere about three perpendicular axes. As an example
+of such an algebraic property, figure \figref{noncommuting-rotations} shows that rotations are noncommutative.
+
+<%
+  fig(
+    'noncommuting-rotations',
+    %q{%
+      Performing the rotations in one order gives
+      one result, 3, while reversing the order gives a different result, 5.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+\begin{eg}{A cylinder is not a sphere}
+\egquestion Show that a cylinder does not have the structure of a two-\linebreak[3]sphere.
+
+\eganswer
+The cylinder passes condition 1. It fails condition 2 because its Gaussian curvature is zero. Alternatively,
+it fails condition $2'$ because it has only two independent Killing vectors, and these correspond to a translation and a rotation (or some
+linear combination of these), which commute.
+\end{eg}
+
+<% end_sec %> % Spherical symmetry
 
 <% begin_sec("Static and stationary spacetimes") %>\label{sec:static-and-stationary}
 When we set out to describe a generic spacetime, the Alice in Wonderland quality of the experience is partly

@@ -1550,7 +1550,10 @@ the cognoscenti of relativity theory (Einstein included!) were quite surprised.'
 <% end_sec %>
 <% end_sec %>
 
+
 \begin{hwsection}
+
+\vfill
 
 <% begin_hw('clock-postulate') %>
 Suppose that we don't yet know the exact form of the Lorentz transformation, but we know based on the
@@ -1569,6 +1572,7 @@ of $L$?\hwendpart
 as measured in some inertial frame. Although the result depends on $L$, prove that in the limit of small
 $L$, we recover the earlier constant-velocity result, with no explicit dependence on $a$.\hwendpart
 \hwsoln
+
 \hwremark{Some authors state a ``clock postulate'' for special relativity, which says that for a clock that is
 sufficiently small, the rate at which
 it runs depends only on $v$, not $a$ (except in the trivial sense that $v$ and $a$ are related by calculus).
@@ -1579,10 +1583,15 @@ one can also make any small clock into an acceleration-insensitive clock, by att
 and applying an appropriate correction to compensate for the clock's observed sensitivity to acceleration.
 (It's still necessary for the clock to be small, since otherwise the lack of simultaneity in relativity makes
 it impossible to describe the whole clock as having a certain acceleration at a certain instant.)
+Farley at al.\footnote{Nuovo Cimento 45 (1966) 281} have verified the ``clock postulate'' to within 2\% for
+the radioactive decay of muons with $\gamma\sim12$ being accelerated by magnetic fields at 
+$5\times10^{18}\ \munit/\sunit^2$.
 Some people get confused by this
 acceleration-independent property of small clocks and think that it contradicts the equivalence
 principle. For a good explanation, see \url{http://math.ucr.edu/home/baez/physics/Relativity/SR/clock.html}.}
 <% end_hw %>
+
+\pagebreak
 
 <% begin_hw('sagnac-area') %>\index{Sagnac effect!proportional to area}
 (a) On p.~\pageref{fig:thomas-as-area} (see figure \figref{thomas-as-area}), we showed that the Thomas precession is
@@ -1596,7 +1605,6 @@ Einstein clock synchronization procedure described on p.~\pageref{einstein-sync-
 \hwsoln
 <% end_hw %>
 
-\pagebreak
 
 <% begin_hw('speed-of-sound') %>
 Example \ref{eg:newtonian-black-hole} on page \pageref{eg:newtonian-black-hole} discusses
