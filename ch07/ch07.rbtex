@@ -12,7 +12,7 @@
 
 This chapter is not required in order to understand the later material.
 
-<% begin_sec("Killing vectors") %>
+<% begin_sec("Killing vectors") %>\index{Killing vector}
 The Schwarzschild metric is an example of a highly symmetric spacetime. It has
 continuous symmetries in space (under rotation) and in time (under translation
 in time). In addition, it has discrete symmetries under spatial reflection and
@@ -27,18 +27,56 @@ In coordinates $(x^0,x^1,x^2,x^3)=(t,r,\theta,\phi)$, we have a vector field
 \begin{equation*}
   \xi = (\der t,0,0,0)
 \end{equation*}
-that defines the time-translation symmetry. In this particular example, the components
-of the field happen to be constant when expressed in our coordinates, but this is not
-generally required. Such a field is called a Killing vector field, or simply a Killing
-vector, after Wilhelm Killing.
+that defines the time-translation symmetry. Such a field is called a Killing vector field, or simply a Killing
+vector, after Wilhelm Killing. When all the points in a space are displaced as specified by the Killing vector, they flow without expansion
+or compression. The path of a particular point, such as the dashed line in figure \figref{killing-vector}, under this flow is called
+its orbit.\index{orbit!Killing vector}\index{Killing vector!orbit} Although the term ``Killing vector'' is singular, it refers to the
+entire field of vectors, each of which differs in general from the others. For example, the $\xi$ shown in figure \figref{killing-vector} has a greater
+magnitude than a $\xi$ near the neck of the surface.
 <% marg(50) %>
+<%
+  fig(
+    'killing-vector',
+    %q{The two-dimensional space has a symmetry which can be visualized by imagining it as a surface of revolution embedded in three-space.
+       Without reference to any extrinsic features such as coordinates or embedding, an observer on this surface can detect the symmetry,
+       because there exists a vector field $\xi$ such that translation by $\xi$ doesn't change the distance between nearby points.}
+  )
+%>
+\spacebetweenfigs
 <%
   fig(
     'killing-portrait',
     %q{Wilhelm Killing (1847-1923).}
   )
 %>
-\spacebetweenfigs
+<% end_marg %>
+
+In the example of the Schwarzschild spacetime, the components
+of the metric happened to be independent of $t$ when expressed in our coordinates.
+This is a sufficient condition for the existence of a Killing vector, but not a necessary one.
+For example, on the surface of an oblate spheroid such as the earth, we can pick the usual colatitude and longitude coordinates $(\theta,\phi)$,
+and then $\der s^2$ will be independent of $\phi$ for a given $\theta$, $\der\theta$, and $\der\phi$.
+But suppose we had decided to measure all of our $\theta$ angles relative to San Francisco's radius line instead of the north pole's, and defined
+$\phi$ according to some convention, such as projecting a sphere onto the earth's ellipsoidal surface. The metric expressed in these new
+coordinates would depend in some messy way on both $\theta$ and $\phi$, but nevertheless it would still have an azimuthal Killing vector.
+In other words, the existence of a Killing vector is an intrinsic property. In general, we define a Killing vector not in terms of a particular
+system of coordinates but in purely geometrical terms: a space has a Killing vector $\xi$ if translation by $\xi$ doesn't change the distance between nearby points.
+Statements such as ``the spacetime has a timelike Killing vector''
+are therefore intrinsic, since both the timelike property and the property of being a Killing vector are
+coordinate-independent.
+
+A more compact way of notating Killing vectors is based on the fact that a derivative
+such as $\partial/\partial x^0$ transforms not as an upper-index (contravariant)
+vector but as a lower-index (covariant) one (see p.~\pageref{derivative-flip-indices}). This is the reason for defining
+the shorthand notation $\partial_0=\partial/\partial x^0$, rather than $\partial^0=\partial/\partial x^0$.
+For this reason, the partial derivative operators ${\partial_0,\partial_1,\partial_2,\partial_3}$ can be used as a set of basis vectors
+for the space of covariant vectors at a particular point P in spacetime. This space is referred to as the
+tangent space\index{tangent space} for the reason shown in figure \figref{tangent-space}. In this notation,
+the Killing vector of the Schwarzschild metric we've been discussing can be notated simply as
+\begin{equation*}
+      \xi =  \partial_t \qquad .
+\end{equation*}
+<% marg(50) %>
 <%
   fig(
     'tangent-space',
@@ -49,31 +87,42 @@ vector, after Wilhelm Killing.
 %>
 <% end_marg %>
 
-A more compact way of notating Killing vectors is based on the fact that a derivative
-such as $\partial/\partial x^0$ transforms not as an upper-index (contravariant)
-vector but as a lower-index (covariant) one (see p.~\pageref{derivative-flip-indices}). This is the reason for defining
-the shorthand notation $\partial_0=\partial/\partial x^0$, rather than $\partial^0=\partial/\partial x^0$.
-For this reason, the partial derivative operators ${\partial_0,\partial_1,\partial_2,\partial_3}$ can be used as a set of basis vectors
-for the space of covariant vectors at a particular point P in spacetime. This space is referred to as the
-tangent space\index{tangent space} for the reason shown in figure \figref{tangent-space}. In this notation,
-the timelike Killing vector of the Schwarzschild metric can be notated simply as
-\begin{equation*}
-      \xi =  \partial_t \qquad .
-\end{equation*}
 It can be shown that an equivalent condition for a field to be a Killing vector is $\nabla_a \xi_b+\nabla_b \xi_a = 0$.
-Since this is written without reference to any coordinate system, it follows that a Killing vector is still
-a Killing vector when we change coordinates. Statements such as ``the spacetime has a timelike Killing vector''
-are therefore intrinsic, since both the timelike property and the property of being a Killing vector are
-coordinate-independent.
+This is written without reference to any coordinate system, in keeping with the coordinate-independence of the notion.
 
 When a spacetime has more than one Killing vector, any linear combination of them is also a Killing vector.
 This means that although the existence of certain types of Killing vectors may be intrinsic, the exact
 choice of those vectors is not. 
 
 \begin{eg}{The Euclidean plane}
-The Euclidean plane has Killing vectors $(1,0)$ and $(0,1)$, but
-these same vectors could be expressed as $(1,1)$ and $(1,-1)$ in coordinate system that was rescaled and
+The Euclidean plane has Killing vectors $(1,0)$ and $(0,1)$, i.e., $\partial_x$ and $\partial_y$. 
+These same vectors could be expressed as $(1,1)$ and $(1,-1)$ in coordinate system that was rescaled and
 rotated by 45 degrees.
+\end{eg}
+
+\begin{eg}{A cylinder}\label{eg:cylinder-killing}
+The local properties of a cylinder, such as intrinsic flatness, are the same as the local properties of
+a Euclidean plane. Since the definition of a Killing vector is local and intrinsic, a cylinder has
+the same Killing vectors as a plane. These might be more naturally notated in $(\phi,z)$ coordinates
+rather than $(x,y)$, giving $\partial_z$ and $\partial_\phi$.
+\end{eg}
+
+\begin{eg}{A sphere}\label{eg:sphere-killing}
+A sphere is like a plane or a cylinder in that it is a two-dimensional space in which no point has
+any properties that are intrinsically different than any other. We might expect, then, that it would
+have two Killing vectors. Actually it has three, $\xi_x$, $\xi_y$, and $\xi_z$, corresponding to
+infinitesimal rotations about the $x$, $y$, and $z$ axes. To show that these are all independent Killing
+vectors, we need to demonstrate that we can't, for example, have $\xi_x=c_1\xi_y+c_2\xi_z$ for some
+constants $c_1$ and $c_2$. To see this, consider the actions of $\xi_y$ and $\xi_z$ on the point $P$ where
+the $x$ axis intersects the sphere. (References to the axes and their intersection with the sphere are
+extrinsic, but this is only for convenience of description and visualization.) Both $\xi_y$ and $\xi_z$
+move P around a little, and these motions are in orthogonal directions, wherease $\xi_x$ leaves P fixed.
+This proves that we can't have $\xi_x=c_1\xi_y+c_2\xi_z$. All three Killing vectors are linearly independent.
+
+This example shows that linear independence of Killing vectors can't be visualized simply by thinking about
+the vectors in the tangent plane at one point. If that were the case, then we could have at most two
+linearly independent Killing vectors in this two-dimensional space. When we say ``Killing vector'' we're really referring to the
+Killing vector \emph{field}, which is defined everywhere on the space.
 \end{eg}
 
 Whenever a spacetime has a Killing vector, geodesics have a constant value of $v^b \xi_a$, where $v^b$ is
@@ -92,7 +141,7 @@ a transformation of $p$ and $E$ into a new frame.
 
 <% end_sec %> % Killing vectors
 
-<% begin_sec("Spherical symmetry") %>
+<% begin_sec("Spherical symmetry") %>\label{sec:spherical-symmetry}
 A little more work is required if we want to link the existence of Killing vectors to the existence
 of a specific symmetry such as spherical symmetry. When we talk about spherical symmetry in the context
 of Newtonian gravity or Maxwell's equations, we may say, ``The fields only depend on
@@ -112,12 +161,12 @@ no preassigned physical interpretation, but $s_{r,t}$ is required to vary smooth
 By ``has the structure of a two-sphere,'' we mean that no intrinsic measurement on $s$ will produce any
 result different from the result we would have obtained on some two-sphere. A two-sphere has only
 two intrinsic properties: (1) it is spacelike, i.e., locally its geometry is approximately that of the Euclidean plane;
-(2) it has a certain nonzero Gaussian radius of curvature, which is constant. If we like, we can require that the parameter $r$ be
-this radius of curvature, in which case $t$ is some timelike coordinate.
+(2) it has a constant positive curvature. If we like, we can require that the parameter $r$ be
+the corresponding radius of curvature, in which case $t$ is some timelike coordinate.
 
 To link this definition to Killing vectors, we note that condition 2 is equivalent to the following alternative condition:
 ($2'$) The set $s$ should have three Killing vectors (which by condition 1 are both spacelike), and it should be possible to choose these
-Killing vectors such that algebraically they act the same as rotations of a sphere about three perpendicular axes. As an example
+Killing vectors such that algebraically they act the same as the ones constructed explicitly in example \ref{eg:sphere-killing}. As an example
 of such an algebraic property, figure \figref{noncommuting-rotations} shows that rotations are noncommutative.
 
 <%
@@ -139,20 +188,66 @@ of such an algebraic property, figure \figref{noncommuting-rotations} shows that
 
 \eganswer
 The cylinder passes condition 1. It fails condition 2 because its Gaussian curvature is zero. Alternatively,
-it fails condition $2'$ because it has only two independent Killing vectors, and these correspond to a translation and a rotation (or some
+it fails condition $2'$ because it has only two independent Killing vectors (example \ref{eg:cylinder-killing}), and these correspond to a translation and a rotation (or some
 linear combination of these), which commute.
 \end{eg}
 
 <% end_sec %> % Spherical symmetry
 
 <% begin_sec("Static and stationary spacetimes") %>\label{sec:static-and-stationary}
+<% begin_sec("Stationary spacetimes") %>
 When we set out to describe a generic spacetime, the Alice in Wonderland quality of the experience is partly
 because coordinate invariance allows our time and distance scales to be arbitrarily rescaled, but also
 partly because the landscape can change from one moment to the next. The situation is drastically
-simplified when the spacetime has a timelike Killing vector. Such a spacetime is said to be stationary.\index{stationary spacetime}
-Some examples are flat spacetime, the Schwarzschild metric, and the spacetime surrounding the rotating earth (in which
+simplified when the spacetime has a timelike Killing vector. Such a spacetime is said to be stationary.\index{stationary}
+Two examples are flat spacetime and the spacetime surrounding the rotating earth (in which
 there is a frame-dragging effect). Non-examples include the solar system, cosmological models, gravitational
-waves, and a black hole in the process of formation.
+waves, and a cloud of matter undergoing gravitational collapse.
+
+Can Alice determine, by traveling around her spacetime and carrying out observations, whether it is stationary?
+If it's not, then she might be able to prove it. For example, suppose she visits a certain region
+and finds that the Kretchmann invariant\index{Kretchmann invariant} $R^{abcd}R_{abcd}$ varies with time in her frame
+of reference. Maybe this is because an asteroid is coming her way, in which case she could
+readjust her velocity vector to match that of the asteroid. Even if she can't see the asteroid, she can
+still try to find a velocity that makes her local geometry stop changing in this particular
+way. If the spacetime is truly stationary, then she can always ``tune in'' to the right velocity vector
+in this way by searching systematically. If this procedure ever fails, then she has proved that her spacetime
+is not stationary.
+
+Self-check: Why is the timelike nature of the Killing vector important in this story?
+
+Proving that a spacetime \emph{is} stationary is harder. This is partly just because spacetime is infinite, so it will
+take an infinite amount of time to check everywhere. We aren't inclined to worry too much about this limitation on our geometrical knowledge,
+which is of a type that has been familiar since thousands of years ago, when it upset the ancient Greeks
+that the parallel postulate could only be checked by following lines out to an infinite distance.
+But there is a new type of limitation as well.
+The Schwarzschild spacetime is not stationary according to our definition. In the coordinates used in
+section \ref{sec:schwarzschild}, $\partial_t$ is a Killing vector, but is only timelike for $r>2m$; for
+$r<2m$ it is spacelike. Although the solution describes a black hole that
+is going to sit around forever without changing, no observer can ever verify that fact, because once she strays
+inside the horizon she must follow a timelike world-line, which will end her program of observation within some
+finite time.
+<% end_sec %> % Static spacetime
+
+<% begin_sec("Isolated systems") %>
+<% begin_sec("Asymptotic flatness") %>
+This unfortunate feature of our definition of stationarity --- its empirical unverifiability --- is something that
+in general we just have to live with. But there is an alternative in the special case of an isolated system,
+such as our galaxy or a black hole. It may be a good approximation to ignore distant matter, modeling such a system
+with a spacetime that is almost flat everywhere except in the region nearby. Such a spacetime is called asymptotically flat.\index{asymptotically flat}
+Formulating the definition of this term rigorously and in a coordinate-invariant way involves a large amount of technical machinery,
+since we are not guaranteed to be presented in advance with a special, physically significant set of coordinates that would
+lead directly to a quantitative way of defining words like ``nearby.'' The reader who wants a rigorous definition is referred to
+Hawking and Ellis.
+<% end_sec %> % Asymptotic flatness
+
+<% begin_sec("Asymptotically stationary spacetimes") %>
+In the case of an asymptotically flat spacetime, we say that it is also asymoptotically stationary\index{stationary!asymptotically}
+if it has a Killing vector that becomes timelike far away. Some authors (e.g., Ludvigsen) define ``stationary'' to mean what I'm calling ``asymoptotically stationary,''
+others (Hawking and Ellis) define it the same way I do, and still others (Carroll) are not self-consistent.
+The Schwarzschild spacetime is asymptotically stationary, but not stationary.
+<% end_sec %> % Asymptotically stationary spacetimes
+<% end_sec %> % Isolated systems
 
 <% begin_sec("A stationary field with no other symmetries") %>
 Consider the most general stationary case, in which the only Killing vector is the timelike one.
@@ -164,7 +259,7 @@ quantities such as tidal forces.
 Points in space thus have a permanent identity. The gravitational field,
 which the equivalence principle tells us is normally an elusive, frame-dependent concept, now becomes
 more concrete: it is the proper acceleration required in order to stay in one place. We can therefore
-use phrases like ``a stationary field,'' without the usual caveats about the meaning of ``field.''
+use phrases like ``a stationary field,'' without the usual caveats about the coordinate-dependent meaning of ``field.''
 
 Space can be
 sprinkled with identical clocks, all at rest. Furthermore, we can compare the rates of these clocks,
@@ -225,19 +320,49 @@ is no rotation.
 <% end_sec %> % Static spacetimes
 
 <% begin_sec("Birkhoff's theorem") %>
-Birkhoff's theorm\index{Birkhoff's theorem}\label{birkhoff} states that if a vacuum spacetime is spherically symmetric, it must be
-static. An important corollary can be derived by listing the assumptions that went into our derivation of the
-Schwarzschild metric. These were: (1) the vacuum field equations, (2) spherical symmetry, (3) staticity, (4) curvature approaching zero far from the origin,
-and (5) a certain choice of coordinates.
-We can therefore conclude from Birkhoff's theorem that the Schwarzschild solution is unique up to a choice of coordinates.
-That is, suppose we have a spherically symmetric mass distribution that is isolated in space. (This isolation is encapsulated in assumption 4.)
-Even if the mass distribution contracts and expands over time, the exterior solution is still the Schwarzschild solution.
-Loosely, Birkhoff's theorem holds because gravitational waves are transverse, not longitudinal (see p.~\pageref{grav-waves-transverse}),
-so the mass distribution's throbbing cannot generate a gravitational wave. Birkhoff's theorem can be viewed
+Birkhoff's theorem,\index{Birkhoff's theorem}\label{birkhoff} proved below, states that in the case of spherical symmetry, 
+the vacuum field equations have a solution, the Schwarzschild spacetime, which is unique up to a choice of coordinates
+and the value of $m$.
+Let's enumerate the assumptions that went into our derivation of the
+Schwarzschild metric on p.~\pageref{sec:complete-sch}. These were: (1) the vacuum field equations, (2) spherical symmetry, (3) asymptotic staticity,
+and (4) a certain choice of coordinates.
+Birkhoff's theorem says that the assumption of staticity was not necessary.
+That is, even if the mass distribution contracts and expands over time, the exterior solution is still the Schwarzschild solution.
+Birkhoff's theorem holds because gravitational waves are transverse, not longitudinal (see p.~\pageref{grav-waves-transverse}),
+so the mass distribution's radial throbbing cannot generate a gravitational wave. Birkhoff's theorem can be viewed
 as the simplest of the no-hair theorems describing black holes.\index{no-hair theorems}
 The most general no-hair theorem states that a black hole is completely characterized by its mass, charge, and
 angular momentum. Other than these three numbers, nobody on the outside can recover any information that was possessed by the matter and
 energy that were sucked into the black hole.
+
+Proof of Birkhoff's theorem: Spherical symmetry
+guarantees that we can introduce coordinates $r$ and $t$ such that the surfaces of constant $r$ and $t$ have the structure of
+a sphere with radius $r$. On one such surface we can introduce colatitude and longitude coordinates $\theta$ and $\phi$.
+The $(\theta,\phi)$ coordinates can be extended in a natural way to other values of $r$ by choosing the radial lines to lie
+in the direction of the covariant derivative vector $\nabla_a r$, and this ensures that the metric will not have any nonvanishing terms
+in $\der r\der\theta$ or $\der r\der\phi$, which could only arise if our choice had broken the symmetry between
+positive and negative values of $\der\theta$ and $\der\phi$. Just as we were free to choose any way of threading lines of
+constant $(\theta,\phi,t)$ between spheres of different radii, we can also choose how to thread lines of constant $(\theta,\phi,r)$
+between different times, and this can be done so as to keep the metric free of any time-space cross-terms such as $\der\theta\der t$.
+The metric can therefore be written in the form
+\begin{equation*}
+  \der s^2 = h(t,r)\der t^2 - k(t,r)\der r^2 - r^2(\der\theta^2+\sin^2\theta \der\phi^2) \qquad .
+\end{equation*}
+This has to be a solution of the vacuum field equations, $R_{ab}=0$, and in particular a quick calculation
+with Maxima shows that $R_{rt}=-\partial_t k/k^2r$, so $k$ must be independent of time.
+With this restriction, we find $R_{rr}=-\partial_rh/hkr-1/r^2-1/kr^2=0$, and since $k$ is time-independent,
+$\partial_rh/h$ is also time-independent. This means that for a particular time $t_\zu{o}$, the function $f(r)=h(t_\zu{o},r)$
+has some universal shape set by a differential equation, with the only possible ambiguity being an over-all scaling that depends on  $t_\zu{o}$.
+But since $h$ is the time-time component of the metric, this scaling corresponds physically to a situation in which every clock, all over the universe,
+speeds up and slows down in unison. General relativity is coordinate-independent, so this has no
+observable effects, and we can absorb it into a redefinition of $t$ that will cause $h$ to be time-independent. Thus the metric can be expressed
+in the time-independent diagonal form
+\begin{equation*}
+  \der s^2 = h(r)\der t^2 - k(r)\der r^2 - r^2(\der\theta^2+\sin^2\theta \der\phi^2) \qquad ,
+\end{equation*}
+which means that $\partial_t$ is a Killing vector. We have already solved the field equations for a metric of this
+form and found as a solution the Schwarzschild metric, which has timelike $\partial_t$ for large $r$.
+
 <% end_sec %> % Birkhoff's theorem
 
 <% begin_sec("The gravitational potential") %>
@@ -454,6 +579,20 @@ effects might affect the picture.
 
 \begin{hwsection}
 
+<% begin_hw('screw') %>
+Example \ref{eg:cylinder-killing} on page \pageref{eg:cylinder-killing} gave the Killing vectors
+$\partial_z$ and $\partial_\phi$ of a cylinder. If we express these instead as two linearly independent Killing
+vectors that are linear combinations of these two, what is the geometrical interpretation?
+<% end_hw %>
+
+<% begin_hw('alice-stationary') %>
+Section \ref{sec:static-and-stationary} told the story of Alice trying to find evidence that her spacetime is
+not stationary, and also listed the following examples of spacetimes that were not stationary: (a)
+the solar system, (b) cosmological models, (c) gravitational
+waves propagating at the speed of light, and (d) a cloud of matter undergoing gravitational collapse. For each of these,
+show that it is possible for Alice to accomplish her mission.
+<% end_hw %>
+
 <% begin_hw('constant-curvature-invariants') %>
 If a spacetime has a certain symmetry, then we expect that symmetry to be detectable in the behavior
 of curvature scalars such as the scalar curvature $R=R\indices{^a_a}$ and the Kretchmann invariant $k=R^{abcd}R_{abcd}$.\index{Kretchmann invariant}\\
@@ -473,24 +612,6 @@ and yet which is not flat. See Coley, Hervik, and Pelavas, ``Spacetimes characte
 \url{arxiv.org/abs/0901.0791v2}.}
 <% end_hw %>
 % constant-curvature-invariants.mac
-
-<% begin_hw('cosmology-killing') %>
-We will not formally discuss cosmological spacetimes until ch.~\ref{ch:sources}, but based on your general
-knowledge of Big Bang models, how many Killing vectors would you expect such a spacetime to have?
-How many discrete symmetries? Would you expect it to be stationary? Static?
-\hwsoln
-<% end_hw %>
-
-<% begin_hw('birkhoff-hole') %>
-(a) On p.~\pageref{birkhoff}, I argued that as a corollary to Birkhoff's theorem, the external field of
-a spherically symmetric, isolated mass distribution must be the Schwarzschild spacetime. Use a similar
-argument to prove that for a spherically symmetric distribution of matter with a cavity at its center,
-the spacetime inside the cavity is flat.\hwendpart
-(b) Combining the results from p.~\pageref{birkhoff} and part a of this problem, we have something
-closely analogous to the gravitational shell theorem from Newtonian mechanics. The shell theorem allows
-us to find the gravitational field in spherically symmetric cases by summing over the fields of the shells
-that are interior to a given point. Can we do something similar in relativity?
-<% end_hw %>
 
 <% begin_hw('petrov-strength') %>\index{Petrov metric}
 Section \ref{sec:uniform-field-kasner} on page \pageref{sec:uniform-field-kasner} presented the Petrov metric.

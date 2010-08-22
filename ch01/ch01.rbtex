@@ -345,7 +345,7 @@ axioms,\footnote{These axioms are summarized for quick reference in the back of 
 \item[E4] All right angles are equal to one another.
 \item[E5] \emph{Parallel postulate:} Given a line and a point not on the line, no more than one line
           can be drawn through the point and parallel to the given line.\footnote{This is a form known as Playfair's axiom, rather than the version of the
-                   postulate originally given by Euclid.}
+                   postulate originally given by Euclid.}\index{parallel postulate}\index{Playfair's axiom}
 \end{itemize}
 
 The modern style in mathematics is to consider this type of axiomatic
