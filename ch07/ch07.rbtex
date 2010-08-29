@@ -23,23 +23,25 @@ of test particles, and that these could be interpreted as mass-energy and angula
 Generalizing these ideas, we want to consider the idea that a metric may be invariant
 when every point in spacetime is systematically shifted by some infinitesimal
 amount. For example, the Schwarzschild metric is invariant under $t\rightarrow t+\der t$.
-In coordinates $(x^0,x^1,x^2,x^3)=(t,r,\theta,\phi)$, we have a vector field
+In coordinates $(x^0,x^1,x^2,x^3)=(t,r,\theta,\phi)$, we have a vector field  (\der t,0,0,0)
+that defines the time-translation symmetry, and it is conventional to split this into
+two factors, a finite vector field $\boldsymbol{\xi}$ and an infinitesimal scalar, so that the displacement vector is
 \begin{equation*}
-  \xi = (\der t,0,0,0)
+  \boldsymbol{\xi}\der t = (1,0,0,0)\der t \qquad .
 \end{equation*}
-that defines the time-translation symmetry. Such a field is called a Killing vector field, or simply a Killing
+Such a field is called a Killing vector field, or simply a Killing
 vector, after Wilhelm Killing. When all the points in a space are displaced as specified by the Killing vector, they flow without expansion
 or compression. The path of a particular point, such as the dashed line in figure \figref{killing-vector}, under this flow is called
 its orbit.\index{orbit!Killing vector}\index{Killing vector!orbit} Although the term ``Killing vector'' is singular, it refers to the
-entire field of vectors, each of which differs in general from the others. For example, the $\xi$ shown in figure \figref{killing-vector} has a greater
-magnitude than a $\xi$ near the neck of the surface.
-<% marg(50) %>
+entire field of vectors, each of which differs in general from the others. For example, the $\boldsymbol{\xi}$ shown in figure \figref{killing-vector} has a greater
+magnitude than a $\boldsymbol{\xi}$ near the neck of the surface.
+<% marg(160) %>
 <%
   fig(
     'killing-vector',
     %q{The two-dimensional space has a symmetry which can be visualized by imagining it as a surface of revolution embedded in three-space.
        Without reference to any extrinsic features such as coordinates or embedding, an observer on this surface can detect the symmetry,
-       because there exists a vector field $\xi$ such that translation by $\xi$ doesn't change the distance between nearby points.}
+       because there exists a vector field $\boldsymbol{\xi}\der u$ such that translation by $\boldsymbol{\xi}\der u$ doesn't change the distance between nearby points.}
   )
 %>
 \spacebetweenfigs
@@ -51,32 +53,45 @@ magnitude than a $\xi$ near the neck of the surface.
 %>
 <% end_marg %>
 
+The infinitesimal notation is designed to describe a continuous symmetry, not a discrete one. For example, the Schwarzschild spacetime
+also has a discrete time-reversal symmetry $t \rightarrow -t$. This can't be described by a Killing vector, because the
+displacement in time is not infinitesimal. 
+
+\pagebreak[4]
+
+\begin{eg}{The Euclidean plane}\label{eg:euclidean-killing}
+The Euclidean plane has two Killing vectors corresponding to translation in two linearly independent directions, plus
+a third Killing vector for rotation about some arbitrarily chosen origin O. In Cartesian coordinates, one way of writing a complete
+set of these is is
+\begin{align*}
+  \boldsymbol{\xi}_1 &= (1,0) \\
+  \boldsymbol{\xi}_2 &= (0,1) \\
+  \boldsymbol{\xi}_3 &= (-y,x) \qquad .
+\end{align*}
+A theorem from classical geometry\footnote{Coxeter, \emph{Introduction to Geometry}, ch.~3} states that any transformation in the Euclidean plane that preserves distances
+and handedness can be expressed either as a translation or as a rotation about some point. The transformations that
+do not preserve handedness, such as reflections, are discrete, not continuous. This theorem tells us that there are no
+more Killing vectors to be found beyond these three, since any translation can be accomplished using $\boldsymbol{\xi}_1$
+and $\boldsymbol{\xi}_2$, while a rotation about a point P can be done by translating P to O, rotating, and then
+translating O back to P.
+\end{eg}
+
 In the example of the Schwarzschild spacetime, the components
 of the metric happened to be independent of $t$ when expressed in our coordinates.
 This is a sufficient condition for the existence of a Killing vector, but not a necessary one.
-For example, on the surface of an oblate spheroid such as the earth, we can pick the usual colatitude and longitude coordinates $(\theta,\phi)$,
-and then $\der s^2$ will be independent of $\phi$ for a given $\theta$, $\der\theta$, and $\der\phi$.
-But suppose we had decided to measure all of our $\theta$ angles relative to San Francisco's radius line instead of the north pole's, and defined
-$\phi$ according to some convention, such as projecting a sphere onto the earth's ellipsoidal surface. The metric expressed in these new
-coordinates would depend in some messy way on both $\theta$ and $\phi$, but nevertheless it would still have an azimuthal Killing vector.
-In other words, the existence of a Killing vector is an intrinsic property. In general, we define a Killing vector not in terms of a particular
-system of coordinates but in purely geometrical terms: a space has a Killing vector $\xi$ if translation by $\xi$ doesn't change the distance between nearby points.
+For example, it is possible to write the metric of the Euclidean plane in various forms such as
+$\der s^2=\der x^2+\der y^2$ and $\der s^2=\der r^2+r^2\der\phi^2$. The first form is independent of
+$x$ and $y$, which demonstrates that $x\rightarrow x+\der x$ and $y\rightarrow y+\der y$
+are Killing vectors, while the second form gives us $\phi\rightarrow \phi+\der\phi$.
+Although we may be able to find a particular coordinate system in which the existence of a Killing vector is manifest,
+its existence is an intrinsic property that holds regardless of whether we even employ coordinates.
+In general, we define a Killing vector not in terms of a particular
+system of coordinates but in purely geometrical terms: a space has a Killing vector $\boldsymbol{\xi}$ if translation by
+an infinitesimal amount $\boldsymbol{\xi}\der u$ doesn't change the distance between nearby points.
 Statements such as ``the spacetime has a timelike Killing vector''
 are therefore intrinsic, since both the timelike property and the property of being a Killing vector are
 coordinate-independent.
-
-A more compact way of notating Killing vectors is based on the fact that a derivative
-such as $\partial/\partial x^0$ transforms not as an upper-index (contravariant)
-vector but as a lower-index (covariant) one (see p.~\pageref{derivative-flip-indices}). This is the reason for defining
-the shorthand notation $\partial_0=\partial/\partial x^0$, rather than $\partial^0=\partial/\partial x^0$.
-For this reason, the partial derivative operators ${\partial_0,\partial_1,\partial_2,\partial_3}$ can be used as a set of basis vectors
-for the space of covariant vectors at a particular point P in spacetime. This space is referred to as the
-tangent space\index{tangent space} for the reason shown in figure \figref{tangent-space}. In this notation,
-the Killing vector of the Schwarzschild metric we've been discussing can be notated simply as
-\begin{equation*}
-      \xi =  \partial_t \qquad .
-\end{equation*}
-<% marg(50) %>
+<% marg(-10) %>
 <%
   fig(
     'tangent-space',
@@ -87,7 +102,33 @@ the Killing vector of the Schwarzschild metric we've been discussing can be nota
 %>
 <% end_marg %>
 
-It can be shown that an equivalent condition for a field to be a Killing vector is $\nabla_a \xi_b+\nabla_b \xi_a = 0$.
+A more compact way of notating Killing vectors is based on the fact that a derivative
+such as $\partial/\partial x^0$ transforms not as an upper-index (contravariant)
+vector but as a lower-index (covariant) one (see p.~\pageref{derivative-flip-indices}). This is the reason for defining
+the shorthand notation $\partial_0=\partial/\partial x^0$, rather than $\partial^0=\partial/\partial x^0$.
+For this reason, the partial derivative operators ${\partial_0,\partial_1,\partial_2,\partial_3}$ can be used as a set of basis vectors
+for the space of covariant vectors at a particular point P in spacetime. This space is referred to as the
+tangent space\index{tangent space} for the reason shown in figure \figref{tangent-space}. In this notation,
+the Killing vector of the Schwarzschild metric we've been discussing can be notated simply as
+\begin{equation*}
+      \boldsymbol{\xi} =  \partial_t \qquad .
+\end{equation*}
+
+The tangent-space notation, like the infinitesimal notation, implicitly refers to continuous symmetries rather than discrete ones.
+If a discrete symmetry carries a point $\zu{P}_1$ to some distant point $\zu{P}_2$, then $\zu{P}_1$ and $\zu{P}_2$
+have two different tangent planes, so there is not a uniquely defined notion
+of whether vectors $\boldsymbol{\xi}_1$ and $\boldsymbol{\xi}_2$ at these two points are equal --- or even approximately equal. 
+There can therefore be no well-defined way to construe a statement such as, ``$\zu{P}_1$ and $\zu{P}_2$
+are separated by a displacement $\boldsymbol{\xi}$.'' In the case of a
+continuous symmetry, on the other hand, the two tangent planes come closer and closer to coinciding as the distance $s$ between
+two points on an orbit approaches zero, and in this limit we recover an approximate notion of being able to
+compare vectors in the two tangent planes. They can be compared by parallel transport, and although parallel
+transport is path-dependent, the difference bewteen paths is proportional to the area they enclose,
+which varies as $s^2$, and therefore becomes negligible in the limit $s\rightarrow0$.
+
+Self-check: Find another Killing vector of the Schwarzschild metric, and express it in the tangent-vector notation.
+
+It can be shown that an equivalent condition for a field to be a Killing vector is $\nabla_a \boldsymbol{\xi}_b+\nabla_b \boldsymbol{\xi}_a = 0$.
 This is written without reference to any coordinate system, in keeping with the coordinate-independence of the notion.
 
 When a spacetime has more than one Killing vector, any linear combination of them is also a Killing vector.
@@ -95,7 +136,7 @@ This means that although the existence of certain types of Killing vectors may b
 choice of those vectors is not. 
 
 \begin{eg}{The Euclidean plane}
-The Euclidean plane has Killing vectors $(1,0)$ and $(0,1)$, i.e., $\partial_x$ and $\partial_y$. 
+The Euclidean plane has two translational Killing vectors $(1,0)$ and $(0,1)$, i.e., $\partial_x$ and $\partial_y$. 
 These same vectors could be expressed as $(1,1)$ and $(1,-1)$ in coordinate system that was rescaled and
 rotated by 45 degrees.
 \end{eg}
@@ -110,14 +151,14 @@ rather than $(x,y)$, giving $\partial_z$ and $\partial_\phi$.
 \begin{eg}{A sphere}\label{eg:sphere-killing}
 A sphere is like a plane or a cylinder in that it is a two-dimensional space in which no point has
 any properties that are intrinsically different than any other. We might expect, then, that it would
-have two Killing vectors. Actually it has three, $\xi_x$, $\xi_y$, and $\xi_z$, corresponding to
+have two Killing vectors. Actually it has three, $\boldsymbol{\xi}_x$, $\boldsymbol{\xi}_y$, and $\boldsymbol{\xi}_z$, corresponding to
 infinitesimal rotations about the $x$, $y$, and $z$ axes. To show that these are all independent Killing
-vectors, we need to demonstrate that we can't, for example, have $\xi_x=c_1\xi_y+c_2\xi_z$ for some
-constants $c_1$ and $c_2$. To see this, consider the actions of $\xi_y$ and $\xi_z$ on the point $P$ where
+vectors, we need to demonstrate that we can't, for example, have $\boldsymbol{\xi}_x=c_1\boldsymbol{\xi}_y+c_2\boldsymbol{\xi}_z$ for some
+constants $c_1$ and $c_2$. To see this, consider the actions of $\boldsymbol{\xi}_y$ and $\boldsymbol{\xi}_z$ on the point $P$ where
 the $x$ axis intersects the sphere. (References to the axes and their intersection with the sphere are
-extrinsic, but this is only for convenience of description and visualization.) Both $\xi_y$ and $\xi_z$
-move P around a little, and these motions are in orthogonal directions, wherease $\xi_x$ leaves P fixed.
-This proves that we can't have $\xi_x=c_1\xi_y+c_2\xi_z$. All three Killing vectors are linearly independent.
+extrinsic, but this is only for convenience of description and visualization.) Both $\boldsymbol{\xi}_y$ and $\boldsymbol{\xi}_z$
+move P around a little, and these motions are in orthogonal directions, wherease $\boldsymbol{\xi}_x$ leaves P fixed.
+This proves that we can't have $\boldsymbol{\xi}_x=c_1\boldsymbol{\xi}_y+c_2\boldsymbol{\xi}_z$. All three Killing vectors are linearly independent.
 
 This example shows that linear independence of Killing vectors can't be visualized simply by thinking about
 the vectors in the tangent plane at one point. If that were the case, then we could have at most two
@@ -125,12 +166,11 @@ linearly independent Killing vectors in this two-dimensional space. When we say 
 Killing vector \emph{field}, which is defined everywhere on the space.
 \end{eg}
 
+<% begin_sec("Conservation laws for test particles") %>
 Whenever a spacetime has a Killing vector, geodesics have a constant value of $v^b \xi_a$, where $v^b$ is
-the velocity four-vector. For example, because the Schwarzschild metric has a Killing vector $\xi = \partial_t$,
+the velocity four-vector. For example, because the Schwarzschild metric has a Killing vector $\boldsymbol{\xi} = \partial_t$,
 test particles have a conserved value of $v^t$, and therefore we also have conservation of $p^t$, interpreted
 as the mass-energy.
-
-Self-check: Find another Killing vector of the Schwarzschild metric.
 
 \begin{eg}{Energy-momentum in flat 1+1 spacetime}
 A flat 1+1-dimensional spacetime has Killing vectors $\partial_x$ and $\partial_t$.
@@ -138,7 +178,7 @@ Corresponding to these are the conserved momentum and mass-energy, $p$ and $E$. 
 two Killing vectors get mixed together by a linear transformation, corresponding to
 a transformation of $p$ and $E$ into a new frame.
 \end{eg}
-
+<% end_sec %> % Conservation laws for test particles
 <% end_sec %> % Killing vectors
 
 <% begin_sec("Spherical symmetry") %>\label{sec:spherical-symmetry}
@@ -335,16 +375,31 @@ The most general no-hair theorem states that a black hole is completely characte
 angular momentum. Other than these three numbers, nobody on the outside can recover any information that was possessed by the matter and
 energy that were sucked into the black hole.
 
+It has been proposed\footnote{Johannsen and Psaltis, http://arxiv.org/abs/1008.3902v1}
+that the no-hair theorem for nonzero angular momentum and zero charge could be tested empirically by
+observations of Sagittarius A*.\index{Sagittarius A*} If the observations are consistent with the no-hair theorem, it would
+be taken as supporting the validity of general relativity and the interpretation of this object as a supermassive black hole.
+If not, then there are various possibilities, including a failure of general relativity to be the correct theory of strong
+gravitational fields, or a failure of one of the theorem's other assumptions, such as the nonexistence of closed timelike curves
+in the surrounding universe.
+
 Proof of Birkhoff's theorem: Spherical symmetry
 guarantees that we can introduce coordinates $r$ and $t$ such that the surfaces of constant $r$ and $t$ have the structure of
 a sphere with radius $r$. On one such surface we can introduce colatitude and longitude coordinates $\theta$ and $\phi$.
 The $(\theta,\phi)$ coordinates can be extended in a natural way to other values of $r$ by choosing the radial lines to lie
-in the direction of the covariant derivative vector $\nabla_a r$, and this ensures that the metric will not have any nonvanishing terms
+in the direction of the covariant derivative vector\footnote{It may seem backwards to start talking about the covariant
+derivative of a particular coordinate before a complete coordinate system has even been introduced. But (excluding the trivial case of a flat spacetime),
+$r$ is not just an arbitrary coordinate, it is something that an observer at a certain point in spacetime can determine by
+mapping out a surface of geometrically identical points, and then determining that surface's radius of curvature.
+Another worry is that it is possible for $\nabla_a r$ to misbehave
+on certain surfaces, such as the event horizon of the Schwarzschild spacetime, but we can simply require that radial lines
+remain continuous as they pass through these surfaces.} $\nabla_a r$, and this ensures that the metric will not have any nonvanishing terms
 in $\der r\der\theta$ or $\der r\der\phi$, which could only arise if our choice had broken the symmetry between
 positive and negative values of $\der\theta$ and $\der\phi$. Just as we were free to choose any way of threading lines of
 constant $(\theta,\phi,t)$ between spheres of different radii, we can also choose how to thread lines of constant $(\theta,\phi,r)$
 between different times, and this can be done so as to keep the metric free of any time-space cross-terms such as $\der\theta\der t$.
-The metric can therefore be written in the form
+The metric can therefore be written in the form\footnote{On the same surfaces referred to in the preceding footnote,
+the functions $h$ and $k$ may to go to 0 or $\infty$. These turn out to be nothing more serious than coordinate singularities.}
 \begin{equation*}
   \der s^2 = h(t,r)\der t^2 - k(t,r)\der r^2 - r^2(\der\theta^2+\sin^2\theta \der\phi^2) \qquad .
 \end{equation*}
@@ -358,10 +413,13 @@ speeds up and slows down in unison. General relativity is coordinate-independent
 observable effects, and we can absorb it into a redefinition of $t$ that will cause $h$ to be time-independent. Thus the metric can be expressed
 in the time-independent diagonal form
 \begin{equation*}
-  \der s^2 = h(r)\der t^2 - k(r)\der r^2 - r^2(\der\theta^2+\sin^2\theta \der\phi^2) \qquad ,
+  \der s^2 = h(r)\der t^2 - k(r)\der r^2 - r^2(\der\theta^2+\sin^2\theta \der\phi^2) \qquad .
 \end{equation*}
-which means that $\partial_t$ is a Killing vector. We have already solved the field equations for a metric of this
-form and found as a solution the Schwarzschild metric, which has timelike $\partial_t$ for large $r$.
+We have already solved the field equations for a metric of this
+form and found as a solution the Schwarzschild spacetime.\footnote{The Schwarzschild \emph{spacetime} is the uniquely
+defined geometry found be removing the coordinate singularities from this form of the Schwarzschild \emph{metric}.} 
+Since the metric's components are all independent of $t$, $\partial_t$ is a Killing vector, and it
+is timelike for large $r$, so the Schwarzschild spacetime is asymptotically static.
 
 <% end_sec %> % Birkhoff's theorem
 

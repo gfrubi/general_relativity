@@ -1118,7 +1118,7 @@ Self-check: Apply similar reasoning to a Galilean boost.
 
 To see how this mathematical fact would play out as a physical effect, we need to consider how to make a physical manifestation of
 the concept of a direction in space.
-<% marg(-50) %>
+<% marg(0) %>
 <%
   fig(
     'photon-in-cavity-and-gyroscope',

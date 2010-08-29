@@ -957,7 +957,7 @@ equations give equivalent notations for the same derivatives:
 <% begin_sec("The geodesic equation") %>\label{sec:geodesic-equation}
 In this section, which can be skipped at a first reading, we show how the Christoffel symbols can be used to
 find differential equations that describe geodesics.\index{geodesic!differential equation for}\label{geodesic-diffeq}\index{geodesic equation}
-<% marg(10) %>
+<% marg(30) %>
 <%
   fig(
     'geodesic-parallel-transports-tangent',
@@ -1214,7 +1214,7 @@ obtained from $abc$ by an even number of pairwise swaps), $-1$ for odd permutati
 not a permutation of $abc$).
 In this notation, a totally antisymmetric torsion tensor is one with $\tau_{\lambda\mu\nu=}\tau_{[\lambda\mu\nu]}$, and torsion of this
 type preserves tangent vectors under translation.
-<% marg(150) %>
+<% marg(80) %>
 <%
   fig(
     'torsion-screw',

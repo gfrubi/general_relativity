@@ -157,6 +157,15 @@ to a silly change of coordinates.
 
 Self-check: $R$ vanishes, but $\Gamma$ doesn't. Is there a
 reason for paying more attention to one or the other?
+<% marg(0) %>
+<%
+  fig(
+    'gravitational-wave',
+    %q{As the gravitational wave propagates in the $z$ direction, the metric oscillates in the $x$ and $y$
+            directions, preserving volume.}
+  )
+%>
+<% end_marg %>
 
 To keep the curvature from vanishing, it looks like we need a metric in which the oscillation is not
 restricted to a single variable. For example, the metric
@@ -172,15 +181,6 @@ Transverse waves, which are what we could actually observe in practical experime
 since it doesn't preserve volume. It also stands still, whereas we expect that solutions to the field
 equations should propagate at the velocity of light, at least for small amplitudes. These conclusions are
 self-consistent, because a wave's polarization can only be constrained if it propagates at $c$ (see p.~\pageref{eg:polzn-constraints}).
-<% marg(0) %>
-<%
-  fig(
-    'gravitational-wave',
-    %q{As the gravitational wave propagates in the $z$ direction, the metric oscillates in the $x$ and $y$
-            directions, preserving volume.}
-  )
-%>
-<% end_marg %>
 
 Based on what we've found out, the following seems like a metric that might have a fighting chance of
 representing a real gravitational wave:
@@ -326,16 +326,6 @@ $x$ or $y$. Therefore there is no measurable property of this metric that varies
 To show that these waves carry momentum and energy, we can
 use the nonmathematical ``sticky bead
 argument'' (figure \figref{sticky-bead}), which was originated by Feynman in 1957 and later popularized by Bondi.
-<% marg(30) %>
-<%
-  fig(
-    'sticky-bead',
-    %q{The sticky bead argument for the reality of gravitational waves. As a gravitational wave with the appropriate
-            polarization passes by, the bead vibrates back and forth on the rod. Friction creates heat. This
-            demonstrates that gravitational waves carry energy, and are thus real, observable phenomena.}
-  )
-%>
-<% end_marg %>
 
 We would next like to find an expression for the energy of the wave in terms of its amplitude.
 Alas, this was not meant to be. 
@@ -361,7 +351,16 @@ in seeing the subject developed in detail is referred to Carroll's \emph{Lecture
 
 <% begin_sec("Rate of radiation") %>\label{sec:rate-of-gravitational-radiation}
 How can we find the rate of gravitational radiation from a system such as the Hulse-Taylor pulsar?
-<% marg(0) %>
+<% marg(130) %>
+<%
+  fig(
+    'sticky-bead',
+    %q{The sticky bead argument for the reality of gravitational waves. As a gravitational wave with the appropriate
+            polarization passes by, the bead vibrates back and forth on the rod. Friction creates heat. This
+            demonstrates that gravitational waves carry energy, and are thus real, observable phenomena.}
+  )
+%>
+\spacebetweenfigs
 <%
   fig(
     'multipoles',

@@ -454,6 +454,15 @@ We can see by the following argument that this mysterious $\vc{A}$ must have som
               the trajectory should be understood as a world-line in 3+1-dimensional spacetime.}
   )
 %>
+\spacebetweenfigs
+<%
+  fig(
+    'vector-potential-of-solenoid',
+    %q{The magnetic field (top) and vector potential (bottom) of a solenoid. The lower diagram is in the plane cutting through the waist of
+              the solenoid, as indicated by the dashed line in the upper diagram. For an infinite solenoid, the magnetic field is
+              uniform on the inside and zero on the outside, while the vector potential is proportional to $r$ on the inside and to $1/r$ on the outside.}
+  )
+%>
 <% end_marg %>
 
 Consider the example of figure \figref{least-action} from a quantum-mechanical point of view. The charged particle $q$ has wave properties,
@@ -480,16 +489,6 @@ relation between the potentials and the fields is
 An excellent discussion of the vector potential from a purely classical point of view
 is given in the classic \emph{Feynman Lectures}.\footnote{\emph{The Feynman Lectures on Physics}, Feynman, Leighton, and Sands, Addison Wesley Longman, 1970}
 Figure \figref{vector-potential-of-solenoid} shows an example.
-<% marg(50) %>
-<%
-  fig(
-    'vector-potential-of-solenoid',
-    %q{The magnetic field (top) and vector potential (bottom) of a solenoid. The lower diagram is in the plane cutting through the waist of
-              the solenoid, as indicated by the dashed line in the upper diagram. For an infinite solenoid, the magnetic field is
-              uniform on the inside and zero on the outside, while the vector potential is proportional to $r$ on the inside and to $1/r$ on the outside.}
-  )
-%>
-<% end_marg %>
 
 <% end_sec %>
 <% end_sec %>
@@ -513,6 +512,17 @@ dimension, and to a possibly nonlinear transformation, we have
   v'_\mu &=  v_\kappa \frac{\partial x^\kappa}{\partial x'^\mu} \qquad .
 \end{align}
 Note the inversion of the partial derivative in one equation compared to the other.
+Because these equations describe a change from one coordinate system to another,
+they clearly depend on the coordinate system, so we use Greek indices rather than
+the Latin ones that would indicate a coordinate-independent equation. Note that
+the letter $\mu$ in these equations always appears as an index referring to the
+new coordinates, $\kappa$ to the old ones. For this reason, we can get away with
+dropping the primes and writing, e.g., $v^\mu=v^\kappa \partial x'^\mu/\partial x^\kappa$
+rather than $v'$, counting on context to show that $v^\mu$ is the vector expressed in the
+new coordinates, $v^\kappa$ in the old ones. This becomes especially natural if we start
+working in a specific coordinate system where the coordinates have names. For example,
+if we transform from coordinates $(t,x,y,z)$ to $(a,b,c,d)$, then it is clear that
+$v^t$ is expressed in one system and $v^c$ in the other.
 
 Self-check: Recall that the gauge transformations allowed in general relativity are not just any
 coordinate transformations; they must be (1) smooth and (2) one-to-one. Relate both of these
@@ -553,6 +563,7 @@ The metric is a rank-2 tensor, and transforms analogously:
 \begin{equation*}
   g_{\mu\nu} = g_{\kappa\lambda} \frac{\partial x^\kappa}{\partial x'^\mu} \frac{\partial x^\lambda}{\partial x'^\nu}
 \end{equation*}
+(writing $g$ rather than $g'$ on the left, because context makes the distinction clear).
 
 Self-check: Write the similar expressions for $g^{\mu\nu}$, $g^\mu_\nu$, and $g_\mu^\nu$, which are
 entirely determined by the grammatical rules for writing superscripts and subscripts. Interpret the case
@@ -845,6 +856,20 @@ spacelike surfaces --- one initial and one final --- and integrate the charge ov
 of conservation of charge would say that no matter what spacelike surface we picked, the total
 charge on each would be the same.
 
+
+Next there's the issue that the integral might diverge, especially if the universe was spatially
+infinite. For now, let's assume a spatially finite universe. For simplicity, let's assume that
+it has the topology of a three-sphere (see section \ref{sec:cosmological-solutions}
+for reassurance that this isn't physically unreasonable), and we can visualize it as a two-sphere.
+
+In the case of the momentum four-vector, what coordinate system would we express it in? In general,
+we do not even expect to be able to define a smooth, well-behaved coordinate system that covers the
+entire universe, and even if we did, it would not make sense to add a vector expressed in that
+coordinate system at point A to another vector from point B; the best we could do would be
+to parallel-transport the vectors to one point and then add them, but parallel transport is
+path-dependent. (Similar issues occur with angular momentum.)
+For this reason, let's restrict ourselves to the easier case of a scalar, such as
+electric charge.
 <% marg(170) %>
 <%
   fig(
@@ -874,20 +899,6 @@ charge on each would be the same.
   )
 %>
 <% end_marg %>
-
-Next there's the issue that the integral might diverge, especially if the universe was spatially
-infinite. For now, let's assume a spatially finite universe. For simplicity, let's assume that
-it has the topology of a three-sphere (see section \ref{sec:cosmological-solutions}
-for reassurance that this isn't physically unreasonable), and we can visualize it as a two-sphere.
-
-In the case of the momentum four-vector, what coordinate system would we express it in? In general,
-we do not even expect to be able to define a smooth, well-behaved coordinate system that covers the
-entire universe, and even if we did, it would not make sense to add a vector expressed in that
-coordinate system at point A to another vector from point B; the best we could do would be
-to parallel-transport the vectors to one point and then add them, but parallel transport is
-path-dependent. (Similar issues occur with angular momentum.)
-For this reason, let's restrict ourselves to the easier case of a scalar, such as
-electric charge.
 
 But now we're in real trouble. How would we go about actually measuring the total electric charge of
 the universe? The only way to do it is to measure electric fields, and then apply Gauss's law.
@@ -1001,7 +1012,7 @@ geodetic effect (6.6 arc-seconds per year) and the much weaker Lense-Thirring
 effect (.041 arc-sec/yr) produced precessions in perpendicular directions.
 Again, the presence of an asymptotically flat background was involved, because the probe measured the
 orientations of its gyroscopes relative to the guide star IM Pegasi.
-<% marg(110) %>
+<% marg(30) %>
 <%
   fig(
     'frame-dragging-banana',

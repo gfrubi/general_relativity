@@ -466,7 +466,7 @@ greater, so the two effects cancel out, and it falls with the same acceleration.
 of the gravitational force. Electrical forces, for example, do not behave this way. The force that an object
 experiences in an electric field is proportional to its charge, which is unrelated to its inertial mass,
 so different charges placed in the same electric field will in general have \emph{different} motions.
-<% marg(0) %>
+<% marg(30) %>
 <%
   fig(
     'galileo-balls',
@@ -529,7 +529,7 @@ of light elements with nearly equal numbers of neutrons and protons. The first h
 of this type were performed by E\"{o}tv\"{o}s around the turn of the twentieth century, and they verified
 the equivalence of inertial and gravitational mass to within about one part in $10^8$.
 These are generically referred to as E\"{o}tv\"{o}s experiments.\index{E\"{o}tv\"{o}s experiments}
-<% marg(50) %>
+<% marg(75) %>
 <%
   fig(
     'eotvos-portrait',
@@ -591,7 +591,7 @@ Accelerations and gravitational fields are equivalent. There is no experiment th
 the other.\footnote{This statement of the equivalence principle is summarized,
 along with some other forms of it to be encountered later, in the back of the book on page
 \pageref{equivalence-principle-summary}.}\index{equivalence principle!accelerations and fields equivalent}\label{equivalence-a-and-g}
-<% marg(0) %>
+<% marg(30) %>
 <%
   fig(
     'braginskii',
@@ -793,7 +793,17 @@ $a$ is the lab's acceleration, $y$ is the height from floor to ceiling, and $c$ 
             photon is detected at the ceiling, the elevator has changed its velocity, so the photon is detected with a Doppler shift.}
   )
 %>
+\spacebetweenfigs
+<%
+  fig(
+    'maxwellian-momentum-of-light',
+    %q{An electromagnetic wave strikes an ohmic surface. The wave's electric field excites an oscillating current density $\vc{J}$.
+            The wave's magnetic field then acts on these currents, producing a force in the direction of the wave's propagation.
+            This is a pre-relativistic argument that light must possess inertia.}
+  )
+%>
 <% end_marg %>
+
 Self-check: Verify this statement.
 
 By the equivalence principle, we find that when such an experiment is done in a gravitational field $g$,\label{grav-redshift-by-ep}
@@ -809,16 +819,6 @@ the resulting force is in the direction of propagation of the wave. Thus the lig
 it has momentum.\label{light-has-momentum-1}
 The equivalence principle says that whatever has inertia must also participate in gravitational interactions.
 Therefore light waves must have weight, and must lose energy when they rise through a gravitational field.
-<% marg(50) %>
-<%
-  fig(
-    'maxwellian-momentum-of-light',
-    %q{An electromagnetic wave strikes an ohmic surface. The wave's electric field excites an oscillating current density $\vc{J}$.
-            The wave's magnetic field then acts on these currents, producing a force in the direction of the wave's propagation.
-            This is a pre-relativistic argument that light must possess inertia.}
-  )
-%>
-<% end_marg %>
 
 Self-check: Verify the application of the right-hand rule described above.
 

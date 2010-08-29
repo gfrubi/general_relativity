@@ -883,7 +883,7 @@ infinite velocity, so tapping the disk with a hammer in one place would result i
 information at $v>c$ to other parts of the disk, and then there would exist frames of reference in which
 the information was received before it was transmitted. The same applies if the hammer tap is used to impart
 rotational motion to the disk.
-<% marg(130) %>
+<% marg(70) %>
 <%
   fig(
     'einstein-ehrenfest-piano',
