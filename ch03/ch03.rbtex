@@ -864,7 +864,8 @@ and Dieks.\footnote{Space, Time, and Coordinates in a Rotating World, \url{http:
 <% end_sec %> % Non-Euclidean geometry observed in the rotating frame
 
 <% begin_sec("Ehrenfest's paradox") %>\label{sec:ehrenfest-paradox}
-Ehrenfest\footnote{P. Ehrenfest, Gleichf\"ormige Rotation starrer K\"orper und Relativit\"atstheorie, Z. Phys. 10 (1909) 918}
+Ehrenfest\footnote{P. Ehrenfest, Gleichf\"ormige Rotation starrer K\"orper und Relativit\"atstheorie, Z. Phys. 10 (1909) 918,
+available in English translation at \url{en.wikisource.org}.}
 described the following paradox.\index{Ehrenfest's paradox} Suppose that observer B, in the lab frame, measures the radius of the disk to be
 $r$ when the disk is at rest, and $r'$ when the disk is spinning. B can also measure the corresponding circumferences
 $C$ and $C'$. Because B is in an inertial frame, the spatial geometry does not appear non-Euclidean according to measurements carried

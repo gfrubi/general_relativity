@@ -642,7 +642,7 @@ def remove_titlecase(title)
   [ 'Cartesian','Kepler','Gauss','Amp\\`{e}re','Maxwell','Faraday','Brans','Dicke','Einstein',
     'Huygens','Schr\\"odinger','Schr\\\"odinger','Greek','Biot','Savart','Doppler','Lorentz','Michelson',
     'Morley','Euclid','Euclidean','Erlangen','Hafele','Keating','Hafele-Keating','Pound-Rebka','Rebka','Thomas',
-    'Mach','Machian','Riemann','Christoffel'].each { |proper|
+    'Mach','Machian','Riemann','Christoffel','Milne'].each { |proper|
     foo.gsub!(/(?<!\w)#{proper}/i) {|x| initial_cap(x)}
            # ... the negative lookbehind prevents, e.g., damped and example from becoming DAmped and ExAmple
            # If I had a word like "amplification" in a title, I'd need to special-case that below and change it back.

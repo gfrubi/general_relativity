@@ -19,15 +19,24 @@ Not only should the ``speed of gravity'' be finite, but
 it seems implausible
 that that it would be greater than $c$; in section \ref{sec:lorentz-geometry} (p. \pageref{sec:lorentz-geometry}),
 we argued based on empirically well established principles that there must be a maximum speed of cause and
-effect. Although the argument was only applicable to special relativity, i.e., to a flat, Lorentzian space,
+effect. Although the argument was only applicable to special relativity, i.e., to a flat spacetime,
 it seems likely to apply to general
-relativity as well, at least for ripples in spacetime that are relatively weak, so that space is approximately
-Lorentzian. As early as 1913, before Einstein had even developed the full theory of general relativity, he
-had carried out calculations in the weak-field limit that showed that gravitational effects should propagate
-at $c$. This seems eminently reasonable, since (a) it is likely to be consistent with causality, and (b) $G$ and $c$ are the
+relativity as well, at least for low-amplitude waves on a flat background.
+As early as 1913, before Einstein had even developed the full theory of general relativity, he
+had carried out calculations in the weak-field limit showing that gravitational effects should propagate
+at $c$.\index{gravitational waves!propagation at $c$} This seems eminently reasonable, since (a) it is likely to be consistent with causality, and (b) $G$ and $c$ are the
 only constants with units that appear in the field equations (obscured by our choice of units, in which $G=1$ and $c=1$),
 and the only velocity-scale that can be constructed from
-these two constants is $c$ itself.
+these two constants is $c$ itself.\footnote{High-amplitude waves need \emph{not} propagate at $c$. For example, general relativity predicts
+that a gravitational-wave pulse propagating on a background of curved spacetime develops a trailing edge that propagates at less
+than $c$ (Misner, Thorne, and Wheeler, p. 957).
+This effect is weak when the amplitude is small or the wavelength is short compared to the scale of the background curvature.
+It makes sense that the effect vanishes when background curvature is absent, since there is then no fixed scale. Dispersion
+requires that different wavelengths propagate at different speeds, but without a scale there is no reason for any wavelength
+to behave any differently from any other.\index{gravitational waves!propagation at less than $c$, for high amplitudes}
+At very high amplitudes, one can even have such exotic phenomena as the formation of black holes when enough wave energy
+is focused into a small region. None of these phenomena is ever likely to be observed empirically, since all gravitational
+waves in our universe have extremely small amplitudes.}
 
 Although extremely well founded theoretically, this turns out to be extremely difficult to test empirically.
 In a 2003 experiment,\footnote{\url{http://arxiv.org/abs/astro-ph/0302294}}
@@ -175,7 +184,10 @@ restricted to a single variable. For example, the metric
 does have nonvanishing curvature.\index{polarization!of gravitational waves}\index{transverse polarization!of gravitational waves}\index{gravitational waves!transverse nature}\label{grav-waves-transverse}
 In other words, it seems like we should be looking for transverse waves
 rather than longitudinal ones.\footnote{A more careful treatment shows that longitudinal waves can always be
-interpreted as physically unobservable coordinate waves, in the limit of large distances from the source. Longitudinal
+interpreted as physically unobservable coordinate waves, in the limit of large distances from the source. On the other hand,
+it is clear that no such prohibition against longitudinal waves could apply universally, because such a constraint can only
+be Lorentz-invariant if the wave propagates at $c$ (see p.~\pageref{eg:polzn-constraints}), whereas high-amplitude waves need not propagate at $c$.
+Longitudinal
 waves near the source are referred to as Type III solutions in a classification scheme due to Petrov.\index{Petrov classification}\index{Type III solution}\index{Type N solution}
 Transverse waves, which are what we could actually observe in practical experiments, are type N.} On the other hand, this metric cannot be a solution to the vacuum field equations,
 since it doesn't preserve volume. It also stands still, whereas we expect that solutions to the field
@@ -351,6 +363,14 @@ in seeing the subject developed in detail is referred to Carroll's \emph{Lecture
 
 <% begin_sec("Rate of radiation") %>\label{sec:rate-of-gravitational-radiation}
 How can we find the rate of gravitational radiation from a system such as the Hulse-Taylor pulsar?
+
+Let's proceed by analogy. The simplest source of sound waves is something like the cone of a stereo speaker.
+Since typical sound waves have wavelengths measured in meters, the entire speaker is generally small compared to the wavelength.
+The speaker cone is a surface of oscillating displacement $x=x_\zu{o}\sin\omega t$. 
+Idealizing such a source to a radially pulsating spherical surface, we have an oscillating monopole that radiates sound waves
+uniformly in all directions. To find the power radiated, we note that the velocity of the source-surface is
+proportional to $x_\zu{o}\omega$, so the kinetic energy of the air immediately in contact with it is proportional
+to $\omega^2 x_\zu{o}^2$. The power radiated is therefore proportional to $\omega^2 x_\zu{o}^2$.
 <% marg(130) %>
 <%
   fig(
@@ -373,14 +393,6 @@ How can we find the rate of gravitational radiation from a system such as the Hu
   )
 %>
 <% end_marg %>
-
-Let's proceed by analogy. The simplest source of sound waves is something like the cone of a stereo speaker.
-Since typical sound waves have wavelengths measured in meters, the entire speaker is generally small compared to the wavelength.
-The speaker cone is a surface of oscillating displacement $x=x_\zu{o}\sin\omega t$. 
-Idealizing such a source to a radially pulsating spherical surface, we have an oscillating monopole that radiates sound waves
-uniformly in all directions. To find the power radiated, we note that the velocity of the source-surface is
-proportional to $x_\zu{o}\omega$, so the kinetic energy of the air immediately in contact with it is proportional
-to $\omega^2 x_\zu{o}^2$. The power radiated is therefore proportional to $\omega^2 x_\zu{o}^2$.
 
 In electromagnetism, conservation of charge forbids the existence of an oscillating electric monopole.
 The simplest radiating source is therefore an oscillating electric dipole $D=D_\zu{o}\sin\omega t$. If the dipole's physical size

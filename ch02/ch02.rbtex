@@ -1526,7 +1526,7 @@ however, was too big by a factor of two.
 <% end_marg %>
 
 The explanation of the mysterious factor of two had in fact been implicit in a 1916 calculation by
-Willem de Sitter,\index{de Sitter!Willem} one of the first applications of general relativity. De Sitter
+Willem de Sitter,\index{de Sitter, Willem} one of the first applications of general relativity. De Sitter
 treated the earth-moon system as a gyroscope, and found the precession of its axis of rotation,
 which was partly due to the curvature of spacetime and partly due to the type of rotation described earlier
 in this section.

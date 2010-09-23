@@ -366,7 +366,7 @@ that are simultaneous according to this $t$ are events at which the local proper
 are the same. These coordinates are referred as the ``standard'' cosmological coordinates; one will also encounter
 other choices, such as the comoving and conformal coordinates, which are more convenient for certain purposes.
 Historically, the solution for the functions $a$ and $f$ was found by de 
-Sitter in 1917.\index{de Sitter}\index{standard cosmological coordinates}\index{comoving cosmological coordinates}\index{conformal cosmological coordinates}
+Sitter in 1917.\index{de Sitter, Willem}\index{standard cosmological coordinates}\index{comoving cosmological coordinates}\index{conformal cosmological coordinates}
 \index{cosmological coordinates!standard}\index{cosmological coordinates!comoving}\index{cosmological coordinates!conformal}\label{standard-cosm-coords}
 
 The unknown function $f(r)$ has to make the 3-space metric $\der\ell^2$ have a constant Einstein curvature tensor.
@@ -389,7 +389,7 @@ component, $G\indices{^t_t}=(1-1/f)/r^2$. This has to be constant, and since sca
 3+1-dimensional metric, we can just set the value of $G_{tt}$ more or less arbitrarily, except for its sign.
 The result is $f=1/(1-kr^2)$, where $k=-1$, 0, or 1. The form of $\der\ell^2$ shows us that $k$ can be interpreted
 in terms of the sign of the spatial curvature. The $k=0$ case gives a flat space. For negative $k$, a circle of radius $r$ centered
-on the origin has a circumference $2\pi r f(r)$ that is less than its Euclidean value of $2\pi r$. The opposite occurs for
+on the origin has a circumference $2\pi r f(r)$ that is more than its Euclidean value of $2\pi r$. The opposite occurs for
 $k>0$.
 The resulting metric, called the Robertson-Walker metric, is
 \begin{equation*}
@@ -1007,7 +1007,7 @@ Note that $H$ is a ``constant'' in the sense that it is the same for all galaxie
 with a vanishing cosmological constant; it does not stay
 constant with the passage of cosmological time.
 Plugging back into the original form of the Friedmann equations, we find that the flat universe can
-only exist if the density of matter satisfies $\rho=\rho_{crit}=2H^2/8\pi=2H^2/8\pi G$.
+only exist if the density of matter satisfies $\rho=\rho_{crit}=3H^2/8\pi=3H^2/8\pi G$.
 The observed value of the Hubble constant is about $1/(14\times10^9\ \text{years})$, which is roughly
 interpreted as the age of the universe, i.e., the proper time experienced by a test particle since
 the Big Bang. This gives $\rho_{crit}\sim 10^{-26}\ \kgunit/\munit^3$.

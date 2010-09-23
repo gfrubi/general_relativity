@@ -118,7 +118,7 @@ The observer in the $(t,x)$ frame agrees on the magnitude of this vector, so
 The solution of these differential equations is $t=\frac{1}{a}\sinh a\tau$, \linebreak[4] $x=\frac{1}{a}\cosh a\tau$, and eliminating
 $\tau$ gives
 \begin{equation*}
-  x = \frac{1}{a}\left(\sqrt{1+a^2t^2}-1\right) \qquad .
+  x = \frac{1}{a}\sqrt{1+a^2t^2} \qquad .
 \end{equation*}
 As $t$ approaches infinity, $\der x/\der t$ approaches the speed of light.
 \end{eg}
@@ -813,11 +813,17 @@ we can infer an upper limit on the mass of a neutron star:
 The theoretical uncertainties in such an estimate are fairly large. Tolman, Oppenheimer, and Volkoff\index{Tolman-Oppenheimer-Volkoff limit}
 originally estimated it in 1939 as $0.7M_\odot$, whereas modern estimates are more in the range of 1.5
 to $3M_\odot$. These are significantly lower than our crude estimate of $5M_\odot$,
-mainly because the attractive nature of the strong nuclear force tends to push the star toward
+mainly because the attractive nature of the strong nuclear force tends to pull the star toward
 collapse. Unambiguous results are presently impossible because of uncertainties in extrapolating the
 behavior of the strong force from the regime of ordinary nuclei, where it has been relatively well parametrized, into
 the exotic environment of a neutron star, where the density is significantly different and no protons
-are present.
+are present. There are a variety of effects that may be difficult to anticipate or to calculate. For example,
+Brown and Bethe found in 1994\index{Brown-Bethe scenario}\footnote{G.E. Brown and H.A. Bethe, ``Observational constraints on the maximum neutron star mass,''
+Astrophys. J. 423 (1994) 659. A presentation by Lee and Rho is freely available at \url{arxiv.org/abs/hep-ph/9411364v1}.} that it might be possible for the mass limit to be drastically revised because
+of the process $e^-\rightarrow K^-+\nu_e$, which is impossible in free space due to conservation of energy, but
+might be possible in a neutron star. Observationally, all neutron stars seem to lie in a surprisingly
+small range of mass, between 1.3 and $1.45M_\odot$, which might be more easily explained if the Brown-Bethe scenario is
+correct.
 
 % K=4000
 % me=9.1 10^-31 kg
@@ -835,6 +841,8 @@ solar masses end up as black holes; see section \ref{sec:black-hole-formation}.
 
 
 <% end_sec %> % exptl tests
+
+\pagebreak[4]
 
 <% begin_sec("Conservation laws") %>\index{conservation laws}
 <% begin_sec("No general conservation laws") %>\label{sec:no-conservation-laws}
@@ -891,13 +899,6 @@ electric charge.
     %q{This boundary cuts the sphere into equal parts.}
   )
 %>
-\spacebetweenfigs
-<%
-  fig(
-    'conservation-umbilicus',
-    %q{The circumference of this boundary is small, but the region it contains is large.}
-  )
-%>
 <% end_marg %>
 
 But now we're in real trouble. How would we go about actually measuring the total electric charge of
@@ -907,11 +908,6 @@ be a two-dimensional surface on the three-sphere, but we can visualize it as a o
 surface --- a closed curve --- on the two-sphere. But now suppose this curve is a great circle, \figref{conservation-sphere-equator}. If we
 measure a nonvanishing total flux across it, how do we know where the charge is? It could be
 on either side.
-
-You might protest that this is an artificial example. In reality wouldn't we conduct a ``charge
-survey'' by chopping up space into small regions, as in \figref{conservation-sphere-belly-button}? Figure \figref{conservation-umbilicus} shows that this won't work
-either. The boundary curve has a small circumference, but it contains a very large interior
-region.
 
 The conclusion is that conservation laws only make sense in relativity under very special
 circumstances.\footnote{For another argument leading to the same conclusion, see subsection \ref{sec:ctc}.} We do not have anything like over-arching, global

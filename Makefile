@@ -21,7 +21,7 @@ default:
 	$(DO_PDFLATEX)
 	@process_geom_file.pl <geom.pos >temp.pos
 	@mv temp.pos geom.pos
-	makeindex genrel.idx &>/dev/null
+	makeindex genrel.idx >/dev/null
 
 book:
 	make clean
