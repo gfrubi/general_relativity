@@ -565,8 +565,6 @@ The bottom panel shows a more realistic drawing of an experiment by Braginskii a
                       to calm down completely after being put in place; to stop these vibrations,
                       static electrical forces were applied through the two circular plates to provide
                       very gentle twists on the ellipsoidal mass between them.
-<% end_sec %> % Eotvos experiments
-
 <% begin_sec("Equivalence of gravitational fields and accelerations") %>
 One consequence of the E\"{o}tv\"{o}s experiments' null results is that it is not possible to tell the difference between an acceleration and
 a gravitational field. At certain times during Betty's field trip, she feels herself pressed against her seat,
@@ -584,6 +582,8 @@ But now consider the second explanation, that the capsule has been dipped into a
 The ball and the pencil will still fall side by side to the floor, because they have the same ratio of
 gravitational to inertial mass. 
 <% end_sec %> % Equivalence of gravitational fields and accelerations
+<% end_sec %> % Eotvos experiments
+
 
 <% begin_sec("The equivalence principle") %>
 This leads to one way of stating a central principle of relativity known as the \emph{equivalence principle}:
@@ -635,7 +635,7 @@ any measurement carried out within the capsule) whether she is in an inertial or
   fig(
     'inertial-frame',
     %q{%
-      Wouldn't it be nice if we could define the meaning of an inertial frame of reference? Newton makes it sound easy:
+      Wouldn't it be nice if we could define the meaning of a Newtonian inertial frame of reference? Newton makes it sound easy:
       to define an inertial frame,
       just find some object that is not accelerating because it is not being acted on by any external forces. But what object would we use?
       The earth? The ``fixed stars?'' Our galaxy? Our supercluster of galaxies? All of these are accelerating --- relative to something.
@@ -655,7 +655,8 @@ due to gravitational attraction, but the expansion is now observed to be acceler
 to a poorly understood phenomenon referred to by the catch-all term ``dark energy.''\index{dark energy}
 In general, there is no distant background of physical objects in the universe that is not accelerating.
 
-The conclusion is that we need to abandon the entire distinction between inertial and noninertial
+<% begin_sec("Lorentz frames") %>
+The conclusion is that we need to abandon the entire distinction between Newton-style inertial and noninertial
 frames of reference. The best that we can do is to single out certain frames of reference defined
 by the motion of objects that are not subject to any nongravitational forces. A falling rock defines
 such a frame of reference. In this frame, the rock is at rest, and the ground is accelerating.
@@ -665,10 +666,47 @@ frame of reference according to the Newtonian view, but it is not a Lorentz fram
 
 In Newtonian physics, inertial frames are preferable because they make motion simple: objects with no
 forces acting on them move along straight world-lines. Similarly, Lorentz frames occupy a privileged position
-in general relativity because they make motion simple: objects move along straight world-lines
+in general relativity because they make motion simple: objects move along ``straight'' world-lines
 if they have no nongravitational forces acting on them.
-<% end_sec %> % The equivalence principle
 
+\begin{eg}{No antigravity}\label{eg:upsidasium}\index{antigravity}\index{upsidasium}
+This whole chain of reasoning was predicated on the null results of E\"{o}tv\"{o}s experiments.
+In the Rocky and Bullwinkle cartoons, there is a non-E\"{o}tv\"{o}sian substance called upsidasium, which falls up instead of down.
+Its ratio of gravitational to inertial mass is apparently negative. If such a substance could be found,
+it would falsify the equivalence principle.
+\end{eg}
+<% marg(30) %>
+<%
+  fig(
+    'upsidasium',
+    %q{Bars of upsidasium are kept in special warehouses, bolted to the ground. Copyright Jay Ward Productions, used under U.S. fair use excpetion to copyright law.}
+  )
+%>
+<% end_marg %>
+
+<% end_sec %> % Lorentz frames
+<% begin_sec("Operational definition of a Lorentz frame") %>
+We can define a Lorentz frame in operational terms
+using an idealized variation on a device actually built by Waage at Princeton as a pedagogical demonstration.\label{lorentz-frame-box}
+Build a sealed box whose contents are isolated from all nongravitational forces. Of the four
+known forces of nature, the three we need to exclude are the strong nuclear force, the weak nuclear force, and
+the electromagnetic force. The strong nuclear force has a range of only about 1 fm ($10^{-15}\ \munit$), so to exclude it we merely need to
+make the box thicker than that, and also surround it with enough paraffin wax to keep out any neutrons that happen to be flying by.
+The weak nuclear force also has a short range, and although shielding against neutrinos is a practical impossibility,
+their influence on the apparatus inside will be negligible. To shield against electromagnetic forces, we surround the
+box with a Faraday cage and a solid sheet of mu-metal. Finally, we make sure that the box is not being touched by
+any surrounding matter, so that short-range residual electrical forces (sticky forces, chemical bonds, etc.) are excluded.
+That is, the box cannot be supported; it is free-falling.
+
+Crucially, the shielding does \emph{not} exclude gravitational forces. There is in fact no known way of shielding against
+gravitational effects such as the attraction of other 
+masses (example \ref{eg:shielding}, p.~\pageref{eg:shielding}) or the propagation of gravitational waves (ch.~\ref{ch:waves}).
+
+Inside the box, we carry out an initial calibration by firing projectiles along three Cartesian axes and trace their linear paths. If the box is big enough
+to hold an observer, then that observer can always tell whether or not she is in a Lorentz frame. She simply has to
+fire the projectiles, and see whether or not they follow the precalibrated paths. For example, she can detect that
+the frame has become non-Lorentzian if the box is rotated, allowed to rest on the ground, or accelerated by a rocket engine.
+<% end_sec %> % Operational definition of a Lorentz frame
 <% begin_sec("Locality of Lorentz frames") %>
 It would be convenient if we could define a single Lorentz frame that would cover the entire universe, but we can't.
 In figure \figref{local-lorentz-frames}, two girls simultaneously drop down from tree branches --- one in Los
@@ -696,6 +734,66 @@ We don't notice the curvature of the Earth's surface in everyday life because th
 is thousands of kilometers. On a map of LA, we don't notice any curvature, nor do we detect it on a map
 of Mumbai, but it is not possible to make a flat map that includes both LA and Mumbai without seeing
 severe distortions.
+<% end_sec %> % Locality of Lorentz frames
+<% begin_sec("Terminology") %>
+The meanings of words evolve over time, and since relativity is now a century old, there has been
+some confusing semantic drift in its nomenclature. This applies both to ``inertial frame'' and
+to ``special relativity.''
+
+Early formulations of general relativity never refer to ``inertial frames,'' ``Lorentz frames,'' or
+anything else of that flavor. The very first topic in Einstein's original systematic presentation of 
+the theory\footnote{Einstein, ``The Foundation of the General Theory of Relativity,'' 1916.
+An excerpt is given on p.~\pageref{einstein-foundation}.}
+is an example (discussed in this book on p.~\pageref{einstein-two-planets}) involving two planets,
+the purpose of which is to convince the reader that \emph{all} frames of reference are created
+equal, and that any attempt to make some of them into second-class citizens is invidious.
+Other treatments of general relativity from the same era follow Einstein's lead.\footnote{Two that I
+believe were relatively influential are Born's 1920 \emph{Einstein's Theory of Relativity} and
+Eddington's 1924 \emph{The Mathematical Theory of Relativity}. Born follows Einstein's ``Foundation''
+paper slavishly. Eddington seems only to mention inertial frames in a few places where the context
+is Newtonian.} The trouble is that, as discussed in more detail on p.~\pageref{einstein-two-planets},
+this example is more a statement of Einstein's aspirations for his theory than an accurate depiction
+of the physics that it actually implies. General relativity really does allow an unambiguous distinction
+to be made between Lorentz frames and non-Lorentz frames, as described on p.~\pageref{lorentz-frame-box}.
+Einstein's statement should have been weaker: the laws of physics (such as the Einstein field equation, p.~\pageref{einstein-field-equation})
+are the same in all frames (Lorentz or non-Lorentz). This is different from the situation in Newtonian mechanics
+and special relativity, where the laws of physics take on their simplest form only in Newton-inertial frames.
+
+Because Einstein didn't want to make distinctions between frames, we ended up being saddled with inconvenient
+terminology for them. The least verbally awkward choice is to hijack the term ``inertial,'' redefining
+it from its Newtonian meaning. We then say that the Earth's surface is not an inertial frame, in the context
+of general relativity, whereas in the Newtonian context it \emph{is} an inertial frame to a very good approximation.
+This usage is fairly standard,\footnote{Misner, Thorne, and Wheeler, \emph{Gravitation}, 1973, p.~18} but would have made
+Newton confused and Einstein unhappy. If we follow this usage, then we may sometimes have to say ``Newtonian-inertial''
+or ``Einstein-inertial.'' A more awkward, but also more precise, term is ``Lorentz frame,'' as used in this book;
+this seems to be widely understood.\footnote{\emph{ibid}, p.~19}\index{inertial frame!ambiguity in definition}\index{frame!inertial!ambiguity in definition}
+
+The distinction between special and general relativity has undergone a similar shift over the decades.
+Einstein originally defined the distinction in terms of the admissibility of accelerated frames of reference.
+This, however, puts us in the absurd position of saying that special relativity, which is supposed to be a generalization
+of Newtonian mechanics, cannot handle accelerated frames of reference in the same way that Newtonian mechanics can.
+In fact both Newtonian mechanics and special relativity treat Newtonian-noninertial frames of reference in the same way:
+by modifying the laws of physics so that they do not take on their most simple form (e.g., violating Newton's third law),
+while retaining the ability to change coordinates back to a preferred frame in which the simpler laws apply.
+It was realized fairly early on\footnote{Eddington, \emph{op. cit.}} that the important distinction was between
+special relativity as a theory of flat spacetime, and general relativity as a theory that described gravity in terms
+of curved spacetime.\index{special relativity!defined}\index{general relativity!defined}
+All relativists writing since about 1950 seem to be in agreement on this more modern redefinition of the 
+terms.\footnote{Misner, Thorne, and Wheeler, \emph{op. cit.}, pp.163-164. Penrose, \emph{The Road to Reality}, 2004, p.~422.
+Taylor and Wheeler, \emph{Spacetime Physics}, 1992, p.~132. Schutz, \emph{A First Course in General Relativity}, 2009, pp.~3, 141.
+Hobson, \emph{General Relativity: An Introduction for Physicists}, 2005, sec. 1.14.}
+
+In an accelerating frame, the equivalence principle tells us that measurements will come
+out the same as if there were a gravitational field. But if the spacetime is flat, describing it
+in an accelerating frame doesn't make it curved. (Curvature is a physical property of spacetime, and cannot be
+changed from zero to nonzero simply by a choice of coordinates.) Thus relativity allows us
+to have gravitational fields in flat space --- but only for certain special configurations like
+uniform fields. Special relativity is capable of operating just fine in this context.
+For example, Chung et al.\footnote{\url{arxiv.org/abs/0905.1929}} did a high-precision test of special
+relativity in 2009 using a matter interferometer in a vertical plane, specifically in order to test
+whether there was any violation of special relativity in a uniform gravitational field. Their experiment is interpreted purely as a test of special
+relativity, not general relativity.
+<% end_sec %> % Terminology
 <% begin_sec("Chiao's paradox") %>\label{sec:chiao-paradox}\index{Chiao's paradox}\index{equivalence principle!application to charged particles}
 The remainder of this subsection deals with the subtle question of whether and how the equivalence
 principle can be applied to charged particles. You may wish to skip it on a first reading. The short
@@ -710,7 +808,7 @@ Sotiriou,  Faraoni, and Liberati, \url{http://arxiv.org/abs/0707.2748}}\index{eq
 As an example
 of an ambiguity that is still somewhat controversial, 90 years after Einstein first proposed the principle,
 consider the question of whether or not it applies to charged particles.
-Raymond Chiao\footnote{arxiv.org/abs/quant-ph/0601193v7} proposes the following thought experiment,
+Raymond Chiao\footnote{\url{arxiv.org/abs/quant-ph/0601193v7}} proposes the following thought experiment,
 which I'll refer to as Chiao's paradox.
 Let a neutral particle and a charged particle be set, side by side, in orbit around the earth.
 Assume (unrealistically)
@@ -771,8 +869,8 @@ It is worth keeping in mind the DeWitts' caution that ``The questions answered b
 interest only, since the forces involved are far too small to be detected experimentally'' (see problem \ref{hw:dewitt-estimate},
 p.~\pageref{hw:dewitt-estimate}).
 <% end_sec %> %  Charged particles
+<% end_sec %> % The equivalence principle
 
-<% end_sec %> % Locality of Lorentz frames
 
 <% begin_sec("Gravitational redshifts") %>\label{sec:gravitational-redshifts}
 Starting on page \pageref{gravity-affects-time}, we saw experimental evidence that the rate of flow of time

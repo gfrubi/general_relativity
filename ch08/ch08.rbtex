@@ -69,7 +69,7 @@ a spacelike surface, and this turns out to be true. It can in fact be shown that
 are those in which the traces $R=R\indices{^a_a}$ and $T=T\indices{^a_a}$ are constant throughout spacetime.
 
 The solution is to replace $R_{ab}$ in the field equations with the a different tensor $G_{ab}$, called the
-Einstein tensor,\index{Einstein tensor} defined by $G_{ab}=R_{ab}-(1/2)Rg_{ab}$,
+Einstein tensor,\index{Einstein tensor} defined by $G_{ab}=R_{ab}-(1/2)Rg_{ab}$,\index{Einstein field equation}\index{field equation, Einstein}\label{einstein-field-equation}
 \begin{equation*}
   G_{ab} = 8\pi T_{ab} \qquad .
 \end{equation*}
@@ -128,7 +128,45 @@ the energy density is never negative in any frame.
 The dominant energy condition is like the weak energy condition, but it also guarantees that no observer
 will see a flux of energy flowing at speeds greater than $c$.
 
-As an example of the use of the energy conditions, Hawking and Ellis
+\begin{eg}{No gravitational shielding}\label{eg:shielding}\index{antigravity}\index{shielding!gravitational}\index{gravitational shielding}
+Electric fields can be shielded against with a Faraday cage, and magnetic fields can be blocked
+with high-permeability materials such as mu-metal.
+It would be fun if we could do the same with gravitational fields, so that we could have zero-gravity
+parties in a specially shielded room. It would be a form of antigravity, but a different one than the ``upsidasium''
+type discussed in example \ref{eg:upsidasium} on page \pageref{eg:upsidasium}. Unfortunately this is difficult to do, and the reason it's difficult
+turns out to be related to the unavailability of materials that violate energy conditions.
+
+First we need to define what we mean by shielding. We limit ourselves to the Newtonian limit, and to one dimension, so that 
+a gravitational field is specified by a function of one variable $g(x)$. The best kind of shielding would be some substance
+that we could cut with shears and form into a box, and that would exclude gravitational fields from the
+interior of the box. This would be analogous to a Faraday cage or a mu-metal shield; no matter what
+external field it was embedded in, it would spontaneously adjust itself so that the internal field
+was canceled out. A less desirable
+kind of shielding would be one that we could set up on an \emph{ad hoc} basis to null out a specific,
+given, externally imposed field. Once we know what the external field is, we try to choose some
+arrangement of masses such that the field is nulled out.
+We will show that even this kind of shielding is unachievable,
+if nulling out the field is interpreted to mean this: at some point, which for convenience we take to
+be the origin, we wish to have a gravitational field such that $g(0)=0$, $\der g/\der x(0)=0$, \ldots
+$\der^n g/\der x^n(0)=0$, where $n$ is arbitrarily specified. For comparison, this kind of shielding
+can be accomplished for magnetic fields with $n=2$ by using a Helmholtz coil to null out the external
+field, or for $n=6$ with a Maxwell coil.
+
+Since we're only doing the Newtonian limit, the gravitational field is the vector sum of the fields
+made by all the sources, and we can take this as a sum over point sources. For a point source $m$
+placed at $x_\zu{o}$, the field $g(x)$ is odd under reflection about $x_\zu{o}$. The derivative
+of the field $g'(x)$ is even. Since $g'$ is even, we can't control its sign at $x=0$ by choosing
+$x_\zu{o}>0$ or $x_\zu{o}<0$. The only way to control the sign of $g'$ is by choosing the sign of $m$.
+Therefore if the sign of the externally imposed field's derivative is wrong, we can never never null
+it out.
+
+To make this more concrete, consider the special case of the earth's field, in the region above the
+earth's surface. The field is downward,
+and it gets stronger as we go down. We can null out the field in some location by hanging a chunk of
+neutron-star matter overhead, but there is no possible way to null out $g'$ without using negative masses.
+\end{eg}
+
+An important example of the use of the energy conditions is that Hawking and Ellis
 have proved that under the assumption of the strong energy condition, 
 any body that becomes sufficiently compact will end up forming a singularity.
 We might imagine that the formation of a black hole would be a delicate thing, requiring perfectly
