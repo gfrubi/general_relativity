@@ -128,18 +128,52 @@ the energy density is never negative in any frame.
 The dominant energy condition is like the weak energy condition, but it also guarantees that no observer
 will see a flux of energy flowing at speeds greater than $c$.
 
+<% begin_sec("The Newtonian limit") %>
+In units with $c \ne 1$, a quantity like $\rho+P$ is expressed as $\rho+P/c^2$. The Newtonian limit is
+recovered as $c\rightarrow\infty$, which makes the pressure term negligible, so that all the energy conditions
+reduce to $\rho\ge 0$. What would it mean if this was violated? Would $\rho<0$ describe an object with negative
+inertial mass, which would accelerate east when you pushed it to the west? Or would it describe something with
+negative gravitational mass, which would repel ordinary matter? We can imagine various possiblities, as shown in
+figure \figref{negative-mass}. Anything that didn't lie on the main diagonal would violate the equivalence principle,
+and would therefore be impossible to accomodate within general relativity's geometrical description of gravity.
+If we had ``upsidasium'' matter such as that described by the second quadrant of the figure (example \ref{eg:upsidasium}, p.~\pageref{eg:upsidasium}), gravity would be like electricity,
+except that like masses would attract and opposites repel; we could have gravitational dielectrics and gravitational
+Faraday cages. The fourth quadrant leads to amusing possibilities like figure \figref{pushme-pullyou}.
+<% marg(-100) %>
+<%
+  fig(
+    'negative-mass',
+    %q{Negative mass.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'pushme-pullyou',
+    %q{The black sphere is made of ordinary matter. The crosshatched sphere
+       has positive gravitational mass and negative inertial mass. If the two
+       of them are placed side by side in empty space, they will both accelerate
+       steadily to the right, gradually approaching the speed of light. Conservation
+       of momentum is preserved, because the exotic sphere has leftward momentum
+       when it moves to the right, so the total momentum is always zero.}
+  )
+%>
+<% end_marg %>
+
+
+
 \begin{eg}{No gravitational shielding}\label{eg:shielding}\index{antigravity}\index{shielding!gravitational}\index{gravitational shielding}
-Electric fields can be shielded against with a Faraday cage, and magnetic fields can be blocked
-with high-permeability materials such as mu-metal.
-It would be fun if we could do the same with gravitational fields, so that we could have zero-gravity
+Electric fields can be completely excluded from a Faraday cage, and magnetic fields can be very strongly blocked
+with high-perme\-ability materials such as mu-metal.
+It would be fun if we could do the same with gravitational fields, so that we could have zero-gravity or near-zero-gravity
 parties in a specially shielded room. It would be a form of antigravity, but a different one than the ``upsidasium''
-type discussed in example \ref{eg:upsidasium} on page \pageref{eg:upsidasium}. Unfortunately this is difficult to do, and the reason it's difficult
+type. Unfortunately this is difficult to do, and the reason it's difficult
 turns out to be related to the unavailability of materials that violate energy conditions.
 
-First we need to define what we mean by shielding. We limit ourselves to the Newtonian limit, and to one dimension, so that 
+First we need to define what we mean by shielding. We restrict ourselves to the Newtonian limit, and to one dimension, so that 
 a gravitational field is specified by a function of one variable $g(x)$. The best kind of shielding would be some substance
 that we could cut with shears and form into a box, and that would exclude gravitational fields from the
-interior of the box. This would be analogous to a Faraday cage or a mu-metal shield; no matter what
+interior of the box. This would be analogous to a Faraday cage; no matter what
 external field it was embedded in, it would spontaneously adjust itself so that the internal field
 was canceled out. A less desirable
 kind of shielding would be one that we could set up on an \emph{ad hoc} basis to null out a specific,
@@ -148,24 +182,37 @@ arrangement of masses such that the field is nulled out.
 We will show that even this kind of shielding is unachievable,
 if nulling out the field is interpreted to mean this: at some point, which for convenience we take to
 be the origin, we wish to have a gravitational field such that $g(0)=0$, $\der g/\der x(0)=0$, \ldots
-$\der^n g/\der x^n(0)=0$, where $n$ is arbitrarily specified. For comparison, this kind of shielding
-can be accomplished for magnetic fields with $n=2$ by using a Helmholtz coil to null out the external
-field, or for $n=6$ with a Maxwell coil.
+$\der^n g/\der x^n(0)=0$, where $n$ is arbitrarily specified. For comparison, \emph{magnetic}
+fields \emph{can} be nulled out according to this definition by building an appropriately chosen configuration of coils
+such as a Helmholtz coil.
 
-Since we're only doing the Newtonian limit, the gravitational field is the vector sum of the fields
+Since we're only doing the Newtonian limit, the gravitational field is the sum of the fields
 made by all the sources, and we can take this as a sum over point sources. For a point source $m$
 placed at $x_\zu{o}$, the field $g(x)$ is odd under reflection about $x_\zu{o}$. The derivative
 of the field $g'(x)$ is even. Since $g'$ is even, we can't control its sign at $x=0$ by choosing
 $x_\zu{o}>0$ or $x_\zu{o}<0$. The only way to control the sign of $g'$ is by choosing the sign of $m$.
 Therefore if the sign of the externally imposed field's derivative is wrong, we can never never null
-it out.
+it out. Figure \figref{nulling-gravity} shows a special case of this theorem.
 
-To make this more concrete, consider the special case of the earth's field, in the region above the
-earth's surface. The field is downward,
-and it gets stronger as we go down. We can null out the field in some location by hanging a chunk of
-neutron-star matter overhead, but there is no possible way to null out $g'$ without using negative masses.
+The theorem does not apply to three dimensions, and it does not prove that all fields are impossible
+to null out, only that some are. For example, the field inside a hemispherical shell can be nulled by
+adding another hemispherical shell to complete the sphere. I thank P. Allen for helpful discussion
+of this topic.
 \end{eg}
-
+<% marg(150) %>
+<%
+  fig(
+    'nulling-gravity',
+    %q{Nulling out a gravitational field is impossible in one dimension without exotic matter. 1. The planet imposes a nonvanishing gravitational
+    field with a nonvanishing gradient. 2. We can null the field at one point in space, by placing a sphere of very dense, but
+    otherwise normal, matter overhead. The stick figure still experiences a tidal force, $g'\ne 0$. 3. To change the field's
+    derivative without changing the field, we can place two additional masses above and below the given point. But to change
+    its derivative in the desired direction --- toward zero --- we would have to make these masses negative.}
+  )
+%>
+<% end_marg %>
+<% end_sec %> % The Newtonian limit
+<% begin_sec("Singularity theorems") %>
 An important example of the use of the energy conditions is that Hawking and Ellis
 have proved that under the assumption of the strong energy condition, 
 any body that becomes sufficiently compact will end up forming a singularity.
@@ -188,16 +235,18 @@ conditions of high density and temperature, matter might demonstrate unusual beh
 including a negative energy density, which would then give rise to a gravitational repulsion.
 Gravitational repulsion would tend to make the light cones tip outward rather than inward, possibly preventing the collapse to a singularity.
 We can close this loophole by assuming an appropriate energy condition.
-Penrose and Hawking have formalized the above argument in the form of a series of
+Penrose and Hawking have formalized the above argument in the form of a pair of
 theorems, known as the singularity theorems.\index{singularity theorems}\index{Penrose-Hawking singularity theorems}
 One of these applies to the formation of black holes, and another one to cosmological singularities such as the
 Big Bang.
-
+<% end_sec %> % Singularity theorems
+<% begin_sec("Current status") %>
 The current status of the energy conditions is shaky.
 Although it is clear that all of them hold in a variety of situations, there are strong reasons to believe that
 they are violated at both microscopic and cosmological scales, for reasons both classical
 and quantum-mechanical.\footnote{Barcelo and Visser, ``Twilight for the energy conditions?,'' \url{http://arxiv.org/abs/gr-qc/0205066v1}.}
 We will see such a violation in the following section.
+<% end_sec %> % Current status
 <% end_sec %> % Energy conditions
 
 <% begin_sec("The cosmological constant") %>\label{sec:cosmological-constant}% Is a sub-sub-section, so only refer to it by page, not by section number.
@@ -1175,7 +1224,8 @@ wrong,'' i.e., so ill-defined that it cannot even be falsified by experiment, an
 But in 1961, Robert Dicke and his student Carl Brans came up with a theory of gravity that made testable predictions, and
 that was specifically designed to be more Machian than general relativity.\index{Brans-Dicke theory} Their paper\footnote{C. Brans and R. H. Dicke, ``Mach's
 Principle and a Relativistic Theory of Gravitation,'' Physical Review 124 (1961) 925} is extremely readable, even for
-the non-specialist. On the first page,  they propose one of those seemingly foolish
+the non-specialist. In this theory, the seemingly foolproof operational definition of a Lorentz frame given on p.~\pageref{operational-lorentz}
+fails. On the first page, Brans and Dicke propose one of those seemingly foolish
 thought experiments about a nearly empty universe:
 
 \begin{quotation}

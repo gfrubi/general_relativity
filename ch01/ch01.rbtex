@@ -583,15 +583,7 @@ The ball and the pencil will still fall side by side to the floor, because they 
 gravitational to inertial mass. 
 <% end_sec %> % Equivalence of gravitational fields and accelerations
 <% end_sec %> % Eotvos experiments
-
-
-<% begin_sec("The equivalence principle") %>
-This leads to one way of stating a central principle of relativity known as the \emph{equivalence principle}:
-Accelerations and gravitational fields are equivalent. There is no experiment that can distinguish one from
-the other.\footnote{This statement of the equivalence principle is summarized,
-along with some other forms of it to be encountered later, in the back of the book on page
-\pageref{equivalence-principle-summary}.}\index{equivalence principle!accelerations and fields equivalent}\label{equivalence-a-and-g}
-<% marg(30) %>
+<% marg(200) %>
 <%
   fig(
     'braginskii',
@@ -600,6 +592,14 @@ along with some other forms of it to be encountered later, in the back of the bo
   )
 %>
 <% end_marg %>
+
+
+<% begin_sec("The equivalence principle") %>
+This leads to one way of stating a central principle of relativity known as the \emph{equivalence principle}:
+Accelerations and gravitational fields are equivalent. There is no experiment that can distinguish one from
+the other.\footnote{This statement of the equivalence principle is summarized,
+along with some other forms of it to be encountered later, in the back of the book on page
+\pageref{equivalence-principle-summary}.}\index{equivalence principle!accelerations and fields equivalent}\label{equivalence-a-and-g}
 
 
 To see what a radical departure this is, we need to compare with the completely different picture presented by
@@ -673,7 +673,7 @@ if they have no nongravitational forces acting on them.
 This whole chain of reasoning was predicated on the null results of E\"{o}tv\"{o}s experiments.
 In the Rocky and Bullwinkle cartoons, there is a non-E\"{o}tv\"{o}sian substance called upsidasium, which falls up instead of down.
 Its ratio of gravitational to inertial mass is apparently negative. If such a substance could be found,
-it would falsify the equivalence principle.
+it would falsify the equivalence principle. Cf.~example \ref{eg:shielding}, p.~\pageref{eg:shielding}.
 \end{eg}
 <% marg(30) %>
 <%
@@ -685,28 +685,64 @@ it would falsify the equivalence principle.
 <% end_marg %>
 
 <% end_sec %> % Lorentz frames
-<% begin_sec("Operational definition of a Lorentz frame") %>
+<% begin_sec("Operational definition of a Lorentz frame") %>\label{operational-lorentz}
 We can define a Lorentz frame in operational terms
-using an idealized variation on a device actually built by Waage at Princeton as a pedagogical demonstration.\label{lorentz-frame-box}
-Build a sealed box whose contents are isolated from all nongravitational forces. Of the four
+using an idealized variation (figure \figref{waage-box}) on a device actually built by Harold Waage\index{Waage, Harold} at Princeton as a lecture demonstration to be used
+by his partner in crime John Wheeler.\index{Wheeler, John}\label{lorentz-frame-box}
+Build a sealed chamber whose contents are isolated from all nongravitational forces. Of the four
 known forces of nature, the three we need to exclude are the strong nuclear force, the weak nuclear force, and
 the electromagnetic force. The strong nuclear force has a range of only about 1 fm ($10^{-15}\ \munit$), so to exclude it we merely need to
-make the box thicker than that, and also surround it with enough paraffin wax to keep out any neutrons that happen to be flying by.
+make the chamber thicker than that, and also surround it with enough paraffin wax to keep out any neutrons that happen to be flying by.
 The weak nuclear force also has a short range, and although shielding against neutrinos is a practical impossibility,
 their influence on the apparatus inside will be negligible. To shield against electromagnetic forces, we surround the
-box with a Faraday cage and a solid sheet of mu-metal. Finally, we make sure that the box is not being touched by
+chamber with a Faraday cage and a solid sheet of mu-metal. Finally, we make sure that the chamber is not being touched by
 any surrounding matter, so that short-range residual electrical forces (sticky forces, chemical bonds, etc.) are excluded.
-That is, the box cannot be supported; it is free-falling.
+That is, the chamber cannot be supported; it is free-falling.
+
+<%
+  fig(
+    'waage-box',
+    %q{%
+      The spherical chamber, shown in a cutaway view, has layers of shielding to exclude all known nongravitational forces. Once the chamber has been calibrated by marking the three dashed-line
+      trajectories under free-fall conditions, an observer inside the chamber can always tell whether she is in a Lorentz frame.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
 
 Crucially, the shielding does \emph{not} exclude gravitational forces. There is in fact no known way of shielding against
 gravitational effects such as the attraction of other 
 masses (example \ref{eg:shielding}, p.~\pageref{eg:shielding}) or the propagation of gravitational waves (ch.~\ref{ch:waves}).
+Because the shielding is spherical, it exerts no gravitational force of its own on the apparatus inside.
 
-Inside the box, we carry out an initial calibration by firing projectiles along three Cartesian axes and trace their linear paths. If the box is big enough
-to hold an observer, then that observer can always tell whether or not she is in a Lorentz frame. She simply has to
-fire the projectiles, and see whether or not they follow the precalibrated paths. For example, she can detect that
-the frame has become non-Lorentzian if the box is rotated, allowed to rest on the ground, or accelerated by a rocket engine.
+Inside, an observer carries out an initial calibration by firing bullets along three Cartesian axes and tracing their paths, which
+she \emph{defines} to be linear.
+
+We've gone to elaborate lengths to show that we can really determine, without reference to any external reference frame,
+that the chamber is not being acted on by any nongravitational forces, so that we know it is free-falling.
+In addition, we also want the observer to be able to tell whether the chamber is rotating. She could look out through a porthole
+at the stars, but that would be missing the whole point, which is to show that \emph{without reference to any other object}, we can
+determine whether a particular frame is a Lorentz frame. One way to do this would be to watch for precession of a gyroscope.
+Or, without having to resort to additional apparatus, the observer can check whether the paths traced by the
+bullets change when she changes the muzzle velocity. If they do, then she infers that there are velocity-dependent Coriolis
+forces, so she must be rotating. She can then use flywheels to get rid of the rotation, and redo the calibration.
+
+After the initial calibration, she can always tell whether or not she is in a Lorentz frame. She simply has to
+fire the bullets, and see whether or not they follow the precalibrated paths. For example, she can detect that
+the frame has become non-Lorentzian if the chamber is rotated, allowed to rest on the ground, or accelerated by a rocket engine.
+
+It may seem that the detailed construction of this elaborate thought-experiment does nothing more than confirm something
+obvious. It is worth pointing out, then, that we don't really know whether it works or not. It works in general relativity,
+but there are other theories of gravity, such as Brans-Dicke gravity\index{Brans-Dicke gravity} (p.~\pageref{sec:brans-dicke}),
+that are also consistent with all known observations, but in which the apparatus in figure \figref{waage-box} doesn't work.
+Two of the assumptions made above fail in this theory: gravitational shielding effects exist, and Coriolis effects become
+undetectable if there is not enough other matter nearby.
 <% end_sec %> % Operational definition of a Lorentz frame
+
 <% begin_sec("Locality of Lorentz frames") %>
 It would be convenient if we could define a single Lorentz frame that would cover the entire universe, but we can't.
 In figure \figref{local-lorentz-frames}, two girls simultaneously drop down from tree branches --- one in Los
@@ -739,19 +775,34 @@ severe distortions.
 The meanings of words evolve over time, and since relativity is now a century old, there has been
 some confusing semantic drift in its nomenclature. This applies both to ``inertial frame'' and
 to ``special relativity.''
+<% marg(25) %>
+<%
+  fig(
+    'machian-planets',
+    %q{One planet rotates about its axis and the other does not. As discussed in more detail on p.~\pageref{einstein-two-planets},
+       Einstein believed that general relativity was even more radically egalitarian about frames of reference than
+       it really is. He thought that if the planets were alone in an otherwise empty universe, there would be no way to tell
+       which planet was really rotating and which was not, so that B's tidal bulge would have to disappear. There
+       would be no way to tell which planet's surface was a Lorentz frame.},
+    {
+      'suffix'=>'-1'
+    }
+  )
+%>
+<% end_marg %>
 
 Early formulations of general relativity never refer to ``inertial frames,'' ``Lorentz frames,'' or
 anything else of that flavor. The very first topic in Einstein's original systematic presentation of 
 the theory\footnote{Einstein, ``The Foundation of the General Theory of Relativity,'' 1916.
 An excerpt is given on p.~\pageref{einstein-foundation}.}
-is an example (discussed in this book on p.~\pageref{einstein-two-planets}) involving two planets,
+is an example (figure \figref{machian-planets-1}) involving two planets,
 the purpose of which is to convince the reader that \emph{all} frames of reference are created
 equal, and that any attempt to make some of them into second-class citizens is invidious.
 Other treatments of general relativity from the same era follow Einstein's lead.\footnote{Two that I
 believe were relatively influential are Born's 1920 \emph{Einstein's Theory of Relativity} and
 Eddington's 1924 \emph{The Mathematical Theory of Relativity}. Born follows Einstein's ``Foundation''
 paper slavishly. Eddington seems only to mention inertial frames in a few places where the context
-is Newtonian.} The trouble is that, as discussed in more detail on p.~\pageref{einstein-two-planets},
+is Newtonian.} The trouble is that
 this example is more a statement of Einstein's aspirations for his theory than an accurate depiction
 of the physics that it actually implies. General relativity really does allow an unambiguous distinction
 to be made between Lorentz frames and non-Lorentz frames, as described on p.~\pageref{lorentz-frame-box}.
@@ -788,7 +839,7 @@ out the same as if there were a gravitational field. But if the spacetime is fla
 in an accelerating frame doesn't make it curved. (Curvature is a physical property of spacetime, and cannot be
 changed from zero to nonzero simply by a choice of coordinates.) Thus relativity allows us
 to have gravitational fields in flat space --- but only for certain special configurations like
-uniform fields. Special relativity is capable of operating just fine in this context.
+this one. Special relativity is capable of operating just fine in this context.
 For example, Chung et al.\footnote{\url{arxiv.org/abs/0905.1929}} did a high-precision test of special
 relativity in 2009 using a matter interferometer in a vertical plane, specifically in order to test
 whether there was any violation of special relativity in a uniform gravitational field. Their experiment is interpreted purely as a test of special

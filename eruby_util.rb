@@ -639,7 +639,7 @@ def remove_titlecase(title)
   foo = title.clone
   foo = initial_cap(foo.downcase) # first letter is capital, everything after that lowercase
   # restore caps on proper nouns:
-  [ 'Cartesian','Kepler','Gauss','Amp\\`{e}re','Maxwell','Faraday','Brans','Dicke','Einstein',
+  [ 'Cartesian','Kepler','Gauss','Amp\\`{e}re','Maxwell','Faraday','Brans','Dicke','Einstein','Aristotle','Newtonian',
     'Huygens','Schr\\"odinger','Schr\\\"odinger','Greek','Biot','Savart','Doppler','Lorentz','Michelson',
     'Morley','Euclid','Euclidean','Erlangen','Hafele','Keating','Hafele-Keating','Pound-Rebka','Rebka','Thomas',
     'Mach','Machian','Riemann','Christoffel','Milne'].each { |proper|
