@@ -95,12 +95,28 @@ simple form $T\indices{^\mu_\nu}=diag(-\rho,P,P,P)$.
 <% end_sec %> % The Einstein field equation
 
 <% begin_sec("Energy conditions") %>\index{energy conditions}
+Physical theories are supposed to answer questions. For example:\label{energy-condition-questions}
+\begin{enumerate}
+\item Does a small enough physical object always have a world-line that is approximately a geodesic?
+\item Do massive stars collapse to form black-hole singularities?
+\item Did our universe originate in a Big Bang singularity?
+\item If our universe doesn't currently have violations of causality
+such as the closed timelike curves exhibited by the Petrov metric (p.~\pageref{eq:petrov-metric}),
+can we be assured that it will never develop causality violation in the future?
+\end{enumerate}
+We would like to ``prove'' whether the answers to questions like these are yes or no, but
+physical theories are not formal mathematical systems in which results can be ``proved'' absolutely.
+For example, the basic structure of general relativity isn't a set of axioms but a
+list of ingredients like the
+equivalence principle, which has evaded formal definition.\footnote{
+``Theory of gravitation theories: a no-progress report,''
+Sotiriou,  Faraoni, and Liberati, \url{http://arxiv.org/abs/0707.2748}}\index{equivalence principle!not mathematically well defined}
+
+Even the Einstein field equations, which appear to be completely well defined, are not
+mathematically formal predictions of the behavior of a physical system.
 The field equations are agnostic on the question of what kinds of matter fields contribute to the energy-momentum tensor.
 In fact, any spacetime at all is a solution to the Einstein field equations, provided we're willing to admit the
-corresponding energy-momentum tensor. Suppose that we want to prove all-encompassing theorems about general relativity.
-For instance, we may want to reassure ourselves that general relativity will never lead to violations of causality
-such as the closed timelike curves exhibited by the Petrov metric (p.~\pageref{eq:petrov-metric}). We can never make
-this type of general proof without assuming something about the energy-momentum tensor.
+corresponding energy-momentum tensor. We can never answer questions like the ones above without assuming something about the energy-momentum tensor.
 
 In example \ref{eg:dust-and-radiation-cosm} on page \pageref{eg:dust-and-radiation-cosm}, we saw that
 radiation has $P=\rho/3$ and dust has $P=0$. Both have $\rho\ge0$. If the universe is made out of nothing but dust and radiation, then
@@ -127,6 +143,53 @@ the energy density is never negative in any frame.
 
 The dominant energy condition is like the weak energy condition, but it also guarantees that no observer
 will see a flux of energy flowing at speeds greater than $c$.
+
+\begin{eg}{Small bodies move along geodesics.}
+Question 1 on p.~\pageref{energy-condition-questions} was: ``Does a small enough physical object always have a world-line that is approximately a geodesic?''
+We would like something of this type to be true, since general relativity is based on the equivalence principle, the equivalence principle is
+motivated by the null results of E\"{o}tv\"{o}s experiments, and the question essentially asks whether E\"{o}tv\"{o}s experiments give null results,
+when carried out in laboratories using real-world apparatus of small enough size. Nevertheless, it is fairly easy to show that the answer to the
+question is no, unless we make some more specific assumption, such as an energy condition, about the system being modeled.
+
+As a preliminary we have to ask whether ``geodesic'' means a geodesic of the full spacetime including the object's own fields, or
+of the background spacetime B that would have existed without the object. The latter is the more sensible interpretation,
+since the question is basically asking whether a spacetime can really be defined geometrically, as the equivalence principle claims,
+based on the motion of test particles inserted into it. We also have to define words like ``small enough'' and ``approximately;''
+to do this, we imagine a sequence of objects $\zu{O}_n$ that get smaller and smaller as $n$ increases.
+We then form the following conjecture, which is meant to formulate
+question 1 more exactly: Given a background spacetime B, and a timelike world-line $\ell$ in B,
+consider a sequence of spacetimes $\zu{S}_n$, formed by inserting the $\zu{O}_n$ into B, such that:
+(i) the metric of $\zu{S}_n$ is defined on the same points as the metric of B;
+(ii) for any $r>0$, there exists some $n$ such that for $m\ge n$, $\zu{O}_m$ is smaller than $r$;\footnote{i.e., at any point P on $\ell$,
+an observer moving along $\ell$ at P defines a surface of simultaneity K passing through P, and
+sees the stress-energy tensor of  $\zu{O}_n$ as vanishing outside of a three-sphere of radius $r$ within K }
+(iii) the metric of $\zu{S}_n$ approaches the metric of B as $n\rightarrow\infty$. Then $\ell$ is a geodesic of B.
+
+The following is a counterexample to this conjecture.
+Suppose that the density of a physical object can have any finite value. Then we can let spherical object $\zu{O}_1$
+have a certain mass and diameter, $\zu{O}_2$ has a greater mass and a smaller diameter, and so on, with the mass
+approaching some finite limit and the
+diameter always remaining finite, but approaching zero.
+We can make the density of every $\zu{O}_n$ finite and well-behaved, so that the spacetime $\zu{S}_n$ is
+nonsingular.
+$\zu{O}_n$ emits gravitational radiation (ch.~\ref{ch:waves}). 
+If, for example, $\zu{O}_n$ is orbiting the earth, then the energy of its orbit must decay as it dissipates that energy into radiation;
+we observe such orbital decay in the Hulse-Taylor binary pulsar (p.~\pageref{hulse-taylor-pulsar}).
+As with any type
+of radiation (sound waves, electromagnetic waves, etc.), the radiated power is proportional to the square of the strength of the
+source. 
+The radiated power approaches some finite limit as $n\rightarrow\infty$, so $\ell$ accelerates
+away from the world-line of a less massive test-body. It is not possible for both of these world-lines to be geodesics.
+
+There is something unphysical, however, about the limiting process embodied by the objects $\zu{O}_n$. In reality, we don't
+know of any form of matter that can maintain more than a certain critical density (roughly, the Tolman-Oppenheimer-Volkoff limit)
+without turning into a black hole, so there should be some critical $n$ such that for $m\ge n$  the diameter of $\zu{O}_m$ becomes exactly
+zero. We then have a singularity, which is not actually part of the background spacetime B, and condition (i) is violated.
+Ehlers and Geroch\footnote{\url{arxiv.org/abs/gr-qc/0309074v1}} have proved that one way to patch up the conjecture is to
+add another condition: (iv) The objects $\zu{O}_n$ obeys the dominant energy condition. This rules out the counterexample
+given above, since, as discussed in more detail on p.~\pageref{singularity-theorems}, matter that satisfies a reasonable
+energy condition can't be compressed too much without forming a black-hole singularity.
+\end{eg}
 
 <% begin_sec("The Newtonian limit") %>
 In units with $c \ne 1$, a quantity like $\rho+P$ is expressed as $\rho+P/c^2$. The Newtonian limit is
@@ -212,7 +275,7 @@ of this topic.
 %>
 <% end_marg %>
 <% end_sec %> % The Newtonian limit
-<% begin_sec("Singularity theorems") %>
+<% begin_sec("Singularity theorems") %>\label{singularity-theorems}
 An important example of the use of the energy conditions is that Hawking and Ellis
 have proved that under the assumption of the strong energy condition, 
 any body that becomes sufficiently compact will end up forming a singularity.

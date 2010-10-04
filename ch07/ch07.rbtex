@@ -135,7 +135,7 @@ When a spacetime has more than one Killing vector, any linear combination of the
 This means that although the existence of certain types of Killing vectors may be intrinsic, the exact
 choice of those vectors is not. 
 
-\begin{eg}{The Euclidean plane}
+\begin{eg}{Euclidean translations}
 The Euclidean plane has two translational Killing vectors $(1,0)$ and $(0,1)$, i.e., $\partial_x$ and $\partial_y$. 
 These same vectors could be expressed as $(1,1)$ and $(1,-1)$ in coordinate system that was rescaled and
 rotated by 45 degrees.
@@ -144,9 +144,21 @@ rotated by 45 degrees.
 \begin{eg}{A cylinder}\label{eg:cylinder-killing}
 The local properties of a cylinder, such as intrinsic flatness, are the same as the local properties of
 a Euclidean plane. Since the definition of a Killing vector is local and intrinsic, a cylinder has
-the same Killing vectors as a plane. These might be more naturally notated in $(\phi,z)$ coordinates
+the same three Killing vectors as a plane, if we consider only a patch on the cylinder that is small enough so
+that it doesn't wrap all the way around. However, only two of these --- the translations ---
+can be extended to form a smooth vector field on the entire surface of the cylinder.
+These might be more naturally notated in $(\phi,z)$ coordinates
 rather than $(x,y)$, giving $\partial_z$ and $\partial_\phi$.
 \end{eg}
+<% marg(0) %>
+<%
+  fig(
+    'cylinder-killing',
+    %q{Example \ref{eg:cylinder-killing}: A cylinder has three local symmetries, but only two that can be extended globally
+       to make Killing vectors.}
+  )
+%>
+<% end_marg %>
 
 \begin{eg}{A sphere}\label{eg:sphere-killing}
 A sphere is like a plane or a cylinder in that it is a two-dimensional space in which no point has
@@ -195,7 +207,7 @@ on the north pole is also a circle centered on the south pole; this can also occ
 in certain cosmological spacetimes that describe a universe that wraps around on itself spatially.
 
 We therefore define spherical symmetry as follows. A spacetime $S$ is spherically symmetric if we can
-write it as a union $S=\cup s_{r,t}$ of subsets $s_{r,t}$,
+write it as a union $S=\cup s_{r,t}$ of nonintersecting subsets $s_{r,t}$,
 where each $s$ has the structure of a two-sphere, and the real numbers $r$ and $t$ have
 no preassigned physical interpretation, but $s_{r,t}$ is required to vary smoothly as a function of them.
 By ``has the structure of a two-sphere,'' we mean that no intrinsic measurement on $s$ will produce any
@@ -206,7 +218,7 @@ the corresponding radius of curvature, in which case $t$ is some timelike coordi
 
 To link this definition to Killing vectors, we note that condition 2 is equivalent to the following alternative condition:
 ($2'$) The set $s$ should have three Killing vectors (which by condition 1 are both spacelike), and it should be possible to choose these
-Killing vectors such that algebraically they act the same as the ones constructed explicitly in example \ref{eg:sphere-killing}. As an example
+Killing vectors such that algebraically they act the same as the ones constructed explicitly in example \ref{eg:sphere-killing} on p.~\pageref{eg:sphere-killing}. As an example
 of such an algebraic property, figure \figref{noncommuting-rotations} shows that rotations are noncommutative.
 
 <%
@@ -223,13 +235,22 @@ of such an algebraic property, figure \figref{noncommuting-rotations} shows that
   )
 %>
 
+\pagebreak[4]
+
 \begin{eg}{A cylinder is not a sphere}
 \egquestion Show that a cylinder does not have the structure of a two-\linebreak[3]sphere.
 
 \eganswer
 The cylinder passes condition 1. It fails condition 2 because its Gaussian curvature is zero. Alternatively,
-it fails condition $2'$ because it has only two independent Killing vectors (example \ref{eg:cylinder-killing}), and these correspond to a translation and a rotation (or some
-linear combination of these), which commute.
+it fails condition $2'$ because it has only two independent Killing vectors (example \ref{eg:cylinder-killing}).
+\end{eg}
+
+\begin{eg}{A plane is not a sphere}
+\egquestion Show that the Euclidean plane does not have the structure of a two-\linebreak[3]sphere.
+
+\eganswer
+Condition 2 is violated because the Gaussian curvature is zero. Or if we wish, the plane violates
+$2'$ because $\partial_x$ and $\partial_y$ commute, but none of the Killing vectors of a 2-sphere commute.
 \end{eg}
 
 <% end_sec %> % Spherical symmetry
