@@ -154,7 +154,7 @@ of Gauss's law in a vacuum.
 
 <% end_sec %>
 
-<% begin_sec("The energy-momentum tensor") %>\label{sec:energy-momentum-tensor}
+<% begin_sec("The stress-energy tensor") %>\label{sec:energy-momentum-tensor}
 
 In general, the curvature of spacetime will contain contributions from both tidal forces and local sources, superimposed
 on one another. To develop the right formulation for the Einstein field equations, we need to eliminate the tidal
@@ -176,8 +176,7 @@ timelike component of a particle's momentum four-vector. To single it out would 
 just as much as an asymmetric treatment of time and space in constructing a Ricci measure of curvature.
 To get a properly Lorentz invariant theory, we need to find a way to formulate everything in terms of tensor
 equations that make no explicit reference to coordinates. The proper generalization of the Newtonian
-mass density in relativity is the energy-momentum tensor $T^{ij}$\index{energy-momentum tensor}
-(also known as the stress-energy tensor),\index{stress-energy tensor}
+mass density in relativity is the stress-energy tensor $T^{ij}$,\index{stress-energy tensor}
 whose 16 elements measure the local density of mass-energy and momentum, and also the rate of transport of
 these quantities in various directions.
 If we happen to be able to find a frame of reference in which the local matter is
@@ -190,7 +189,7 @@ seeking clearly has to be a rank-2 tensor, not a scalar.
 The implications in four-dimensional spacetime are fairly complex.
 We'll end up with a rank-4 tensor that measures the sectional curvature, and a rank-2 Ricci tensor derived
 from it that averages away the tidal effects. The Einstein field equations then relate the Ricci tensor to the energy-momentum
-tensor in a certain way. The energy-momentum tensor is discussed further in section \ref{sec:more-energy-mom-tensor}
+tensor in a certain way. The stress-energy tensor is discussed further in section \ref{sec:more-energy-mom-tensor}
 on page \pageref{sec:more-energy-mom-tensor}.
 
 <% end_sec %>

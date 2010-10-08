@@ -737,7 +737,7 @@ the frame has become non-Lorentzian if the chamber is rotated, allowed to rest o
 
 It may seem that the detailed construction of this elaborate thought-experiment does nothing more than confirm something
 obvious. It is worth pointing out, then, that we don't really know whether it works or not. It works in general relativity,
-but there are other theories of gravity, such as Brans-Dicke gravity\index{Brans-Dicke gravity} (p.~\pageref{sec:brans-dicke}),
+but there are other theories of gravity, such as Brans-Dicke gravity\index{Brans-Dicke theory} (p.~\pageref{sec:brans-dicke}),
 that are also consistent with all known observations, but in which the apparatus in figure \figref{waage-box} doesn't work.
 Two of the assumptions made above fail in this theory: gravitational shielding effects exist, and Coriolis effects become
 undetectable if there is not enough other matter nearby.

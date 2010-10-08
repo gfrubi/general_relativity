@@ -50,7 +50,7 @@ of spacetime (and its location is also hidden behind an event horizon, so it can
 <% begin_sec("The Einstein tensor") %>
 Given these difficulties, it's not surprising that Einstein's first attempt at incorporating sources into
 his field equation was a dead end. He postulated that the field equation would have the Ricci tensor on
-one side, and the energy-momentum tensor $T^{ab}$ (page \pageref{sec:energy-momentum-tensor}) on the other,
+one side, and the stress-energy tensor $T^{ab}$ (page \pageref{sec:energy-momentum-tensor}) on the other,
 \begin{equation*}
   R_{ab} = 8\pi T_{ab} \qquad ,
 \end{equation*}
@@ -74,24 +74,134 @@ Einstein tensor,\index{Einstein tensor} defined by $G_{ab}=R_{ab}-(1/2)Rg_{ab}$,
   G_{ab} = 8\pi T_{ab} \qquad .
 \end{equation*}
 The Einstein tensor is constructed exactly so that it is divergence-free, $\nabla_b G^{ab}=0$. (This is not obvious,
-but can be proved by direct computation.) Therefore any energy-momentum tensor that satisfies the field equation
+but can be proved by direct computation.) Therefore any stress-energy tensor that satisfies the field equation
 is automatically divergenceless, and thus no additional constraints need to be applied in order to guarantee
 conservation of mass-energy.
 
 Self-check: Does replacing $R_{ab}$ with $G_{ab}$ invalidate the Schwarzschild metric?
 <% end_sec %> % The Einstein tensor
-<% begin_sec("Further interpretation of the energy-momentum tensor") %>\label{sec:more-energy-mom-tensor}\index{energy-momentum tensor}
-The energy-momentum tensor was briefly introduced in section \ref{sec:energy-momentum-tensor} on page \pageref{sec:energy-momentum-tensor}.
+<% begin_sec("Further interpretation of the stress-energy tensor") %>\label{sec:more-energy-mom-tensor}\index{stress-energy tensor}
+The stress-energy tensor was briefly introduced in section \ref{sec:energy-momentum-tensor} on page \pageref{sec:energy-momentum-tensor}.
 By applying the Newtonian limit of the field equation to the Schwarzschild metric, we find that
-$T_{tt}$ is to be identified as the mass density. The Schwarzschild metric describes a spacetime using coordinates
+$T_{tt}$ is to be identified as the mass density $\rho$. The Schwarzschild metric describes a spacetime using coordinates
 in which the mass is at rest. In the cosmological applications we'll be considering shortly,
 it also makes sense to adopt a frame of reference in which the local mass-energy is, on average, at rest,
 so we can continue to think of $T_{tt}$ as the (average) mass density. By symmetry, $T$ must be diagonal in
 such a frame. For example, if we had $T_{tx}\ne 0$, then the positive $x$ direction would be distinguished from
-the negative $x$ direction, but there is nothing that would allow such a distinction. The spacelike components
-are associated with the pressure, $P$. The form of the tensor with mixed upper and lower indices has the
-simple form $T\indices{^\mu_\nu}=diag(-\rho,P,P,P)$.
-<% end_sec %> % The energy-momentum tensor
+the negative $x$ direction, but there is nothing that would allow such a distinction.
+
+\begin{eg}{Dust in a different frame}\label{eg:dust-stress-energy}
+As discussed in example \ref{eg:dust-and-radiation-cosm} on page \pageref{eg:dust-and-radiation-cosm},
+it is convenient in cosmology to distinguish between radiation and ``dust,'' meaning noninteracting, nonrelativistic materials
+such as hydrogen gas or galaxies. Here ``nonrelativistic'' means that in the comoving frame, in which the average flow of dust
+vanishes, the dust particles all have $|v| \ll 1$. What is the stress-energy tensor associated with dust?
+
+Since the dust is nonrelativistic, we can obtain the Newtonian limit by using units in which $c \ne 1$, and
+letting $c$ approach infinity. In Cartesian coordinates, the components of the stress-energy have units that
+cause them to scale like
+\begin{equation*}
+T\indices{^\mu_\nu} \propto \left( \begin{matrix}
+                   1 & 1/c & 1/c & 1/c \\
+                   1/c & 1/c^2 & 1/c^2 & 1/c^2 \\
+                   1/c & 1/c^2 & 1/c^2 & 1/c^2 \\
+                   1/c & 1/c^2 & 1/c^2 & 1/c^2
+      \end{matrix} \right) \qquad .
+\end{equation*}
+In the limit of $c\rightarrow\infty$, we can therefore take the only source of gravitational fields
+to be $T\indices{^t_t}$, which in Newtonian gravity must be the mass density $\rho$, so
+\begin{equation*}
+T\indices{^\mu_\nu} = \left( \begin{matrix}
+                   -\rho & 0 & 0 & 0 \\
+                   0 & 0 & 0 & 0 \\
+                   0 & 0 & 0 & 0 \\
+                   0 & 0 & 0 & 0    
+      \end{matrix} \right) \qquad .
+\end{equation*}
+Under a Lorentz boost by $\beta$ in the $x$ direction, the tensor transformation law gives
+\begin{equation*}
+T\indices{^{\mu'}_{\nu'}} = \left( \begin{matrix}
+                   -\gamma^2\rho & \gamma^2\beta\rho & 0 & 0 \\
+                   \gamma^2\beta\rho & -\gamma^2\beta^2\rho & 0 & 0 \\
+                   0 & 0 & 0 & 0 \\
+                   0 & 0 & 0 & 0    
+      \end{matrix} \right) \qquad .
+\end{equation*}
+The factors of $\gamma^2$ arise because of the combination of two effects:
+each dust particle's mass-energy is increased by a factor of $\gamma$, and length contraction also
+multiplies the density of dust particles by a factor of $\gamma$.
+In the limit of small boosts, the stress-energy tensor becomes
+\begin{equation*}
+T\indices{^{\mu'}_{\nu'}} \approx \left( \begin{matrix}
+                   -\rho & \beta\rho & 0 & 0 \\
+                   \beta\rho & 0 & 0 & 0 \\
+                   0 & 0 & 0 & 0 \\
+                   0 & 0 & 0 & 0    
+      \end{matrix} \right) \qquad .
+\end{equation*}
+This motivates the interpretation of the time-space components of $T$ as the flux of mass-energy
+along each axis. In the primed frame, mass-energy with density $\rho$ flows in the $x$ direction at velocity
+$\beta$, so that the rate at which mass-energy passes through a window of area $A$ in the $y-z$ plane is
+given by $\rho\beta A$.
+\end{eg}
+
+In example \ref{eg:dust-stress-energy}, we found that $T\indices{^x_t}$ had to be interpreted as the
+flux of $T\indices{^t_t}$ (i.e., the flux of mass-energy) across the $x$ axis. Lorentz invariance
+requires that we treat $t$, $x$, $y$, and $z$ symmetrically, and this forces us to adopt the
+following interpretation: $T\indices{^\mu_\nu}$, where $\mu$ is spacelike, is the flux of the
+density of the mass-energy four-vector in the $\mu$ direction. In the comoving frame, in Cartesian
+coordinates, this means that $T\indices{^x_x}$, $T\indices{^y_y}$, and $T\indices{^z_z}$ be
+interpreted as pressures. For example, $T\indices{^x_x}$ has to be the flux in the $x$ direction
+of $x$-momentum. This is simply the pressure, $P$, that would be exerted on a surface with its normal
+in the $x$ direction, so in the comoving frame we have $T\indices{^\mu_\nu}=diag(-\rho,P,P,P)$.
+For a fluid that is not in equilibrium, the pressure need not be isotropic, and the stress
+exerted by the fluid need not be perpendicular to the surface on which it acts. The space-space
+components of $T$ would then be the classical stress tensor, whose diagonal elements are the anisotropic
+pressure, and whose off-diagonal elements are the shear stress. This is the reason for calling $T$
+the stress-energy tensor.
+<% marg(-50) %>
+<%
+  fig(
+    'cavendish',
+    %q{The Cavendish experiment.}
+  )
+%>
+<% end_marg %>
+
+The prediction of general relativity is then that pressure acts as a gravitational source with
+exactly the same strength as mass-energy density. Is this prediction borne out by experiment?
+The classic laboratory test of the strength of a gravitational source is the 1797 Cavendish experiment,
+in which a torsion balance was used to measure the very weak gravitational attractions between
+metal spheres. We could test this aspect of general relativity by doing a Cavendish experiment with boxes full of photons,
+since a photon gas has $P=\rho/3$ (example \ref{eg:dust-and-radiation-cosm}, p.~\pageref{eg:dust-and-radiation-cosm}),
+so that the pressure is of the same order of magnitude as the mass-energy.
+This is unfortunately utterly impractical, since both $P$ and $\rho$ for a well-lit box
+are ridiculously small compared to $\rho$ for a metal ball.
+
+However, the repulsive electromagnetic
+pressure inside an atomic nucleus is quite large by ordinary standards --- about $10^{33}\ \zu{Pa}$!\label{nuclear-pressure}
+To see how big this is compared to the nuclear mass density of $\rho\sim 10^{18}\ \kgunit/\munit^3$, we need to take
+into account the factor of $c^2\ne1$ in SI units, the result being that $P/\rho$ is about $10^{-2}$, which is
+not too small. Thus if we measure gravitational interactions between nuclei with different values of $P/\rho$,
+we should be able to test this prediction of general relativity. In an experiment in 1966,\footnote{Phys Rev 169 (1968) 1007}
+Kreuzer did an asymmetric Cavendish experiment using masses made of two different substances: teflon and
+the liquid trichloroethylene dibromoethane. Teflon is 76\% fluorine by weight, and the liquid is 74\% bromine.
+Fluorine has atomic number $Z=9$, bromine $Z=35$, and since the electromagnetic force has a long range, the
+pressure within a nucleus scales upward roughly like $Z^{1/3}$ (because any given proton is acted on by $Z-1$
+other protons, and the size of a nucleus scales like $Z^{1/3}$).
+Kreuzer intended this exeriment as a test of Newton's third law, but it was reinterpreted by 
+Will\footnote{Clifford Will, ``The Confrontation between General Relativity
+and Experiment,'' \url{relativity.livingreviews.org/Articles/lrr-2006-3/}}
+as a test of general relativity. Suppose we have an alternative to general relativity
+in which pressure is not a source of gravitational fields, but in which the gravitational force \emph{experienced}
+by a given body is, as required by the equivalence principle, independent of how much of its mass is due to
+rest mass and how much comes from the mass equivalent of its energy. That is, in such a theory, a body's
+active gravitational mass $m_a$, which measures the fields it produces, is not proportional to its
+passive gravitational mass $m_p$, which measures the force it feels from an ambient field. Such a theory
+predicts a violation of Newton's third law in Kreuzer's experiment that is proportional to $P/\rho$.
+Kreuzer observed $m_a\propto m_p$ to hold to within $5\times 10^{-5}$, upholding Newton's third law,
+conservation of momentum, and general relativity's prediction that pressure acts as a source of
+the gravitational field.
+<% end_sec %> % The stress-energy tensor
 <% end_sec %> % The Einstein field equation
 
 <% begin_sec("Energy conditions") %>\index{energy conditions}
@@ -114,9 +224,9 @@ Sotiriou,  Faraoni, and Liberati, \url{http://arxiv.org/abs/0707.2748}}\index{eq
 
 Even the Einstein field equations, which appear to be completely well defined, are not
 mathematically formal predictions of the behavior of a physical system.
-The field equations are agnostic on the question of what kinds of matter fields contribute to the energy-momentum tensor.
+The field equations are agnostic on the question of what kinds of matter fields contribute to the stress-energy tensor.
 In fact, any spacetime at all is a solution to the Einstein field equations, provided we're willing to admit the
-corresponding energy-momentum tensor. We can never answer questions like the ones above without assuming something about the energy-momentum tensor.
+corresponding stress-energy tensor. We can never answer questions like the ones above without assuming something about the stress-energy tensor.
 
 In example \ref{eg:dust-and-radiation-cosm} on page \pageref{eg:dust-and-radiation-cosm}, we saw that
 radiation has $P=\rho/3$ and dust has $P=0$. Both have $\rho\ge0$. If the universe is made out of nothing but dust and radiation, then
@@ -135,7 +245,7 @@ null energy condition    &  $\rho+P \ge 0$ \\
 They all have to do with the idea that negative mass-energy doesn't seem to exist in our universe, i.e., that
 gravity is always attractive rather than repulsive. With this motivation, it would seem that there should only
 be one way to state an energy condition: $\rho > 0$. But the symbols $\rho$ and $P$ refer to the form of the
-energy-momentum tensor in a special frame of reference, interpreted as the one that is at rest relative to the
+stress-energy tensor in a special frame of reference, interpreted as the one that is at rest relative to the
 average motion of the ambient matter. In this frame, the tensor is diagonal. Switching to some other frame
 of reference, the $\rho$ and $P$ parts of the tensor would mix, and it might be possible to end up with
 a negative energy density. The weak energy condition is the constraint we need in order to make sure that
@@ -190,18 +300,6 @@ add another condition: (iv) The objects $\zu{O}_n$ obeys the dominant energy con
 given above, since, as discussed in more detail on p.~\pageref{singularity-theorems}, matter that satisfies a reasonable
 energy condition can't be compressed too much without forming a black-hole singularity.
 \end{eg}
-
-<% begin_sec("The Newtonian limit") %>
-In units with $c \ne 1$, a quantity like $\rho+P$ is expressed as $\rho+P/c^2$. The Newtonian limit is
-recovered as $c\rightarrow\infty$, which makes the pressure term negligible, so that all the energy conditions
-reduce to $\rho\ge 0$. What would it mean if this was violated? Would $\rho<0$ describe an object with negative
-inertial mass, which would accelerate east when you pushed it to the west? Or would it describe something with
-negative gravitational mass, which would repel ordinary matter? We can imagine various possiblities, as shown in
-figure \figref{negative-mass}. Anything that didn't lie on the main diagonal would violate the equivalence principle,
-and would therefore be impossible to accomodate within general relativity's geometrical description of gravity.
-If we had ``upsidasium'' matter such as that described by the second quadrant of the figure (example \ref{eg:upsidasium}, p.~\pageref{eg:upsidasium}), gravity would be like electricity,
-except that like masses would attract and opposites repel; we could have gravitational dielectrics and gravitational
-Faraday cages. The fourth quadrant leads to amusing possibilities like figure \figref{pushme-pullyou}.
 <% marg(-100) %>
 <%
   fig(
@@ -222,6 +320,18 @@ Faraday cages. The fourth quadrant leads to amusing possibilities like figure \f
   )
 %>
 <% end_marg %>
+
+<% begin_sec("The Newtonian limit") %>
+In units with $c \ne 1$, a quantity like $\rho+P$ is expressed as $\rho+P/c^2$. The Newtonian limit is
+recovered as $c\rightarrow\infty$, which makes the pressure term negligible, so that all the energy conditions
+reduce to $\rho\ge 0$. What would it mean if this was violated? Would $\rho<0$ describe an object with negative
+inertial mass, which would accelerate east when you pushed it to the west? Or would it describe something with
+negative gravitational mass, which would repel ordinary matter? We can imagine various possiblities, as shown in
+figure \figref{negative-mass}. Anything that didn't lie on the main diagonal would violate the equivalence principle,
+and would therefore be impossible to accomodate within general relativity's geometrical description of gravity.
+If we had ``upsidasium'' matter such as that described by the second quadrant of the figure (example \ref{eg:upsidasium}, p.~\pageref{eg:upsidasium}), gravity would be like electricity,
+except that like masses would attract and opposites repel; we could have gravitational dielectrics and gravitational
+Faraday cages. The fourth quadrant leads to amusing possibilities like figure \figref{pushme-pullyou}.
 
 
 
@@ -248,6 +358,18 @@ be the origin, we wish to have a gravitational field such that $g(0)=0$, $\der g
 $\der^n g/\der x^n(0)=0$, where $n$ is arbitrarily specified. For comparison, \emph{magnetic}
 fields \emph{can} be nulled out according to this definition by building an appropriately chosen configuration of coils
 such as a Helmholtz coil.
+<% marg(150) %>
+<%
+  fig(
+    'nulling-gravity',
+    %q{Nulling out a gravitational field is impossible in one dimension without exotic matter. 1. The planet imposes a nonvanishing gravitational
+    field with a nonvanishing gradient. 2. We can null the field at one point in space, by placing a sphere of very dense, but
+    otherwise normal, matter overhead. The stick figure still experiences a tidal force, $g'\ne 0$. 3. To change the field's
+    derivative without changing the field, we can place two additional masses above and below the given point. But to change
+    its derivative in the desired direction --- toward zero --- we would have to make these masses negative.}
+  )
+%>
+<% end_marg %>
 
 Since we're only doing the Newtonian limit, the gravitational field is the sum of the fields
 made by all the sources, and we can take this as a sum over point sources. For a point source $m$
@@ -262,18 +384,6 @@ to null out, only that some are. For example, the field inside a hemispherical s
 adding another hemispherical shell to complete the sphere. I thank P. Allen for helpful discussion
 of this topic.
 \end{eg}
-<% marg(150) %>
-<%
-  fig(
-    'nulling-gravity',
-    %q{Nulling out a gravitational field is impossible in one dimension without exotic matter. 1. The planet imposes a nonvanishing gravitational
-    field with a nonvanishing gradient. 2. We can null the field at one point in space, by placing a sphere of very dense, but
-    otherwise normal, matter overhead. The stick figure still experiences a tidal force, $g'\ne 0$. 3. To change the field's
-    derivative without changing the field, we can place two additional masses above and below the given point. But to change
-    its derivative in the desired direction --- toward zero --- we would have to make these masses negative.}
-  )
-%>
-<% end_marg %>
 <% end_sec %> % The Newtonian limit
 <% begin_sec("Singularity theorems") %>\label{singularity-theorems}
 An important example of the use of the energy conditions is that Hawking and Ellis
@@ -354,7 +464,7 @@ theory without breaking it.
 
 \begin{eg}{A failed attempt at tinkering}\label{eg:failed-scalar-tinkering}
 As an example of the lack of ``wiggle room'' in the structure of the field equations, suppose we
-construct the scalar $T\indices{^a_a}$, the trace of the energy-momentum tensor, and try to insert
+construct the scalar $T\indices{^a_a}$, the trace of the stress-energy tensor, and try to insert
 it into the field equations as a further source term. The first problem is that the field equation
 involves rank-2 tensors, so we can't just add a scalar. To get around this, suppose we multiply by the
 metric. We then have something like $G_{ab} = c_1 T_{ab}+c_2 g_{ab} T\indices{^c_c}$, where
@@ -364,7 +474,7 @@ with Newtonian gravity in the classical limit.
 This particular attempt fails, because it violates the equivalence principle. Consider a beam of
 light directed along the $x$ axis. Its momentum is equal to its energy (see page \pageref{sec:momentum-four-vector}),
 so its contributions to the local energy density and pressure are equal.
-Thus its contribution to the energy-momentum tensor is of the form $T\indices{^\mu_\nu}=(\text{constant})\times diag(-1,1,0,0)$.
+Thus its contribution to the stress-energy tensor is of the form $T\indices{^\mu_\nu}=(\text{constant})\times diag(-1,1,0,0)$.
 The trace vanishes, so its coupling to gravity in the $c_2$ term is zero. But this violates the equivalence
 principle, which requires that all forms of mass-energy contribute equally to gravitational mass.
 \end{eg}
@@ -407,7 +517,7 @@ more tightly. This justifies the description of $\Lambda$ as cosmological:
 the larger the scale, the more significant the effect of a nonzero $\Lambda$ would be.
 
 Since the right-hand side of the field equation is $8\pi T_{ab} + \Lambda g_{ab}$, it is possible to consider
-the cosmological constant as a type of matter contributing to the energy-momentum tensor.\index{energy conditions!violated by cosmological constant}
+the cosmological constant as a type of matter contributing to the stress-energy tensor.\index{energy conditions!violated by cosmological constant}
 Its negative pressure causes a violation of the strong energy condition. If the cosmological constant is a product of the
 quantum-mechanical structure of the vacuum, then this is not too surprising, because quantum fields are known to display
 negative energy. For example, the energy density between two parallel conducting plates is negative due to the Casimir effect.\index{Casimir effect}
@@ -569,7 +679,7 @@ where dots indicate differentiation with respect to time.
 
 Since we have $G\indices{^a_b}$ with mixed upper and lower indices, we either have to convert it into $G_{ab}$, or write out the
 field equations in this mixed form. The latter turns out to be simpler. In terms of mixed indices, $g\indices{^a_b}$ is always simply
-$diag(1,1,1,1)$. Arbitrarily singling out $r=0$ for simplicity, we have $g=diag(1,-a^2,0,0)$. The energy-momentum tensor is
+$diag(1,1,1,1)$. Arbitrarily singling out $r=0$ for simplicity, we have $g=diag(1,-a^2,0,0)$. The stress-energy tensor is
 $T\indices{^\mu_\nu}=diag(-\rho,P,P,P)$.
 Substituting into $G\indices{^a_b}=8\pi T\indices{^a_b}+\Lambda g\indices{^a_b}$, we find
 \begin{align*}
@@ -601,10 +711,13 @@ occurs regardless of the details of what we assume about the matter and radiatio
 fills the universe. To see this, note that, as discussed in example \ref{eg:dust-and-radiation-cosm}
 on page \pageref{eg:dust-and-radiation-cosm}, radiation is expected to dominate the early universe, for
 generic reasons that are not sensitive to the (substantial) observational uncertainties about the universe's present-day mixture of ingredients.
-Under radiation-dominated conditions, we can approximate $\Lambda=0$ and $P=0$ in the first Friedmann equation,
+Under radiation-dominated conditions, we can approximate
+$\Lambda=0$ and $P=\rho/3$ (example \ref{eg:dust-and-radiation-cosm},
+p.~\pageref{eg:dust-and-radiation-cosm})
+in the first Friedmann equation,
 finding
 \begin{equation*}
-  \frac{\ddot{a}}{a} = - \frac{4\pi}{3}\rho 
+  \frac{\ddot{a}}{a} = - \frac{8\pi}{3}\rho 
 \end{equation*}
 where $\rho$ is the density of mass-energy due to radiation. Since $\ddot{a}/a$ is always negative,
 the graph of $a(t)$ is always concave down, and since $a$ is currently increasing, there must be some
@@ -1321,8 +1434,11 @@ took up an idea earlier proposed by Pascual Jordan\footnote{Jordan was a member 
 ``brown shirts'' who nevertheless ran afoul of the Nazis for his close professional relationships with Jews.} of hypothesizing
 an auxiliary field $\phi$. The fact that such a field has never been detected directly suggests that it has no mass or charge.
 If it is massless, it must propagate at exactly $c$, and this also makes sense because if it were to propagate at speeds less than
-$c$, there would be no obvious physical parameter that would determine that speed. How many tensor indices should it have? Since Mach's principle tries to give an account of inertia, and
-inertial mass is a scalar, $\phi$ should presumably be a scalar (quantized by a spin-zero particle). Theories of this type
+$c$, there would be no obvious physical parameter that would determine that speed. How many tensor indices
+should it have? Since Mach's principle tries to give an account of inertia, and
+inertial mass is a scalar,\footnote{A limit of $5\times 10^{-23}$
+has been placed on the anisotropy of the inertial mass of the proton: R.W.P. Drever, ``A search for anisotropy of inertial mass using a free
+precession technique,'' Philosophical Magazine, 6:687 (1961) 683.} $\phi$ should presumably be a scalar (quantized by a spin-zero particle). Theories of this type
 are called tensor-scalar theories, because they use a scalar field in addition to the metric tensor.
 
 The wave equation for a massless scalar field, in the absence of sources, is simply $\nabla_i \nabla^i \phi=0$. The solutions of this
@@ -1366,7 +1482,7 @@ pick for a unitless number, including zero and infinity.
 The limit of $\omega\rightarrow\infty$ recovers the special case of general relativity. Thus Mach's principle, which
 once seemed too vague to be empirically falsifiable, comes down to measuring a specific number, $\omega$, which
 quantifies how non-Machian our universe is.\footnote{
-There are also good technical reasons for 
+Another good technical reasons for 
 thinking of $\phi$ as relating to the gravitational constant is that general relativity has a standard prescription for
 describing fields on a background of curved spacetime. The vacuum field equations of general relativity can be derived
 from the principle of least action, and although the details are beyond the scope of this book (see, e.g.,
@@ -1470,6 +1586,11 @@ is so large that it shows our universe to be essentially as non-Machian as gener
 
 \begin{hwsection}
 
+<% begin_hw('nuclear-pressure') %>
+Verify, as claimed on p.~\pageref{nuclear-pressure}, that the electromagnetic pressure inside
+a medium-weight atomic nucleus is on the order of $10^{33}\ \zu{Pa}$.
+<% end_hw %>
+
 <% begin_hw('verify-milne') %>
 Verify the claim made on p.~\pageref{milne} that $a$ is a linear function of time in the case
 of the Milne universe, and that $k=-1$.
@@ -1488,7 +1609,7 @@ The Einstein field equations are
   G_{ab} = 8\pi T_{ab} + \Lambda g_{ab} \qquad ,
 \end{equation*}
 and when it is possible to adopt a frame of reference in which the local mass-energy is at rest on average,
-we can interpret the energy-momentum tensor as
+we can interpret the stress-energy tensor as
 \begin{equation*}
   T\indices{^\mu_\nu}=diag(-\rho,P,P,P) \qquad ,
 \end{equation*}
@@ -1524,6 +1645,7 @@ make the speed exceed $c$.
 
 Debunk this proposal in the special case of the Milne universe.
 <% end_hw %>
+
 
 
 \end{hwsection}

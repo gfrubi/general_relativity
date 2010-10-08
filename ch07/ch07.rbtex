@@ -513,7 +513,7 @@ We might logically try to generalize this to 3+1 dimensions as follows:
 \end{equation*}
 But a funny thing happens now --- simply by slapping on the two new Cartesian axes $x$ and $y$, it turns out
 that we have made our vacuum solution into a non-vacuum solution, and not only that, but the
-resulting energy-momentum tensor is unphysical (ch.~\ref{ch:sources}, problem \ref{hw:uniform-field-sources},
+resulting stress-energy tensor is unphysical (ch.~\ref{ch:sources}, problem \ref{hw:uniform-field-sources},
 p.~\pageref{hw:uniform-field-sources}).
 
 One way to proceed would be to relax our insistence on making the spacetime one that exactly
