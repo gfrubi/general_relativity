@@ -583,7 +583,7 @@ The ball and the pencil will still fall side by side to the floor, because they 
 gravitational to inertial mass. 
 <% end_sec %> % Equivalence of gravitational fields and accelerations
 <% end_sec %> % Eotvos experiments
-<% marg(200) %>
+<% marg(170) %>
 <%
   fig(
     'braginskii',

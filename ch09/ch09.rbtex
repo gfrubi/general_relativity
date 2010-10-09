@@ -371,7 +371,7 @@ Idealizing such a source to a radially pulsating spherical surface, we have an o
 uniformly in all directions. To find the power radiated, we note that the velocity of the source-surface is
 proportional to $x_\zu{o}\omega$, so the kinetic energy of the air immediately in contact with it is proportional
 to $\omega^2 x_\zu{o}^2$. The power radiated is therefore proportional to $\omega^2 x_\zu{o}^2$.
-<% marg(130) %>
+<% marg(100) %>
 <%
   fig(
     'sticky-bead',

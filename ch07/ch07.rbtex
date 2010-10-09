@@ -150,7 +150,7 @@ can be extended to form a smooth vector field on the entire surface of the cylin
 These might be more naturally notated in $(\phi,z)$ coordinates
 rather than $(x,y)$, giving $\partial_z$ and $\partial_\phi$.
 \end{eg}
-<% marg(0) %>
+<% marg(50) %>
 <%
   fig(
     'cylinder-killing',

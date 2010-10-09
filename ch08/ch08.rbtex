@@ -80,7 +80,7 @@ conservation of mass-energy.
 
 Self-check: Does replacing $R_{ab}$ with $G_{ab}$ invalidate the Schwarzschild metric?
 <% end_sec %> % The Einstein tensor
-<% begin_sec("Further interpretation of the stress-energy tensor") %>\label{sec:more-energy-mom-tensor}\index{stress-energy tensor}
+<% begin_sec("Interpretation of the stress-energy tensor") %>\label{sec:more-energy-mom-tensor}\index{stress-energy tensor}
 The stress-energy tensor was briefly introduced in section \ref{sec:energy-momentum-tensor} on page \pageref{sec:energy-momentum-tensor}.
 By applying the Newtonian limit of the field equation to the Schwarzschild metric, we find that
 $T_{tt}$ is to be identified as the mass density $\rho$. The Schwarzschild metric describes a spacetime using coordinates
@@ -100,7 +100,7 @@ Since the dust is nonrelativistic, we can obtain the Newtonian limit by using un
 letting $c$ approach infinity. In Cartesian coordinates, the components of the stress-energy have units that
 cause them to scale like
 \begin{equation*}
-T\indices{^\mu_\nu} \propto \left( \begin{matrix}
+T\indices{_\mu_\nu} \propto \left( \begin{matrix}
                    1 & 1/c & 1/c & 1/c \\
                    1/c & 1/c^2 & 1/c^2 & 1/c^2 \\
                    1/c & 1/c^2 & 1/c^2 & 1/c^2 \\
@@ -108,10 +108,10 @@ T\indices{^\mu_\nu} \propto \left( \begin{matrix}
       \end{matrix} \right) \qquad .
 \end{equation*}
 In the limit of $c\rightarrow\infty$, we can therefore take the only source of gravitational fields
-to be $T\indices{^t_t}$, which in Newtonian gravity must be the mass density $\rho$, so
+to be $T\indices{_t_t}$, which in Newtonian gravity must be the mass density $\rho$, so
 \begin{equation*}
 T\indices{^\mu_\nu} = \left( \begin{matrix}
-                   -\rho & 0 & 0 & 0 \\
+                   \rho & 0 & 0 & 0 \\
                    0 & 0 & 0 & 0 \\
                    0 & 0 & 0 & 0 \\
                    0 & 0 & 0 & 0    
@@ -119,20 +119,20 @@ T\indices{^\mu_\nu} = \left( \begin{matrix}
 \end{equation*}
 Under a Lorentz boost by $\beta$ in the $x$ direction, the tensor transformation law gives
 \begin{equation*}
-T\indices{^{\mu'}_{\nu'}} = \left( \begin{matrix}
-                   -\gamma^2\rho & \gamma^2\beta\rho & 0 & 0 \\
-                   \gamma^2\beta\rho & -\gamma^2\beta^2\rho & 0 & 0 \\
+T\indices{_{\mu'}_{\nu'}} = \left( \begin{matrix}
+                   \gamma^2\rho & \gamma^2\beta\rho & 0 & 0 \\
+                   \gamma^2\beta\rho & \gamma^2\beta^2\rho & 0 & 0 \\
                    0 & 0 & 0 & 0 \\
                    0 & 0 & 0 & 0    
       \end{matrix} \right) \qquad .
 \end{equation*}
-The factors of $\gamma^2$ arise because of the combination of two effects:
+The over-all factor of $\gamma^2$ arises because of the combination of two effects:
 each dust particle's mass-energy is increased by a factor of $\gamma$, and length contraction also
 multiplies the density of dust particles by a factor of $\gamma$.
 In the limit of small boosts, the stress-energy tensor becomes
 \begin{equation*}
-T\indices{^{\mu'}_{\nu'}} \approx \left( \begin{matrix}
-                   -\rho & \beta\rho & 0 & 0 \\
+T\indices{_{\mu'}_{\nu'}} \approx \left( \begin{matrix}
+                   \rho & \beta\rho & 0 & 0 \\
                    \beta\rho & 0 & 0 & 0 \\
                    0 & 0 & 0 & 0 \\
                    0 & 0 & 0 & 0    
@@ -144,35 +144,31 @@ $\beta$, so that the rate at which mass-energy passes through a window of area $
 given by $\rho\beta A$.
 \end{eg}
 
-In example \ref{eg:dust-stress-energy}, we found that $T\indices{^x_t}$ had to be interpreted as the
-flux of $T\indices{^t_t}$ (i.e., the flux of mass-energy) across the $x$ axis. Lorentz invariance
+In example \ref{eg:dust-stress-energy}, we found that $T\indices{_x_t}$ had to be interpreted as the
+flux of $T\indices{_t_t}$ (i.e., the flux of mass-energy) across the $x$ axis. Lorentz invariance
 requires that we treat $t$, $x$, $y$, and $z$ symmetrically, and this forces us to adopt the
-following interpretation: $T\indices{^\mu_\nu}$, where $\mu$ is spacelike, is the flux of the
+following interpretation: $T\indices{_\mu_\nu}$, where $\mu$ is spacelike, is the flux of the
 density of the mass-energy four-vector in the $\mu$ direction. In the comoving frame, in Cartesian
-coordinates, this means that $T\indices{^x_x}$, $T\indices{^y_y}$, and $T\indices{^z_z}$ be
-interpreted as pressures. For example, $T\indices{^x_x}$ has to be the flux in the $x$ direction
+coordinates, this means that $T\indices{_x_x}$, $T\indices{_y_y}$, and $T\indices{_z_z}$ should be
+interpreted as pressures. For example, $T\indices{_x_x}$ is the flux in the $x$ direction
 of $x$-momentum. This is simply the pressure, $P$, that would be exerted on a surface with its normal
-in the $x$ direction, so in the comoving frame we have $T\indices{^\mu_\nu}=diag(-\rho,P,P,P)$.
+in the $x$ direction, so in the comoving frame we have $T\indices{_\mu_\nu}=diag(\rho,P,P,P)$.
 For a fluid that is not in equilibrium, the pressure need not be isotropic, and the stress
 exerted by the fluid need not be perpendicular to the surface on which it acts. The space-space
 components of $T$ would then be the classical stress tensor, whose diagonal elements are the anisotropic
 pressure, and whose off-diagonal elements are the shear stress. This is the reason for calling $T$
 the stress-energy tensor.
-<% marg(-50) %>
-<%
-  fig(
-    'cavendish',
-    %q{The Cavendish experiment.}
-  )
-%>
-<% end_marg %>
 
 The prediction of general relativity is then that pressure acts as a gravitational source with
-exactly the same strength as mass-energy density. Is this prediction borne out by experiment?
+exactly the same strength as mass-energy density. This has important implications for cosmology,
+since the early universe was dominated by radiation, and a photon gas has 
+$P=\rho/3$ (example \ref{eg:dust-and-radiation-cosm}, p.~\pageref{eg:dust-and-radiation-cosm}).
+<% end_sec %> % Interpretation of the stress-energy tensor
+<% begin_sec("Experimental tests") %>
+But how do we know that this prediction is even correct? Can it be verified in the laboratory?
 The classic laboratory test of the strength of a gravitational source is the 1797 Cavendish experiment,
 in which a torsion balance was used to measure the very weak gravitational attractions between
 metal spheres. We could test this aspect of general relativity by doing a Cavendish experiment with boxes full of photons,
-since a photon gas has $P=\rho/3$ (example \ref{eg:dust-and-radiation-cosm}, p.~\pageref{eg:dust-and-radiation-cosm}),
 so that the pressure is of the same order of magnitude as the mass-energy.
 This is unfortunately utterly impractical, since both $P$ and $\rho$ for a well-lit box
 are ridiculously small compared to $\rho$ for a metal ball.
@@ -181,27 +177,66 @@ However, the repulsive electromagnetic
 pressure inside an atomic nucleus is quite large by ordinary standards --- about $10^{33}\ \zu{Pa}$!\label{nuclear-pressure}
 To see how big this is compared to the nuclear mass density of $\rho\sim 10^{18}\ \kgunit/\munit^3$, we need to take
 into account the factor of $c^2\ne1$ in SI units, the result being that $P/\rho$ is about $10^{-2}$, which is
-not too small. Thus if we measure gravitational interactions between nuclei with different values of $P/\rho$,
-we should be able to test this prediction of general relativity. In an experiment in 1966,\footnote{Phys Rev 169 (1968) 1007}
-Kreuzer did an asymmetric Cavendish experiment using masses made of two different substances: teflon and
-the liquid trichloroethylene dibromoethane. Teflon is 76\% fluorine by weight, and the liquid is 74\% bromine.
+not too small. Thus if we measure gravitational interactions of nuclei with different values of $P/\rho$,
+we should be able to test this prediction of general relativity. 
+In 1966,\footnote{Kreuzer, Phys. Rev. 169 (1968) 1007}
+\index{Kreuzer experiment}
+Kreuzer did a Cavendish experiment using masses made of two different substances: teflon and
+a mixture of the liquids trichloroethylene and dibromoethane, with the proportions intentionally chosen so as to give a density nearly
+the same as that of teflon, but not exactly the same. Teflon is 76\% fluorine by weight, and the liquid is 74\% bromine.
 Fluorine has atomic number $Z=9$, bromine $Z=35$, and since the electromagnetic force has a long range, the
 pressure within a nucleus scales upward roughly like $Z^{1/3}$ (because any given proton is acted on by $Z-1$
-other protons, and the size of a nucleus scales like $Z^{1/3}$).
-Kreuzer intended this exeriment as a test of Newton's third law, but it was reinterpreted by 
-Will\footnote{Clifford Will, ``The Confrontation between General Relativity
-and Experiment,'' \url{relativity.livingreviews.org/Articles/lrr-2006-3/}}
-as a test of general relativity. Suppose we have an alternative to general relativity
-in which pressure is not a source of gravitational fields, but in which the gravitational force \emph{experienced}
-by a given body is, as required by the equivalence principle, independent of how much of its mass is due to
-rest mass and how much comes from the mass equivalent of its energy. That is, in such a theory, a body's
-active gravitational mass $m_a$, which measures the fields it produces, is not proportional to its
-passive gravitational mass $m_p$, which measures the force it feels from an ambient field. Such a theory
-predicts a violation of Newton's third law in Kreuzer's experiment that is proportional to $P/\rho$.
-Kreuzer observed $m_a\propto m_p$ to hold to within $5\times 10^{-5}$, upholding Newton's third law,
-conservation of momentum, and general relativity's prediction that pressure acts as a source of
-the gravitational field.
-<% end_sec %> % The stress-energy tensor
+other protons, and the size of a nucleus scales like $Z^{1/3}$, so $P\propto Z/(Z^{1/3})^2$).
+The solid mass was immersed in the liquid, and the combined gravitational field of the solid and the liquid
+was detected by a Cavendish balance. The solid mass was then moved back and forth repeatedly, so that its
+distance from the balance varied. Small, expected changes occurred in the gravitational field because of
+the slight difference in density between the solid and the liquid, and these changes verified that the balance
+was working and able to detect small changes in the gravitational field against a background of random and systematic
+errors. These changes were a measure of the two substances' differing densities of \emph{active} gravitational
+mass, i.e., their ability to create gravitational fields. The buoyancy of the solid was measured,
+giving a measurement of the difference between the densities of the two substances' \emph{passive} gravitational masses, which determine
+the forces they feel in an external field. The active and passive gravitational masses were found to be proportional
+to one another,
+\begin{equation*}
+  m_p \propto m_a \qquad \text{to within $5\times 10^{-5}$\qquad.}
+\end{equation*}
+<% marg(100) %>
+<%
+  fig(
+    'cavendish',
+    %q{Top: A Cavendish balance, used to determine the gravitational constant. Bottom: Kreuzer's modification}
+  )
+%>
+<% end_marg %>
+
+Kreuzer intended this exeriment only as a test of $m_p\propto m_a$, but it was reinterpreted
+by Will\footnote{Will, ``Active mass in relativistic gravity: Theoretical interpretation of the Kreuzer experiment,'' Ap. J. 204 (1976) 234,
+available online at \url{adsabs.harvard.edu}. A broader review of experimental tests of general relativity is given in
+Will, ``The Confrontation between General Relativity
+and Experiment,'' \url{relativity.livingreviews.org/Articles/lrr-2006-3/}. The Kreuzer experiment is discussed in  section 3.7.3.}
+as a test of the coupling of sources to gravitational fields as predicted by general relativity and other theories of gravity.
+Suppose that pressure does not contribute as much to gravitational fields as is claimed by general relativity; its
+coupling is reduced by a factor $1-\zeta$, where $\zeta=0$ in general relativity.\footnote{In Will's notation, $\zeta_4$ measures
+nonstandard coupling to pressure, $\zeta_3$ to internal energy, and $\zeta_1$ to kinetic energy. By requiring that point-particle
+models agree with perfect-fluid models, one obtains $(-2/3)\zeta_1=\zeta_3=-\zeta_4=\zeta$.} Will considers a model consisting of
+pointlike particles interacting through static electrical forces, and shows that for such a system,
+\begin{equation*}
+  m_a = m_p + \frac{1}{2}\zeta U_e \qquad ,
+\end{equation*}
+where $U_e$ is the electrical energy. The Kreuzer experiment then requires $|\zeta| < 6\times 10^{-2}$, meaning that
+pressure does contribute to gravitational fields as predicted by general relativity, to within a precision of 6\%.
+
+If $\zeta$ were nonzero, so that active and passive gravitational mass were not equivalent, then a pair of objects made of different
+substances would
+not obey Newton's third law in their gravitational interactions,
+and momentum would not be conserved. The system's center of mass would accelerate
+along the line connecting the two bodies, in either the direction of the lower-$Z$ object or the higher-$Z$ one, depending
+on the sign of $\zeta$. Bartlett and van Buren\footnote{Phys. Rev. Lett. 57 (1986) 24. The result is summarized in section 3.7.3 of
+the review by Will.} used this fact in 1986 to derive a tighter limit on $\zeta$. Since the moon
+has an asymmetrical distribution of iron and aluminum, a nonzero $\zeta$ would cause it to have an anomalous acceleration along
+a certain line. Because lunar laser ranging gives extremely accurate data on the moon's orbit, the constraint is tightened
+to $|\zeta| < 1\times 10^{-8}$.
+<% end_sec %> % Experimental tests
 <% end_sec %> % The Einstein field equation
 
 <% begin_sec("Energy conditions") %>\index{energy conditions}
@@ -300,7 +335,7 @@ add another condition: (iv) The objects $\zu{O}_n$ obeys the dominant energy con
 given above, since, as discussed in more detail on p.~\pageref{singularity-theorems}, matter that satisfies a reasonable
 energy condition can't be compressed too much without forming a black-hole singularity.
 \end{eg}
-<% marg(-100) %>
+<% marg(-30) %>
 <%
   fig(
     'negative-mass',
@@ -358,7 +393,7 @@ be the origin, we wish to have a gravitational field such that $g(0)=0$, $\der g
 $\der^n g/\der x^n(0)=0$, where $n$ is arbitrarily specified. For comparison, \emph{magnetic}
 fields \emph{can} be nulled out according to this definition by building an appropriately chosen configuration of coils
 such as a Helmholtz coil.
-<% marg(150) %>
+<% marg(120) %>
 <%
   fig(
     'nulling-gravity',
@@ -1298,6 +1333,14 @@ Historically, it was very difficult
 to determine the universe's average density, even to within an order of magnitude. Most of the matter in the universe
 probably doesn't emit light, making it difficult to detect. Astronomical distance scales are also very poorly calibrated
 against absolute units such as the SI.
+<% marg(-70) %>
+<%
+  fig(
+    'cmb-geometry',
+    %q{The angular scale of fluctuations in the cosmic microwave background can be used to infer the curvature of the universe.}
+  )
+%>
+<% end_marg %>
 
 A strong constraint on the models comes from accurate measurements of the cosmic microwave
 background, especially by the 1989-1993 COBE probe, and its 2001-2009 successor, the Wilkinson Microwave Anisotropy Probe,
@@ -1317,14 +1360,6 @@ divided by the critical density that results in a flat universe. $\Omega$ includ
 from matter, $\Omega_M$, the cosmological constant, $\Omega_\Lambda$, and radiation (negligible in the
 present-day unverse). The results from WMAP, combined with other data from other methods, gives
 $\Omega=1.005\pm .006$. In other words, the universe is very nearly spatially flat.
-<% marg(60) %>
-<%
-  fig(
-    'cmb-geometry',
-    %q{The angular scale of fluctuations in the cosmic microwave background can be used to infer the curvature of the universe.}
-  )
-%>
-<% end_marg %>
 
 The supernova data described on page \pageref{sec:vacuum-dominated} complement the CMB data because they are
 mainly sensitive to the difference $\Omega_\Lambda-\Omega_M$, rather than their sum $\Omega=\Omega_\Lambda+\Omega_M$.
