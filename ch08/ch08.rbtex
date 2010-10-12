@@ -178,9 +178,37 @@ pressure inside an atomic nucleus is quite large by ordinary standards --- about
 To see how big this is compared to the nuclear mass density of $\rho\sim 10^{18}\ \kgunit/\munit^3$, we need to take
 into account the factor of $c^2\ne1$ in SI units, the result being that $P/\rho$ is about $10^{-2}$, which is
 not too small. Thus if we measure gravitational interactions of nuclei with different values of $P/\rho$,
-we should be able to test this prediction of general relativity. 
-In 1966,\footnote{Kreuzer, Phys. Rev. 169 (1968) 1007}
-\index{Kreuzer experiment}
+we should be able to test this prediction of general relativity. This was done by Kreuzer\label{kreuzer}\footnote{Kreuzer, Phys. Rev. 169 (1968) 1007}\index{Kreuzer experiment}
+in 1966.
+
+Before we can properly describe and interpret the Kreuzer experiment, we need to distinguish the several
+different types of mass that could in principle be different from one another in a theory of gravity.
+We've already encountered the distinction between inertial and gravitational mass,\index{mass!inertial}\index{inertial mass}\index{mass!gravitational}\index{gravitational mass}
+which  E\"{o}tv\"{o}s experiments (p.~\pageref{sec:eotvos}) show to be equivalent to about one part in $10^{12}$.
+But there is also a distinction between an object's \emph{active} gravitational
+mass $m_a$, which measures its ability to create gravitational fields, and its \emph{passive} gravitational mass $m_p$,
+which measures the force it feels when placed in an externally generated 
+field.\index{mass!active gravitational}\index{gravitational mass!active}\index{mass!passive gravitational}\index{gravitational mass!passive}
+For experiments using laboratory-scale material objects at nonrelativistic velocities, the Newtonian limit
+applies, and we can think of active gravitational mass as a scalar, with a density $T_{tt}=\rho$.
+
+To understand how this relates to pressure as a source of gravitational fields, it is helpful to
+consider a case where $P$ is about the same as $\rho$, which occurs for light. Light is inherently
+relativistic, so the concept of a scalar gravitational mass breaks down, but we can still use ``mass'' in quotes to talk qualitatively
+about an electromagnetic wave's active and passive participation in gravitational effects.
+Experiments show that general relativity correctly predicts the deflection of light by the sun to about one part
+in $10^5$ (p.~\pageref{sec:deflection-of-light}). This is the electromagnetic equivalent of an E\"{o}tv\"{o}s experiment;
+it shows that general relativity predicts the right thing about the proportion between a light wave's inertial
+and passive gravitational ``masses.'' Now suppose that general relativity was wrong, and pressure was not a source
+of gravitational fields. This would cause a drastic decrease in the active gravitational ``mass'' of an
+electromagnetic wave.
+
+The Kreuzer experiment actually dealt with static electric fields inside nuclei, not
+electromagnetic waves, but it is still clear what we should expect in general: if pressure does not act as
+a gravitational source, then the ratio $m_a/m_p$ should be different for different for different nuclei.
+Specifically, it should be lower for a nucleus with a higher atomic number $Z$, in which the electrostatic
+pressures are higher.
+
 Kreuzer did a Cavendish experiment using masses made of two different substances: teflon and
 a mixture of the liquids trichloroethylene and dibromoethane, with the proportions intentionally chosen so as to give a density nearly
 the same as that of teflon, but not exactly the same. Teflon is 76\% fluorine by weight, and the liquid is 74\% bromine.
@@ -209,33 +237,61 @@ to one another,
 %>
 <% end_marg %>
 
-Kreuzer intended this exeriment only as a test of $m_p\propto m_a$, but it was reinterpreted
+Kreuzer intended this exeriment only as a test of $m_p\propto m_a$, but it was reinterpreted in 1976
 by Will\footnote{Will, ``Active mass in relativistic gravity: Theoretical interpretation of the Kreuzer experiment,'' Ap. J. 204 (1976) 234,
 available online at \url{adsabs.harvard.edu}. A broader review of experimental tests of general relativity is given in
 Will, ``The Confrontation between General Relativity
 and Experiment,'' \url{relativity.livingreviews.org/Articles/lrr-2006-3/}. The Kreuzer experiment is discussed in  section 3.7.3.}
 as a test of the coupling of sources to gravitational fields as predicted by general relativity and other theories of gravity.
+Crudely, we've already argued that $m_p\propto m_a$ would be substance-dependent if pressure did not couple to gravitational
+fields. Will actually carried out a more careful calculation, of which I present a simplified summary.
 Suppose that pressure does not contribute as much to gravitational fields as is claimed by general relativity; its
-coupling is reduced by a factor $1-\zeta$, where $\zeta=0$ in general relativity.\footnote{In Will's notation, $\zeta_4$ measures
+coupling is reduced by a factor $1-x$, where $x=0$ in general relativity.\footnote{In Will's notation, $\zeta_4$ measures
 nonstandard coupling to pressure, $\zeta_3$ to internal energy, and $\zeta_1$ to kinetic energy. By requiring that point-particle
-models agree with perfect-fluid models, one obtains $(-2/3)\zeta_1=\zeta_3=-\zeta_4=\zeta$.} Will considers a model consisting of
+models agree with perfect-fluid models, one obtains $(-2/3)\zeta_1=\zeta_3=-\zeta_4=x$.} Will considers a model consisting of
 pointlike particles interacting through static electrical forces, and shows that for such a system,
 \begin{equation*}
-  m_a = m_p + \frac{1}{2}\zeta U_e \qquad ,
+  m_a = m_p + \frac{1}{2}x U_e \qquad ,
 \end{equation*}
-where $U_e$ is the electrical energy. The Kreuzer experiment then requires $|\zeta| < 6\times 10^{-2}$, meaning that
+where $U_e$ is the electrical energy. The Kreuzer experiment then requires $|x| < 6\times 10^{-2}$, meaning that
 pressure does contribute to gravitational fields as predicted by general relativity, to within a precision of 6\%.
 
-If $\zeta$ were nonzero, so that active and passive gravitational mass were not equivalent, then a pair of objects made of different
-substances would
-not obey Newton's third law in their gravitational interactions,
-and momentum would not be conserved. The system's center of mass would accelerate
-along the line connecting the two bodies, in either the direction of the lower-$Z$ object or the higher-$Z$ one, depending
-on the sign of $\zeta$. Bartlett and van Buren\footnote{Phys. Rev. Lett. 57 (1986) 24. The result is summarized in section 3.7.3 of
-the review by Will.} used this fact in 1986 to derive a tighter limit on $\zeta$. Since the moon
-has an asymmetrical distribution of iron and aluminum, a nonzero $\zeta$ would cause it to have an anomalous acceleration along
+One of the important ways in which Will's calculation goes beyond my previous crude argument is that it shows that
+when $x=0$, as it does for general relativity, the correction term $x U_e/2$ vanishes, and $m_a=m_p$ exactly. This is
+interpreted as follows. Let a bromine nucleus be referred to with a capital $M$, fluorine with the lowercase $m$.
+Then when a bromine nucleus and a fluorine nucleus interact gravitationally at a distance $r$, the Newtonian
+approximation applies, and the total internal force acting on the pair of nuclei taken as a whole equals
+$(m_pM_a-M_pm_a)/r^2$ (in units where the Newtonian gravitational constant $G$ equals 1). This vanishes
+only if $m_pM_a-M_pm_a=0$, which is equivalent to $m_p/M_p=m_a/M_a$. If this proportionality fails, then
+the system violates Newton's third law and conservation of momentum; its center of mass will accelerate
+along the line connecting the two nuclei, either in the direction of $M$ or in the direction of $m$, depending
+on the sign of $x$. 
+
+Thus the vanishing of the correction term $x U_e/2$ tells us that general relativity
+predicts exact conservation of momentum in this interaction. This is comforting, but a little susprising on the face
+of it. Newtonian gravity treats active and passive massive perfectly symmetrically, so that there is a perfect
+guarantee of conservation of momentum. But relativity
+incorporates them in a completely asymmetric manner, so there is no obvious reason that we should have perfect
+conservation of momentum. In fact we don't have any general guarantee of conservation of momentum, since,
+as discussed in section \ref{sec:no-conservation-laws} on page \pageref{sec:no-conservation-laws}, the language
+of general relativity doesn't even give us the symbols we would need in order to state a global conservation law
+for a vector. General relativity does, however, allow \emph{local} conservation laws. We will have local
+conservation of mass-energy and momentum provided that the stress-energy tensor's divergence $\nabla_b T^{ab}$ vanishes.
+
+Bartlett and van Buren\footnote{Phys. Rev. Lett. 57 (1986) 24. The result is summarized in section 3.7.3 of
+the review by Will.} used this connection to conservation of momentum in 1986 to derive a tighter limit on $x$. Since the moon
+has an asymmetrical distribution of iron and aluminum, a nonzero $x$ would cause it to have an anomalous acceleration along
 a certain line. Because lunar laser ranging gives extremely accurate data on the moon's orbit, the constraint is tightened
-to $|\zeta| < 1\times 10^{-8}$.
+to $|x| < 1\times 10^{-8}$.\label{end-kreuzer}
+<% marg(40) %>
+<%
+  fig(
+    'mirror-on-moon',
+    %q{The Apollo 11 mission left behind this mirror, which in this photo shows the reflection of the black sky. The mirror
+       is used for lunar laser ranging measurements, which have an accuracy of about a centimeter.}
+  )
+%>
+<% end_marg %>
 <% end_sec %> % Experimental tests
 <% end_sec %> % The Einstein field equation
 
@@ -335,7 +391,7 @@ add another condition: (iv) The objects $\zu{O}_n$ obeys the dominant energy con
 given above, since, as discussed in more detail on p.~\pageref{singularity-theorems}, matter that satisfies a reasonable
 energy condition can't be compressed too much without forming a black-hole singularity.
 \end{eg}
-<% marg(-30) %>
+<% marg(40) %>
 <%
   fig(
     'negative-mass',
@@ -489,7 +545,8 @@ universe.
 Looking back over the considerations that led us to this form of the equation, we see that it is
 very nearly uniquely determined by the following criteria:
 \begin{itemize}
-\item The equivalence principle is satisfied.
+\item It should be consistent with experimental evidence for local conservation of mass-energy and momentum.
+\item It should satisfy the equivalence principle.
 \item It should be coordinate-independent.
 \item It should be equivalent to Newtonian gravity in the appropriate limit.
 \item It should not be overdetermined.
@@ -506,12 +563,13 @@ metric. We then have something like $G_{ab} = c_1 T_{ab}+c_2 g_{ab} T\indices{^c
 the two constants $c_1$ and $c_2$ would be constrained by the requirement that the theory agree
 with Newtonian gravity in the classical limit.
 
-This particular attempt fails, because it violates the equivalence principle. Consider a beam of
+To see why this attempt fails, consider a beam of
 light directed along the $x$ axis. Its momentum is equal to its energy (see page \pageref{sec:momentum-four-vector}),
 so its contributions to the local energy density and pressure are equal.
 Thus its contribution to the stress-energy tensor is of the form $T\indices{^\mu_\nu}=(\text{constant})\times diag(-1,1,0,0)$.
-The trace vanishes, so its coupling to gravity in the $c_2$ term is zero. But this violates the equivalence
-principle, which requires that all forms of mass-energy contribute equally to gravitational mass.
+The trace vanishes, so the beam of light's coupling to gravity in the $c_2$ term is zero. As discussed on
+pp.~\pageref{kreuzer}-\pageref{end-kreuzer}, empirical tests of conservation of momentum would therefore
+constrain $c_2$ to be $\lesssim 10^{-8}$.
 \end{eg}
 
 One way in which we \emph{can} change the field equation without violating any of these is to add a term $\Lambda g_{ab}$, giving

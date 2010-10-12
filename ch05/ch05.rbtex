@@ -1299,7 +1299,7 @@ source.\footnote{Carroll and Field, \url{http://arxiv.org/abs/gr-qc/9403058}}
 
 <% end_sec %> % torsion
 
-<% begin_sec("From metric to curvature",4) %>\label{sec:from-metric-to-curvature}
+<% begin_sec("From metric to curvature") %>\label{sec:from-metric-to-curvature}
 
 <% begin_sec("Finding $\\Gamma$ given $g$") %>
 We've already found the Christoffel symbol in terms of the metric in one dimension. Expressing it in
@@ -1567,6 +1567,202 @@ is much smaller.
 
 <% end_sec %> % metric to curvature
 
+<% begin_sec("Manifolds",4) %>
+This section can be omitted on a first reading.
+
+<% begin_sec("Why we need manifolds") %>
+General relativity doesn't assume a predefined background metric, and this creates a chicken-and-egg problem.
+We want to define a metric on some space, but how do we even specify the set of points that make up that space?
+The usual way to define a set of points would be by their coordinates. For example, in two dimensions we
+could define the space as the set of all ordered pairs of real numbers $(x,y)$.
+But this doesn't work in general relativity, because space is not guaranteed to have this structure.
+For example, in the classic 1979 computer game Asteroids, space ``wraps around,'' so that if your spaceship flies off the
+right edge of the screen, it reappears on the left, and similarly at the top and bottom. Even before we impose a metric
+on this space, it has topological properties that differ from those of the Euclidean plane. By ``topological'' we mean
+properties that are preserved if the space is thought of as a sheet of rubber that can be stretched in any way, but
+not cut or glued back together. Topologically, the space in Asteroids is equivalent to a torus (surface of a doughnut),
+but not to the Euclidean plane.\index{topology}
+<% marg(80) %>
+<%
+  fig(
+    'asteroids',
+    %q{In Asteroids, space ``wraps around.''}
+  )
+%>
+<% end_marg %>
+
+<%
+  fig(
+    'coffee-cup-to-doughnut',
+    %q{%
+      A coffee cup is topologically equivalent to a doughnut.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'sidepos'=>'b'
+    }
+  )
+%>
+
+Another useful example is the surface of a sphere. In example \ref{eg:christoffel-on-globe-quantitative} on page
+\pageref{eg:christoffel-on-globe-quantitative}, we calculated $\Gamma\indices{^\theta_{\phi\phi}}$. A similar
+calculation gives $\Gamma\indices{^\phi_{\theta\phi}}=\cot\theta/R$. Now consider what happens as we drive our dogsled
+north along the line of longitude $\phi=0$, cross the north pole at $\theta=0$, and continue along the same geodesic. As we cross
+the pole, our longitude changes discontinuously from 0 to $\pi$. Consulting the geodesic equation, we see that this happens
+because  $\Gamma\indices{^\phi_{\theta\phi}}$ blows up at $\theta=0$. Of course nothing really special happens at the pole.
+The bad behavior isn't the fault of the sphere, it's the fault of the $(\theta,\phi)$ coordinates we've chosen,
+that happen to misbehave at the pole. Unfortunately, it is impossible to define a pair of coordinates on a two-sphere
+without having them misbehave somewhere. (This follows from Brouwer's famous 1912 ``Hairy ball theorem,'' which states
+that it is impossible to comb the hair on a sphere without creating a cowlick somewhere.) 
+<% end_sec %> % Why we need manifolds
+
+<% begin_sec("Topological definition of a manifold") %>\label{sec:manifold-def-topological}
+This motivates us to try to define a ``bare-bones'' geometrical space in which there is no predefined metric or even
+any predefined set of coordinates.
+
+There is a general notion of a topological space, which is too general for our purposes. In such a space, the
+only structure we are guaranteed is that certain sets are defined as ``open,''\index{open set}
+in the same sense that an interval like $0< x < 1$ is called ``open.'' Any point in an open set can be
+moved around without leaving the set. An open set is essentially a set without a boundary, for in a set
+like $0\le x \le 1$, the boundary points 0 and 1 can only be moved in one direction without taking them outside.
+<% marg(20) %>
+<%
+  fig(
+    'venn-diagram-topology',
+    %q{General relativity doesn't assume a predefined background metric. Therefore all we can really know
+       before we calculate anything is that we're working on a manifold, without a metric imposed on it.}
+  )
+%>
+<% end_marg %>
+
+A toplogical space is too general for us because it can include spaces like fractals, infinite-dimensional spaces,
+and spaces that have different numbers of dimensions in different regions.
+It is nevertheless useful to recognize certain concepts that can be defined using only the generic apparatus of
+a topological space, so that we know they do not depend in any way on the presence of a metric.
+An open set surrounding a point is called a neighborhood of that point.\index{neighborhood}
+In a topological space we have a notion of getting arbitrarily close to a certain point, which means to take
+smaller and smaller neighborhoods, each of which is a subset of the last. But since there is no metric,
+we do not have any concept of
+comparing distances of distant points, e.g., that P is closer to Q than R is to S.
+A continuous function\index{continuous function} is a purely topological idea; a continuous function is one such that for any open subset U
+of its range, the set V of points in its domain that are mapped to points in U is also open.
+Although some definitions of continuous functions talk about real numbers like $\epsilon$ and $\delta$,
+the notion of continuity doesn't depend on the existence of any structure such as the real number system.
+A homeomorphism\index{homeomorphism} is a function that is invertible and continuous in both directions.
+Homeomorphisms formalize the informal notion of ``rubber-sheet geometry without cutting or gluing.''
+If a homeomorphism exists between two topological spaces, we say that they are homeomorphic;
+they have the same structure and are in some sense
+the same space.
+
+The more specific type of topological space we want is called a manifold. Without attempting any high level of
+mathematical rigor, we define an $n$-dimensional manifold M according to the following informal axioms,
+with footnotes suggesting ways of formalizing the words somewhat more:
+\begin{itemize}
+\item[M1] Dimension: M's dimension\footnote{meaning its Lebesgue covering dimension} is $n$.
+\item[M2] Homogeneity: No point has any property that distinguishes it from any other point.\footnote{M is a homogeneous space under its own homeomorphism group.}
+\item[M3] Completeness: M is complete, in the sense that specifying an arbitrarily small neighborhood gives a unique definition of a point.\footnote{M is a complete uniform space.}
+\end{itemize}
+(It is also desirable to impose a few more technical conditions.\footnote{M should be normal, Hausdorff, and second-countable.})
+
+\begin{eg}{Lines}
+The set of all real numbers is a 1-manifold. Similarly, any line with the properties specified in Euclid's \emph{Elements} is
+a 1-manifold. All such lines are homeomorphic to one another, and we can therefore speak of ``the line.''
+\end{eg}
+
+\begin{eg}{A circle}
+A circle (not including its interior) is a 1-manifold, and it is not homeomorphic to the line. To see this, note that deleting a point from a circle
+leaves it in one connected piece, but deleting a point from a line makes two. Here we use the fact that a homeomorphism
+is guaranteed to preserve ``rubber-sheet'' properties like the number of pieces.
+\end{eg}
+
+\begin{eg}{No changes of dimension}
+A ``lollipop'' formed by gluing an open 2-circle (i.e., a circle not including its boundary) to an open line segment is not a manifold, because there is no $n$ for which it
+satisfies M1.
+
+It also violates M2, because points in this
+set fall into three distinct classes: classes that live in 2-dimensional neighborhoods, those that live in 1-dimensional neighborhoods,
+and the point where the line segment intersects the boundary of the circle.
+\end{eg}
+
+\begin{eg}{No manifolds made from the rational numbers}
+The rational numbers are not a manifold, because specifying an arbitrarily small neighborhood around $\sqrt{2}$ excludes every rational
+number, violating M3.
+
+Similarly, the rational plane defined by rational-number coordinate pairs $(x,y)$ is not a 2-manifold. It's good that we've excluded
+this space, because it has the unphysical property that curves can cross without having a point in common. For example, the curve $y=x^2$
+crosses from one side of the line $y=2$ to the other, but never intersects it. This is physically undesirable because it doesn't
+match up with what we have in mind when we talk about collisions between particles as intersections of their world-lines, or
+when we say that electric field lines aren't supposed to intersect.
+\end{eg}
+
+\begin{eg}{No boundary}
+The open half-plane $y>0$ in the Cartesian plane is a 2-manifold. The closed half-plane $y\ge 0$ is not, because it violates M2;
+the boundary points have different properties than the ones on the interior.
+\end{eg}
+
+\begin{eg}{Disconnected manifolds}
+Two nonintersecting lines are a 1-manifold. Physically, disconnected manifolds of this type would represent a universe in which
+an observer in one region would never be able to find out about the existence of the other region.
+\end{eg}
+
+\begin{eg}{No bad glue jobs}
+Hold your hands like you're pretending you know karate, and then use one hand to karate-chop the other. Suppose we want to join two
+open half-planes in this way. As long as they're separate, then we have a perfectly legitimate disconnected manifold. But if we
+want to join them by adding the point P where their boundaries coincide, then we violate M2, because this point has special properties
+not possessed by any others. An example of such a property is that there exist points Q and R such that every continuous curve joining
+them passes through P.
+\end{eg}
+<% end_sec %> % Topological definition of a manifold
+<% begin_sec("Local-coordinate definition of a manifold") %>
+An alternative way of characterizing an  $n$-manifold is as an object that can locally be described by
+$n$ real coordinates. That is, any sufficiently small neighborhood is homeomorphic to an open set in the space
+of real-valued $n$-tuples of the form $(x_1,x_2,\ldots,x_n)$. For example, a closed half-plane is not a 2-manifold
+because no neighborhood of a point on its edge is homeomorphic to any open set in the Cartesian plane.
+
+Self-check: Verify that this alternative definition of a manifold gives the same answers as M1-M3 in all the examples above.
+
+Roughly speaking, the equivalence of the two definitions occurs because we're using $n$ real numbers as coordinates for the
+dimensions specified by M1,
+and the real numbers are the unique number system that has the usual arithmetic operations, is ordered, and is
+complete in the sense of M3.
+
+As usual when we say that something is ``local,''
+a question arises as to how local is local enough. The language in the definition above about ``any sufficiently small neighborhood''
+is logically akin to the Weierstrass $\epsilon$-$\delta$ approach: if Alice gives Bob a manifold and a point on a manifold,
+Bob can always find some neighborhood around that point that is compatible with coordinates, but it may be an extremely small
+neighborhood. As discussed in section \ref{sec:models}, a method that is equally rigorous --- and usually much more
+convenient in differential geometry --- is to use infinitesimals. For example, suppose that we want to write down
+a metric in the form $\der s^2=g_{ab}\der x^a\der x^b$. Infinitesimal distances like $\der x^a$ are always small enough to
+fit in \emph{any} open set of real numbers. In fact, an alternative definition of an open set, in a space with a Euclidean
+metric, is one in which every point can be surrounded by an infinitesimal ball. Similarly, if we want to calculate Christoffel
+symbols, the Riemann tensor, etc., then all we need is the ability to take derivatives, and this only requires infinitesimal
+coordinate changes. Likewise the equivalence principle says that a spacetime is compatible with a Lorentzian metric at every
+point, and this only requires an infinitesimal amount of elbow-room.
+
+In practice, we never have to break up a manifold into infinitely many pieces, each of them infinitesimally small, in order
+to have well-behaved coordinates.
+
+\begin{eg}{Coordinates on a circle}
+If we are to define coordinates on a circle, they should be continuous functions. The angle $\phi$ about the center therefore
+doesn't quite work as a global coordinate, because it has a discontinuity where $\phi=0$ is identified with $\phi=2\pi$.
+We can get around this by using different coordinates in different regions, as is guaranteed to be possible by the local-coordinate definition of a manifold.
+For example, we can cover the circle with two open sets, one on the left and one on the right. The left one, L, is defined by
+deleting only the $\phi=0$ point from the circle. The right one, R, is defined by deleting only the one at $\phi=\pi$.
+On L, we use coordinates $0<\phi_L<2\pi$, which are always a continuous function from L to the real numbers. On R, we use $-\pi<\phi_R<\pi$.
+\end{eg}
+
+In examples like this one, the sets like L and R are referred to as patches.\index{patch}
+We require that the coordinate maps on the different patches match up smoothly. For example,
+we want $\phi_L$ to be a continuous function of $\phi_R$ on any open neighborhood where they are both
+defined.
+
+The local-coordinate definition only states that a manifold \emph{can} be coordinatized. That is,
+the functions that define the coordinate maps are not part of the definition of the manifold,
+so, for example, if two people define coordinates patches on the unit circle in different ways,
+they are still talking about exactly the same manifold.
+<% end_sec %> % Local-coordinate definition of a manifold
+<% end_sec %> % Manifolds
 \begin{hwsection}
 
 <% begin_hw('polar-christoffel') %>
@@ -1630,6 +1826,13 @@ Some further properties of the metric [\ref{eq:uniform-field-metric-exp}] are an
 subsection \ref{sec:uniform-field-kasner} on page \pageref{sec:uniform-field-kasner}.
 <% end_hw %>
 
+<% begin_hw('double-cone-not-manifold') %>
+Prove that a double cone (e.g., the surface $r=z$ in cylindrical coordinates) is not a manifold.\hwsoln
+<% end_hw %>
+
+<% begin_hw('torus-is-manifold') %>
+Prove that a torus is a manifold.\hwsoln
+<% end_hw %>
 
 \end{hwsection}
 

@@ -519,7 +519,7 @@ events infinitesimally close together. Even for randomly chosen events far apart
 violate O1 is zero.
 <% end_sec %> % Geometrical treatment of gravity
 
-<% begin_sec("E\\\"{o}tv\\\"{o}s experiments") %>
+<% begin_sec("E\\\"{o}tv\\\"{o}s experiments") %>\label{sec:eotvos}
 Einstein's entire system breaks down if there is any violation, no matter how small, of the proportionality
 between inertial and gravitational mass, and it therefore becomes very interesting to search experimentally
 for such a violation. For example, we might wonder whether neutrons and protons had slightly different ratios of

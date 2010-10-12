@@ -284,7 +284,7 @@ geometry, mathematicians stopped wasting their time looking for contradictions i
 Consider the following axiomatically defined system of numbers:
 \begin{enumerate}
 \item It is a field, i.e., it has addition, subtraction, multiplication, and division with the usual properties.
-\item It is an ordered geometry in the sense of O1-O4, and the ordering relates to addition and multiplication in the usual way.
+\item It is an ordered geometry in the sense of O1-O4 on p.~\pageref{ordered-geometry-axioms}, and the ordering relates to addition and multiplication in the usual way.
 \item Existence of infinitesimals: There exists a positive number $d$ such that $d<1$, $d<1/2$, $d<1/3$, \ldots
 \end{enumerate}
 A model of this system can be constructed within the real number system by defining $d$ as the identity function
@@ -292,7 +292,7 @@ $d(x)=x$ and forming the set of functions of the form $f(d)=P(d)/Q(d)$,
 where $P$ and $Q$ are polynomials with real coefficients.
 The ordering of functions $f$ and $g$ is defined according to the sign of $\lim_{x\rightarrow 0^+}f(x)-g(x)$.
 Axioms 1-3 can all be proved from the real-number axioms. Therefore this system, which includes infinitesimals, is equiconsistent with the reals. More elaborate
-constructions can extend this to systems that more of the properties of the reals, and
+constructions can extend this to systems that have more of the properties of the reals, and
 a browser-based calculator that implements such a system is available at \url{lightandmatter.com/calc/inf}.
 Abraham Robinson extended this in 1966 to all of analysis,\index{Robinson!Abraham}
 and thus there is nothing intrinsically nonrigorous about doing analysis in the style of
@@ -1199,6 +1199,18 @@ and one of their goals is to show that it has a background independence that jus
 It is instructive to consider coordinate independence from the point of view of a field theory. Newtonian gravity can be described
 in three equivalent ways: as a gravitational field $\vc{g}$, as a gravitational potential $\phi$, or as a set of
 gravitational field lines. The field lines are never incident on one another, and locally the field satisfies Poisson's equation.
+<% marg(150) %>
+<%
+  fig(
+    'star-magnetic-field-lines',
+    %q{Since magnetic field lines can never intersect, a magnetic field pattern contains coordinate-independent information
+       in the form of the knotting of the lines.
+       This figure shows the magnetic field pattern of the star SU Aurigae, as measured by Zeeman-Doppler imaging (Petit at al.).
+       White lines represent magnetic field lines that close upon themselves in the immediate vicinity of the star;
+       blue lines are those that extend out into the interstellar medium.}
+  )
+%>
+<% end_marg %>
 
 The electromagnetic field has polarization
 properties different from those of the gravitational field,
@@ -1221,19 +1233,7 @@ is called a gauge transformation.\index{gauge transformation}
 In relativity,
 the gauge transformations are the smooth coordinate transformations. These gauge transformations distort the
 field lines without making them cut through one another.
-<% marg(150) %>
-<%
-  fig(
-    'star-magnetic-field-lines',
-    %q{Since magnetic field lines can never intersect, a magnetic field pattern contains coordinate-independent information
-       in the form of the knotting of the lines.
-       This figure shows the magnetic field pattern of the star SU Aurigae, as measured by Zeeman-Doppler imaging (Petit at al.).
-       White lines represent magnetic field lines that close upon themselves in the immediate vicinity of the star;
-       blue lines are those that extend out into the interstellar medium.}
-  )
-%>
 
-<% end_marg %>
 <% end_sec %> % Coordinate independence as a choice of gauge
 <% end_sec %> % Interpretation of coordinate independence
 \begin{hwsection}
