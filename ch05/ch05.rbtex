@@ -1595,7 +1595,7 @@ but not to the Euclidean plane.\index{topology}
   fig(
     'coffee-cup-to-doughnut',
     %q{%
-      A coffee cup is topologically equivalent to a doughnut.
+      A coffee cup is topologically equivalent to a torus.
     },
     {
       'width'=>'wide',
@@ -1656,14 +1656,15 @@ they have the same structure and are in some sense
 the same space.
 
 The more specific type of topological space we want is called a manifold. Without attempting any high level of
-mathematical rigor, we define an $n$-dimensional manifold M according to the following informal axioms,
-with footnotes suggesting ways of formalizing the words somewhat more:
+mathematical rigor, we define an $n$-dimensional manifold M according to the following informal principles:\footnote{For those with
+knowledge of topology, these can be formalized a little more: we want a completely normal, second-countable, locally connected topological space that
+has Lebesgue covering dimension $n$, is a homogeneous space under its own homeomorphism group, and is a complete uniform space. I don't know whether
+this is sufficient to characterize a manifold completely, but it suffices to rule out all the counterexamples of which I know.}
 \begin{itemize}
-\item[M1] Dimension: M's dimension\footnote{meaning its Lebesgue covering dimension} is $n$.
-\item[M2] Homogeneity: No point has any property that distinguishes it from any other point.\footnote{M is a homogeneous space under its own homeomorphism group.}
-\item[M3] Completeness: M is complete, in the sense that specifying an arbitrarily small neighborhood gives a unique definition of a point.\footnote{M is a complete uniform space.}
+\item[M1] Dimension: M's dimension is $n$.
+\item[M2] Homogeneity: No point has any property that distinguishes it from any other point.
+\item[M3] Completeness: M is complete, in the sense that specifying an arbitrarily small neighborhood gives a unique definition of a point.
 \end{itemize}
-(It is also desirable to impose a few more technical conditions.\footnote{M should be normal, Hausdorff, and second-countable.})
 
 \begin{eg}{Lines}
 The set of all real numbers is a 1-manifold. Similarly, any line with the properties specified in Euclid's \emph{Elements} is
@@ -1753,9 +1754,14 @@ On L, we use coordinates $0<\phi_L<2\pi$, which are always a continuous function
 \end{eg}
 
 In examples like this one, the sets like L and R are referred to as patches.\index{patch}
-We require that the coordinate maps on the different patches match up smoothly. For example,
-we want $\phi_L$ to be a continuous function of $\phi_R$ on any open neighborhood where they are both
-defined.
+We require that the coordinate maps on the different patches match up smoothly. In this example, we would
+like all four of the following functions, known as transition maps,\index{transition map} to be continuous:
+\begin{itemize}
+\item $\phi_L$ as a function of $\phi_R$ on the domain $0<\phi_R<\pi$
+\item $\phi_L$ as a function of $\phi_R$ on the domain $-\pi<\phi_R<0$
+\item $\phi_R$ as a function of $\phi_L$ on the domain $0<\phi_L<\pi$
+\item $\phi_R$ as a function of $\phi_L$ on the domain $\pi<\phi_L<2\pi$
+\end{itemize}
 
 The local-coordinate definition only states that a manifold \emph{can} be coordinatized. That is,
 the functions that define the coordinate maps are not part of the definition of the manifold,
@@ -1824,6 +1830,16 @@ we would like for a uniform gravitational field. This is related to Bell's
 spaceship paradox (example \ref{eg:bell-spaceship-paradox}, p.~\pageref{eg:bell-spaceship-paradox}).}\index{Bell, John!spaceship paradox}\index{spaceship paradox}
 Some further properties of the metric [\ref{eq:uniform-field-metric-exp}] are analyzed in
 subsection \ref{sec:uniform-field-kasner} on page \pageref{sec:uniform-field-kasner}.
+<% end_hw %>
+
+<% begin_hw('closed-and-open') %>
+In a topological space T, the complement of a subset U is defined as the set of all points in T that are
+not members of U. A set whose complement is open is referred to as closed.\index{closed set}
+On the real line, give 
+(a) one example of a closed
+set and (b) one example of a set that is neither open nor closed.
+(c) Give an example of an inequality that defines an open set on the rational number line, but
+a closed set on the real line.
 <% end_hw %>
 
 <% begin_hw('double-cone-not-manifold') %>

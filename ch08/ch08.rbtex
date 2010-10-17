@@ -172,13 +172,22 @@ metal spheres. We could test this aspect of general relativity by doing a Cavend
 so that the pressure is of the same order of magnitude as the mass-energy.
 This is unfortunately utterly impractical, since both $P$ and $\rho$ for a well-lit box
 are ridiculously small compared to $\rho$ for a metal ball.
+<% marg(70) %>
+<%
+  fig(
+    'cavendish',
+    %q{A Cavendish balance, used to determine the gravitational constant.}
+  )
+%>
+<% end_marg %>
 
 However, the repulsive electromagnetic
 pressure inside an atomic nucleus is quite large by ordinary standards --- about $10^{33}\ \zu{Pa}$!\label{nuclear-pressure}
 To see how big this is compared to the nuclear mass density of $\rho\sim 10^{18}\ \kgunit/\munit^3$, we need to take
 into account the factor of $c^2\ne1$ in SI units, the result being that $P/\rho$ is about $10^{-2}$, which is
 not too small. Thus if we measure gravitational interactions of nuclei with different values of $P/\rho$,
-we should be able to test this prediction of general relativity. This was done by Kreuzer\label{kreuzer}\footnote{Kreuzer, Phys. Rev. 169 (1968) 1007}\index{Kreuzer experiment}
+we should be able to test this prediction of general relativity. This was done in
+a Princeton PhD-thesis experiment by Kreuzer\label{kreuzer}\footnote{Kreuzer, Phys. Rev. 169 (1968) 1007}\index{Kreuzer experiment}
 in 1966.
 
 Before we can properly describe and interpret the Kreuzer experiment, we need to distinguish the several
@@ -194,7 +203,7 @@ applies, and we can think of active gravitational mass as a scalar, with a densi
 
 To understand how this relates to pressure as a source of gravitational fields, it is helpful to
 consider a case where $P$ is about the same as $\rho$, which occurs for light. Light is inherently
-relativistic, so the concept of a scalar gravitational mass breaks down, but we can still use ``mass'' in quotes to talk qualitatively
+relativistic, so the Newtonian concept of a scalar gravitational mass breaks down, but we can still use ``mass'' in quotes to talk qualitatively
 about an electromagnetic wave's active and passive participation in gravitational effects.
 Experiments show that general relativity correctly predicts the deflection of light by the sun to about one part
 in $10^5$ (p.~\pageref{sec:deflection-of-light}). This is the electromagnetic equivalent of an E\"{o}tv\"{o}s experiment;
@@ -205,37 +214,60 @@ electromagnetic wave.
 
 The Kreuzer experiment actually dealt with static electric fields inside nuclei, not
 electromagnetic waves, but it is still clear what we should expect in general: if pressure does not act as
-a gravitational source, then the ratio $m_a/m_p$ should be different for different for different nuclei.
+a gravitational source, then the ratio $m_a/m_p$ should be different for different nuclei.
 Specifically, it should be lower for a nucleus with a higher atomic number $Z$, in which the electrostatic
 pressures are higher.
+<% marg(50) %>
+<%
+  fig(
+    'kreuzer-simplified',
+    %q{A simplified diagram of Kreuzer's modification. The moving teflon mass is submerged in a liquid with nearly the same density.}
+  )
+%>
+<% end_marg %>
 
-Kreuzer did a Cavendish experiment using masses made of two different substances: teflon and
-a mixture of the liquids trichloroethylene and dibromoethane, with the proportions intentionally chosen so as to give a density nearly
-the same as that of teflon, but not exactly the same. Teflon is 76\% fluorine by weight, and the liquid is 74\% bromine.
+Kreuzer did a Cavendish experiment, figure \figref{kreuzer-simplified}, using masses made of two different substances. The first substance was teflon.
+The second substance was
+a mixture of the liquids trichloroethylene and dibromoethane, with the proportions chosen so as to give a
+density as close as possible to that of teflon.
+Teflon is 76\% fluorine by weight, and the liquid is 74\% bromine.
 Fluorine has atomic number $Z=9$, bromine $Z=35$, and since the electromagnetic force has a long range, the
 pressure within a nucleus scales upward roughly like $Z^{1/3}$ (because any given proton is acted on by $Z-1$
 other protons, and the size of a nucleus scales like $Z^{1/3}$, so $P\propto Z/(Z^{1/3})^2$).
 The solid mass was immersed in the liquid, and the combined gravitational field of the solid and the liquid
-was detected by a Cavendish balance. The solid mass was then moved back and forth repeatedly, so that its
-distance from the balance varied. Small, expected changes occurred in the gravitational field because of
-the slight difference in density between the solid and the liquid, and these changes verified that the balance
-was working and able to detect small changes in the gravitational field against a background of random and systematic
-errors. These changes were a measure of the two substances' differing densities of \emph{active} gravitational
-mass, i.e., their ability to create gravitational fields. The buoyancy of the solid was measured,
-giving a measurement of the difference between the densities of the two substances' \emph{passive} gravitational masses, which determine
-the forces they feel in an external field. The active and passive gravitational masses were found to be proportional
-to one another,
+was detected by a Cavendish balance.
+
+Ideally, one would formulate the liquid mixture so that its passive-mass density was exactly equal to that
+of teflon, as determined by buoyancy. Any oscillation in the torque measured by the Cavendish balance would
+then indicate an inequivalence between active and passive gravitational mass.
+<%
+  fig(
+    'kreuzer',
+    %q{%
+      The Kreuzer experiment. 1. There are two passive masses, P, and an active mass A consisting of
+      a single 23-cm diameter teflon cylinder immersed in a fluid. The teflon cylinder is driven back and forth with a period of 400 s.
+      The resulting deflection of the torsion beam is monitored by an optical lever
+      and canceled actively by electrostatic forces from capacitor plates (not shown).
+      The voltage required for this active cancellation is a measure of the torque exerted by A on the torsion beam.
+      2. Active mass as a function of temperature. 3. Passive mass as a function of temperature.
+      In both 2 and 3, temperature is measured in units of ohms, i.e., the uncalibrated units of a thermistor that was immersed in the liquid.
+    },
+    {
+      'width'=>'fullpage',
+      'sidecaption'=>true,
+      'sidepos'=>'b'
+    }
+  )
+%>
+
+In reality, the two substances involved had different coefficients
+of thermal expansion, so slight variations in temperature made their passive-mass densities unequal.
+Kreuzer therefore measured both the buoyant force and the gravitational torque as functions of temperature.
+He determined that these became zero at the same temperature, to within experimental errors, which verified
+the equivalence of active and passive gravitational mass to within a certain precision,
 \begin{equation*}
   m_p \propto m_a \qquad \text{to within $5\times 10^{-5}$\qquad.}
 \end{equation*}
-<% marg(100) %>
-<%
-  fig(
-    'cavendish',
-    %q{Top: A Cavendish balance, used to determine the gravitational constant. Bottom: Kreuzer's modification}
-  )
-%>
-<% end_marg %>
 
 Kreuzer intended this exeriment only as a test of $m_p\propto m_a$, but it was reinterpreted in 1976
 by Will\footnote{Will, ``Active mass in relativistic gravity: Theoretical interpretation of the Kreuzer experiment,'' Ap. J. 204 (1976) 234,

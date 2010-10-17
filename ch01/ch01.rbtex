@@ -1230,6 +1230,13 @@ then comes back down.  Compare the elapsed times.
 \hwhint{hint:\currenthwlabel} \hwsoln
 <% end_hw %>
 
+<% begin_hw('clock-at-center-of-earth') %>
+(a) Find the difference in rate between a clock at the center of the earth and a clock at the south pole.
+(b) When an antenna on earth receives a radio signal from a space probe that is in a hyperbolic orbit in the outer solar system,
+the signal will show both a kinematic redshift and a gravitational blueshift. Compare the orders of magnitude of these two effects.
+\hwsoln
+<% end_hw %>
+
 <% begin_hw('ep-charge') %>
 Consider the following physical situations: (1) a charged object lies on a desk on the planet earth;
 (2) a charged object orbits the earth; (3) a charged object is released above the earth's surface

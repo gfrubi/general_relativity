@@ -391,7 +391,7 @@ Birkhoff's theorem says that the assumption of staticity was not necessary.
 That is, even if the mass distribution contracts and expands over time, the exterior solution is still the Schwarzschild solution.
 Birkhoff's theorem holds because gravitational waves are transverse, not longitudinal (see p.~\pageref{grav-waves-transverse}),
 so the mass distribution's radial throbbing cannot generate a gravitational wave. Birkhoff's theorem can be viewed
-as the simplest of the no-hair theorems describing black holes.\index{no-hair theorems}
+as the simplest of the no-hair theorems describing black holes.\index{no-hair theorems}\index{black hole!no-hair theorem}
 The most general no-hair theorem states that a black hole is completely characterized by its mass, charge, and
 angular momentum. Other than these three numbers, nobody on the outside can recover any information that was possessed by the matter and
 energy that were sucked into the black hole.

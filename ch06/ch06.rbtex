@@ -904,8 +904,8 @@ and Experiment,'' \url{http://relativity.livingreviews.org/Articles/lrr-2006-3/}
 
 <% end_sec %> % Deflection of light
 <% end_sec %> %  Schwarzschild metric
-<% begin_sec("Black holes") %>\label{sec:black-holes}
-<% begin_sec("Singularities") %>\label{sec:black-hole-singularity}
+<% begin_sec("Black holes") %>\label{sec:black-holes}\index{black hole}
+<% begin_sec("Singularities") %>\label{sec:black-hole-singularity}\index{black hole!singularity}
 A provocative feature of the Schwarzschild metric is that it has elements that blow up at $r=0$ and at $r=2m$. If this is a description of
 the sun, for example, then these singularities are of no physical significance, since we only solved the
 Einstein field equation for the vacuum region outside the sun, whereas $r=2m$ would lie about 3 km from the sun's center.
@@ -940,7 +940,7 @@ He may not notice anything special at all about his local environment. (Or he ma
 nevertheless great enough to kill him.)
 
 <% end_sec %> % singularities
-<% begin_sec("Event horizon") %>\label{sec:black-hole-horizon}
+<% begin_sec("Event horizon") %>\label{sec:black-hole-horizon}\index{black hole!event horizon}
 
 Even though $r=2m$ isn't a real singularity, interesting things do happen there. For $r<2m$, the sign of
 $g_{tt}$ becomes negative, while $g_{rr}$ is positive. In our $+---$ signature, this has the following
@@ -958,7 +958,7 @@ in the context of black holes; their properties, and some of the implications fo
 been discussed in section \ref{sec:event-horizons}.
 
 <% end_sec %> % event horizon
-<% begin_sec("Expected formation") %>\label{sec:black-hole-formation}
+<% begin_sec("Expected formation") %>\label{sec:black-hole-formation}\index{black hole!formation}
 
 Einstein and Schwarzschild
 did not believe, however, that any of these features of the Schwarzschild metric were more than a mathematical curiosity, and the term ``black hole'' was
@@ -1057,7 +1057,7 @@ book and absorb the main points.
 <% end_sec %> % singularities
 
 <% begin_sec("Hawking radiation") %>
-<% begin_sec("Radiation from black holes") %>
+<% begin_sec("Radiation from black holes") %>\index{black hole!radiation from}
 Since event horizons are expected to emit blackbody radiation, a black hole should not be entirely black; it should
 radiate. This is called Hawking radiation.\index{Hawking radiation}
 Suppose observer B just outside the event horizon blasts the engines of her rocket ship, producing enough

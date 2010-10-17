@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.47 r22583"
-   sodipodi:docname="New document 1">
+   sodipodi:docname="venn-diagram-topology.svg">
   <defs
      id="defs4">
     <inkscape:perspective
@@ -65,7 +65,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -123,20 +123,16 @@
        xml:space="preserve"
        style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
        x="140.87239"
-       y="94.513618"
+       y="100.51362"
        id="text3642"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         id="tspan3644"
          x="140.87239"
-         y="94.513618">smooth</tspan><tspan
-         sodipodi:role="line"
-         x="140.87239"
-         y="107.01362"
+         y="100.51362"
          id="tspan3646">manifolds</tspan><tspan
          sodipodi:role="line"
          x="140.87239"
-         y="119.51362"
+         y="113.01362"
          id="tspan3648">with metrics</tspan></text>
   </g>
 </svg>

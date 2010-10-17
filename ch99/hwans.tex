@@ -60,6 +60,20 @@ a force to clock A, decelerating it and then reaccelerating it so that it comes 
 We've already established that the effect of motion is to slow down time, so clock
 A reads a smaller time interval.
 
+\hwsolnhdr{clock-at-center-of-earth}
+(a) Generalizing the expression $gy/c^2$ for the fractional time dilation to the case of a nonuniform
+field, we find $\Phi/c^2$, where $\Phi$ is the Newtonian gravitational potential, i.e., the
+gravitational energy per unit mass.
+The shell theorem gives a gravitational field $g=Mr/R^3$. Integration shows
+$\Phi=Mr^2/2R^3$. The difference in the gravitational potential between these two points, divided by $c^2$, is
+$\Phi/c^2=M/2c^2R$, which comes out to be $3.5\times 10^{-10}$. This is the fractional difference in clock rates.
+% calc -x -e "M=5.97 10^24 kg; R=6370 km; GM/(2c^2R)"
+(b) The probe's velocity is on the same order of magnitude as escape velocity from the inner solar system,
+so very roughly we can say that $v\sim\sqrt{|\Delta\Phi|}$, where $\Delta\Phi$ is the difference between the gravitational
+potential at the earth's orbit and infinity. This gives a Doppler shift $v/c\sim \sqrt{|\Delta\Phi|}/c$.
+We saw in part a that the gravitational Doppler shift was $\Delta\Phi/c^2$, which is the square of this
+quantity, and therefore much smaller.
+
 \hwsolnhdr{ep-charge}
 (a) In case 1 there is no source of energy, so the particle cannot radiate.
 In case 2-4, the particle radiates, because there are sources of energy (loss of
@@ -316,14 +330,33 @@ Therefore the two can't be the same under a change of coordinates.
 property that under the transformation $z\rightarrow z+c$, where $c$ is a constant, the only change is a rescaling of the
 time coordinate; by coordinate invariance, such a rescaling is unobservable.
 
+\hwsolnhdr{closed-and-open}
+(a) $0 \le x \le 1$\\
+(b) $0 \le x < 1$\\
+(c) $x^2 \le 2$
+
 \hwsolnhdr{double-cone-not-manifold}
 The double cone fails to satisfy axiom M2, because the apex has properties that differ topologically from those of
 other points: deleting it chops the space into two disconnected pieces.
 
 \hwsolnhdr{torus-is-manifold}
-A torus satisfies M1-M3. Alternatively, we can use the local-coordinate definition. We have already shown that a circle
+When we use a word like ``torus,'' there is some hidden ambiguity. We could mean something strange like the following. Suppose
+we construct the three-dimensional space of coordinates $(x,y,z)$ in which all three coordinates are rational numbers. Then let
+a torus be the set of such all points lying at a distance of 1/2 from the nearest point on a unit circle. This is in some sense
+a torus, but it doesn't have the topological properties one usually assumes. For example, two continuous curves on its surface can cross
+without having a point of intersection. We can't get anywhere without assuming that the word ``torus'' refers to a surface that
+has the usual topological properties.
+
+Now let's prove that it's a manifold using both definitions.
+
+Using the topological definition, M1 is satisfied with $n=2$, because every point on the
+surface lives in a two-dimensional neighborhood. M2 holds because the only differences between points are those that are not
+topological, e.g., Gaussian curvature. M3 holds provided precisely under the interpretation outlined in the first paragraph.
+
+Alternatively, we can use the local-coordinate definition. We have already shown that a circle
 is a 1-manifold, which can be coordinatized in two patches by an angle $\phi$. The torus can therefore be coordinatized by
-a pair of such angles, $(\phi_1,\phi_2)$, in four patches.
+a pair of such angles, $(\phi_1,\phi_2)$, in four patches. Again we need to assume the interpretation given above, since
+otherwise real-number pairs like $(\phi_1,\phi_2)$ wouldn't have the same topology as points on the rational-number torus.
 
 \beginsolutions{6}
 

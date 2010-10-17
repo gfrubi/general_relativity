@@ -733,7 +733,7 @@ and in which direction? Compare with figure \figref{local-lorentz-frames} on pag
 %>
 <% end_marg %>
 
-\begin{eg}{A Newtonian black hole}\label{eg:newtonian-black-hole}
+\begin{eg}{A Newtonian black hole}\label{eg:newtonian-black-hole}\index{black hole!Newtonian}
 In the case of a black hole, the light cone tips over so far that the entire future timelike
 region lies within the black hole. If an observer is present at such an event, then that observer's
 entire potential future lies within the black hole, not outside it.
