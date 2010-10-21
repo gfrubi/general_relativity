@@ -884,7 +884,7 @@ is no matter to create gravitational fields). Let this universe have a scatterin
 small to invalidate the approximation of $\rho=0$, and let the test particles be at rest in the $(r,\theta,\phi)$ coordinates.
 The linear dependence of $a$ on $t$ means that these particles simply move inertially and without any gravitational
 interactions, spreading apart from one another
-at a constant rate like the raisins in a rising loaf of raisin bread. The FRW equations require $k=-1$, so the spatial
+at a constant rate like the raisins in a rising loaf of raisin bread. The Friedmann equations require $k=-1$, so the spatial
 geometry is one of constant negative curvature.
 
 The Milne universe is in fact flat spacetime described in tricky coordinates. The connection can be made as follows.
@@ -1413,7 +1413,17 @@ The $k=-1$ case represents a universe that has negative spatial curvature, is sp
 i.e., even if the cosmological constant had been zero, the expansion of the universe would have had too little matter in it
 to cause it to recontract and end in a Big Crunch.
 
-
+The time-reversal symmetry of general relativity was discussed on p.~\pageref{sec:sch-t-reversal} in connection with the
+Schwarzschild metric.\footnote{Problem \ref{hw:frw-time-reversal} on p.~\pageref{hw:frw-time-reversal} shows that this symmetry is also exhibited by the
+Friedmann equations.} Because of this symmetry, we expect that solutions to the field equations will be symmetric under
+time reversal (unless asymmetric boundary conditions were imposed). The closed universe has exactly this type of
+time-reversal symmetry. But the open universe clearly breaks this symmetry, and this is why we speak of the Big Bang
+as lying in the past, not in the future. This is an example of 
+spontaneous symmetry breaking.\label{spontaneous-symm-breaking}\index{spontaneous symmetry breaking}\index{symmetry breaking!spontaneous}
+Spontaneous symmetry breaking happens when we try to balance a pencil on its tip, and it is also an important phenomenon in particle physics.
+The time-reversed version of the open universe is an equally valid solution of the field equations. (Another example of spontaneous symmetry breaking
+in cosmological solutions is that the solutions have a preferred frame of reference, which is the one at rest relative to the cosmic microwave
+background and the average motion of the galaxies.)
 <% end_sec %> % The open universe
 
 <% end_sec %> % The matter-dominated solution
@@ -1711,10 +1721,20 @@ is so large that it shows our universe to be essentially as non-Machian as gener
 
 \begin{hwsection}
 
+
 <% begin_hw('nuclear-pressure') %>
 Verify, as claimed on p.~\pageref{nuclear-pressure}, that the electromagnetic pressure inside
 a medium-weight atomic nucleus is on the order of $10^{33}\ \zu{Pa}$.
 <% end_hw %>
+
+<% begin_hw('frw-time-reversal') %>
+(a) Show that the Friedmann equations are symmetric under time reversal.
+(b) The spontaneous breaking of this symmetry in perpetually expanding solutions was discussed on page \pageref{spontaneous-symm-breaking}.
+Use the definition of a manifold to show that this symmetry cannot be restored by gluing together an expanding solution and a contracting
+one ``back to back'' to create a single solution on a single, connected manifold.
+\hwsoln
+<% end_hw %>
+
 
 <% begin_hw('verify-milne') %>
 Verify the claim made on p.~\pageref{milne} that $a$ is a linear function of time in the case

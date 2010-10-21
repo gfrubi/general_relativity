@@ -399,6 +399,14 @@ treatment of the indices in $R\indices{^a_{bcd}} = \partial_c \Gamma\indices{^a_
                         + \Gamma\indices{^a_{ce}}\Gamma\indices{^e_{db}}-\Gamma\indices{^a_{de}}\Gamma\indices{^e_{cb}}$
 guarantees that the Riemann tensor must vanish when there is only one nonvanishing Christoffel symbol.
 
+\hwsolnhdr{bogus-vacuum-field-equation}
+The first thing one notices is that the equation $R_{ab}=k$ isn't written according to the usual rules of grammar
+for tensor equations. The left-hand side has two lower indices, but the right-hand side has none. In the language of freshman physics,
+this is like setting a vector equal to a scalar. Suppose we interpret it as meaning that each of $R$'s 16 components should equal
+$k$ in a vacuum. But this still isn't satisfactory, because it violates coordinate-independence. For example, suppose we
+are initially working with some coordinates $x^\mu$, and we then rescale all four of them according to $x^{\mu'}=2x^\mu$.
+Then the components of $R_{ab}$ all scale down by a factor of 4. But this would violate the proposed field equation.
+
 \beginsolutions{7}
 
 \hwsolnhdr{alice-stationary}
@@ -438,6 +446,22 @@ in section \ref{sec:carousel}, this will cause a discontinuity once we wrap arou
 clock synchronization fails, and this frame is not static.
 
 \beginsolutions{8}
+
+\hwsolnhdr{frw-time-reversal}
+(a) The Friedmann equations are
+\begin{align*}
+  \frac{\ddot{a}}{a}   \quad          &= \frac{1}{3}\Lambda - \frac{4\pi}{3}(\rho+3P) \\
+\intertext{and}
+  \left(\frac{\dot{a}}{a}\right)^2    &= \frac{1}{3}\Lambda + \frac{8\pi}{3}\rho-k a^{-2} \qquad .
+\end{align*}
+The first equation is time-reversal invariant because the second derivative stays the same under time reversal.
+The second equation is also time-reversal invariant, because although the first derivative flips its sign
+under time reversal, it is squared.\\
+(b) We typically do not think of a singularity as being a point belonging to a manifold at all. If we want to
+create this type of connected, symmetric back-to-back solution, then we need the Big Bang singularity to be
+a point in the manifold. But this violates the definition of a manifold, because then the Big Bang point would
+have topological characteristics different from those of other points: deleting it separates the spacetime into
+two pieces.
 
 \hwsolnhdr{milne-rope}
 Example \ref{eg:girdle} on page \pageref{eg:girdle}, the cosmic girdle, showed that a rope

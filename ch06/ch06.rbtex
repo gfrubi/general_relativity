@@ -367,7 +367,7 @@ logical ways to define $r$. We'll define it as the circumference divided by $2\p
 the last two terms of the metric are the same as in flat space: $-r^2 \der\theta^2 - r^2 \sin^2\theta \der\phi^2$.
 Since we're looking for static solutions, none of the elements of the metric can depend on $t$. Also, the solution is
 going to be symmetric under $t \rightarrow -t$, $\theta \rightarrow -\theta$, and $\phi \rightarrow -\phi$, so we
-can't have any off-diagonal elements. The result is that we have narrowed the metric down to something of the
+can't have any off-diagonal elements.\footnote{For more about time-reversal symmetry, see p.~\pageref{sec:sch-t-reversal}.} The result is that we have narrowed the metric down to something of the
 form
 \begin{equation*}
   \der s^2 = h(r)\der t^2 - k(r)\der r^2 - r^2 \der\theta^2 - r^2 \sin^2\theta \der\phi^2 \qquad ,
@@ -458,10 +458,21 @@ work, we get $1/(1-2m/r)$. The result for the metric is
 \begin{equation*}
   \der s^2 = \left(1-\frac{2m}{r}\right)\der t^2 - \left(\frac{1}{1-2m/r}\right)\der r^2 - r^2 \der\theta^2 - r^2 \sin^2\theta \der\phi^2 \qquad .
 \end{equation*}
-A quick calculation in Maxima demonstrates that this is an exact solution for all $r$, i.e., the Ricci tensor vanishes everywhere,
+This is called the Schwarzschild metric.
+A quick calculation in Maxima demonstrates that it is an exact solution for all $r$, i.e., the Ricci tensor vanishes everywhere,
 even at $r<2m$, which is outside the radius of convergence of the geometric series.
 <% end_sec %> % closed-form
+<% begin_sec("Time-reversal symmetry") %>\label{sec:sch-t-reversal}\index{time reversal!of the Schwarzschild metric}\index{time reversal!symmetry of general relativity}
+The Schwarzschild metric is invariant under time reversal, since time occurs only in the form of $\der t^2$, which stays the same
+under $\der t\rightarrow -\der t$. This is the same time-reversal symmetry that occurs in Newtonian gravity, where the field is described
+by the gravitational acceleration $\vc{g}$, and accelerations are time-reversal invariant.
 
+Fundamentally, this is an example of general relativity's coordinate independence. The laws of physics provided by general relativity,
+such as the vacuum field equation, are invariant under any smooth coordinate transformation, and $t\rightarrow -t$ is such a coordinate
+transformation, so general relativity has time-reversal symmetry. Since the Schwarzschild metric was found by imposing time-reversal-symmetric
+boundary conditions on a time-reversal-symmetric differential equation, we expect it to be time-reversal 
+symmetric itself.\footnote{Unless spontaneous symmetry breaking occurs; see p.~\pageref{spontaneous-symm-breaking}.}
+<% end_sec %> % Time-reversal symmetry
 <% end_sec %> % complete solution
 
 <% begin_sec("Geodetic effect") %>\label{sec:geodetic-effect-exact}
@@ -1287,6 +1298,13 @@ Verify by direct calculation, as asserted on p.~\pageref{slowdown-curvature}, th
 metric $\der s^2=-t\der t^2-\der\ell^2$, where $\der\ell^2=\der x^2+\der y^2+\der z^2$.
 \hwsoln
 <% end_hw %>
+
+<% begin_hw('bogus-vacuum-field-equation') %>
+Suppose someone proposes that the vacuum field equation of general relativity isn't
+$R_{ab}=0$ but rather $R_{ab}=k$, where $k$ is some constant that describes an innate
+tendency of spacetime to have tidal distortions. Explain why this is not a good proposal.
+<% end_hw %>
+
 
 \end{hwsection}
 

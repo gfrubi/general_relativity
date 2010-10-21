@@ -1567,7 +1567,7 @@ is much smaller.
 
 <% end_sec %> % metric to curvature
 
-<% begin_sec("Manifolds",4) %>
+<% begin_sec("Manifolds",4) %>\index{manifold}
 This section can be omitted on a first reading.
 
 <% begin_sec("Why we need manifolds") %>
@@ -1712,7 +1712,7 @@ Hold your hands like you're pretending you know karate, and then use one hand to
 open half-planes in this way. As long as they're separate, then we have a perfectly legitimate disconnected manifold. But if we
 want to join them by adding the point P where their boundaries coincide, then we violate M2, because this point has special properties
 not possessed by any others. An example of such a property is that there exist points Q and R such that every continuous curve joining
-them passes through P.
+them passes through P. (Cf.~problem \ref{hw:frw-time-reversal}, p.~\pageref{hw:frw-time-reversal}.)
 \end{eg}
 <% end_sec %> % Topological definition of a manifold
 <% begin_sec("Local-coordinate definition of a manifold") %>
