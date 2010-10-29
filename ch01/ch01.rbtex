@@ -668,6 +668,25 @@ In Newtonian physics, inertial frames are preferable because they make motion si
 forces acting on them move along straight world-lines. Similarly, Lorentz frames occupy a privileged position
 in general relativity because they make motion simple: objects move along ``straight'' world-lines
 if they have no nongravitational forces acting on them.
+<% marg(-10) %>
+<% fig(
+    'artificial-horizon',
+    %q{An artificial horizon.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{The artificial horizon}
+The pilot of an airplane cannot always easily tell which way is up. The horizon may not be level simply because the ground has an actual slope, and
+in any case the horizon may not be visible if the weather is foggy. One might imagine that the problem could be solved simply by hanging a pendulum
+and observing which way it pointed, but by the equivalence principle the pendulum cannot tell the difference between a gravitational field and an acceleration
+of the aircraft relative to the ground --- nor can any other accelerometer, such as the pilot's inner ear. For example, when the plane is turning to the right,
+accelerometers will be tricked into believing that ``down'' is down and to the left. To get around this problem, airplanes use a device called an artificial
+horizon, which is essentially a gyroscope. The gyroscope has to be initialized when the plane is known to be oriented in a horizontal plane.
+No gyroscope is perfect, so over time it will drift. For this reason the instrument also contains an accelerometer, and the gyroscope is
+automatically restored to agreement with the accelerometer, with a time-constant of several minutes. If the plane is flown in circles for
+several minutes, the artificial horizon will be fooled into indicating that the wrong direction is vertical.
+\end{eg}
 
 \begin{eg}{No antigravity}\label{eg:upsidasium}\index{antigravity}\index{upsidasium}
 This whole chain of reasoning was predicated on the null results of E\"{o}tv\"{o}s experiments.
@@ -698,7 +717,6 @@ their influence on the apparatus inside will be negligible. To shield against el
 chamber with a Faraday cage and a solid sheet of mu-metal. Finally, we make sure that the chamber is not being touched by
 any surrounding matter, so that short-range residual electrical forces (sticky forces, chemical bonds, etc.) are excluded.
 That is, the chamber cannot be supported; it is free-falling.
-
 <%
   fig(
     'waage-box',

@@ -494,7 +494,7 @@ particular redshift is gravitational (measured by $\Phi$) or kinematic, or some 
 <% end_sec %> % Static and stationary spacetimes
 
 <% begin_sec("The uniform gravitational field revisited") %>\label{sec:uniform-field-kasner}\index{uniform gravitational field}\index{gravitational field!uniform}
-This subsection gives a somewhat exotic example.
+This section gives a somewhat exotic example.
 It is not necessary to read it in order to understand the later material.
 
 In problem \ref{hw:uniform-field} on page \pageref{hw:uniform-field}, we made a wish list of desired properties

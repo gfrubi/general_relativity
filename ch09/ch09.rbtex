@@ -417,6 +417,11 @@ As in the case of the oscillating electric dipole, the radiation is suppressed i
 the source is small compared to the wavelength. The suppression is even stronger in the case of a quadrupole,
 and the result is that the radiated power is proportional to $Q_\zu{o}^2\omega^6$.
 
+This result has the interesting property of being invariant under a rescaling of coordinates. In geometrized units,
+mass, distance, and time all have the same units, so that $Q_\zu{o}^2$ has units of $(\text{length}^3)^2$
+while $\omega^6$ has units of $(\text{length}^{-6}$. This is exactly what is required, because in geometrized
+units, power is unitless, $\text{energy}/\text{time}=\text{length}\text{length}=1$.
+
 The general pattern we have observed is that for multipole radiation of order $m$ (0=monopole, 1=dipole, 2=quadrupole),
 the radiated power depends on $\omega^{2(m+1)}$. Since gravitational radiation must always have $m=2$ or higher, we
 have the very steep $\omega^6$ dependence of power on frequency.

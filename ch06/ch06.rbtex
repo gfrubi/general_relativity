@@ -470,8 +470,30 @@ by the gravitational acceleration $\vc{g}$, and accelerations are time-reversal 
 Fundamentally, this is an example of general relativity's coordinate independence. The laws of physics provided by general relativity,
 such as the vacuum field equation, are invariant under any smooth coordinate transformation, and $t\rightarrow -t$ is such a coordinate
 transformation, so general relativity has time-reversal symmetry. Since the Schwarzschild metric was found by imposing time-reversal-symmetric
-boundary conditions on a time-reversal-symmetric differential equation, we expect it to be time-reversal 
-symmetric itself.\footnote{Unless spontaneous symmetry breaking occurs; see p.~\pageref{spontaneous-symm-breaking}.}
+boundary conditions on a time-reversal-symmetric differential equation, it is an equally valid solution when we time-reverse it.
+Furthermore, we expect the metric to be invariant under time reversal, unless spontaneous symmetry breaking occurs (see p.~\pageref{spontaneous-symm-breaking}).
+
+This suggests that we ask the more fundamental question of what global symmetries general relativity has. Does it have symmetry under
+parity inversion, for example? Or can we take any solution such as the Schwarzschild spacetime and transform it into a frame of reference in
+which the source of the field is moving uniformly in a certain direction? Because general relativity is locally equivalent to special
+relativity, we know that these symmetries are locally valid. But it may not even be possible to define the corresponding global
+symmetries. For example, there are some spacetimes on which it is not even possible to define a global time coordinate. On
+such a spacetime, which is described as not time-orientable,\index{time-orientable}\index{orientable!in time}
+there does not exist any smooth vector field that is everywhere timelike, so it is not possible to define past versus future light-cones
+at all points in space without having a discontinuous change in the definition occur somewhere. This is similar to the way in which a M\"{o}bius
+strip does not allow an orientation of its surface (an ``up'' direction as seen by an ant) to be defined globally.
+
+Suppose that our spacetime is time-orientable, and we are able to define coordinates $(p,q,r,s)$
+such that $p$ is always the timelike coordinate. Because $q\rightarrow -q$ is a smooth coordinate transformation, we are
+guaranteed that our spacetime remains a valid solution of the field equations under this change. But that doesn't mean that what we've found is
+a symmetry under parity inversion in a plane. Our coordinate $q$ is not necessarily interpretable as distance along a particular
+``$q$ axis.'' Such axes don't even exist globally in general relativity. A coordinate does not even have to have units of time
+or distance; it could be an angle, for example, or it might not have any geometrical significance at all. Similarly, we could
+do a transformation $q\rightarrow q'=q+kp$. If we think of $q$ as measuring spatial position and $p$ time, then this looks
+like a Galilean transformation, with $k$ being the velocity. The solution to the field equations obtained after performing this transformation is still
+a valid solution, but that doesn't mean that relativity has Galilean symmetry rather than Lorentz symmetry. There is no sensible way to define
+a Galilean transformation acting on an entire spacetime, because when we talk about a Galilean transformation we assume the existence of things
+like global coordinate axes, which do not even exist in general relativity.
 <% end_sec %> % Time-reversal symmetry
 <% end_sec %> % complete solution
 
