@@ -215,7 +215,7 @@ into the interface between gravity and quantum mechanics.
 <% begin_sec("The Schwarzschild metric") %>\label{sec:schwarzschild}
 
 We now set ourselves the goal of finding the metric describing the static spacetime outside a spherically symmetric, nonrotating, body of mass $m$.
-This problem was first solved by Karl Schwarzschild in 1915.\index{Schwarzschild!Karl}\footnote{``On the gravitational field of a point mass according to Einstein's theory,''
+This problem was first solved by Karl Schwarzschild in 1915.\index{Schwarzschild, Karl}\footnote{``On the gravitational field of a point mass according to Einstein's theory,''
 Sitzungsberichte der K\:{o}niglich Preussischen Akademie der Wissenschaften 1 (1916) 189.
 An English translation is available at \url{http://arxiv.org/abs/physics/9905030v1}.}
 One byproduct of finding this metric will be the ability to calculate the geodetic effect exactly, but it will
@@ -425,7 +425,7 @@ ricci(true);
 \end{listing}
 
 I won't reproduce the entire output of the Ricci tensor, which is voluminous. We want all four of its nonvanishing components
-to vanish as quickly as possible for large values of $r$, so I decided to fiddle with $R_tt$, which looked as simple as any
+to vanish as quickly as possible for large values of $r$, so I decided to fiddle with $R_{tt}$, which looked as simple as any
 of them. It appears to vary as $r^{-4}$ for large $r$, so let's evaluate  $\lim_{r\rightarrow\infty}\left(r^4R_{tt}\right)$:
 \begin{listing}{9}
 limit(r^4*ric[1,1],r,inf);
@@ -458,7 +458,7 @@ work, we get $1/(1-2m/r)$. The result for the metric is
 \begin{equation*}
   \der s^2 = \left(1-\frac{2m}{r}\right)\der t^2 - \left(\frac{1}{1-2m/r}\right)\der r^2 - r^2 \der\theta^2 - r^2 \sin^2\theta \der\phi^2 \qquad .
 \end{equation*}
-This is called the Schwarzschild metric.
+This is called the Schwarzschild metric.\index{Schwarzschild metric}
 A quick calculation in Maxima demonstrates that it is an exact solution for all $r$, i.e., the Ricci tensor vanishes everywhere,
 even at $r<2m$, which is outside the radius of convergence of the geometric series.
 <% end_sec %> % closed-form
@@ -707,6 +707,7 @@ the form of the functions $h$ and $k$. In addition, it turns out that the assump
 motion was unnecessary. All that really mattered was that $h$ and $k$ were independent of $t$.
 Therefore we will have a similar conserved quantity $p_\mu$ any time the
 metric's components, expressed in a particular coordinate system, are independent of $x^\mu$.
+(This is generalized on p.~\pageref{sec:killing-conservation}.)
 In particular, the Schwarzschild metric's components are independent of $\phi$ as well as $t$, so
 we have a second conserved quantity $p_\phi$, which is interpreted as angular momentum.
 <% marg(120) %>
@@ -1324,9 +1325,18 @@ metric $\der s^2=-t\der t^2-\der\ell^2$, where $\der\ell^2=\der x^2+\der y^2+\de
 <% begin_hw('bogus-vacuum-field-equation') %>
 Suppose someone proposes that the vacuum field equation of general relativity isn't
 $R_{ab}=0$ but rather $R_{ab}=k$, where $k$ is some constant that describes an innate
-tendency of spacetime to have tidal distortions. Explain why this is not a good proposal.
+tendency of spacetime to have tidal distortions. Explain why this is not a good proposal.\hwsoln
 <% end_hw %>
 
+<% begin_hw('no-schwarzschild-in-three-dimensions') %>\index{Schwarzschild metric!none in 2+1 dimensions}
+The Schwarzschild metric was found in $d=4$ dimensions (three spatial and one temporal).
+Tangherlini found in 1963 that it could be generalized straightforwardly to $d>4$. Prove, however, that it \emph{cannot} be generalized to
+$d=3$.\hwsoln
+
+\hwremark If black-hole solutions exist in $d$ dimensions, then one can extend such a solution
+to $d+1$ dimensions with cylindrical symmetry, forming a ``black string.'' The result of this
+problem implies that black string solutions do not exist in $d=4$.
+<% end_hw %>
 
 \end{hwsection}
 

@@ -178,7 +178,7 @@ linearly independent Killing vectors in this two-dimensional space. When we say 
 Killing vector \emph{field}, which is defined everywhere on the space.
 \end{eg}
 
-<% begin_sec("Conservation laws for test particles") %>
+<% begin_sec("Conservation laws") %>\label{sec:killing-conservation}
 Whenever a spacetime has a Killing vector, geodesics have a constant value of $v^b \xi_a$, where $v^b$ is
 the velocity four-vector. For example, because the Schwarzschild metric has a Killing vector $\boldsymbol{\xi} = \partial_t$,
 test particles have a conserved value of $v^t$, and therefore we also have conservation of $p^t$, interpreted
@@ -190,6 +190,11 @@ Corresponding to these are the conserved momentum and mass-energy, $p$ and $E$. 
 two Killing vectors get mixed together by a linear transformation, corresponding to
 a transformation of $p$ and $E$ into a new frame.
 \end{eg}
+
+In addition, one can define a globally conserved quantity found by integrating the flux $P^a=T^{ab}\xi_b$ over the
+boundary of any compact orientable region.\footnote{Hawking and Ellis, ``The Large Scale Structure of Space-Time,'' p.~62} In case
+of a flat spacetime, there are enough Killing vectors to give conservation of energy-momentum and angular momentum.
+
 <% end_sec %> % Conservation laws for test particles
 <% end_sec %> % Killing vectors
 
@@ -644,11 +649,11 @@ about the logical self-consistency of general relativity.
 A very readable and entertaining overview of these issues is given in the final chapter of Kip Thorne's \emph{Black Holes and Time Warps:
 Einstein's Outrageous Legacy}. In a toy model constructed by Thorne's students, involving a billiard ball and a wormhole, it turned out that there always
 seemed to be self-consistent solutions to the ball's equations of motion, but they were not unique, and they often involved
-disquieting possibilities in which the ball went back in time and collided with its earlier self. Among other things, this is
-a clear violation of conservation of mass-energy, since no mass was put into the system to create extra copies of the ball;
-this provides yet another demonstration of the fact that, as discussed in section \ref{sec:no-conservation-laws}, general
-relativity does not admit global conservation laws. There are various conjectures about the ways in which quantum-mechanical
-effects might affect the picture.
+disquieting possibilities in which the ball went back in time and collided with its earlier self. Among other things, this seems to lead to
+a violation of conservation of mass-energy, since no mass was put into the system to create extra copies of the ball. This would then
+be an example of the fact that, as discussed in section \ref{sec:no-conservation-laws}, general
+relativity does not admit global conservation laws. However, there is also an argument that the mouths of the wormhole
+change in mass in such a way as to preserve conservation of energy.\footnote{\url{http://golem.ph.utexas.edu/string/archives/000550.html}}
 <% end_sec %> % closed timelike curves
 
 

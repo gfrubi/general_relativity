@@ -429,8 +429,8 @@ This demonstrates that if
 we want to see strong gravitational radiation, we need to look at systems that are oscillating extremely rapidly.
 For a binary system with unequal masses of order $m$, with orbits having radii of order $r$, we have $Q_\zu{o}\sim mr^2$.
 Newton's laws give $\omega\sim m^{1/2} r^{-3/2}$, which is essentially Kepler's law of periods. The result is
-that the radiated power should depend on $(m/r)^5$. In units with $G=1$ and $c=1$, power is unitless, so the units
-of this expression check out. Reinserting the proper constants to give an equation that allows practical calculation
+that the radiated power should depend on $(m/r)^5$. 
+Reinserting the proper constants to give an equation that allows practical calculation
 in SI units, we have
 \begin{equation*}
   P = k \frac{G^4}{c^5} \left(\frac{m}{r}\right)^5 \qquad ,

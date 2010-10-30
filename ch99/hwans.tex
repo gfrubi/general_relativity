@@ -407,6 +407,42 @@ $k$ in a vacuum. But this still isn't satisfactory, because it violates coordina
 are initially working with some coordinates $x^\mu$, and we then rescale all four of them according to $x^{\mu'}=2x^\mu$.
 Then the components of $R_{ab}$ all scale down by a factor of 4. But this would violate the proposed field equation.
 
+\hwsolnhdr{no-schwarzschild-in-three-dimensions}
+The following Maxima code calculates the Ricci tensor for a metric with $g_{tt}=h$ and $g_{rr}=k$.
+
+\begin{listing}{1}
+load(ctensor);
+dim:3;
+ct_coords:[t,r,phi];
+depends(h,r);
+depends(k,r);
+lg:matrix([h,0,0],
+          [0,-k,0],
+          [0,0,-r^2]);
+cmetric();
+ricci(true);
+\end{listing}
+
+\noindent Inspecting the output (not reproduced here), we see that $R_{\phi\phi}=0$ requires $k'/k=h'/h$. Since the logarithmic derivatives of $h$ and $k$ are the
+same, the two functions can differ by at most a constant factor $c$. So now we do a second iteration of the calculation:
+
+\begin{listing}{1}
+load(ctensor);
+dim:3;
+ct_coords:[t,r,phi];
+depends(h,r);
+lg:matrix([h,0,0],
+          [0,-c*h,0],
+          [0,0,-r^2]);
+cmetric();
+ricci(true);
+\end{listing}
+
+\noindent The result for $R_{rr}$ is independent of $c$. Since $h$ is essentially the gravitational potential,
+we have the requirements $h'>0$ (because gravity is attractive)
+and $h''<0$ (because gravity weakens with distance). Therefore we find that  $R_{rr}$
+is positive, and we do not obtain a vacuum solution.
+
 \beginsolutions{7}
 
 \hwsolnhdr{alice-stationary}

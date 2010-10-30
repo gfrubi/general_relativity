@@ -818,12 +818,14 @@ collapse. Unambiguous results are presently impossible because of uncertainties 
 behavior of the strong force from the regime of ordinary nuclei, where it has been relatively well parametrized, into
 the exotic environment of a neutron star, where the density is significantly different and no protons
 are present. There are a variety of effects that may be difficult to anticipate or to calculate. For example,
-Brown and Bethe found in 1994\index{Brown-Bethe scenario}\footnote{G.E. Brown and H.A. Bethe, ``Observational constraints on the maximum neutron star mass,''
-Astrophys. J. 423 (1994) 659. A presentation by Lee and Rho is freely available at \url{arxiv.org/abs/hep-ph/9411364v1}.} that it might be possible for the mass limit to be drastically revised because
+Brown and Bethe found in 1994\index{Brown-Bethe scenario}\footnote{H.A. Bethe and G.E. Brown, ``Observational constraints on the maximum neutron star mass,''
+Astrophys. J. 445 (1995) L129.  G.E. Brown and H.A. Bethe, ``A Scenario for a Large Number of Low-Mass Black Holes in the Galaxy,''
+Astrophys. J.  423 (1994) 659. Both papers are available at \url{adsabs.harvard.edu}.} that it might be possible for the mass limit to be drastically revised because
 of the process $e^-\rightarrow K^-+\nu_e$, which is impossible in free space due to conservation of energy, but
-might be possible in a neutron star. Observationally, all neutron stars seem to lie in a surprisingly
-small range of mass, between 1.3 and $1.45M_\odot$, which might be more easily explained if the Brown-Bethe scenario is
-correct.
+might be possible in a neutron star. Observationally, nearly all neutron stars seem to lie in a surprisingly
+small range of mass, between 1.3 and $1.45M_\odot$, but in 2010 a neutron star with a mass of $1.97\pm .04\ M_\odot$ was discovered,
+ruling out most neutron-star models that included exotic matter.\footnote{Demorest
+et al., \url{arxiv.org/abs/1010.5788v1}.}
 
 % K=4000
 % me=9.1 10^-31 kg
@@ -910,11 +912,13 @@ measure a nonvanishing total flux across it, how do we know where the charge is?
 on either side.
 
 The conclusion is that conservation laws only make sense in relativity under very special
-circumstances.\footnote{For another argument leading to the same conclusion, see subsection \ref{sec:ctc}.} We do not have anything like over-arching, global
+circumstances.\footnote{For another argument leading to the same conclusion, see subsection \ref{sec:ctc}, p.~\pageref{sec:ctc}.} We do not have anything like over-arching, global
 principles of conservation.
-As an example of the appropriate special circumstances, section \ref{sec:sch-conserved} shows how to define conserved quantities, which
+As an example of the appropriate special circumstances, section \ref{sec:sch-conserved}, p.~\pageref{sec:sch-conserved} shows how to define conserved quantities, which
 behave like energy and momentum, for the
-motion of a test particle in a particular metric that has a certain symmetry.
+motion of a test particle in a particular metric that has a certain symmetry. This is generalized 
+on p.~\pageref{sec:killing-conservation} to a general, global conservation law corresponding to every
+continuous symmetry of a spacetime.
 <% end_sec %> % No general conservation laws
 <% begin_sec("Conservation of angular momentum and frame dragging") %>\label{sec:frame-dragging}
 Another special case where conservation laws work is that if the spacetime we're studying gets very flat at large distances
