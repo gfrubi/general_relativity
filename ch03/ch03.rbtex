@@ -200,7 +200,7 @@ play in organizing your knowledge of calculus.
                Padua and the University of Rome, but was fired in 1938 because
                he was a Jew and an anti-fascist.}
   )
-%>
+%>\index{Levi-Civita, Tullio}
 <% end_marg %>
 
 \emph{Models} provide a way of dealing with both the logical issues and the conceptual ones.
@@ -1013,6 +1013,7 @@ satellite correcting the phase of the signal based on the propagation time infer
 this is accomplished by communication with a master control station in Colorado Springs, which communicates with
 the satellites via relays at Kwajalein, Ascension Island, Diego Garcia, and Cape Canaveral.
 \end{eg}
+
 <% end_sec %> % The spatial metric and synchronization of clocks
 <% begin_sec("Impossibility of rigid rotation, even with external forces") %>\label{no-born-rigidity}
 The determination of the spatial metric with rulers at rest relative to the disk is appealing because of its
@@ -1150,7 +1151,7 @@ doesn't come equipped with coordinates. We impose those coordinates on it, and t
 by nature.'' The impressionable reader who is tempted to say, ``Ah, yes, that \emph{is} obvious,'' should consider that it was
 far from obvious to Newton (``Absolute, true and mathematical time, of itself, and
 from its own nature flows equably without regard to anything external \ldots''), nor was it obvious to Einstein.
-Levi-Civita\index{Levi-Civita!Tullio} nudged Einstein the direction of coordinate independence in 1912. Einstein
+Levi-Civita\index{Levi-Civita, Tullio} nudged Einstein the direction of coordinate independence in 1912. Einstein
 tried hard to make a coordinate-independent theory, but for reasons described in section \ref{sec:hole-argument} (p.~\pageref{sec:hole-argument}),
 he convinced himself that that was a dead end. In 1914-15 he published theories that were not coordinate-independent, which
 you will hear relativists describe as ``obvious'' dead ends because they lack any geometrical interpretation. It seems to me that it takes a highly
@@ -1199,7 +1200,7 @@ and one of their goals is to show that it has a background independence that jus
 It is instructive to consider coordinate independence from the point of view of a field theory. Newtonian gravity can be described
 in three equivalent ways: as a gravitational field $\vc{g}$, as a gravitational potential $\phi$, or as a set of
 gravitational field lines. The field lines are never incident on one another, and locally the field satisfies Poisson's equation.
-<% marg(150) %>
+<% marg(80) %>
 <%
   fig(
     'star-magnetic-field-lines',

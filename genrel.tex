@@ -1,5 +1,7 @@
 \documentclass{genrel}
 
+%\includeonly{ch01/ch01temp}
+
 \makeindex
 
 \begin{document}
@@ -54,16 +56,16 @@
 \parafmt
 \myeqnspacing % Do this early and often, since it gets reset by \normalsize
 %========================= chapters =========================
-	\renewcommand{\chapdir}{ch01}\include{ch01/ch01temp}\write18{mv_silent all.pos ch01.pos}% 
-	\renewcommand{\chapdir}{ch02}\include{ch02/ch02temp}\write18{mv_silent all.pos ch02.pos}% 
-	\renewcommand{\chapdir}{ch03}\include{ch03/ch03temp}\write18{mv_silent all.pos ch03.pos}% 
-	\renewcommand{\chapdir}{ch04}\include{ch04/ch04temp}\write18{mv_silent all.pos ch04.pos}% 
-	\renewcommand{\chapdir}{ch05}\include{ch05/ch05temp}\write18{mv_silent all.pos ch05.pos}% 
-	\renewcommand{\chapdir}{ch06}\include{ch06/ch06temp}\write18{mv_silent all.pos ch06.pos}% 
-	\renewcommand{\chapdir}{ch07}\include{ch07/ch07temp}\write18{mv_silent all.pos ch07.pos}% 
-	\renewcommand{\chapdir}{ch08}\include{ch08/ch08temp}\write18{mv_silent all.pos ch08.pos}% 
+	\renewcommand{\chapdir}{ch01}\include{ch01/ch01temp}
+	\renewcommand{\chapdir}{ch02}\include{ch02/ch02temp}
+	\renewcommand{\chapdir}{ch03}\include{ch03/ch03temp}
+	\renewcommand{\chapdir}{ch04}\include{ch04/ch04temp}
+	\renewcommand{\chapdir}{ch05}\include{ch05/ch05temp}
+	\renewcommand{\chapdir}{ch06}\include{ch06/ch06temp}
+	\renewcommand{\chapdir}{ch07}\include{ch07/ch07temp}
+	\renewcommand{\chapdir}{ch08}\include{ch08/ch08temp}
 	\formatchtoc{\large}{\quad\contentspage}{4mm} % This has to go before the last chapter.
-	\renewcommand{\chapdir}{ch09}\include{ch09/ch09temp}\write18{mv_silent all.pos ch09.pos}% 
+	\renewcommand{\chapdir}{ch09}\include{ch09/ch09temp}
 
 %=================================================================================================================================
 
@@ -84,6 +86,12 @@
 
 \vfill\pagebreak
 
+
+%=================================================================================================================================
+% cross-references
+\index{gravitational potential|see{potential}}
+\index{gravitational red-shift|see{red-shift}}
+\index{waves!gravitational|see{gravitational waves}}
 
 %=================================================================================================================================
 
@@ -137,6 +145,7 @@ is credited as the source of the material. The material was created for NASA by 
 \cred{kreuzer-simplified}{Simplified diagram of Kreuzer experiment}{Based on a public-domain drawing by Wikimedia commons user Chris Burks}
 \cred{kreuzer}{Kreuzer experiment}{The diagram of the apparatus is redrawn from the paper, and the two graphs are taken directly from the paper. I believe the use of these images in this book falls under the fair use exception to copyright in the U.S.}
 \cred{mirror-on-moon}{Apollo 11 mirror}{NASA, public domain}
+\cred{penzias-wilson-antenna}{Penzias-Wilson antenna}{NASA, public domain}% http://grin.hq.nasa.gov/ABSTRACTS/GPN-2003-00013.html
 \cred{lemaitre}{Lema\^{i}tre}{Ca.~1933, public domain.}% http://commons.wikimedia.org/wiki/File:Lemaitre.jpg
 \cred{cmb-geometry}{Cosmic microwave background image}{NASA/WMAP Science Team, public domain}%http://en.wikipedia.org/wiki/File:WMAP_2008.png
 \cred{dicke-oblateness}{Dicke's apparatus}{Dicke, 1967. Used under the US fair-use doctrine}

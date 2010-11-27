@@ -1090,7 +1090,7 @@ book and absorb the main points.
 
 <% end_sec %> % singularities
 
-<% begin_sec("Hawking radiation") %>
+<% begin_sec("Hawking radiation") %>\label{sec:hawking-radiation}
 <% begin_sec("Radiation from black holes") %>\index{black hole!radiation from}
 Since event horizons are expected to emit blackbody radiation, a black hole should not be entirely black; it should
 radiate. This is called Hawking radiation.\index{Hawking radiation}
@@ -1154,6 +1154,58 @@ the event horizon and can never send information back out.
 
 <% end_sec %> % Black hole radiation
 
+<% begin_sec("Black holes in $d$ dimensions") %>\label{sec:schwarzschild-d-dimensions}\index{Schwarzschild metric!in $d$ dimensions}
+It has been proposed that our universe might actually have not $d=4$ dimensions but some higher number, with the
+$d-4$ ``extra'' ones being spacelike, and curled up on some small scale $\rho$ so that we don't see them in ordinary life. One candidate
+for such a scale $\rho$ is the Planck length, and we then have to talk about theories of quantum gravity such as string theory.
+On the other hand, it could be the 1 TeV electroweak scale; the motivation for such an idea is that it would allow
+the unification of electroweak interactions with gravity. This idea goes by the name of ``large extra dimensions'' --- ``large''
+because $\rho$ is bigger than the Planck length. In fact, in such theories the Planck length \emph{is} the electroweak unification
+scale, and the number normally referred to as the
+Planck length is not really the Planck length.\footnote{Kanti, \url{arxiv.org/abs/hep-ph/0402168}}\index{large extra dimensions}\index{extra dimensions}
+
+In $d$ dimensions, there are $d-1$ spatial dimensions, and a surface of spherical symmetry has $d-2$. In the Newtonian weak-field
+limit, the density of gravitational field lines
+falls off like $m/r^{d-2}$ with distance from a source $m$, and we therefore find that Newton's law of gravity has an exponent
+of $-(d-2)$. If $d\ne 3$, we can integrate to find that the gravitational potential varies as $\Phi\sim -mr^{-(d-3)}$.
+Passing back to the weak-field limit of general relativity, the equivalence principle dictates that
+the $g_{tt}$ term of the metric be approximately
+$1+2\Phi$, so we find that the metric has the form
+\begin{equation*}
+ \der s^2 \approx (1-2mr^{-(d-3)})\der t^2 - (\ldots)\der r^2 - r^2 \der\theta^2 - r^2 \sin^2\theta \der\phi^2 \qquad .
+\end{equation*}
+This looks like the Schwarzschild form with no other change than a generalization of the exponent, and in fact Tangherlini
+showed in 1963 that for $d>4$, one obtains the exact solution simply by applying the same change of 
+exponent to $g_{rr}$ as well.\footnote{Emparan and Reall, ``Black Holes in Higher Dimensions,'' \url{relativity.livingreviews.org/Articles/lrr-2008-6/}}
+
+If large extra dimensions do exist, then this is the actual form of any black-hole spacetime for $r\ll \rho$, where the
+background curvature of the extra dimensions is negligible. Since the exponents are all changed, gravitational forces become
+stronger than otherwise expected at small distances, and it becomes easier to make black holes. It has been proposed that
+if large extra dimensions exist, microscopic black holes would be observed at the Large Hadron Collider. They would immediately
+evaporate into Hawking radiation (p.~\pageref{sec:hawking-radiation}), with an experimental signature of violating the
+standard conservation laws of particle physics.
+
+The reasoning given above fails in the case of $d=3$, i.e., 2+1-dimensional spacetime, both because the integral of
+$r^{-1}$ is not $r^0$ and because the Tangherlini-Schwarzschild is not a vacuum solution. As shown in problem
+\ref{hw:no-schwarzschild-in-three-dimensions} on p.~\pageref{hw:no-schwarzschild-in-three-dimensions},
+there is no counterpart of the Schwarzschild metric in 2+1 dimensions.
+This is essentially because for $d=3$ mass is unitless, so given a source having a certain mass, there is
+no way to set the distance scale at which Newtonian weak-field behavior gives way to the relativistic strong field.
+Whereas for $d \ge 4$, Newtonian gravity is the limiting case of relativity, for $d=3$ they are unrelated theories.
+In fact, the relativistic theory of gravity for $d=3$ is somewhat trivial. Spacetime
+does not admit curvature in vacuum solutions,\footnote{\url{arxiv.org/abs/gr-qc/0503022v4}} so that the only
+nontrivial way to make non-Minkowski 2+1-dimensional spacetimes is by gluing together Minkowski pieces
+in various topologies, like gluing pieces of paper to make things like cones and M\"{o}bius strips.
+2+1-dimensional gravity has conical singularities, but not Schwarzschild-style ones that are surrounded by curved spacetime.
+
+If black-hole solutions exist in $d$ dimensions, then one can extend such a solution
+to $d+1$ dimensions with cylindrical symmetry, forming a ``black string.''\index{black string} The nonexistence of $d=3$ black holes
+implies that black string solutions do not exist in our own $d=4$ universe.
+However, different considerations arise in a universe with a negative
+cosmological constant (p.~\pageref{sec:cosmological-constant}). There are then 2+1-dimensional solutions known as BTZ
+black holes.\footnote{\url{arxiv.org/abs/gr-qc/9506079v1}}\index{BTZ black hole} Since our own universe
+has a positive cosmological constant, not a negative one, we still find that black strings cannot exist.
+<% end_sec %> 
 <% end_sec %> % black holes
 
 <% begin_sec("Degenerate solutions") %>\label{sec:degeneracy}\index{degeneracy}
@@ -1328,14 +1380,9 @@ $R_{ab}=0$ but rather $R_{ab}=k$, where $k$ is some constant that describes an i
 tendency of spacetime to have tidal distortions. Explain why this is not a good proposal.\hwsoln
 <% end_hw %>
 
-<% begin_hw('no-schwarzschild-in-three-dimensions') %>\index{Schwarzschild metric!none in 2+1 dimensions}
-The Schwarzschild metric was found in $d=4$ dimensions (three spatial and one temporal).
-Tangherlini found in 1963 that it could be generalized straightforwardly to $d>4$. Prove, however, that it \emph{cannot} be generalized to
-$d=3$.\hwsoln
-
-\hwremark If black-hole solutions exist in $d$ dimensions, then one can extend such a solution
-to $d+1$ dimensions with cylindrical symmetry, forming a ``black string.'' The result of this
-problem implies that black string solutions do not exist in $d=4$.
+<% begin_hw('no-schwarzschild-in-three-dimensions') %>
+Prove, as claimed on p.~\pageref{sec:schwarzschild-d-dimensions}, that in 2+1 dimensions, with a vanishing
+cosmological constant, there is no nontrivial Schwarzschild metric.\hwsoln
 <% end_hw %>
 
 \end{hwsection}

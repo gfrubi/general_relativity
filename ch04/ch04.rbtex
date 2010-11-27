@@ -493,7 +493,7 @@ Figure \figref{vector-potential-of-solenoid} shows an example.
 <% end_sec %>
 <% end_sec %>
 
-<% begin_sec("The tensor transformation laws") %>
+<% begin_sec("The tensor transformation laws") %>\label{sec:tensor-transformation-law}\index{transformation laws}\index{tensor transformation laws}
 We may wish to represent a vector in more than one coordinate system, and to convert back
 and forth between the two representations. In general relativity, the transformation of
 the coordinates need not be linear, as in the Lorentz transformations; it can be any smooth,
@@ -1012,7 +1012,7 @@ geodetic effect (6.6 arc-seconds per year) and the much weaker Lense-Thirring
 effect (.041 arc-sec/yr) produced precessions in perpendicular directions.
 Again, the presence of an asymptotically flat background was involved, because the probe measured the
 orientations of its gyroscopes relative to the guide star IM Pegasi.
-<% marg(30) %>
+<% marg(35) %>
 <%
   fig(
     'frame-dragging-banana',
@@ -1035,6 +1035,144 @@ orientations of its gyroscopes relative to the guide star IM Pegasi.
 
 <% end_sec %> % Conservation of angular momentum and frame dragging
 <% end_sec %> % Conservation laws
+<% begin_sec("Things that aren't quite tensors") %>
+This section can be skipped on a first reading.
+<% begin_sec("Area, volume, and tensor densities") %>
+We've embarked on a program of redefining every possible physical quantity as a tensor, but so far we haven't tackled
+area and volume. Is there, for example, an area tensor in a locally Euclidean plane? We are encouraged to hope that
+there is such a thing, because on p.~\pageref{affine-area-and-volume} we saw that we could cook up a measure of
+area with no other ingredients than the axioms of affine geometry. What kind of tensor would it be? The notions of vector and scalar from freshman
+mechanics are distinguished from one another by the fact that one has a direction in space and the other does not. Therefore we expect that
+area would be a scalar, i.e., a rank-0 tensor. But this can't be right, for the following reason. Under a rescaling of coordinates by
+a factor $k$, area should change by a factor of $k^2$. But by the tensor transformation laws, a rank-0 tensor is supposed to be
+invariant under a change of coordinates. We therefore conclude that quantities like area and volume are not tensors.
+
+In the language of ordinary vectors and scalars in Euclidean three-space, one way to express area and volume is by using
+dot and cross products. The area of the parallelogram spanned by $\vc{u}$ and $\vc{v}$ is measured by the area vector $\vc{u}\times\vc{v}$,
+and similarly the volume of the parallelepiped can be computed as the scalar triple product $\vc{u}\cdot(\vc{v}\times\vc{w})$. 
+Both of these quantities are defined such that interchanging two of the inputs negates the output. In differential
+geometry, we do have a scalar product, which is defined by contracting the indices of two vectors, as in $u^av_b$. If we also had a
+a tensorial cross product, we would be able to define area and volume tensors, so we conclude that there is no tensorial cross product, i.e.,
+an operation that would multiply two rank-1 tensors to produce a rank-1 tensor. Since one of the most important physical applications of
+the cross product is to calculate the angular momentum $\vc{L}=\vc{r}\times\vc{p}$, we find that angular momentum in relativity is
+either not a tensor or not a rank-1 tensor.
+
+When someone tells you that it's impossible to do a seemingly straightforward thing, the typical response is to look for a way
+to get around the supposed limitation. In the case of a locally Euclidean plane, what is to stop us from making a small, standard
+square, and then sliding the square around to any desired location? If we have some figure whose area we wish to measure, we can
+then dissect it into squares of that size and count the number of squares.
+<% marg(0) %>
+<%
+  fig(
+    'mobius-strip',
+    %q{A M\"{o}bius strip is not an orientable surface.}
+  )
+%>
+<% end_marg %>
+
+There are two problems with this plan, neither of which is completely insurmountable. First, the area vector $\vc{u}\times\vc{v}$
+is a vector, with its orientation specified by the direction of the vector. We need this orientation, for example, when we calculate
+the electric flux as $\int \vc{E}\cdot\der\vc{A}$. Figure \figref{mobius-strip} shows that we cannot always define such an orientation
+in a consistent way. When the $x-y$ coordinate system is slid around the M\"{o}bius strip, it ends up with the opposite orientation.
+In general relativity, there is not any guarantee of orientability in space --- or even in time!\index{orientability} But the vast majority
+of spacetimes of physical interest are in fact orientable in every desired way, and even for those that aren't, orientability still holds
+in any sufficiently small neighborhood.
+
+The other problem is simply that area has the wrong scaling properties to be a rank-0 tensor. We can get around this problem simply by
+being willing to discuss quantities that don't transform exactly like tensors. Often we only care about transformations, such as
+rotations and translations, that don't involve
+any scaling. We saw in 
+section \ref{sec:lorentz-geometry} on p.~\pageref{sec:lorentz-geometry} that Lorentz boosts also have the special property of
+preserving area in a space-time plane containing the boost.
+We therefore define a \emph{tensor density}\index{tensor density} as a quantity that transforms like a tensor under rotations, translations, and boosts,
+but that rescales and possibly flips its sign under other types of coordinate transformations. In general, the additional factor comes from
+the determinant $d$ of the matrix consisting of the partial derivatives $\partial x'^\mu/\partial x^\nu$ (called the Jacobian matrix).\index{Jacobian matrix}
+This determinant is raised to a power
+$W$, known as the weight of the tensor density.\index{weight of a tensor density} Weight zero corresponds to the case of a real tensor.
+
+\begin{eg}{Area as a tensor density}
+In a Euclidean plane, a rescaling of coordinates by a factor of $k$ is represnted by a matrix of partial
+derivatives that is simply $kI$, where $I$ is the identity matrix. The determinant is $k^2$. Therefore
+area is a tensor density of weight 2.
+\end{eg}
+
+In Weyl's apt characterization,\footnote{Hermann Weyl, ``Space-Time-Matter,'' 1922, p.~109, available online at \url{archive.org/details/spacetimematter00weyluoft}.} 
+tensors represent intensities, while tensor densities measure quantity.
+<% end_sec %> % Area, volume, and tensor densities
+<% begin_sec("The Levi-Civita symbol") %>\index{angular momentum}
+Although there is no tensorial vector cross product, we can define a similar operation whose output is a tensor density.
+This is most easily expressed in terms of the Levi-Civita symbol\index{Levi-Civita, Tullio}\index{Levi-Civita symbol} $\epsilon$.
+(See p.~\pageref{fig:levi-civita-portrait} for biographical information about Levi-Civita.)
+
+In $n$ dimensions, the Levi-Civita symbol has $n$ indices. It is defined so as to
+be totally asymmetric, in the sense that if any two of the indices are interchanged, its sign flips. This is sufficient
+to define the symbol completely except for an over-all scaling, which is fixed by arbitrarily taking one of the nonvanishing
+elements and setting it to $+1$. To see that this is enough to define $\epsilon$ completely, first note that it must vanish
+when any index is repeated. For example, in three dimensions labeled by $\kappa$, $\lambda$, and $\mu$, $\epsilon_{\kappa\lambda\lambda}$
+is unchanged under an interchange of the second and third indices, but it must also flip its sign under this operation, which means
+that it must be zero. If we arbitrarily fix $\epsilon_{\kappa\lambda\mu}=+1$, then interchange of the second and third indices
+gives $\epsilon_{\kappa\mu\lambda}=-1$, and a further interchange of the first and second yields $\epsilon_{\mu\kappa\lambda}=+1$.
+Any permutation of the three distinct indices can be reached from any other by a series of such pairwise swaps, and the number
+of swaps is uniquely odd or even.\footnote{For a proof, see the Wikipedia article ``Parity of a permutation.''}
+In Cartesian coordinates in three dimensions, it is conventional to choose  $\epsilon_{xyz}=+1$ when
+$x$, $y$, and $z$ form a right-handed spatial coordinate system. In four dimensions, we take
+$\epsilon_{txyz}=+1$ when $t$ is the direction and $(x,y,z)$ are right-handed.
+
+In Euclidean three-space, in coordinates such that $g=diag(1,1,1)$, the vector cross product $\vc{A}=\vc{u}\times\vc{v}$, where we have
+in mind the interpretation of $\vc{A}$ as area, can be expressed
+as $A_\mu=\epsilon_{\mu\kappa\lambda}u^\kappa v^\lambda$.
+
+Self-check: Check that this matches up with the more familiar definition of the vector cross product.
+
+Now suppose that we want to generalize to curved spaces, where $g$ cannot be constant. There are two ways to proceed.
+
+<% begin_sec("Tensorial $\\epsilon$") %>
+One is to let $\epsilon$ have the values $0$ and $\pm1$ at some arbitrarily chosen point, in some arbitrarily chosen coordinate
+system, but to let it transform like a tensor. Then $A_\mu=\epsilon_{\mu\kappa\lambda}u^\kappa v^\lambda$ needs to be modified,
+since the right-hand side is a tensor, and that would make $A$ a tensor, but if $A$ is an area we don't want it to transform like
+a 1-tensor. We therefore need to revise the definition of area to be $A_\mu=g^{-1/2}\epsilon_{\mu\kappa\lambda}u^\kappa v^\lambda$,
+where $g$ is the determinant of the lower-index form of the metric. The following two examples justify this procedure in a locally Euclidean three-space.
+
+\begin{eg}{Scaling coordinates with tensorial $\epsilon$}
+Then scaling of coordinates by $k$ scales all the elements of the metric by $k^{-2}$, $g$ by $k^{-6}$, $g^{-1/2}$ by $k^{3}$, $\epsilon_{\mu\kappa\lambda}$ by
+$k^{-3}$, and $u^\kappa v^\lambda$ by $k^2$. The result is to scale $A_\mu$ by $k^{+3-3+2}=k^{2}$, which makes sense if $A$ is an area.
+\end{eg}
+
+\begin{eg}{Oblique coordinates with tensorial $\epsilon$}
+In oblique coordinates (example \ref{eg:oblique-cartesian}, p.~\pageref{eg:oblique-cartesian}), the two basis vectors have unit
+length but are at an angle $\phi \ne \pi/2$ to one another. The determinant of the metric is $g=\sin^2\phi$, so $\sqrt{g}=\sin\phi$,
+which is exactly the correction factor needed in order to get the right area when $u$ and $v$ are the two basis vectors.
+\end{eg}
+
+This procedure works more generally, the sole modification being that in a space such as a locally Lorentzian one where $g<0$ we need
+to use $\sqrt{-g}$ as the correction factor rather than $\sqrt{g}$.
+<% end_sec %> % Tensorial $\epsilon$
+<% begin_sec("Pseudoensorial $\\epsilon$") %>
+The other option is to let $\epsilon$ have the same $0$ and $\pm1$ values at all points. Then $\epsilon$ is clearly not a tensor, because
+it doesn't scale by a factor of $k^n$ when the coordinates are scaled by $k$; $\epsilon$ is a pseudotensor with weight $+1$ for the upper-index version
+and $-1$ for the lower-index one. The relation $A_\mu=\epsilon_{\mu\kappa\lambda}u^\kappa v^\lambda$ gives an area that is a pseudotensor,
+not a tensor, because $A$ is not written in terms of purely tensorial quantities. Scaling the coordinates by $k$ leaves $\epsilon_{\mu\kappa\lambda}$
+unchanged, scales up $u^\kappa v^\lambda$ by $k^2$, and scales up the area by $k^2$, as expected.
+<% end_sec %> % Pseudoensorial $\epsilon$
+Unfortunately, there is no consistency in the literature as to whether $\epsilon$ should be a tensor or a pseudotensor.
+Some will define both a tensor and a nontensor version, with notations
+like $\epsilon$ and $\tilde{\epsilon}$, or\footnote{Misner, Thorne, and Wheeler} $\epsilon_{0123}$ and $[0123]$. 
+Others avoid writing the letter $\epsilon$ completely.\footnote{Hawking and Ellis} The pseudotensor version
+is convenient because we always know that its value is $0$ or $\pm 1$. The tensor version has the advantage that it transforms
+as a tensor.
+<% end_sec %> % The Levi-Civita symbol
+<% begin_sec("Angular momentum") %>\index{angular momentum}
+As discussed above, angular momentum cannot be a rank-1 tensor.
+One approach is to define a rank-2 angular momentum tensor $L^{ab}=r^ap^b$. 
+
+In a frame whose origin is instantaneously moving along with a certain system's center of mass
+at a certain time, the time-space components of $L$ vanish, and the components $L^{yz}$, $L^{zx}$, and $L^{xy}$ coincide
+in the nonrelativistic limit with the $x$, $y$, and $z$ components of the Newtonian angular momentum vector. 
+We then have $L^a=\epsilon_{abc}L^{bc}$ (with psuedotensorial $\epsilon$) for the angular momentum pseudovector whose spacelike components are
+$L^x$, $L^y$, and $L^z$. Although the pseudovector is less cumbersome than the 2-tensor, the 2-tensor has the simple transformation
+properties of a tensor.
+<% end_sec %> % Angular momentum
+<% end_sec %> % Things that aren't quite tensors
 
 \begin{hwsection}
 
@@ -1144,6 +1282,7 @@ The laws of physics in our universe imply that for bodies with a certain range o
 equilibrium state. Suppose we knew of the existence of neutron stars, but didn't know the mass of the neutron.
 Infer upper and lower bounds on the mass of the neutron.
 <% end_hw %>
+
 
 \end{hwsection}
 

@@ -87,15 +87,14 @@ of general relativity.
   )
 %>
 
-Even without performing the calculations for this system, it is easy to show that if such waves exist, they must be
-capable of carrying energy. Consider two equal masses in highly elliptical orbits about their common center of mass.
-As the masses recede from one another, they feel a delayed version of the gravitational force originating from a time when they were closer together
-and the force was stronger. The result is that in the near-Newtonian limit, they lose more kinetic and gravitational energy than they
-would have lost in the purely Newtonian theory. Now they come back inward in their orbits. As they approach one another, the time-delayed
-force is anomalously weak, so they gain less mechanical energy than expected. The result is that with each cycle, mechanical energy
-is lost. We expect that this energy is carried by the waves, in the same way that radio waves carry the energy lost by a transmitting antenna.
-The analysis in the case of circular motion is a little trickier, but the result is 
-the same (problem \ref{hw:circular-radiation}).\label{elliptical-radiation}
+An even more dramatic, if less clearcut, piece of evidence is
+Komossa, Zhou, and Lu's observation\footnote{\url{http://arxiv.org/abs/0804.4585}} of a supermassive black hole
+that appears to be recoiling from its parent galaxy at a velocity of 2650 km/s (projected along the line of
+sight). They interpret this as evidence for the following scenario. In the early universe, galaxies form with
+supermassive black holes at their centers. When two such galaxies collide, the black holes can merge. The
+merger is a violent process in which intense gravitational waves are emitted, and these waves carry a large
+amount of momentum, causing the black holes to recoil at a velocity greater than the escape velocity of the
+merged galaxy.
 
 Although the energy loss from systems such as the Hulse-Taylor binary provide strong evidence that gravitational waves
 exist and carry enery, we would also like to detect them directly. This would not only be a definitive
@@ -123,20 +122,89 @@ other known binary star.\footnote{Roelofs et al., ``Spectroscopic Evidence for a
     }
   )
 %>
-
-An even more dramatic, if less clearcut, piece of evidence is
-Komossa, Zhou, and Lu's observation\footnote{\url{http://arxiv.org/abs/0804.4585}} of a supermassive black hole
-that appears to be recoiling from its parent galaxy at a velocity of 2650 km/s (projected along the line of
-sight). They interpret this as evidence for the following scenario. In the early universe, galaxies form with
-supermassive black holes at their centers. When two such galaxies collide, the black holes can merge. The
-merger is a violent process in which intense gravitational waves are emitted, and these waves carry a large
-amount of momentum, causing the black holes to recoil at a velocity greater than the escape velocity of the
-merged galaxy.
-
 <% end_sec %> % Empirical evidence
+<% begin_sec("Energy content") %>
+<% marg(0) %>
+<%
+  fig(
+    'atlas',
+    %q{As the two planets recede from one another, each feels the gravitational attraction that the other one exerted
+       in its previous position, delayed by the time it takes gravitational effects to propagate at $c$. At time $t$,
+       the right-hand planet experiences the stronger deceleration corresponding to the left-hand planet's closer position at the earlier time $t'$,
+       not its current position at $t$. Mechanical energy is not conserved, and the orbits will decay.}
+  )
+%>
+<% end_marg %>
+
+Even without performing the calculations for a system like the Hulse-Taylor binary, it is easy to show that if such waves exist, they must be
+capable of carrying away energy. Consider two equal masses in highly elliptical orbits about their common center of mass.
+The motion is nearly one-dimensional.
+As the masses recede from one another, they feel a delayed version of the gravitational force originating from a time when they were closer together
+and the force was stronger. The result is that in the near-Newtonian limit, they lose more kinetic and gravitational energy than they
+would have lost in the purely Newtonian theory. Now they come back inward in their orbits. As they approach one another, the time-delayed
+force is anomalously weak, so they gain less mechanical energy than expected. The result is that with each cycle, mechanical energy
+is lost. We expect that this energy is carried by the waves, in the same way that radio waves carry the energy lost by a transmitting antenna.\footnote{One has
+to be careful with this type of argument. In particular, one can obtain incorrect correct results by attempting to generalize this one-dimensional
+argument to motion in more than one dimension, because the effective semi-Newtonian interaction is not just a time-delayed version of Newton's
+law; it also includes velocity-dependent forces. It is easy to see why such velocity-dependence must occur in the simpler case of electromagnetism.
+Suppose that charges A and B are not at rest relative to one another. In B's frame, the electric field from A must come from the direction of the position
+that an observer comoving with B would extrapolate linearly from A's last known position and velocity, as determined by light-speed calculation.
+This follows from Lorentz invariance, since
+this is the direction that will be seen by an observer comoving with A. A full discussion is given by Carlip, \url{arxiv.org/abs/gr-qc/9909087v2}.}
+
+Not only can these waves remove mechanical energy from a system, they can also deposit energy in a detector,
+as shown by the nonmathematical ``sticky bead
+argument'' (figure \figref{sticky-bead}), which was originated by Feynman in 1957 and later popularized by Bondi.
+<% marg(0) %>
+<%
+  fig(
+    'sticky-bead',
+    %q{The sticky bead argument for the reality of gravitational waves. As a gravitational wave with the appropriate
+            polarization passes by, the bead vibrates back and forth on the rod. Friction creates heat. This
+            demonstrates that gravitational waves carry energy, and are thus real, observable phenomena.}
+  )
+%>
+<% end_marg %>
+
+Now strictly speaking, we have only shown that gravitational waves can extract or donate mechanical
+energy, but not that the waves themselves \emph{transmit} this energy. The distinction isn't one that
+normally occurs to us, since we are trained to believe that energy is always conserved. But we know that,
+for fundamental reasons, general relativity doesn't have global conservation laws that apply to all spacetimes
+(p.~\pageref{sec:no-conservation-laws}).
+Perhaps the energy lost by the Hulse-Taylor system is simply gone, never to reappear, and the energy
+imparted to the sticky bead is simply generated out of nowhere. On the other hand, general relativity
+does have global conservation laws for certain specific classes of spacetimes, including, for example,
+a conserved scalar mass-energy in the case of a stationary spacetime (p.~\pageref{sec:killing-conservation}).
+Spacetimes containing gravitational waves are not stationary, but perhaps there is something similar we can do
+in some appropriate special case.
+
+Suppose we want an expression for the energy of a gravitational wave in terms of its amplitude.
+This seems like it ought to be straightforward. We have such expressions in other classical field theories.
+In electromagnetism, we have energy densities $+(1/8\pi k) |\vc{E}|^2$ and $+(1/2\mu_\zu{o})  |\vc{B}|^2$
+associated with the electric and magnetic fields.
+In Newtonian gravity, we can assign an energy density
+$-(1/8\pi G)|\vc{g}|^2$ to the gravitational field $\vc{g}$; the minus sign indicates that when masses
+glom onto each other, they produce a greater field, and energy is released.
+
+In general relativity, however, the equivalence principle tells us that for any gravitational field measured
+by one observer, we can find another observer, one who is free-falling, who says that the local field is zero.
+It follows that we cannot associate an energy with the curvature of a particular region of spacetime in
+any exact way. The best we can do is to find expressions that give the energy density (1) in the limit of
+weak fields, and (2) when averaged over a region of space that is large compared to the wavelength.
+These expressions are not unique. There are a number of ways to write them in terms of the metric and
+its derivatives, and they all give the same result in the appropriate limit. The reader who is interested
+in seeing the subject developed in detail is referred to Carroll's \emph{Lecture Notes on General Relativity},
+\url{http://arxiv.org/abs/gr-qc/?9712019}. Although this sort of thing is technically messy,
+we can accomplish quite a bit simply by knowing that such results do exist, and that although they
+are non-unique in general, they are uniquely well defined in certain cases. Specifically, when one wants
+to discuss gravitational waves, it is usually possible to assume an asymptotically flat spacetime. In an
+asymptotically flat spacetime, there is a scalar mass-energy, called the ADM mass,\index{ADM mass}\index{mass!ADM}\index{mass-energy!ADM}
+that is conserved. In this restricted sense, we are assured that the books balance, and that the emission and absorption of gravitational
+waves really does mean the \emph{transmission} of a fixed amount of energy.
+<% end_sec %> % Energy content
 
 <% begin_sec("Expected properties") %>
-To see what properties we should expect for such radiation, first consider the reasoning that led to the construction of
+To see what properties we should expect for gravitational radiation, first consider the reasoning that led to the construction of
 the Ricci and Einstein tensors. If a certain volume of space is filled with test particles, then the Ricci and Einstein
 tensors measure the tendency for this volume to ``accelerate;'' i.e., $-\der^2 V/\der t^2$ is a measure of the attraction of
 any mass lying inside the volume. A distant mass, however, will exert only tidal forces, which distort a region without
@@ -333,33 +401,6 @@ $x$ or $y$. Therefore there is no measurable property of this metric that varies
 
 <% end_sec %> % Some exact solutions
 
-<% begin_sec("Energy content") %>
-
-To show that these waves carry momentum and energy, we can
-use the nonmathematical ``sticky bead
-argument'' (figure \figref{sticky-bead}), which was originated by Feynman in 1957 and later popularized by Bondi.
-
-We would next like to find an expression for the energy of the wave in terms of its amplitude.
-Alas, this was not meant to be. 
-
-It seems like it ought to be straightforward. We have such expressions in other classical field theories.
-In electromagnetism, we have energy densities $+(1/8\pi k) |\vc{E}|^2$ and $+(1/2\mu_\zu{o})  |\vc{B}|^2$
-associated with the electric and magnetic fields.
-In Newtonian gravity, we can assign an energy density
-$-(1/8\pi G)|\vc{g}|^2$ to the gravitational field $\vc{g}$; the minus sign indicates that when masses
-glom onto each other, they produce a greater field, and energy is released.
-
-In general relativity, however, the equivalence principle tells us that for any gravitational field measured
-by one observer, we can find another observer, one who is free-falling, who says that the local field is zero.
-It follows that we cannot associate an energy with the curvature of a particular region of spacetime in
-any exact way. The best we can do is to find expressions that give the energy density (1) in the limit of
-weak fields, and (2) when averaged over a region of space that is large compared to the wavelength.
-These expressions are not unique. There are a number of ways to write them in terms of the metric and
-its derivatives, and they all give the same result in the appropriate limit. The reader who is interested
-in seeing the subject developed in detail is referred to Carroll's \emph{Lecture Notes on General Relativity},
-\url{http://arxiv.org/abs/gr-qc/?9712019}.
-
-<% end_sec %> % Energy content
 
 <% begin_sec("Rate of radiation") %>\label{sec:rate-of-gravitational-radiation}
 How can we find the rate of gravitational radiation from a system such as the Hulse-Taylor pulsar?
@@ -371,16 +412,7 @@ Idealizing such a source to a radially pulsating spherical surface, we have an o
 uniformly in all directions. To find the power radiated, we note that the velocity of the source-surface is
 proportional to $x_\zu{o}\omega$, so the kinetic energy of the air immediately in contact with it is proportional
 to $\omega^2 x_\zu{o}^2$. The power radiated is therefore proportional to $\omega^2 x_\zu{o}^2$.
-<% marg(100) %>
-<%
-  fig(
-    'sticky-bead',
-    %q{The sticky bead argument for the reality of gravitational waves. As a gravitational wave with the appropriate
-            polarization passes by, the bead vibrates back and forth on the rod. Friction creates heat. This
-            demonstrates that gravitational waves carry energy, and are thus real, observable phenomena.}
-  )
-%>
-\spacebetweenfigs
+<% marg(50) %>
 <%
   fig(
     'multipoles',
@@ -461,13 +493,6 @@ of the data.
 \vfill
 
 \begin{hwsection}
-
-<% begin_hw('circular-radiation') %>
-On page \pageref{elliptical-radiation}, I argued that when two bodies are in highly elliptical orbits about their
-common center of mass, delays in the propagation of gravitational effects lead to a loss of energy, which can be
-explained by gravitational radiation. Extend the argument to the case of circular orbits.
-\hwsoln
-<% end_hw %>
 
 <% begin_hw('why-geodesics-for-test-particles') %>\index{geodesic!as world-line of a test particle}
 (a) Starting on page \pageref{sec:geometrical-gravity}, we have associated geodesics with the world-lines of low-mass

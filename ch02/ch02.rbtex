@@ -236,7 +236,7 @@ extended to distances measured along two different parallel lines.
 %>
 <% end_marg %>
 
-\begin{eg}{Area and volume}\label{eg:affine-area-lattice}
+\begin{eg}{Area and volume}\label{eg:affine-area-lattice}\label{affine-area-and-volume}
 It is possible to define area and volume in affine geometry. This is a little surprising,
 since distances along different lines are not even comparable. However, we are already accustomed to multiplying
 and dividing numbers that have different units (a concept that would have given Euclid conniptions), and the
@@ -433,7 +433,7 @@ Although we defined $\gamma$ in terms of the time coordinate of $\zu{R}'$, we co
 coordinate of $\zu{Q}'$, so $\gamma$ represents a factor of both time dilation and length contraction.
 (Clearly it wouldn't have made sense to distort one quantity without distorting the other, since the invariant
 velocity $c$ represents a ratio of a distance to a time.) In summary, a clock runs fastest according to an observer
-who is at rest relative to the clock, and a measuring rod likewise appears longest in its own rest frame.
+who is at rest relative to the clock, and a measuring rod likewise appears longest in its own rest frame.\index{time dilation!kinematic}\index{length contraction}
 
 The lack of a universal notion of simultaneity has a similarly symmetric interpretation. In prerelativistic
 physics, points in space have no fixed identity. A brass plaque commemorating a Civil War battle is not
@@ -507,13 +507,53 @@ to accelerate, as in the original story of Alice and Betty, and then we are no l
 pure Lorentz frames, which are described by non-accelerating observers.
 \end{eg}
 
-\pagebreak
+\begin{eg}{Einstein's goof}\label{eg:einstein-goof}
+Einstein's original 1905 paper on special relativity, reproduced on p.~\pageref{einstein-relativity},
+contains a famous incorrect prediction, that ``a
+spring-clock at the equator must go more slowly, by a very small
+amount, than a precisely similar clock situated at one of the
+poles under otherwise identical conditions'' (p.~\pageref{einstein-goof}). This was a
+reasonable prediction at the time, but we now know that it was incorrect because it neglected
+gravitational time dilation. 
+In the description of the Hafele-Keating experiment using atomic clocks aboard airplanes (p. \pageref{sec:hafele-keating}), 
+we saw that both gravity and motion had effects on the rate of flow of time.
+On p.~\pageref{grav-redshift-by-ep} we found based on the equivalence principle that the gravitational
+redshift of an electromagnetic wave is $\Delta E/E=\Delta\Phi$ (where $c=1$ and $\Phi$ is the gravitational
+potential $gy$), and that this could also be interpreted
+as a gravitational time dilation  $\Delta t/t=\Delta\Phi$.
+
+The clock at the equator suffers a kinematic time dilation
+that would tend to cause it to run more slowly than the one at the pole. However, the earth is not a sphere,
+so the two clocks are at different distances from the earth's center, and the field they inhabit is also
+not the simple field of a sphere. This suggests that there may be an additional gravitational effect
+due to $\Delta\Phi\ne 0$. 
+Expanding the Lorentz gamma factor in a Taylor series, we find that the kinematic effect amounts to
+$\Delta t/t = \gamma-1\approx v^2/2$. The mismatch in rates between the two clocks is
+\begin{equation*}
+  \frac{\Delta t}{t} \approx \frac{1}{2}v^2 -\Delta\Phi \qquad ,
+\end{equation*}
+where $\Delta\Phi=\Phi_{\text{equator}}-\Phi_{\text{pole}}$, and a factor of $1/c^2$ on the right is suppressed
+because $c=1$. But this expression for $\Delta t/t$ vanishes,
+because the surface of the earth's oceans is in equilibrium, and therefore a mass of water $m$ can be
+brought from the north pole to the equator, with the change in potential energy $-m\Delta\Phi$ being
+exactly sufficient to supply the necessary kinetic energy $(1/2)mv^2$.
+We therefore find that a change of latitude
+should have no effect on the rate of a clock, provided that it remains at sea level.
+
+This has been verified
+experimentally by Alley et al.\footnote{C.O. Alley, et al., in NASA Goddard Space Flight Center, Proc. of the 13th
+Ann. Precise Time and Time Interval (PTTI) Appl. and Planning Meeting, p. 687-724, 1981, available
+online at \url{http://www.pttimeeting.org/archivemeetings/index9.html}} Alley's group flew atomic
+clocks from Washington, DC to Thule, Greenland, left them there for four days, and brought them back.
+The difference between the clocks that went to Greenland and other clocks that stayed in Washington
+was $38\pm5$ ns, which was consistent with the $35\pm 2$ ns effect predicted purely based on kinematic
+and gravitational time dilation while the planes were in the air. If Einstein's 1905 prediction had
+been correct, then there would have been an additional difference of 224 ns due to the difference in latitude.
+\end{eg}
 
 \begin{eg}{GPS}\label{eg:gps}
-In the Hafele-Keating experiment using atomic clocks aboard airplanes (p. \pageref{sec:hafele-keating}), both gravity and motion had
-effects on the rate of flow of time. Similarly, both effects must be considered in the case of the GPS system.
-The gravitational effect was found on page \pageref{grav-redshift-by-ep} to be $\Delta E/E=gy$ (with $c=1$), based on the
-equivalence principle. The special-relativistic effect can be found from the Lorentz transformation.
+In the GPS system, as in example \ref{eg:einstein-goof},
+both gravitational and kinematic time dilation must be considered.
 Let's determine the directions and relative strengths of the two effects in the case of a GPS satellite.
 
 A radio photon emitted by a GPS satellite gains energy as it falls to the earth's surface, so its energy
@@ -527,16 +567,17 @@ to the observer on earth, this causes time aboard the satellite to flow more slo
 We can therefore see that the two effects are of opposite sign. Which is stronger?
 
 For a satellite in low earth orbit, we would have $v^2/r=g$, where $r$ is only slightly greater than the radius of the earth.
-Expanding the Lorentz gamma factor in a Taylor series, we find that the relative effect on the flow of time
+The relative effect on the flow of time
 is $\gamma-1\approx v^2/2 = gr/2$. The gravitational effect, approximating
 $g$ as a constant, is $-gy$, where $y$ is the satellite's altitude above the earth. For such a satellite,
 the gravitational effect is down by a factor of $2y/r$, so the Lorentz time dilation dominates.
 
 GPS satellites, however, are not in low earth orbit. They orbit at an altitude of about 20,200 km, which is quite a bit
 greater than the radius of the earth. We therefore expect the gravitational effect to dominate. To confirm this,
-we need to generalize the equation $\Delta E/E=gy$ to the case where $g$ is not a constant.
-Integrating the equation $\der E/E = g \der y$, we find that the time dilation factor is equal to $e^{\Delta\Phi}$, where
-$\Phi=\int g\der y$ is the gravitational potential per unit mass. When $\Delta\Phi$ is small, this causes a relative effect
+we need to generalize the equation $\Delta t/t=\Delta\Phi$ (with $c=1$) from example
+\ref{eg:einstein-goof} to the case where $g$ is not a constant.\index{time dilation!gravitational!nonuniform field}
+Integrating the equation $\der t/t = \der\Phi$, we find that the time dilation factor is equal to $e^{\Delta\Phi}$.
+When $\Delta\Phi$ is small, $e^{\Delta\Phi}\approx 1+\Delta\Phi$, and we have a relative effect
 equal to $\Delta\Phi$. The total effect for a GPS satellite is thus
 (inserting factors of $c$ for calculation with SI units, and using positive signs for blueshifts)
 \begin{equation*}
@@ -571,6 +612,8 @@ time dilation now approximately 0, or approximately $2\delta$? Why is this only 
     }
   )
 %>
+
+\pagebreak
 
 \begin{eg}{Large time dilation}\label{eg:cern-muons}
 The time dilation effect in the Hafele-Keating experiment was very small. If we want to see a large time dilation
@@ -651,7 +694,24 @@ the slope to be $2.4\times10^{-15}$, which, as shown in the figure is an excelle
 \end{eg}
 
 <% end_sec %>
-<% marg(-50) %>
+
+
+<% begin_sec("The light cone",4) %>
+
+Given an event P, we can now classify all the causal relationships in which P can participate.
+In Newtonian physics, these relationships fell into two classes: P could potentially cause any event
+that lay in its future, and could have been caused by any event in its past.
+In a Lorentz spacetime, we have a trichotomy rather than a dichotomy. There is a third class
+of events that are too far away from P in space, and too close in time, to allow any cause and effect
+relationship, since causality's maximum velocity is $c$. Since we're working in units in which $c=1$,
+the boundary of this set is formed by the lines with slope $\pm1$ on a $(t,x)$ plot. This is referred
+to as the light cone,\index{light cone} and in the generalization from 1+1 to 3+1 dimensions, it literally
+becomes a (four-dimensional) cone. The terminology comes from the fact that light happens to travel at $c$,
+the maximum speed of cause and effect. If we make a cut through the cone defined by a surface of constant time
+in P's future, the resulting section is a sphere (analogous to the circle formed by cutting a three-dimensional
+cone), and this sphere is interpreted as the set of events on which P could have had a causal effect by
+radiating a light pulse outward in all directions.
+<% marg(100) %>
 <%
   fig(
     'lightcone',
@@ -669,23 +729,6 @@ the slope to be $2.4\times10^{-15}$, which, as shown in the figure is an excelle
   )
 %>
 <% end_marg %>
-
-
-<% begin_sec("The light cone") %>
-
-Given an event P, we can now classify all the causal relationships in which P can participate.
-In Newtonian physics, these relationships fell into two classes: P could potentially cause any event
-that lay in its future, and could have been caused by any event in its past.
-In a Lorentz spacetime, we have a trichotomy rather than a dichotomy. There is a third class
-of events that are too far away from P in space, and too close in time, to allow any cause and effect
-relationship, since causality's maximum velocity is $c$. Since we're working in units in which $c=1$,
-the boundary of this set is formed by the lines with slope $\pm1$ on a $(t,x)$ plot. This is referred
-to as the light cone,\index{light cone} and in the generalization from 1+1 to 3+1 dimensions, it literally
-becomes a (four-dimensional) cone. The terminology comes from the fact that light happens to travel at $c$,
-the maximum speed of cause and effect. If we make a cut through the cone defined by a surface of constant time
-in P's future, the resulting section is a sphere (analogous to the circle formed by cutting a three-dimensional
-cone), and this sphere is interpreted as the set of events on which P could have had a causal effect by
-radiating a light pulse outward in all directions.
 
 Events lying inside one another's light cones are said to have a timelike relationship. Events outside each
 other's light cones are spacelike in relation to one another, and in the case where they lie on the surfaces
@@ -714,7 +757,7 @@ mass, causing the expansion of the universe to accelerate.
 Self-check: In the bottom panel of figure \figref{tipping-light-cones}, can an observer look at the
 properties of the spacetime in her immediate vicinity and tell how much her light cones are tipping,
 and in which direction? Compare with figure \figref{local-lorentz-frames} on page \pageref{fig:local-lorentz-frames}.
-<% marg(120) %>
+<% marg(30) %>
 <%
   fig(
     'tipping-light-cones',
@@ -1410,7 +1453,7 @@ longer and more detailed discussion by Rhodes and Semon, \url{www.bates.edu/~mse
 this type of inertially guided, constant-thrust motion is always represented on the velocity disk by
 an arc of a circle that is perpendicular to the disk at its edge. (We consider a diameter of the disk to be
 the limiting case of a circle with infinite radius.)}
-<% marg(100) %>
+<% marg(50) %>
 <%
   fig(
     'velocity-disk-loop-filled-in',
@@ -1531,7 +1574,7 @@ treated the earth-moon system as a gyroscope, and found the precession of its ax
 which was partly due to the curvature of spacetime and partly due to the type of rotation described earlier
 in this section.
 The effect on the motion of the moon was noncumulative, and was only about one meter, which was much
-too small to be measured at the time. In 1927, however,  Llewellyn Thomas\index{Thomas!Llewellyn}
+too small to be measured at the time. In 1927, however,  Llewellyn Thomas\index{Thomas, Llewellyn}
 applied similar reasoning to the hydrogen atom, with the electron's spin vector playing the role of gyroscope.
 Since gravity is negligible here, the effect has nothing to do with curvature of spacetime, and Thomas's
 effect corresponds purely to the special-relativistic part of de Sitter's result. It is simply the
@@ -1547,8 +1590,8 @@ relativistic effect could give a factor of 2 instead of something of order $v/c$
 the cognoscenti of relativity theory (Einstein included!) were quite surprised.''
 
 
-<% end_sec %>
-<% end_sec %>
+<% end_sec %> % An experimental test: Thomas precession in hydrogen
+<% end_sec %> % Geometry of Flat Spacetime
 
 
 \begin{hwsection}

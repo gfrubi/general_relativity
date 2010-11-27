@@ -1,6 +1,8 @@
 # See INTERNALS for documentation on all the files: geom.pos, marg.pos, chNN.pos,
 # figfeedbackNN, all.pos.
 
+require 'json'
+
 $n_code_listing = 0
 $hw_number = 0
 $hw = []
@@ -41,7 +43,6 @@ $section_level = -1
 # the caption of a figure. See meki latex notes for more details. In these cases, I
 # can get the refs using eruby instead of latex. See pageref_workaround() and ref_workaround() below.
 
-#qwe
 # Code similar to this is duplicated in translate_to_html.rb:
 refs_file = 'save.ref'
 $ref = {}
@@ -57,10 +58,12 @@ if File.exist?(refs_file) then # It's not an error if the file doesn't exist yet
 end
 
 def ref_workaround(label)
+  if $ref[label]==nil then return 'nn' end # The first time through, won't have a save.ref. Put in a placeholder that's about the right width.
   return $ref[label][0]
 end
 
 def pageref_workaround(label)
+  if $ref[label]==nil then return 'nnn' end # The first time through, won't have a save.ref. Put in a placeholder that's about the right width.
   return $ref[label][1].to_s
 end
 
@@ -86,6 +89,10 @@ end
 
 def is_web
   return ENV['BOOK_OUTPUT_FORMAT']=='web'
+end
+
+def dir
+  return ENV['DIR']
 end
 
 def pos_file
@@ -165,7 +172,6 @@ def marg_print(delta_y)
       page = feed['page']
       refy = feed['refy']
       deltay = feed['deltay']
-      #$stderr.print "page=#{page},refy=#{refy},deltay=#{deltay}\n"
       y = refy*$tex_points_to_mm+deltay
       y_raw = y
       debug = false
@@ -233,8 +239,12 @@ end
 
 # returns height in mm, or nil if the all.pos file doesn't exist yet, or figure not listed in it
 def height_of_marg
-  #debug = ($ch.to_i==4 and $n_marg==6)
+  #debug = ($ch.to_i==0 and $n_marg==6)
   debug = false
+  if debug then 
+    $stderr.print "debug is on, pos_file_exists=#{pos_file_exists()}, pos_file=#{pos_file()}, cwd=#{Dir.getwd()}\n" 
+    $stderr.print "listing of *.pos = "+`ls *.pos`
+  end
   if !(File.exist?($marg_file)) then return nil end
   if !pos_file_exists() then return nil end
   # First, figure out what figures are associated with the current margin block.
@@ -304,10 +314,39 @@ def get_low_and_hi!(found,lo_y,hi_y,filename,mine)
 end
 
 def figure_exists_in_my_own_dir?(name)
-  ch = $ch
-  if $ch=='001' then ch='00' end
-  if $ch=='002' then ch='00' end
-  return (File.exist?("ch#{ch}/figs/#{name}.pdf") or File.exist?("ch#{ch}/figs/#{name}.jpg") or File.exist?("ch#{ch}/figs/#{name}.png"))
+  return (File.exist?("#{dir()}/figs/#{name}.pdf") or File.exist?("#{dir()}/figs/#{name}.jpg") or File.exist?("#{dir()}/figs/#{name}.png"))
+end
+
+def figure_in_toc(name,options={})
+  default_options = {
+    'scootx'=>0,
+    'scooty'=>0,
+    'noresize'=>false
+  }
+  default_options.each { 
+    |option,default|
+    if options[option]==nil then
+      options[option]=default
+    end
+  }
+  d = 'ch00/figs'
+  if !(File.exist?(d)) then d='front/figs' end
+  if !(File.exist?("#{d}/toc-#{name}.pdf") or File.exist?("#{d}/toc-#{name}.jpg") or File.exist?("#{d}/toc-#{name}.png")) then
+    d='../share/toc' 
+  end
+  if options['noresize'] then
+    print "\\addtocontents{toc}{\\protect\\figureintocnoresize{#{d}/toc-#{name}}}"
+  else
+    if options['scootx']==0 then
+      if options['scooty']==0 then
+        print "\\addtocontents{toc}{\\protect\\figureintoc{#{d}/toc-#{name}}}"
+      else
+        print "\\addtocontents{toc}{\\protect\\figureintocscooty{#{d}/toc-#{name}}{#{options['scooty']}mm}}"
+      end
+    else
+      print "\\addtocontents{toc}{\\protect\\figureintocscootx{#{d}/toc-#{name}}{#{options['scootx']}mm}}"
+    end
+  end
 end
 
 def fig(name,caption=nil,options={})
@@ -635,14 +674,25 @@ def add_titlecase(title)
   return foo  
 end
 
+$read_proper_nouns = false
+$proper_nouns = []
+def proper_nouns
+  if !$read_proper_nouns then
+    json_file = whichever_file_exists(["../scripts/proper_nouns.json","scripts/proper_nouns.json"])
+    json_data = ''
+    File.open(json_file,'r') { |f| json_data = f.gets(nil) }
+    if json_data == '' then $stderr.print "Error reading file #{json_file} in eruby_util.rb"; exit(-1) end
+    $proper_nouns = JSON.parse(json_data)
+    $read_proper_nouns = true
+  end
+  return $proper_nouns
+end
+
 def remove_titlecase(title)
   foo = title.clone
   foo = initial_cap(foo.downcase) # first letter is capital, everything after that lowercase
   # restore caps on proper nouns:
-  [ 'Cartesian','Kepler','Gauss','Amp\\`{e}re','Maxwell','Faraday','Brans','Dicke','Einstein','Aristotle','Newtonian',
-    'Huygens','Schr\\"odinger','Schr\\\"odinger','Greek','Biot','Savart','Doppler','Lorentz','Michelson',
-    'Morley','Euclid','Euclidean','Erlangen','Hafele','Keating','Hafele-Keating','Pound-Rebka','Rebka','Thomas',
-    'Mach','Machian','Riemann','Christoffel','Milne'].each { |proper|
+  proper_nouns().each { |proper|
     foo.gsub!(/(?<!\w)#{proper}/i) {|x| initial_cap(x)}
            # ... the negative lookbehind prevents, e.g., damped and example from becoming DAmped and ExAmple
            # If I had a word like "amplification" in a title, I'd need to special-case that below and change it back.
@@ -683,6 +733,16 @@ def end_chapter
       f.print "#{book},#{chnum},#{i},#{name},#{$hw_has_solution[i]?'1':'0'}\n"
     }
   }
+  mv = whichever_file_exists(['mv_silent','../mv_silent'])
+  print "\n\\write18{#{mv} all.pos ch#{$ch}.pos}\n"
+end
+
+def whichever_file_exists(files)
+  files.each {|f|
+    if File.exist?(f) then return f end
+  }
+  $stderr.print "Error in eruby_util.rb, whichever_file_exists(#{files.join(',')}): none of these files exist. Current working dir is #{Dir.pwd}\n"
+  return nil
 end
 
 def code_listing(filename,code)

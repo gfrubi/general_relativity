@@ -178,7 +178,7 @@ linearly independent Killing vectors in this two-dimensional space. When we say 
 Killing vector \emph{field}, which is defined everywhere on the space.
 \end{eg}
 
-<% begin_sec("Conservation laws") %>\label{sec:killing-conservation}
+<% begin_sec("Conservation laws") %>\label{sec:killing-conservation}\index{conservation laws!from Killing vectors}
 Whenever a spacetime has a Killing vector, geodesics have a constant value of $v^b \xi_a$, where $v^b$ is
 the velocity four-vector. For example, because the Schwarzschild metric has a Killing vector $\boldsymbol{\xi} = \partial_t$,
 test particles have a conserved value of $v^t$, and therefore we also have conservation of $p^t$, interpreted
@@ -191,14 +191,18 @@ two Killing vectors get mixed together by a linear transformation, corresponding
 a transformation of $p$ and $E$ into a new frame.
 \end{eg}
 
-In addition, one can define a globally conserved quantity found by integrating the flux $P^a=T^{ab}\xi_b$ over the
-boundary of any compact orientable region.\footnote{Hawking and Ellis, ``The Large Scale Structure of Space-Time,'' p.~62} In case
+In addition, one can define a globally conserved quantity found by integrating the flux density $P^a=T^{ab}\xi_b$ over the
+boundary of any compact orientable region.\footnote{Hawking and Ellis, \emph{The Large Scale Structure of Space-Time}, p.~62,
+give a succinct treatment that
+describes the flux densities and proves that Gauss's theorem, which ordinarily fails in curved spacetime for a non-scalar flux,
+holds in the case where the appropriate Killing vectors exist. For an explicit description
+of how one can integrate to find a scalar mass-energy, see Winitzki, \emph{Topics in General Relativity}, section 3.1.5, available for free online.} In case
 of a flat spacetime, there are enough Killing vectors to give conservation of energy-momentum and angular momentum.
 
 <% end_sec %> % Conservation laws for test particles
 <% end_sec %> % Killing vectors
 
-<% begin_sec("Spherical symmetry") %>\label{sec:spherical-symmetry}
+<% begin_sec("Spherical symmetry") %>\label{sec:spherical-symmetry}\index{spherical symmetry}\index{symmetry!spherical}
 A little more work is required if we want to link the existence of Killing vectors to the existence
 of a specific symmetry such as spherical symmetry. When we talk about spherical symmetry in the context
 of Newtonian gravity or Maxwell's equations, we may say, ``The fields only depend on
@@ -391,7 +395,7 @@ the vacuum field equations have a solution, the Schwarzschild spacetime, which i
 and the value of $m$.
 Let's enumerate the assumptions that went into our derivation of the
 Schwarzschild metric on p.~\pageref{sec:complete-sch}. These were: (1) the vacuum field equations, (2) spherical symmetry, (3) asymptotic staticity,
-and (4) a certain choice of coordinates.
+(4) a certain choice of coordinates, and (5) $\Lambda=0$.
 Birkhoff's theorem says that the assumption of staticity was not necessary.
 That is, even if the mass distribution contracts and expands over time, the exterior solution is still the Schwarzschild solution.
 Birkhoff's theorem holds because gravitational waves are transverse, not longitudinal (see p.~\pageref{grav-waves-transverse}),
@@ -443,17 +447,30 @@ in the time-independent diagonal form
 \end{equation*}
 We have already solved the field equations for a metric of this
 form and found as a solution the Schwarzschild spacetime.\footnote{The Schwarzschild \emph{spacetime} is the uniquely
-defined geometry found be removing the coordinate singularities from this form of the Schwarzschild \emph{metric}.} 
+defined geometry found by removing the coordinate singularities from this form of the Schwarzschild \emph{metric}.} 
 Since the metric's components are all independent of $t$, $\partial_t$ is a Killing vector, and it
 is timelike for large $r$, so the Schwarzschild spacetime is asymptotically static.
 
+The no-hair theorems say that relativity only has a small repertoire of types of black-hole singularities,
+defined as regions of spacetime that are causally disconnected from the universe, in the sense that
+future light-cones of points in the region do not extend to infinity.\footnote{For a more formal statement of
+this, see Hawking and Ellis, ``The Large Scale Structure of Space-Time,'' p.~315.} That is, a black hole is defined as
+a singularity hidden behind an event horizon, and since the definition of an event horizon is dependent on
+the observer, we specify an observer infinitely far away. The theorems cannot classify naked singularities,
+i.e., those not hidden behind horizons, because the role of naked singularities in relativity is the subject
+of the cosmic censorship hypothesis, which is an open problem. The theorems do not rule out the
+Big Bang singularity, because we cannot define the notion of an observer infinitely far from the Big Bang.
+We can also see that Birkhoff's theorem does not prohibit the Big Bang, because
+cosmological models are not vacuum solutions with $\Lambda=0$. Black string
+solutions are not ruled out by Birkhoff's theorem because they would lack spherical symmetry,
+so we need the arguments given on p.~\pageref{sec:schwarzschild-d-dimensions} to show that they don't exist.\index{black string}
 <% end_sec %> % Birkhoff's theorem
 
 <% begin_sec("The gravitational potential") %>
 When Pound and Rebka made the first observation of gravitational redshifts, these shifts were
 interpreted as evidence of gravitational time dilation, i.e., a mismatch in the rates of
 clocks. We are accustomed to connecting these two ideas by using the expression $e^{-\Delta\Phi}$ for
-the ratio of the rates of two clocks, where $\Phi$ is a function of the spatial coordinates,
+the ratio of the rates of two clocks (example \ref{eg:gps}, p.~\pageref{eg:gps}), where $\Phi$ is a function of the spatial coordinates,
 and this is in fact the most general possible definition of
 a gravitational potential $\Phi$ in relativity. Since a stationary field allows us to compare
 rates of clocks, it seems that we should be able to define a gravitational potential for any

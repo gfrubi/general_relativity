@@ -1,9 +1,0 @@
-load(ctensor);
-ct_coords:[t,r,theta,z];
-lg:matrix([log(r),0,0,0],
-          [0,-(1-m*log(r)),0,0],
-          [0,0,-r^2,0],
-          [0,0,0,-1]);
-cmetric();   
-ricci(true);
-/* christof(mcs); */

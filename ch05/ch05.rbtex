@@ -1189,6 +1189,15 @@ to prove that no model of a two-space embedded in a three-space can have torsion
 
 Generalizing to more dimensions, the torsion tensor is odd under the full spacetime reflection
 $x_a \rightarrow -x_a$, i.e., a parity inversion plus a time-reversal, PT. 
+<% marg(0) %>
+<%
+  fig(
+    'torsion-screw',
+    %q{Three gyroscopes are initially aligned with the $x$, $y$, and $z$ axes. After parallel transport along the geodesic $x$ axis, the
+            $x$ gyro is still aligned with the $x$ axis, but the $y$ and $z$ gyros have rotated.}
+  )
+%>
+<% end_marg %>
 
 In the story above, we had a torsion that didn't preserve tangent vectors. In three or more dimensions, however, it
 is possible to have torsion that does preserve tangent vectors. For example, transporting a vector along the $x$
@@ -1207,22 +1216,9 @@ for symmetrization and antisymmetrization of tensors from page \pageref{symmetry
   T_{[abc]} &= \frac{1}{3!}\Sigma\epsilon^{abc}T_{abc} \qquad ,
 \end{align*}
 where the sums are over all permutations of the indices, and in the second line
-the totally antisymmetric Levi-Civita symbol\index{Levi-Civita symbol} is defined by $\epsilon^{abc}=\epsilon^{bca}=\epsilon^{cab}=+1$,
-$\epsilon^{bac}=\epsilon^{acb}=\epsilon^{cba}=-1$, and $\epsilon^{\lambda\mu\nu}=0$ for all other combinations of indices.
-In other words, $\epsilon^{\lambda\mu\nu}$ is $+1$ if $\lambda\mu\nu$ represent an even permutation of $abc$ (i.e., they can be
-obtained from $abc$ by an even number of pairwise swaps), $-1$ for odd permutations, and $0$ otherwise (i.e., if $\lambda\mu\nu$ is
-not a permutation of $abc$).
+we have used the Levi-Civita symbol.\index{Levi-Civita symbol}
 In this notation, a totally antisymmetric torsion tensor is one with $\tau_{\lambda\mu\nu=}\tau_{[\lambda\mu\nu]}$, and torsion of this
 type preserves tangent vectors under translation.
-<% marg(80) %>
-<%
-  fig(
-    'torsion-screw',
-    %q{Three gyroscopes are initially aligned with the $x$, $y$, and $z$ axes. After parallel transport along the geodesic $x$ axis, the
-            $x$ gyro is still aligned with the $x$ axis, but the $y$ and $z$ gyros have rotated.}
-  )
-%>
-<% end_marg %>
 
 In two dimensions, there are no totally antisymmetric objects with three indices, because we can't write three indices without
 repeating one. In three dimensions, an antisymmetric object with three indices is simply a multiple of the Levi-Civita tensor, so a totally antisymmetric torsion,
@@ -1299,7 +1295,7 @@ source.\footnote{Carroll and Field, \url{http://arxiv.org/abs/gr-qc/9403058}}
 
 <% end_sec %> % torsion
 
-<% begin_sec("From metric to curvature") %>\label{sec:from-metric-to-curvature}
+<% begin_sec("From metric to curvature",4) %>\label{sec:from-metric-to-curvature}
 
 <% begin_sec("Finding $\\Gamma$ given $g$") %>
 We've already found the Christoffel symbol in terms of the metric in one dimension. Expressing it in

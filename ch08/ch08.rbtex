@@ -765,6 +765,14 @@ They even went so far as to sweep out the pigeon droppings inside.
 It was eventually established that the radiation was
 coming uniformly from all directions in the
 sky and had a black-body spectrum with a temperature of about 3 K.
+<% marg(60) %>
+<%
+  fig(
+    'penzias-wilson-antenna',
+    %q{The horn antenna used by Penzias and Wilson.}
+  )
+%>
+<% end_marg %>
 
 This is now interpreted as follows. At one time, the universe was hot enough to
 ionize matter. An ionized gas is opaque to light, since the oscillating fields of an electromagnetic
@@ -927,7 +935,7 @@ fine-tuned equilibrium turns out to be unstable. These considerations make a sta
 they are also consistent with the observed Hubble expansion (p.~\pageref{evidence-for-expansion}).
 
 Since the universe is not static, what happens if we use general relativity to extrapolate farther and farther back in time?
-<% marg(0) %>
+<% marg(40) %>
 <%
   fig(
     'lemaitre',
@@ -1564,7 +1572,7 @@ Historically, it was very difficult
 to determine the universe's average density, even to within an order of magnitude. Most of the matter in the universe
 probably doesn't emit light, making it difficult to detect. Astronomical distance scales are also very poorly calibrated
 against absolute units such as the SI.
-<% marg(-70) %>
+<% marg(0) %>
 <%
   fig(
     'cmb-geometry',

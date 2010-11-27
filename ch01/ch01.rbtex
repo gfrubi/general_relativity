@@ -237,12 +237,13 @@ correspondingly reduced.\footnote{These differences in velocity are not simply s
 choosing a different frame of reference, because the clocks' motion isn't in a straight line. The clocks back
 in Washington, for example, have a certain acceleration toward the earth's axis, which is different from the
 accelerations experienced by the traveling clocks.} The signs of the $\Delta t$'s show that moving clocks
-were slower.
+were slower.\index{time dilation!kinematic}
 
 On the other hand, the asymmetry of the results, with $|\Delta t_E| \ne |\Delta t_W|$,
 implies that there was a second effect involved, simply due to the planes' being up in the air. Relativity predicts
 that time's rate of flow also changes with height in a gravitational field. The deeper reasons for such an
-effect are given in section \ref{sec:pound-rebka} on page \pageref{sec:pound-rebka}.\label{gravity-affects-time}
+effect are given in section \ref{sec:pound-rebka} on 
+page \pageref{sec:pound-rebka}.\index{time dilation!gravitational}\label{gravity-affects-time}
 
 Although Hafele and Keating's measurements were on the ragged edge of the state of the art in 1971, technology has
 now progressed to the point where such effects have everyday consequences. The satellites of the Global
@@ -269,13 +270,13 @@ much smaller, indicating that the ``clock'' constituted by nuclear decay process
 by the motion of the muons.
 <% end_sec %> % muons
 
-<% begin_sec("Gravitational redshifts") %>\label{gravitational-redshifts}
+<% begin_sec("Gravitational red-shifts") %>\label{gravitational-redshifts}
 The first  experiment that isolated the gravitational effect on time was a 1925 measurement by W.S. Adams of the spectrum
 of light emitted from the surface of the white dwarf star Sirius B. The gravitational field at the surface of Sirius B
-is $4\times 10^5 g$, and the gravitational potential is about 3,000 times greater than at the Earth's surface. The emission lines of hydrogen were redshifted,
+is $4\times 10^5 g$, and the gravitational potential is about 3,000 times greater than at the Earth's surface. The emission lines of hydrogen were red-shifted,
 i.e., reduced in frequency,
 and this effect was interpreted as a slowing of time at the surface of Sirius 
-relative to the surface of the Earth.\index{redshift!gravitational}\index{Adams, W.S.}\index{Sirius B}
+relative to the surface of the Earth.\index{red-shift!gravitational}\index{Adams, W.S.}\index{Sirius B}
 Historically, the mass and radius of Sirius were not known with better than order of magnitude precision in 1925,
 so this observation did not constitute a good quantitative test.
 
@@ -434,7 +435,7 @@ strong to be completely correct as a foundation for relativity. For example, if 
 hole, at some point he will reach a central point of infinite density, called a singularity.\index{singularity}
 At this point, his chain of cause and effect terminates, violating O2.
 It is also an open question whether O3's prohibition on time-loops actually holds in general relativity;
-this is Stephen Hawking's playfully named chronology protection conjecture.\index{chronology protection conjecture}\index{Hawking!Stephen}
+this is Stephen Hawking's playfully named chronology protection conjecture.\index{chronology protection conjecture}\index{Hawking, Stephen}
 We'll also see that in general relativity O1 is almost always true, but there are exceptions.
 <% marg(63) %>
 <%
@@ -941,7 +942,7 @@ p.~\pageref{hw:dewitt-estimate}).
 <% end_sec %> % The equivalence principle
 
 
-<% begin_sec("Gravitational redshifts") %>\label{sec:gravitational-redshifts}
+<% begin_sec("Gravitational red-shifts") %>\label{sec:gravitational-redshifts}
 Starting on page \pageref{gravity-affects-time}, we saw experimental evidence that the rate of flow of time
 changes with height in a gravitational field. We can now see that this is required by the equivalence principle.
 
@@ -975,7 +976,8 @@ Self-check: Verify this statement.
 
 By the equivalence principle, we find that when such an experiment is done in a gravitational field $g$,\label{grav-redshift-by-ep}
 there should be a gravitational effect on the energy of a photon equal to $\Delta E/E=gy/c^2$. Since the quantity $gy$ is
-the gravitational energy per unit mass, the photon's fractional loss of energy is the same as the (Newtonian) loss of
+the gravitational potential (gravitational energy per unit mass),\index{potential}
+the photon's fractional loss of energy is the same as the (Newtonian) loss of
 energy experienced by a material object of mass $m$ and initial kinetic energy $mc^2$. 
 
 The interpretation is as follows.
@@ -1010,6 +1012,11 @@ Further interpretation:
            which is one ingredient of general relativity. Experimental tests of this prediction only
            test the equivalence principle; they do not allow us to distinguish between one theory of gravity
            and another if both theories incorporate the equivalence principle.
+\item If an object such as a radio transmitter or an atom in an excited state emits an electromagnetic wave with a frequency $f$,
+           then the object can be considered to be a type of clock. We can therefore interpret the gravitational red-shift as
+           a gravitational time dilation:\index{time dilation!gravitational}
+           a difference in the rate at which time itself flows, depending on the gravitational potential. This is
+           consistent with the empirical results presented in section \ref{sec:hafele-keating}, p.~\pageref{sec:hafele-keating}.
 \end{itemize}
 
 \begin{eg}{Chiao's paradox revisited}\label{eg:chiao-energy}\index{Chiao's paradox}\index{equivalence principle!application to charged particles}
@@ -1022,14 +1029,14 @@ about the earth, even in distant parts of the universe. The electric field patte
 causes a radiation reaction which back-reacts on the particle, causing its orbit to decay.
 \end{eg}
 
-<% end_sec %> %  Gravitational redshifts
+<% end_sec %> %  Gravitational red-shifts
 
-<% begin_sec("The Pound-Rebka experiment") %>\label{sec:pound-rebka}\index{Pound-Rebka experiment}\index{gravitational redshift}\index{redshift!gravitational}
+<% begin_sec("The Pound-Rebka experiment") %>\label{sec:pound-rebka}\index{Pound-Rebka experiment}\index{red-shift!gravitational}
 The 1959 Pound-Rebka experiment at Harvard\footnote{Phys. Rev. Lett. 4 (1960) 337} was the first quantitative test of the equivalence principle to be carried out
 under controlled conditions, and in this section we will discuss it in detail.
 
 When $y$ is on the order of magnitude of the height of a building, the value of $\Delta E/E=gy/c^2$ is $\sim 10^{-14}$, so
-an extremely high-precision experiment is necessary in order to detect a gravitational redshift. A number of other effects are big
+an extremely high-precision experiment is necessary in order to detect a gravitational red-shift. A number of other effects are big
 enough to obscure it entirely, and must somehow be eliminated or compensated for. These are listed below, along with their
 orders of magnitude in the experimental design finally settled on by Pound and Rebka.
 
@@ -1168,7 +1175,7 @@ However, systematic effects such as (4) were easier to monitor and account for w
 A lab building at Harvard happened to have a 22-meter tower, which was used for the experiment.
 To reduce the absorption of the gammas in the 22 meters of air, a long, cylindrical mylar bag full of helium
 gas was placed in the shaft, \figref{pound-rebka}.
-<% marg(-10) %>
+<% marg(10) %>
 <%
   fig(
     'pound-rebka-photos',
@@ -1251,7 +1258,7 @@ then comes back down.  Compare the elapsed times.
 <% begin_hw('clock-at-center-of-earth') %>
 (a) Find the difference in rate between a clock at the center of the earth and a clock at the south pole.
 (b) When an antenna on earth receives a radio signal from a space probe that is in a hyperbolic orbit in the outer solar system,
-the signal will show both a kinematic redshift and a gravitational blueshift. Compare the orders of magnitude of these two effects.
+the signal will show both a kinematic red-shift and a gravitational blueshift. Compare the orders of magnitude of these two effects.
 \hwsoln
 <% end_hw %>
 
