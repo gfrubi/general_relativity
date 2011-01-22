@@ -1,5 +1,5 @@
 <%
-  require "eruby_util.rb"
+  require "./scripts/eruby_util.rb"
 %>
 
 <%

@@ -1,5 +1,5 @@
 <%
-  require "eruby_util.rb"
+  require "./scripts/eruby_util.rb"
 %>
 
 <%
@@ -454,7 +454,7 @@ is timelike for large $r$, so the Schwarzschild spacetime is asymptotically stat
 The no-hair theorems say that relativity only has a small repertoire of types of black-hole singularities,
 defined as regions of spacetime that are causally disconnected from the universe, in the sense that
 future light-cones of points in the region do not extend to infinity.\footnote{For a more formal statement of
-this, see Hawking and Ellis, ``The Large Scale Structure of Space-Time,'' p.~315.} That is, a black hole is defined as
+this, see Hawking and Ellis, ``The Large Scale Structure of Space-Time,'' p.~315.} That is, a black hole is defined as\index{black hole!definition}
 a singularity hidden behind an event horizon, and since the definition of an event horizon is dependent on
 the observer, we specify an observer infinitely far away. The theorems cannot classify naked singularities,
 i.e., those not hidden behind horizons, because the role of naked singularities in relativity is the subject

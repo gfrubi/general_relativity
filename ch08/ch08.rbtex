@@ -1,5 +1,5 @@
 <%
-  require "eruby_util.rb"
+  require "./scripts/eruby_util.rb"
 %>
 
 <%
@@ -1215,7 +1215,8 @@ form of the equivalence principle.
 
 Over the years, a variety of explanations have been proposed for
 the Pioneer anomaly, including both glamorous ones (a modification of the $1/r^2$ law of gravitational
-forces) and others more pedestrian (effects due to outgassing of fuel or radiation pressure from sunlight).
+forces) and others more pedestrian (effects due to outgassing of fuel, radiation pressure from sunlight, or infrared radiation originating from the
+spacecrafts radioisotope thermoelectric generator).
 Calculations by Iorio\footnote{\url{http://arxiv.org/abs/0912.2947v1}} in 2006-2009
 show that if the force law for gravity is modified in order to explain the Pioneer anomalies, and if
 gravity obeys the equivalence principle, then the results are inconsistent with the observed orbital motion
@@ -1223,6 +1224,12 @@ of the satellites of Neptune. This makes gravitational explanations unlikely, bu
 out \O{}stvang's theory, since the theory is not supposed to obey the equivalence principle.
 \O{}stvang says\footnote{private communication, Jan.~4, 2010} that his theory predicts an expansion of
 $\sim 1\munit/\zu{yr}$ in the orbit of Triton's moon Nereid, which is consistent with observation.
+
+In December 2010, the original discoverers of the effect made a statement in the popular press that they
+had a new analysis, which they were preparing to publish in a scientific paper, in which the size of
+the anomaly would be drastically revised downward, with a far greater proportion of the acceleration
+being accounted for by thermal effects. In my opinion this revision, combined with the putative effect's
+violation of the equivalence principle, make it clear that the anomaly is not gravitational.
 \end{eg}
 
 <% end_sec %> % More than one dimension required
@@ -1690,7 +1697,7 @@ very distant bullet seems to be more important than the massive, nearby walls of
 inertial coordinate frames and the orientation of the gyroscope.
 \end{quotation}
 
-They then proceed to construct a mathematical and more Machian theory of gravity. From the Machian point of view,
+They then proceed to construct a mathematical and more Mach\-ian theory of gravity. From the Machian point of view,
 the correct local definition of an inertial frame must be determined relative to the bulk of the matter in the
 universe. We want to retain the Lorentzian local character of spacetime, so this influence can't be transmitted
 via instantaneous action at a distance.

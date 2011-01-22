@@ -1,5 +1,5 @@
 <%
-  require "eruby_util.rb"
+  require "./scripts/eruby_util.rb"
 %>
 
 <%
@@ -324,7 +324,7 @@ size of the universe for the three different regimes. Some of the simpler cases 
 
 <% end_sec %> % momentum 4-vector
 
-<% begin_sec("The frequency four-vector and the relativistic Doppler shift") %>\label{sec:doppler}\index{frequency four-vector}
+<% begin_sec("The frequency four-vector and the relativistic Doppler shift") %>\label{sec:doppler}\index{frequency four-vector}\index{Doppler shift}
 Frequency is to time as the wavenumber\index{wavenumber} $k=1/\lambda$ is to space, so when treating waves relativistically it is
 natural to conjecture that there is a four-frequency $f_a$ made by assembling $(f,\vc{k})$, which behaves as a Lorentz vector. This is correct, since
 we already know that $\partial_a$ transforms as a covariant vector, and for a scalar wave of the form
@@ -346,6 +346,41 @@ $f'=f/(1-v)$ for a moving source. Relativistically, there is also a time dilatio
 providing an additional factor of $1/\gamma$.
 
 This analysis is extended to 3+1 dimensions in problem \ref{hw:doppler-three-d}.
+
+\begin{eg}{Ives-Stilwell experiments}\index{Ives-Stilwell experiments}
+The relativistic Doppler shift differs from the nonrelativistic one by the time-dilation factor $\gamma$, so that
+there is still a shift even when the relative motion of the source and the observer is perpendicular to the direction
+of propagation. This is called the transverse Doppler shift. Einstein suggested this early on as a test of relativity.
+However, such experiments are difficult to carry out with high precision, because they are sensitive to any error
+in the alignment of the 90-degree angle. Such experiments were eventually performed, with results that confirmed
+relativity,\footnote{See, e.g., Hasselkamp, Mondry, and Scharmann, Zeitschrift f\"ur Physik A: Hadrons and Nuclei 289 (1979) 151.}
+but one-dimensional measurements provided both the earliest tests of the relativistic Doppler shift and the most precise
+ones to date. The first such test was done by Ives and Stilwell in 1938, using the following trick. The relativistic
+expression $S_v = \sqrt{(1+v)/(1-v)}$ for the Doppler shift has the property that $S_vS_{-v}=1$, which differs from the
+nonrelativistic result of $(1+v)(1-v)=1-v^2$. One can therefore accelerate an ion up to a relativistic speed, measure
+both the forward Doppler shifted frequency $f_f$ and the backward one  $f_b$, and compute $\sqrt{f_ff_b}$. According
+to relativity, this should exactly equal the frequency $f_\zu{o}$ measured in the ion's rest frame.
+
+In a particularly exquisite modern version of the Ives-Stilwell idea,\footnote{G.~Saathoff et al., ``Improved Test
+of Time Dilation in Relativity,'' Phys. Rev. Lett. 91 (2003) 190403. A publicly available description of the
+experiment is given in Saathoff's PhD thesis, \url{www.mpi-hd.mpg.de/ato/homes/saathoff/diss-saathoff.pdf}.} 
+Saathoff et al.~circulated $\zu{Li}^+$ ions at $v=.064$ in a storage ring. An electron-cooler technique was
+used in order to reduce the variation in velocity among ions in the beam. Since the identity $S_vS_{-v}=1$
+is independent of $v$, it was not necessary to measure $v$ to the same incredible precision as the frequencies;
+it was only necessary that it be stable and well-defined. The natural line width was 7 MHz, and other experimental
+effects broadened it further to 11 MHz. By curve-fitting the line, it was possible to achieve results good to
+a few tenths of a MHz. The resulting frequencies, in units of MHz, were:
+
+\begin{tabular}{rl}
+$f_f$ & =          $582490203.44 \pm .09$ \\
+$f_b$ & =          $512671442.9  \pm 0.5$ \\
+$\sqrt{f_ff_b}$ &= $546466918.6  \pm 0.3$ \\
+$f_\zu{o}$ &=      $546466918.8  \pm 0.4$ (from previous experimental work) 
+\end{tabular}
+
+\noindent The spectacular agreement with theory has made this experiment a lightning rod for
+anti-relativity kooks.
+\end{eg}
 
 \begin{eg}{Einstein's derivation of $E=mc^2$}\label{eg:einstein-mc2}
 On page \pageref{sec:momentum-four-vector}, we showed that the celebrated $E=mc^2$ follows directly from

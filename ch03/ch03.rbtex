@@ -1,5 +1,5 @@
 <%
-  require "eruby_util.rb"
+  require "./scripts/eruby_util.rb"
 %>
 
 <%
@@ -39,7 +39,7 @@ can be approximated locally by flat spacetime. But consider that no practitioner
 problems by filling sheets of scratch paper with epsilons and deltas. Instead, she uses the Leibniz notation,
 in which $\der y$ and $\der x$ are interpreted as infinitesimally small numbers.
 You may be inclined, based on your previous training, to dismiss infinitesimals as neither rigorous nor necessary.
-In 1966, Abraham Robinson\index{Robinson!Abraham} demonstrated that concerns about rigor had been unfounded; we'll come back
+In 1966, Abraham Robinson\index{Robinson, Abraham} demonstrated that concerns about rigor had been unfounded; we'll come back
 to this point in section \ref{sec:models}. Although it is true that any calculation written using infinitesimals can also
 be carried out using limits, the following example shows how much more well suited the infinitesimal language is to
 differential geometry.
@@ -1014,6 +1014,18 @@ this is accomplished by communication with a master control station in Colorado 
 the satellites via relays at Kwajalein, Ascension Island, Diego Garcia, and Cape Canaveral.
 \end{eg}
 
+\begin{eg}{Einstein's goof, in the rotating frame}\label{eg:einstein-goof-rot}
+Example \ref{eg:einstein-goof} on p.~\pageref{eg:einstein-goof} recounted Einstein's famous mistake in
+predicting that a clock at the pole would experience a time dilation relative to a clock at the equator,
+and the empirical test of this fact by Alley et al.~using atomic clocks.
+The perfect cancellation of gravitational and kinematic time dilations might seem fortuitous, but it fact
+it isn't. When we transform into the frame rotating along with the earth, there is no longer any kinematic
+effect at all, because neither clock is moving. In this frame, the surface of the earth's oceans is
+an equipotential, so the gravitational time dilation vanishes as well, assuming both clocks are at sea
+level. In the transformation to the rotating frame, the metric picks up a $\der\theta'\der t$ term, but
+since both clocks are fixed to the earth's surface, they have $\der\theta'=0$, and there is no Sagnac effect.
+\end{eg}
+
 <% end_sec %> % The spatial metric and synchronization of clocks
 <% begin_sec("Impossibility of rigid rotation, even with external forces") %>\label{no-born-rigidity}
 The determination of the spatial metric with rulers at rest relative to the disk is appealing because of its
@@ -1301,7 +1313,7 @@ James Terrell, ``Invisibility of the Lorentz Contraction,'' Physical Review 116 
 Roger Penrose, ``The Apparent Shape of a Relativistically Moving Sphere,'' Proceedings of the Cambridge Philosophical Society 55 (1959) 139.
 }
 showing that in reality an object may appear contracted, expanded, or rotated, depending on whether it is approaching the
-observer, passing by, or receding.\index{Terrell!James}\index{Penrose!Roger}\index{aberration}\index{optical effects}
+observer, passing by, or receding.\index{Terrell, James}\index{Penrose, Roger}\index{aberration}\index{optical effects}
 The case of a sphere is especially interesting. Consider the following four cases:
 
 \begin{itemize}

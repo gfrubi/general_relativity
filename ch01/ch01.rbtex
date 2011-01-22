@@ -1,5 +1,5 @@
 <%
-  require "eruby_util.rb"
+  require "./scripts/eruby_util.rb"
 %>
 
 <%
@@ -1014,7 +1014,7 @@ Further interpretation:
            and another if both theories incorporate the equivalence principle.
 \item If an object such as a radio transmitter or an atom in an excited state emits an electromagnetic wave with a frequency $f$,
            then the object can be considered to be a type of clock. We can therefore interpret the gravitational red-shift as
-           a gravitational time dilation:\index{time dilation!gravitational}
+           a gravitational time dilation:\index{time dilation!gravitational}\label{grav-redshift-as-time-dil}
            a difference in the rate at which time itself flows, depending on the gravitational potential. This is
            consistent with the empirical results presented in section \ref{sec:hafele-keating}, p.~\pageref{sec:hafele-keating}.
 \end{itemize}

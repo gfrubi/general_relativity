@@ -11,10 +11,14 @@ def overlap(a,b,c,d)
   return b-c
 end
 
+def mm(x)
+  return sprintf((x+0.5).to_s,"%d")
+end
+
 found_some = false
-Dir["ch*.pos"].each { |filename|
+Dir["*.pos"].each { |filename|
   found_some = true
-  filename=~/ch(.*)\.pos/
+  filename=~/(.*)\.pos/
   ch = $1 # interpret as string, not integer, e.g., in NP 001 is not the same as 01
   #print "ch. #{ch}\n"
   lo_y = {}
@@ -56,8 +60,8 @@ Dir["ch*.pos"].each { |filename|
           figs.keys.each { |g|
             if f<g and overlap(lo_y[f],hi_y[f],lo_y[g],hi_y[g]) and overlap(lo_x[f],hi_x[f],lo_x[g],hi_x[g]) then
               print "***** colliding figures, ch. #{ch}, p. #{pg}, #{f} and #{g}\n"
-              print "    #{f} extends from #{lo_y[f]} to #{hi_y[f]} mm, #{g} from #{lo_y[g]} to #{hi_y[g]} mm \n"
-              print "    overlapping by #{overlap(lo_x[f],hi_x[f],lo_x[g],hi_x[g])} mm horizontally and #{overlap(lo_y[f],hi_y[f],lo_y[g],hi_y[g])} mm vertically\n"
+              print "    #{f} extends from #{mm(lo_y[f])} to #{mm(hi_y[f])} mm, #{g} from #{mm(lo_y[g])} to #{mm(hi_y[g])} mm \n"
+              print "    overlapping by #{mm(overlap(lo_x[f],hi_x[f],lo_x[g],hi_x[g]))} mm horizontally and #{mm(overlap(lo_y[f],hi_y[f],lo_y[g],hi_y[g]))} mm vertically\n"
             end
           }
         }
@@ -69,4 +73,3 @@ Dir["ch*.pos"].each { |filename|
 if !found_some then
   print "no .pos files found\n"
 end
-

@@ -1,5 +1,5 @@
 <%
-  require "eruby_util.rb"
+  require "./scripts/eruby_util.rb"
 %>
 
 <%
@@ -124,20 +124,8 @@ other known binary star.\footnote{Roelofs et al., ``Spectroscopic Evidence for a
 %>
 <% end_sec %> % Empirical evidence
 <% begin_sec("Energy content") %>
-<% marg(0) %>
-<%
-  fig(
-    'atlas',
-    %q{As the two planets recede from one another, each feels the gravitational attraction that the other one exerted
-       in its previous position, delayed by the time it takes gravitational effects to propagate at $c$. At time $t$,
-       the right-hand planet experiences the stronger deceleration corresponding to the left-hand planet's closer position at the earlier time $t'$,
-       not its current position at $t$. Mechanical energy is not conserved, and the orbits will decay.}
-  )
-%>
-<% end_marg %>
-
 Even without performing the calculations for a system like the Hulse-Taylor binary, it is easy to show that if such waves exist, they must be
-capable of carrying away energy. Consider two equal masses in highly elliptical orbits about their common center of mass.
+capable of carrying away energy. Consider two equal masses in highly elliptical orbits about their common center of mass, figure \figref{fig:atlas}.\label{atlas-argument}
 The motion is nearly one-dimensional.
 As the masses recede from one another, they feel a delayed version of the gravitational force originating from a time when they were closer together
 and the force was stronger. The result is that in the near-Newtonian limit, they lose more kinetic and gravitational energy than they
@@ -155,7 +143,17 @@ this is the direction that will be seen by an observer comoving with A. A full d
 Not only can these waves remove mechanical energy from a system, they can also deposit energy in a detector,
 as shown by the nonmathematical ``sticky bead
 argument'' (figure \figref{sticky-bead}), which was originated by Feynman in 1957 and later popularized by Bondi.
-<% marg(0) %>
+<% marg(80) %>
+<%
+  fig(
+    'atlas',
+    %q{As the two planets recede from one another, each feels the gravitational attraction that the other one exerted
+       in its previous position, delayed by the time it takes gravitational effects to propagate at $c$. At time $t$,
+       the right-hand planet experiences the stronger deceleration corresponding to the left-hand planet's closer position at the earlier time $t'$,
+       not its current position at $t$. Mechanical energy is not conserved, and the orbits will decay.}
+  )
+%>
+\spacebetweenfigs
 <%
   fig(
     'sticky-bead',
@@ -451,8 +449,20 @@ and the result is that the radiated power is proportional to $Q_\zu{o}^2\omega^6
 
 This result has the interesting property of being invariant under a rescaling of coordinates. In geometrized units,
 mass, distance, and time all have the same units, so that $Q_\zu{o}^2$ has units of $(\text{length}^3)^2$
-while $\omega^6$ has units of $(\text{length}^{-6}$. This is exactly what is required, because in geometrized
-units, power is unitless, $\text{energy}/\text{time}=\text{length}\text{length}=1$.
+while $\omega^6$ has units of $(\text{length})^{-6}$. This is exactly what is required, because in geometrized
+units, power is unitless, $\text{energy}/\text{time}=\text{length}/\text{length}=1$.
+
+We can also tie the $\omega^6$ dependence to our earlier argument, on p.~\pageref{atlas-argument}, for the
+dissipation of energy by gravitational waves. The argument was that gravitating bodies are subject to time-delayed
+gravitational forces, with the result that orbits tend to decay. This argument only works if the forces are time-varying;
+if the forces are constant over time, then the time delay has no effect. For example, in the semi-Newtonian limit the field
+of a sheet of mass is independent of distance from the sheet. (The electrical analog of this fact is easily proved using
+Gauss's law.) If two parallel sheets fall toward one another, then neither is subject to a time-varying force, so there
+will be no dissipation of energy. In general, we expect that there will be no gravitational radiation from a particle unless
+the third derivative of its position $\der^3 x/\der t^3$ is nonzero. (The same is true for electric quadrupole radiation.)
+In the special case where the position oscillates sinusoidally, the chain rule tells us that taking the third derivative
+is equivalent to bringing out a factor of $\omega^3$. Since the amplitude of gravitational waves is proportional to
+$\der^3 x/\der t^3$, their energy varies as $(\der^3 x/\der t^3)^2$, or $\omega^6$.
 
 The general pattern we have observed is that for multipole radiation of order $m$ (0=monopole, 1=dipole, 2=quadrupole),
 the radiated power depends on $\omega^{2(m+1)}$. Since gravitational radiation must always have $m=2$ or higher, we

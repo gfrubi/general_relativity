@@ -37,6 +37,37 @@ $web_command_marker = 'ZZZWEB:'
 $count_section_commands = 0
 $section_level = -1
 
+def fatal_error(message)
+  $stderr.print "eruby_util.rb: #{message}\n"
+  exit(-1)
+end
+
+def save_complaint(message)
+  File.open('eruby_complaints','a') { |f| 
+    f.print message,"\n"
+  }
+end
+
+#--------------------------------------------------------------------------
+config_file = 'book.config'
+if ! File.exist?(config_file) then fatal_error("error, file #{config_file} does not exist") end
+$config = {
+  'titlecase_above'=>nil, # e.g., 1 means titlecase for chapters but not for sections or subsections
+}
+File.open(config_file,'r') { |f|
+  c = f.gets(nil) # nil means read whole file
+  c.scan(/(\w+),(.*)/) { |var,value|
+    if ! $config.has_key?(var) then fatal_error("Error in config file #{config_file}, illegal variable '#{var}'") end
+    if {'titlecase_above'=>nil}.has_key?(var) then
+      value = value.to_i
+    end
+    $config[var] = value
+  }
+}
+$config.keys.each { |k|
+  if $config[k].nil? then fatal_error("error, variable #{k} not given in #{config_file}") end
+}
+
 #--------------------------------------------------------------------------
 # The following code is a workaround for a bug in latex. The symptom is that I get
 # "Missing \endcsname inserted" in a few isolated cases where I use a pageref inside
@@ -46,16 +77,34 @@ $section_level = -1
 # Code similar to this is duplicated in translate_to_html.rb:
 refs_file = 'save.ref'
 $ref = {}
+n_defs = {}
 if File.exist?(refs_file) then # It's not an error if the file doesn't exist yet; references are just not defined yet, and that's normal for the first time on a fresh file.
   File.open(refs_file,'r') do |f|
     # lines look like this:
     #    fig:entropygraphb,h,255
     t = f.gets(nil) # nil means read whole file
     t.scan(/(.*),(.*),(.*)/) { |label,number,page|
+      if $ref[label]!=nil then
+        if $last_chapter==true && $ref[label][0]!=number && $ref[label][1]!=page.to_i && label=~/\Afig:/ then 
+          save_complaint("******* warning: figure #{label} defined both as figure #{$ref[label][0]} on p. #{$ref[label][1]} and as figure #{number} on p. #{page.to_i}, eruby_util.rb reading #{refs_file}")
+        end
+      end
       $ref[label] = [number,page.to_i]
+      if n_defs[label]==nil then n_defs[label]=0 end
+      n_defs[label] = n_defs[label]+1
     }
   end
 end
+avg = 0
+n = 0
+n_defs.keys.each {|fig|
+  n = n+1
+  avg = avg + n_defs[fig]
+}
+avg = avg.to_f / n
+n_defs.keys.each {|fig|
+  #if n_defs[fig] > avg then $stderr.print "****** warning: figure #{fig} defined #{n_defs[fig]} times in save.ref, which is more than the average of #{avg}\n" end
+}
 
 def ref_workaround(label)
   if $ref[label]==nil then return 'nn' end # The first time through, won't have a save.ref. Put in a placeholder that's about the right width.
@@ -188,11 +237,11 @@ def marg_print(delta_y)
       tol_in  =    5     # if a figure is this close to the top or bottom, we silently snap it exactly to the top or bottom
       max_fudge =  3     # amount by which a tall stack of figures can stick up over the top, if it's just plain too big to fit
       min_ht =    15     # even if we don't know ht, all figures are assumed to be at least this high
-      if y>maxy+tol_out then warn_marg(1,$n_marg,page,"figure too high by #{y-maxy} mm, which is greater than #{tol_out} mm, ht=#{ht}") end
+      if y>maxy+tol_out then warn_marg(1,$n_marg,page,"figure too high by #{mm(y-maxy)} mm, which is greater than #{mm(tol_out)} mm, ht=#{mm(ht)}") end
       if y>maxy-tol_in then y=maxy end
       if !(ht==nil) then
         $stderr.print "ht=#{ht}\n" if debug
-        if y-ht<miny-tol_out then warn_marg(1,$n_marg,page,"figure too low by #{miny-(y-ht)} mm, which is greater than #{tol_out} mm, ht=#{ht}") end
+        if y-ht<miny-tol_out then warn_marg(1,$n_marg,page,"figure too low by #{mm(miny-(y-ht))} mm, which is greater than #{tol_out} mm, ht=#{mm(ht)}") end
         if ht>maxht then
           # The stack of figures is simply too tall to fit. The user will get warned about this later, and may be doing it
           # on purpose, as a last resort. Typically in this situation, what looks least bad is to align it at the top, or a tiny bit above.
@@ -210,6 +259,11 @@ def marg_print(delta_y)
     # In the following, I'm converting from pdfsavepos's coordinate system to textpos's; assumes calc package is available.
     print "\\begin{textblock*}{\\marginfigwidth}(#{x}mm,\\paperheight-#{y}mm)%\n"
 end
+
+def mm(x)
+  return sprintf((x+0.5).to_i.to_s,"%d")
+end
+
 
 def warn_marg(severity,nmarg,page,message)
   # First, figure out what figures are associated with the current margin block.
@@ -596,6 +650,65 @@ end
 def hw_solution()
   $hw_has_solution[$hw_number] = true
   print "\\hwsoln"
+  write_to_answer_data('answer')
+end
+
+$answer_data_file = 'answers.csv'
+$answer_data = []
+$answer_text = {}
+
+def clear_answer_data
+  File.open($answer_data_file,'w') { |f| }
+end
+
+def write_to_answer_data(type)
+  # type = 'self_check','bare_answer','answer'
+  File.open($answer_data_file,'a') { |f|
+    f.print "#{$ch.to_i},#{$hw[$hw_number]},#{type}\n"
+  }
+end
+
+def read_answer_data()
+  File.open($answer_data_file,'r') { |f|
+    a = f.gets(nil) # nil means read whole file
+    a.scan(/(\d+),(.*),(.*)/) { |ch,name,type|
+      $answer_data.push([ch.to_i,name,type])
+    }
+  }
+end
+
+def print_general_answer_section_header(header)
+  print "\\addcontentsline{toc}{section}{#{header}}\\formatlikechapter{#{header}}\\\\*\n\n"
+end
+
+def print_answers_of_one_type(lo_ch,hi_ch,type,header)
+  read_answer_data()
+  print "\\hwanssection{#{header}}\n\n"
+  last_ch = -1
+  for ch in lo_ch..hi_ch do
+    $answer_data.each { |a|
+      name = a[1]
+      if ch==a[0] && type==a[2] then
+        if last_ch!=ch then
+          print '\pagebreak[3]\vspace{2mm}\noindent\formatlikesubsection{Solutions for chapter '+ch.to_s+'}\\\\*'
+        end
+        last_ch = ch
+        print answer_header(name,type)+$answer_text[name]
+      end
+    }
+  end
+end
+
+def answer_header(label,type)
+  macro = ''
+  if type=='self_check' then macro='scanshdr' end
+  if type=='bare_answer' then macro='hwsolnhdr' end
+  if type=='answer' then macro='hwsolnhdr' end
+  if macro=='' then
+    $stderr.print "error in eruby_util.rb, answer_header(), illegal type: #{type}\n"
+    return ''
+  end
+  return "\\#{macro}{#{label}}\\\\*\n"
 end
 
 def hw_ref(name)
@@ -605,6 +718,35 @@ end
 
 def end_hw()
   print "\\end{homework}"
+end
+
+def self_check_answer(label,text)
+  $answer_text[label] = text
+  print "\\scanshdr{#{label}}\\\\*\n#{text}"
+end
+
+def bare_answer(label,text)
+  $answer_text[label] = text
+  print "\\hwsolnhdr{#{label}}\\\\*\n#{text}"
+end
+
+def answer(label,text)
+  $answer_text[label] = text
+end
+
+def part_title(title)
+  title = alter_titlecase(title,-1)
+  print "\\mypart{#{title}}"
+end
+
+def begin_ex(title,label='')
+  if label != '' then label='['+label+']' end
+  title = alter_titlecase(title,1)
+  print "\\begin{handson}#{label}{#{title}}"
+end
+
+def end_ex
+  print "\\end{handson}"
 end
 
 def end_sec()
@@ -648,23 +790,26 @@ def begin_sec(title,pagebreak=nil,label='',options={})
     label_level = 'subsubsec'
   end
   #$stderr.print "level=#{$section_level}, title=#{title}\n"
-  # In LM, sections are supposed to be titlecase.
-  # May be a section in LM, but a subsection in SN, and that's why we may need to change to and from titlecase automatically, and it's not an error
-  # that should be reported to the user.
-  if $section_level>=2 then
-    title = remove_titlecase(title) 
-  else
-    title = add_titlecase(title)
-  end
+  title = alter_titlecase(title,$section_level)
   if label != '' then label="\\label{#{label_level}:#{label}}" end
   print "\\#{macro}#{pagebreak}{#{title}}#{label}\n"
+end
+
+# The following allows me to control what's titlecase and what's not, simply by changing book.config. Since text can be shared between books,
+# and the same title may be a section in LM but a subsection in SN, this needs to be done on the fly.
+def alter_titlecase(title,section_level)
+  if section_level>=$config['titlecase_above'] then
+    return remove_titlecase(title) 
+  else
+    return add_titlecase(title)
+  end
 end
 
 def add_titlecase(title)
   foo = title.clone
   # Examples:
   #   Current-conducting -> Current-Conducting
-  foo.gsub!(/(?<![\w'"`{}\\])(\w)/) {$1.upcase}              # Change every initial letter to uppercase. Handle Bob's, Schr\"odinger, Amp\`{e}re's
+  foo.gsub!(/(?<![\w'"`{}\\$])(\w)/) {$1.upcase}              # Change every initial letter to uppercase. Handle Bob's, Schr\"odinger, Amp\`{e}re's
   [ 'a','the','and','or','if','for','of','on','by' ].each { |tiny| # Change specific short words back to lowercase.
     foo.gsub!(/(?<!\w)#{tiny}(?!\w)/i) {tiny} 
   }
@@ -675,7 +820,7 @@ def add_titlecase(title)
 end
 
 $read_proper_nouns = false
-$proper_nouns = []
+$proper_nouns = {}
 def proper_nouns
   if !$read_proper_nouns then
     json_file = whichever_file_exists(["../scripts/proper_nouns.json","scripts/proper_nouns.json"])
@@ -692,12 +837,15 @@ def remove_titlecase(title)
   foo = title.clone
   foo = initial_cap(foo.downcase) # first letter is capital, everything after that lowercase
   # restore caps on proper nouns:
-  proper_nouns().each { |proper|
-    foo.gsub!(/(?<!\w)#{proper}/i) {|x| initial_cap(x)}
+  proper_nouns()["noun"].each { |proper|
+    foo.gsub!(/(?<!\w)#{Regexp::quote(proper)}/i) {|x| initial_cap(x)}
            # ... the negative lookbehind prevents, e.g., damped and example from becoming DAmped and ExAmple
            # If I had a word like "amplification" in a title, I'd need to special-case that below and change it back.
   }
-  foo.gsub!(/big bang/) {'Big Bang'} # logic above can't handle multi-word patterns
+  # logic above can't handle multi-word patterns
+  proper_nouns()["multiword"].each { |proper| # e.g., proper="Big Bang"
+    foo.gsub!(/#{Regexp::quote(proper.downcase)}/) {proper} 
+  }
   acronyms_and_symbols_uppercase(foo) # e.g., FWHM
   #if title != foo then $stderr.print "changing title from #{title} to #{foo}\n" end
   return foo
@@ -705,7 +853,9 @@ end
 
 def acronyms_and_symbols_uppercase(foo)
   # Acronyms and symbols that need to be uppercase no matter what:
-  foo.gsub!(/(?<!\w)(q|fwhm|frw)(?!\w)/) {$1.upcase}
+  proper_nouns()["acronym"].each { |a| # e.g., a="FWHM"
+    foo.gsub!(/(?<!\w)(#{Regexp::quote(a.downcase)})(?!\w)/) {$1.upcase}
+  }
 end
 
 def initial_cap(x)
@@ -787,6 +937,7 @@ def chapter(number,title,label,caption='',options={})
       options['anonymous']=(caption=='')
     end
   end
+  title = alter_titlecase(title,0)
   if is_print then chapter_print(number,title,label,caption,options) end
   if is_web   then   chapter_web(number,title,label,caption,options) end
 end
@@ -845,4 +996,38 @@ def chapter_print(number,title,label,caption,options)
     exit(-1)
   end
   print "#{result}\\label{#{label}}\n"
+end
+
+$photo_credits = []
+
+def photo_credit(label,description,credit)
+  $photo_credits.push([label,description,credit,'normal'])
+end
+
+def toc_photo_credit(description,credit)
+  $photo_credits.push(['',description,credit,'contents'])
+end
+
+def pagenum_or_zero(label)
+  if label == '' then return 0 end
+  l = 'fig:'+label
+  if $ref[l]==nil then return 0 else return $ref[l][1] end
+end
+
+def print_photo_credits
+  $photo_credits.sort{ |a,b| pagenum_or_zero(a[0]) <=> pagenum_or_zero(b[0]) }.each { |c|
+    label = c[0]
+    description = c[1]
+    credit = c[2]
+    type = c[3]
+    #print "label #{label}="
+    #if $ref[label]!=nil then print $ref[label][1] end
+    if type=='normal' then
+      print "\\cred{#{label}}{#{description}}{#{credit}}\n"
+    else
+      print "\\docred{Contents}{#{description}}{#{credit}}\n"
+    end
+  }
+  #$ref.keys.each { |k|    print k,$ref[k]  }
+
 end

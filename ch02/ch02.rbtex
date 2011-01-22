@@ -1,5 +1,5 @@
 <%
-  require "eruby_util.rb"
+  require "./scripts/eruby_util.rb"
 %>
 
 <%
@@ -549,6 +549,9 @@ The difference between the clocks that went to Greenland and other clocks that s
 was $38\pm5$ ns, which was consistent with the $35\pm 2$ ns effect predicted purely based on kinematic
 and gravitational time dilation while the planes were in the air. If Einstein's 1905 prediction had
 been correct, then there would have been an additional difference of 224 ns due to the difference in latitude.
+
+The perfect cancellation of kinematic and gravitational effects is not as fortuitous as it might seem; this
+is discussed in example \ref{eg:einstein-goof-rot} on p.~\pageref{eg:einstein-goof-rot}.
 \end{eg}
 
 \begin{eg}{GPS}\label{eg:gps}
@@ -1635,6 +1638,34 @@ principle. For a good explanation, see \url{http://math.ucr.edu/home/baez/physic
 <% end_hw %>
 
 \pagebreak
+
+<% begin_hw('mountain-valley') %>
+Two of the most conceptually direct tests of relativistic time dilation were carried out by comparing the rates
+of twin atomic clocks, one left on a mountaintop for a certain amount of time, the other in a nearby valley 
+below.\footnote{L. Briatore and S. Leschiutta, Evidence for the earth gravitational shift by direct atomic-time-scale comparison, Il Nuovo Cimento B, 37B (2): 219 (1979).
+S. Iijima and K. Fujiwara, An experiment for the potential blue shift at the Norikura Corona Station, Annals of the Tokyo Astronomical Observatory, Second Series, Vol. XVII, 2 (1978) 68.}
+Unlike the clocks in the Hafele-Keating experiment, these are stationary for almost the entire duration of the experiment,
+so any time dilation is purely gravitational, not kinematic. One could object, however, that the clocks are not really
+at rest relative to one another, due to the earth's rotation. This is an example of how the distinction between gravitational
+and kinematic time dilations is frame-dependent, since the effect \emph{is} purely gravitational in the rotating frame,
+where the gravitational field is reduced by the fictitious centrifugal force. Show that, in the non-rotating frame,
+the ratio of the kinematic effect to the gravitational one comes out to be $2.8\times10^{-3}$ at the latitude of Tokyo.
+This small value indicates that the experiment can be interpreted as a very pure test of the gravitational time dilation effect.
+To calculate the effect, you will need to use the fact that, as discussed on p.~\pageref{grav-redshift-as-time-dil},
+gravitational redshifts can be interpreted as gravitational time dilations.\hwsoln
+<% end_hw %>
+<% marg(100) %>
+<%
+  fig(
+    'iijima',
+    %q{A graph from the paper by Iijima, showing the time difference between the two clocks. One clock was kept at Mitaka Observatory, at 58 m above sea level.
+       The other was moved back and forth between a second observatory, Norikura Corona Station, and the peak of the Norikura volcano, 2876 m above sea level.
+       The plateaus on the graph are data from the periods when the clocks were compared side by side at Mitaka. The difference between one plateau and the next
+       is the gravitational time dilation accumulated during the period when the mobile clock was at the top of Norikura.}
+  )
+%>
+<% end_marg %>
+
 
 <% begin_hw('sagnac-area') %>\index{Sagnac effect!proportional to area}
 (a) On p.~\pageref{fig:thomas-as-area} (see figure \figref{thomas-as-area}), we showed that the Thomas precession is
