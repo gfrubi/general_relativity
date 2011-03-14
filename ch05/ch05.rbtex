@@ -329,7 +329,7 @@ $K=1/\rho^2$.
 Self-check: Verify the equation $K=1/\rho^2$ by considering a triangle covering one octant of the sphere,
 as in example \ref{eg:octant}.
 
-It is useful to introduce \emph{normal coordinates},\index{normal coordinates}
+It is useful to introduce \emph{normal} or \emph{Gaussian normal coordinates},\index{normal coordinates}\index{Gaussian normal coordinates}
 defined as follows. Through point O, construct perpendicular geodesics, and define affine coordinates $x$ and $y$ along
 these. For any point P off the axis, define coordinates by constructing the lines through
 P that cross the axes perpendicularly. For P in a sufficiently small neighborhood of O, these lines exist

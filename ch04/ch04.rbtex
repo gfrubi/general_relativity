@@ -380,6 +380,10 @@ $f_\zu{o}$ &=      $546466918.8  \pm 0.4$ (from previous experimental work)
 
 \noindent The spectacular agreement with theory has made this experiment a lightning rod for
 anti-relativity kooks.
+
+If one is searching for small deviations from the predictions of special relativity, a natural place to look
+is at high velocities. Ives-Stilwell experiments have been performed at velocities as high as $0.84$, and
+they confirm special relativity.\footnote{MacArthur et al., Phys. Rev. Lett. 56 (1986) 282 (1986)}
 \end{eg}
 
 \begin{eg}{Einstein's derivation of $E=mc^2$}\label{eg:einstein-mc2}
@@ -1106,7 +1110,7 @@ then dissect it into squares of that size and count the number of squares.
 <% end_marg %>
 
 There are two problems with this plan, neither of which is completely insurmountable. First, the area vector $\vc{u}\times\vc{v}$
-is a vector, with its orientation specified by the direction of the vector. We need this orientation, for example, when we calculate
+is a vector, with its orientation specified by the direction of the normal to the surface. We need this orientation, for example, when we calculate
 the electric flux as $\int \vc{E}\cdot\der\vc{A}$. Figure \figref{mobius-strip} shows that we cannot always define such an orientation
 in a consistent way. When the $x-y$ coordinate system is slid around the M\"{o}bius strip, it ends up with the opposite orientation.
 In general relativity, there is not any guarantee of orientability in space --- or even in time!\index{orientability} But the vast majority
@@ -1126,7 +1130,7 @@ This determinant is raised to a power
 $W$, known as the weight of the tensor density.\index{weight of a tensor density} Weight zero corresponds to the case of a real tensor.
 
 \begin{eg}{Area as a tensor density}
-In a Euclidean plane, a rescaling of coordinates by a factor of $k$ is represnted by a matrix of partial
+In a Euclidean plane, a rescaling of coordinates by a factor of $k$ is represented by a matrix of partial
 derivatives that is simply $kI$, where $I$ is the identity matrix. The determinant is $k^2$. Therefore
 area is a tensor density of weight 2.
 \end{eg}

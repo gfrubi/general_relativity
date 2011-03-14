@@ -129,7 +129,8 @@ which varies as $s^2$, and therefore becomes negligible in the limit $s\rightarr
 Self-check: Find another Killing vector of the Schwarzschild metric, and express it in the tangent-vector notation.
 
 It can be shown that an equivalent condition for a field to be a Killing vector is $\nabla_a \boldsymbol{\xi}_b+\nabla_b \boldsymbol{\xi}_a = 0$.
-This is written without reference to any coordinate system, in keeping with the coordinate-independence of the notion.
+This relation, called the Killing equation,\index{Killing equation}
+is written without reference to any coordinate system, in keeping with the coordinate-independence of the notion.
 
 When a spacetime has more than one Killing vector, any linear combination of them is also a Killing vector.
 This means that although the existence of certain types of Killing vectors may be intrinsic, the exact
@@ -176,6 +177,60 @@ This example shows that linear independence of Killing vectors can't be visualiz
 the vectors in the tangent plane at one point. If that were the case, then we could have at most two
 linearly independent Killing vectors in this two-dimensional space. When we say ``Killing vector'' we're really referring to the
 Killing vector \emph{field}, which is defined everywhere on the space.
+\end{eg}
+
+\vspace{15mm}
+
+\begin{eg}{Proving nonexistence of Killing vectors}
+\egquestion Find all Killing vectors of these two metrics:
+\begin{align*}
+\der s^2 &= e^{-x}\der x^2+e^x\der y^2 \\
+\der s^2 &= \der x^2+x^2\der y^2 \qquad .
+\end{align*}
+
+\eganswer Since both metrics are manifestly independent of $y$, it follows that $\partial_y$ is a Killing vector for both of them.
+Neither one has any other manifest symmetry, so we can reasonably conjecture that this is the only Killing vector either one of
+them has. However, one can have symmetries that are not manifest, so it is also possible that there are more.
+
+One way to attack
+this would be to use the Killing equation to find a system of differential equations, and then determine how many linearly
+independent solutions there were.
+
+But there is a simpler approach. The dependence of these metrics on $x$ suggests
+that the spaces may have intrinsic properties that depend on $x$; if so, then this demonstrates a lower symmetry
+than that of the Euclidean plane, which has three Killing vectors. One intrinsic property we can check is the scalar
+curvature $R$. The following Maxima code calculates $R$ for the first metric.
+
+\begin{listing}{1}
+load(ctensor);
+dim:2;
+ct_coords:[x,y];
+lg:matrix([exp(-x),0],[0,exp(x)]);
+cmetric();
+R:scurvature(); /* scalar curvature */
+\end{listing}
+% killing.mac
+
+The result is $R=-e^x$, which demonstrates that points that differ in $x$ have different intrinsic properties.
+Since the flow of a Killing field $\xi$ can never connect points that have different properties, we conclude
+that $\xi_x=0$. If only $\xi_y$ can be nonzero, the Killing equation $\nabla_a \xi_b+\nabla_b \xi_a = 0$
+simplifies to $\nabla_x\xi_y=\nabla_y\xi_y=0$. These equations constrain both $\partial_x\xi_y$
+and $\partial_y\xi_y$, which means that given a value of $\xi_y$ at some point in the plane,
+its value everywhere else is determined. Therefore the only possible Killing vectors are scalar multiples of the Killing vector already found.
+Since we don't consider Killing vectors to be distinct unless they are linearly independent, the first metric only has one Killing vector.
+
+A similar calculation for the second metric shows that $R=0$, and an explicit calculation of its Riemann tensor shows that
+in fact the space is flat. It is simply the Euclidean plane written in funny coordinates. This metric has the same three
+Killing vectors as the Euclidean plane. 
+
+It would have been tempting to leap to the wrong conclusion about the second metric by the following
+reasoning. The signature of a metric is an intrinsic property. The metric has signature $++$ everywhere in the plane
+except on the $y$ axis, where it has signature $+0$. This shows that the $y$ axis has different intrinsic properties than
+the rest of the plane, and therefore the metric must have a lower symmetry than the Euclidean plane. It can have at most
+two Killing vectors, not three. This contradicts our earlier conclusion. The resolution of this paradox is that
+this metric has a removable degeneracy of the same type as the one described in section \ref{sec:degeneracy}.
+As discussed in that section, the signature is invariant only under \emph{nonsingular} transformations, but the
+transformation that converts these coordinates to Cartesian ones is singular.
 \end{eg}
 
 <% begin_sec("Conservation laws") %>\label{sec:killing-conservation}\index{conservation laws!from Killing vectors}

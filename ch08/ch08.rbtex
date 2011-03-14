@@ -562,7 +562,7 @@ adding another hemispherical shell to complete the sphere. I thank P. Allen for 
 of this topic.
 \end{eg}
 <% end_sec %> % The Newtonian limit
-<% begin_sec("Singularity theorems") %>\label{singularity-theorems}
+<% begin_sec("Singularity theorems") %>\label{singularity-theorems}\index{singularity theorems}\index{Penrose-Hawking singularity theorems}
 An important example of the use of the energy conditions is that Hawking and Ellis
 have proved that under the assumption of the strong energy condition, 
 any body that becomes sufficiently compact will end up forming a singularity.
@@ -597,9 +597,15 @@ including a negative energy density, which would then give rise to a gravitation
 Gravitational repulsion would tend to make the light cones tip outward rather than inward, possibly preventing the collapse to a singularity.
 We can close this loophole by assuming an appropriate energy condition.
 Penrose and Hawking have formalized the above argument in the form of a pair of
-theorems, known as the singularity theorems.\index{singularity theorems}\index{Penrose-Hawking singularity theorems}
+theorems, known as the singularity theorems.
 One of these applies to the formation of black holes, and another one to cosmological singularities such as the
 Big Bang.
+
+In a cosmological model, it is natural to foliate using world-lines that are at rest relative to the Hubble flow (or, equivalently, the world-lines
+of observers who see a vanishing dipole moment in the cosmic microwave background). The $\Theta$ we then obtain is positive,
+because the universe is expanding. At small distances, we have $\Theta=3H_\zu{o}$, where $H_\zu{o}\approx 2.3\times10^{-19}\ \sunit^{-1}$ is the
+Hubble constant (the fractional rate of change of the scale factor of cosmological distances).\index{Hubble constant}
+The factor of three occurs because volume is proportional to the cube of the linear dimensions.
 <% end_sec %> % Singularity theorems
 <% begin_sec("Current status") %>
 The current status of the energy conditions is shaky.
@@ -1567,9 +1573,9 @@ time-reversal symmetry. But the open universe clearly breaks this symmetry, and 
 as lying in the past, not in the future. This is an example of 
 spontaneous symmetry breaking.\label{spontaneous-symm-breaking}\index{spontaneous symmetry breaking}\index{symmetry breaking!spontaneous}
 Spontaneous symmetry breaking happens when we try to balance a pencil on its tip, and it is also an important phenomenon in particle physics.
-The time-reversed version of the open universe is an equally valid solution of the field equations. (Another example of spontaneous symmetry breaking
+The time-reversed version of the open universe is an equally valid solution of the field equations. Another example of spontaneous symmetry breaking
 in cosmological solutions is that the solutions have a preferred frame of reference, which is the one at rest relative to the cosmic microwave
-background and the average motion of the galaxies.)
+background and the average motion of the galaxies. This is referred to as the Hubble flow.\index{Hubble flow}
 <% end_sec %> % The open universe
 
 <% end_sec %> % The matter-dominated solution
@@ -1873,11 +1879,8 @@ Verify, as claimed on p.~\pageref{nuclear-pressure}, that the electromagnetic pr
 a medium-weight atomic nucleus is on the order of $10^{33}\ \zu{Pa}$.
 <% end_hw %>
 
-<% begin_hw('frw-time-reversal') %>
-(a) Show that the Friedmann equations are symmetric under time reversal.
-(b) The spontaneous breaking of this symmetry in perpetually expanding solutions was discussed on page \pageref{spontaneous-symm-breaking}.
-Use the definition of a manifold to show that this symmetry cannot be restored by gluing together an expanding solution and a contracting
-one ``back to back'' to create a single solution on a single, connected manifold.
+<% begin_hw('big-bang-removable') %>
+Is the Big Bang singularity removable by the coordinate transformation $t\rightarrow 1/t$?
 \hwsoln
 <% end_hw %>
 
@@ -1891,6 +1894,14 @@ of the Milne universe, and that $k=-1$.
 Examples \ref{eg:girdle} on page \pageref{eg:girdle} and \ref{eg:whip} on page \pageref{eg:whip}
 discussed ropes with cosmological lengths. Reexamine these examples in the case of the Milne
 universe.
+\hwsoln
+<% end_hw %>
+
+<% begin_hw('frw-time-reversal') %>
+(a) Show that the Friedmann equations are symmetric under time reversal.
+(b) The spontaneous breaking of this symmetry in perpetually expanding solutions was discussed on page \pageref{spontaneous-symm-breaking}.
+Use the definition of a manifold to show that this symmetry cannot be restored by gluing together an expanding solution and a contracting
+one ``back to back'' to create a single solution on a single, connected manifold.
 \hwsoln
 <% end_hw %>
 
@@ -1937,6 +1948,12 @@ make the speed exceed $c$.
 Debunk this proposal in the special case of the Milne universe.
 <% end_hw %>
 
+<% begin_hw('observable-universe-observer-dependent') %>
+Make a rigorous definition of the volume $V$ of the \emph{observable} universe.
+Suppose someone asks whether $V$ depends on the observer's state of motion.
+Does this question have a well-defined answer? If so, what is it? Can we
+calculate $V$'s observer-dependence by applying a Lorentz contraction?\hwsoln
+<% end_hw %>
 
 
 \end{hwsection}

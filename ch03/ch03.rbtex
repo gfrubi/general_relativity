@@ -429,7 +429,8 @@ intrinsic notation should avoid any explicit reference to a coordinate system. T
 a symbol such as $x$ appears, we need to make sure that nowhere in the notation is there any hidden assumption that $x$
 comes from any particular coordinate system. For example, the equation should still be valid if the generic symbol $x$
 is later taken to represent the distance $r$ from some center of symmetry.
-This coordinate-independence property is also known as general covariance.\index{general covariance}\index{coordinate independence}
+This coordinate-independence property is also known as 
+general covariance.\index{general covariance}\index{coordinate independence}\index{coordinate-transformation}\label{diffeomorphism}
 <% begin_sec("Frames moving at $c$?") %>\label{sec:frames-at-c}
 A good application of these ideas is to the question of what
 the world would look like in a frame of reference moving at the
@@ -1110,6 +1111,15 @@ if two test particles sent into the region collide at a point $\vc{x}$ inside th
 changing the point's name to $\vc{x}'$ doesn't change the observable fact that they collided.
 
 <% end_sec %> % The hole argument
+<% marg(-100) %>
+<%
+  fig(
+    'machian-planets',
+    %q{A paradox? Planet A has no equatorial bulge, but B does. What cause produces this effect? Einstein
+         reasoned that the cause couldn't be B's rotation, because each planet rotates relative to the other.}
+  )
+%>
+<% end_marg %>
 <% begin_sec("A Machian paradox") %>\label{einstein-two-planets}
 
 Another type of argument that made Einstein suffer is also resolved by a correct understanding of measurements,
@@ -1124,15 +1134,6 @@ no cause that could produce the differing effect. The people on either planet ca
 as rotating and the other planet as stationary, or they can describe the situation the other way around.
 Einstein believed that this argument proved that there could be no difference between the sizes of the
 two planets' equatorial bulges.
-<% marg(50) %>
-<%
-  fig(
-    'machian-planets',
-    %q{A paradox? Planet A has no equatorial bulge, but B does. What cause produces this effect? Einstein
-         reasoned that the cause couldn't be B's rotation, because each planet rotates relative to the other.}
-  )
-%>
-<% end_marg %>
 
 The flaw in Einstein's argument was that measurements in local Lorentz frames do allow one to make a distinction
 between rotation and a lack of rotation. For example, suppose that scientists on planet A notice that their
