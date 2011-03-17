@@ -177,7 +177,7 @@ end
 
 def end_marg
   if !$in_marg then die('(end_marg)',"end_marg, not in a marg in the first place, chapter #{$ch}") end
-  if is_print then print "\\end{textblock*}\\end{margin}%\n" end
+  if is_print then print "\\end{textblock*}\\end{margin}%\n\\vspace{1.5mm}" end
   if is_web then print "#{$web_command_marker}end_marg\n" end
   $in_marg = false
 end
@@ -261,6 +261,7 @@ def marg_print(delta_y)
 end
 
 def mm(x)
+  if x==nil then return '' end
   return sprintf((x+0.5).to_i.to_s,"%d")
 end
 
@@ -368,7 +369,21 @@ def get_low_and_hi!(found,lo_y,hi_y,filename,mine)
 end
 
 def figure_exists_in_my_own_dir?(name)
-  return (File.exist?("#{dir()}/figs/#{name}.pdf") or File.exist?("#{dir()}/figs/#{name}.jpg") or File.exist?("#{dir()}/figs/#{name}.png"))
+  return figure_exists_in_this_dir?(name,dir()+"/figs")
+end
+
+def figure_exists_in_this_dir?(name,d)
+  return (File.exist?("#{d}/#{name}.pdf") or File.exist?("#{d}/#{name}.jpg") or File.exist?("#{d}/#{name}.png"))
+end
+
+# returns a directory (possibly with LaTeX macros in it) or nil if we can't find the figure
+def find_directory_where_figure_is(name)
+  if figure_exists_in_my_own_dir?(name) then return dir = "\\figprefix\\chapdir/figs" end
+  # bug: doesn't support \figprefix
+  s = shared_figs()
+  if figure_exists_in_this_dir?(name,s[0]) then return s[0] end
+  if figure_exists_in_this_dir?(name,s[1]) then return s[1] end
+  return nil
 end
 
 def figure_in_toc(name,options={})
@@ -460,15 +475,8 @@ def fig(name,caption=nil,options={})
   if options['anonymous']=='default' then
     options['anonymous']=(!caption)
   end
-  dir = "\\figprefix\\chapdir/figs"
-  if !figure_exists_in_my_own_dir?(name) then
-    # bug: doesn't support \figprefix
-    s = shared_figs()
-    dir = s[0]
-    unless (File.exist?("#{dir}/#{name}.pdf") or File.exist?("#{dir}/#{name}.jpg") or File.exist?("#{dir}/#{name}.png")) then
-      dir = s[1]
-    end
-  end
+  dir = find_directory_where_figure_is(name)
+  if dir.nil? && options['text'].nil? then save_complaint("figure #{name} not found in #{dir()}/figs, #{shared_figs()[0]}, or #{shared_figs()[1]}") end
   #------------------------------------------------------------
   if is_print then fig_print(name,caption,options,dir) end
   #------------------------------------------------------------
@@ -566,8 +574,8 @@ def fig_print(name,caption,options,dir)
   if width=='wide' and options['text']==nil then
     if options['anonymous'] then
       if options['narrowfigwidecaption'] then die(name,'narrowfigwidecaption requires anonymous=false, and float=false') end
-      if options['float'] then
-        if caption then
+      if options['float']  then
+        if caption || true then # see einstein-train
           if options['sidecaption'] then
             spit("\\widefigsidecaption{#{sidepos}}{#{name}}{%\n#{caption}}{anonymous}{#{floatpos}}{float}{#{suffix}}{#{dir}}\n")
           else
@@ -578,7 +586,7 @@ def fig_print(name,caption,options,dir)
         end
       else # not floating
         if caption then
-          die(name,"widefig is currently only implemented as a floating figure, because I couldn't get it to work right unless it was floating (see comments in lmcommon.sty)")
+          #die(name,"widefig is currently only implemented as a floating figure, because I couldn't get it to work right unless it was floating (see comments in lmcommon.sty)")
         else
           spit("\\widefignocaptionnofloat[#{dir}]{#{name}}\n")
         end
@@ -678,6 +686,15 @@ def read_answer_data()
 end
 
 def print_general_answer_section_header(header)
+  print_end_matter_section_header(header)
+end
+
+def print_photo_credits_section_header(header)
+  print_end_matter_section_header(header)
+end
+
+def print_end_matter_section_header(header)
+  header = alter_titlecase(header,0)
   print "\\addcontentsline{toc}{section}{#{header}}\\formatlikechapter{#{header}}\\\\*\n\n"
 end
 
@@ -690,7 +707,7 @@ def print_answers_of_one_type(lo_ch,hi_ch,type,header)
       name = a[1]
       if ch==a[0] && type==a[2] then
         if last_ch!=ch then
-          print '\pagebreak[3]\vspace{2mm}\noindent\formatlikesubsection{Solutions for chapter '+ch.to_s+'}\\\\*'
+          print '\par\pagebreak[3]\vspace{2mm}\noindent\formatlikesubsection{Solutions for chapter '+ch.to_s+'}\\\\*'
         end
         last_ch = ch
         print answer_header(name,type)+$answer_text[name]
@@ -702,7 +719,7 @@ end
 def answer_header(label,type)
   macro = ''
   if type=='self_check' then macro='scanshdr' end
-  if type=='bare_answer' then macro='hwsolnhdr' end
+  if type=='bare_answer' then macro='hwanshdr' end
   if type=='answer' then macro='hwsolnhdr' end
   if macro=='' then
     $stderr.print "error in eruby_util.rb, answer_header(), illegal type: #{type}\n"
@@ -727,7 +744,7 @@ end
 
 def bare_answer(label,text)
   $answer_text[label] = text
-  print "\\hwsolnhdr{#{label}}\\\\*\n#{text}"
+  print "\\hwanshdr{#{label}}\\\\*\n#{text}"
 end
 
 def answer(label,text)
@@ -739,10 +756,10 @@ def part_title(title)
   print "\\mypart{#{title}}"
 end
 
-def begin_ex(title,label='')
-  if label != '' then label='['+label+']' end
+def begin_ex(title,label='',columns=1)
   title = alter_titlecase(title,1)
-  print "\\begin{handson}#{label}{#{title}}"
+  column_command = (columns==1 ? "\\onecolumn" : "\\twocolumn");
+  print "\\begin{handson}{#{label}}{#{title}}{#{column_command}}"
 end
 
 def end_ex

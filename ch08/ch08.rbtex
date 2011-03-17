@@ -603,7 +603,7 @@ Big Bang.
 
 In a cosmological model, it is natural to foliate using world-lines that are at rest relative to the Hubble flow (or, equivalently, the world-lines
 of observers who see a vanishing dipole moment in the cosmic microwave background). The $\Theta$ we then obtain is positive,
-because the universe is expanding. At small distances, we have $\Theta=3H_\zu{o}$, where $H_\zu{o}\approx 2.3\times10^{-19}\ \sunit^{-1}$ is the
+because the universe is expanding. The volume expansion is $\Theta=3H_\zu{o}$, where $H_\zu{o}\approx 2.3\times10^{-18}\ \sunit^{-1}$ is the
 Hubble constant (the fractional rate of change of the scale factor of cosmological distances).\index{Hubble constant}
 The factor of three occurs because volume is proportional to the cube of the linear dimensions.
 <% end_sec %> % Singularity theorems
