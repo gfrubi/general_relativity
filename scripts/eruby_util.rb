@@ -418,6 +418,14 @@ def figure_in_toc(name,options={})
   end
 end
 
+def x_mark
+  raw_fig('x-mark')
+end
+
+def raw_fig(name)
+  fig(name,'',{'raw'=>true})
+end
+
 def fig(name,caption=nil,options={})
   default_options = {
     'anonymous'=>'default',# true means figure has no figure number, but still gets labeled (which is, e.g., necessary for photo credits)
@@ -438,7 +446,8 @@ def fig(name,caption=nil,options={})
     'narrowfigwidecaption'=>false, # currently only supported with float and !anonymous
     'suffix'=>'',          # for use when a figure is used in more than one place, and we need to make the label unique
     'text'=>nil,           # if it exists, puts the text in the figure rather than a graphic (name is still required for labeling)
-    #      see macros \starttextfig and \finishtextfig
+                           #      see macros \starttextfig and \finishtextfig
+    'raw'=>false           # used for anonymous inline figures, e.g., check marks; generates a raw call to includegraphics
     # not yet implemeted: 
     #    translated=false
     #      or just have the script autodetect whether a translated version exists!
@@ -457,8 +466,6 @@ def fig(name,caption=nil,options={})
     #      automagically add a gray background if it's 2-column
     #    resize=true
     #      see macros \fignoresize, \inlinefignocaptionnoresize
-    # Note that anonymousinlinefig is a raw call to includegraphics (with figprefix); this is used for stuff like checkmarks, and is very
-    # low-level; don't translate into eruby at all.
   }
   caption.gsub!(/\A\s+/,'') # blank lines on the front make latex freak out
   if caption=='' then caption=nil end
@@ -484,6 +491,7 @@ def fig(name,caption=nil,options={})
 end
 
 def process_fig_web(name,caption,options)
+  if options['raw'] then print "\\anonymousinlinefig{#{dir}/#{name}}"; return end
   if caption==nil then caption='' end
   # remove comments now, will be too late to do it later; can't use lookbehind because eruby compiled with ruby 1.8
   caption.gsub!(/\\%/,'PROTECTPERCENT') 
@@ -503,6 +511,7 @@ end
 
 # sets $page_rendered_on as a side-effect (or sets it to nil if all.pos isn't available yet)
 def fig_print(name,caption,options,dir)
+  if options['raw'] then spit("\\includegraphics{#{dir}/#{name}}"); return end
   width=options['width']
   $fig_handled = false
   sidepos = options['sidepos']
@@ -677,6 +686,7 @@ def write_to_answer_data(type)
 end
 
 def read_answer_data()
+  if ! File.exist?($answer_data_file) then return end
   File.open($answer_data_file,'r') { |f|
     a = f.gets(nil) # nil means read whole file
     a.scan(/(\d+),(.*),(.*)/) { |ch,name,type|
@@ -859,6 +869,7 @@ def remove_titlecase(title)
            # ... the negative lookbehind prevents, e.g., damped and example from becoming DAmped and ExAmple
            # If I had a word like "amplification" in a title, I'd need to special-case that below and change it back.
   }
+  foo.gsub!(/Machine/,"machine") # LM 4.4
   # logic above can't handle multi-word patterns
   proper_nouns()["multiword"].each { |proper| # e.g., proper="Big Bang"
     foo.gsub!(/#{Regexp::quote(proper.downcase)}/) {proper} 

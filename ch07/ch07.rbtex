@@ -234,7 +234,7 @@ transformation that converts these coordinates to Cartesian ones is singular.
 \end{eg}
 
 <% begin_sec("Conservation laws") %>\label{sec:killing-conservation}\index{conservation laws!from Killing vectors}
-Whenever a spacetime has a Killing vector, geodesics have a constant value of $v^b \xi_a$, where $v^b$ is
+Whenever a spacetime has a Killing vector, geodesics have a constant value of $v^b \xi_b$, where $v^b$ is
 the velocity four-vector. For example, because the Schwarzschild metric has a Killing vector $\boldsymbol{\xi} = \partial_t$,
 test particles have a conserved value of $v^t$, and therefore we also have conservation of $p^t$, interpreted
 as the mass-energy.

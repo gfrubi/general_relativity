@@ -729,9 +729,28 @@ we have
   L &= r^2  \frac{\der \phi}{\der s} \\
 \end{align*}
 for the conserved energy per unit mass and angular momentum per unit mass.\label{no-separate-k-and-u}
-In interpreting the energy $E$, it is important to understand that in the general-relativistic context, there is
-no useful way of separating the rest mass, kinetic energy, and potential energy into separate terms; $E$ includes all of these, and 
-turns out to be less than the rest mass (i.e., less than 1) for a planet orbiting the sun.
+
+In interpreting the energy per unit mass $E$, it is important to understand that in the general-relativistic context, there is
+no useful way of separating the rest mass, kinetic energy, and potential energy into separate terms, as we could
+in Newtonian mechanics. $E$ includes contributions from all of these, and 
+turns out to be less than the contribution due to the rest mass (i.e., less than 1) for a planet orbiting the sun.
+It turns out that $E$ can be interpreted as a measure of the additional gravitational mass that the solar system possesses as measured
+by a distant observer, due to the presence of the planet. It then makes sense that $E$ is conserved; by analogy with
+Newtonian mechanics, we would expect that any gravitational effects that depended on the detailed arrangement of
+the masses within the solar system would decrease as $1/r^4$, becoming negligible at large distances and leaving
+a constant field varying as $1/r^2$.
+
+One way of seeing that it doesn't make sense to split $E$ into parts is that although the equation given above for $E$ involves a specific set of coordinates,
+$E$ can actually be expressed as a Lorentz-invariant scalar (see p.~\pageref{sec:killing-conservation}).
+This property makes $E$ especially interesting and useful (and different from the energy in Newtonian mechanics, which is
+conserved but not frame-independent). On the other hand, the kinetic and potential energies depend on the velocity
+and position. These are completely dependent on the coordinate system, and there is nothing physically special about the
+coordinate system we've used here. Suppose a particle is falling directly toward the earth, and an astronaut in a space-suit
+is free-falling along with it and monitoring its progress. The astronaut judges the particle's kinetic energy to be zero,
+but other observers say it's nonzero, so it's clearly not a Lorentz scalar.
+And suppose the astronaut insists on defining a potential energy to go along with this kinetic energy.
+The potential energy must be decreasing, since the particle is getting closer to the earth, but then there is
+no way that the sum of the kinetic and potential energies could be constant.
 <% end_sec %> % conserved quantities
 
 <% begin_sec("Perihelion advance") %>\label{sec:perihelion-advance}

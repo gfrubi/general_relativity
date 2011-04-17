@@ -195,7 +195,7 @@ on page \pageref{sec:more-energy-mom-tensor}.
 
 <% end_sec %>
 
-<% begin_sec("Curvature in two spacelike dimensions") %>\index{curvature!in two spacelike dimensions}
+<% begin_sec("Curvature in two spacelike dimensions",nil,'curvature-2-d') %>\index{curvature!in two spacelike dimensions}
 Since the curvature tensors in 3+1 dimensions are complicated, let's start by considering lower dimensions.
 In one dimension, \figref{no-intrinsic-curvature-in-one-dim}, there is no such thing as intrinsic curvature.\index{curvature!none in one dimension} This is because curvature describes the
 failure of parallelism to behave as in E5, but there is no notion of parallelism in one dimension.
@@ -458,7 +458,7 @@ no information about directions in space.
 
 <% end_sec %>
 
-<% begin_sec("Curvature tensors") %>\index{curvature!tensors}
+<% begin_sec("Curvature tensors",nil,'curvature-tensors') %>\index{curvature!tensors}
 The example of the flea suggests that if we want to express curvature as a tensor, it should have
 even rank. Also, in a coordinate system in which the coordinates have units of distance (they are not
 angles, for instance, as in spherical coordinates), we expect that the units of curvature will always

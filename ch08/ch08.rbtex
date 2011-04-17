@@ -845,26 +845,44 @@ out rotation of the universe with $\omega \gtrsim 10^{-22}\ \zu{Hz}$.
 <% end_sec %>
 
 <% begin_sec("The FRW cosmologies") %>
+<% begin_sec("The FRW metric and the standard coordinates") %>
 Motivated by Hubble's observation that the universe is expanding, we hypothesize the existence of solutions of the
 field equation in which the properties of space are homogeneous and isotropic,
 but the over-all scale of space is increasing as described by some scale function $a(t)$. Because of
 coordinate invariance, the metric can still be written in a variety of forms. One such form is
 \begin{equation*}
-  \der s^2 = \der t^2 - a(t)\der\ell^2 \qquad ,
+  \der s^2 = \der t^2 - a(t)^2\der\ell^2 \qquad ,
 \end{equation*}
 where the spatial part is
 \begin{equation*}
   \der\ell^2 = f(r)\der r^2 + r^2 \der\theta^2 + r^2 \sin^2\theta \der\phi^2 \qquad .
 \end{equation*}
-In these coordinates, the time $t$ is interpreted as the proper time of a particle that has always been at rest. Events
-that are simultaneous according to this $t$ are events at which the local properties of the universe --- i.e., its curvature ---
-are the same. These coordinates are referred as the ``standard'' cosmological coordinates; one will also encounter
+
+To interpret the coordinates, we note that if an observer is able to determine the functions $a$ and $f$ for her universe,
+then she can always measure some scalar curvature such as the Ricci scalar or the Kretchmann invariant, and since these
+are proportional to $a$ raised to some power, she can determine $a$ and $t$. This shows that $t$ is a ``look-out-the-window'' time,
+i.e., a time coordinate that we can determine by looking out the window and observing the present conditions in the universe. Because the quantity being
+measured directly is a scalar, the result is independent of the observer's state of motion. (In practice, these scalar curvatures
+are difficult to measure directly, so we measure something else, like the sky-wide average temperature of the cosmic microwave background.)
+Simultaneity is supposed to be ill-defined in relativity, but the look-out-the-window time defines a notion of simultaneity that
+is the most naturally interesting one in this spacetime. With this particular definition of simultaneity, we can also define a
+preferred state of rest at any location in spacetime, which is the one in which $t$ changes as slowly as possible relative to one's own clock. This local rest frame,
+which is more easily determined in practice as the one in which the microwave background is most uniform across the sky, can
+also be interpreted as the one that is moving along with the Hubble flow, i.e., the average motion of the galaxies, photons, or
+whatever else inhabits the spacetime. The time $t$ is interpreted as the proper time of a particle that has always been locally at rest.
+The spatial distance measured by $L=\int a\der\ell$ is called the proper distance.\index{proper distance}\label{proper-distance-cosmologically}
+It is the distance that would be measured by a chain of rulers, each of them
+``at rest'' in the above sense.
+
+These coordinates are referred as the ``standard'' cosmological coordinates; one will also encounter
 other choices, such as the comoving and conformal coordinates, which are more convenient for certain purposes.
 Historically, the solution for the functions $a$ and $f$ was found by de 
 Sitter in 1917.\index{de Sitter, Willem}\index{standard cosmological coordinates}\index{comoving cosmological coordinates}\index{conformal cosmological coordinates}
 \index{cosmological coordinates!standard}\index{cosmological coordinates!comoving}\index{cosmological coordinates!conformal}\label{standard-cosm-coords}
+<% end_sec %> % The FRW metric and the standard coordinates
 
-The unknown function $f(r)$ has to make the 3-space metric $\der\ell^2$ have a constant Einstein curvature tensor.
+<% begin_sec("The spatial metric") %>
+The unknown function $f(r)$ has to give a 3-space metric $\der\ell^2$ with a constant Einstein curvature tensor.
 The following Maxima program computes the curvature.
 \begin{listing}{1}
 load(ctensor);
@@ -882,15 +900,52 @@ Line 2 tells Maxima that we're working in a space with three dimensions rather t
 Line 4 tells it that $f$ is a function of time.  Line 9 uses its built-in function for computing the Einstein tensor $G\indices{^a_b}$. The result has only one nonvanishing
 component, $G\indices{^t_t}=(1-1/f)/r^2$. This has to be constant, and since scaling can be absorbed in the factor $a(t)$ in the
 3+1-dimensional metric, we can just set the value of $G_{tt}$ more or less arbitrarily, except for its sign.
-The result is $f=1/(1-kr^2)$, where $k=-1$, 0, or 1. The form of $\der\ell^2$ shows us that $k$ can be interpreted
-in terms of the sign of the spatial curvature. The $k=0$ case gives a flat space. For negative $k$, a circle of radius $r$ centered
-on the origin has a circumference $2\pi r f(r)$ that is more than its Euclidean value of $2\pi r$. The opposite occurs for
-$k>0$.
+The result is $f=1/(1-kr^2)$, where $k=-1$, 0, or 1.
+
 The resulting metric, called the Robertson-Walker metric, is
 \begin{equation*}
   \der s^2 = \der t^2 - a^2\left(\frac{\der r^2}{1-kr^2} + r^2 \der\theta^2 + r^2 \sin^2\theta \der\phi^2\right) \qquad .
 \end{equation*}
 
+The form of $\der\ell^2$ shows us that $k$ can be interpreted
+in terms of the sign of the spatial curvature. We recognize the $k=0$ metric as a flat spacetime described in spherical coordinates.
+To interpret the $k\ne 0$ cases, we note that a circle at coordinate $r$ has proper circumference $C=2\pi a r$
+and proper radius $R=a\int_0^r \sqrt{f(r')}\der r'$. For $k<0$, we have $f<1$ and $C>2\pi R$, indicating
+negative spatial curvature. For $k>0$ there is positive curvature.
+
+Let's examine the positive-curvature case more closely. Suppose we select a particular plane of simultaneity defined by
+$t=\text{constant}$ and $\phi=\pi/2$, and we start doing geometry in this plane.
+In two spatial dimensions, the Riemann tensor only has a single independent component, which can be identified
+with the Gaussian curvature (sec.~\ref{sec:curvature-tensors}, p.~\pageref{sec:curvature-tensors}), and
+when this Gaussian curvature is positive and constant, it can be interpreted as the angular defect of a triangle per unit area
+(sec.~\ref{sec:curvature-2-d}, p.~\pageref{sec:curvature-2-d}). Since the sum of the interior angles of a triangle
+can never be greater than $3\cdot2\pi$, we have an upper limit on the area of any triangle. This shows that
+the positive-curvature Robertson-Walker metric represents a cosmology that is spatially finite. At a given $t$, it
+is the three-dimensional analogue of a two-sphere. On a two-sphere, if we set up polar coordinates with a given
+point arbitrarily chosen as the origin, then we know that the $r$ coordinate must ``wrap around'' when we get to
+the antipodes. That is, there is a coordinate singularity there. (We know it can only be a coordinate singularity,
+because if it wasn't, then the antipodes would have special physical characteristics, but the FRW model was
+constructed to be spatially homogeneous.) This ``wrap-around'' behavior is described by saying that the model
+is \emph{closed}.\index{closed cosmology}
+
+In the negative-curvature case, there is no limit on the area of triangles. Such a universe is called \emph{open}.\index{open cosmology}
+In the case of an open universe, it is particularly easy to demonstrate a fact that bothers many students, which is that
+proper distances can grow at rates exceeding $c$. Let particles A and B both be at rest relative to the Hubble flow.
+The proper distance between them is then given by $L=a\ell$, where $\ell=\int_A^B\der\ell$ is constant. Then differentiating
+$L$ with respect to the look-out-the-window time $t$ gives $\der L/\der t=\dot{a}\ell$. In an open universe,
+there is no limit on the size of $\ell$, so at any given time, we can make $\der L/\der t$ as large as we like.
+This does not violate special relativity, since it is only locally that special relativity is a valid approximation to general
+relativity. Because GR only supplies us with frames of reference that are local, the velocity of two objects relative to one another is
+not even uniquely defined; our choice of $\der L/\der t$ was just one of infinitely many possible definitions.
+
+The distinction between closed and open universes is not just a matter of geometry, it's a matter of topology as well.
+Just as a two-sphere cannot be made into a Euclidean plane without cutting or tearing, a closed universe is not topologically
+equivalent to an open one. The correlation between local properties (curvature) and global ones (topology) is a general
+theme in differential geometry. A universe that is open is open forever,
+and similarly for a closed one. 
+<% end_sec %> % The spatial metric
+
+<% begin_sec("The Friedmann equations") %>
 Having fixed $f(r)$, we can now see what the field equation tells us about $a(t)$.
 The next program computes the Einstein tensor for the full four-dimensional spacetime:
 \begin{listing}{1}
@@ -932,7 +987,8 @@ Rearranging a little, we have a set of differential equations known as the Fried
 
 The cosmology that results from a solution of these differential equations is known as the
 Friedmann-Robertson-Walker (FRW) or Friedmann-Lema\^{i}tre-Robertson-Walker (FLRW) cosmology.\index{Friedmann-Robertson-Walker cosmology}
-<% end_sec %>
+<% end_sec %> % The Friedmann equations
+<% end_sec %> % The FRW cosmologies
 
 <% begin_sec("A singularity at the Big Bang") %>
 The Friedmann equations only
@@ -1354,8 +1410,10 @@ so as an approximation we can write the Friedmann equations as
 This is referred to as a vacuum-dominated universe.
 The solution is
 \begin{equation*}
-  a = \exp\left[\sqrt{\frac{\Lambda}{3}} \: t\right] \qquad .
+  a = \exp\left[\sqrt{\frac{\Lambda}{3}} \: t\right] \qquad ,
 \end{equation*}
+where observations show that $\Lambda\sim 10^{-26}\ \kgunit/munit^3$, giving $\sqrt{3/\Lambda}\sim 10^{11}$ years.
+
 The implications for the fate of the universe are depressing. All parts of the universe will accelerate
 away from one another faster and faster as time goes on. The relative separation between two objects, say galaxy A
 and galaxy B, will eventually be increasing faster than the speed of light. (The Lorentzian character of spacetime
@@ -1558,7 +1616,45 @@ the Big Bang. This gives $\rho_{crit}\sim 10^{-26}\ \kgunit/\munit^3$.
 %  2H^2/(8piG)
 %    6.08487033002423*10^-27 kg/m3
 
+As discussed in subsection \ref{sec:cosmology-observation}, our universe turns out to be almost exactly
+spatially flat. Although it is presently vacuum-dominated, the flat and matter-dominated FRW cosmology
+is a useful description of its matter-dominated era.
+
+\begin{eg}{Size and age of the observable universe}\index{universe!observable}\index{universe!observable!size and age}
+\index{observable universe}\index{observable universe!size and age}
+The observable universe is defined by the region from which light has had time to reach us since the Big Bang.
+Many people are inclined to assume that its radius in units of light-years must therefore be equal to the
+age of the universe expressed in years. This is not true. Cosmological distances like these are not even
+uniquely defined, because general relativity only has local frames of reference, not global ones.
+
+Suppose we adopt the proper distance $L$ defined on p.~\pageref{proper-distance-cosmologically} as our measure
+of radius. By this measure, realistic cosmological models  say that
+our 14-billion-year-old universe has a radius of 46 billion light years.
+
+For a flat universe, $f=1$, so by inspecting the FRW metric we find that a photon moving radially with $\der s=0$ has
+$|\der r/\der t|=a^{-1}$, giving $r=\pm\int_{t_1}^{t_2} \der t/a$.
+Suppressing signs, the proper distance the photon traverses starting
+soon after the Big Bang is $L=a(t_2)\int d\ell=a(t_2)\int \der r=a(t_2)r=a(t_2)\int_{t_1}^{t_2} \der t/a$.
+
+In the matter-dominated case, $a \propto t^{2/3}$, so this results in
+$L=3t_2$ in the limit where $t_1$ is small. Our universe
+has spent most of its history being matter-dominated, so it's
+encouraging that the matter-dominated calculation seems to do a
+pretty good job of reproducing the actual ratio of 46/14=3.3 between
+$L$ and $t_2$.
+
+While we're at it, we can see what happens in the purely vacuum-dominated case, which has
+$a\propto e^{t/T}$, where $T=\sqrt{3/\Lambda}$. This cosmology doesn't have a Big Bang, but we can think of it as
+an approximation to the more recent history of the universe, glued on to an earlier matter-dominated
+solution. Here we find $L=\left[e^{(t_2-t_1)/T}-1\right]T$, where $t_1$ is the time when the switch
+to vacuum-domination happened. This function grows more quickly with $t_2$ than the one obtained in the
+matter-dominated case, so it makes sense that the real-world ratio of $L/t_2$ is somewhat greater than
+the matter-dominated value of 3.
+\end{eg}
+
+
 <% end_sec %> % The flat universe
+
 
 <% begin_sec("The open universe") %>
 The $k=-1$ case represents a universe that has negative spatial curvature, is spatially infinite, and is also infinite in time,
