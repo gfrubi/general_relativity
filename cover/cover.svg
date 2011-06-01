@@ -10,11 +10,11 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="1602.9375"
+   width="1610.575"
    height="1012.5"
    id="svg2"
    sodipodi:version="0.32"
-   inkscape:version="0.47 r22583"
+   inkscape:version="0.48.1 r9760"
    version="1.0"
    sodipodi:docname="cover.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
@@ -48,9 +48,9 @@
      objecttolerance="10"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.31794845"
-     inkscape:cx="797.45243"
-     inkscape:cy="529.619"
+     inkscape:zoom="0.24245937"
+     inkscape:cx="797.84039"
+     inkscape:cy="472.30645"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -78,25 +78,25 @@
     <rect
        style="fill:#000000;fill-opacity:1;stroke:none"
        id="rect2391"
-       width="1602.7885"
+       width="1610.4392"
        height="1012.5"
-       x="0.26757279"
+       x="0.38419411"
        y="0.20881294" />
     <rect
        style="fill:#000000;fill-opacity:1;stroke:none"
        id="rect2383"
        width="1584.9375"
        height="1003.7938"
-       x="6.8560514"
+       x="14.623405"
        y="8.9150267" />
     <image
        sodipodi:absref="/home/bcrowell/Documents/writing/books/genrel/cover/galactic-center.jpg"
        xlink:href="galactic-center.jpg"
-       width="1594.6125"
-       height="998.72772"
+       y="7.9646301"
+       x="15.991957"
        id="image3204"
-       x="8.2246027"
-       y="7.9646301" />
+       height="998.72772"
+       width="1594.6125" />
     <text
        xml:space="preserve"
        style="font-size:35.78436661px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans"
@@ -121,7 +121,7 @@
          y="166.46082">Crowell</tspan></text>
     <g
        id="g3228"
-       transform="matrix(0,0.9940103,-0.9940103,0,2033.4822,131.83481)">
+       transform="matrix(0,0.9940103,-0.9940103,0,2035.1073,131.83481)">
       <text
          sodipodi:linespacing="125%"
          id="text3220"

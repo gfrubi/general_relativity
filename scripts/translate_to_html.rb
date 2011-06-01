@@ -21,7 +21,9 @@
 #   --html5
 #                            Similar to --modern, but generates html 5 with inline mathml.
 #                            As of June 2009, I haven't actually been able to test this, because I don't have a browser that supports it.
-#                            Firefox 3.5 beta 4 doesn't seem to support it mathml in html 5.
+#                            Firefox 3.5 beta 4 doesn't seem to support mathml in html 5.
+#   --mathjax
+#                            Generate html 4.01, with math in mathjax format.
 #   --wiki
 #                            Generate MediaWiki format. This is very crude at this point. After I used this to move everything into my mediawiki,
 #                            I ended up doing a lot of mucking around  with bots to clean stuff up. See notes below.
@@ -109,10 +111,14 @@ def fatal_error(message)
   exit(-1)
 end
 
+require 'json'
+
 require 'getoptlong' # pickaxe book, p. 452
+
 opts = GetoptLong.new(
   [ "--modern",                GetoptLong::NO_ARGUMENT ],
   [ "--html5",                 GetoptLong::NO_ARGUMENT ],
+  [ "--mathjax",               GetoptLong::NO_ARGUMENT ],
   [ "--wiki",                  GetoptLong::NO_ARGUMENT ],
   [ "--test",                  GetoptLong::NO_ARGUMENT ],
   [ "--redo_all_equations",    GetoptLong::NO_ARGUMENT ],
@@ -127,13 +133,14 @@ end
 
 $modern             = opts_hash['--modern']!=nil || opts_hash['--html5']!=nil
 $html5              = opts_hash['--html5']!=nil
+$mathjax            = opts_hash['--mathjax']!=nil
 $wiki               = opts_hash['--wiki']!=nil
 $test_mode          = opts_hash['--test']!=nil
 $redo_all_equations = opts_hash['--redo_all_equations']!=nil
 $redo_all_tables    = opts_hash['--redo_all_tables']!=nil
 $no_write           = opts_hash['--no_write']!=nil
 
-$stderr.print "modern=#{$modern} test=#{$test_mode} redo_all_equations=#{$redo_all_equations} redo_all_tables=#{$redo_all_tables} no_write=#{$no_write} wiki=#{$wiki} html5=#{$html4}\n"
+$stderr.print "modern=#{$modern} test=#{$test_mode} redo_all_equations=#{$redo_all_equations} redo_all_tables=#{$redo_all_tables} no_write=#{$no_write} mathjax=#{$mathjax} wiki=#{$wiki} html5=#{$html4}\n"
 
 $xhtml = $modern
 # xhtml requires, e.g., <meta ... />, but html requires <meta ...>
@@ -207,8 +214,9 @@ $tex_math_nontrivial = {'infty'=>'infin' , 'ldots'=>'hellip' , 'leq'=>'le' , 'ge
 $tex_math_trivial_not_entities = "sin cos tan ln log exp".split(/ /)
 $tex_math_not_entities = {'munit'=>'m' , 'sunit'=>'s' , 'kgunit'=>'kg' , 'nunit'=>'N' , 'junit'=>'J' , 'der'=>'d'  ,  'pm'=>'&#177;' ,  'degcunit'=>'&deg;C' , 'parallel'=>'||',
                           'sharp'=>'&#x266F;'}
-$tex_math_not_in_mediawiki = {'munit'=>'\text{m}' , 'sunit'=>'\text{s}' , 'kgunit'=>'\text{kg}' , 'gunit'=>'\text{g}' , 'nunit'=>'\text{N}' , 'junit'=>'\text{J}' , 'der'=>'d'  ,  'degcunit'=>'\ensuremath{\,^{\circ}}C' ,
-                            'cancel'=>'', 'zu'=>'text'}
+$tex_math_not_in_mediawiki = {'munit'=>'\text{m}' , 'sunit'=>'\text{s}' , 'kgunit'=>'\text{kg}' , 'gunit'=>'\text{g}' , 'nunit'=>'\text{N}',
+                              'junit'=>'\text{J}' , 'der'=>'d'  ,  'degcunit'=>'\ensuremath{\,^{\circ}}C' ,
+                              'cancel'=>'', 'zu'=>'text'}
 
 $tex_math_to_html = {}
 $tex_math_trivial_not_entities.each {|x|
@@ -317,10 +325,19 @@ $protect_tex_math_for_mediawiki = {}
 
 def html_subdir(subdir)
   d = $config['html_dir'] + '/ch' + $ch + '/' + subdir
-  if ! File.exist?(d) then
-    unless system("mkdir -p #{d}") then $stderr.print "error, #{$?}, creating directory #{d}"; exit(-1) end
-  end
+  make_directory_if_nonexistent(d,'html_subdir')
   return d
+end
+
+def make_directory_if_nonexistent(d,context)
+  if ! File.exist?(d) then
+    if system("mkdir -p #{d}") then
+      $stderr.print "translate_to_html.rb successfuly created directory #{d}, context=#{context}\n"
+    else
+      $stderr.print "error in translate_to_html.rb, #{$?}, creating directory #{d}, context=#{context}\n"
+      exit(-1) 
+    end
+  end
 end
 
 def wiki_style_section(n)
@@ -345,11 +362,10 @@ def parse_itty_bitty_stuff!(tex)
     }
   }
   tex.gsub!(/\\O{}/,'&Oslash;')
-  tex.gsub!(/\\o{}/,'&oslash;')
   tex.gsub!(/\\ae{}/,'&aelig;')
   tex.gsub!(/\.~/,'. ')
   tex.gsub!(/\\\-/,'')
-  tex.gsub!(/\\ /,' ')
+  if !$mathjax then tex.gsub!(/\\ /,' ') end
   tex.gsub!(/\\%/,'%')
   tex.gsub!(/\\#/,'#')
   tex.gsub!(/\\(quad|qquad)/,' ')
@@ -913,7 +929,7 @@ def handle_math(tex,inline_only=false,allow_bitmap=true)
   tex.gsub!(/\\munit/,'m')
   tex.gsub!(/\\sunit/,'s')
 
-  tex.gsub!(/\&\=/,'=') # happens for displayed math that we couldn't handle, or didn't try to handle, from align environment
+  if !$mathjax then tex.gsub!(/\&\=/,'=') end # happens for displayed math that we couldn't handle, or didn't try to handle, from align environment
 
   return tex
 
@@ -933,6 +949,14 @@ def handle_math_one(foo,math_type,allow_bitmap)
 
   debug = false # tex=~/\{1\}\{2\}/
 
+  if $mathjax then
+    if math_type=='inline' then
+      return '\\('+prep_math_for_mathjax(tex)+'\\)' 
+    else
+      return "\\[\\begin{#{math_type}*}"+prep_math_for_mathjax(tex)+"\\end{#{math_type}*}\\]"
+    end
+  end
+
   tex.gsub!(/\\(begin|end){split}/,'') # we don't handle these (they occur inside other math environments)
 
   html = handle_math_one_html(tex.clone,math_type)
@@ -941,6 +965,19 @@ def handle_math_one(foo,math_type,allow_bitmap)
   html = handle_math_one_bitmap(tex.clone,math_type)
   return html if html!=nil
   return nil
+end
+
+def prep_math_for_mathjax(math)
+  m = math.clone
+  m.gsub!(/\</,'\\lt') # Keep < from being interpreted as html tag by browser.
+  m.gsub!(/\\vc{([A-Za-z]+)}/) {"\\ensuremath{\\mathbf{#{$1}}}"}
+  m.gsub!(/\\zu{([A-Za-z]+)}/) {"\\text{#{$1}}"}
+  m.gsub!(/\\intertext/) {"\\text"}
+  $tex_math_not_in_mediawiki.each { |k,v|
+    m.gsub!(/\\#{k}/) {v}
+  }
+  m.gsub!(/\\$/) {"PROTECT_DOUBLE_BACKSLASH_FOR_MATHJAX"}
+  return m
 end
 
 # translate one particular equation to html or mathml, if possible; return nil on failure
@@ -1167,6 +1204,7 @@ def parse_eensy_weensy(t)
   tex.gsub!(/\\epigraph(?:long|longfitbyline)?{(#{curly})}{(#{curly})}/) {"#{$1} -- <i>#{$2}</i>"}
   tex.gsub!(/\\\//,' ')
   tex.gsub!(/\\\\/,$br)
+  tex.gsub!(/PROTECT_DOUBLE_BACKSLASH_FOR_MATHJAX/,"\\\\")
   tex.gsub!(/\\xmark/,'&times;')
   tex.gsub!(/\\hwsoln/,'(solution in the pdf version of the book)')
   tex.gsub!(/\\hwendpart/,$br)
@@ -1175,11 +1213,20 @@ def parse_eensy_weensy(t)
   tex.gsub!(/\\(egquestion|eganswer)/,'&loz;')
   tex.gsub!(/\\notationitem{(#{curly_safe})}{(#{curly_safe})}/) {"#{$1} &mdash; #{$2}"} # endless loop in NP7 if I don't use curly_safe?? why??
   tex.gsub!(/\\vocabitem{(#{curly})}{(#{curly})}/) {"<i>#{$1}</i> &mdash; #{$2}"}
-  tex.gsub!(/\\label{([^}]+)}/) {x=$1; "<a #{$anchor}=\"#{x}\"></a>"}
+  tex.gsub!(/\\label{([^}]+)}/) {
+    x=$1
+    unless x=~/^splits:/ then # kludge to avoid malformed xhtml resulting from \label in a paragraph by itself
+      "<a #{$anchor}=\"#{x}\"></a>"
+    end
+  }
+
   tex.gsub!(/\\url{(#{curly})}/) {"<a href=\"#{$1}\">#{$1}</a>"}
 
   # footnotes:
+  $stderr.print "entering\n"
+  if false then
   tex.gsub!(/\\footnote{(#{curly})}/) {
+    $stderr.print "foo\n"
     text=$1
     $footnote_ctr += 1
     n = $footnote_ctr
@@ -1187,6 +1234,8 @@ def parse_eensy_weensy(t)
     $footnote_stack.push([n,label,parse_para(text)])
     "<a href=\"\##{label}\"><sup>#{n}</sup></a>"
   }
+  end
+  $stderr.print "lived\n"
 
   parse_references!(tex)
 
@@ -1260,27 +1309,31 @@ def parse_references!(tex)
   }
 end
 
+$read_topic_map = false
+$topic_map = {}
 def find_topic(ch,book,own)
-# The following is duplicated in scripts/BookData.pm.
-  x = {
-    '1np'=>{0=>'intro',1=>'intro',2=>'mechanics',3=>'mechanics',4=>'mechanics',5=>'mechanics',6=>'mechanics',7=>'mechanics',8=>'mechanics',9=>'mechanics',10=>'mechanics',},
-    '2cl'=>{1=>'mechanics',2=>'mechanics',3=>'mechanics',4=>'mechanics',5=>'mechanics',6=>'mechanics',},
-    '3vw'=>{1=>'mechanics',2=>'mechanics',3=>'waves',4=>'waves',},
-    '4em'=>{1=>'em-general',2=>'em-general',3=>'em-dc',4=>'em-dc',5=>'em-fields',6=>'em-fields',7=>'em-fields'},
-    '5op'=>{1=>'optics',2=>'optics',3=>'optics',4=>'optics',5=>'optics',},
-    '6mr'=>{1=>'relativity',2=>'quantum',3=>'quantum',4=>'quantum',5=>'quantum'},
-    '7cp'=>{1=>'mechanics',2=>'mechanics',3=>'mechanics',4=>'relativity',5=>'em-dc',6=>'em-fields',7=>'optics',8=>'waves'},
-    '0sn'=>{0=>'intro',1=>'mechanics',2=>'mechanics',3=>'mechanics',4=>'mechanics',5=>'mechanics',6=>'waves',7=>'relativity',
-            8=>'em-general',9=>'em-dc',10=>'em-fields',11=>'em-fields',12=>'optics',13=>'quantum',},
-  }[book]
+  return own # genrel doesn't use this
+  # Topic maps are also used in scripts/BookData.pm.
+  if !$read_topic_map then
+    json_file = "../scripts/topic_map.json"
+    json_data = ''
+    File.open(json_file,'r') { |f| json_data = f.gets(nil) }
+    if json_data == '' then $stderr.print "Error reading file #{json_file} in translate_to_html.rb"; exit(-1) end
+    $topic_map = JSON.parse(json_data)
+    $read_topic_map = true
+  end
+
+  ch_string = ch.to_i.to_s # e.g., convert '07' to '7'
+
+  t1 = $topic_map['1']
+  x = t1[book]
   if x==nil then return own end
-  own.push("../9share/#{x[ch.to_i]}/figs")
+  own.push("../share/#{x[ch_string]}/figs")
+
   # secondary places to look:
-  x = {
-    '7cp'=>{1=>'relativity',5=>'em-general',8=>'mechanics'},
-    '0sn'=>{6=>'mechanics'},
-  }[book]
-  if x!=nil and x[ch.to_i]!=nil then own.push("../9share/#{x[ch.to_i]}/figs") end
+  t2 = $topic_map['2']
+  x = t2[book]
+  if x!=nil and x[ch_string]!=nil then own.push("../share/#{x[ch_string]}/figs") end
   return own
 end
 
@@ -1290,15 +1343,29 @@ def die(name,message)
   exit(-1)
 end
 
+# returns, e.g., 'n3/figs' or 'ch09/figs'
+def own_figs
+  if ENV['OWN_FIGS'].nil? then
+    return "ch#{$ch}/figs"
+  else
+    return ENV['OWN_FIGS']
+  end
+end
+
 def find_figure(name,width_type)
   # width_type = 'narrow' , 'wide' , 'fullpage' , 'raw'
+
+  # Allow for kludges like fig('../../../lm/vw/figs/doppler',...), which I do in an E&M chapter of LM.
+  if name=~/^\.\./ then
+    return name
+  end
 
   name.gsub!(/(.*\/)/,'') # get rid of anything before the last slash; if it's shared, we'll figure that out ourselves
 
   if name=='zzzfake' then return nil end
 
   output_dir = "#{$config['html_dir']}/ch#{$ch}/figs"
-  do_system("mkdir #{output_dir}") unless File.exist?(output_dir)
+  make_directory_if_nonexistent(output_dir,'find_figure')
 
   search = Dir["#{output_dir}/#{name}.*"]
   unless search.empty? then
@@ -1309,7 +1376,7 @@ def find_figure(name,width_type)
   
   debug = false # debug mechanism for finding where the figure is
 
-  possible_dirs = find_topic($ch,$config['book'],["ch#{$ch}/figs"])
+  possible_dirs = find_topic($ch,$config['book'],[own_figs()])
   allowed_formats = ['jpg','png','pdf']
   found_in_dir = nil
   found_in_fmt = nil
@@ -1329,7 +1396,7 @@ def find_figure(name,width_type)
 
   base = "#{dir}/#{name}."
   if dir==nil then
-    $stderr.print "error finding figure #{base}*, not found in any of these dirs: ",possible_dirs.join(','),", relative to cwd=#{Dir.getwd()}\n"
+    $stderr.print "translate_to_html: error finding figure #{base}*, not found in any of these dirs: ",possible_dirs.join(','),", relative to cwd=#{Dir.getwd()}\n"
     exit(-1)
   else
     result = "#{dir}/#{name}.#{fmt}"
@@ -1669,6 +1736,11 @@ else
   stylesheet = 'http://www.lightandmatter.com/lm.css'
 end
 
+mathjax_in_head = ''
+if $mathjax then
+  mathjax_in_head = '<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>'
+end
+
 if !$wiki then
 print <<STUFF
   <head>
@@ -1676,6 +1748,7 @@ print <<STUFF
     <link rel="stylesheet" type="text/css" href="http://www.lightandmatter.com/banner.css" media="all"#{$self_closing_tag}>
     <link rel="stylesheet" type="text/css" href="#{stylesheet}" media="all"#{$self_closing_tag}>
     <meta http-equiv="Content-Type" content="#{mime}; charset=utf-8"#{$self_closing_tag}>
+    #{mathjax_in_head}
   </head>
   <body>
 STUFF
@@ -1740,7 +1813,23 @@ macros_not_handled = {}
 chipmunk = tex.clone
 chipmunk.gsub!(/alt=\"[^"]*\"/,'')
 chipmunk.gsub!(/\<\!\-\-([^\-]|(\-(?!\-)))*\-\-\>/,'') # not really generally correct, but works for the comments I generate that might have html inside
-chipmunk.scan(/(\\\w+({[^}]*})?)/) {macros_not_handled[$1]=1}
+math_macros = $tex_math_trivial.clone
+math_macros = math_macros.concat($tex_math_nontrivial.keys)
+math_macros = math_macros.concat($tex_math_trivial_not_entities)
+math_macros = math_macros.concat(['text','frac','shoveright','sqrt','left','right','mathbf','ensuremath','hat','mathbf','mathrm'])
+chipmunk.scan(/(\\\w+({[^}]*})?)/) {
+  whole = $1 # e.g.,  \frac{ke^2}
+  macro = whole
+  if whole=~/^\\([a-zA-Z]+)/ then macro=$1 end
+  math_ok = false
+  if $mathjax then
+    math_macros.each { |m| if m==macro then math_ok=true end }
+    if macro=='begin' || macro=='end' then
+      ['align','equation','multline','gather'].each { |e| if whole=~/^\\(begin|end){#{e}\*?}/ then math_ok=true end}
+    end
+  end
+  if !math_ok then macros_not_handled[whole]=1 end
+}
 #tex.split(/alt=\"[^"]*\"/).each { |x|
 #  curly = "(?:(?:{[^{}]*}|[^{}]*)*)" # match anything, as long as any curly braces in it are paired properly, and not nested
 #  x.scan(/(\\\w+({[^}]*})?)/) {macros_not_handled[$1]=1}

@@ -1010,6 +1010,37 @@ causal relationships to connect with the spacetime outside. In relativity, event
 in the context of black holes; their properties, and some of the implications for black holes, have already
 been discussed in section \ref{sec:event-horizons}.
 
+The gravitational time dilation in the Schwarzschild field, relative to a clock at infinity, is given by the
+square root of the $g_{tt}$ component of the metric. This goes to zero at the event horizon, meaning that,
+for example, a photon emitted from the event horizon will be infinitely redshifted when it reaches an observer
+at infinity. This makes sense, because the photon is then undetectable, just as it would be if it had been
+emitted from \emph{inside} the event horizon. If matter is falling into a black hole, then due to time dilation
+an observer at infinity ``sees'' that matter as slowing down more and more as it approaches the horizon. This
+has some counterintuitive effects. A radially infalling particle has $\der ^2r/\der t^2>0$ once it falls past
+a certain point, which could be interpreted as a gravitational repulsion.
+The observer at infinity may also be led to describe the black hole as consisting of an empty, spherical
+shell of matter that never quite made it through the horizon. If asked what holds the shell up, the
+observer could say that it is held up by gravitational repulsion. 
+
+There is actually nothing wrong with
+any of this, but one should realize that it is only one possible description in one possible coordinate
+system. An observer hovering just outside the event horizon sees a completely different picture, with
+matter falling past at velocities that approach the speed of light as it comes to the event horizon.
+If an atom emits a photon from the event horizon, the hovering observer sees it as being infinitely
+red-shifted, but explains the red-shift as a kinematic one rather than a gravitational one.
+
+We can imagine yet a third observer, one who free-falls along with the infalling matter. According to this
+observer, the gravitational field is always zero, and it takes only a finite time to pass through the
+event horizon.
+
+If a black hole has formed from the gravitational collapse of a cloud of matter, then some of our observers can
+say that ``right now'' the matter is located in a spherical shell at the event horizon, while others can
+say that it is concentrated at an infinitely dense singularity at the center. Since simultaneity isn't well
+defined in relativity, it's not surprising that they disagree about what's happening ``right now.''
+Regardless of where they say the matter is, they all agree on the spacetime curvature. In fact,
+Birkhoff's theorem (p.~\pageref{birkhoff}) tells us that any spherically symmetric vacuum spacetime is
+Schwarzschild in form, so it doesn't matter where we say the matter is, as long as it's distributed in
+a spherically symmetric way and surrounded by vacuum.
 <% end_sec %> % event horizon
 <% begin_sec("Expected formation") %>\label{sec:black-hole-formation}\index{black hole!formation}
 
@@ -1024,12 +1055,11 @@ of gas or dust to spontaneously collapse into a black hole. But clouds of less t
 form planets, which achieve a permanent equilibrium between gravity and internal pressure. Heavier objects initiate
 nuclear fusion, but those with masses above about $100M_\odot$ are immediately torn apart by their own solar winds. In the range from
 0.1 to $100M_\odot$, stars form. As discussed in section \ref{sec:degenerate-matter}, those with masses greater than
-about a few solar are expected to form black holes when they die. We therefore expect, on theoretical grounds, that the universe
+about a few  $M_\odot$ are expected to form black holes when they die. We therefore expect, on theoretical grounds, that the universe
 should contain black holes with masses ranging from a few solar masses to a few tens of solar masses.
 
 % http://en.wikipedia.org/wiki/Quasar
 % http://en.wikipedia.org/wiki/Supermassive_black_holes
-
 
 <% end_sec %> % formation of black holes
 
@@ -1038,7 +1068,8 @@ A black hole is expected to be a very compact object, with a strong gravitationa
 its own light. A bare, isolated black hole would be difficult to detect, except perhaps via its lensing of light
 rays that happen to pass by it. But if a black hole occurs in a binary star system, it is possible for mass to be transferred
 onto the black hole from its companion, if the companion's evolution causes it to expand into a giant and intrude upon
-the black hole's gravity well. The object known as Cygnus X-1\index{Cygnus X-1} is the best-studied example. This X-ray-emitting
+the black hole's gravity well. The infalling gas would then get hot and emit radiation before disappearing behind
+the event horizon. The object known as Cygnus X-1\index{Cygnus X-1} is the best-studied example. This X-ray-emitting
 object was discovered by a rocket-based experiment in 1964. It is part of a double-star system, the other member being
 a blue supergiant. They orbit their common center of mass with a period of 5.6 days.
 The orbit is nearly circular, and has a semi-major axis of about 0.2 times the distance from the earth to the sun.
@@ -1072,6 +1103,22 @@ existence, a variety of mechanisms was proposed for their formation. Little is k
 is correct, although the existence of quasars in the early universe is interpreted as evidence that mass accreted
 rapidly onto supermassive black holes in the early stages of the evolution of the galaxies.
 
+A skeptic could object that although Cygnus X-1 and Sagittarius A* are more compact than is believed possible
+for a neutron star, this does not necessarily prove that they are black holes. Indeed, speculative theories
+have been proposed in which exotic objects could exist that are intermediate in compactness between black holes and
+neutron stars. These hypothetical creatures have names like black stars, gravastars, fuzzballs, quark stars, boson stars,
+and electroweak stars. Although there is no evidence that these theories are right or that these objects exist,
+we are faced with the question of how to determine whether a given object is really a black hole or one of these other species.
+The defining characteristic of a black hole is that it has an event horizon rather than a physical surface. If
+an object is not a black hole, than by conservation of
+energy any matter that falls onto it must release its gravitational potential energy when it hits that surface.
+Cygnus X-1 has a copious supply of matter falling onto it from its supergiant companion, and Sagittarius A* likewise
+accretes a huge amount of gas from the stellar wind of nearby stars.
+By analyzing millimeter and infrared very-long-baseline-interferometry observations, Broderick, Loeb, and Narayan\footnote{\url{arxiv.org/abs/0903.1105}} have shown that
+if Sagittarius A* had a surface, then the luminosity of this surface must be less than 0.3\%
+of the luminosity of the accretion disk. But this is not physically possible, because there are fundamental
+limits on the efficiency with which the gas can radiate away its energy before hitting the surface.
+We can therefore conclude that Sagittarius A* must have an event horizon.
 <% end_sec %> % observational
 
 <% begin_sec("Singularities and cosmic censorship") %>\index{singularity}\index{cosmic censorship}

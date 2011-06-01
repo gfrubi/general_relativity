@@ -720,7 +720,11 @@ def print_answers_of_one_type(lo_ch,hi_ch,type,header)
           print '\par\pagebreak[3]\vspace{2mm}\noindent\formatlikesubsection{Solutions for chapter '+ch.to_s+'}\\\\*'
         end
         last_ch = ch
-        print answer_header(name,type)+$answer_text[name]
+        if $answer_text[name].nil? then
+          $stderr.print "No answer text available for problem #{name}\n"
+        else
+          print answer_header(name,type)+$answer_text[name]
+        end
       end
     }
   end
@@ -785,8 +789,11 @@ def begin_sec(title,pagebreak=nil,label='',options={})
   $count_section_commands += 1
   $section_level += 1
   # In LM, section level 1=section, 2=subsection, 3=subsubsection; 0 would be chapter, but chapters aren't done with begin_sec()
-  if $section_level==0 then
-    $stderr.print "warning, at #{$count_section_commands}th section command, ch #{$ch}, section #{title}, section level=#{$section_level}, zero section level (happens in NP Preface)\n"
+  if $section_level==0 || $section_level>3 then
+    e=''
+    if $section_level==0 then e='zero section level (happens in NP Preface)' end
+    if $section_level>3 then e='section level is too deep' end
+    $stderr.print "warning, at #{$count_section_commands}th section command, ch #{$ch}, section #{title}, section level=#{$section_level}, #{e}\n"
     $section_level = 1
   end
   if pagebreak==nil then pagebreak=4-$section_level end

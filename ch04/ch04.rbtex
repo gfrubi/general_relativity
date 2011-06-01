@@ -342,8 +342,8 @@ interchanging the roles of source and observer is equivalent to flipping the sig
 version only depends on the \emph{relative} motion of the source and the observer, whereas the Newtonian one
 also depends on the source's motion relative to the medium (i.e., relative to the preferred frame in which the
 waves have the ``right'' velocity). In Newtonian mechanics, we have
-$f'=f/(1-v)$ for a moving source. Relativistically, there is also a time dilation of the oscillation of the source,
-providing an additional factor of $1/\gamma$.
+$f'=(1+v)f$ for a moving observer. Relativistically, there is also a time dilation of the oscillation of the source,
+providing an additional factor of $\gamma$.
 
 This analysis is extended to 3+1 dimensions in problem \ref{hw:doppler-three-d}.
 
@@ -1090,7 +1090,7 @@ In the language of ordinary vectors and scalars in Euclidean three-space, one wa
 dot and cross products. The area of the parallelogram spanned by $\vc{u}$ and $\vc{v}$ is measured by the area vector $\vc{u}\times\vc{v}$,
 and similarly the volume of the parallelepiped can be computed as the scalar triple product $\vc{u}\cdot(\vc{v}\times\vc{w})$. 
 Both of these quantities are defined such that interchanging two of the inputs negates the output. In differential
-geometry, we do have a scalar product, which is defined by contracting the indices of two vectors, as in $u^av_b$. If we also had a
+geometry, we do have a scalar product, which is defined by contracting the indices of two vectors, as in $u^av_a$. If we also had a
 a tensorial cross product, we would be able to define area and volume tensors, so we conclude that there is no tensorial cross product, i.e.,
 an operation that would multiply two rank-1 tensors to produce a rank-1 tensor. Since one of the most important physical applications of
 the cross product is to calculate the angular momentum $\vc{L}=\vc{r}\times\vc{p}$, we find that angular momentum in relativity is
@@ -1155,7 +1155,7 @@ Any permutation of the three distinct indices can be reached from any other by a
 of swaps is uniquely odd or even.\footnote{For a proof, see the Wikipedia article ``Parity of a permutation.''}
 In Cartesian coordinates in three dimensions, it is conventional to choose  $\epsilon_{xyz}=+1$ when
 $x$, $y$, and $z$ form a right-handed spatial coordinate system. In four dimensions, we take
-$\epsilon_{txyz}=+1$ when $t$ is the direction and $(x,y,z)$ are right-handed.
+$\epsilon_{txyz}=+1$ when $t$ is future-timelike and $(x,y,z)$ are right-handed.
 
 In Euclidean three-space, in coordinates such that $g=diag(1,1,1)$, the vector cross product $\vc{A}=\vc{u}\times\vc{v}$, where we have
 in mind the interpretation of $\vc{A}$ as area, can be expressed
@@ -1186,17 +1186,17 @@ which is exactly the correction factor needed in order to get the right area whe
 This procedure works more generally, the sole modification being that in a space such as a locally Lorentzian one where $g<0$ we need
 to use $\sqrt{-g}$ as the correction factor rather than $\sqrt{g}$.
 <% end_sec %> % Tensorial $\epsilon$
-<% begin_sec("Pseudoensorial $\\epsilon$") %>
+<% begin_sec("Tensor-density $\\epsilon$") %>
 The other option is to let $\epsilon$ have the same $0$ and $\pm1$ values at all points. Then $\epsilon$ is clearly not a tensor, because
-it doesn't scale by a factor of $k^n$ when the coordinates are scaled by $k$; $\epsilon$ is a pseudotensor with weight $+1$ for the upper-index version
-and $-1$ for the lower-index one. The relation $A_\mu=\epsilon_{\mu\kappa\lambda}u^\kappa v^\lambda$ gives an area that is a pseudotensor,
+it doesn't scale by a factor of $k^n$ when the coordinates are scaled by $k$; $\epsilon$ is a tensor density with weight $+1$ for the upper-index version
+and $-1$ for the lower-index one. The relation $A_\mu=\epsilon_{\mu\kappa\lambda}u^\kappa v^\lambda$ gives an area that is a tensor density,
 not a tensor, because $A$ is not written in terms of purely tensorial quantities. Scaling the coordinates by $k$ leaves $\epsilon_{\mu\kappa\lambda}$
 unchanged, scales up $u^\kappa v^\lambda$ by $k^2$, and scales up the area by $k^2$, as expected.
-<% end_sec %> % Pseudoensorial $\epsilon$
-Unfortunately, there is no consistency in the literature as to whether $\epsilon$ should be a tensor or a pseudotensor.
+<% end_sec %> % Tensor-density $\epsilon$
+Unfortunately, there is no consistency in the literature as to whether $\epsilon$ should be a tensor or a tensor density.
 Some will define both a tensor and a nontensor version, with notations
 like $\epsilon$ and $\tilde{\epsilon}$, or\footnote{Misner, Thorne, and Wheeler} $\epsilon_{0123}$ and $[0123]$. 
-Others avoid writing the letter $\epsilon$ completely.\footnote{Hawking and Ellis} The pseudotensor version
+Others avoid writing the letter $\epsilon$ completely.\footnote{Hawking and Ellis} The tensor-density version
 is convenient because we always know that its value is $0$ or $\pm 1$. The tensor version has the advantage that it transforms
 as a tensor.
 <% end_sec %> % The Levi-Civita symbol
@@ -1207,8 +1207,8 @@ One approach is to define a rank-2 angular momentum tensor $L^{ab}=r^ap^b$.
 In a frame whose origin is instantaneously moving along with a certain system's center of mass
 at a certain time, the time-space components of $L$ vanish, and the components $L^{yz}$, $L^{zx}$, and $L^{xy}$ coincide
 in the nonrelativistic limit with the $x$, $y$, and $z$ components of the Newtonian angular momentum vector. 
-We then have $L^a=\epsilon_{abc}L^{bc}$ (with psuedotensorial $\epsilon$) for the angular momentum pseudovector whose spacelike components are
-$L^x$, $L^y$, and $L^z$. Although the pseudovector is less cumbersome than the 2-tensor, the 2-tensor has the simple transformation
+We then have $L^a=\epsilon_{abc}L^{bc}$ (with tensor-density $\epsilon$) for the angular momentum tensor density whose spacelike components are
+$L^x$, $L^y$, and $L^z$. Although the tensor density is less cumbersome than the 2-tensor, the 2-tensor has the simple transformation
 properties of a tensor.
 <% end_sec %> % Angular momentum
 <% end_sec %> % Things that aren't quite tensors

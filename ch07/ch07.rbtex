@@ -388,7 +388,7 @@ use phrases like ``a stationary field,'' without the usual caveats about the coo
 
 Space can be
 sprinkled with identical clocks, all at rest. Furthermore, we can compare the rates of these clocks,
-and even compensate for mismatched rates, by the following procedure. Since the spacetime is static,
+and even compensate for mismatched rates, by the following procedure. Since the spacetime is stationary,
 experiments are reproducible. If we send a photon or a material particle from a point A in space to
 a point B, then identical particles emitted at later times will follow identical trajectories. The
 time lag between the arrival of two such particls tells an observer at B the amount of time at B
@@ -507,9 +507,15 @@ Since the metric's components are all independent of $t$, $\partial_t$ is a Kill
 is timelike for large $r$, so the Schwarzschild spacetime is asymptotically static.
 
 The no-hair theorems say that relativity only has a small repertoire of types of black-hole singularities,
-defined as regions of spacetime that are causally disconnected from the universe, in the sense that
+defined as singularities inside regions of space that are causally disconnected from the universe, in the sense that
 future light-cones of points in the region do not extend to infinity.\footnote{For a more formal statement of
-this, see Hawking and Ellis, ``The Large Scale Structure of Space-Time,'' p.~315.} That is, a black hole is defined as\index{black hole!definition}
+this, see Hawking and Ellis, ``The Large Scale Structure of Space-Time,'' p.~315. Essentially, the region must be a connected
+region on a spacelike three-surface, and there must be no lightlike world-lines that connect points in that region
+to null infinity. Null infinity is defined formally using conformal techniques, but basically
+refers to points that are infinitely far away in both space and time, and have the two infinities \emph{equal} in a certain
+sense, so that a free light ray could end up there. The definition is based on the assumption that the surrounding spacetime
+is asymptotically flat, since otherwise null infinity can't be defined. It is not actually necessary to assume a singularity
+as part of the definition; the no-hair theorems guarantee that one exists.} That is, a black hole is defined as\index{black hole!definition}
 a singularity hidden behind an event horizon, and since the definition of an event horizon is dependent on
 the observer, we specify an observer infinitely far away. The theorems cannot classify naked singularities,
 i.e., those not hidden behind horizons, because the role of naked singularities in relativity is the subject

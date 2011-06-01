@@ -410,7 +410,7 @@ the energy density is never negative in any frame.
 The dominant energy condition is like the weak energy condition, but it also guarantees that no observer
 will see a flux of energy flowing at speeds greater than $c$.
 
-<% begin_sec("Geodesic motion of test particles") %>
+<% begin_sec("Geodesic motion of test particles") %>\label{geodesic-motion-details}
 Question 1 on p.~\pageref{energy-condition-questions} was: ``Does a small enough physical object always have a world-line that is approximately a geodesic?''
 In other words, do E\"{o}tv\"{o}s experiments give null results when carried out in laboratories using real-world apparatus of small enough size?
 We would like something of this type to be true, since general relativity is based on the equivalence principle, and the equivalence principle is
@@ -434,7 +434,7 @@ outgoing flux due to $p'$. In reality spacetime isn't flat, and it isn't even po
 by parallel-transporting one into the same
 location as the other. Parallel transport is path-dependent, but if we make the reasonable restriction to
 paths that stay within S, we expect the ambiguity due to path-dependence to be proportional to the area
-enclosed by any two paths, so that if R is small enough, the ambiguity can be made small.
+enclosed by any two paths, so that if S is small enough, the ambiguity can be made small.
 Ignoring this small ambiguity, we can see that one way for the fluxes to cancel would be for the
 particle to travel along a geodesic, since both  $p$ and $p'$ are tangent to the test-body's world-line, and a geodesic is
 a curve that parallel-transports its own tangent vector. Geodesic motion is therefore one solution, and we
@@ -457,7 +457,7 @@ sees the stress-energy tensor of  $\zu{O}_n$ as vanishing outside of a three-sph
 Then $\ell$ is a geodesic of B.
 
 This is almost right but not quite, as shown by the following counterexample.
-Papapetrou\footnote{Proc. Royal Soc. London A 209 (1951) 248-258, available for free online at \url{royalsocietypublishing.org}. The relevant 
+Papapetrou\footnote{Proc.~Royal Soc.~London A 209 (1951) 248. The relevant 
 result is summarized in Misner, Thorne, and Wheeler, \emph{Gravitation}, p.~1121.}
 has shown that a spinning body in a curved background spacetime deviates from a geodesic with an acceleration that
 is proportional to $LR$, where $L$ is its angular momentum and $R$ is the Riemann curvature.
@@ -919,7 +919,7 @@ In two spatial dimensions, the Riemann tensor only has a single independent comp
 with the Gaussian curvature (sec.~\ref{sec:curvature-tensors}, p.~\pageref{sec:curvature-tensors}), and
 when this Gaussian curvature is positive and constant, it can be interpreted as the angular defect of a triangle per unit area
 (sec.~\ref{sec:curvature-2-d}, p.~\pageref{sec:curvature-2-d}). Since the sum of the interior angles of a triangle
-can never be greater than $3\cdot2\pi$, we have an upper limit on the area of any triangle. This shows that
+can never be greater than $3\pi$, we have an upper limit on the area of any triangle. This happens because
 the positive-curvature Robertson-Walker metric represents a cosmology that is spatially finite. At a given $t$, it
 is the three-dimensional analogue of a two-sphere. On a two-sphere, if we set up polar coordinates with a given
 point arbitrarily chosen as the origin, then we know that the $r$ coordinate must ``wrap around'' when we get to
@@ -927,8 +927,20 @@ the antipodes. That is, there is a coordinate singularity there. (We know it can
 because if it wasn't, then the antipodes would have special physical characteristics, but the FRW model was
 constructed to be spatially homogeneous.) This ``wrap-around'' behavior is described by saying that the model
 is \emph{closed}.\index{closed cosmology}
+<% marg(70) %>
+<%
+  fig(
+    'triangles',
+    %q{1. In the Euclidean plane, this triangle can be scaled by any factor while remaining similar to itself.
+       2. In a plane with positive curvature, geometrical figures have a maximum area and maximum linear dimensions. This triangle has almost the maximum area, because the sum
+          of its angles is nearly $3\pi$.
+       3. In a plane with negative curvature, figures have a maximum area but no maximum linear dimensions. This triangle has almost the maximum area, because the sum
+          of its angles is nearly zero. Its vertices, however, can still be separated from one another without limit.}
+  )
+%>
+<% end_marg %>
 
-In the negative-curvature case, there is no limit on the area of triangles. Such a universe is called \emph{open}.\index{open cosmology}
+In the negative-curvature case, there is no limit on distances, \subfigref{triangles}{3}. Such a universe is called \emph{open}.\index{open cosmology}
 In the case of an open universe, it is particularly easy to demonstrate a fact that bothers many students, which is that
 proper distances can grow at rates exceeding $c$. Let particles A and B both be at rest relative to the Hubble flow.
 The proper distance between them is then given by $L=a\ell$, where $\ell=\int_A^B\der\ell$ is constant. Then differentiating
@@ -1412,7 +1424,7 @@ The solution is
 \begin{equation*}
   a = \exp\left[\sqrt{\frac{\Lambda}{3}} \: t\right] \qquad ,
 \end{equation*}
-where observations show that $\Lambda\sim 10^{-26}\ \kgunit/munit^3$, giving $\sqrt{3/\Lambda}\sim 10^{11}$ years.
+where observations show that $\Lambda\sim 10^{-26}\ \kgunit/\munit^3$, giving $\sqrt{3/\Lambda}\sim 10^{11}$ years.
 
 The implications for the fate of the universe are depressing. All parts of the universe will accelerate
 away from one another faster and faster as time goes on. The relative separation between two objects, say galaxy A
@@ -1690,10 +1702,11 @@ against absolute units such as the SI.
 %>
 <% end_marg %>
 
+\index{cosmological constant!observation}
 A strong constraint on the models comes from accurate measurements of the cosmic microwave
 background, especially by the 1989-1993 COBE probe, and its 2001-2009 successor, the Wilkinson Microwave Anisotropy Probe,
 positioned at the L2 Lagrange point of the earth-sun system, beyond the Earth on the line
-connecting sun and earth.
+connecting sun and earth.\footnote{Komatsu et al., 2010, \url{arxiv.org/abs/1001.4538}}
 The temperature of the cosmic microwave background radiation is not the same in all directions, and
 its can be measured at different angles.
 In a universe with negative spatial

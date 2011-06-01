@@ -492,7 +492,11 @@ so different charges placed in the same electric field will in general have \emp
 <% begin_sec("Geometrical treatment of gravity") %>\label{sec:geometrical-gravity}
 Einstein realized that this special property of the gravitational force made it possible to describe
 gravity in purely geometrical terms. We define the
-world-lines of objects acted on by gravity to be the lines described by the axioms of the geometry.
+world-lines of small\footnote{The reason for the restriction to small objects is essentially gravitational radiation. 
+The object should also be electrically neutral, and neither the object nor the surrounding spacetime should
+contain any exotic forms of negative energy. This is discussed in more detail
+on p.~\pageref{geodesic-motion-details}. See also problem \ref{hw:why-geodesics-for-test-particles} on p.~\pageref{hw:why-geodesics-for-test-particles}.}
+objects acted on by gravity to be the lines described by the axioms of the geometry.
 Since we normally think of the ``lines'' described by Euclidean geometry and its kin as \emph{straight} lines,
 this amounts to a redefinition of what it means for a line to be straight. By analogy, imagine stretching
 a piece of string taut across a globe, as we might do in order to plan an airplane flight or aim a

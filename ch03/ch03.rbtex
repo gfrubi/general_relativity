@@ -379,7 +379,7 @@ the diagram can't be plastered onto the sphere without folding or cutting and pa
 <%
   fig(
     'pythagorean',
-    %q{Example \pageref{blurtzy}.},
+    %q{Example \ref{blurtzy}.},
     {
       'width'=>'fullpage',
     }
@@ -430,7 +430,18 @@ a symbol such as $x$ appears, we need to make sure that nowhere in the notation 
 comes from any particular coordinate system. For example, the equation should still be valid if the generic symbol $x$
 is later taken to represent the distance $r$ from some center of symmetry.
 This coordinate-independence property is also known as 
-general covariance.\index{general covariance}\index{coordinate independence}\index{coordinate-transformation}\label{diffeomorphism}
+general covariance,
+and this type of smooth change of coordinates is also 
+called a diffeomorphism.\index{general covariance}\index{coordinate independence}\index{coordinate transformation}\index{diffeomorphism}\label{diffeomorphism}
+
+\begin{eg}{The Dehn twist}\index{Dehn twist}
+As an exotic example of a change of coordinates, take a torus and label it with coordinates $(\theta,\phi)$, where $\theta+2\pi$ is
+taken to be the same as $\theta$, and similarly for $\phi$. Now subject it to the coordinate transformation T defined by $\theta\rightarrow\theta+\phi$,
+which is like opening the torus, twisting it by a full circle, and then joining the ends back together. T is known as the ``Dehn twist,''
+and it is different from most of the coordinate transformations we do in relativity because it can't be done smoothly, i.e., there is no
+continuous function $f(x)$ on $0\le x\le 1$ such that every value of $f$ is a smooth coordinate transformation, $f(0)$ is the identity transformation,
+and $f(1)=T$.
+\end{eg}
 <% begin_sec("Frames moving at $c$?") %>\label{sec:frames-at-c}
 A good application of these ideas is to the question of what
 the world would look like in a frame of reference moving at the
@@ -797,7 +808,7 @@ forward in time. Adopt a frame of reference in which
 every spatial component of each vector vanishes.
 This entails no loss of generality, since inner products are
 invariant under such a transformation.
-Since the time-ordering is also preserved under transformations in the Poincar\'{e} group, but each is still directed forward in time,
+Since the time-ordering is also preserved under transformations in the Poincar\'{e} group, each is still directed forward in time,
 not backward.
 Now let  $\vc{b}$ and $\vc{c}$ be pulled away
 from parallelism, like opening a pair of scissors in the $x-t$ plane. This reduces $b_tc_t$, while causing
@@ -1164,7 +1175,7 @@ doesn't come equipped with coordinates. We impose those coordinates on it, and t
 by nature.'' The impressionable reader who is tempted to say, ``Ah, yes, that \emph{is} obvious,'' should consider that it was
 far from obvious to Newton (``Absolute, true and mathematical time, of itself, and
 from its own nature flows equably without regard to anything external \ldots''), nor was it obvious to Einstein.
-Levi-Civita\index{Levi-Civita, Tullio} nudged Einstein the direction of coordinate independence in 1912. Einstein
+Levi-Civita\index{Levi-Civita, Tullio} nudged Einstein in the direction of coordinate independence in 1912. Einstein
 tried hard to make a coordinate-independent theory, but for reasons described in section \ref{sec:hole-argument} (p.~\pageref{sec:hole-argument}),
 he convinced himself that that was a dead end. In 1914-15 he published theories that were not coordinate-independent, which
 you will hear relativists describe as ``obvious'' dead ends because they lack any geometrical interpretation. It seems to me that it takes a highly

@@ -611,7 +611,7 @@ effect already calculated.
 
 The data for Gravity Probe B are $r=r_e+(650\ \zu{km})$ and $n \approx 5000$ (orbiting once every
 90 minutes for the 353-day duration of the experiment), giving $\Delta\theta \sim 3\times10^{-6}$ radians.
-Figure \figref{gravity-probe-b-geodetic-graphs} shows the actual results\footnote{\url{ http://einstein.stanford.edu/content/final_report/GPB_Final_NASA_Report-020509-web.pdf}}
+Figure \figref{gravity-probe-b-geodetic-graphs} shows the actual results\footnote{\url{arxiv.org/abs/1105.3456}}
 the four gyroscopes aboard the probe.
 The precession was about 6 arc-seconds, or $3\times10^{-5}$ radians. Our crude estimate was
 on the right order of magnitude. The missing unitless factor on the right-hand side of the

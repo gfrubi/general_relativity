@@ -28,6 +28,8 @@ my $wopt = '';
 if (exists $ENV{WOPT}) {$wopt = $ENV{WOPT}}
 my $no_write = 0;
 if ($wopt=~/\-\-no_write/) {$no_write=1}
+my $mathjax = 0;
+if ($wopt=~/\-\-mathjax/) {$mathjax=1}
 my $wiki = 0;
 if ($wopt=~/\-\-wiki/) {$wiki=1}
 my $xhtml = 0;

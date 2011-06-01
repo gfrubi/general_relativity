@@ -64,7 +64,7 @@ that agrees with relativity is a test of this specific aspect of relativity.
 <% end_sec %> % The speed of gravity
 
 <% begin_sec("Gravitational radiation") %>
-<% begin_sec("Empirical evidence") %>
+<% begin_sec("Empirical evidence") %>\index{gravitational waves!empirical evidence for}
 So we still don't know, a century after Einstein found the field equations, whether gravitational ``ripples'' travel at $c$.
 Nevertheless, we do have strong empirical evidence that such ripples exist. The Hulse-Taylor system (page \pageref{hulse-taylor-pulsar})
 contains two neutron stars orbiting around their common center of mass, and the period of the orbit is observed to be decreasing
@@ -123,9 +123,9 @@ other known binary star.\footnote{Roelofs et al., ``Spectroscopic Evidence for a
   )
 %>
 <% end_sec %> % Empirical evidence
-<% begin_sec("Energy content") %>
+<% begin_sec("Energy content") %>\index{gravitational waves!energy content}
 Even without performing the calculations for a system like the Hulse-Taylor binary, it is easy to show that if such waves exist, they must be
-capable of carrying away energy. Consider two equal masses in highly elliptical orbits about their common center of mass, figure \figref{fig:atlas}.\label{atlas-argument}
+capable of carrying away energy. Consider two equal masses in highly elliptical orbits about their common center of mass, figure \figref{atlas}.\label{atlas-argument}
 The motion is nearly one-dimensional.
 As the masses recede from one another, they feel a delayed version of the gravitational force originating from a time when they were closer together
 and the force was stronger. The result is that in the near-Newtonian limit, they lose more kinetic and gravitational energy than they
@@ -400,7 +400,7 @@ $x$ or $y$. Therefore there is no measurable property of this metric that varies
 <% end_sec %> % Some exact solutions
 
 
-<% begin_sec("Rate of radiation") %>\label{sec:rate-of-gravitational-radiation}
+<% begin_sec("Rate of radiation") %>\label{sec:rate-of-gravitational-radiation}\index{gravitational waves!rate of radiation}
 How can we find the rate of gravitational radiation from a system such as the Hulse-Taylor pulsar?
 
 Let's proceed by analogy. The simplest source of sound waves is something like the cone of a stereo speaker.
