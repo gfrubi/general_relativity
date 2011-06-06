@@ -60,12 +60,6 @@
 #     http://rubyforge.org/tracker/index.php?func=detail&aid=11510&group_id=426&atid=1698
 
 # keep making sure it validates at http://validator.w3.org/
-#            can apt-get install w3c-markup-validator , but it installs and starts apache , and no man page??
-#            The main program is a perl script called "check", http://dev.w3.org/cvsweb/validator/httpd/cgi-bin/ .
-#            The validator seems to have gotten more strict over time. One thing that has gotten stricter recently is that it complains about
-#            math nested inside mtext, like you get from latex code such as $\text{blah $x^2$ foo}$. This renders fine in firefox, so I'm
-#            not sure it's something I care about fixing. This is actually one of the main features I worked hard to put into footex.
-#            An example where this occurs is the example beginning with "How high does a diving board..." in SN0.
 # Default should be:
 #   - redo any figures whose original source files are newer than the bitmaps
 #   - delete equations that are no longer referred to
@@ -300,9 +294,9 @@ $disclaimer_html = <<DISCLAIMER
     #{valid_icon}
     <p>You are viewing the html version of <b>#{$config['title']}</b>, by Benjamin Crowell. This version is only designed for casual browsing, and may have
     some formatting problems.
-    For serious reading, you want the printer-friendly <a href="#{$config['url']}">Adobe Acrobat version</a>.</p>
+    For serious reading, you want the <a href="#{$config['url']}">Adobe Acrobat version</a>.</p>
     <p><a href="..">Table of Contents</a></p>
-    <p>(c) 1998-2009 Benjamin Crowell, licensed under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike license</a>.
+    <p>(c) 1998-2011 Benjamin Crowell, licensed under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike license</a>.
      Photo credits are given at the end of the Adobe Acrobat version.</p>
     </div>
 DISCLAIMER
@@ -797,6 +791,11 @@ def handle_table_one(original)
         else
           html.gsub!(/<div class="tabular">/,'')
           html.gsub!(/<\/div>/,'')
+
+          # The following are obsolete in html 5, validator complains about them:
+          html.gsub!(/cellspacing="\d+"/,' ')
+          html.gsub!(/cellpadding="\d+"/,' ')
+
           File.open(cache_file,'w') do |f|
             f.print html
           end
@@ -970,7 +969,8 @@ end
 def prep_math_for_mathjax(math)
   m = math.clone
   m.gsub!(/\</,'\\lt') # Keep < from being interpreted as html tag by browser.
-  m.gsub!(/\\vc{([A-Za-z]+)}/) {"\\ensuremath{\\mathbf{#{$1}}}"}
+  m.gsub!(/\\vc{([A-Za-z]+)}/) {"\\mathbf{#{$1}}"}
+  m.gsub!(/\\unitdot/) {"\\!\\cdot\\!"}
   m.gsub!(/\\zu{([A-Za-z]+)}/) {"\\text{#{$1}}"}
   m.gsub!(/\\intertext/) {"\\text"}
   $tex_math_not_in_mediawiki.each { |k,v|
@@ -1194,10 +1194,14 @@ def parse_eensy_weensy(t)
   # macros we don't care about:
   tex.gsub!(/\\index{#{curly}}/,'') # This actually gets taken care of earlier by duplicated code. Probably not necessary to have it here as well.
   tex.gsub!(/\\noindent/,'') # Should pay attention to this, but it would be really hard.
+  tex.gsub!(/\\write18{#{curly}}/,'')
   # kludge, needed in SN 10:
   tex.gsub!(/\\formatlikecaption{/,'') 
   tex.gsub!(/\\normalsize/,'') 
   tex.gsub!(/\\normalfont/,'') 
+
+  # macros that we treat as identity operators:
+  tex.gsub!(/\\(?:indices){(#{curly})}/) {$1}
 
   # macros that are easy to process:
   tex.gsub!(/\\(?:emph|optionalchapternote){(#{curly})}/) {"<i>#{$1}</i>"}
@@ -1210,7 +1214,7 @@ def parse_eensy_weensy(t)
   tex.gsub!(/\\hwendpart/,$br)
   tex.gsub!(/\\answercheck/,'(answer check available at lightandmatter.com)')
   tex.gsub!(/\\ldots/,'...') # won't mess up math, because this is called after we handle math
-  tex.gsub!(/\\(egquestion|eganswer)/,'&loz;')
+  if $mathjax then tex.gsub!(/\\(egquestion|eganswer)/,'\\(\\triangleright\\)') else tex.gsub!(/\\(egquestion|eganswer)/,'&loz;') end
   tex.gsub!(/\\notationitem{(#{curly_safe})}{(#{curly_safe})}/) {"#{$1} &mdash; #{$2}"} # endless loop in NP7 if I don't use curly_safe?? why??
   tex.gsub!(/\\vocabitem{(#{curly})}{(#{curly})}/) {"<i>#{$1}</i> &mdash; #{$2}"}
   tex.gsub!(/\\label{([^}]+)}/) {
@@ -1223,10 +1227,7 @@ def parse_eensy_weensy(t)
   tex.gsub!(/\\url{(#{curly})}/) {"<a href=\"#{$1}\">#{$1}</a>"}
 
   # footnotes:
-  $stderr.print "entering\n"
-  if false then
   tex.gsub!(/\\footnote{(#{curly})}/) {
-    $stderr.print "foo\n"
     text=$1
     $footnote_ctr += 1
     n = $footnote_ctr
@@ -1234,8 +1235,6 @@ def parse_eensy_weensy(t)
     $footnote_stack.push([n,label,parse_para(text)])
     "<a href=\"\##{label}\"><sup>#{n}</sup></a>"
   }
-  end
-  $stderr.print "lived\n"
 
   parse_references!(tex)
 
@@ -1312,7 +1311,6 @@ end
 $read_topic_map = false
 $topic_map = {}
 def find_topic(ch,book,own)
-  return own # genrel doesn't use this
   # Topic maps are also used in scripts/BookData.pm.
   if !$read_topic_map then
     json_file = "../scripts/topic_map.json"
@@ -1356,7 +1354,7 @@ def find_figure(name,width_type)
   # width_type = 'narrow' , 'wide' , 'fullpage' , 'raw'
 
   # Allow for kludges like fig('../../../lm/vw/figs/doppler',...), which I do in an E&M chapter of LM.
-  if name=~/^\.\./ then
+  if name=~/^\.\.\/\.\.\/\.\.\/lm/ then
     return name
   end
 
@@ -1708,7 +1706,7 @@ end
 if $modern && !$html5 && !$wiki then
   print <<STUFF
 <?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN" "http://www.w3.org/TR/MathML2/dtd/xhtml-math11-f.dtd" >
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN" "http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd" >
 <html xmlns="http://www.w3.org/1999/xhtml">
 STUFF
   mime = 'application/xhtml+xml'
@@ -1772,7 +1770,7 @@ print <<BANNER
   </div>
 BANNER
 
-print "<table width=\"#{$ad_width_pixels}\"><tr><td>" + $disclaimer_html + "</td></tr></table>\n"
+print "<table style=\"width:#{$ad_width_pixels}px;\"><tr><td>" + $disclaimer_html + "</td></tr></table>\n"
   # ... people are probably more likely to read ad if it looks same width as this block of text, looks like part of page
 end
 
@@ -1816,7 +1814,7 @@ chipmunk.gsub!(/\<\!\-\-([^\-]|(\-(?!\-)))*\-\-\>/,'') # not really generally co
 math_macros = $tex_math_trivial.clone
 math_macros = math_macros.concat($tex_math_nontrivial.keys)
 math_macros = math_macros.concat($tex_math_trivial_not_entities)
-math_macros = math_macros.concat(['text','frac','shoveright','sqrt','left','right','mathbf','ensuremath','hat','mathbf','mathrm'])
+math_macros = math_macros.concat(['text','frac','shoveright','sqrt','left','right','mathbf','ensuremath','hat','mathbf','mathrm','triangleright'])
 chipmunk.scan(/(\\\w+({[^}]*})?)/) {
   whole = $1 # e.g.,  \frac{ke^2}
   macro = whole
