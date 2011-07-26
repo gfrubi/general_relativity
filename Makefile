@@ -1,6 +1,7 @@
 RUN_ERUBY = perl -Iscripts scripts/run_eruby.pl
 
-DO_PDFLATEX_RAW = pdflatex -shell-escape -interaction=nonstopmode genrel >err
+TEX_INTERPRETER = lualatex
+DO_PDFLATEX_RAW = $(TEX_INTERPRETER) -shell-escape -interaction=nonstopmode genrel >err
 # -shell-escape is so that write18 will be allowed
 SHOW_ERRORS = \
         print "========error========\n"; \

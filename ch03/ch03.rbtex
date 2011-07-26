@@ -1344,6 +1344,16 @@ What can we say about the generalization to cases B, C, and D?
 \hwsoln
 <% end_hw %>
 
+<% begin_hw('dispersion') %>
+This problem involves a relativistic particle of mass $m$ which is also a wave, as described by quantum mechanics.
+Let $c=1$ and $\hbar=1$ throughout. Starting from the de Broglie
+relations $E=\omega$ and $p=k$, where $k$ is the wavenumber, find the dispersion
+relation connecting $\omega$ to $k$. Calculate the group velocity, and verify that
+it is consistent with the usual relations $p=m\gamma v$ and $E=m\gamma$ for $m>0$.
+What goes wrong if you instead try to associate $v$ with the phase velocity?
+\hwsoln
+<% end_hw %>
+
 
 \end{hwsection}
 

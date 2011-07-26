@@ -687,7 +687,9 @@ To see why it would have this effect, compare its behavior with that of an ordin
 When an ordinary fluid, such as the exploding air-gas mixture in a car's cylinder, expands, it does work on its environment,
 and therefore by conservation of energy its own internal energy is reduced. A positive cosmological constant,
 however, acts like a certain amount of mass-energy built into every cubic meter of vacuum. Thus when it
-expands, it \emph{releases} energy. Its pressure is negative.
+expands, it \emph{releases} energy. Its pressure is negative. Another way of verifying these statements
+is by observing that for a given cosmological constant, we can always observe the $\Lambda g_{ab}$ term in the
+field equations into the $8\pi T_{ab}$, as if the cosmological constant were some form of matter.
 
 Now consider the following pseudo-classical argument.
 Although we've already seen (page \pageref{no-separate-k-and-u}) that there is no useful way to separate the
@@ -799,7 +801,8 @@ Fred Hoyle,\index{Hoyle, Fred}\index{steady-state cosmology} in which some novel
 atoms, preventing the infinite dilution of matter over the universe's history, which in this model extends infinitely far into the past. But
 we have already seen strong empirical evidence that the universe's local properties (quasar abundance, etc.) \emph{are} changing over time.
 The CMB is an even more extreme and direct
-example of this; the universe full of hot, dense gas that emitted the CMB is clearly nothing like today's universe.
+example of this; the universe full of hot, dense gas that emitted the CMB is clearly nothing like today's universe.\footnote{For a detailed
+review of the evidence that rules out various variations on the Hoyle theme, see \url{http://www.astro.ucla.edu/~wright/stdystat.htm}.}
 <% end_sec %> % evidence for expansion of the universe
 
 <% begin_sec("Evidence for homogeneity and isotropy") %>\label{sec:evidence-for-homogeneity}
@@ -835,7 +838,7 @@ The CMB would therefore show variation with the form of a quadrupole term, $3\co
 In 1977 a U-2 spyplane (the same type involved in the 1960 U.S.-Soviet incident) was used by
 Smoot et al.\footnote{G. F. Smoot, M. V. Gorenstein, and R. A. Muller, ``Detection of Anisotropy in the Cosmic Blackbody Radiation,'' Phys. Rev. Lett. 39 (1977) 898.
 The interpretation of the CMB measurements is somewhat model-dependent; in the early years of observational cosmology,
-it was not even universally accepted that the CMB has a cosmological origin. The best model-independent
+it was not even universally accepted that the CMB had a cosmological origin. The best model-independent
 limit on the rotation of the universe comes from observations of the solar system,
 Clemence, ``Astronomical Time,'' Rev. Mod. Phys. 29 (1957) 2.}
 to search for anisotropies in the CMB. This experiment was the first to definitively succeed in detecting
@@ -1203,12 +1206,25 @@ the characteristic scale of the black hole, e.g., the radius of its event horizo
 we can see that cosmological expansion does not affect the size of this gravitationally bound system. We can also imagine
 putting a test particle in a circular orbit around the black hole. Since the metric near the black hole is very nearly the same
 as an ordinary Schwarzschild metric, we find that the test particle's orbit does not expand by any significant amount.
-Estimates have also been carried out for more
+
+Cooperstock et al.~have carried out estimates for more
 realistic cosmologies and for actual systems of interest such as the solar system.\footnote{\url{http://arxiv.org/abs/astro-ph/9803097v1}} For example,
 the predicted general-relativistic effect on the radius of the earth's orbit since the
 time of the dinosaurs is calculated to be about as big as the diameter of an atomic nucleus;
 if the earth's orbit had expanded according to $a(t)$, the increase would have been millions of
 kilometers.
+
+To see why the solar-system effect is so small, let's consider how it can depend on the function $a(t)$. The Milne universe
+is just flat spacetime described in silly coordinates, and it has $\dot{a}\ne 0$, i.e., a nonvanishing value of $H_\zu{o}$.
+This shows that we should not expect any expansion of the solar system due to  $\dot{a}\ne 0$. The lowest-order effect
+requires $\ddot{a}\ne 0$. Since a rescaling like $a(t)\rightarrow 2a(t)$ has no physical meaning, we can guess that
+the effect is proportional to $\ddot{a}/a$. This quantity should be on the order of the inverse square of the age
+of the universe, i.e., of order $H_\zu{o}^2\sim 10^{-35}\ \sunit^{-2}$. Based on units, we expect that multiplying this
+by the size of the solar system might give an estimate of the rate at which the solar system expands. The result
+is indeed in order-of-magnitude agreement with Cooperstock's rigorous result, but should not be taken too seriously
+since, e.g., it would also lead us to expect, erroneously, an expansion for atoms and nuclei.
+Cooperstock's calculation,
+which correctly incorporates the physics of a gravitationally bound system, does not say anything about atoms and nuclei.
 
 It is more difficult to demonstrate by explicit calculation that atoms and nuclei do not expand, since we do not
 have a theory of quantum gravity at our disposal. It is, however, easy to see that such an expansion would
@@ -1227,6 +1243,17 @@ remain constant, and this would be inconsistent with the classical theory of
 electromagnetism, which predicts a Doppler shift due to the relative motion of the
 source and the observer. One can choose to describe cosmological redshifts either as
 Doppler shifts or as expansions of wavelength due to cosmological expansion.
+
+A nice way of discussing atoms, nuclei, photons, and solar systems all on the same footing is to note that
+in geometrized units, the units of mass and length are the same. Therefore the existence of
+any fundamental massive particle sets a universal length scale, one that will be known to any intelligent species
+anywhere in the universe. Since photons are massless, they can't be used to set a universal scale in this
+way; a photon has a certain mass-energy, but that mass-energy can take on any value. Similarly, a solar system
+sets a length scale, but not a universal one; the radius of a planet's orbit can take on any value.
+A universe without massive fundamental particles would be a universe without measurement.
+Geometrically, it would obey the laws of conformal geometry,\index{conformal geometry} in which angles and light-cones were the
+only geometrical measurements. This is the reason that atoms and nuclei, which are made of massive fundamental
+particles, do not expand.
 <% end_sec %> % General-relativistic predictions
 <% begin_sec("More than one dimension required") %>
 Another good way of understanding why a photon expands, while an atom does not, is to recall that
@@ -1598,7 +1625,7 @@ a certain amount of matter in it. The present observational evidence (from super
 background, as described above) is sufficient to show that our universe does not contain this much matter.
 <% end_sec %> % The closed universe
 
-<% begin_sec("The flat universe") %>
+<% begin_sec("The flat universe") %>\label{flat-dust}
 The case of $k=0$ describes a universe that is spatially flat. It represents a knife-edge case lying between the
 closed and open universes. In a semiclassical analogy, it represents the case in which the universe is moving
 exactly at escape velocity; as $t$ approaches infinity, we have $a \rightarrow\infty$, $\rho\rightarrow 0$, and
@@ -1632,7 +1659,7 @@ As discussed in subsection \ref{sec:cosmology-observation}, our universe turns o
 spatially flat. Although it is presently vacuum-dominated, the flat and matter-dominated FRW cosmology
 is a useful description of its matter-dominated era.
 
-\begin{eg}{Size and age of the observable universe}\index{universe!observable}\index{universe!observable!size and age}
+\begin{eg}{Size and age of the observable universe}\label{eg:observable-universe}\index{universe!observable}\index{universe!observable!size and age}
 \index{observable universe}\index{observable universe!size and age}
 The observable universe is defined by the region from which light has had time to reach us since the Big Bang.
 Many people are inclined to assume that its radius in units of light-years must therefore be equal to the
@@ -1662,6 +1689,9 @@ solution. Here we find $L=\left[e^{(t_2-t_1)/T}-1\right]T$, where $t_1$ is the t
 to vacuum-domination happened. This function grows more quickly with $t_2$ than the one obtained in the
 matter-dominated case, so it makes sense that the real-world ratio of $L/t_2$ is somewhat greater than
 the matter-dominated value of 3.
+
+The radiation-dominated version is handled in problem
+\ref{hw:observable-universe-perfect-fluid} on p.~\pageref{hw:observable-universe-perfect-fluid}.
 \end{eg}
 
 
@@ -1687,6 +1717,12 @@ background and the average motion of the galaxies. This is referred to as the Hu
 <% end_sec %> % The open universe
 
 <% end_sec %> % The matter-dominated solution
+
+<% begin_sec("The radiation-dominated solution") %>
+For the reasons discussed in example \ref{eg:dust-and-radiation-cosm} on page \pageref{eg:dust-and-radiation-cosm},
+the early universe was dominated by radiation. The solution of the Friedmann equations for this case is taken up
+in problem \ref{hw:flat-perfect-fluid-cosmology} on page  \pageref{hw:flat-perfect-fluid-cosmology}.
+<% end_sec %> % The radiation-dominated solution
 
 <% begin_sec("Observation") %>\label{sec:cosmology-observation}
 Historically, it was very difficult
@@ -1779,6 +1815,8 @@ consisted mostly of protons and neutrons), then nuclear reactions in the dense e
 proceeded relatively efficiently, leading to a much higher ratio of helium to hydrogen, and a much lower
 abundance of deuterium. The conclusion is that most of the matter in the universe must be made of
 an unknown type of exotic non-baryonic matter, known generically as ``dark matter.''\index{dark matter}
+Even with the inclusion of dark matter, there is a problem with the abundance of lithium-7 relative to
+hydrogen, which models greatly overpredict.\footnote{\url{arxiv.org/abs/0808.2818}, \url{arxiv.org/abs/1107.1117}}
 <% end_sec %> % observation
 
 <% end_sec %> % Cosmological solutions
@@ -1988,16 +2026,21 @@ Verify, as claimed on p.~\pageref{nuclear-pressure}, that the electromagnetic pr
 a medium-weight atomic nucleus is on the order of $10^{33}\ \zu{Pa}$.
 <% end_hw %>
 
+\vspace{3mm}
+
 <% begin_hw('big-bang-removable') %>
 Is the Big Bang singularity removable by the coordinate transformation $t\rightarrow 1/t$?
 \hwsoln
 <% end_hw %>
 
+\vspace{3mm}
 
 <% begin_hw('verify-milne') %>
 Verify the claim made on p.~\pageref{milne} that $a$ is a linear function of time in the case
 of the Milne universe, and that $k=-1$.
 <% end_hw %>
+
+\vspace{3mm}
 
 <% begin_hw('milne-rope') %>
 Examples \ref{eg:girdle} on page \pageref{eg:girdle} and \ref{eg:whip} on page \pageref{eg:whip}
@@ -2006,6 +2049,8 @@ universe.
 \hwsoln
 <% end_hw %>
 
+\vspace{3mm}
+
 <% begin_hw('frw-time-reversal') %>
 (a) Show that the Friedmann equations are symmetric under time reversal.
 (b) The spontaneous breaking of this symmetry in perpetually expanding solutions was discussed on page \pageref{spontaneous-symm-breaking}.
@@ -2013,6 +2058,8 @@ Use the definition of a manifold to show that this symmetry cannot be restored b
 one ``back to back'' to create a single solution on a single, connected manifold.
 \hwsoln
 <% end_hw %>
+
+\vspace{3mm}
 
 <% begin_hw('field-equations-parity') %>
 The Einstein field equations are
@@ -2030,6 +2077,19 @@ Analyze the properties of these relations under
 a reflection such as $x \rightarrow -x$ or $t \rightarrow -t$.
 \hwsoln
 <% end_hw %>
+
+\vspace{3mm}
+
+<% begin_hw('lambda-violates-sec') %>
+(a) Show that a positive cosmological constant violates the strong energy condition in a vacuum.
+In applying the definition of the strong energy condition, treat the cosmological constant as a form
+of matter, i.e., ``roll in'' the cosmological constant term to the stress-energy term in the field equations.
+(b) Comment on how this affects the results of the following paper:
+Hawking and Ellis, ``The Cosmic Black-Body Radiation and the Existence of Singularities in Our Universe,''
+Astrophysical Journal, 152 (1968) 25,\\ \url{http://articles.adsabs.harvard.edu/f...pJ...152...25H}.
+<% end_hw %>
+
+\pagebreak
 
 <% begin_hw('uniform-field-sources') %>\index{uniform gravitational field}\index{gravitational field!uniform}
 In problem \ref{hw:uniform-field} on page \pageref{hw:uniform-field}, we analyzed the properties of the metric
@@ -2063,6 +2123,25 @@ Suppose someone asks whether $V$ depends on the observer's state of motion.
 Does this question have a well-defined answer? If so, what is it? Can we
 calculate $V$'s observer-dependence by applying a Lorentz contraction?\hwsoln
 <% end_hw %>
+
+<% begin_hw('flat-perfect-fluid-cosmology') %>
+For a perfect fluid, we have $P=w\rho$, where $w$ is a constant. The cases $w=0$ and $w=1/3$ correspond, respectively, to
+dust and radiation. Show that for a flat universe with $\Lambda=0$ dominated by a single component that is a perfect fluid,
+the solution to the Friedmann equations is of the form $a\propto t^\delta$, and determine the exponent $\delta$.
+Check your result in the dust case against the one on p.~\pageref{flat-dust}, then find the exponent in the 
+radiation case. Although the $w=-1$ case corresponds to a cosmological constant, show that the solution is not
+of this form for $w= -1$.
+\hwsoln
+<% end_hw %>
+
+<% begin_hw('observable-universe-perfect-fluid') %>
+Apply the result of problem \ref{hw:flat-perfect-fluid-cosmology} to generalize the result of example
+\ref{eg:observable-universe} on p.~\pageref{eg:observable-universe} for the size of the observable
+universe. What is the result in the case of the radiation-dominated universe?
+\hwsoln
+<% end_hw %>
+
+
 
 
 \end{hwsection}

@@ -258,6 +258,15 @@ D is not a well-defined question. When asking this question, we're implicitly as
 ``real'' shape, which appears different because the sphere has been set into motion. But
 you can't impart an angular acceleration to a perfectly rigid body in relativity.
 
+\hwsolnhdr{dispersion}
+Applying the de Broglie relations to the relativistic identity $m^2=E^2-p^2$, we find the
+dispersion relation to be $m^2=\omega^2-k^2$. The group velocity is $\der\omega/\der k=\sqrt{1-(m/\omega)^2}$.
+Applying the de Broglie relations to this, and associating the group velocity with $v$, we have
+$v=\sqrt{1-(m/E)^2}$, which is equivalent to $E=m\gamma$. Since $E=m\gamma$ has been established,
+and $m^2=E^2-p^2$ was assumed, it follows immediately that $p=m\gamma v$ holds as well.
+All hell breaks loose if we try to associate $v$ with the phase velocity, which is
+$\omega/k=\sqrt{1+(m/k)^2}$. For example, the phase velocity is always greater than $c(=1)$ for $m>0$.
+
 \beginsolutions{4}
 
 \hwsolnhdr{photon-four-velocity}
@@ -556,6 +565,15 @@ important symmetry property, which is part of the  Poincar\'{e} group\index{Poin
 is retained when we make the transition to general relativity. It's a discrete symmetry, so it wasn't guaranteed
 to exist simply because of general covariance, which relates to continuous coordinate transformations.
 
+\hwsolnhdr{lambda-violates-sec}
+(a) The Einstein field equations are $G_{ab}=8\pi T_{ab}+\Lambda g_{ab}$.
+That means that in a vacuum, where $T=0$, a cosmological constant is equivalent to $\rho=(1/8\pi)\Lambda$ and $P=-(1/8\pi)\Lambda$. 
+This gives $\rho+3P=(1/8\pi)(-2\Lambda)$, which violates the SEC for $\Lambda>0$, since part of the SEC is $\rho+3P \ge 0$.\\
+(a) Since our universe appears to have a positive cosmological constant, and the paper by Hawking and Ellis
+assumes the strong energy condition, doubts are raised about the conclusion of the paper as applied to our universe.
+However, the theorem is being applied to the early universe, which was not a vacuum. Both $P$ and $\rho$ were
+large and positive in the early, radiation-dominated universe, and therefore the SEC was not violated.
+
 \hwsolnhdr{uniform-field-sources}
 
 (a) The Ricci tensor is $R_{tt}=g^2e^{2gz}$, $R_{zz}=-g^2$. The scalar curvature is $2g^2$, which is constant, as expected.
@@ -628,6 +646,27 @@ In particular, it is not meaningful to try to calculate a reduced
 value of $V$ based on Lorentz contraction for O's velocity relative
 to the Hubble flow. Lorentz contractions can't be applied to
 a curved spacetime.
+
+\hwsolnhdr{flat-perfect-fluid-cosmology}
+The Friedmann equations reduce to
+\begin{align*}
+  \frac{\ddot{a}}{a}   \quad          &= - \frac{4\pi}{3}(1+3w)\rho \\
+  \left(\frac{\dot{a}}{a}\right)^2    &=  \frac{8\pi}{3}\rho \qquad .
+\end{align*}
+Eliminating $\rho$, we find
+\begin{equation*}
+  \frac{\ddot{a}}{\dot{a}^2} = -\beta \qquad ,
+\end{equation*}
+where $\beta=(1+3w)/2$. For a solution of the form $a\propto t^\delta$, calculation of the
+derivatives results in $\delta=1/(1+\beta)=(2/3)/(1+w)$. For dust, $\delta=2/3$, which checks
+out against the result on p.~\pageref{flat-dust}. For radiation, $\delta=1/2$.
+For a cosmological constant, $w= -1$ gives $\delta=\infty$, so the solution has a different form.
+
+\hwsolnhdr{observable-universe-perfect-fluid}
+The integral is exactly the same as the one in example \ref{eg:observable-universe} on p.~\pageref{eg:observable-universe}
+for the dust case, except that the exponent $2/3$ is generalized to $\delta=(2/3)/(1+w)$, as shown in the solution to
+problem \ref{hw:flat-perfect-fluid-cosmology}. The result is $L/t=1/(1-\delta)=(w+1)/(w+1/3)$. In the radiation-dominated
+case, we have $L/t=2$.
 
 \beginsolutions{9}
 

@@ -3,14 +3,12 @@
 # (c) 2006-2009 Benjamin Crowell, GPL licensed
 
 # must be run from the book's directory
-# reads stdin, writes stdout; normally invoked by doing "../run_eruby.pl w"
+# reads stdin, writes stdout; normally invoked by doing "run_eruby.pl w"
 # also has various side-effects, like converting figures to screen resolution if necessary, writing index.html, ...
 # dependencies:
 #    ruby version 1.9 or later (because of lookbehinds in regexes)
 #    tex4ht (used in the equation_to_image.pl script to convert the more complicated equations to bitmaps)
 #    pdftoppm (comes bundled with xpdf)
-# use:
-#   translate_to_html.rb 
 # command-line options:
 #   --modern
 #                            Generate xhtml, meta tag saying application/xhtml+xml, use svg and mathml features. The resulting file
@@ -321,6 +319,10 @@ def html_subdir(subdir)
   d = $config['html_dir'] + '/ch' + $ch + '/' + subdir
   make_directory_if_nonexistent(d,'html_subdir')
   return d
+end
+
+def is_calculus_book
+  return $config['book']=='calc'
 end
 
 def make_directory_if_nonexistent(d,context)
@@ -832,6 +834,8 @@ def handle_math(tex,inline_only=false,allow_bitmap=true)
 
   unless inline_only then
 
+  tex.gsub!(/\\mygamma/) {"\\gamma"}
+
   if false then # I think this is no longer necessary now that I'm using footex, and in fact it causes problems.
   #--------------------- locate displayed math with intertext or multiple lines, and split into smaller pieces ----------------------------
   # This has to come before inline ($...$) math, because sometimes displayed math has \text{...$...$...} inside it.
@@ -1311,6 +1315,8 @@ end
 $read_topic_map = false
 $topic_map = {}
 def find_topic(ch,book,own)
+  if book=='calc' then return own end
+
   # Topic maps are also used in scripts/BookData.pm.
   if !$read_topic_map then
     json_file = "../scripts/topic_map.json"
@@ -1482,6 +1488,7 @@ def parse(t,level,current_section)
       whazzat = find_figure(name,width) # has the side-effect of copying or converting it if necessary
       if caption=~/\A\s*\Z/ then c='' else c="<p class=\"caption\">#{l}#{parse_para(caption)}</p>" end
       x = "<img src=\"figs/#{whazzat}\" alt=\"#{name}\"#{$self_closing_tag}><a #{$anchor}=\"fig:#{name}\"></a>"+c
+      if is_calculus_book then x = "<p>"+x+"</p>" end
       if name=='zzzfake' then x=c end
       x
     }

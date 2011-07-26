@@ -238,8 +238,11 @@ it must travel at close to $c$. It must therefore have a very large time dilatio
 take a very long time to undergo radioactive decay. In the limit as the mass approaches zero,
 the time required for the decay approaches infinity. Another way of saying this is that
 the rate of radioactive decay must be fixed in terms of proper time, but there is no such
-thing as proper time for a massless particle. Thus is is not only this specific process
+thing as proper time for a massless particle. Thus it is not only this specific process
 that is forbidden, but any radioactive decay process involving a massless particle.
+
+There are various loopholes in this argument. The
+question is investigated more thoroughly by Fiore and Modanese.\footnote{\url{http://arxiv.org/abs/hep-th/9508018}}
 \end{eg}
 
 \begin{eg}{Massive photons}\index{photon!mass}\label{eg:photon-mass}
@@ -1207,9 +1210,9 @@ One approach is to define a rank-2 angular momentum tensor $L^{ab}=r^ap^b$.
 In a frame whose origin is instantaneously moving along with a certain system's center of mass
 at a certain time, the time-space components of $L$ vanish, and the components $L^{yz}$, $L^{zx}$, and $L^{xy}$ coincide
 in the nonrelativistic limit with the $x$, $y$, and $z$ components of the Newtonian angular momentum vector. 
-We then have $L^a=\epsilon_{abc}L^{bc}$ (with tensor-density $\epsilon$) for the angular momentum tensor density whose spacelike components are
-$L^x$, $L^y$, and $L^z$. Although the tensor density is less cumbersome than the 2-tensor, the 2-tensor has the simple transformation
-properties of a tensor.
+We can also define a three-dimensional object
+$L^a=\epsilon_{abc}L^{bc}$ (with tensor-density $\epsilon$) that
+doesn't transform like a tensor.
 <% end_sec %> % Angular momentum
 <% end_sec %> % Things that aren't quite tensors
 

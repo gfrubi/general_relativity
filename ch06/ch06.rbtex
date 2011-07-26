@@ -510,7 +510,7 @@ a circle of constant $r$ gives
   \nabla_\phi L^\phi &= 0 \\
   \nabla_\phi L^r &= 0 \qquad .
 \end{align*}
-Computing the covariant derivatives, and we have
+Computing the covariant derivatives, we have
 \begin{align*}
   0 &= \partial_\phi L^\phi + \Gamma\indices{^\phi_{\phi r}}L^r \\
   0 &= \partial_\phi L^r    + \Gamma\indices{^r_{\phi \phi}}L^\phi  \qquad .
@@ -653,7 +653,7 @@ taken into account, however, there was a remaining discrepancy of about 40 secon
 or $6.6\times 10^{-7}$ radians per orbit. The direction of the effect was in the forward direction, in the sense that if we view Mercury's
 orbit from above the ecliptic, so that it orbits in the counterclockwise direction, then the gradual rotation
 of the major axis is also counterclockwise. In other words, Mercury spends more time near perihelion than
-it should classically. During this time, it sweeps out a greater angle than classically expected, so that
+it should nonrelativistically. During this time, it sweeps out a greater angle than nonrelativistically expected, so that
 when it flies back out and away from the sun, its orbit has rotated counterclockwise.
 
 % 43*(1/100)*(1/365.25)*(115.9)*(1/3600)*pi/180
@@ -674,7 +674,7 @@ of about 26.
 If Einstein had had a computer on his desk, he probably would simply have integrated the motion numerically
 using the geodesic equation.
 But it is possible to simplify the problem enough to attack it with pencil and paper, if we can find
-the relevant conserved quantities of the motion. Classically, these are energy and angular momentum.
+the relevant conserved quantities of the motion. Nonrelativistically, these are energy and angular momentum.
 
 Consider a rock falling directly toward the sun. The Schwarzschild metric is of the special form
 \begin{equation*}
@@ -776,9 +776,9 @@ Rearranging terms and writing $\dot{r}$ for $\der r/\der s$, this becomes
 
 There is a varied and strange family of orbits in the Schwarzschild field, including bizarre knife-edge trajectories
 that take several nearly circular turns before suddenly flying off. We turn our attention instead to the case
-of an orbit such as Mercury's which is nearly classical and nearly circular.
+of an orbit such as Mercury's which is nearly Newtonian and nearly circular.
 
-Classically, a circular orbit has radius $r=L^2/m$ and period $T=2\pi L^3/m^2$.
+Nonrelativistically, a circular orbit has radius $r=L^2/m$ and period $T=2\pi L^3/m^2$.
 
 Relativistically, a circular orbit occurs when there is only one turning
 point at which $\dot{r}=0$. This requires that $E^2$ equal the minimum value of $U^2$, which occurs at
@@ -1063,7 +1063,7 @@ should contain black holes with masses ranging from a few solar masses to a few 
 
 <% end_sec %> % formation of black holes
 
-<% begin_sec("Observational evidence") %>
+<% begin_sec("Observational evidence") %>\index{black hole!observational evidence}
 A black hole is expected to be a very compact object, with a strong gravitational field, that does not emit any of
 its own light. A bare, isolated black hole would be difficult to detect, except perhaps via its lensing of light
 rays that happen to pass by it. But if a black hole occurs in a binary star system, it is possible for mass to be transferred
@@ -1118,7 +1118,8 @@ By analyzing millimeter and infrared very-long-baseline-interferometry observati
 if Sagittarius A* had a surface, then the luminosity of this surface must be less than 0.3\%
 of the luminosity of the accretion disk. But this is not physically possible, because there are fundamental
 limits on the efficiency with which the gas can radiate away its energy before hitting the surface.
-We can therefore conclude that Sagittarius A* must have an event horizon.
+We can therefore conclude that Sagittarius A* must have an event horizon. Its event horizon may be
+imaged directly in the near future.\footnote{\url{arxiv.org/abs/0906.4040}}
 <% end_sec %> % observational
 
 <% begin_sec("Singularities and cosmic censorship") %>\index{singularity}\index{cosmic censorship}
