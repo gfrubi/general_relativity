@@ -215,8 +215,8 @@ This establishes that time is not universal and absolute.
 <% marg(0) %>
 <%
   fig(
-    'atomic-clock-boarding-plane',
-    %q{The atomic clock has its own ticket and its own seat.}
+    'hk-in-cabin',
+    %q{The clock took up two seats, and two tickets were bought for it under the name of ``Mr.~Clock.''}
   )
 %>
 <% end_marg %>

@@ -1014,7 +1014,8 @@ coordinates is referred to as ECEF, for Earth-Centered, Earth-Fixed.
 The system requires synchronization of the atomic clocks carried aboard the satellites, and this synchronization
 also needs to be extended to the (less accurate) clocks built into the receiver units. It is impossible to carry
 out such a synchronization globally in the rotating frame in order to create coordinates $(T,r,\theta',\phi)$.
-If we tried, it would result in discontinuities (see problem \ref{hw:gps-t-discontinuity}, p.~\pageref{hw:gps-t-discontinuity}). Instead, the GPS system handles clock synchronization
+If we tried, it would result in discontinuities 
+(see problem \ref{hw:gps-t-discontinuity}, p.~\pageref{hw:gps-t-discontinuity}). Instead, the GPS system handles clock synchronization
 in coordinates $(t,r,\theta',\phi)$, as in equation [\ref{eq:rotating-lab-metric}]. These are known as the
 Earth-Centered Inertial (ECI) coordinates. The $t$ coordinate in this
 system is not the one that users at neighboring points on the earth's surface would establish if they carried

@@ -11,15 +11,15 @@
 #    pdftoppm (comes bundled with xpdf)
 # command-line options:
 #   --modern
-#                            Generate xhtml, meta tag saying application/xhtml+xml, use svg and mathml features. The resulting file
+#                            Generate xhtml 1.1, meta tag saying application/xhtml+xml, use svg and mathml features. The resulting file
 #                            should have file extension .xhtml so that apache will serve it as application/xhtml+xml.
 #                            If this option is not supplied, then by default:
 #                            Generate html 4.01 that should work in all browsers, meta tag saying text/html, no svg or mathml.
 #                            The resulting file should have file extension .html so that apache will serve it with as text/html.
+#                            As of Dec 2011, this is needed for opera and for old versions of firefox. May also be useful in the
+#                            future because xhtml 1.1 is a good format for converting into epub.
 #   --html5
-#                            Similar to --modern, but generates html 5 with inline mathml.
-#                            As of June 2009, I haven't actually been able to test this, because I don't have a browser that supports it.
-#                            Firefox 3.5 beta 4 doesn't seem to support mathml in html 5.
+#                            Similar to --modern, but generates html 5 with inline mathml. This works in firefox 3.7+.
 #   --mathjax
 #                            Generate html 4.01, with math in mathjax format.
 #   --wiki
@@ -35,6 +35,8 @@
 #                            Only prevents writing to the toc and writing external files for equations.
 #                            To prevent writing to the html file for each chapter, you also need to
 #                            add the x parameter on the command line for run_eruby.pl in lm.make.
+#  --all_figs_inline
+#                            Always put figures inline, not in a separate figure column on the side. Defaults to true if $config['book']=='calc'
 #===============================================================================================================================
 #===============================================================================================================================
 #===============================================================================================================================
@@ -115,7 +117,8 @@ opts = GetoptLong.new(
   [ "--test",                  GetoptLong::NO_ARGUMENT ],
   [ "--redo_all_equations",    GetoptLong::NO_ARGUMENT ],
   [ "--redo_all_tables",       GetoptLong::NO_ARGUMENT ],
-  [ "--no_write",              GetoptLong::NO_ARGUMENT ]
+  [ "--no_write",              GetoptLong::NO_ARGUMENT ],
+  [ "--all_figs_inline",       GetoptLong::NO_ARGUMENT ]
 )
 
 opts_hash = Hash.new
@@ -131,6 +134,7 @@ $test_mode          = opts_hash['--test']!=nil
 $redo_all_equations = opts_hash['--redo_all_equations']!=nil
 $redo_all_tables    = opts_hash['--redo_all_tables']!=nil
 $no_write           = opts_hash['--no_write']!=nil
+$all_figs_inlne     = opts_hash['--all_figs_inline']!=nil
 
 $stderr.print "modern=#{$modern} test=#{$test_mode} redo_all_equations=#{$redo_all_equations} redo_all_tables=#{$redo_all_tables} no_write=#{$no_write} mathjax=#{$mathjax} wiki=#{$wiki} html5=#{$html4}\n"
 
@@ -321,8 +325,8 @@ def html_subdir(subdir)
   return d
 end
 
-def is_calculus_book
-  return $config['book']=='calc'
+def all_figs_inline
+  return $config['book']=='calc' || $all_figs_inline
 end
 
 def make_directory_if_nonexistent(d,context)
@@ -1315,7 +1319,7 @@ end
 $read_topic_map = false
 $topic_map = {}
 def find_topic(ch,book,own)
-  if book=='calc' then return own end
+  if book=='calc' || book=='genrel' then return own end
 
   # Topic maps are also used in scripts/BookData.pm.
   if !$read_topic_map then
@@ -1356,6 +1360,10 @@ def own_figs
   end
 end
 
+# Example:
+#   if called with name='tied-rocks-1', returns 'tied-rocks-1.png'
+#   if the screen-resolution bitmap 'tied-rocks-1.png' doesn't exist yet, has the side-effect of creating it in $config['html_dir'].
+# This most commonly gets called by parse(), but also gets called by parse_itty_bitty_stuff() for \anonymousinlinefig and \fullpagewidthfignocaption.
 def find_figure(name,width_type)
   # width_type = 'narrow' , 'wide' , 'fullpage' , 'raw'
 
@@ -1465,6 +1473,7 @@ def alphalph(x)
 end
 
 # returns an array consisting of text column and margin column blocks, [[t1,m1],[t2,m2],...]
+# m1, m2, ... will be null strings if the book has no marg() figures (as with Calculus), or if --all_figs_inline is set
 def parse(t,level,current_section)
   tex = t.clone
 
@@ -1487,14 +1496,18 @@ def parse(t,level,current_section)
       if name=='zzzfake' then $fig_ctr += 1 end # kludge, I don't understand why this is needed, but it is, or else EM1 figures get out of step at the end
       whazzat = find_figure(name,width) # has the side-effect of copying or converting it if necessary
       if caption=~/\A\s*\Z/ then c='' else c="<p class=\"caption\">#{l}#{parse_para(caption)}</p>" end
-      x = "<img src=\"figs/#{whazzat}\" alt=\"#{name}\"#{$self_closing_tag}><a #{$anchor}=\"fig:#{name}\"></a>"+c
-      if is_calculus_book then x = "<p>"+x+"</p>" end
+      i = "<img src=\"figs/#{whazzat}\" alt=\"#{name}\"#{$self_closing_tag}><a #{$anchor}=\"fig:#{name}\"></a>"
+      if all_figs_inline then 
+        x = "<p>"+i+"</p>"+c
+      else
+        x = i+c
+      end
       if name=='zzzfake' then x=c end
       x
     }
     in_marg = false # even if it starts with a marg, split() gives us a null string for the first chunk()
     tex.split(/ZZZWEB\:(?:end\_)?marg/).each { |marg|
-      if in_marg then
+      if in_marg && !all_figs_inline then
         marg_stuff = marg_stuff + marg 
       else
         non_marg_stuff = non_marg_stuff + marg

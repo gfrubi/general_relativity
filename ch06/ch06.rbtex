@@ -1077,7 +1077,8 @@ Applying Kepler's law of periods to these data constrains the sum of the masses,
 fixes the mass of the supergiant. The result is that the mass of Cygnus X-1 is greater than about 10 solar masses,
 and this is confirmed by multiple methods. Since this is far above the Tolman-Oppenheimer-Volkoff limit, Cygnus X-1
 is believed to be a black hole, and its X-ray emissions are interpreted as the radiation from the disk of superheated
-material accreting onto it from its companion.
+material accreting onto it from its companion. It is believed to have more than 90\% of the maximum
+possible spin for a black hole of its mass.\footnote{Gou et al., ``The Extreme Spin of the Black Hole in Cygnus X-1,'' \url{http://arxiv.org/abs/1106.3690}}
 <% marg(65) %>
 <%
   fig(

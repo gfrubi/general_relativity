@@ -1815,6 +1815,8 @@ consisted mostly of protons and neutrons), then nuclear reactions in the dense e
 proceeded relatively efficiently, leading to a much higher ratio of helium to hydrogen, and a much lower
 abundance of deuterium. The conclusion is that most of the matter in the universe must be made of
 an unknown type of exotic non-baryonic matter, known generically as ``dark matter.''\index{dark matter}
+A number of experiments are under way to detect dark matter directly, and the results so far are not definitive
+and sometimes contradict one another.\footnote{\url{http://arxiv.org/abs/1106.1066}, \url{http://arxiv.org/abs/1109.0702}}
 Even with the inclusion of dark matter, there is a problem with the abundance of lithium-7 relative to
 hydrogen, which models greatly overpredict.\footnote{\url{arxiv.org/abs/0808.2818}, \url{arxiv.org/abs/1107.1117}}
 <% end_sec %> % observation
@@ -1887,7 +1889,15 @@ ones that begin with Big Bangs.
 Masses are the sources of the field $\phi$. How should they couple to it? Since $\phi$ is a scalar, we need to
 construct a scalar as its source, and the only reasonable scalar that can play this role is the trace of the
 stress-energy tensor, $T\indices{^i_i}$. As discussed in example \ref{eg:failed-scalar-tinkering} on page
-\pageref{eg:failed-scalar-tinkering}, this vanishes for light, so only material particles are sources of $\phi$.
+\pageref{eg:failed-scalar-tinkering}, this vanishes for light, so the
+only sources of $\phi$ are material particles.\footnote{This leads to an
+exception to the statement above that all Brans-Dicke spacetimes are expected
+to look like Big Bang cosmologies. Any solution of the GR field equations
+containing nothing but vacuum and
+electromagnetic fields (known as an ``elevtrovac'' solution) is also a
+valid Brans-Dicke spacetime. In such a spacetime, a constant $\phi$ can be
+set arbitrarily. Such a spacetime is in some sense not generic for Brans-Dicke
+gravity.}
 Even so, the Brans-Dicke theory retains a form of the equivalence principle. As discussed on pp.~\pageref{sec:chiao-paradox} and \pageref{eg:chiao-energy},
 the equivalence principle is a statement about the results of local experiments, and $\phi$ at any given location in the
 universe is dominated by contributions from matter lying at cosmological distances.
