@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 
-# (c) 2006-2009 Benjamin Crowell, GPL licensed
+# (c) 2006-2011 Benjamin Crowell, GPL licensed
 
 # must be run from the book's directory
 # reads stdin, writes stdout; normally invoked by doing "run_eruby.pl w"
@@ -35,8 +35,19 @@
 #                            Only prevents writing to the toc and writing external files for equations.
 #                            To prevent writing to the html file for each chapter, you also need to
 #                            add the x parameter on the command line for run_eruby.pl in lm.make.
-#  --all_figs_inline
-#                            Always put figures inline, not in a separate figure column on the side. Defaults to true if $config['book']=='calc'
+#  --override_config_with="foo.config"
+#                            After reading html.config, read foo.config as well, and overwrite any options previously set.
+# notes on handheld output:
+#   see calc book for example of handheld.config
+#   the idea is to output xhtml that calibre can convert to epub, etc.
+#   images may be too big for epub's 63k limit, but I think calibre will fix that...?
+# html.config :
+#   typical file:
+#     book,calc
+#     title,Calculus
+#     url,http://www.lightandmatter.com/calc/
+#     base_dir,.
+#     ...etc...
 #===============================================================================================================================
 #===============================================================================================================================
 #===============================================================================================================================
@@ -118,7 +129,7 @@ opts = GetoptLong.new(
   [ "--redo_all_equations",    GetoptLong::NO_ARGUMENT ],
   [ "--redo_all_tables",       GetoptLong::NO_ARGUMENT ],
   [ "--no_write",              GetoptLong::NO_ARGUMENT ],
-  [ "--all_figs_inline",       GetoptLong::NO_ARGUMENT ]
+  [ "--override_config_with",  GetoptLong::REQUIRED_ARGUMENT ]
 )
 
 opts_hash = Hash.new
@@ -126,15 +137,15 @@ opts.each do |opt,arg|
   opts_hash[opt] = arg # for boolean options, arg is "" if option was set
 end
 
-$modern             = opts_hash['--modern']!=nil || opts_hash['--html5']!=nil
-$html5              = opts_hash['--html5']!=nil
-$mathjax            = opts_hash['--mathjax']!=nil
-$wiki               = opts_hash['--wiki']!=nil
-$test_mode          = opts_hash['--test']!=nil
-$redo_all_equations = opts_hash['--redo_all_equations']!=nil
-$redo_all_tables    = opts_hash['--redo_all_tables']!=nil
-$no_write           = opts_hash['--no_write']!=nil
-$all_figs_inlne     = opts_hash['--all_figs_inline']!=nil
+$modern                = opts_hash['--modern']!=nil || opts_hash['--html5']!=nil
+$html5                 = opts_hash['--html5']!=nil
+$mathjax               = opts_hash['--mathjax']!=nil
+$wiki                  = opts_hash['--wiki']!=nil
+$test_mode             = opts_hash['--test']!=nil
+$redo_all_equations    = opts_hash['--redo_all_equations']!=nil
+$redo_all_tables       = opts_hash['--redo_all_tables']!=nil
+$no_write              = opts_hash['--no_write']!=nil
+$override_config_with  = opts_hash['--override_config_with']
 
 $stderr.print "modern=#{$modern} test=#{$test_mode} redo_all_equations=#{$redo_all_equations} redo_all_tables=#{$redo_all_tables} no_write=#{$no_write} mathjax=#{$mathjax} wiki=#{$wiki} html5=#{$html4}\n"
 
@@ -159,8 +170,7 @@ $br = "<br#{$self_closing_tag}>"
 
 require "digest/md5"
 
-config_file = 'html.config'
-if ! File.exist?(config_file) then fatal_error("error, file #{config_file} does not exist") end
+# Anything set to nil below is mandatory. Anything non-nil is a default.
 $config = {
   'book'=>nil, # a label for the book, is typically the same as the name of the directory the book resides in
   'title'=>nil, # human-readable title
@@ -168,27 +178,43 @@ $config = {
   # The following directories can have ~ in them, which expands to home directory. The directories must exist.
     'base_dir'=>nil,'script_dir'=>nil,'html_dir'=>nil,'sty_dir'=>nil,
   # Sectioning:
-     'number_sections_at_depth'=>nil,'spew_figs_at_level'=>nil,'restart_figs_at_level'=>nil,'highest_section_level'=>nil
+     'number_sections_at_depth'=>nil,'spew_figs_at_level'=>nil,'restart_figs_at_level'=>nil,'highest_section_level'=>nil,
+  'all_figs_inline'=>0,
+  'max_fig_width_pixels'=>-1, # -1 normally, >0 for handheld readers
+  'allow_png'=>1              # 1 normally, 0 for handheld readers
 }
-File.open(config_file,'r') { |f|
-  c = f.gets(nil) # nil means read whole file
-  c.scan(/(\w+),(.*)/) { |var,value|
-    if ! $config.has_key?(var) then fatal_error("Error in config file #{config_file}, illegal variable '#{var}'") end
-    if {'base_dir'=>nil,'script_dir'=>nil,'html_dir'=>nil,'sty_dir'=>nil}.has_key?(var) then
-      value.gsub!(/~/,ENV['HOME'])
-      if ! FileTest.directory?(value) then fatal_error("#{var}=#{value}, but #{value} either does not exist or is not a directory") end
-    end
-    if {'number_sections_at_depth'=>nil,'spew_figs_at_level'=>nil,'restart_figs_at_level'=>nil,'highest_section_level'=>nil}.has_key?(var) then
-      value = value.to_i
-    end
-    $config[var] = value
-    $stderr.print "#{var}=#{value} "
+# config params from this list are converted to integers
+integer_config = {
+  'number_sections_at_depth'=>nil,'spew_figs_at_level'=>nil,'restart_figs_at_level'=>nil,'highest_section_level'=>nil,
+  'all_figs_inline'=>nil,'max_fig_width_pixels'=>nil,'allow_png'=>nil
+}
+
+config_files = ['html.config']
+if !($override_config_with.nil?) then config_files.push($override_config_with) end
+config_files.each {|config_file|
+  if ! File.exist?(config_file) then fatal_error("error, file #{config_file} does not exist") end
+  File.open(config_file,'r') { |f|
+    c = f.gets(nil) # nil means read whole file
+    c.scan(/(\w+),(.*)/) { |var,value|
+      if ! $config.has_key?(var) then fatal_error("Error in config file #{config_file}, illegal variable '#{var}'") end
+      if {'base_dir'=>nil,'script_dir'=>nil,'html_dir'=>nil,'sty_dir'=>nil}.has_key?(var) then
+        value.gsub!(/~/,ENV['HOME'])
+        if ! FileTest.directory?(value) then fatal_error("#{var}=#{value}, but #{value} either does not exist or is not a directory") end
+      end
+      if integer_config.has_key?(var) then
+        value = value.to_i
+      end
+      $config[var] = value
+    }
   }
-  $stderr.print "\n"
 }
 $config.keys.each { |k|
-  if $config[k].nil? then fatal_error("error, variable #{k} not given in #{config_file}") end
+  if $config[k].nil? then fatal_error("error, variable #{k} not given in #{config_file} and has no default value") end
 }
+$config.keys.each { |k|
+  $stderr.print "#{k}=#{$config[k]} "
+}
+$stderr.print "\n"
 
 $chapter_toc = "<div class=\"container\">Contents#{$br}\n"
 
@@ -326,7 +352,7 @@ def html_subdir(subdir)
 end
 
 def all_figs_inline
-  return $config['book']=='calc' || $all_figs_inline
+  return $config['all_figs_inline']==1
 end
 
 def make_directory_if_nonexistent(d,context)
@@ -1389,7 +1415,7 @@ def find_figure(name,width_type)
   debug = false # debug mechanism for finding where the figure is
 
   possible_dirs = find_topic($ch,$config['book'],[own_figs()])
-  allowed_formats = ['jpg','png','pdf']
+  allowed_formats = ['jpg','png','pdf'] # input formats
   found_in_dir = nil
   found_in_fmt = nil
   allowed_formats.each {|fmt|
@@ -1416,6 +1442,7 @@ def find_figure(name,width_type)
   return '' if result==nil
 
   output_format = {'jpg'=>'jpg','png'=>'png','pdf'=>'png'}[fmt]
+  if $config['allow_png']==0 && output_format=='png' then output_format='jpg' end
   if output_format==nil then $stderr.print "error in translate_to_html.rb, find_figure, output_format is nil, name=#{name}\n"; exit(-1) end
   if name==nil then $stderr.print "error in translate_to_html.rb, find_figure, name is nil\n"; exit(-1) end
   if $config['html_dir']==nil then $stderr.print "error in translate_to_html.rb, find_figure, $config['html_dir'] is nil\n"; exit(-1) end
@@ -1436,6 +1463,7 @@ def find_figure(name,width_type)
         target_width = 100
         $stderr.print "Warning, unrecognized width type #{width_type} for figure #{dest}\n"
       end
+      if $config['max_fig_width_pixels']>0 && target_width>$config['max_fig_width_pixels'] then target_width=$config['max_fig_width_pixels'] end
       scale = target_width/width
       width = (width*scale).to_i
       height = (height*scale).to_i
@@ -1473,7 +1501,7 @@ def alphalph(x)
 end
 
 # returns an array consisting of text column and margin column blocks, [[t1,m1],[t2,m2],...]
-# m1, m2, ... will be null strings if the book has no marg() figures (as with Calculus), or if --all_figs_inline is set
+# m1, m2, ... will be null strings if the book has no marg() figures (as with Calculus), or if all_figs_inline is set
 def parse(t,level,current_section)
   tex = t.clone
 
