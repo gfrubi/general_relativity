@@ -726,7 +726,7 @@ we have
 \begin{align*}
   E &= \left(1-\frac{2m}{r}\right) \frac{\der t}{\der s} \\
 \intertext{and}
-  L &= r^2  \frac{\der \phi}{\der s} \\
+  L &= r^2  \frac{\der \phi}{\der s} 
 \end{align*}
 for the conserved energy per unit mass and angular momentum per unit mass.\label{no-separate-k-and-u}
 

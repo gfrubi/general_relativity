@@ -1,6 +1,7 @@
 RUN_ERUBY = perl -Iscripts scripts/run_eruby.pl
 
-TEX_INTERPRETER = lualatex
+TEX_INTERPRETER = pdflatex
+#TEX_INTERPRETER = lualatex
 DO_PDFLATEX_RAW = $(TEX_INTERPRETER) -shell-escape -interaction=nonstopmode genrel >err
 # -shell-escape is so that write18 will be allowed
 SHOW_ERRORS = \
@@ -14,6 +15,8 @@ SHOW_ERRORS = \
         close F; \
         exit(1)
 DO_PDFLATEX = echo "$(DO_PDFLATEX_RAW)" ; perl -e 'if (system("$(DO_PDFLATEX_RAW)")) {$(SHOW_ERRORS)}'
+HANDHELD_TEMP = handheld_temp
+BOOK = genrel
 
 default:
 	@make preflight
@@ -33,6 +36,8 @@ book:
 	make
 
 web:
+	@make preflight
+	scripts/translate_to_html.rb --write_config_and_exit
 	WOPT='$(WOPT) --modern' $(RUN_ERUBY) w #... xhtml
 	WOPT='$(WOPT) --html5' $(RUN_ERUBY) w #... html 5
 	$(RUN_ERUBY) w #... html
@@ -50,6 +55,7 @@ clean:
 	@rm -f ch*/ch*temp_new ch*/*.postm4 ch*/*.wiki
 	@rm -f code_listing_* code_listings/* code_listings.zip
 	@rm -Rf code_listings
+	@rm -f temp.* temp_mathml.*
 	@# Sometimes we get into a state where LaTeX is unhappy, and erasing these cures it:
 	@rm -f *aux *idx *ilg *ind *log *toc
 	@rm -f ch*/*aux
@@ -90,3 +96,31 @@ prepress:
 all_figures:
 	# The following requires Inkscape 0.47 or later.
 	perl -e 'foreach my $$f(<*/ch*/figs/*.svg>) {$$g=$$f; $$g=~s/\.svg$$/.pdf/; print "g=$$g\n"; $$c="inkscape --export-text-to-path --export-pdf=$$g $$f  --export-area-drawing"; print "$$c\n"; system($$c)}'
+
+handheld:
+	# see meki/zzz_misc/publishing for notes on how far I've progressed with this
+	scripts/translate_to_html.rb --write_config_and_exit --modern --override_config_with="config/handheld.config"
+	make preflight
+	@rm -Rf $(HANDHELD_TEMP)
+	mkdir $(HANDHELD_TEMP)
+	pwd
+	WOPT='$(WOPT) --modern --override_config_with="config/handheld.config"' $(RUN_ERUBY) w $(FIRST_CHAPTER) $(DIRECTORIES) #... xhtml
+	cp standalone.css $(HANDHELD_TEMP)
+	make epub
+	make mobi
+	@echo "To post the books, do 'make post_handheld'."
+
+post_handheld:
+	cp $(BOOK).epub $(HOME)/Lightandmatter
+	cp $(BOOK).mobi $(HOME)/Lightandmatter
+
+epub:
+	# Before doing this, do a "make handheld".
+	ebook-convert $(HANDHELD_TEMP)/index.html $(BOOK).epub $(GENERIC_OPTIONS_FOR_CALIBRE) --no-default-epub-cover
+
+mobi:
+	# Before doing this, do a "make handheld".
+	ebook-convert $(HANDHELD_TEMP)/index.html $(BOOK).mobi $(GENERIC_OPTIONS_FOR_CALIBRE) --rescale-images
+
+epubcheck:
+	java -jar /usr/bin/epubcheck/epubcheck.jar $(BOOK).epub 2>err
