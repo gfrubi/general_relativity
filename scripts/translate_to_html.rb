@@ -10,6 +10,9 @@
 #         it will automatically get copied over into the various projects the next time I do a "make" or a
 #         "make preflight".
 #
+#         When making a new version, test it by building html for all books, and also by making epub of calc and doing
+#         a "make epubcheck".
+#
 #
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 #
@@ -49,10 +52,12 @@
 #                            Only prevents writing to the toc and writing external files for equations.
 #                            To prevent writing to the html file for each chapter, you also need to
 #                            add the x parameter on the command line for run_eruby.pl in lm.make.
-#  --override_config_with="foo.config"
-#                            After reading standard config files, read foo.config as well, and overwrite any options previously set.
+#  --override_config_with="foo.config,bar.config"
+#                            After reading standard config files, read foo.config and bar.config as well, and overwrite any options previously set.
 #  --write_config_and_exit
 #                            Just writes temp.config.
+#  --util="foo"
+#                            Provides certain utility functions rather than doing a format conversion to html.
 # notes on handheld output:
 #   see calc book for example of handheld.config
 #   the idea is to output xhtml that calibre can convert to epub, etc.
@@ -80,6 +85,13 @@
 #    standalone                      boolean, 0 or 1, set to 1 if everything like CSS files, etc., has to be local, not at a URL
 #    scale_for_bitmapped_equations   normally 100, may need to be more like 150 or 200 for handheld devices
 #    forbid_anchors_and_links        don't generate any of these except in TOC; used for handheld output, because they confuse calibre and upset epubcheck
+#    text_width_pixels               
+#    ad_width_pixels                 
+#    margin_width_mm                 
+#    mime_type                       normally a null string, but otherwise forces the mime type to be what's given
+#    html_file_extension             normally a null string, but otherwise forces the file extension to be what's given; if given, string should include the leading dot
+#    mathml_plus_fallback            boolean, 0 or 1, normally 0; for epub 3's "switch" mechanism; see http://idpf.org/epub/30/spec/epub30-contentdocs.html#sec-xhtml-epub-switch
+#    mathml_with_epub3_switch        boolean, 0 or 1, normally 0; for epub 3's "switch" mechanism; see http://idpf.org/epub/30/spec/epub30-contentdocs.html#sec-xhtml-epub-switch
 #===============================================================================================================================
 #===============================================================================================================================
 #===============================================================================================================================
@@ -143,6 +155,10 @@
 #===============================================================================================================================
 #===============================================================================================================================
 
+require "digest/md5"
+require "date"
+require "tmpdir"
+
 def fatal_error(message)
   $stderr.print "error in translate_to_html.rb: #{message}\n"
   exit(-1)
@@ -162,7 +178,8 @@ opts = GetoptLong.new(
   [ "--redo_all_tables",       GetoptLong::NO_ARGUMENT ],
   [ "--no_write",              GetoptLong::NO_ARGUMENT ],
   [ "--override_config_with",  GetoptLong::REQUIRED_ARGUMENT ],
-  [ "--write_config_and_exit", GetoptLong::NO_ARGUMENT ]
+  [ "--write_config_and_exit", GetoptLong::NO_ARGUMENT ],
+  [ "--util",                  GetoptLong::REQUIRED_ARGUMENT ]
 )
 
 opts_hash = Hash.new
@@ -180,8 +197,13 @@ $redo_all_tables       = opts_hash['--redo_all_tables']!=nil
 $no_write              = opts_hash['--no_write']!=nil
 $override_config_with  = opts_hash['--override_config_with']
 $write_config_and_exit  = opts_hash['--write_config_and_exit']
+$util                  = opts_hash['--util']
 
-$stderr.print "modern=#{$modern} test=#{$test_mode} redo_all_equations=#{$redo_all_equations} redo_all_tables=#{$redo_all_tables} no_write=#{$no_write} mathjax=#{$mathjax} wiki=#{$wiki} html5=#{$html4}\n"
+$silent = $write_config_and_exit || $util=~/[a-z]/
+
+unless $silent then
+  $stderr.print "modern=#{$modern} test=#{$test_mode} redo_all_equations=#{$redo_all_equations} redo_all_tables=#{$redo_all_tables} no_write=#{$no_write} mathjax=#{$mathjax} wiki=#{$wiki} html5=#{$html4}\n"
+end
 
 $xhtml = $modern
 # xhtml requires, e.g., <meta ... />, but html requires <meta ...>
@@ -202,7 +224,7 @@ $br = "<br#{$self_closing_tag}>"
 #===============================================================================================================================
 #===============================================================================================================================
 
-require "digest/md5"
+
 
 # Anything set to nil below is mandatory. Anything non-nil is a default.
 $config = {}
@@ -211,11 +233,11 @@ config_dir = 'config'
 if ! FileTest.directory?(config_dir) then config_dir = '../config' end
 
 config_files = ["#{config_dir}/default.config","#{config_dir}/repo.config","this.config"]
-if !($override_config_with.nil?) then config_files.push($override_config_with) end
+if !($override_config_with.nil?) then config_files.concat($override_config_with.split(/,/)) end
 
 config_files.each {|config_file|
   if ! File.exist?(config_file) then
-    $stderr.print "warning, config file #{config_file} does not exist\n" 
+    #$stderr.print "warning, config file #{config_file} does not exist\n" unless $silent
   else
     File.open(config_file,'r') { |f|
       j = f.gets(nil) # nil means read whole file
@@ -231,17 +253,82 @@ config_files.each {|config_file|
 $config.keys.each { |k|
   if k=~/_dir\Z/ then
     value = $config[k]
-    if ! FileTest.directory?(value) && !$write_config_and_exit then fatal_error("#{k}=#{value}, but #{value} either does not exist or is not a directory") end
+    if ! FileTest.directory?(value) && !$silent then fatal_error("#{k}=#{value}, but #{value} either does not exist or is not a directory") end
   end
 }
-$config.keys.each { |k|
-  $stderr.print "#{k}=#{$config[k]} "
-}
-$stderr.print "\n"
+unless $silent then
+  $config.keys.each { |k|
+    $stderr.print "#{k}=#{$config[k]} "
+  }
+  $stderr.print "\n"
+end
 
 # Write a copy of all the config variables to a temporary file, for use by any other scripts such as latex_table_to_html.pl that might need the info.
 File.open("temp.config",'w') { |f| f.print JSON.generate($config)}
 if $write_config_and_exit then exit(0) end
+
+if $util=~/[a-z]/ then
+  if $util=='ebook_title_footer' then
+    today = Date.today()
+    print <<-FOOTER;
+      <p>(c) #{today.year} Benjamin Crowell, <a href="http://creativecommons.org/licenses/by-sa/3.0/us/">CC-BY-SA</a> license.
+      File generated #{today.year}-#{today.mon}-#{today.mday}.</p>
+    FOOTER
+  end
+  if $util=~/patch_epub3:(.*)/ then
+    infile = $1
+    unless File.exist?(infile) then fatal_error("in patch_epub3: input file #{infile} does not exist") end
+    Dir.mktmpdir { |tmpdir|
+      unless system("unzip -qq #{infile} -d #{tmpdir}") then fatal_error("in patch_epub3: unable to unzip file #{infile}") end
+      package_document = "#{tmpdir}/content.opf"
+      # EPUB 3.0 spec, section 4.3.4, says we need to declare mathml property in manifest file:
+      xml = ''
+      File.open(package_document,'r') { |f|
+        xml = f.gets(nil) # nil means read whole file
+        xml.gsub!(/(<item\s+([^\/]|"[^"]*")*\/>)/) {
+          item = $1 # e.g., item=<item href="ch01_split_000.xhtml" id="html15" media-type="application/xhtml+xml"/>
+          if item=~/media-type="application\/xhtml\+xml"/ then # don't do images, just html
+            #$stderr.print "item=#{item}\n"
+            p = ["mathml"]
+            if $config['mathml_with_epub3_switch']==1 then p.push("switch") end
+            if item=~/properties="([^"]*)"/ then 
+              p.concat($1.split(/\s+/))
+            else
+              item.gsub!(/<item/,'<item properties=""')
+            end
+            item.gsub!(/(properties="[^"]*")/) {"properties=\"#{p.uniq.join(' ')}\""}
+            #$stderr.print "p=#{p.join(' ')}, changed item to #{item}\n"
+          end # if html
+          item
+        }
+      }
+      File.open(package_document,'w') { |f| f.print xml }
+      Dir.entries(tmpdir).each { |x|
+        file = "#{tmpdir}/#{x}"
+        if file=~/html\Z/ then
+          #$stderr.print "file #{file}\n"
+          html = ''
+          File.open(file,'r') { |f| html = f.gets(nil) } # nil means read whole file
+          # first line output by calibre 0.7.44 looks like this: <?xml version='1.0' encoding='utf-8'?>
+          if html=~/\A<\?xml/ then
+            html.gsub!(/\A[^\n]*/) {"<!DOCTYPE html>"}
+          end
+          File.open(file,'w') { |f| f.print html}
+        end
+      }
+      File.rename(infile,"before_patch_epub3.epub")
+      # zip options: -r recursive, -q quiet --quiet --recurse-paths --show-files
+      old_dir = Dir.getwd
+      Dir.chdir(tmpdir)
+      # Mimetype file has to come first. The "extra field" is not allowed, hence the -X.
+      unless system("zip --quiet -X #{infile} mimetype") then Dir.chdir(old_dir); fatal_error("in patch_epub3: unable to rezip file #{infile}") end
+      unless system("zip --quiet -X --recurse-paths #{infile} *") then Dir.chdir(old_dir); fatal_error("in patch_epub3: unable to rezip file #{infile}") end
+      Dir.chdir(old_dir)
+      File.rename("#{tmpdir}/#{infile}","#{old_dir}/#{infile}")
+    }
+  end
+  exit(0)
+end
 
 $chapter_toc = "<div class=\"container\">Contents#{$br}\n"
 
@@ -250,10 +337,13 @@ $section_level_num = {'chapter'=>1,'section'=>2,'subsection'=>3,'subsubsection'=
 $ch = nil
 $chapter_title = nil
 $count_eg = 0
+$hide_figs = {}
+$hide_envs = {}
+$hide_mathml_in_captions = {} # fix for bug with improperly nested mathml being generated in Calculus when captions contain mathml
 
-$text_width_pixels = 500
-$ad_width_pixels = 728
-$margin_width = 80 # mm
+$text_width_pixels = $config['text_width_pixels']
+$ad_width_pixels = $config['ad_width_pixels']
+$margin_width_mm = $config['margin_width_mm']
 
 # In normal web-browser html, it makes sense logically to have displayed math in divs inside paragraphs, and I think it's legal.
 # But in handheld-device formats, this can lead to problems, so break the math out into separate divs that aren't enclosed in p tags.
@@ -266,8 +356,10 @@ $tex_math_trivial = "lt gt perp times sim ne le perp le nabla alpha beta gamma d
 $tex_math_nontrivial = {'infty'=>'infin'  , 'leq'=>'le' , 'geq'=>'ge' , 'partial'=>'part' , 'cdot'=>'sdot' , 'unitdot'=>'sdot'  ,  'propto'=>'prop',
                         'approx'=>'asymp' , 'rightarrow'=>'rarr'   ,  'degunit'=>'deg' ,  'ldots'=>'hellip' }
   # ... nontrivial ones; trivial ones will now be appended to this list:
-$tex_math_trivial_not_entities = "sin cos tan ln log exp".split(/ /)
-$tex_math_not_entities = {'munit'=>'m' , 'sunit'=>'s' , 'kgunit'=>'kg' , 'nunit'=>'N' , 'junit'=>'J' , 'der'=>'d'  ,  'pm'=>'&#177;' ,  'degcunit'=>'&deg;C' , 'parallel'=>'||',
+$tex_math_trivial_not_entities = "sin cos tan ln log exp arg".split(/ /)
+$tex_math_not_entities = {'munit'=>'m' , 'sunit'=>'s' , 'kgunit'=>'kg' , 'nunit'=>'N' , 'junit'=>'J' , 
+                          'der'=>'d'  , # cases like "\der x" are special-cased elsewhere to avoid rendering with a space like "d x"
+                          'pm'=>'&#177;' ,  'degcunit'=>'&deg;C' , 'parallel'=>'||',
                           'sharp'=>'&#x266F;' , 'flat'=>'#x266D'   , 'ell'=>'&#8467;'
 }
 $tex_math_not_in_mediawiki = {'munit'=>'\text{m}' , 'sunit'=>'\text{s}' , 'kgunit'=>'\text{kg}' , 'gunit'=>'\text{g}' , 'nunit'=>'\text{N}',
@@ -433,6 +525,7 @@ def parse_itty_bitty_stuff!(tex)
   tex.gsub!(/\\photocredit{(#{curly})}/) {" (#{$1})"}
   tex.gsub!(/\\textbf{(#{curly})}/) {"<b>#{$1}</b>"}
   tex.gsub!(/\\(?:textit|emph){(#{curly})}/) {"<i>#{$1}</i>"}
+  tex.gsub!(/{\s*\\footnotesize\s+(#{curly})\s*}/) {"<span style=\"font-size: small;\">#{$1}</span>"}
   if $wiki then
     tex.gsub!(/\\mypart{(#{curly})}/) {"\n\n=#{$1}=\n\n"} # extra newlines prevent confusion with <p></p> tags in NP 2, 6
     tex.gsub!(/\\formatlikesubsection{(#{curly})}/) {"===#{$1}==="}
@@ -453,6 +546,8 @@ def parse_itty_bitty_stuff!(tex)
   tex.gsub!(/\\pagebreak/,'')
   tex.gsub!(/\\smspacebetweenfigs/,'')
   tex.gsub!(/\\raggedright/,'')
+  tex.gsub!(/\\thompson/,' [Thompson, 1919] ')
+  tex.gsub!(/\\granville/,' [Granville, 1911] ')
 
   # environments that we don't care about:
   tex.gsub!(/\\(begin|end){(preface|longnoteafterequation|flushleft)}/,'')
@@ -502,6 +597,7 @@ def parse_section(tex)
   envs.each { |x|
     r[x] = /\\(?:begin|end){#{x}}/
   }  
+  debug = tex=~/The product  rule/
   envs.each { |x|
     result = ''
     inside = false # even if the environment starts at the beginning of the string, split() gives us a null string as our first string
@@ -527,6 +623,7 @@ def parse_section(tex)
   tex.gsub!(/\\end{description}/,'\\end{itemize}')
   hw = 1
   # hwsection and summary are actually not needed in the following, since we change them to mysection using regexes early on
+  # hwwithsoln is taken care of in prep_web.pl to homework
   envs = ['homework','eg','optionaltopic','selfcheck','dq','summary','vocab','notation','othernotation','summarytext','hwsection',
         'enumerate','itemize','important','lessimportant','dialogline',
         'exploring','reading','egnoheader','listing','verbatim','exsection']
@@ -551,6 +648,9 @@ def parse_section(tex)
     # The following are used for environments that are *not* going to become divs:
     at_top = {'enumerate'=>'<ol>' ,'itemize'=>'<ul>','listing'=>'<pre>','verbatim'=>'<pre>'}
     at_bottom = {'enumerate'=>'</ol>','itemize'=>'</ul>','listing'=>'</pre>','verbatim'=>'</pre>'}
+    will_not_be_a_div = at_top[x]!=nil
+    # Normally we hide what's inside an environment from the parser so it doesn't get confused. Don't do it on ones that won't be divs, because it doesn't work on those:
+    no_hiding = will_not_be_a_div
     result = ''
     inside = false # even if the environment starts at the beginning of the string, split() gives us a null string as our first string
     tex.split(r[x]).each { |d|
@@ -575,7 +675,7 @@ def parse_section(tex)
           end
           arg = args[1]
           #if d=~/Kepler/ then $stderr.print "((((#{d}))))" end
-          if use_arg_as_title and arg!=nil and arg.length>0 and arg=~/[a-z]/ then # sometimes length is 1, but character is non-printing??
+          if use_arg_as_title and arg!=nil and arg.length>0 then
             arg = handle_math(arg)
             front = ''
             if stick_in_front_of_header[x]!=nil then
@@ -595,7 +695,7 @@ def parse_section(tex)
             top = "\n\n<div class=\"#{x}\">\n\n"
             bottom = "\n\n</div>\n\n"
           end
-          if x=='homework' then 
+          if x=~/\A(homework|hw)\Z/ then 
             d = "<b>#{hw}</b>. " + d
             hw+=1
             if args[1]!='' && !$wiki && $config['forbid_anchors_and_links']==0 then top = top + "<a #{$anchor}=\"hw:#{arg}\"></a>" end
@@ -608,6 +708,7 @@ def parse_section(tex)
           if at_bottom[x]!=nil then bottom=at_bottom[x] end
           if stick_at_end[x]!=nil then bottom = stick_at_end[x]+bottom end
           if x=='listing' or x=='verbatim' then
+            d.gsub!(/(<br>|<br\/>|<i>|<\/i>)/,'')
             d.gsub!('<','&lt;')
             d.gsub!('>','&gt;')
             d.gsub!(/\n\s*\n/,"\nKEEP_BLANK_LINE\n")
@@ -619,7 +720,14 @@ def parse_section(tex)
             d.sub!('</li>','') # get rid of bogus closing tag at first item
             d = d + '</li>' # add closing tag on last item
           end
-          result = result + top + d + bottom
+          unless no_hiding then
+            y = top + parse_section(d) + bottom 
+            h = "HIDE_ENV_"+hash_function(y)+"_HERE"
+            $hide_envs[h] = y
+            result = result + "\n\n#{h}\n\n"
+          else
+            result = result + top + d + bottom 
+          end
         else # not inside
           result = result + d
         end
@@ -651,7 +759,6 @@ def parse_section(tex)
   # Bug: if parse_para returns something with nested divs in it, the code below won't work properly.
   result = ''
   tex.split(/\n{2,}/).each { |para|
-    #if para=~/a remarkable fact/ then $stderr.print "********\n#{para}\n********\n" end # qwe
     debug = false
     if para=~/^(<div|<\/div)/ then
       p = para
@@ -699,6 +806,8 @@ def parse_section(tex)
 
   tex.gsub!(/KEEP_BLANK_LINE/,'')
   tex.gsub!(/KEEP_PERCENT/,'%')
+  tex.gsub!(/\\&/,"&amp;")
+  tex.gsub!(/&(?!#?\w+;)/,"&amp;")
 
   return tex
 end
@@ -910,6 +1019,7 @@ def handle_math(tex,inline_only=false,allow_bitmap=true)
 
   if false then # I think this is no longer necessary now that I'm using footex, and in fact it causes problems.
   #--------------------- locate displayed math with intertext or multiple lines, and split into smaller pieces ----------------------------
+  ############################### DEACTIVATED BY IF FALSE ABOVE #####################
   # This has to come before inline ($...$) math, because sometimes displayed math has \text{...$...$...} inside it.
   envs = ['align','equation','multline','gather','align*','equation*','multline*','gather*']
   r = {}
@@ -927,6 +1037,8 @@ def handle_math(tex,inline_only=false,allow_bitmap=true)
     tex.split(r[x]).each { |m|
       if !(m=~/\A\s*\Z/) then # not pure whitespace
         if inside then 
+          debug = m=~/\\vc{v} &= \\frac{\\der/
+          debug = true
           m.gsub!(/\\\\\s*\\intertext{(#{curly})}/) {"\\end{#{x}}\n#{$1}\n\\begin{#{x}}"}
           m.gsub!(/\\\\/,"\\end{#{x}}\n\\begin{#{x}}")
           result = result + "\\begin{#{x}}"
@@ -988,9 +1100,10 @@ def handle_math(tex,inline_only=false,allow_bitmap=true)
     debug = false # math[n]=~/\{1\}\{2\}/
     m = handle_math_one(math[n],math_type[n],(allow_bitmap && !($config['forbid_images_inside_text']==1 && math_type[n]=='inline')))
     if m==nil then
-      m=math[n]
+      m=math[n].gsub(/</,"&lt;")
     else
       if math_type[n]!='inline' and !( m=~/<div/) then
+        # begin_equation() and end_equation() produce <div> tags
         m = begin_equation() + m + end_equation() # already has divs in it if it's not inline and was parsed into bitmaps
       end
     end
@@ -1022,14 +1135,7 @@ end
 def handle_math_one(foo,math_type,allow_bitmap)
   tex = foo.clone
 
-  #if foo=~/xdot/ then $stderr.print "=================== in handle_math_one, input=#{foo}, standalone=#{$config['standalone']}, matches xdot\n" end
-
-  if tex=='' then
-    $stderr.print "warning, null string passed to handle_math_one\n"
-    return ''
-  end
-
-  debug = false # tex=~/\{1\}\{2\}/
+  if tex=='' then  $stderr.print "warning, null string passed to handle_math_one\n"; return '' end
 
   if $mathjax then
     if math_type=='inline' then
@@ -1041,14 +1147,51 @@ def handle_math_one(foo,math_type,allow_bitmap)
 
   tex.gsub!(/\\(begin|end){split}/,'') # we don't handle these (they occur inside other math environments)
 
-  html = handle_math_one_html(tex.clone,math_type)
-  return html if html!=nil
-  if !allow_bitmap && $config['standalone']==1 then return handle_math_one_desperate_fallback(tex.clone) end
-  return nil if !allow_bitmap
-  html = handle_math_one_bitmap(tex.clone,math_type)
-  return html if html!=nil
-  #$stderr.print "=================== in handle_math_one, input=#{foo}, standalone=#{$config['standalone']}, didn't do fallback\n"
-  return nil
+  debug = foo=~/\\vc{v} &= \\frac{\\de/
+  html = handle_math_one_html(tex.clone,math_type) # may return either plain html or html with mathml, if config says that's allowed
+
+  use_desperate_fallback_if_necessary = !allow_bitmap && $config['standalone']==1
+
+  # $stderr.print "mathml_plus_fallback=#{$config['mathml_plus_fallback']} html.nil?=#{html.nil?} contains_mathml=#{contains_mathml(html)}\n"
+
+  if $config['mathml_plus_fallback']==1 && html!=nil && contains_mathml(html) then
+    # http://idpf.org/epub/30/spec/epub30-contentdocs.html#sec-xhtml-epub-switch
+    # namespace is http://www.idpf.org/2007/ops
+    fallback = ''
+    if $config['mathml_with_epub3_switch']==0 then fatal_error("mathml_plus_fallback=1, but mathml_with_epub3_switch=0, and I don't have any other fallback mechanism") end
+    if use_desperate_fallback_if_necessary then fallback=handle_math_one_desperate_fallback(tex.clone) else fallback=handle_math_one_bitmap(tex.clone,math_type) end
+    # http://idpf.org/epub/20/spec/OPS_2.0.1_draft.htm#Section2.6.3.1.1
+    # http://www.dessci.com/en/reference/ebooks/EPUBMath_spec.htm
+    # http://code.google.com/p/epub-revision/source/browse/trunk/test/xhtml/valid/switch-001.xhtml?r=2949
+    # http://www.w3schools.com/xml/xml_namespaces.asp
+    # It doesn't matter if you do the xmlns: in a particular element or in a parent element such as the <html> tag.
+    # This page implies that epubcheck can handle case/switch: http://code.google.com/p/epubcheck/issues/detail?id=132
+    #  ... but when I do it, epubcheck is upset.
+    # Doesn't actually work in calibre 0.7.44: http://www.mobileread.com/forums/showthread.php?p=1905534#post1905534
+    return (<<-SWITCH
+      <epub:switch xmlns:epub="http://www.idpf.org/2007/ops"> 
+        <epub:case required-namespace="http://www.w3.org/1998/Math/MathML">
+          #{html}
+        </epub:case>
+        <epub:default>
+          #{fallback}
+        </epub:default>
+      </epub:switch>
+    SWITCH
+    ).gsub(/\n/,' ')
+  else
+    # not producing multiple versions using epub switch
+    return html if html!=nil
+    if use_desperate_fallback_if_necessary then return handle_math_one_desperate_fallback(tex.clone) end
+    return nil if !allow_bitmap
+    html = handle_math_one_bitmap(tex.clone,math_type)
+    return html if html!=nil
+    return nil
+  end
+end
+
+def contains_mathml(html)
+  return (html=~/<math/)!=nil
 end
 
 def prep_math_for_mathjax(math)
@@ -1069,6 +1212,7 @@ end
 # math_type = 'inline', 'align', or 'equation', or 'multline', or 'gather'
 def handle_math_one_html(tex,math_type)
   debug = false
+
   original = tex.clone
   if original=~/<\/?i>/ then
     $stderr.print "huh? m has <i> in it, getting ready to produce tex code\n#{original}\n"
@@ -1158,7 +1302,7 @@ end
 # Translate one particular equation to xhtml, trying to create something half-way legible if all else fails.
 # This is meant only for use in math that occurs inline in ebooks that don't support mathml.
 def handle_math_one_desperate_fallback(tex)
-  debug = false
+  debug = false # tex=~/omega/ && tex=~/intertext/
   curly = "(?:(?:{[^{}]*}|[^{}]*)*)" # match anything, as long as any curly braces in it are paired properly, and not nested
 
   if debug then $stderr.print "=================== in handle_math_one_desperate_fallback, input=#{tex}\n" end
@@ -1171,6 +1315,11 @@ def handle_math_one_desperate_fallback(tex)
   m.gsub!(/\\[ :,]/,' ')
   m.gsub!(/\\(?:text|zu){([A-Za-z]+)}/) {$1} 
   m.gsub!(/\\(?:vc|mathbf){([A-Za-z]+)}/) {"<b>#{$1}</b>"}
+  m.gsub!(/\\ge/,'>=')
+  m.gsub!(/\\le/,'&lt;=')
+  m.gsub!(/\\frac{([A-Za-z0-9]+)}{([A-Za-z0-9])}/) {"<sup>#{$1}</sup>/<sub>#{$2}</sub>"}
+  m.gsub!(/\\frac{([A-Za-z0-9]+)}{([0-9]{2,})}/) {"<sup>#{$1}</sup>/<sub>#{$2}</sub>"}
+  m.gsub!(/\\frac{([A-Za-z0-9]+)}{([A-Za-z0-9]{2,})}/) {"<sup>#{$1}</sup>/<sub>(#{$2})</sub>"} # needs parens
 
   m.gsub!(/\\(?:sqrt){(#{curly})}/) {"&radic;#{$1}"} # If possible, strip of the curly braces.
   m.gsub!(/\\sqrt/) {"&radic;"}                      # ... otherwise, still do something with it.
@@ -1178,8 +1327,12 @@ def handle_math_one_desperate_fallback(tex)
   m.gsub!(/\^([A-Za-z0-9])/) {"<sup>#{$1}</sup>"}
   m.gsub!(/\\xdot/,"\\dot{x}")
   m.gsub!(/\\dot{([A-Za-z])}/) {"#{$1}<sup>&middot;</sup>"}
-  m.gsub!(/\\Ddot{x}/,"x&uml;")
+  m.gsub!(/\\(Ddot|ddot){([A-Za-z])}/) {"#{$2}&uml;"}
+  m.gsub!(/\\bar{([A-Za-z])}/) {"#{$1}<sup>-</sup>"}
   m = replace_list(m,$tex_symbol_replacement_list)
+
+  m.gsub!(/</,'&lt;')
+  m.gsub!(/>/,'&gt;')
 
   if debug then $stderr.print "===================in handle_math_one_desperate_fallback, output=#{m}\n" end
 
@@ -1194,6 +1347,7 @@ end
 # if the type isn't inline, then we put div's around the equation(s)
 def handle_math_one_bitmap(tex,math_type)
     m = tex.clone
+    scale = $config['scale_for_bitmapped_equations']
 
     if m=~/\\(begin|end){array}/ then return nil end # can't handle these because they contain \\ inside
 
@@ -1201,8 +1355,8 @@ def handle_math_one_bitmap(tex,math_type)
     m.gsub!(/\\indices{(#{curly})}/) {$1} # has to strip curly braces off, not just delete the macro
     # if you really try to do an align environment, it wants to make separate bitmaps for each column
     t = {'inline'=>'equation*', 'equation'=>'equation*' , 'align'=>'equation*', 'multline'=>'multline*' , 'gather'=>'gather*'}[math_type]    
-    if (math_type=='equation' || math_type=='inline') && tex=~/\\\\/ && !(tex=~/\\begin{matrix}/)then
-      fatal_error("double backslash not allowed in equation environment: #{tex}")
+    if (math_type=='equation' || math_type=='inline') && tex=~/\\\\/ && !(tex=~/\\begin{matrix}/) then
+      $stderr.print "double backslash not allowed in equation environment: #{tex}\n...This may not be a LaTeX error if it has intertext, but may cause parser to generate invalid xhtml.\n"
     end
     # stuff that's illegal in equation environment:
     m.gsub!(/\&/,'')
@@ -1212,10 +1366,10 @@ def handle_math_one_bitmap(tex,math_type)
       original = e.clone
       e.gsub!(/\n/,' ') # empty lines upset tex
       if (e=~/\A\s*\Z/) then
-        fatal_error("double backslash not allowed after final line in displayed math: #{tex}")
+        $stderr.print "double backslash not allowed after final line in displayed math: #{tex}\n...This may not be a LaTeX error if it has intertext, but may cause parser to generate invalid xhtml.\n"
       else
       eq_dir = html_subdir('math')
-      eq_base = 'eq_' + hash_equation(e) + '.png'
+      eq_base = 'eq_' + hash_equation(e,scale) + '.png'
       eq_file = eq_dir + '/' + eq_base
       if $redo_all_equations || ! File.exist?(eq_file) then
         temp = 'temp.tex'
@@ -1242,7 +1396,6 @@ def handle_math_one_bitmap(tex,math_type)
         else
           if ! $no_write then
             if !File.exist?(temp) then $stderr.print "error, temp file #{temp} doesn't exist"; exit(-1) end
-            scale = $config['scale_for_bitmapped_equations']
             unless system("#{$config['script_dir']}/equation_to_image.pl #{temp} #{$config['sty_dir']}/lmmath.sty #{scale}>/dev/null") then $stderr.print "error, #{$?}"; exit(-1) end
             unless system("mv #{temp_png} #{eq_file}") then $stderr.print "WARNING, error #{$?}, probably tex4ht isn't installed\n" end
           end
@@ -1274,12 +1427,12 @@ def end_equation
 end
 
 
-def hash_equation(foo)
+def hash_equation(foo,scale)
   tex = foo.clone
   # strip any leading or trailing dollar signs or spaces:
   tex.gsub!(/^[$ ]+/,'')
   tex.gsub!(/[$ ]+$/,'')
-  return hash_function(tex)
+  return hash_function(hash_function(tex)+scale.to_s)
 end
 
 def hash_function(x)
@@ -1327,6 +1480,7 @@ def parse_eensy_weensy(t)
 
   # macros that are easy to process:
   tex.gsub!(/\\(?:emph|optionalchapternote){(#{curly})}/) {"<i>#{$1}</i>"}
+  tex.gsub!(/\\(?:givecredit){(#{curly})}/) {" [#{$1}] "}
   tex.gsub!(/\\epigraph(?:long|longfitbyline)?{(#{curly})}{(#{curly})}/) {"#{$1} -- <i>#{$2}</i>"}
   tex.gsub!(/\\\//,' ')
   tex.gsub!(/\\\\/,$br)
@@ -1546,7 +1700,7 @@ def find_figure(name,width_type)
       width,height=$1.to_f,$2.to_f
        target_width = -1
       if width_type=='raw' then target_width = width end
-      if width_type=='narrow' then target_width = ($margin_width/25.4)*72 end
+      if width_type=='narrow' then target_width = ($margin_width_mm/25.4)*72 end
       if width_type=='wide' or width_type=='fullpage' then target_width = $text_width_pixels end
       if target_width == -1 then
         target_width = 100
@@ -1594,7 +1748,7 @@ end
 def parse(t,level,current_section)
   tex = t.clone
 
-  protect_mathml_in_captions = {} # fix for bug with improperly nested mathml being generated in Calculus when captions contain mathml
+  tex.gsub!(/\\der ([A-Za-z])/) {"d#{$1}"} # otherwise we get "d x"
 
   # The following is so that text right before or right after an enumerate or itemize will be in its own paragraph:
   tex.gsub!(/(\\end{(enumerate|itemize)})/) {$1+"\n"}
@@ -1609,33 +1763,32 @@ def parse(t,level,current_section)
     non_marg_stuff = ''
     tex.gsub!(/END_CAPTION\n*/,"END_CAPTION\n") # the newline is because without it, the code below will eat too much with each regex match
     # The following code assumes that each ZZZWEB thingie is on a separate line; if there aren't newlines between them, it eats too much and goes nuts.
-    tex.gsub!(/ZZZWEB\:fig,([^,]+),(\w+),(\d),([^\n]*)END_CAPTION/) {
-      name,width,anon,caption = $1,$2,$3.to_i,$4
-      #if name=='zzzfake' then $stderr.print "zzzfake------------\n#{name}\n#{width}\n#{anon}\n#{caption}-------\n" end
-      if anon==0 then $fig_ctr += 1 ; l=alphalph($fig_ctr).to_s+' / ' else l='' end
-      if name=='zzzfake' then $fig_ctr += 1 end # kludge, I don't understand why this is needed, but it is, or else EM1 figures get out of step at the end
-      whazzat = find_figure(name,width) # has the side-effect of copying or converting it if necessary
-      if caption=~/\A\s*\Z/ then c='' else 
-        pc=parse_para(caption)
-        if pc=~/<math/ then h="ZZZ_PROTECT_MATHML_IN_CAPTIONS_"+hash_function(pc); protect_mathml_in_captions[h]=pc.clone; pc=h end
-        c="<p class=\"caption\">#{l}#{pc}</p>#{end_of_caption_marker}"  
-      end
-      a = ($config['forbid_anchors_and_links']==0 ? "<a #{$anchor}=\"fig:#{name}\"></a>" : '')
-      i = "<img src=\"figs/#{whazzat}\" alt=\"#{name}\"#{$self_closing_tag}>#{a}"
-      if all_figs_inline then 
-        x = "<p>"+i+"</p>"+c
-      else
-        x = i+c
-      end
-      if name=='zzzfake' then x=c end
-      x
-    }
     in_marg = false # even if it starts with a marg, split() gives us a null string for the first chunk()
-    tex.split(/ZZZWEB\:(?:end\_)?marg/).each { |marg|
-      if in_marg && !all_figs_inline then
-        marg_stuff = marg_stuff + marg 
+    tex.split(/ZZZWEB\:(?:end\_)?marg/).each { |x|
+      inline = !in_marg || all_figs_inline
+      x.gsub!(/ZZZWEB\:fig,([^,]+),(\w+),(\d),([^\n]*)END_CAPTION/) {
+        name,width,anon,caption = $1,$2,$3.to_i,$4
+        #if name=='zzzfake' then $stderr.print "zzzfake------------\n#{name}\n#{width}\n#{anon}\n#{caption}-------\n" end
+        if anon==0 then $fig_ctr += 1 ; l=alphalph($fig_ctr).to_s+' / ' else l='' end
+        if name=='zzzfake' then $fig_ctr += 1 end # kludge, I don't understand why this is needed, but it is, or else EM1 figures get out of step at the end
+        whazzat = find_figure(name,width) # has the side-effect of copying or converting it if necessary
+        if caption=~/\A\s*\Z/ then c='' else 
+          pc=parse_para(caption)
+          if pc=~/<math/ then h="HIDE_MATHML_IN_CAPTIONS_"+hash_function(pc)+"_HERE"; $hide_mathml_in_captions[h]=pc.clone; pc=h end
+          c="<p class=\"caption\">#{l}#{pc}</p>#{end_of_caption_marker}"  
+        end
+        a = ($config['forbid_anchors_and_links']==0 ? "<a #{$anchor}=\"fig:#{name}\"></a>" : '')
+        i = "<img src=\"figs/#{whazzat}\" alt=\"#{name}\"#{$self_closing_tag}>#{a}"
+        if name=='zzzfake' then i='' end
+        y="<!--BEGIN_IMG--><p>"+i+"</p>"+c+"<!--END_IMG-->"
+        h = "HIDE_FIG_"+hash_function(y)+"_HERE"
+        $hide_figs[h] = y
+        "\n\n#{h}\n\n"
+      }
+      if inline then
+        non_marg_stuff = non_marg_stuff + x
       else
-        non_marg_stuff = non_marg_stuff + marg
+        marg_stuff = marg_stuff + x
       end
       in_marg = !in_marg
     }
@@ -1693,6 +1846,7 @@ def parse(t,level,current_section)
     current_section.push(secnum)
     section.gsub!(/\\marg{(#{curly})}/) {"<p>#{$1}</p>"} # occurs in EM 5, opener
 
+
     # kludgy fix for bug that causes paragraphs not to have <p></p> after caption:
     if true then
       #if section=~/and its derivative cos/ then $stderr.print "\n********\n#{section}\n********\n"; exit(-1) end
@@ -1702,8 +1856,8 @@ def parse(t,level,current_section)
       section.gsub!(/#{end_of_caption_marker}/) {""} # Clean up ones that fell at end of section.
     end
 
-    section.gsub!(/\n*(\\begin{(important|lessimportant))}/) {"\n\n#{$1}"}
-    section.gsub!(/(\\end{(important|lessimportant))}\n*/) {"#{$1}\n\n"}
+    section.gsub!(/\n*(\\begin{(important|lessimportant)})/) {"\n\n#{$1}"}
+    section.gsub!(/(\\end{(important|lessimportant)})\n*/) {"#{$1}\n\n"}
 
     if !(section=~/\A\s*\Z/) then
       result.concat(parse(section,level+1,current_section))
@@ -1711,7 +1865,7 @@ def parse(t,level,current_section)
     current_section.pop
     secnum += 1
   }
-  result.each { |s| 0.upto(1) { |i| protect_mathml_in_captions.each { |k,v| unless s[i].nil? then s[i].gsub!(/#{k}/,v) end  } } }
+  result.each { |s| 0.upto(1) { |i| $hide_mathml_in_captions.each { |k,v| unless s[i].nil? then s[i].gsub!(/#{k}/,v) end  } } } # this gets checked for again at end
   #------------------------------------------------------------------------------------------------------------------------------------
   curly = "(?:(?:{[^{}]*}|[^{}]*)*)" # match anything, as long as any curly braces in it are paired properly, and not nested
   if level==$config['spew_figs_at_level'] then
@@ -1850,6 +2004,7 @@ parse(tex,1,[]).each {|s|
 }
 tex = result
 
+
 tex.gsub!(/ {2,}/,' ') # multiple spaces
 tex.gsub!(/<p>\s*<\/p>/,'') # peepholer to get rid of <p></p> pairs
 tex.gsub!(/\n{3,}/,"\n\n") # 3 or more newlines in a row
@@ -1857,7 +2012,6 @@ tex.gsub!(/\\&/,"&amp;")
 tex.gsub!(/&(?![a-zA-Z0-9#]+;)/,"&amp;")
 tex.gsub!(/<\/h1>\n*<\/p>/,"</h1>") # happens in NP, which has part I, II, ...; see above in handling for mypart
 tex.gsub!(/<td>([^<>]+)<\/t>/) {"<td>#{$1}<\/td>"}; # bug in htlatex?
-tex.gsub!(/KEEP_INDENTATION_(\d+)_SPACES/) {replicate_string(' ',$1.to_i)}
 tex.gsub!(/<!-- ZZZ_TWO_NEWLINES -->/,"\n\n")
 
 tex.gsub!(/#{$begin_div_not_p}(<div class="equation">([^\n])+)#{$end_div_not_p}\n/) {"</p>#{$1}<p>"}
@@ -1868,6 +2022,21 @@ tex.gsub!(/#{$end_div_not_p}/,'')
 tex.gsub!(/(?<!\n)(<div)/) {"\n#{$1}"}
 tex.gsub!(/\n{0,1}(<p[^ ])/) {"\n\n#{$1}"}
 tex.gsub!(/(<\/p>)\n{0,1}/) {"#{$1}\n\n"}
+
+1.upto(10) { |i| # Allow for nesting 10 deep.
+  tex.gsub!(/(HIDE_ENV_[0-9a-f]+_HERE)/) {$hide_envs[$1]}
+  tex.gsub!(/(HIDE_FIG_[0-9a-f]+_HERE)/) {$hide_figs[$1]}
+  tex.gsub!(/(HIDE_MATHML_IN_CAPTIONS_[0-9a-f]+_HERE)/) {$hide_mathml_in_captions[$1]}
+}
+tex.gsub!(/<p><!--BEGIN_IMG-->/) {''}
+tex.gsub!(/<!--END_IMG--><\/p>/) {''}
+tex.gsub!(/<p>\s*(<div\s+class="[^"]*"\s*>)/) {$1}
+tex.gsub!(/(<\/div>)\s*<\/p>/) {$1}
+tex.gsub!(/(Example \d+): ZZZ_NO_EG_TITLE/) {$1}
+
+tex.gsub!(/KEEP_INDENTATION_(\d+)_SPACES/) {replicate_string(' ',$1.to_i)}
+tex.gsub!(/<!-- ZZZ_END_OF_CAPTION -->/,"")
+
 
 # ultra-kludge: depend on the formatting of the code at this point to let us to a final cleanup of a small number of cases where the $begin_div_not_p kludge didn't work:
 if $no_displayed_math_inside_paras then
@@ -1906,7 +2075,7 @@ end
 
 if $html5 then
   print <<STUFF
-<!doctype html>
+<!DOCTYPE html>
 <html>
 STUFF
   mime = 'text/html'
@@ -1939,6 +2108,8 @@ mathjax_in_head = ''
 if $mathjax then
   mathjax_in_head = '<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>'
 end
+
+if $config['mime_type']=~/\w/ then mime=$config['mime_type'] end
 
 if !$wiki then
 print <<STUFF
@@ -2032,12 +2203,9 @@ chipmunk.scan(/(\\\w+({[^}]*})?)/) {
       ['align','equation','multline','gather'].each { |e| if whole=~/^\\(begin|end){#{e}\*?}/ then math_ok=true end}
     end
   end
+  whole.gsub!(/\n.*/,'') # if it inadvertently eats thousands of lines and thinks it's one macro, don't print it all
   if !math_ok then macros_not_handled[whole]=1 end
 }
-#tex.split(/alt=\"[^"]*\"/).each { |x|
-#  curly = "(?:(?:{[^{}]*}|[^{}]*)*)" # match anything, as long as any curly braces in it are paired properly, and not nested
-#  x.scan(/(\\\w+({[^}]*})?)/) {macros_not_handled[$1]=1}
-#}
 unless macros_not_handled.keys.empty? then $stderr.print "Warning: the following macros were not handled in this chapter: "+macros_not_handled.keys.join(' ')+"\n" end
 
 if $footnote_ctr>0 then
@@ -2081,7 +2249,8 @@ File.open("#{$config['html_dir']}/index.html",'a') do |f|
       oh_my_god_another_kludge = '0'
     end
   end
-  f.print "<p><a href=\"ch#{$ch}/ch#{kludge}.html\">#{oh_my_god_another_kludge} #{and_more_kludge}</a></p>\n"
-  # ------->!!!! Link to .html, even if we're generating a file that will be called .xhtml. Mod_rewrite will redirect them if it's appropriate.
+  ext = ".html" # ------->!!!! Link to .html, even if we're generating a file that will be called .xhtml. Mod_rewrite will redirect them if it's appropriate.
+  if $config['standalone']==1 && $config['html_file_extension']=~/\w/ then ext=$config['html_file_extension'] end
+  f.print "<p><a href=\"ch#{$ch}/ch#{kludge}#{ext}\">#{oh_my_god_another_kludge} #{and_more_kludge}</a></p>\n"
 end
 end

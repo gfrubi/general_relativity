@@ -1091,7 +1091,7 @@ invariant under a change of coordinates. We therefore conclude that quantities l
 
 In the language of ordinary vectors and scalars in Euclidean three-space, one way to express area and volume is by using
 dot and cross products. The area of the parallelogram spanned by $\vc{u}$ and $\vc{v}$ is measured by the area vector $\vc{u}\times\vc{v}$,
-and similarly the volume of the parallelepiped can be computed as the scalar triple product $\vc{u}\cdot(\vc{v}\times\vc{w})$. 
+and similarly the volume of the parallelepiped formed by  $\vc{u}$, $\vc{v}$, and $\vc{w}$ can be computed as the scalar triple product $\vc{u}\cdot(\vc{v}\times\vc{w})$. 
 Both of these quantities are defined such that interchanging two of the inputs negates the output. In differential
 geometry, we do have a scalar product, which is defined by contracting the indices of two vectors, as in $u^av_a$. If we also had a
 a tensorial cross product, we would be able to define area and volume tensors, so we conclude that there is no tensorial cross product, i.e.,
@@ -1133,9 +1133,27 @@ This determinant is raised to a power
 $W$, known as the weight of the tensor density.\index{weight of a tensor density} Weight zero corresponds to the case of a real tensor.
 
 \begin{eg}{Area as a tensor density}
-In a Euclidean plane, a rescaling of coordinates by a factor of $k$ is represented by a matrix of partial
+In a Euclidean plane, making our rulers longer by a factor of $k$ causes the area measured in the new coordinates
+to decrease by a factor of $1/k^2$. The rescaling is represented by a matrix of partial
 derivatives that is simply $kI$, where $I$ is the identity matrix. The determinant is $k^2$. Therefore
-area is a tensor density of weight 2.
+area is a tensor density of weight $-1$.
+\end{eg}
+
+\begin{eg}{Mass density}
+A piece of aluminum foil as a certain number of milligrams per square centimeter.
+Stretching rulers by $k$ causes this number to increase by $k^2$, so this mass density has $W=+1$.
+\end{eg}
+
+\begin{eg}{Length in the Euclidean plane}
+Let a line segment of unit length be parallel to the $x$ axis in the Euclidean plane.
+Then the transformation $(x,y)\rightarrow (x/k,y)$ changes its length to $1/k$, which would
+lead us to imagine that length was a tensor density with $W=-1/2$. But
+$(x,y)\rightarrow (x,y/k)$ doesn't change the length at all, suggesting $W=0$ (a pure tensor).
+The result is that length is not a tensor or tensor density of any kind.
+
+Generalizing to more than two dimensions, an $m$-dimensional volume embedded in an
+$n$-dimensional space is a tensor density with $W=-1$ if and only if $m=n$; for $m<n$,
+the $m$-volume isn't a tensor density at all.
 \end{eg}
 
 In Weyl's apt characterization,\footnote{Hermann Weyl, ``Space-Time-Matter,'' 1922, p.~109, available online at \url{archive.org/details/spacetimematter00weyluoft}.} 
