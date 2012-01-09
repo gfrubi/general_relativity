@@ -24,6 +24,7 @@ default:
 	$(RUN_ERUBY)
 	# perl -e 'foreach $$f(<ch*>) {if (-d $$f) {$$f=~/ch(\d\d)/; $$n=$$1; $$c = "cd ch$$n && ../fruby ch$$n.rbtex >ch$${n}temp.tex && cd -"; print "$$c\n"; system $$c}}'
 	$(DO_PDFLATEX)
+	@scripts/translate_to_html.rb --util="learn_commands:$(BOOK).cmd"
 	@process_geom_file.pl <geom.pos >temp.pos
 	@mv temp.pos geom.pos
 	makeindex genrel.idx >/dev/null
@@ -32,6 +33,7 @@ book:
 	@make preflight
 	make clean
 	make && make
+	@scripts/translate_to_html.rb --util="learn_commands:$(BOOK).cmd"
 	@scripts/check_for_colliding_figures.rb
 	@scripts/harvest_aux_files.rb
 	make

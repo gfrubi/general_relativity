@@ -15,10 +15,13 @@
 \newcounter{scctr}[chapter]
 \newcounter{hwctr}[chapter]
 %====================== pull in sub-packages =====================================================
-\RequirePackage{tensor,lmlanguage,lmlayout,lmcommon,lmfigs,lmenvironments,ifthen}
+\RequirePackage{tensor,lmlanguage,lmlayout,lmcommon,lmfigs,lmenvironments,ifthen,learn-cmd-syntax}
 %====================== other packages =====================================================
 \RequirePackage[leqno]{amsmath}
 \RequirePackage{url}
+
+\StartSaveCommands % for learn-cmd-syntax
+
 %=====================================================================================
 % In DP, we use italics for figref, but in LM that would look too much like an algebra
 % symbol, so no italics.
@@ -48,3 +51,6 @@
 	\section{$\star$ #2}\myeqnspacing}
   \newcommand{\mysubsection}[2][3]{\pagebreak[#1]\subsection{#2}}
   \newcommand{\mysubsectionnotoc}[2][3]{\pagebreak[#1]\subsection*{#2}}
+
+\StopSaveCommands % for learn-cmd-syntax
+\WriteSaveCommands  % for learn-cmd-syntax
