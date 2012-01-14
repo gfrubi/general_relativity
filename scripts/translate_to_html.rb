@@ -159,8 +159,9 @@ require "digest/md5"
 require "date"
 require "tmpdir"
 require 'json'
+require 'psych' # choice of parser for yaml
+require 'yaml'
 require 'getoptlong' # pickaxe book, p. 452
-
 
 def fatal_error(message)
   $stderr.print "error in translate_to_html.rb: #{message}\n"
@@ -175,16 +176,18 @@ def file_contains(file,regexp)
   return nil
 end
 
-def get_json_from_file(file)
-  File.open(file,'r') { |f|
-    x = f.gets(nil) # nil means read whole file
-    begin
-      return JSON.parse(x)
-    rescue JSON::ParserError
-      fatal_error("invalid JSON syntax in file #{file}")
-    end
-  }
-  fatal_error("couldn't read JSON file #{file}")
+# This can read either JSON or YAML (since JSON is a subset of YAML).
+def get_serialized_data_from_file(file)
+  parsed = begin
+    YAML.load(File.open(file))
+  rescue ArgumentError => e
+    fatal_error("invalid YAML syntax in file #{file}")
+  end
+  return parsed
+end
+
+def array_of_strings_to_one_string(s)
+  return s.class() == String ? s : s.join("\n")
 end
 
 opts = GetoptLong.new(
@@ -253,18 +256,11 @@ config_files.each {|config_file|
   if ! File.exist?(config_file) then
     #$stderr.print "warning, config file #{config_file} does not exist\n" unless $silent
   else
-    File.open(config_file,'r') { |f|
-      j = f.gets(nil) # nil means read whole file
-      begin
-        c = JSON.parse(j)
-      rescue JSON::ParserError
-        fatal_error("the JSON file #{config_file} has invalid syntax") 
-      end
-      c.keys.each { |k|
-        value = c[k]
-        if k=~/_dir\Z/ then value.gsub!(/~/,ENV['HOME']) end
-        $config[k] = value # override any earlier value that was set
-      }
+    c = get_serialized_data_from_file(config_file)
+    c.keys.each { |k|
+      value = c[k]
+      if k=~/_dir\Z/ then value.gsub!(/~/,ENV['HOME']) end
+      $config[k] = value # override any earlier value that was set
     }
   end
 }
@@ -316,11 +312,11 @@ if $util=~/[a-z]/ then
         if line=~/\A(command|environment),([^,]*),([^,]*),([^,]*),([^,]*)\Z/ then
           type,name,n_req,n_opt,default = [$1,$2,$3.to_i,$4.to_i,$5]
           name.gsub!(/\s/,'')
-          name.gsub!(/\\/,'\\\\\\\\')
-          dd = ''
-          if n_opt>0 then dd = ",\"default\":\"#{default}\"" end
-          ignore = name=~/"/ || name=~/\\.*\\/ || name=~/\?/ # commands that are probably internal to some package, or that are likely to cause an error
-          results[type].push("    \"#{name}\":{\"n_req\":#{n_req},\"n_opt\":#{n_opt}#{dd}}") unless ignore
+          name.gsub!(/\\/,'') if type=='command'
+          ignore = name=~/"/ || name=~/\\/ || name=~/\?/ # commands that are probably internal to some package, or that are likely to cause an error
+          info = {"n_req"=>n_req,"n_opt"=>n_opt}
+          if n_opt>0 then info['default']=default end
+          results[type].push("    \"#{name.gsub(/\\/,'\\\\\\\\')}\":#{JSON.generate(info)}") unless ignore
         else
           unless line=~/\A\s*\Z/ || line=="command,\\,,0,0," then fatal_error("in learn_commands: syntax error in this line of #{infile}: #{line}") end
         end
@@ -434,93 +430,48 @@ end
 #       html boilerplate
 #=====================================================================================================================
 
+def get_boilerplate_from_custom_file(what,format)
+  x = get_serialized_data_from_file($custom_config)['boilerplate']
+  return '' if x.nil?
+  x = x[what]
+  return '' if x.nil?
+  x = array_of_strings_to_one_string(x)
+  return eval "%Q{"+x+"}" # they can put interpolations like #{$config['title']}, #{$config['url']}, or #{boilerplate('valid_icon',format)}
+end
+
 # format = wiki,xhtml,modern,html5
 def boilerplate(what,format)
 unless format.keys.sort.join(',')=="html5,modern,wiki,xhtml" then fatal_error("format has illegal set of keys #{format.keys.sort.join(',')} in boilerplate") end
-#----------------------------------------------------------------------------------------------------
-#     google_ad_html
-#----------------------------------------------------------------------------------------------------
+  # --- google_ad_html ---
   if what=='google_ad_html' then
-if !format['wiki'] then
-  # The special-casing is to get adsense to work with xhtml, since document.write() doesn't work in xhtml. This is shown inside an <object> tag in the xhtml.
-  if format['xhtml'] then
-    # In the following, I don't need to give an IE-compatible alternative to the object tag, since the xhtml version will never be shown to IE anyway.
-    return <<'AD'
-	<!-- ============== ad =============== -->
-          <div id="ads">
-          <object data="http://www.lightandmatter.com/adsense_for_xhtml.html" type="text/html"  width="728" height="90">
-          </object>
-          </div>
-AD
+    if !format['wiki'] then
+      if format['xhtml'] then
+        return get_boilerplate_from_custom_file('google_ad_xhtml',format)
+      else
+        return get_boilerplate_from_custom_file('google_ad_html',format)
+      end
+    end
+    return ''
+  end
+  # --- disclaimer_html ---
+  if what=='disclaimer_html' then
+    if format['wiki'] then
+      return get_boilerplate_from_custom_file('disclaimer_wiki',format)
+    else
+      return get_boilerplate_from_custom_file('disclaimer_html',format)
+    end
+  end
+  # --- valid_icon ---
+  if what=='valid_icon' then
+  # In the following, the main point of the icon is to allow me to tell, for testing purposes, whether I'm seeing the xhtml version
+  # or the html version. I'm not displaying any icon for the html version, since that would just clutter up the page.
+  if format['modern'] and !format['html5'] then
+    return '<p><img src="http://www.w3.org/Icons/valid-xhtml11-blue.png" alt="Valid XHTML 1.1 Strict" height="31" width="88"/></p>'
   else
-    # If I change the following, I also need to change it in http://www.lightandmatter.com/adsense_for_xhtml.html :
-    return <<'AD'
-          <!-- ============== ad =============== -->
-          <script type="text/javascript"><!--
-          google_ad_client = "pub-2202341256191765";
-          google_ad_width = 728;
-          google_ad_height = 90;
-          google_ad_format = "728x90_as";
-          google_ad_type = "text";
-          google_ad_channel ="";
-          google_color_border = "dddddd";
-          google_color_bg = "FFFFFF";
-          google_color_link = "444444";
-          google_color_text = "000000";
-          google_color_url = "000000";
-          //--></script>
-
-          <script type="text/javascript"
-                    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-          </script>
-AD
+    #return '<p><img src="http://www.w3.org/Icons/valid-html401-blue" alt="Valid HTML 4.01 Strict" height="31" width="88"/></p>'
+    return ''
   end
-else
-  return ''
 end
-
-  end
-#----------------------------------------------------------------------------------------------------
-#     valid_icon
-#----------------------------------------------------------------------------------------------------
-if what=='valid_icon' then
-# In the following, the main point of the icon is to allow me to tell, for testing purposes, whether I'm seeing the xhtml version
-# or the html version. I'm not displaying any icon for the html version, since that would just clutter up the page.
-if format['modern'] and !format['html5'] then
-  return '<p><img src="http://www.w3.org/Icons/valid-xhtml11-blue.png" alt="Valid XHTML 1.1 Strict" height="31" width="88"/></p>'
-else
-  #return '<p><img src="http://www.w3.org/Icons/valid-html401-blue" alt="Valid HTML 4.01 Strict" height="31" width="88"/></p>'
-  return ''
-end
-end
-#----------------------------------------------------------------------------------------------------
-#     disclaimer_html
-#----------------------------------------------------------------------------------------------------
-if what=='disclaimer_html' then
-if format['wiki'] then
-return <<DISCLAIMER
-    <p>This is the wiki version of #{$config['title']}, by Benjamin Crowell. 
-    This version may have some formatting problems.
-    For serious reading, you want the printer-friendly <a href="#{$config['url']}">Adobe Acrobat version</a>.</p>
-    <p>(c) 1998-2009 Benjamin Crowell, licensed under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike license</a>.
-     Photo credits are given at the end of the Adobe Acrobat version.</p>
-    </div>
-DISCLAIMER
-else
-return <<DISCLAIMER
-    <div class="topstuff">
-    #{boilerplate('valid_icon',format)}
-    <p>You are viewing the html version of <b>#{$config['title']}</b>, by Benjamin Crowell. This version is only designed for casual browsing, and may have
-    some formatting problems.
-    For serious reading, you want the <a href="#{$config['url']}">Adobe Acrobat version</a>.</p>
-    <p><a href="..">Table of Contents</a></p>
-    <p>(c) 1998-2011 Benjamin Crowell, licensed under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike license</a>.
-     Photo credits are given at the end of the Adobe Acrobat version.</p>
-    </div>
-DISCLAIMER
-end
-end
-#-----
 end # boilerplate
 #===================================================================================================================================================
 
@@ -559,6 +510,10 @@ end
 #===============================================================================================================================
 #===============================================================================================================================
 #===============================================================================================================================
+$custom_config = "custom_html.yaml"
+$topic_map_file = "../scripts/topic_map.json"
+
+
 $want_chapter_toc = !$wiki && $config['standalone']==0
 
 
@@ -586,14 +541,12 @@ $tex_math_nontrivial = {'infty'=>'infin'  , 'leq'=>'le' , 'geq'=>'ge' , 'partial
                         'approx'=>'asymp' , 'rightarrow'=>'rarr'   ,  'degunit'=>'deg' ,  'ldots'=>'hellip' }
   # ... nontrivial ones; trivial ones will now be appended to this list:
 $tex_math_trivial_not_entities = "sin cos tan ln log exp arg".split(/ /)
-$tex_math_not_entities = {'munit'=>'m' , 'sunit'=>'s' , 'kgunit'=>'kg' , 'nunit'=>'N' , 'junit'=>'J' , 
+$tex_math_not_entities = {
                           'der'=>'d'  , # cases like "\der x" are special-cased elsewhere to avoid rendering with a space like "d x"
-                          'pm'=>'&#177;' ,  'degcunit'=>'&deg;C' , 'parallel'=>'||',
+                          'pm'=>'&#177;' ,'parallel'=>'||',
                           'sharp'=>'&#x266F;' , 'flat'=>'#x266D'   , 'ell'=>'&#8467;'
 }
-$tex_math_not_in_mediawiki = {'munit'=>'\text{m}' , 'sunit'=>'\text{s}' , 'kgunit'=>'\text{kg}' , 'gunit'=>'\text{g}' , 'nunit'=>'\text{N}',
-                              'junit'=>'\text{J}' , 'der'=>'d'  ,  'degcunit'=>'\ensuremath{\,^{\circ}}C' ,
-                              'cancel'=>'', 'zu'=>'text'}
+$tex_math_not_in_mediawiki = {'der'=>'d'  ,  'cancel'=>''}
 
 $tex_math_to_html = {}
 $tex_math_trivial_not_entities.each {|x|
@@ -629,8 +582,11 @@ $footnote_stack = []
 #===============================================================================================================================
 #===============================================================================================================================
 
-def preprocess(tex)
+def preprocess(tex,command_data,style_files)
+  # command_data looks like {"unitdot":{"n_req":0,"n_opt":0},...}; only lists commands that we've specifically been told to handle
   curly = "(?:(?:{[^{}]*}|[^{}]*)*)" # match anything, as long as any curly braces in it are paired properly, and not nested
+  style = ''
+  style_files.each { |s|  File.open(s,'r') { |f| style = style + "\n" + f.gets(nil) }  }
 
   # Convert summary and hwsection environments into sections, which is what they really are, anyway.
   ['summary','hwsection'].each { |s|
@@ -686,12 +642,38 @@ def preprocess(tex)
   # kludge, fix:
   tex.gsub!(/myoptionalsection/,'mysection')
 
+  tex = apply_custom_macros(tex,command_data,style)
+
   # minipages inside figures aren't necessary in html, and confuse the parser
   tex.gsub!(/\\begin{minipage}\[[a-z]\]{\d+[a-z]*}/,'')
   tex.gsub!(/\\end{minipage}/,'')
   # ... and, e.g., make it do something sensible with non-graphical figures, as in EM 1
   tex.gsub!(/\\docaption{(#{curly})}/) {"ZZZWEB:fig,zzzfake,narrow,1,#{newlines_to_spaces($1)}END_CAPTION"} # name,width,anon,caption
 
+  return tex
+end
+
+def apply_custom_macros(tex,command_data,style)
+  # command_data looks like [cmds,info], where info looks like {"unitdot":{"n_req":0,"n_opt":0},...}; only lists commands that we've specifically been told to handle
+  # style is the LaTeX source code defining these commands
+  curly = "(?:(?:{[^{}]*}|[^{}]*)*)" # match anything, as long as any curly braces in it are paired properly, and not nested
+  max_depth = 30
+  1.upto(max_depth) {
+    before = tex.clone
+    command_data[0].each { |c|
+      info = command_data[1][c]
+      if info==nil then fatal_error("no command_data for #{c} in apply_custom_macros, so it shouldn't be in custom_html.yaml") end
+      n_req,n_opt = [info['n_req'],info['n_opt']]
+      if style =~ /\\newcommand{\\#{c}}\s*(?:\[(\d+)\])?\s*{(#{curly})}/ then
+        nargs,definition = [$1,$2]
+        if n_req==0 && n_opt==0 then tex.gsub!(/\\#{c}/,definition) end
+        if n_req==1 && n_opt==0 then tex.gsub!(/\\#{c}{(#{curly})}/) {definition.gsub(/#1/,$1)} end
+      else
+        $stderr.print "failed to find definition for \\#{c}\n"
+      end
+    }
+    break if before==tex
+  }
   return tex
 end
 
@@ -895,11 +877,11 @@ def parse_macros_outside_para!(tex)
 end
 
 def get_environment_data
-  # Read command and environment data from learned_commands.json and custom.json.
+  # Read command and environment data from learned_commands.json and custom_html.yaml.
   # Returns [envs,env_data], where
-  #   envs = array containing names of environments that we actually intend to try to parse (only those in custom.json)
+  #   envs = array containing names of environments that we actually intend to try to parse (only those in custom_html.yaml)
   #   env_data = a hash containing info about each of those environments (plus data about other environments that we don't intend to try to parse)
-  # The only environments we actually try to parse are those in custom.json.
+  # The only environments we actually try to parse are those in custom_html.yaml.
   # In learned_commands.json, inferred from .cls file:
   #   n_req = # of required args
   #   n_opt = # of optional args (0 or 1)
@@ -913,8 +895,8 @@ def get_environment_data
   #     stick_in_front_of_header
   #   used only for environments that are not going to become divs:
   #     surround_with_tag : e.g., 'ol' means surround it with <ol>...</ol>; must be present for anything that will not be a div
-  learned = get_json_from_file("learned_commands.json")['environment'] # {"eg":{"n_req":0,"n_opt":1,"default":""},...}
-  custom =  get_json_from_file("custom.json")['environment']           # {"eg":{"use_arg_as_title":true,...},...}
+  learned = get_serialized_data_from_file("learned_commands.json")['environment'] # {"eg":{"n_req":0,"n_opt":1,"default":""},...}
+  custom =  get_serialized_data_from_file($custom_config)['environment']           # {"eg":{"use_arg_as_title":true,...},...}
   env_data = {}
   learned.merge(custom).keys.each { |e|
     if learned.has_key?(e) && custom.has_key?(e) then
@@ -925,6 +907,20 @@ def get_environment_data
     end
   }
   return [custom.keys,env_data]
+end
+
+def get_command_data
+  # similar to get_environment_data(), but does commands rather than environments
+  # commands are ignored unless they're listed in custom config
+  learned = get_serialized_data_from_file("learned_commands.json")['command'] # {"unitdot":{"n_req":0,"n_opt":0},...}
+  custom =  get_serialized_data_from_file($custom_config)['command']          # {"unitdot":{},...}
+  cmd_data = {}
+  learned.merge(custom).keys.each { |c|
+    if learned.has_key?(c) && custom.has_key?(c) then
+      cmd_data[c] = learned[c].merge(custom[c])
+    end
+  }
+  return [custom.keys,cmd_data]
 end
 
 def parse_section(tex,environment_data)
@@ -1483,6 +1479,8 @@ end
 def handle_math_one(foo,math_type,allow_bitmap)
   tex = foo.clone
 
+  tex.gsub!(/\\textup/,'\\text')
+
   if tex=='' then  $stderr.print "warning, null string passed to handle_math_one\n"; return '' end
 
   if $mathjax then
@@ -1569,12 +1567,14 @@ def handle_math_one_html(tex,math_type)
   end
 
   m = tex.clone
+    m.gsub!(/\n/,' ')
     m.gsub!(/\&\=/,'=') # we don't try to handle alignment
-    m.gsub!(/_\\zu{o}/,'_o')
     m.gsub!(/\\(quad|qquad)/,' ') # we don't try to handle spacing
     m.gsub!(/\\[ :,]/,' ')
-    m.gsub!(/\\(?:text|zu){([A-Za-z]+)}/) {"TEXTu#{sprintf("%04d",$1.length)}#{$1}"} # parsing gets too complex if not A-Za-z, because can't tell what gets italicized
-    m.gsub!(/\\(?:vc|mathbf){([A-Za-z]+)}/) {"TEXTb#{sprintf("%04d",$1.length)}#{$1}"}
+    m.gsub!(/\\(left|right)/,'') # we don't handle these, and \left becomes <=ft
+    m.gsub!(/_\\text{([A-Za-z])}/) {"_#{$1}"} # handle x_\text{o} as x_o, not worrying about the italicization of the o; prevent _TEXTu0001o, which gives subscripted T
+    m.gsub!(/\\text{([A-Za-z]+)}/) {"TEXTu#{sprintf("%04d",$1.length)}#{$1}"} # parsing gets too complex if not A-Za-z, because can't tell what gets italicized
+    m.gsub!(/\\mathbf{([A-Za-z]+)}/) {"TEXTb#{sprintf("%04d",$1.length)}#{$1}"}
     y = parse_simple_equation(m)
     if debug then $stderr.print "--------in handle_math_one_html, y=#{y}\n" end
     if y!=nil then
@@ -1945,15 +1945,7 @@ def find_topic(ch,book,own)
 
   # Topic maps are also used in scripts/BookData.pm.
   if !$read_topic_map then
-    json_file = "../scripts/topic_map.json"
-    json_data = ''
-    File.open(json_file,'r') { |f| json_data = f.gets(nil) }
-    if json_data == '' then $stderr.print "Error reading file #{json_file} in translate_to_html.rb"; exit(-1) end
-    begin
-      $topic_map = JSON.parse(json_data)
-    rescue JSON::ParserError
-      fatal_error("file #{json_file} has invalid JSON syntax")
-    end
+    $topic_map = get_serialized_data_from_file($topic_map_file)
     $read_topic_map = true
   end
 
@@ -2448,7 +2440,11 @@ get_refs()
 
 tex = $stdin.gets(nil) # nil means read whole file
 
-tex = preprocess(tex)
+# FIXME -- filename hardcoded, kludge...
+sty = "lmmath.sty"
+if !File.exist?(sty) then sty="../lmmath.sty" end
+
+tex = preprocess(tex,get_command_data(),[sty])
 tex = process(tex,get_environment_data()) # has the side-effect of creating $chapter_toc
 tex = postprocess(tex)
 

@@ -14,13 +14,15 @@
 \newcounter{egctr}[chapter]
 \newcounter{scctr}[chapter]
 \newcounter{hwctr}[chapter]
-%====================== pull in sub-packages =====================================================
-\RequirePackage{tensor,lmlanguage,lmlayout,lmcommon,lmfigs,lmenvironments,ifthen,learn-cmd-syntax}
-%====================== other packages =====================================================
+%====================== packages =====================================================
 \RequirePackage[leqno]{amsmath}
 \RequirePackage{url}
+\RequirePackage{tensor,ifthen,learn-cmd-syntax}
 
 \StartSaveCommands % for learn-cmd-syntax
+
+%====================== pull in sub-packages =====================================================
+\RequirePackage{lmlanguage,lmlayout,lmcommon,lmfigs,lmenvironments}
 
 %=====================================================================================
 % In DP, we use italics for figref, but in LM that would look too much like an algebra
