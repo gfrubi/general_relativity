@@ -1698,6 +1698,8 @@ The open half-plane $y>0$ in the Cartesian plane is a 2-manifold. The closed hal
 the boundary points have different properties than the ones on the interior.
 \end{eg}
 
+\pagebreak
+
 \begin{eg}{Disconnected manifolds}
 Two nonintersecting lines are a 1-manifold. Physically, disconnected manifolds of this type would represent a universe in which
 an observer in one region would never be able to find out about the existence of the other region.
@@ -1710,7 +1712,9 @@ want to join them by adding the point P where their boundaries coincide, then we
 not possessed by any others. An example of such a property is that there exist points Q and R such that every continuous curve joining
 them passes through P. (Cf.~problem \ref{hw:frw-time-reversal}, p.~\pageref{hw:frw-time-reversal}.)
 \end{eg}
+
 <% end_sec %> % Topological definition of a manifold
+
 <% begin_sec("Local-coordinate definition of a manifold") %>
 An alternative way of characterizing an  $n$-manifold is as an object that can locally be described by
 $n$ real coordinates. That is, any sufficiently small neighborhood is homeomorphic to an open set in the space
@@ -1764,6 +1768,42 @@ the functions that define the coordinate maps are not part of the definition of 
 so, for example, if two people define coordinates patches on the unit circle in different ways,
 they are still talking about exactly the same manifold.
 <% end_sec %> % Local-coordinate definition of a manifold
+
+<% begin_sec("Homeomorphism") %>
+The notion that the coffee cup is topologically the same as the doughnut can be formalized by saying that it is possible to
+make a one-to-one and onto map from one to the other such that both the mapping and its inverse are continuous. This is called
+an homeomorphism.\index{homeomorphism} Homeomorphism can be defined for any space for which continuity is well defined, not just
+for manifolds.
+
+\begin{eg}{Open line segment homeomorphic to a line}
+Let L be an open line segment, such as the open interval $(0,1)$.
+L is homeomorphic to a line, because we can map $(0,1)$ to the real line through the function $f(x)=\tan(\pi x-\pi/2)$.
+\end{eg}
+
+\begin{eg}{Closed line segment not homeomorphic to a line}
+A closed line segment (which is not a manifold) is not homeomorphic to a line. If we map it to a line, then the endpoints 
+have to go to two special points A and B. There is then no way for the mapping to visit the points
+exterior to the interval $[\zu{A},\zu{B}]$ without visiting A and B more than once.
+\end{eg}
+
+\begin{eg}{Open line segment not homeomorphic to the interior of a circle}\label{eg:homeomorphism-preserves-dimension}
+If the interior of a circle could be mapped by a homeomorphism $f$ to an open line segment,
+then consider what would happen if we took a closed curve lying inside the circle and found its
+image. By the intermediate value theorem, $f$ would not be one-to-one, but this is a contradiction
+since $f$ was assumed to be a homeomorphism. This is an example of a more general fact that homeomorphism
+preserves the dimensionality of a manifold.
+\end{eg}
+<% marg(60) %>
+<%
+  fig(
+    'homeomorphism-preserves-dimension',
+    %q{Example \ref{eg:homeomorphism-preserves-dimension}.}
+  )
+%>
+<% end_marg %>
+
+
+<% end_sec %> % Homeomorphism
 <% end_sec %> % Manifolds
 \begin{hwsection}
 
