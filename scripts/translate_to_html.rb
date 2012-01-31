@@ -162,6 +162,7 @@ require 'json'
 require 'psych' # choice of parser for yaml
 require 'yaml'
 require 'getoptlong' # pickaxe book, p. 452
+require 'fileutils'
 
 def fatal_error(message)
   $stderr.print "error in translate_to_html.rb: #{message}\n"
@@ -2042,24 +2043,10 @@ def find_figure(name,width_type)
   unless File.exist?(dest) then
     # need to call ImageMagick even if input and output formats are the same, to convert to web resolution
     infile = base+fmt
-    options = ''
-    #if fmt=='jpg' or fmt=='png' then
-    if true then
-      `identify #{infile}`.split(/ /)[2]=~/(\d+)x(\d+)/ # ImageMagick
-      width,height=$1.to_f,$2.to_f
-       target_width = -1
-      if width_type=='raw' then target_width = width end
-      if width_type=='narrow' then target_width = ($margin_width_mm/25.4)*72 end
-      if width_type=='wide' or width_type=='fullpage' then target_width = $text_width_pixels end
-      if target_width == -1 then
-        target_width = 100
-        $stderr.print "Warning, unrecognized width type #{width_type} for figure #{dest}\n"
-      end
-      if $config['max_fig_width_pixels']>0 && target_width>$config['max_fig_width_pixels'] then target_width=$config['max_fig_width_pixels'] end
-      scale = target_width/width
-      width = (width*scale).to_i
-      height = (height*scale).to_i
-      options = options + " -resize #{width}x#{height}"
+    did_it = false
+    if fmt=='jpg' or fmt=='png' then
+      rescale_image(width_type,infile,dest)
+      did_it = true
     end
     if fmt=='pdf' then
       # Can convert pdf directly to bitmap of the desired resolution using imagemagick, but it messes up on some files (e.g., huygens-1.pdf), so
@@ -2069,16 +2056,49 @@ def find_figure(name,width_type)
       ppm_file = 'z-000001.ppm' # only 1 page in pdf
       unless File.exist?(ppm_file) then ppm_file = 'z-1.ppm' end # different versions of pdftoppm use different naming conventions
       if File.exist?(ppm_file) then
-        do_system("convert #{options} #{ppm_file} #{dest} && rm #{ppm_file}") # scale it back down
+        rescale_image(width_type,ppm_file,dest)
+        FileUtils.rm(ppm_file)
+        did_it = true
       else
-        $stderr.print "Error converting figure #{dest}, no file z-000001.ppm or z-1.ppm created as output by pdftoppm; perhaps pdftoppm isn't installed?"
-        $stderr.print "Command line was #{pdftoppm_command}\n"
+        fatal_error(
+          <<-DEATH
+            Error converting figure #{dest}, no file z-000001.ppm or z-1.ppm created as output by pdftoppm; perhaps pdftoppm isn't installed?
+            Command line was #{pdftoppm_command}
+          DEATH
+        )
       end
-    else
-      do_system("convert #{options} #{infile} #{dest}")
-    end
+    end # if pdf
+    fatal_error("error in translate_to_html.rb, find_figure(), converting from illegal format #{fmt} to #{output_format}") unless did_it
   end
   return name+'.'+output_format
+end
+
+def rescale_image(width_type,infile,dest)
+  options = find_rescaling_info_for_image(width_type,infile,dest)
+  do_system("convert #{options} #{infile} #{dest}")
+end
+
+def find_rescaling_info_for_image(width_type,infile,name_of_dest_file_for_error_reporting)
+  (width,height) = get_image_file_dimensions(infile)
+  target_width = -1
+  if width_type=='raw' then target_width = width end
+  if width_type=='narrow' then target_width = ($margin_width_mm/25.4)*72 end
+  if width_type=='wide' or width_type=='fullpage' then target_width = $text_width_pixels end
+  if target_width == -1 then
+    target_width = 100
+    $stderr.print "Warning, unrecognized width type #{width_type} for figure #{name_of_dest_file_for_error_reporting}\n"
+  end
+  if $config['max_fig_width_pixels']>0 && target_width>$config['max_fig_width_pixels'] then target_width=$config['max_fig_width_pixels'] end
+  scale = target_width/width
+  width = (width*scale).to_i
+  height = (height*scale).to_i
+  return " -resize #{width}x#{height}" # for ImageMagick's convert
+end
+
+def get_image_file_dimensions(infile) # returns [width,height] in floating-point format
+  # Use ImageMagick's identify script to determine the dimensions of the image:
+  `identify #{infile}`.split(/ /)[2]=~/(\d+)x(\d+)/ or fatal_error("error in translate_to_html, get_image_file_dimensions(), ImageMagick's identify utility failed on file #{infile}")
+  return [$1.to_f,$2.to_f]
 end
 
 def do_system(cmd)
@@ -2129,7 +2149,7 @@ def parse(t,level,current_section,environment_data)
         a = ($config['forbid_anchors_and_links']==0 ? "<a #{$anchor}=\"fig:#{name}\"></a>" : '')
         i = "<img src=\"figs/#{whazzat}\" alt=\"#{name}\"#{$self_closing_tag}>#{a}"
         if name=='zzzfake' then i='' end
-        y="<!--BEGIN_IMG--><p>"+i+"</p>"+c+"<!--END_IMG-->"
+        y="<!--BEGIN_IMG--><p class=\"noindent\">"+i+"</p>"+c+"<!--END_IMG-->"
         "\n\n#{hide(y,'fig')}\n\n"
       }
       if inline then

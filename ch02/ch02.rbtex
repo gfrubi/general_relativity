@@ -151,7 +151,7 @@ auxiliary point $\zu{q}_0$ not lying on $\ell$. By A1, construct the parallelogr
 Next construct $\zu{q}_01\zu{q}_12$. Continuing in this way, we have a scaffolding of parallelograms adjacent
 to the line, determining an infinite lattice of points 1, 2, 3, \ldots on the line, which
 represent the positive integers. Fractions can be defined in a similar way. For example, $\frac{1}{2}$ is defined
-as the the point such that when the initial lattice segment $0\frac{1}{2}$ is extended by the same construction, the next point
+as the point such that when the initial lattice segment $0\frac{1}{2}$ is extended by the same construction, the next point
 on the lattice is 1. 
 <% marg(50) %>
 <%

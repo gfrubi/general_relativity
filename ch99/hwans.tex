@@ -359,7 +359,7 @@ other points: deleting it chops the space into two disconnected pieces.
 \hwsolnhdr{torus-is-manifold}
 When we use a word like ``torus,'' there is some hidden ambiguity. We could mean something strange like the following. Suppose
 we construct the three-dimensional space of coordinates $(x,y,z)$ in which all three coordinates are rational numbers. Then let
-a torus be the set of such all points lying at a distance of 1/2 from the nearest point on a unit circle. This is in some sense
+a torus be the set of all such points lying at a distance of 1/2 from the nearest point on a unit circle. This is in some sense
 a torus, but it doesn't have the topological properties one usually assumes. For example, two continuous curves on its surface can cross
 without having a point of intersection. We can't get anywhere without assuming that the word ``torus'' refers to a surface that
 has the usual topological properties.
@@ -368,12 +368,18 @@ Now let's prove that it's a manifold using both definitions.
 
 Using the topological definition, M1 is satisfied with $n=2$, because every point on the
 surface lives in a two-dimensional neighborhood. M2 holds because the only differences between points are those that are not
-topological, e.g., Gaussian curvature. M3 holds provided precisely under the interpretation outlined in the first paragraph.
+topological, e.g., Gaussian curvature. M3 holds due to the interpretation outlined in the first paragraph.
 
 Alternatively, we can use the local-coordinate definition. We have already shown that a circle
 is a 1-manifold, which can be coordinatized in two patches by an angle $\phi$. The torus can therefore be coordinatized by
 a pair of such angles, $(\phi_1,\phi_2)$, in four patches. Again we need to assume the interpretation given above, since
 otherwise real-number pairs like $(\phi_1,\phi_2)$ wouldn't have the same topology as points on the rational-number torus.
+
+\hwsolnhdr{sphere-not-homeomorphic-to-torus}
+In the torus, we can construct a closed curve C that encircles the hole. If we have a homeomorphism, C must have
+an image $\zu{C}'$ under that homeomorphism that is a closed curve in the sphere.  $\zu{C}'$ can then be
+contracted continuously to a point, and since the inverse of the homeomorphism is also continuous, it would be
+possible to contract C continuously to a point. But this is impossible because C encircles the hole.
 
 \beginsolutions{6}
 

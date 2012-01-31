@@ -423,7 +423,7 @@ enough.
 
 A space of constant negative curvature has a geometry 
 called hyperbolic,\index{geometry!hyperbolic}\index{hyperbolic geometry}
-and is of some interest because it appears to be the one that describes the the spatial dimensions
+and is of some interest because it appears to be the one that describes the spatial dimensions
 of our universe on a cosmological scale.
 A hyperboloidal surface works locally as a model, but its curvature is only approximately
 constant; the surface of constant curvature is a horn-shaped one created by revolving a mountain-shaped curve
@@ -1045,7 +1045,7 @@ approximation to a geodesic:\label{geodesic-algorithm}
 \item Add $(\der^2 x^i/\der\lambda^2)\Delta\lambda$ to the currently stored value of $\der x^i/\der\lambda$.
 \item Add $(\der x^i/\der\lambda)\Delta\lambda$ to $x^i$.
 \item Add $\Delta\lambda$ to $\lambda$.
-\item Repeat steps 2-5 until the the geodesic has been extended to the desired affine distance.
+\item Repeat steps 2-5 until the geodesic has been extended to the desired affine distance.
 \end{enumerate}
 Since the result of the calculation depends only on the inputs at step 1, we find that the geodesic is uniquely determined.
 
@@ -1767,13 +1767,8 @@ The local-coordinate definition only states that a manifold \emph{can} be coordi
 the functions that define the coordinate maps are not part of the definition of the manifold,
 so, for example, if two people define coordinates patches on the unit circle in different ways,
 they are still talking about exactly the same manifold.
-<% end_sec %> % Local-coordinate definition of a manifold
 
-<% begin_sec("Homeomorphism") %>
-The notion that the coffee cup is topologically the same as the doughnut can be formalized by saying that it is possible to
-make a one-to-one and onto map from one to the other such that both the mapping and its inverse are continuous. This is called
-an homeomorphism.\index{homeomorphism} Homeomorphism can be defined for any space for which continuity is well defined, not just
-for manifolds.
+We conclude with a few examples relating to homeomorphism.
 
 \begin{eg}{Open line segment homeomorphic to a line}
 Let L be an open line segment, such as the open interval $(0,1)$.
@@ -1803,7 +1798,8 @@ preserves the dimensionality of a manifold.
 <% end_marg %>
 
 
-<% end_sec %> % Homeomorphism
+<% end_sec %> % Local-coordinate definition of a manifold
+
 <% end_sec %> % Manifolds
 \begin{hwsection}
 
@@ -1885,6 +1881,11 @@ Prove that a double cone (e.g., the surface $r=z$ in cylindrical coordinates) is
 <% begin_hw('torus-is-manifold') %>
 Prove that a torus is a manifold.\hwsoln
 <% end_hw %>
+
+<% begin_hw('sphere-not-homeomorphic-to-torus') %>
+Prove that a sphere is not homeomorphic to a torus.\hwsoln
+<% end_hw %>
+
 
 \end{hwsection}
 
