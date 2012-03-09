@@ -433,14 +433,6 @@ Even though the line charges formed by the two trains
 are moving in opposite directions, their currents don't cancel. A negative charge moving
 to the left makes a current that goes to the right, so in frame 1,
 the total current is twice that contributed by either line charge.
-<% marg(60) %>
-<%
-  fig(
-    'b-field',
-    %q{Magnetism is a purely relativistic effect.}
-  )
-%>
-<% end_marg %>
 
 In frame 1 the charge densities of the two line charges cancel out,
 and the electric field experienced by the lone charge is therefore zero.
@@ -453,6 +445,14 @@ charges are moving more slowly than in frame 1, so in frame 2 they are less cont
 The negative charges are moving more quickly, so their contraction is greater now.
 Since the charge densities don't cancel, there is an electric field in frame 2, which
 points into the wire, attracting the lone charge. 
+<% marg(60) %>
+<%
+  fig(
+    'b-field',
+    %q{Magnetism is a purely relativistic effect.}
+  )
+%>
+<% end_marg %>
 
 We appear to have a logical contradiction here, because an observer in frame 2 predicts that
 the charge will collide with the wire, whereas in frame 1 it looks as though it should
