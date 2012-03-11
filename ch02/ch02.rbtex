@@ -808,14 +808,14 @@ Cf. homework problem \ref{hw:speed-of-sound} and section \ref{sec:carousel}, as 
 the remark following problem \ref{hw:speed-of-sound}.
 \end{eg}
 
-<% begin_sec("Velocity addition") %>\label{sec:velocity-addition}
+<% begin_sec("Velocity addition") %>\label{sec:velocity-addition}\index{velocity addition}
 In classical physics, velocities add in relative motion. For example, if a boat moves relative to
 a river, and the river moves relative to the land, then the boat's velocity relative to the land
 is found by vector addition. This linear behavior cannot hold relativistically. For example,
 if a spaceship is moving at $0.60c$ relative to the earth, and it launches a probe at $0.60c$
 relative to itself, we can't have the probe moving at $1.20c$ relative to the earth, because
 this would be greater than the maximum speed of cause and effect, $c$. To see how to add velocities
-relativistically, we start be rewriting the Lorentz transformation as the matrix
+relativistically, we start by rewriting the Lorentz transformation as the matrix
 \begin{equation*}
   \left(
   \begin{array}{cc}
