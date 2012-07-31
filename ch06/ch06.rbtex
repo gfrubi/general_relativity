@@ -391,7 +391,7 @@ $-m/r^2$, we find $h'/k=2m/r^2$ for $r \gg m$. Since $k \approx 1$ for large $r$
 The interpretation of this calculation is as follows. We assert the equivalence
 principle, by which the acceleration of a free-falling particle can be said to be zero. After some calculations, we find that
 the rate at which time flows (encoded in $h$) is not constant. It is different for observers at different heights in a gravitational
-potential well. But this is something we had already deduced, without the tensor gymnastics, in example
+potential well. But this is something we had already deduced, without the index gymnastics, in example
 \ref{eg:pound-rebka} on page \pageref{eg:pound-rebka}.
 
 Integrating, we find that for large $r$, $h=1-2m/r$.
@@ -963,7 +963,7 @@ A provocative feature of the Schwarzschild metric is that it has elements that b
 the sun, for example, then these singularities are of no physical significance, since we only solved the
 Einstein field equation for the vacuum region outside the sun, whereas $r=2m$ would lie about 3 km from the sun's center.
 Furthermore, it is possible that one or both of these singularities is nothing
-more than a spot where our coordinate system misbehaves. This would be known as a \emph{coordinate singularity}.\index{coordinate singularity}
+more than a spot where our coordinate system misbehaves. This would be known as a \emph{coordinate singularity}.\index{coordinate singularity}\index{singularity!coordinate}
 For example, the metric of ordinary polar coordinates in a Euclidean plane has $g^{\theta\theta}\rightarrow\infty$ as $r\rightarrow 0$.
 
 One way to test whether a singularity is a coordinate singularity is to calculate a scalar measure of curvature, whose value is independent of
@@ -1394,6 +1394,15 @@ The metric of coordinates $(\theta,\phi)$ on the unit sphere is $\der s^2=\der\t
 (a) Show that there is a singular point at which $g^{ab}\rightarrow\infty$.
 (b) Verify directly that the scalar curvature $R=R^a_a$ constructed from the trace of the Ricci tensor is never infinite.
 (c) Prove that the singularity is a coordinate singularity.
+<% end_hw %>
+
+<% begin_hw('astroid') %>
+The curve given parametrically by $(\cos^3 t,\sin^3 t)$ is called an astroid. 
+The arc length along this curve is given by $s=(3/2)\sin^2 t$, and its 
+curvature by $k=-(2/3)\csc 2t$. By rotating this astroid about the $x$ axis, we form a surface of revolution
+that can be described by coordinates $(t,\phi)$, where $\phi$ is the angle of rotation.
+(a) Find the metric on this surface.
+(b) Identify any singularities, and classify them as coordinate or intrinsic singularities.
 <% end_hw %>
 
 <% begin_hw('carousel-singularities') %>

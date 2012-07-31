@@ -17,10 +17,10 @@ The Schwarzschild metric is an example of a highly symmetric spacetime. It has
 continuous symmetries in space (under rotation) and in time (under translation
 in time). In addition, it has discrete symmetries under spatial reflection and
 time reversal. In section \ref{sec:schwarzschild-orbits}, we saw that the two
-continuous symmetries led to the existence of conserved quantities for the orbits
+continuous symmetries led to the existence of conserved quantities for the trajectories
 of test particles, and that these could be interpreted as mass-energy and angular momentum.
 
-Generalizing these ideas, we want to consider the idea that a metric may be invariant
+Generalizing, we want to consider the idea that a metric may be invariant
 when every point in spacetime is systematically shifted by some infinitesimal
 amount. For example, the Schwarzschild metric is invariant under $t\rightarrow t+\der t$.
 In coordinates $(x^0,x^1,x^2,x^3)=(t,r,\theta,\phi)$, we have a vector field  (\der t,0,0,0)

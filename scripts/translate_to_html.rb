@@ -1572,7 +1572,7 @@ def handle_math_one_html(tex,math_type)
     m.gsub!(/\&\=/,'=') # we don't try to handle alignment
     m.gsub!(/\\(quad|qquad)/,' ') # we don't try to handle spacing
     m.gsub!(/\\[ :,]/,' ')
-    m.gsub!(/\\(left|right)/,'') # we don't handle these, and \left becomes <=ft
+    m.gsub!(/\\(left|right)(?!\w)/,'') # we don't handle these, and \left becomes <=ft; the negative lookahead is so we don't mess up \leftarrow and \rightarrow
     m.gsub!(/_\\text{([A-Za-z])}/) {"_#{$1}"} # handle x_\text{o} as x_o, not worrying about the italicization of the o; prevent _TEXTu0001o, which gives subscripted T
     m.gsub!(/\\text{([A-Za-z]+)}/) {"TEXTu#{sprintf("%04d",$1.length)}#{$1}"} # parsing gets too complex if not A-Za-z, because can't tell what gets italicized
     m.gsub!(/\\mathbf{([A-Za-z]+)}/) {"TEXTb#{sprintf("%04d",$1.length)}#{$1}"}
