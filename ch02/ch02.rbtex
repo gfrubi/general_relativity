@@ -429,10 +429,13 @@ The result for the transformation $L$, a Lorentz boost along the $x$ axis with v
 The symmetry of $\zu{P}'\zu{Q}'\zu{R}'\zu{S}'$ with respect to reflection across the diagonal indicates that
 the time and space dimensions are treated symmetrically, although they are not entirely
 interchangeable as they would have been in case II.
-Although we defined $\gamma$ in terms of the time coordinate of $\zu{R}'$, we could just as easily have used the spatial
-coordinate of $\zu{Q}'$, so $\gamma$ represents a factor of both time dilation and length contraction.
-(Clearly it wouldn't have made sense to distort one quantity without distorting the other, since the invariant
-velocity $c$ represents a ratio of a distance to a time.) In summary, a clock runs fastest according to an observer
+
+A measuring rod, unlike a clock, sweeps out a two-dimensional strip on an $x-t$ graph.
+As in Galilean relativity, the two observers disagree on the positions of events
+at the two ends of their rods, but in addition they  disagree on the simultaneity of such events.
+Calculation shows that a moving rod appears contracted by a factor $\gamma$.
+
+In summary, a clock runs fastest according to an observer
 who is at rest relative to the clock, and a measuring rod likewise appears longest in its own rest frame.\index{time dilation!kinematic}\index{length contraction}
 
 The lack of a universal notion of simultaneity has a similarly symmetric interpretation. In prerelativistic
@@ -1125,11 +1128,27 @@ reuniting and interfering. The result is a measurement of $g$ to about one part 
 New and nontrivial phenomena arise when we generalize from 1+1 dimensions to 3+1.
 <% begin_sec("Lorentz boosts in three dimensions") %>\label{lorentz-three-dim}
 How does a Lorentz boost along one axis, say $x$, affect the other two spatial coordinates $y$ and $z$?
-We have
+
+First, we can rule out the possibility that such a transformation could have various terms such as
+$t'=\ldots+(\ldots)y+\ldots$. For example, if the $t$ coefficient was positive for $v>0$, then the laws of
+physics would be different from the laws that applied in a universe where the $y$ or $t$ axis was inverted,
+but this would violate parity or time-reversal symmetry. This establishes that observers in the two frames
+agree on the directions of the $y$ and $z$ axes and on simultaneity along those axes when they coincide.
+
+Now suppose that two observers, in motion relative to one another along the $x$ axis, each carry
+a stick, represented by line segments AB and CD, oriented along the $y$ axis, such that the bases of
+the sticks A and C coincide at some time. Due to the vanishing of the types of terms in the transformation
+referred to above, they agree that B and D are collinear with A (and C) at this time. Then by O3 and O4, either
+B lies between A and D, D lies between A and B, or B=D. That is, they must agree whether the sticks are
+equal in length or, if not, then on whose is longer. This would violate L1, isotropy of space,
+since it would distinguish $+x$ from $-x$.
+
+Another simple way to obtain this result is as follows. We have
 already proved that area in the $(t,x)$ plane is preserved. The same proof applies to volume in the spaces
 $(t,x,y)$ and $(t,x,z)$, hence lengths in the $y$ and $z$ directions are preserved. (The proof does \emph{not} apply to
 volume in, e.g., $(x,y,z)$ space, because the $x$ transformation depends on $t$, and therefore if we are given
 a region in $(x,y,z)$, we do not have enough information to say how it will change under a Lorentz boost.)
+
 The complete form of the transformation $L(v\hat{\vc{x}})$, a Lorentz boost along the $x$ axis with velocity $v$, is therefore:
 \begin{align*}
   t' &= \gamma t + v \gamma x \\

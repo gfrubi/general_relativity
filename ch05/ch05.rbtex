@@ -300,12 +300,15 @@ Theorem: In elliptic geometry, the angular defect $\epsilon=\alpha+\beta+\gamma-
 of a triangle is proportional to its area $A$.\\
 Proof: By axiom E2, extend each side of the triangle to form a line, figure \subfigref{elliptic-geom-triangle-area-proof}{1}.
 Each pair of lines crosses at only one point (E1)
-and divides the plane into two lunes with its two vertices touching at this point, figure \subfigref{elliptic-geom-triangle-area-proof}{2}. The two interior angles
+and divides the plane into two lunes with their four vertices touching at this
+point, figure \subfigref{elliptic-geom-triangle-area-proof}{2}.
+Of the six lunes, we focus on the three shaded ones, which overlap the triangle.
+In each of these, the two interior angles
 at the vertex are the same (Euclid I.15).
 The area of a lune is proportional to its interior angle, as follows from dissection into narrower lunes;
 since a lune with an interior angle of $\pi$ covers the entire area $P$ of the plane, the constant
 of proportionality is $P/\pi$.
-The sum of the areas of our three lunes is $(P/\pi)(\alpha+\beta+\gamma)$, but these three areas also cover the entire plane,
+The sum of the areas of the three lunes is $(P/\pi)(\alpha+\beta+\gamma)$, but these three areas also cover the entire plane,
 overlapping three times on the given triangle, and therefore their sum also equals $P+2A$.
 Equating the two expressions leads to the desired result.
 <% marg(63) %>
@@ -509,6 +512,8 @@ see that the Riemann tensor tells us something about the amount of curvature con
 infinitesimal area spanned by $\der p^c$ and $\der q^d$. A finite two-dimensional region can be broken
 down into infinitesimal elements of area, and the Riemann tensor integrated over them. The result is
 equal to the finite change $\Delta v^b$ in a vector transported around the whole boundary of the region.
+
+\pagebreak
 
 \begin{eg}{Curvature tensors on a sphere}
 Let's find the curvature tensors on a sphere of radius $\rho$.
@@ -1297,7 +1302,7 @@ source.\footnote{Carroll and Field, \url{http://arxiv.org/abs/gr-qc/9403058}}
 
 <% begin_sec("From metric to curvature",4) %>\label{sec:from-metric-to-curvature}
 
-<% begin_sec("Finding $\\Gamma$ given $g$") %>
+<% begin_sec("Finding the Christoffel symbol from the metric") %>
 We've already found the Christoffel symbol in terms of the metric in one dimension. Expressing it in
 tensor notation, we have
 \begin{align*}
@@ -1440,7 +1445,7 @@ lambda= 90.00   r= 90.06   phi= 89.29 deg.
 We can see that $\phi\rightarrow 90\ \zu{deg.}$ as $\lambda\rightarrow\infty$, which makes sense, because
 the geodesic is a straight line parallel to the $y$ axis.
 
-A less trivial use of the technique is demonstrated on page \ref{sec:deflection-of-light}, where we
+A less trivial use of the technique is demonstrated on page \pageref{sec:deflection-of-light}, where we
 calculate the deflection of light rays in a gravitational field, one of the classic observational tests
 of general relativity.
 <% end_sec %> % Numerical solution
@@ -1697,8 +1702,6 @@ when we say that electric field lines aren't supposed to intersect.
 The open half-plane $y>0$ in the Cartesian plane is a 2-manifold. The closed half-plane $y\ge 0$ is not, because it violates M2;
 the boundary points have different properties than the ones on the interior.
 \end{eg}
-
-\pagebreak
 
 \begin{eg}{Disconnected manifolds}
 Two nonintersecting lines are a 1-manifold. Physically, disconnected manifolds of this type would represent a universe in which
