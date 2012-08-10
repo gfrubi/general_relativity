@@ -659,11 +659,10 @@ when it flies back out and away from the sun, its orbit has rotated counterclock
 % 43*(1/100)*(1/365.25)*(115.9)*(1/3600)*pi/180
 %    6.61510182764023*10^-7
 
-We can easily understand why there should be such an effect according to general relativity, by passing to
-the limit in which the relativistic effect is very large. Consider the
-orbits of material objects in the vicinity of a black hole. An object that passes through the event horizon
-spends infinite time at its ``perihelion'' and never emerges again. Applying this reasoning to the case of
-Mercury's orbit, we find that an effect in the observed direction is expected.
+We can at least qualitatively understand the reason for such an effect based on the spatial part of the curvature
+of the spacetime surrounding the sun. This spatial curvature is positive, so a circle's circumference is less than
+$2\pi$ times its radius. This causes Mercury to get back to a previously visited angular position before it has had time
+to complete its Newtonian cycle of radial motion.
 
 Based on the examples in section \ref{sec:estimates}, we also expect that the effect will be of order
 $m/r$, where $m$ is the mass of the sun and $r$ is the radius of Mercury's orbit.
