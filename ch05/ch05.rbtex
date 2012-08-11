@@ -459,6 +459,65 @@ Surprisingly, even this is impossible. The flea can only measure the single numb
 no information about directions in space.
 \end{eg}
 
+\pagebreak
+
+\begin{eg}{The lightning rod}\label{eg:lightning-rod}
+ Suppose you have a pear-shaped conductor like the one
+        in figure \subfigref{lightning-rod}{1}.  Since the pear is a conductor,
+        there are free charges everywhere inside it. Panels 1 and 2 of the figure show
+        a computer simulation with 100 identical electric charges. In 1, the charges
+        are released at random positions inside the pear. Repulsion causes them all
+        to fly outward onto the surface and then settle down into an orderly but nonuniform
+        pattern. 
+
+        We might not have been able to guess the pattern in advance, but we can
+        verify that some of its features make sense. For example, charge A has more neighbors
+        on the right than on the left, which would tend to make it accelerate off to the left.
+        But when we look at the picture as a whole, it appears reasonable that this is prevented
+        by the larger number of more distant charges on its left than on its right.
+
+        There also seems to be a pattern to the nonuniformity: the charges collect more
+        densely in areas like B, where the Gaussian curvature is large, and less densely in areas like C,
+        where $K$ is nearly zero (slightly negative).
+<% marg(130) %>
+<%
+  fig(
+    'lightning-rod',
+    %q{%
+      Example \ref{eg:lightning-rod}. In 1 and 2, charges that are visible on the front surface of the conductor
+      are shown as solid dots; the others would have to be seen through the conductor, which we
+      imagine is semi-transparent.
+    }
+  )
+%>
+<% end_marg %>
+
+To understand the reason for this pattern, consider \subfigref{lightning-rod}{3}.
+It's straightforward to show that the density of charge $\sigma$ on each sphere is inversely proportional
+to its radius, or proportional to $K^{1/2}$. Lord Kelvin proved that on a conducting ellipsoid, the
+density of charge is proportional to the distance from the center to the tangent plane, which
+is equivalent\footnote{\url{http://math.stackexchange.com/questions/112662/gaussian-curvature-of-an-ellipsoid-proportional-to-fourth-power-of-the-distance}}
+to $\sigma\propto K^{1/4}$; this result looks similar except for the different exponent.
+McAllister showed in 1990\footnote{I W McAllister 1990 J. Phys. D: Appl. Phys. 23 359} that this
+$K^{1/4}$ behavior applies to a certain class of examples, but it clearly can't apply in all cases, since,
+for example, $K$ could be negative, or we could have a deep concavity, which would form a Faraday cage.
+Problem \ref{hw:gaussian-curvature-at-edge} on p.~\pageref{hw:gaussian-curvature-at-edge} discusses the case of a knife-edge.
+
+Similar reasoning shows why Benjamin Franklin used a sharp
+        tip when he invented the lightning rod. The charged stormclouds
+        induce positive and negative charges to move to opposite
+        ends of the rod.  At the pointed upper end of the rod, the
+        charge tends to concentrate at the point, and this charge
+        attracts the lightning. The same effect can sometimes be seen when
+        a scrap of aluminum foil is inadvertently put in a microwave oven. Modern experiments\footnote{Moore \emph{et al.},
+        Journal of Applied Meteorology 39 (1999) 593} show that although
+        a sharp tip is best at starting a spark, a more moderate curve,
+        like the right-hand tip of the pear in this example, is better
+        at successfully sustaining the spark for long enough to connect
+        a discharge to the clouds.
+
+\end{eg}
+
 <% end_sec %>
 
 <% begin_sec("Curvature tensors",nil,'curvature-tensors') %>\index{curvature!tensors}
@@ -512,8 +571,6 @@ see that the Riemann tensor tells us something about the amount of curvature con
 infinitesimal area spanned by $\der p^c$ and $\der q^d$. A finite two-dimensional region can be broken
 down into infinitesimal elements of area, and the Riemann tensor integrated over them. The result is
 equal to the finite change $\Delta v^b$ in a vector transported around the whole boundary of the region.
-
-\pagebreak
 
 \begin{eg}{Curvature tensors on a sphere}
 Let's find the curvature tensors on a sphere of radius $\rho$.
@@ -795,6 +852,7 @@ the \emph{covariant derivative}.\index{covariant derivative!in electromagnetism}
 It gives the right answer regardless of a change of gauge.
 
 <% end_sec %> % The covariant derivative in electromagnetism
+
 <% begin_sec("The covariant derivative in general relativity") %>\index{covariant derivative}\index{derivative!covariant}\index{covariant derivative!in relativity}\index{derivative!covariant!in relativity}
 
 Now consider how all of this plays out in the context of general relativity. The gauge transformations
@@ -804,15 +862,6 @@ scalar function remains constant when expressed in a new coordinate system, but 
 true for a constant vector function, or for any tensor of higher rank. This is because the change
 of coordinates changes the units in which the vector is measured, and if the change of coordinates
 is nonlinear, the units vary from point to point.
-<% marg(50) %>
-<%
-  fig(
-    'varying-ruler-spacing',
-    %q{These three rulers represent three choices of coordinates. As in figure \figref{varying-wavelength} on page \pageref{fig:varying-wavelength},
-         switching from one set of coordinates to another has no effect on any experimental observables. It is merely a choice of gauge.}
-  )
-%>
-<% end_marg %>
 
 Consider the one-dimensional case, in which a
 vector $v^a$ has only one component, and the metric is also a single number, so that we can omit the
@@ -825,6 +874,15 @@ a one-dimensional space, because there is no curvature in one dimension. In more
 and normal coordinates only give a metric that is approximately constant in the neighborhood around a certain point.
 See figure \figref{gaussian-coords-on-sphere} pn page \pageref{fig:gaussian-coords-on-sphere} for an example
 of normal coordinates on a sphere, which do not have a constant metric.)
+<% marg(50) %>
+<%
+  fig(
+    'varying-ruler-spacing',
+    %q{These three rulers represent three choices of coordinates. As in figure \figref{varying-wavelength} on page \pageref{fig:varying-wavelength},
+         switching from one set of coordinates to another has no effect on any experimental observables. It is merely a choice of gauge.}
+  )
+%>
+<% end_marg %>
 
 Now suppose we transform into a new coordinate system $X$, which is not normal.
 The metric $G$, expressed in this coordinate system, is not constant.
@@ -1805,6 +1863,15 @@ preserves the dimensionality of a manifold.
 
 <% end_sec %> % Manifolds
 \begin{hwsection}
+
+<% begin_hw('gaussian-curvature-at-edge') %>
+Example \ref{eg:lightning-rod} on p.~\pageref{eg:lightning-rod} discussed some examples in electrostatics where the charge density on the surface of a conductor
+depends on the Gaussian curvature, when the curvature is positive. In the case of a knife-edge formed by two
+half-planes at an exterior angle $\beta>\pi$, there
+is a standard result\footnote{Jackson, \emph{Classical Electrodynamics}} that the charge density at the edge
+blows up to infinity as $R^{\pi/\beta-1}$. Does this match up with the hypothesis that Gaussian curvature
+determines the charge density?\hwsoln
+<% end_hw %>
 
 <% begin_hw('polar-christoffel') %>
 Show, as claimed on page \pageref{sec:numerical-geodesic}, that
