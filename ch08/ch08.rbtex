@@ -1735,11 +1735,14 @@ in problem \ref{hw:flat-perfect-fluid-cosmology} on page  \pageref{hw:flat-perfe
 <% end_sec %> % The radiation-dominated solution
 
 <% begin_sec("Observation") %>\label{sec:cosmology-observation}
-Historically, it was very difficult
-to determine the universe's average density, even to within an order of magnitude. Most of the matter in the universe
-probably doesn't emit light, making it difficult to detect. Astronomical distance scales are also very poorly calibrated
-against absolute units such as the SI.
-<% marg(0) %>
+Historically, it was believed that the cosmological constant was zero, that nearly all matter in the universe was
+in the form of atoms, and that there was therefore only one interesting cosmological parameter to measure, which was
+the average density of matter. This density was very difficult
+to determine, even to within an order of magnitude, because most of the matter in the universe
+probably doesn't emit light, making it difficult to detect. Astronomical distance scales were also very poorly calibrated
+against absolute units such as the SI. Starting around 1995, however, a new set of techniques led to an era of
+high-precision cosmology.
+<% marg(-10) %>
 <%
   fig(
     'cmb-geometry',
@@ -1748,7 +1751,7 @@ against absolute units such as the SI.
 %>
 <% end_marg %>
 
-\index{cosmological constant!observation}
+<% begin_sec("Spatial curvature from CMB fluctuations") %>\index{cosmological constant!observation}
 A strong constraint on the models comes from accurate measurements of the cosmic microwave
 background, especially by the 1989-1993 COBE probe, and its 2001-2009 successor, the Wilkinson Microwave Anisotropy Probe,
 positioned at the L2 Lagrange point of the earth-sun system, beyond the Earth on the line
@@ -1767,12 +1770,17 @@ divided by the critical density that results in a flat universe. $\Omega$ includ
 from matter, $\Omega_M$, the cosmological constant, $\Omega_\Lambda$, and radiation (negligible in the
 present-day unverse). The results from WMAP, combined with other data from other methods, gives
 $\Omega=1.005\pm .006$. In other words, the universe is very nearly spatially flat.
+<% end_sec %> % Spatial curvature from CMB fluctuations
 
+\pagebreak
+
+<% begin_sec("Accelerating expansion from supernova data") %>
 The supernova data described on page \pageref{sec:vacuum-dominated} complement the CMB data because they are
 mainly sensitive to the difference $\Omega_\Lambda-\Omega_M$, rather than their sum $\Omega=\Omega_\Lambda+\Omega_M$.
 This is because these data measure the acceleration or deceleration of the universe's expansion. Matter produces
 deceleration, while the cosmological constant gives acceleration. Figure \figref{supernova-graph} shows some recent
-supernova data.\footnote{Riess et al., 2007, \url{arxiv.org/abs/astro-ph/0611572}} The horizontal axis gives the redshift
+supernova data.\footnote{Riess et al., 2007, \url{arxiv.org/abs/astro-ph/0611572}. A larger data set is analyzed
+in Kowalski et al., 2008, \url{arxiv.org/abs/0804.4142}.} The horizontal axis gives the redshift
 factor $z=(\lambda'-\lambda)/\lambda$, where $\lambda'$ is the wavelength observed on earth and $\lambda$ the wavelength
 originally emitted. It measures how fast the supernova's galaxy is receding from us. The vertical axis is
 $\Delta(m-M)=(m-M)-(m-M)_{empty}$, where $m$ is the apparent magnitude, $M$ is the absolute magnitude, and
@@ -1783,8 +1791,8 @@ vertical axis makes it easier to see small differences. Since the WMAP data requ
 supernova data with values of $\Omega_M$ and $\Omega_\Lambda$ that add up to one. Attempting to do so with
 $\Omega_M=1$ and $\Omega_\Lambda=0$ is clearly inconsistent with the data, so we can conclude that the cosmological
 constant is definitely positive.
-
-<% marg(60) %>
+<% end_sec %> 
+<% marg(100) %>
 <%
   fig(
     'supernova-graph',
@@ -1793,14 +1801,62 @@ constant is definitely positive.
   )
 %>
 <% end_marg %>
+
+<% marg(-10) %>
+<%
+  fig(
+    'eisenstein-bao',
+    %q{The acoustic peak in the BAO correlation function. Redrawn from Eisenstein, New Astronomy Reviews. 49 (2005) 360,
+       as reproduced in Bassett and Hlozek, 2009, \url{arxiv.org/abs/0910.5224}.}
+  )
+%>
+<% end_marg %>
+<% begin_sec("Density of matter from baryonic acoustic oscillations") %>\index{baryon acoustic oscillations}
+Efforts such as the Sloan Digital Sky Survey have made three-dimensional maps of the density of luminous
+matter in the universe.\footnote{Sanchez et al., 2012, \url{arxiv.org/abs/1203.6616}} The distribution is
+clumpy. Measuring the average correlation $\xi$ between the density at points separated by some distance $s$ (measured
+in the comoving frame),
+one would expect that the function $\xi(s)$  would be largest when $s$ was small and would simply taper off with
+increasing $s$. By analogy, we don't usually find a Manhattan-style landscape of skyscrapers side by side
+with an uninhabited mountainous wilderness. On the other hand, imagine constructing such a correlation function for
+houses in a subdivision in which the roads do not form any regular grid, but zoning regulations prohibit construction
+of houses on lots of less than a certain size. In this situation, there would be zero probability of finding
+houses separated by very small distances, and $\xi(s)$ would exhibit a peak at some larger scale set by the legal code.
+The actual results of the sky surveys do show such a peak, which is due to well known physics
+referred to as baryon acoustic oscillations 
+(BAO).\footnote{Bassett and Hlozek, 2009, \url{arxiv.org/abs/0910.5224}}
+In the early universe, any region of overdensity would tend to create a radiating
+sound wave like the bang of
+a firecracker. Such waves propagated at a known speed (about half the speed of light) for a known time
+(about 400,000 years, until matter became deionized and transparent to radiation, making it immune to the
+photon pressure that drove the oscillations). This leads to a known distance $s$, which forms a standard
+ruler at which the peak in $\xi(s)$ occurs. In cosmological models, these results strongly constrain
+$\Omega_M$, while being relatively insensitive to $\Omega_\Lambda$, and they are therefore complementary
+to both the supernova data and the CMB results.
+<% end_sec %> % Density of matter from baryonic acoustic oscillations
+
+<% begin_sec("Conclusions about cosmology") %>
 Figure \figref{cosmology-parameters} summarizes what we can conclude about our universe, parametrized in terms of a
-model with both $\Omega_M$ and $\Omega_\Lambda$ nonzero. \footnote{See Carroll, ``The Cosmological Constant,'' \url{http://www.livingreviews.org/lrr-2001-1}
+model with both $\Omega_M$ and $\Omega_\Lambda$ nonzero.\footnote{See Carroll, ``The Cosmological Constant,'' \url{http://www.livingreviews.org/lrr-2001-1}
 for a full mathematical treatment of such models.} We can tell that it
 originated in a Big Bang singularity, that it will go on expanding forever, and that it is very nearly flat.
 Note that in a cosmology with nonzero values for both $\Omega_M$ and $\Omega_\Lambda$, there is no strict
 linkage between the spatial curvature and the question of recollapse, as there is in a model with only
 matter and no cosmological constant; therefore even though we know that the universe will not recollapse,
 we do not know whether its spatial curvature is slightly positive (closed) or negative (open).
+<% marg(45) %>
+<%
+  fig(
+    'cosmology-parameters',
+    %q{The cosmological parameters of our universe, after Perlmutter, 1998, \url{arxiv.org/abs/astro-ph/9812133}
+       and Kowalski, 2008, \url{arxiv.org/abs/0804.4142}. The three shaded regions represent the 95\%
+       confidence regions for the three types of observations.}
+  )
+%>
+<% end_marg %>
+<% end_sec %> % Conclusions about cosmology
+
+<% begin_sec("Consistency checks") %>
 
 Astrophysical considerations provide further constraints and consistency checks. In the era before the advent
 of high-precision cosmology, estimates of the age of the universe ranged from 10 billion to 20 billion years, and the
@@ -1808,15 +1864,13 @@ low end was inconsistent with the age of the oldest globular clusters. This was 
 observational cosmology or for the astrophysical models used to estimate the age of the clusters: ``You can't be
 older than your ma.'' Current data have shown that the low estimates of the age were incorrect, so consistency is
 restored.
-<% marg(60) %>
-<%
-  fig(
-    'cosmology-parameters',
-    %q{The cosmological parameters of our universe, after Perlmutter et al., \url{arxiv.org/abs/astro-ph/9812133}.}
-  )
-%>
-<% end_marg %>
 
+That only a small fraction of the universe's matter was luminous had been suspected by astronomers such as
+Zwicky as early as 1933, based on the inability to reconcile the observed kinematics with Newton's laws if
+all matter was assumed to be luminous.
+<% end_sec %> % Consistency checks
+
+<% begin_sec("Dark matter") %>         
 Another constraint comes from models of nucleosynthesis during the era shortly after the Big Bang (before the
 formation of the first stars). The observed relative abundances of hydrogen, helium, and deuterium cannot be
 reconciled with the density of ``dust'' (i.e., nonrelativistic matter) inferred from the observational
@@ -1825,10 +1879,24 @@ consisted mostly of protons and neutrons), then nuclear reactions in the dense e
 proceeded relatively efficiently, leading to a much higher ratio of helium to hydrogen, and a much lower
 abundance of deuterium. The conclusion is that most of the matter in the universe must be made of
 an unknown type of exotic non-baryonic matter, known generically as ``dark matter.''\index{dark matter}
+
+ The existence of nonbaryonic matter is also required in order to
+reconcile the observed density of galaxies with the observed strength of the CMB fluctuations, and in merging
+galaxy clusters it has been observed that the gravitational potential is offset from the radiating plasma.
+A 2012 review paper on dark matter is Roos, \url{arxiv.org/abs/1208.3662}.
+
 A number of experiments are under way to detect dark matter directly, and the results so far are not definitive
 and sometimes contradict one another.\footnote{\url{http://arxiv.org/abs/1106.1066}, \url{http://arxiv.org/abs/1109.0702}}
+
+At one time it was widely expected that dark matter would consist of the lightest supersymmetric particle, which
+might for example be the neutralino. However, results from the LHC seem to make it unlikely that our universe
+exhibits supersymmetry, assuming that the energy scale is the electroweak scale, which is the only scale that
+has strong motivation. It now appears more likely that dark matter consists of some other particle such
+as sterile neutrinos or axions.
+
 Even with the inclusion of dark matter, there is a problem with the abundance of lithium-7 relative to
 hydrogen, which models greatly overpredict.\footnote{\url{arxiv.org/abs/0808.2818}, \url{arxiv.org/abs/1107.1117}}
+<% end_sec %> % Dark matter
 <% end_sec %> % observation
 
 <% end_sec %> % Cosmological solutions

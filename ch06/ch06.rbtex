@@ -1250,10 +1250,10 @@ background curvature of the extra dimensions is negligible. Since the exponents 
 stronger than otherwise expected at small distances, and it becomes easier to make black holes. It has been proposed that
 if large extra dimensions exist, microscopic black holes would be observed at the Large Hadron Collider. They would immediately
 evaporate into Hawking radiation (p.~\pageref{sec:hawking-radiation}), with an experimental signature of violating the
-standard conservation laws of particle physics.
+standard conservation laws of particle physics. As of 2010, the empirical results seem to be negative.\footnote{\url{http://arxiv.org/abs/1012.3375}}
 
 The reasoning given above fails in the case of $d=3$, i.e., 2+1-dimensional spacetime, both because the integral of
-$r^{-1}$ is not $r^0$ and because the Tangherlini-Schwarzschild is not a vacuum solution. As shown in problem
+$r^{-1}$ is not $r^0$ and because the Tangherlini-Schwarzschild metric is not a vacuum solution. As shown in problem
 \ref{hw:no-schwarzschild-in-three-dimensions} on p.~\pageref{hw:no-schwarzschild-in-three-dimensions},
 there is no counterpart of the Schwarzschild metric in 2+1 dimensions.
 This is essentially because for $d=3$ mass is unitless, so given a source having a certain mass, there is
