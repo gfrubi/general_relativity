@@ -12,7 +12,7 @@
 
 <% begin_sec("Sources in general relativity") %>
 <% begin_sec("Point sources in a background-independent theory") %>
-Schr\"{o}dinger equation and Maxwell's equations treat spacetime as a stage on which particles and
+The Schr\"{o}dinger equation and Maxwell's equations treat spacetime as a stage on which particles and
 fields act out their roles. General relativity, however, is essentially a theory of spacetime itself.
 The role played by atoms or rays of light is so peripheral that by the time Einstein had derived
 an approximate version of the Schwarzschild metric, and used it to find the precession of Mercury's

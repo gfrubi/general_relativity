@@ -1461,6 +1461,14 @@ Prove, as claimed on p.~\pageref{sec:schwarzschild-d-dimensions}, that in 2+1 di
 cosmological constant, there is no nontrivial Schwarzschild metric.\hwsoln
 <% end_hw %>
 
+<% begin_hw('flip-velocity-vectors') %>
+On p.~\pageref{sec:sch-t-reversal} I argued that there is no way to define a time-reversal operation in
+general relativity so that it applies to all spacetimes. Why can't we define it by picking some arbitrary
+spacelike surface that covers the whole universe, flipping the velocity of every particle on that
+surface, and evolving a new version of the spacetime backward and forward from that surface using the field equations?\hwsoln
+<% end_hw %>
+
+
 \end{hwsection}
 
 <% end_chapter %>
