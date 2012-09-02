@@ -1218,7 +1218,8 @@ putting a test particle in a circular orbit around the black hole. Since the met
 as an ordinary Schwarzschild metric, we find that the test particle's orbit does not expand by any significant amount.
 
 Cooperstock et al.~have carried out estimates for more
-realistic cosmologies and for actual systems of interest such as the solar system.\footnote{\url{http://arxiv.org/abs/astro-ph/9803097v1}} For example,
+realistic cosmologies and for actual systems of
+interest such as the solar system.\footnote{\url{http://arxiv.org/abs/astro-ph/9803097v1}} For example,
 the predicted general-relativistic effect on the radius of the earth's orbit since the
 time of the dinosaurs is calculated to be about as big as the diameter of an atomic nucleus;
 if the earth's orbit had expanded according to $a(t)$, the increase would have been millions of
@@ -1228,13 +1229,15 @@ To see why the solar-system effect is so small, let's consider how it can depend
 is just flat spacetime described in silly coordinates, and it has $\dot{a}\ne 0$, i.e., a nonvanishing value of $H_\zu{o}$.
 This shows that we should not expect any expansion of the solar system due to  $\dot{a}\ne 0$. The lowest-order effect
 requires $\ddot{a}\ne 0$. Since a rescaling like $a(t)\rightarrow 2a(t)$ has no physical meaning, we can guess that
-the effect is proportional to $\ddot{a}/a$. This quantity should be on the order of the inverse square of the age
-of the universe, i.e., of order $H_\zu{o}^2\sim 10^{-35}\ \sunit^{-2}$. Based on units, we expect that multiplying this
-by the size of the solar system might give an estimate of the rate at which the solar system expands. The result
-is indeed in order-of-magnitude agreement with Cooperstock's rigorous result, but should not be taken too seriously
-since, e.g., it would also lead us to expect, erroneously, an expansion for atoms and nuclei.
-Cooperstock's calculation,
-which correctly incorporates the physics of a gravitationally bound system, does not say anything about atoms and nuclei.
+the effect is proportional to $\ddot{a}/a$. Based on units, we expect that multiplying this
+by the size of the solar system might give an estimate of the rate at which the solar system expands,
+and this is indeed the result of Cooperstock's rigorous calculation for a circular orbit. The fractional rate
+of anomalous acceleration $\ddot{r}/r$ is on the order of the inverse square of the age
+of the universe, i.e., of order $H_\zu{o}^2\sim 10^{-35}\ \sunit^{-2}$.
+The result for $\ddot{r}/r$ is valid for $r\ll 1/H_\zu{o}$ and is independent of $r$,
+so it can be applied to similar systems with circular orbits
+at other scales, such as the earth-moon system or a pair of galaxies in circular orbits about their common
+center of mass. It can't be applied to systems bound by non-gravitational forces, such as atoms and nuclei.
 
 It is more difficult to demonstrate by explicit calculation that atoms and nuclei do not expand, since we do not
 have a theory of quantum gravity at our disposal. It is, however, easy to see that such an expansion would
@@ -1260,9 +1263,9 @@ any fundamental massive particle sets a universal length scale, one that will be
 anywhere in the universe. Since photons are massless, they can't be used to set a universal scale in this
 way; a photon has a certain mass-energy, but that mass-energy can take on any value. Similarly, a solar system
 sets a length scale, but not a universal one; the radius of a planet's orbit can take on any value.
-A universe without massive fundamental particles would be a universe without measurement.
-Geometrically, it would obey the laws of conformal geometry,\index{conformal geometry} in which angles and light-cones were the
-only geometrical measurements. This is the reason that atoms and nuclei, which are made of massive fundamental
+A universe without massive fundamental particles would be a universe without length measurement.
+It would obey the laws of conformal geometry,\index{conformal geometry} in which angles and light-cones were the
+only measures. This is the reason that atoms and nuclei, which are made of massive fundamental
 particles, do not expand.
 <% end_sec %> % General-relativistic predictions
 <% begin_sec("More than one dimension required") %>
