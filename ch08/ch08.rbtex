@@ -1212,16 +1212,17 @@ We can, however, handle simple cases, as in example
 \ref{eg:sch-de-sitter} on page \pageref{eg:sch-de-sitter}, where we display an exact solution
 for the case of a universe containing only two things: an isolated black hole, and an energy density described
 by a cosmological constant. We find that
-the characteristic scale of the black hole, e.g., the radius of its event horizon, is still set by the constant mass $m$, so
-we can see that cosmological expansion does not affect the size of this gravitationally bound system. We can also imagine
-putting a test particle in a circular orbit around the black hole. Since the metric near the black hole is very nearly the same
-as an ordinary Schwarzschild metric, we find that the test particle's orbit does not expand by any significant amount.
+the characteristic scale of the black hole, i.e., the radius of its event horizon, is still set by the constant mass $m$, so
+we can see that cosmological expansion does not affect the size of this gravitationally bound system.
+Another case with a null result is one in which we take a $\Lambda=0$ cosmological model
+and remove all the matter from a spherical region. In this example, Birkhoff's theorem guarantees that
+the metric in this region is flat, so expansion can't cause any dynamical effects within it.
 
-Cooperstock et al.~have carried out estimates for more
-realistic cosmologies and for actual systems of
+It is not true, however, that the effect vanishes in all cases.
+Cooperstock et al.~have carried out estimates for actual systems of
 interest such as the solar system.\footnote{\url{http://arxiv.org/abs/astro-ph/9803097v1}} For example,
 the predicted general-relativistic effect on the radius of the earth's orbit since the
-time of the dinosaurs is calculated to be about as big as the diameter of an atomic nucleus;
+time of the dinosaurs is calculated to be nonzero, but only about as big as the diameter of an atomic nucleus;
 if the earth's orbit had expanded according to $a(t)$, the increase would have been millions of
 kilometers.
 
@@ -1230,16 +1231,27 @@ is just flat spacetime described in silly coordinates, and it has $\dot{a}\ne 0$
 This shows that we should not expect any expansion of the solar system due to  $\dot{a}\ne 0$. The lowest-order effect
 requires $\ddot{a}\ne 0$. Since a rescaling like $a(t)\rightarrow 2a(t)$ has no physical meaning, we can guess that
 the effect is proportional to $\ddot{a}/a$. Based on units, we expect that multiplying this
-by the size of the solar system might give an estimate of the rate at which the solar system expands,
-and this is indeed the result of Cooperstock's rigorous calculation for a circular orbit. The fractional rate
-of anomalous acceleration $\ddot{r}/r$ is on the order of the inverse square of the age
-of the universe, i.e., of order $H_\zu{o}^2\sim 10^{-35}\ \sunit^{-2}$.
-The result for $\ddot{r}/r$ is valid for $r\ll 1/H_\zu{o}$ and is independent of $r$,
-so it can be applied to similar systems with circular orbits
-at other scales, such as the earth-moon system or a pair of galaxies in circular orbits about their common
-center of mass. It can't be applied to systems bound by non-gravitational forces, such as atoms and nuclei.
+by the size of the solar system might give an estimate of the anomalous acceleration of a planet,
+and this is indeed the result of Cooperstock's rigorous calculation for a circular orbit.
+The anomalous acceleration is given by $(\ddot{a}/a)\vc{r}$. 
+The factor $\ddot{a}/a$ is on the order of the inverse square of the age
+of the universe, i.e., $H_\zu{o}^2\sim 10^{-35}\ \sunit^{-2}$.
 
-It is more difficult to demonstrate by explicit calculation that atoms and nuclei do not expand, since we do not
+A careful examination of the signs involved helps to make it clear that the effect is an intricate
+dynamical one rather than some kind of straightforward competition between expansion and binding. First, we have to consider
+the relationship between the anomalous force on a planet like the earth and the long-term trend or ``secular
+variation'' in its orbital parameters. There is no reason to expect this relationship to be simple or intuitive.
+For example, the effect of the sun's radiation pressure on an asteroid is a repulsion of the form $1/r^2$, so its
+effect is to rescale slightly the force of gravity, and this does not cause any secular trend. In fact, a
+force proportional to $r$ turns out to produce a contrary secular trend. If the force is outward, the orbit
+contracts. The other sign to consider is that of $\ddot{a}$. At the time when Cooperstock was writing, in 1998,
+it was believed that $\ddot{a}$ was negative. This would produce an inward force on the earth, leading to a
+secular trend of expansion in its orbit. Since we now know that $\ddot{a}>0$ in the present epoch,
+the earth's orbit would presently be \emph{contracting} in the absence of other secular trends
+such as the effect of Jupiter's gravity (which are in fact much larger).
+
+It is more difficult to demonstrate by explicit calculation that atoms and nuclei do not steadily expand, 
+since we do not
 have a theory of quantum gravity at our disposal. It is, however, easy to see that such an expansion would
 violate either the equivalence principle or the basic properties of quantum mechanics. One way of stating
 the equivalence principle is that the local geometry of spacetime is always approximately Lorentzian, so that
