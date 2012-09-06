@@ -1219,12 +1219,15 @@ and remove all the matter from a spherical region. In this example, Birkhoff's t
 the metric in this region is flat, so expansion can't cause any dynamical effects within it.
 
 It is not true, however, that the effect vanishes in all cases.
+The universe contains structure on a variety of scales, extending up to about 20\%
+of $1/H_\zu{o}$ (see p.~\pageref{sec:evidence-for-homogeneity}). Clearly cosmological expansion \emph{will} have an effect on the largest of these structures.
+The question is how quickly the effect drops off as we go to smaller scales.
 Cooperstock et al.~have carried out estimates for actual systems of
 interest such as the solar system.\footnote{\url{http://arxiv.org/abs/astro-ph/9803097v1}} For example,
 the predicted general-relativistic effect on the radius of the earth's orbit since the
 time of the dinosaurs is calculated to be nonzero, but only about as big as the diameter of an atomic nucleus;
 if the earth's orbit had expanded according to $a(t)$, the increase would have been millions of
-kilometers.
+kilometers.\label{local-expansion}
 
 To see why the solar-system effect is so small, let's consider how it can depend on the function $a(t)$. The Milne universe
 is just flat spacetime described in silly coordinates, and it has $\dot{a}\ne 0$, i.e., a nonvanishing value of $H_\zu{o}$.
@@ -1233,22 +1236,12 @@ requires $\ddot{a}\ne 0$. Since a rescaling like $a(t)\rightarrow 2a(t)$ has no 
 the effect is proportional to $\ddot{a}/a$. Based on units, we expect that multiplying this
 by the size of the solar system might give an estimate of the anomalous acceleration of a planet,
 and this is indeed the result of Cooperstock's rigorous calculation for a circular orbit.
-The anomalous acceleration is given by $(\ddot{a}/a)\vc{r}$. 
+The anomalous acceleration is given by $(\ddot{a}/a)\vc{r}$.
 The factor $\ddot{a}/a$ is on the order of the inverse square of the age
-of the universe, i.e., $H_\zu{o}^2\sim 10^{-35}\ \sunit^{-2}$.
-
-A careful examination of the signs involved helps to make it clear that the effect is an intricate
-dynamical one rather than some kind of straightforward competition between expansion and binding. First, we have to consider
-the relationship between the anomalous force on a planet like the earth and the long-term trend or ``secular
-variation'' in its orbital parameters. There is no reason to expect this relationship to be simple or intuitive.
-For example, the effect of the sun's radiation pressure on an asteroid is a repulsion of the form $1/r^2$, so its
-effect is to rescale slightly the force of gravity, and this does not cause any secular trend. In fact, a
-force proportional to $r$ turns out to produce a contrary secular trend. If the force is outward, the orbit
-contracts. The other sign to consider is that of $\ddot{a}$. At the time when Cooperstock was writing, in 1998,
-it was believed that $\ddot{a}$ was negative. This would produce an inward force on the earth, leading to a
-secular trend of expansion in its orbit. Since we now know that $\ddot{a}>0$ in the present epoch,
-the earth's orbit would presently be \emph{contracting} in the absence of other secular trends
-such as the effect of Jupiter's gravity (which are in fact much larger).
+of the universe, i.e., $H_\zu{o}^2\sim 10^{-35}\ \sunit^{-2}$. The smallness of this factor is what
+makes the effect on the solar system so absurdly tiny; it may, however, become relevant on larger scales
+or in ``big rip'' cosmologies in which $\ddot{a}$ blows up cataclysmically. The effect is discussed further 
+in example \ref{eg:more-local-expansion} on p.~\pageref{eg:more-local-expansion}.
 
 It is more difficult to demonstrate by explicit calculation that atoms and nuclei do not steadily expand, 
 since we do not
@@ -1739,7 +1732,62 @@ Spontaneous symmetry breaking happens when we try to balance a pencil on its tip
 The time-reversed version of the open universe is an equally valid solution of the field equations. Another example of spontaneous symmetry breaking
 in cosmological solutions is that the solutions have a preferred frame of reference, which is the one at rest relative to the cosmic microwave
 background and the average motion of the galaxies. This is referred to as the Hubble flow.\index{Hubble flow}
+
+\begin{eg}{More about the local effects of expansion}\label{eg:more-local-expansion}
+On p.~\pageref{local-expansion} we made an order-of-estimate estimate of the effect of cosmological expansion
+on a small, bound system such as the solar system, and we found that it was many orders of magnitude too small
+to be detectable. It may, however, become relevant on larger scales
+or in ``big rip'' cosmologies in which $\ddot{a}$ blows up cataclysmically.
+
+A body in a circular orbit experiences an anomalous acceleration $(\ddot{a}/a)\vc{r}$ due to cosmological acceleration.
+For concreteness, let's talk about the earth-moon system.
+The direction of the anomalous force on the earth
+is outward for an accelerating cosmological expansion (as we now know is the case), inward for a decelerating one
+(as Cooperstock assumed in 1998). The existence of such a force does not automatically cause a long-term trend
+or ``secular variation'' in the radius of the earth's orbit. For example, a vacuum-dominated cosmology gives
+a constant value for $\ddot{a}/a$, so the outward force is constant. The existence of this constant, outward force
+is very nearly equivalent to rescaling the sun's gravitational force by a tiny amount, so the motion is still very nearly
+Keplerian and periodic, but with a slightly ``wrong'' constant of proportionality in Kepler's law of periods.
+The rate of change $\dot{r}$ in the radius of the circular orbit is therefore zero in this case.
+
+But in most cosmologies $\ddot{a}/a$ is not exactly constant, and the anomalous force on the earth varies.
+In a matter-dominated cosmology with $\Lambda=0$, in its expanding phase, the force is inward but decreasing over
+time, so the orbit expands over time. What really matters then, is $(\der/\der t)(\ddot{a}/a)$.
+If we were free to pick any function for $a(t)$, we could make up examples
+in which $\dot{a}>0$ but $(\der/\der t)(\ddot{a}/a)<0$, so that the solar system would respond to cosmological
+expansion by shrinking!
+
+The function $a(t)$, however, has to satisfy the Friedmann equations, one of which is (in units with $G \ne 1$)
+\begin{equation*}
+  \frac{\ddot{a}}{a} = G\left[\frac{1}{3}\Lambda - \frac{4\pi}{3}(\rho+3P)\right] \qquad .
+\end{equation*}
+The present epoch of the universe seems to be well modeled by dark energy described by a constant $\Lambda$ plus
+dust with $P\ll \rho$. We then find
+\begin{equation*}
+ \frac{\der}{\der t}\left(\frac{\ddot{a}}{a}\right) \propto \dot{\rho} \qquad .
+\end{equation*}
+This ensures that the sign of the effect is always as expected from the naive Manichean image of
+binding forces struggling against cosmological expansion (or perhaps cooperating during the contracting
+phase of a Big Crunch cosmology).
+
+It's spooky that this works out so nicely. Why is it $\dot{\rho}$ that matters?
+The following pseudo-derivation ``explains'' the mystery. Consider a hypothetical Newtonian universe consisting of a sun of mass $M$,
+an earth in a circular
+orbit of radius $r$, and a uniform spherical cloud of matter centered on the sun. If the radius of the cloud is 
+greater than $r$, then by Newton's shell theorem the foce on the earth can be calculated as if only the portion
+interior to $r$ had existed. Let the cloud be thinned out over time by transporting its particles
+outward, so that the density $\rho$ decreases with time. Newton's laws give $\omega^2 r = GM/r^2$, and
+conservation of angular momentum results in $\omega r^2=\text{const}$. A calculation gives
+$  r/r_\zu{o} = [M+(4\pi/3) \rho_\zu{o} r_\zu{o}^3]/[M+(4\pi/3) \rho r^3] $, which results
+in $ \dot{r}/r_o \approx -(4\pi/3) G \omega_o^{-2}\dot{\rho} $. We now pretend that 
+this result can be carried over to general relativity, and application of the Friedmann
+equations yields $\dot{r}/r_\zu{o} =  \omega_o^{-2} (d/dt)(\ddot{a}/a)$, which is identical
+to the exact result found by Cooperstock et al.\footnote{\url{http://arxiv.org/abs/astro-ph/9803097v1}}
+using a rigorous general-relativistic calculation. 
+\end{eg}
+
 <% end_sec %> % The open universe
+
 
 <% end_sec %> % The matter-dominated solution
 
