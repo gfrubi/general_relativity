@@ -1205,43 +1205,19 @@ signal propagation times to space probes, and no expanding trend is detected.
 <% end_sec %> % Brooklyn is not expanding!
 <% begin_sec("General-relativistic predictions") %>
 Does general relativity correctly reproduce these observations? General relativity is mainly a theory of
-gravity, so it should be well within its domain to explain why the solar system does not expand while
+gravity, so it should be well within its domain to explain why the solar system does not expand detectably while
 intergalactic distances do. It is impractical to solve the Einstein field equations exactly so as to describe the
 internal structure of all the bodies that occupy the universe: galaxies, superclusters, etc.
 We can, however, handle simple cases, as in example
 \ref{eg:sch-de-sitter} on page \pageref{eg:sch-de-sitter}, where we display an exact solution
 for the case of a universe containing only two things: an isolated black hole, and an energy density described
 by a cosmological constant. We find that
-the characteristic scale of the black hole, i.e., the radius of its event horizon, is still set by the constant mass $m$, so
-we can see that cosmological expansion does not affect the size of this gravitationally bound system.
-Another case with a null result is one in which we take a $\Lambda=0$ cosmological model
-and remove all the matter from a spherical region. In this example, Birkhoff's theorem guarantees that
-the metric in this region is flat, so expansion can't cause any dynamical effects within it.
-
-It is not true, however, that the effect vanishes in all cases.
-The universe contains structure on a variety of scales, extending up to about 20\%
-of $1/H_\zu{o}$ (see p.~\pageref{sec:evidence-for-homogeneity}). Clearly cosmological expansion \emph{will} have an effect on the largest of these structures.
-The question is how quickly the effect drops off as we go to smaller scales.
-Cooperstock et al.~have carried out estimates for actual systems of
-interest such as the solar system.\footnote{\url{http://arxiv.org/abs/astro-ph/9803097v1}} For example,
-the predicted general-relativistic effect on the radius of the earth's orbit since the
-time of the dinosaurs is calculated to be nonzero, but only about as big as the diameter of an atomic nucleus;
-if the earth's orbit had expanded according to $a(t)$, the increase would have been millions of
-kilometers.\label{local-expansion}
-
-To see why the solar-system effect is so small, let's consider how it can depend on the function $a(t)$. The Milne universe
-is just flat spacetime described in silly coordinates, and it has $\dot{a}\ne 0$, i.e., a nonvanishing value of $H_\zu{o}$.
-This shows that we should not expect any expansion of the solar system due to  $\dot{a}\ne 0$. The lowest-order effect
-requires $\ddot{a}\ne 0$. Since a rescaling like $a(t)\rightarrow 2a(t)$ has no physical meaning, we can guess that
-the effect is proportional to $\ddot{a}/a$. Based on units, we expect that multiplying this
-by the size of the solar system might give an estimate of the anomalous acceleration of a planet,
-and this is indeed the result of Cooperstock's rigorous calculation for a circular orbit.
-The anomalous acceleration is given by $(\ddot{a}/a)\vc{r}$.
-The factor $\ddot{a}/a$ is on the order of the inverse square of the age
-of the universe, i.e., $H_\zu{o}^2\sim 10^{-35}\ \sunit^{-2}$. The smallness of this factor is what
-makes the effect on the solar system so absurdly tiny; it may, however, become relevant on larger scales
-or in ``big rip'' cosmologies in which $\ddot{a}$ blows up cataclysmically. The effect is discussed further 
-in example \ref{eg:more-local-expansion} on p.~\pageref{eg:more-local-expansion}.
+the characteristic scale of the black hole, i.e., the radius of its event horizon, does not increase with time.
+A fuller treatment of these issues is given on p.~\pageref{local-expansion}, after some facts about realistic
+cosmologies have been established. The result is that although bound systems like the solar system are 
+in some cases predicted to
+expand, the expansion is absurdly small, too small to measure, and much smaller than the rate of expansion
+of the universe in general as represented by the scale factor $a(t)$. This agrees with observation.
 
 It is more difficult to demonstrate by explicit calculation that atoms and nuclei do not steadily expand, 
 since we do not
@@ -1580,7 +1556,8 @@ The metric
 \end{equation*}
 is an exact solution to the Einstein field equations with cosmological constant $\Lambda$, and can be interpreted as a universe in which the
 only mass is a black hole of mass $m$ located at $r=0$. Near the black hole, the $\Lambda$ terms become negligible, and this is simply
-the Schwarzschild metric. As argued in section \ref{sec:observability-of-expansion}, page \pageref{sec:observability-of-expansion},
+the Schwarzschild metric.
+As argued in section \ref{sec:observability-of-expansion}, page \pageref{sec:observability-of-expansion},
 this is a simple example of how cosmological expansion does not cause all structures in the universe to grow at the same rate.
 \end{eg}
 % sch_de_sitter.mac
@@ -1733,19 +1710,80 @@ The time-reversed version of the open universe is an equally valid solution of t
 in cosmological solutions is that the solutions have a preferred frame of reference, which is the one at rest relative to the cosmic microwave
 background and the average motion of the galaxies. This is referred to as the Hubble flow.\index{Hubble flow}
 
-\begin{eg}{More about the local effects of expansion}\label{eg:more-local-expansion}
-On p.~\pageref{local-expansion} we made an order-of-estimate estimate of the effect of cosmological expansion
-on a small, bound system such as the solar system, and we found that it was many orders of magnitude too small
-to be detectable. It may, however, become relevant on larger scales
-or in ``big rip'' cosmologies in which $\ddot{a}$ blows up cataclysmically.
 
-A body in a circular orbit experiences an anomalous acceleration $(\ddot{a}/a)\vc{r}$ due to cosmological acceleration.
+<% end_sec %> % The open universe
+
+
+<% end_sec %> % The matter-dominated solution
+
+<% begin_sec("The radiation-dominated solution") %>
+For the reasons discussed in example \ref{eg:dust-and-radiation-cosm} on page \pageref{eg:dust-and-radiation-cosm},
+the early universe was dominated by radiation. The solution of the Friedmann equations for this case is taken up
+in problem \ref{hw:flat-perfect-fluid-cosmology} on page  \pageref{hw:flat-perfect-fluid-cosmology}.
+<% end_sec %> % The radiation-dominated solution
+
+<% begin_sec("Local effects of expansion") %>\label{local-expansion}
+
+In this section we discuss the predictions of general relativity concerning the effect of cosmological
+expansion on small, gravitationally bound systems such as the solar system or clusters of galaxies.
+The short answer is that in most realistic cosmologies (but not necessarily in
+``Big Rip'' scenarios)\index{Big Rip} the effect of expansion
+is not zero, but is many orders of magnitude too small
+to measure. Many readers will probably be willing to accept these assertions while skipping the following demonstrations.
+
+To begin with, we observe that there are two qualitatively distinct types of effects that could exist.
+Suppose that a loaf of raisin bread is rising. Let's say that the loaf's scale factor $a$ doubles
+by the time the yeast's efforts are spent.
+By definition, this means that the raisins (galaxies, test particles) get farther apart by a factor of 2.
+We could imagine that in addition: (1) the strain of expansion could cause each raisin to puff
+up by, say, 1\%,
+and to maintain this increased size
+over the entire course of expansion; or that (2) expansion could could cause each raisin to expand
+gradually, to 0.2\% more than its original size, then 0.4\% more than its original size, and so on,
+until, at the end of the process, each had grown beyond its original size by some amount such as 3.8\%,
+which, while less than the 100\%
+growth of the inter-raisin distances, was nevertheless nonzero. Astronomers refer to the second possibility
+as a ``secular'' trend. For example, simulations of solar systems often show that over billions of years,
+planets gradually migrate either inward or outward,
+under the influence of their gravitational interactions with other planets. As an example of an expansion without
+a secular trend, asteroids may experience a nonnegligible $1/r^2$ force due to radiation pressure from the sun.
+The effect is exactly as if the sun's mass or the gravitational constant had been slightly reduced.
+Kepler's elliptical orbit law holds, the law of periods is slightly off, and the orbital radius
+shows zero trend over time.
+
+If either type of effect exists, an observer in some local inertial frame will interpret it as
+a ``force.'' (The scare quotes are a reminder that general relativity doesn't describe gravity as
+Newton-style linearly additive, instantaneous action at a distance.) 
+Such a force, if it exists, cannot simply be proportional
+to the rate of expansion $\dot{a}/a$. As a counterexample, the Milne universe
+is just flat spacetime described in silly coordinates, and it has $\dot{a}\ne 0$.
+
+It would make more sense for the force to depend on the second derivative of the scale factor.
+To justify this more precisely, imagine releasing two test particles, initially separated by
+some distance that is much less than the Hubble scale. They are initially at rest relative to
+the Hubble flow. Then simply by the definition
+of the scale factor (i.e., by inspection of the FRW metric), the distance between them varies
+as $\text{const}\times a(t)$. If one of these particles is an observer, she sees a ``force''
+acting on the other particle that causes an acceleration $(\ddot{a}/a)\vc{r}$, where
+$\vc{r}$ is the displacement between the particles.
+
+Thus if we are to observe any nonzero effects of expansion on a local system, they are not
+really effects of expansion at all, but effects of the \emph{acceleration} of expansion.
+The factor $\ddot{a}/a$ is on the order of the inverse square of the age
+of the universe, i.e., $H_\zu{o}^2\sim 10^{-35}\ \sunit^{-2}$. The smallness of this factor is what
+makes the effect on a system such as the solar system so absurdly tiny. For example, multiplying it
+by the earth-sun distance results in an acceleration many orders of magnitude smaller than the earth's
+acceleration in its orbit.
+
+Not only is this acceleration numerically tiny for all small-scale systems of interest, but it is not
+guaranteed to produce a nonvanishing secular trend.
 For concreteness, let's talk about the earth-moon system.
 The direction of the anomalous force on the earth
-is outward for an accelerating cosmological expansion (as we now know is the case), inward for a decelerating one
-(as Cooperstock assumed in 1998). The existence of such a force does not automatically cause a long-term trend
-or ``secular variation'' in the radius of the earth's orbit. For example, a vacuum-dominated cosmology gives
-a constant value for $\ddot{a}/a$, so the outward force is constant. The existence of this constant, outward force
+is outward for an accelerating cosmological expansion, as we now know is the case for the present epoch.
+(It was inward during the matter-dominated epoch.)
+As an example in which no secular trend occurs, a vacuum-dominated cosmology gives
+a constant value for $\ddot{a}/a$, so the outward force is constant. As with the effect of radiation
+pressure, the existence of this constant, outward force
 is very nearly equivalent to rescaling the sun's gravitational force by a tiny amount, so the motion is still very nearly
 Keplerian and periodic, but with a slightly ``wrong'' constant of proportionality in Kepler's law of periods.
 The rate of change $\dot{r}$ in the radius of the circular orbit is therefore zero in this case.
@@ -1770,32 +1808,37 @@ This ensures that the sign of the effect is always as expected from the naive Ma
 binding forces struggling against cosmological expansion (or perhaps cooperating during the contracting
 phase of a Big Crunch cosmology).
 
-It's spooky that this works out so nicely. Why is it $\dot{\rho}$ that matters?
-The following pseudo-derivation ``explains'' the mystery. Consider a hypothetical Newtonian universe consisting of a sun of mass $M$,
-an earth in a circular
-orbit of radius $r$, and a uniform spherical cloud of matter centered on the sun. If the radius of the cloud is 
-greater than $r$, then by Newton's shell theorem the foce on the earth can be calculated as if only the portion
-interior to $r$ had existed. Let the cloud be thinned out over time by transporting its particles
-outward, so that the density $\rho$ decreases with time. Newton's laws give $\omega^2 r = GM/r^2$, and
+It's spooky that this works out so nicely. Why does it all reduce so simply to a dependence on
+$\dot{\rho}$?
+To understand this, consider two cosmologies, A and B, both with $\Lambda=0$. Cosmology A is 
+a matter-dominated FRW spacetime.
+B is identical to A, except that all the matter has been scooped out of a small spherical region S, leaving
+a vacuum. (``Small'' means small compared to the Hubble scale.)
+Within S, we introduce test particles 1 and 2. Because an FRW spacetime is homogeneous
+and isotropic, cosmology B retains spherical symmetry about the center of S.
+Since $\Lambda=0$, Birkhoff's theorem applies to B, so B is flat inside S.
+Therefore in B, the relative acceleration $\vc{a}$ of the test particles equals zero.
+Because S is small compared to cosmological distances, local observers can accurately attibute the difference
+in behavior between A and B to the Newtonian gravitational force from the dust that was present
+in A but not in B. In A, we have $\vc{a}=(\ddot{a}/a)\vc{r}$, where $\vc{r}$ is the displacement
+between the two particles. Since $\vc{a}=0$ in B, it follows that the acceleration in A can be calculated
+accurately by finding the Newtonian gravitational force due to the added dust.
+
+We now let 1 be the sun, 2 the earth, and S a sphere centered on the sun whose radius equals the
+radius of the earth's circular orbit. Due to cosmological expansion, the dust in cosmology
+A is thinned out over time, reducing its density $\rho$.  Applying Newton's laws to the orbit
+of the earth gives $\omega^2 r = GM/r^2$, and
 conservation of angular momentum results in $\omega r^2=\text{const}$. A calculation gives
 $  r/r_\zu{o} = [M+(4\pi/3) \rho_\zu{o} r_\zu{o}^3]/[M+(4\pi/3) \rho r^3] $, which results
-in $ \dot{r}/r_o \approx -(4\pi/3) G \omega_o^{-2}\dot{\rho} $. We now pretend that 
-this result can be carried over to general relativity, and application of the Friedmann
-equations yields $\dot{r}/r_\zu{o} =  \omega_o^{-2} (d/dt)(\ddot{a}/a)$, which is identical
-to the exact result found by Cooperstock et al.\footnote{\url{http://arxiv.org/abs/astro-ph/9803097v1}}
-using a rigorous general-relativistic calculation. 
-\end{eg}
+in $ \dot{r}/r_o \approx -(4\pi/3) G \omega_o^{-2}\dot{\rho} $. Application of the Friedmann
+equations yields $\dot{r}/r_\zu{o} =  \omega_o^{-2} (d/dt)(\ddot{a}/a)$. 
+Plugging in numbers for the earth-sun system,
+we find that since the age of the dinosaurs, the radius of the earth's orbit has grown by less than
+the diameter of an atomic nucleus.\footnote{The picturesque image comes from Cooperstock et al.,
+\url{http://arxiv.org/abs/astro-ph/9803097v1}, who give a purely general-relativistic calculation
+leading to a result exactly equivalent to the one derived here.}
 
-<% end_sec %> % The open universe
-
-
-<% end_sec %> % The matter-dominated solution
-
-<% begin_sec("The radiation-dominated solution") %>
-For the reasons discussed in example \ref{eg:dust-and-radiation-cosm} on page \pageref{eg:dust-and-radiation-cosm},
-the early universe was dominated by radiation. The solution of the Friedmann equations for this case is taken up
-in problem \ref{hw:flat-perfect-fluid-cosmology} on page  \pageref{hw:flat-perfect-fluid-cosmology}.
-<% end_sec %> % The radiation-dominated solution
+<% end_sec %> % Local effects of expansion
 
 <% begin_sec("Observation") %>\label{sec:cosmology-observation}
 Historically, it was believed that the cosmological constant was zero, that nearly all matter in the universe was
@@ -1834,8 +1877,6 @@ from matter, $\Omega_M$, the cosmological constant, $\Omega_\Lambda$, and radiat
 present-day unverse). The results from WMAP, combined with other data from other methods, gives
 $\Omega=1.005\pm .006$. In other words, the universe is very nearly spatially flat.
 <% end_sec %> % Spatial curvature from CMB fluctuations
-
-\pagebreak
 
 <% begin_sec("Accelerating expansion from supernova data") %>
 The supernova data described on page \pageref{sec:vacuum-dominated} complement the CMB data because they are
