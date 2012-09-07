@@ -91,9 +91,9 @@ post:
 
 prepress:
 	pdftk genrel.pdf cat 3-end output temp.pdf
-	# The following makes Lulu not complain about missing fonts. Make sure the version of gs is recent enough so that it won't mess up
-	# ligatures in Helvetica. Also, lulu sometimes chokes if gs version is <8.x.
-	gs -q  -dCompatibilityLevel=1.4 -dSubsetFonts=false -dPDFSETTINGS=/printer -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=genrel_lulu.pdf temp.pdf -c '.setpdfwrite'
+	# Filtering through gs used to be necessary to convince Lulu not to complain about missing fonts.
+	# Now that should no longer be necessary, because recent versions of pdftex embed all fonts, and fullembed.map prevents subsetting.
+	# See meki:computer:apps:ghostscript, scripts/create_fullembed_file, and http://tex.stackexchange.com/questions/24002/turning-off-font-subsetting-in-pdftex
 	@rm -f temp.pdf
 
 all_figures:
