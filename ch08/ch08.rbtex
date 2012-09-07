@@ -1012,6 +1012,82 @@ Rearranging a little, we have a set of differential equations known as the Fried
 
 The cosmology that results from a solution of these differential equations is known as the
 Friedmann-Robertson-Walker (FRW) or Friedmann-Lema\^{i}tre-Robertson-Walker (FLRW) cosmology.\index{Friedmann-Robertson-Walker cosmology}
+
+The first Friedmann equation describes the rate at which cosmological expansion accelerates or decelerates.
+Let's refer to it as the acceleration equation. It expresses the basic idea of the field equations, which is
+that non-tidal curvature (left-hand side) is caused by the matter that is present locally (right-hand side).
+Example \ref{eg:cosmo-hole} illustrates this in a simple case.
+<% marg(20) %>
+<%
+  fig(
+    'friedmann-portrait',
+    %q{Alexander Friedmann (1888-1925).}
+  )
+%>
+<% end_marg %>
+
+The second Friedmann equation tells us the magnitude of the
+rate of expansion or contraction. Call it the velocity equation. The quantity $\dot{a}/a$, evaluated at the present
+cosmological time, is the Hubble constant $H_\zu{o}$ (which is constant only in the sense that at a fixed time, it
+is a constant of proportionality between distance and recession velocity).\index{Hubble constant}
+
+To the practiced eye, it seems odd to have two dynamical laws, one predicting velocity and one acceleration.
+The analogous laws in freshman mechanics, would be Newton's second law, which predicts acceleration, and conservation
+of energy, which predicts velocity. Newton's laws and conservation of energy are not independent, and for mechanical
+systems either can be derived from the other. 
+The Friedmann equations, however, are not overdetermined or redundant. They are underdetermined, because
+we want to predict \emph{three} unknown functions of time: $a$, $\rho$, and $P$.
+Since there are only two equations, they are not sufficient
+to uniquely determine a solution for all three functions. The third constraint comes in the form of
+some type of equation of state for the matter described by $\rho$ and $P$, which in simple models can often
+be written in the form $P=w\rho$. For example, nonrelativistic material particles have $w=0$. 
+
+Unlike $a$, $\rho$, and $P$, the cosmological constant $\Lambda$
+is not free to vary with time; if it did, then the stress-energy tensor would have a nonvanishing divergence,
+which is not consistent with the Einstein field equations.
+
+Although general relativity does not provide any scalar, globally conserved measure of mass-energy that is
+conserved in all spacetimes, the Friedmann velocity equation can be loosely interpreted as a statement of
+conservation of mass-energy in an FRW spacetime. The left-hand side acts like kinetic energy. In a
+cosmology that expands and then recontracts in a Big Crunch, the turn-around point is defined by the time
+at which the right-hand side equals zero. The origin of the velocity equation is in fact the time-time
+part of the field equations, whose source term is the mass-energy component of the stress-energy tensor.
+<% marg(-10) %>
+<%
+  fig(
+    'cosmo-hole',
+    %q{Example \ref{eg:cosmo-hole}.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Scooping out a hole}\label{eg:cosmo-hole} 
+This example illustrates the connection between cosmological acceleration and local density of matter
+given by the Friedmann acceleration equation.
+Consider two cosmologies, each with $\Lambda=0$. Cosmology 1 is 
+an FRW spacetime in which all matter is in the form of nonrelativistic particles such as atoms or galaxies.
+2 is identical to 1, except that all the matter has been scooped out of a small spherical region S, leaving
+a vacuum. (``Small'' means small compared to the Hubble scale $1/H_\zu{o}$.)
+Within S, we introduce test particles A and B. Because an FRW spacetime is homogeneous
+and isotropic, cosmology 2 retains spherical symmetry about the center of S.
+Since $\Lambda=0$, Birkhoff's theorem applies to 2, so 2 is flat inside S.
+Therefore in 2, the relative acceleration $\vc{a}$ of the test particles equals zero.
+
+Because S is small compared to cosmological distances, and because the dust is nonrelativistic,
+local observers can accurately attibute the difference
+in behavior between 1 and 2 to the Newtonian gravitational force from the dust that was present
+in 1 but not in 2. 
+For convenience, let A and B both be initially at rest relative to the local dust
+(i.e., having $\dot{\theta}=\dot{\phi}=0$). 
+By the definition of the scale factor (i.e., by inspection of the FRW metric), the distance between them 
+varies as $\text{const}\times a(t)$. If one of these particles is an observer, she sees a ``force''
+acting on the other particle that causes an acceleration $(\ddot{a}/a)\vc{r}$, where
+$\vc{r}$ is the displacement between the particles.
+
+Since $\vc{a}=0$ in 2, it follows that the acceleration in 1 can be calculated
+accurately by finding the Newtonian gravitational force due to the added dust. This results in a connection
+between $\ddot{a}/a$, on the left-hand side of the Friedmann acceleration equation, and $\rho$, on the right side.
+\end{eg}
 <% end_sec %> % The Friedmann equations
 <% end_sec %> % The FRW cosmologies
 
@@ -1727,7 +1803,7 @@ in problem \ref{hw:flat-perfect-fluid-cosmology} on page  \pageref{hw:flat-perfe
 In this section we discuss the predictions of general relativity concerning the effect of cosmological
 expansion on small, gravitationally bound systems such as the solar system or clusters of galaxies.
 The short answer is that in most realistic cosmologies (but not necessarily in
-``Big Rip'' scenarios)\index{Big Rip} the effect of expansion
+``Big Rip'' scenarios, p.~\pageref{eg:big-rip})\index{Big Rip} the effect of expansion
 is not zero, but is many orders of magnitude too small
 to measure. Many readers will probably be willing to accept these assertions while skipping the following demonstrations.
 
@@ -1761,11 +1837,10 @@ is just flat spacetime described in silly coordinates, and it has $\dot{a}\ne 0$
 It would make more sense for the force to depend on the second derivative of the scale factor.
 To justify this more precisely, imagine releasing two test particles, initially separated by
 some distance that is much less than the Hubble scale. They are initially at rest relative to
-the Hubble flow. Then simply by the definition
-of the scale factor (i.e., by inspection of the FRW metric), the distance between them varies
-as $\text{const}\times a(t)$. If one of these particles is an observer, she sees a ``force''
-acting on the other particle that causes an acceleration $(\ddot{a}/a)\vc{r}$, where
-$\vc{r}$ is the displacement between the particles.
+the Hubble flow, and no locally gravitating bodies are present.
+As discussed in example \ref{eg:cosmo-hole} on p.~\pageref{eg:cosmo-hole},
+the acceleration of one test particle relative to
+the other is given by $(\ddot{a}/a)\vc{r}$, where $\vc{r}$ is their relative displacement.
 
 Thus if we are to observe any nonzero effects of expansion on a local system, they are not
 really effects of expansion at all, but effects of the \emph{acceleration} of expansion.
@@ -1777,7 +1852,7 @@ acceleration in its orbit.
 
 Not only is this acceleration numerically tiny for all small-scale systems of interest, but it is not
 guaranteed to produce a nonvanishing secular trend.
-For concreteness, let's talk about the earth-moon system.
+For concreteness, let's keep talking about the earth-moon system.
 The direction of the anomalous force on the earth
 is outward for an accelerating cosmological expansion, as we now know is the case for the present epoch.
 (It was inward during the matter-dominated epoch.)
@@ -1785,7 +1860,7 @@ As an example in which no secular trend occurs, a vacuum-dominated cosmology giv
 a constant value for $\ddot{a}/a$, so the outward force is constant. As with the effect of radiation
 pressure, the existence of this constant, outward force
 is very nearly equivalent to rescaling the sun's gravitational force by a tiny amount, so the motion is still very nearly
-Keplerian and periodic, but with a slightly ``wrong'' constant of proportionality in Kepler's law of periods.
+Keplerian, but with a slightly ``wrong'' constant of proportionality in Kepler's law of periods.
 The rate of change $\dot{r}$ in the radius of the circular orbit is therefore zero in this case.
 
 But in most cosmologies $\ddot{a}/a$ is not exactly constant, and the anomalous force on the earth varies.
@@ -1802,41 +1877,50 @@ The function $a(t)$, however, has to satisfy the Friedmann equations, one of whi
 The present epoch of the universe seems to be well modeled by dark energy described by a constant $\Lambda$ plus
 dust with $P\ll \rho$. We then find
 \begin{equation*}
- \frac{\der}{\der t}\left(\frac{\ddot{a}}{a}\right) \propto \dot{\rho} \qquad .
+ \frac{\der}{\der t}\left(\frac{\ddot{a}}{a}\right) \propto \dot{\rho} \qquad ,
 \end{equation*}
+with a negative constant of proportionality.
 This ensures that the sign of the effect is always as expected from the naive Manichean image of
 binding forces struggling against cosmological expansion (or perhaps cooperating during the contracting
-phase of a Big Crunch cosmology).
+phase of a Big Crunch cosmology). 
 
-It's spooky that this works out so nicely. Why does it all reduce so simply to a dependence on
-$\dot{\rho}$?
-To understand this, consider two cosmologies, A and B, both with $\Lambda=0$. Cosmology A is 
-a matter-dominated FRW spacetime.
-B is identical to A, except that all the matter has been scooped out of a small spherical region S, leaving
-a vacuum. (``Small'' means small compared to the Hubble scale.)
-Within S, we introduce test particles 1 and 2. Because an FRW spacetime is homogeneous
-and isotropic, cosmology B retains spherical symmetry about the center of S.
-Since $\Lambda=0$, Birkhoff's theorem applies to B, so B is flat inside S.
-Therefore in B, the relative acceleration $\vc{a}$ of the test particles equals zero.
-Because S is small compared to cosmological distances, local observers can accurately attibute the difference
-in behavior between A and B to the Newtonian gravitational force from the dust that was present
-in A but not in B. In A, we have $\vc{a}=(\ddot{a}/a)\vc{r}$, where $\vc{r}$ is the displacement
-between the two particles. Since $\vc{a}=0$ in B, it follows that the acceleration in A can be calculated
-accurately by finding the Newtonian gravitational force due to the added dust.
-
-We now let 1 be the sun, 2 the earth, and S a sphere centered on the sun whose radius equals the
-radius of the earth's circular orbit. Due to cosmological expansion, the dust in cosmology
-A is thinned out over time, reducing its density $\rho$.  Applying Newton's laws to the orbit
+One way of understanding why this reduces so nicely to a dependence on $\dot{\rho}$
+is the reasoning given in example \ref{eg:cosmo-hole} on p.~\pageref{eg:cosmo-hole}, in which we found that
+the relative acceleration of two test particles A and B in a matter-dominated FRW cosmology could be calculated accurately
+by pretending that it was due to the presence of the dust in any given sphere S surrounding the two particles.
+We now let A be the sun, B the earth, and S a sphere centered on the sun whose radius equals the
+radius of the earth's circular orbit. Due to cosmological expansion, the dust inside S
+thins out with time, reducing its density $\rho$.  Applying Newton's laws to the orbit
 of the earth gives $\omega^2 r = GM/r^2$, and
 conservation of angular momentum results in $\omega r^2=\text{const}$. A calculation gives
 $  r/r_\zu{o} = [M+(4\pi/3) \rho_\zu{o} r_\zu{o}^3]/[M+(4\pi/3) \rho r^3] $, which results
 in $ \dot{r}/r_o \approx -(4\pi/3) G \omega_o^{-2}\dot{\rho} $. Application of the Friedmann
-equations yields $\dot{r}/r_\zu{o} =  \omega_o^{-2} (d/dt)(\ddot{a}/a)$. 
+equations yields
+\begin{equation*}
+  \dot{r}/r_\zu{o} =  \omega_o^{-2} (d/dt)(\ddot{a}/a) \qquad ,
+\end{equation*}
+which is valid generally, not just for $P=0$. The $\omega_o^{-2}$ factor shows that the effect is smaller
+for more tightly bound systems.
+
+We know that the universe in the present era has $(d/dt)(\ddot{a}/a)>0$ because $\dot{\rho}<0$, and
+for purposes of an order-of-magnitude estimate we can take $(d/dt)(\ddot{a}/a)\sim H_\zu{o}^3$.
 Plugging in numbers for the earth-sun system,
 we find that since the age of the dinosaurs, the radius of the earth's orbit has grown by less than
 the diameter of an atomic nucleus.\footnote{The picturesque image comes from Cooperstock et al.,
-\url{http://arxiv.org/abs/astro-ph/9803097v1}, who give a purely general-relativistic calculation
-leading to a result exactly equivalent to the one derived here.}
+\url{http://arxiv.org/abs/astro-ph/9803097v1}, who give a different calculation
+leading to a result for $\dot{r}$ exactly equivalent to the one derived here.}
+
+\begin{eg}{A Big Rip}\label{eg:big-rip}\index{Big Rip}
+Known forms of matter are believed to have equations of state $P=w\rho$ with $w \ge -1$.
+The value for a vacuum-dominated universe would be $w=-1$.
+Cosmological observations\footnote{Carnero et al., \url{arxiv.org/abs/1104.5426}}
+show that empirically the universe behaves as if it is made out of stuff with $w=-1.03\pm.16$,
+and this leaves open the possibility of $w<-1$. In this case, the solution to the Friedmann equations
+gives a scale factor $a(t)$ that blows up to infinity at some finite $t$. In such a scenario,
+known as a ``Big Rip,''
+$(d/dt)(\ddot{a}/a)$ diverges, and any system, no matter how tightly bound, is 
+ripped apart.\footnote{Caldwell et al., \url{arxiv.org/abs/astro-ph/0302506}}
+\end{eg}
 
 <% end_sec %> % Local effects of expansion
 
