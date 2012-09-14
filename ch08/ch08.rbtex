@@ -1032,7 +1032,7 @@ cosmological time, is the Hubble constant $H_\zu{o}$ (which is constant only in 
 is a constant of proportionality between distance and recession velocity).\index{Hubble constant}
 
 To the practiced eye, it seems odd to have two dynamical laws, one predicting velocity and one acceleration.
-The analogous laws in freshman mechanics, would be Newton's second law, which predicts acceleration, and conservation
+The analogous laws in freshman mechanics would be Newton's second law, which predicts acceleration, and conservation
 of energy, which predicts velocity. Newton's laws and conservation of energy are not independent, and for mechanical
 systems either can be derived from the other. 
 The Friedmann equations, however, are not overdetermined or redundant. They are underdetermined, because
@@ -1040,7 +1040,7 @@ we want to predict \emph{three} unknown functions of time: $a$, $\rho$, and $P$.
 Since there are only two equations, they are not sufficient
 to uniquely determine a solution for all three functions. The third constraint comes in the form of
 some type of equation of state for the matter described by $\rho$ and $P$, which in simple models can often
-be written in the form $P=w\rho$. For example, nonrelativistic material particles have $w=0$. 
+be written in the form $P=w\rho$. For example, dust has $w=0$.
 
 Unlike $a$, $\rho$, and $P$, the cosmological constant $\Lambda$
 is not free to vary with time; if it did, then the stress-energy tensor would have a nonvanishing divergence,
@@ -1087,6 +1087,10 @@ $\vc{r}$ is the displacement between the particles.
 Since $\vc{a}=0$ in 2, it follows that the acceleration in 1 can be calculated
 accurately by finding the Newtonian gravitational force due to the added dust. This results in a connection
 between $\ddot{a}/a$, on the left-hand side of the Friedmann acceleration equation, and $\rho$, on the right side.
+
+For consistency, we can verify that the Newtonian gravitational force exerted by a uniform sphere, at a point
+on its interior, is proportional to $\vc{r}$. This is a classic result that is easily derived from
+Newton's shell theorem.
 \end{eg}
 <% end_sec %> % The Friedmann equations
 <% end_sec %> % The FRW cosmologies
@@ -1914,7 +1918,7 @@ leading to a result for $\dot{r}$ exactly equivalent to the one derived here.}
 Known forms of matter are believed to have equations of state $P=w\rho$ with $w \ge -1$.
 The value for a vacuum-dominated universe would be $w=-1$.
 Cosmological observations\footnote{Carnero et al., \url{arxiv.org/abs/1104.5426}}
-show that empirically the universe behaves as if it is made out of stuff with $w=-1.03\pm.16$,
+show that empirically the present-day universe behaves as if it is made out of stuff with $w=-1.03\pm.16$,
 and this leaves open the possibility of $w<-1$. In this case, the solution to the Friedmann equations
 gives a scale factor $a(t)$ that blows up to infinity at some finite $t$. In such a scenario,
 known as a ``Big Rip,''

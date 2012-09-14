@@ -1137,23 +1137,50 @@ the description of the vacuum around the electron to include a sea of virtual pa
 
 In the case of the singularity at the center of a black hole, it is possible that quantum mechanical effects at the
 Planck scale prevent the formation of a singularity. Unfortunately, we are unlikely to find any empirical evidence
-about this, since black holes always seem to come clothed in event horizons, so we cannot extract any data about
-a singularity inside. In a way, this is a good thing. If a singularity exists, it is a point at which all
-the known laws of physics broke down, and physicists therefore have no way of predicting anything about its
-behavior. As John Earman of the University of Pittsburgh puts it, anything could pop out of a singularity, including green
-slime or your lost socks. In more technical language, a naked singularity would constitute an extreme violation of
-unitarity and an acute instance of the information paradox (see page \pageref{information-paradox}).\index{unitarity}\index{information paradox}\label{slime-and-socks}
+about this, since black holes always seem to come clothed in event horizons, so we outside observers
+cannot extract any data about the singularity inside. Even if we take a suicidal trip into a black hole,
+we get no data about the singularity, because the singularity in the Schwarzschild metric is
+spacelike, not timelike, and therefore it always lies in our future light cone, never in our past.
 
-As long as singularities are hidden behind event horizons, this has no effect on
-our ability to make predictions about the physical behavior of the universe. There is no obvious built-in reason
-that general relativity should not allow \emph{naked} singularities,\index{singularity!naked}\index{naked singularity}
-but neither do we know of any real-world process by which one could be formed.
-Roger Penrose's\index{Penrose, Roger} 1969 \emph{cosmic censorship}
-hypothesis states that our universe contains no naked singularities other than the Big Bang.
-A reasonably readable treatment of these issues is given in Earman,
-\emph{Bangs, Crunches, Whimpers, and Shrieks: Singularities and Acausalities in Relativistic Spacetimes}, Oxford, 1995;
-he clearly marks the sections that are highly technical and suggests how the non-specialist reader can navigate the
-book and absorb the main points.
+In a way, the inaccessibility of singularities is a good thing. If a singularity exists, it is a point at which all
+the known laws of physics break down, and physicists therefore have no way of predicting anything about its
+behavior.
+There is likewise no great crisis for physics due to the Big Bang singularity or the Big Crunch singularity
+that occurs in some cosmologies in which the universe recollapses; we have no reasonable expectation of being
+able to make and test predictions or retrodictions that extend beyond the beginning or end of the universe.
+
+What would be a crushing blow to the enterprise of physics would be a singularity that could sit on
+someone's desk. As John Earman of the University of Pittsburgh
+puts it, anything could pop out of such a singularity, including green
+slime or your lost socks. In more technical language, a singularity would constitute an extreme violation of
+unitarity and an acute instance of the
+information paradox (see page \pageref{information-paradox}).\index{unitarity}\index{information paradox}\label{slime-and-socks}
+
+To formalize these ideas, we need to define the type of singularity that is of concern. It is still a matter of active
+theoretical research how one can most usefully define these concepts, but 
+Penrose\footnote{``Gravitational collapse,'' in
+Proceedings of the symposium on gravitational radiation and gravitational collapse,
+Warsaw, 1973. \url{adsabs.harvard.edu/full/1974IAUS...64...82P}} proposed the following two
+candidates as definitions of what he called a \emph{naked} singularity:\index{singularity!naked}\index{naked singularity}
+
+\begin{itemize}
+\item \emph{Global definition:} A naked singularity is one from which timelike or lightlike world-lines can
+originate and then escape to infinity.
+\item \emph{Local definition:} A naked singularity is one that is timelike, in the sense that an observer with a
+timelike world-line can have the singularity sometimes in his future light-cone and sometimes in his past light-cone.
+\end{itemize}
+
+\noindent The local definition has the advantage that it excludes cosmological singularities. Neither
+definition includes the black hole singularity described by the Schwarzschild metric.
+
+There is no obvious reason
+that general relativity should not allow naked singularities,
+but neither do we know of any real-world process by which one could be formed by gravitational collapse.
+Penrose's\index{Penrose, Roger} \emph{cosmic censorship}\index{cosmic censorship}
+hypothesis states that the laws of physics prevent the formation of naked singularities from nonsingular and generic
+initial conditions. ``Generic'' is a necessary addition to Penrose's original 1969 formulation, since
+Choptuik showed in 1993 that certain perfectly fine-tuned
+initial conditions allowed collapse to a naked singularity.\footnote{Phys. Rev. Lett. 70, p.~9}
 
 <% end_sec %> % singularities
 
