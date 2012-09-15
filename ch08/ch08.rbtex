@@ -1664,20 +1664,23 @@ possibility of a bounce caused by a very strong cosmological constant.
 <% begin_sec("The matter-dominated solution") %>\label{sec:matter-dominated}
 Our universe is not perfectly vacuum-dominated, and in the past it was even less so. Let us consider the matter-dominated
 epoch, in which the cosmological constant was negligible compared to the material sources. 
-The equations of state
-for nonrelativistic matter (p. \pageref{eg:dust-and-radiation-cosm}) are
-\begin{align*}
- P&=0 \\
- \rho &\propto a^{-3}
-\end{align*}
-so the Friedmann equations become
+The equation of state
+for nonrelativistic matter (p. \pageref{eg:dust-and-radiation-cosm}) is
+\begin{equation*}
+ P=0 \qquad .
+\end{equation*}
+The dilution of the dust with cosmological expansion gives
+\begin{equation*}
+ \rho \propto a^{-3}
+\end{equation*}
+(see example \ref{eg:dust-dilution}). The Friedmann equations become
 \begin{align*}
   \frac{\ddot{a}}{a}   \quad          &=  - \frac{4\pi}{3}\rho \\
   \left(\frac{\dot{a}}{a}\right)^2    &= \frac{8\pi}{3}\rho-k a^{-2} \qquad ,
 \end{align*}
 where for compactness $\rho$'s dependence on $a$, with some constant of proportionality, is not shown explicitly.
-A static solution, with constant $a$, is impossible, and $\ddot{a}$ is negative, which we can interpret semiclassically
-in terms of the deceleration of the matter in the universe due to gravitational attraction. There are three cases
+A static solution, with constant $a$, is impossible, and $\ddot{a}$ is negative, which we can interpret in Newtonian
+terms as the deceleration of the matter in the universe due to gravitational attraction. There are three cases
 to consider, according to the value of $k$.
 
 <% begin_sec("The closed universe") %>
@@ -1702,7 +1705,7 @@ background, as described above) is sufficient to show that our universe does not
 
 <% begin_sec("The flat universe") %>\label{flat-dust}
 The case of $k=0$ describes a universe that is spatially flat. It represents a knife-edge case lying between the
-closed and open universes. In a semiclassical analogy, it represents the case in which the universe is moving
+closed and open universes. In a Newtonian analogy, it represents the case in which the universe is moving
 exactly at escape velocity; as $t$ approaches infinity, we have $a \rightarrow\infty$, $\rho\rightarrow 0$, and
 $\dot{a}\rightarrow 0$. This case, unlike the others, allows an easy closed-form solution to the motion.
 Let the constant of proportionality in the equation of state $\rho \propto a^{-3}$ be fixed by setting
@@ -1733,6 +1736,31 @@ the Big Bang. This gives $\rho_{crit}\sim 10^{-26}\ \kgunit/\munit^3$.
 As discussed in subsection \ref{sec:cosmology-observation}, our universe turns out to be almost exactly
 spatially flat. Although it is presently vacuum-dominated, the flat and matter-dominated FRW cosmology
 is a useful description of its matter-dominated era.
+
+
+
+<% end_sec %> % The flat universe
+
+
+<% begin_sec("The open universe") %>
+The $k=-1$ case represents a universe that has negative spatial curvature, is spatially infinite, and is also infinite in time,
+i.e., even if the cosmological constant had been zero, the expansion of the universe would have had too little matter in it
+to cause it to recontract and end in a Big Crunch.
+
+The time-reversal symmetry of general relativity was discussed on p.~\pageref{sec:sch-t-reversal} in connection with the
+Schwarzschild metric.\footnote{Problem \ref{hw:frw-time-reversal} on p.~\pageref{hw:frw-time-reversal} shows that this symmetry is also exhibited by the
+Friedmann equations.} Because of this symmetry, we expect that solutions to the field equations will be symmetric under
+time reversal (unless asymmetric boundary conditions were imposed). The closed universe has exactly this type of
+time-reversal symmetry. But the open universe clearly breaks this symmetry, and this is why we speak of the Big Bang
+as lying in the past, not in the future. This is an example of 
+spontaneous symmetry breaking.\label{spontaneous-symm-breaking}\index{spontaneous symmetry breaking}\index{symmetry breaking!spontaneous}
+Spontaneous symmetry breaking happens when we try to balance a pencil on its tip, and it is also an important phenomenon in particle physics.
+The time-reversed version of the open universe is an equally valid solution of the field equations. Another example of spontaneous symmetry breaking
+in cosmological solutions is that the solutions have a preferred frame of reference, which is the one at rest relative to the cosmic microwave
+background and the average motion of the galaxies. This is referred to as the Hubble flow.\index{Hubble flow}
+
+
+<% end_sec %> % The open universe
 
 \begin{eg}{Size and age of the observable universe}\label{eg:observable-universe}\index{universe!observable}\index{universe!observable!size and age}
 \index{observable universe}\index{observable universe!size and age}
@@ -1769,30 +1797,35 @@ The radiation-dominated version is handled in problem
 \ref{hw:observable-universe-perfect-fluid} on p.~\pageref{hw:observable-universe-perfect-fluid}.
 \end{eg}
 
+\begin{eg}{Local conservation of mass-energy}\label{eg:dust-dilution}
+Any solution to the Friedmann equations is a solution of the field equations, and therefore locally
+conserves mass-energy. We saved work above by applying this condition in advance in the form $\rho\propto a^{-3}$
+to make the dust dilute itself properly with cosmological expansion. In this example we prove the same proportionality
+by explicit calculation.
 
-<% end_sec %> % The flat universe
+Local conservation of mass-energy is expressed by the zero divergence of the stress-energy tensor,
+$\nabla_jT^{jb}=0$. The definition of the covariant derivative gives
+\begin{equation*}
+  \nabla_j T^{bc} = \partial_j T^{bc}+\Gamma^b_{jd}T^{dc}+\Gamma^c_{jd}T^{bd} \qquad .
+\end{equation*}
+For convenience, we carry out the calculation at $r=0$; if conservation holds here, then it holds everywhere
+by homogeneity.
 
+In a local Cartesian frame $(t',x',y',z')$ at rest relative to the dust, the stress-energy tensor is diagonal
+with $T^{t't'}=\rho$. At $r=0$, the transformation from FLRW coordinates into these coordinates doesn't
+mix $t$ or $t'$ with the other coordinates, so by the tensor transformation law we still have $T^{tt}=\rho$. 
 
-<% begin_sec("The open universe") %>
-The $k=-1$ case represents a universe that has negative spatial curvature, is spatially infinite, and is also infinite in time,
-i.e., even if the cosmological constant had been zero, the expansion of the universe would have had too little matter in it
-to cause it to recontract and end in a Big Crunch.
-
-The time-reversal symmetry of general relativity was discussed on p.~\pageref{sec:sch-t-reversal} in connection with the
-Schwarzschild metric.\footnote{Problem \ref{hw:frw-time-reversal} on p.~\pageref{hw:frw-time-reversal} shows that this symmetry is also exhibited by the
-Friedmann equations.} Because of this symmetry, we expect that solutions to the field equations will be symmetric under
-time reversal (unless asymmetric boundary conditions were imposed). The closed universe has exactly this type of
-time-reversal symmetry. But the open universe clearly breaks this symmetry, and this is why we speak of the Big Bang
-as lying in the past, not in the future. This is an example of 
-spontaneous symmetry breaking.\label{spontaneous-symm-breaking}\index{spontaneous symmetry breaking}\index{symmetry breaking!spontaneous}
-Spontaneous symmetry breaking happens when we try to balance a pencil on its tip, and it is also an important phenomenon in particle physics.
-The time-reversed version of the open universe is an equally valid solution of the field equations. Another example of spontaneous symmetry breaking
-in cosmological solutions is that the solutions have a preferred frame of reference, which is the one at rest relative to the cosmic microwave
-background and the average motion of the galaxies. This is referred to as the Hubble flow.\index{Hubble flow}
-
-
-<% end_sec %> % The open universe
-
+There are a number of Christoffel symbols involved, but the only three of relevance that don't vanish at
+$r=0$ turn out to be $\Gamma^r_{rt}=\Gamma^\theta_{\theta t}=\Gamma^\phi_{\phi t}=\dot{a}/a$. The result is
+\begin{equation*}
+  \nabla_\mu T^{t\mu} = \partial_tT^{tt}+3\frac{\dot{a}}{a} T^{tt} \qquad ,
+\end{equation*}
+or $\dot{\rho}/\rho=-3\dot{a}/a$, which can be rewritten as
+\begin{equation*}
+  \frac{\der}{\der t} \ln\rho = -3 \frac{\der}{\der t} \ln a \qquad ,
+\end{equation*}
+producing the proportionality originally claimed.
+\end{eg}
 
 <% end_sec %> % The matter-dominated solution
 
