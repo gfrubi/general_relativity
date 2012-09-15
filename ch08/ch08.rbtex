@@ -76,7 +76,7 @@ Einstein tensor,\index{Einstein tensor} defined by $G_{ab}=R_{ab}-(1/2)Rg_{ab}$,
 The Einstein tensor is constructed exactly so that it is divergence-free, $\nabla_b G^{ab}=0$. (This is not obvious,
 but can be proved by direct computation.) Therefore any stress-energy tensor that satisfies the field equation
 is automatically divergenceless, and thus no additional constraints need to be applied in order to guarantee
-conservation of mass-energy.
+conservation of mass-energy.\label{einstein-tensor-div-free}
 
 Self-check: Does replacing $R_{ab}$ with $G_{ab}$ invalidate the Schwarzschild metric?
 <% end_sec %> % The Einstein tensor
@@ -729,6 +729,20 @@ the cosmological constant as a type of matter contributing to the stress-energy 
 Its negative pressure causes a violation of the strong energy condition. If the cosmological constant is a product of the
 quantum-mechanical structure of the vacuum, then this is not too surprising, because quantum fields are known to display
 negative energy. For example, the energy density between two parallel conducting plates is negative due to the Casimir effect.\index{Casimir effect}
+
+If $\Lambda$ is thought of as a form of matter, then it becomes 
+natural to ask whether\label{varying-lambda}\index{cosmological constant!no variation of}
+it's spread more thickly in some places than others: is the cosmological ``constant'' really constant?
+The following argument shows that it cannot vary.
+The field equations are $G_{ab}=8\pi T_{ab}+\Lambda g_{ab}$.
+Taking the divergence of both sides, we have $\nabla^a G_{ab}=8\pi \nabla^a T_{ab}+\nabla^a (\Lambda g_{ab})$.
+The left-hand side vanishes (see p.~\pageref{einstein-tensor-div-free}). Since laboratory experiments have
+verified conservation of mass-energy to high precision for all the forms of matter represented by $T$,
+we have $\nabla^a T_{ab}=0$ as well. Applying the product rule to the term $\nabla^a (\Lambda g_{ab})$,
+we get $g_{ab}\nabla^a\Lambda+\Lambda\nabla^a g_{ab}$. But the covariant derivative of the metric vanishes,
+so the result is simply $\nabla_b\Lambda$. Thus any variation in the cosmological constant over space or time
+violates the field equations, and the violation is equivalent to the violation we would get from a form of matter
+than didn't conserve mass-energy locally.
 <% end_sec %> % The cosmological constant
 <% end_sec %> % Sources in general relativity
 
@@ -1044,7 +1058,7 @@ be written in the form $P=w\rho$. For example, dust has $w=0$.
 
 Unlike $a$, $\rho$, and $P$, the cosmological constant $\Lambda$
 is not free to vary with time; if it did, then the stress-energy tensor would have a nonvanishing divergence,
-which is not consistent with the Einstein field equations.
+which is not consistent with the Einstein field equations (see p.~\pageref{varying-lambda}).
 
 Although general relativity does not provide any scalar, globally conserved measure of mass-energy that is
 conserved in all spacetimes, the Friedmann velocity equation can be loosely interpreted as a statement of
