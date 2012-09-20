@@ -1214,8 +1214,9 @@ and $-1$ for the lower-index one. The relation $A_\mu=\epsilon_{\mu\kappa\lambda
 not a tensor, because $A$ is not written in terms of purely tensorial quantities. Scaling the coordinates by $k$ leaves $\epsilon_{\mu\kappa\lambda}$
 unchanged, scales up $u^\kappa v^\lambda$ by $k^2$, and scales up the area by $k^2$, as expected.
 <% end_sec %> % Tensor-density $\epsilon$
+
 Unfortunately, there is no consistency in the literature as to whether $\epsilon$ should be a tensor or a tensor density.
-Some will define both a tensor and a nontensor version, with notations
+Some authors define both a tensor and a nontensor version, with notations
 like $\epsilon$ and $\tilde{\epsilon}$, or\footnote{Misner, Thorne, and Wheeler} $\epsilon_{0123}$ and $[0123]$. 
 Others avoid writing the letter $\epsilon$ completely.\footnote{Hawking and Ellis} The tensor-density version
 is convenient because we always know that its value is $0$ or $\pm 1$. The tensor version has the advantage that it transforms
