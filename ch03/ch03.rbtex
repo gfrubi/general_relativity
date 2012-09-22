@@ -743,7 +743,7 @@ for example, by Penrose. The opposite version, with $g=diag(-1,+1)$ is used by a
 Wheeler.
 
 Our universe does not have just one spatial dimension, it has three, so the full metric in a Lorentz
-frame is given by \linebreak $g=diag(+1,-1,-1,-1)$. 
+frame is given by \linebreak $g=diag(+1,-1,-1,-1)$.
 <% end_sec %>
 
 <% begin_sec("Isometry, inner products, and the Erlangen Program") %>

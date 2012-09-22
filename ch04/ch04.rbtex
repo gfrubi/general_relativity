@@ -86,14 +86,37 @@ non-collinear boosts is noncommutative, and is generally equivalent to a boost p
 consistent with linear addition of four vectors. At the risk of beating a dead horse, a four-velocity's squared magnitude is
 always 1, and this is not consistent with being able to add four-velocity vectors.
 
-\begin{eg}{A zero velocity vector?}
+\begin{eg}{A zero velocity vector?}\label{eg:zero-v-vector}
 \egquestion Suppose an object has a certain four-velocity $v^i$ in a certain frame of reference. Can we transform into a different
 frame in which the object is at rest, and its four-velocity is zero?
 
 \eganswer No. In general, the Lorentz transformation preserves the magnitude of vectors, so it can never transform a vector with
-a zero magnitude into one with zero magnitude. We can transform into a frame in which the object is at rest,
+a zero magnitude into one with zero magnitude. Since this is a material object
+(not a ray oflight) we can transform into a frame in which the object is at rest,
 but an object at rest does not have a vanishing four-velocity. It has a four-velocity
 of $(1,0,0,0)$.
+\end{eg}
+
+Example \ref{eg:zero-v-vector} suggests a nice way of thinking about velocity vectors, which is that every timelike
+velocity vector represents a potential observer.
+An observer is a material object, and therefore has a timelike velocity vector. This observer writes her own
+velocity vector as  $(1,0,0,0)$, i.e., as the unit vector in the timelike direction. Often when we see an expression
+involving a velocity vector, we can interpret it as describing a measurement taken by a specific observer.
+
+\begin{eg}{Orthogonality as simultaneity}\index{orthogonality}
+In a space where the inner product can be negative, orthogonality doesn't mean what our euclidean intuition thinks it
+means. For example, a lightlike vector can be orthogonal to itself --- a situation that never occurs in a euclidean space.
+
+Suppose we have a timelike vector $\vc{t}$ and a spacelike one $\vc{x}$. What would it mean for $\vc{t}$
+and $\vc{x}$ to be orthogonal, with $\vc{t}\cdot\vc{x}=0$? Since $\vc{t}$ is timelike, we can make a unit
+vector $\hat{\vc{t}}=\vc{t}/|\vc{t}|$ out of it, and interpret $\hat{\vc{t}}$
+as the velocity vector of some hypothetical observer. We then know that in that observer's frame, $\hat{\vc{t}}$
+is simply a unit vector along the time axis. It now becomes clear that $\vc{x}$ must be parallel to the x axis,
+i.e., it represents a displacement between two events that this observer considers to be simultaneous.
+
+This is an example of the idea that expressions involving velocity vectors can be interpreted as measurements taken
+by a certain observer. The expression $\vc{t}\cdot\vc{x}=0$ can be interpreted as meaning that
+according to an observer whose world-line is tangent to $\vc{t}$, $\vc{x}$ represents a relationship of simultaneity.
 \end{eg}
 
 The four-acceleration is found by taking a second derivative with respect to proper time.\index{four-vector!acceleration}
@@ -1222,6 +1245,19 @@ Others avoid writing the letter $\epsilon$ completely.\footnote{Hawking and Elli
 is convenient because we always know that its value is $0$ or $\pm 1$. The tensor version has the advantage that it transforms
 as a tensor.
 <% end_sec %> % The Levi-Civita symbol
+<% begin_sec("Spacetime volume") %>\index{volume!spacetime}\label{subsec:spacetime-volume}
+We saw on p.~\pageref{spacetime-area} that area in the $1+1$-dimensional plane of flat spacetime is preserved 
+by a Lorentz boost. This makes sense because when we express the area spanned by a parallelogram with edges
+$\vc{p}$ and $\vc{q}$ as
+$\epsilon^{ab}p_as_b$, all the indices have been contracted, leaving a rank-0 tensor density. In $3+1$ dimensions,
+we have the spacetime volume $V=\epsilon^{abcd}p_a q_b r_c s_d$ spanned by the paralellepiped with edges
+$\vc{p}$, $\vc{q}$, $\vc{r}$, and $\vc{s}$. A typical situation in which this volume is nonzero would be that in which
+one of the vectors is timelike and the other three spacelike.
+Let the timelike one be $\vc{p}$. Assume $|\vc{p}|= 1$, since an example with $|\vc{p}|\ne 1$ can be reduced to this
+by scaling. Then $\vc{p}$ can be interpreted as the velocity vector of some observer, and
+$V$ as the spatial volume that the observer says is spanned by the 
+3-paralellepiped with edges $\vc{q}$, $\vc{r}$, and $\vc{s}$.
+<% end_sec %> % 
 <% begin_sec("Angular momentum") %>\index{angular momentum}
 As discussed above, angular momentum cannot be a rank-1 tensor.
 One approach is to define a rank-2 angular momentum tensor $L^{ab}=r^ap^b$. 

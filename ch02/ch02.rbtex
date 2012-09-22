@@ -322,10 +322,8 @@ transformation starts from a parallelogram rather than a square. Scaling the are
 and again by $A(-v)$ must therefore give back the original square with its original unit area,
 $A(v)A(-v)=1$, and since $A(v)=A(-v)$, $A(v)=\pm1$ for any value of $v$. Since $A(0)=1$, we must
 have $A(v)=1$ for all $v$. The argument is independent of the shape of the region, so we conclude
-that all areas are preserved by Lorentz boosts. The argument is also purely one about affine
-geometry (it would apply equally well to a Euclidean space), so there is no reason to expect the area
-$A$ in the $(t,x)$ plane to have any special physical significance in relativity; it is simply a useful
-mathematical tool in the present discussion.
+that all areas are preserved by Lorentz boosts.\label{spacetime-area} (See subsection \ref{subsec:spacetime-volume}
+on p.~\pageref{subsec:spacetime-volume} for further interpretation of $A$.)
 
 If we consider a boost by an infinitesimal velocity $\der v$, then the vanishing change in area comes
 from the sum of the areas of the four infinitesimally thin slivers where the rectangle lies either
@@ -1661,8 +1659,10 @@ principle. For a good explanation, see \url{http://math.ucr.edu/home/baez/physic
 <% begin_hw('mountain-valley') %>
 Some of the most conceptually direct tests of relativistic time dilation were carried out by comparing the rates
 of twin atomic clocks, one left on a mountaintop for a certain amount of time, the other in a nearby valley 
-below.\footnote{L. Briatore and S. Leschiutta, Evidence for the earth gravitational shift by direct atomic-time-scale comparison, Il Nuovo Cimento B, 37B (2): 219 (1979).
-S. Iijima and K. Fujiwara, An experiment for the potential blue shift at the Norikura Corona Station, Annals of the Tokyo Astronomical Observatory, Second Series, Vol. XVII, 2 (1978) 68.}
+below.\footnote{L. Briatore and S. Leschiutta, ``Evidence for the earth gravitational shift by direct atomic-time-scale
+ comparison,'' Il Nuovo Cimento B, 37B (2): 219 (1977).
+Iijima \emph{et al.}, ``An experiment for the potential blue shift at the Norikura Corona Station,''
+Annals of the Tokyo Astronomical Observatory, Second Series, Vol. XVII, 2 (1978) 68.}
 Unlike the clocks in the Hafele-Keating experiment, these are stationary for almost the entire duration of the experiment,
 so any time dilation is purely gravitational, not kinematic. One could object, however, that the clocks are not really
 at rest relative to one another, due to the earth's rotation. This is an example of how the distinction between gravitational
