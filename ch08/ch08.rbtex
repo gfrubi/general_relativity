@@ -412,13 +412,17 @@ They all have to do with the idea that negative mass-energy doesn't seem to exis
 gravity is always attractive rather than repulsive. With this motivation, it would seem that there should only
 be one way to state an energy condition: $\rho > 0$. But the symbols $\rho$ and $P$ refer to the form of the
 stress-energy tensor in a special frame of reference, interpreted as the one that is at rest relative to the
-average motion of the ambient matter. In this frame, the tensor is diagonal. Switching to some other frame
+average motion of the ambient matter. (Such a frame is not even guaranteed to exist unless the matter acts
+as a perfect fluid.) In this frame, the tensor is diagonal. Switching to some other frame
 of reference, the $\rho$ and $P$ parts of the tensor would mix, and it might be possible to end up with
 a negative energy density. The weak energy condition is the constraint we need in order to make sure that
 the energy density is never negative in any frame.
 
 The dominant energy condition is like the weak energy condition, but it also guarantees that no observer
 will see a flux of energy flowing at speeds greater than $c$.
+
+The strong energy condition essentially states that gravity is never repulsive; it is violated
+by the cosmological constant (see p.~\pageref{lambda-and-energy-conditions}).
 
 <% begin_sec("Geodesic motion of test particles") %>\label{geodesic-motion-details}
 Question 1 on p.~\pageref{energy-condition-questions} was: ``Does a small enough physical object always have a world-line that is approximately a geodesic?''
@@ -726,9 +730,18 @@ the larger the scale, the more significant the effect of a nonzero $\Lambda$ wou
 
 Since the right-hand side of the field equation is $8\pi T_{ab} + \Lambda g_{ab}$, it is possible to consider
 the cosmological constant as a type of matter contributing to the stress-energy tensor.\index{energy conditions!violated by cosmological constant}
-Its negative pressure causes a violation of the strong energy condition. If the cosmological constant is a product of the
-quantum-mechanical structure of the vacuum, then this is not too surprising, because quantum fields are known to display
-negative energy. For example, the energy density between two parallel conducting plates is negative due to the Casimir effect.\index{Casimir effect}
+We then have $\rho=-P=\Lambda/8\pi$.\label{lambda-and-energy-conditions}
+As described in more detail in section \ref{sec:cosmology-observation} on p.~\pageref{sec:cosmology-observation},
+we now know that $\Lambda$ is positive.
+With $\Lambda>0$, the weak and dominant energy conditions are both satisfied, so that in every frame of reference,
+$\rho$ is positive and there is no flux of energy flowing at speeds greater than $c$.
+The negative pressure does violate the strong energy condition, meaning that the constant acts as a form
+of gravitational repulsion. If the cosmological constant is a product of the
+quantum-mechanical structure of the vacuum, then this violation 
+is not too surprising, because quantum fields are known to violate
+various energy conditions.
+For example, the energy density between two parallel conducting plates
+is negative due to the Casimir effect.\index{Casimir effect}
 
 If $\Lambda$ is thought of as a form of matter, then it becomes 
 natural to ask whether\label{varying-lambda}\index{cosmological constant!no variation of}
