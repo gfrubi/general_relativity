@@ -488,6 +488,13 @@ The DEC is obeyed for $\epsilon<0$ and violated for $\epsilon>0$, and since $\ep
 tensor equal to that of an electromagnetic wave, we can tell
 that light is exactly on the border between forms of matter that fulfill the DEC and those
 that don't. Since the DEC is formulated as a non-strict inequality, it follows that light obeys the DEC.
+
+The reader is cautioned that it is not possible in general to read off a ``speed of energy flux''
+from the value of $T$ at a point, without knowing $T$'s derivatives. The previous discussion might
+suggest, for example, that $T_{xt}/T_{tt}$ could be interpreted as such a speed. This is false except as
+a Newtonian approximation.
+As a counterexample, one can easily construct static electromagnetic fields such that the Poynting vector
+is nonvanishing. $T_{xt}$ is exactly the $x$ component of the Poynting vector.
 \end{eg}
 
 <% begin_sec("Geodesic motion of test particles") %>\label{geodesic-motion-details}
