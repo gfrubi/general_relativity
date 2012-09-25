@@ -153,6 +153,9 @@ the cosmological constant, and one can also check that these give
 symmetry.\index{stress-energy tensor!symmetry of} Belinfante noted in 1939 that
 symmetry seemed to fail in the case of fields with intrinsic spin, but he found that this problem
 could be avoided by modifying the previously assumed way of connecting $T$ to the properties of the field.
+This shows that it can be rather subtle to interpret the stress-energy tensor and connect it to experimental
+observables. For more on this connection, and the case of electromagnetic fields, see examples
+\ref{eg:t-of-em-wave} and \ref{eg:t-of-static-em-fields} on p.~\pageref{eg:t-of-em-wave}.
 
 In example \ref{eg:dust-stress-energy}, we found that $T\indices{_x_t}$ had to be interpreted as the
 flux of $T\indices{_t_t}$ (i.e., the flux of mass-energy) across the $x$ axis. Lorentz invariance
@@ -424,7 +427,7 @@ will see a flux of energy flowing at speeds greater than $c$.
 The strong energy condition essentially states that gravity is never repulsive; it is violated
 by the cosmological constant (see p.~\pageref{lambda-and-energy-conditions}).
 
-\begin{eg}{An electromagnetic wave}\index{stress-energy tensor!of an electromagnetic wave}
+\begin{eg}{An electromagnetic wave}\label{eg:t-of-em-wave}\index{stress-energy tensor!of an electromagnetic wave}
 In example \ref{eg:dust-stress-energy} on p.~\pageref{eg:dust-stress-energy}, we saw that dust boosted
 along the $x$ axis gave a stress-energy tensor
 \begin{equation*}
@@ -488,13 +491,78 @@ The DEC is obeyed for $\epsilon<0$ and violated for $\epsilon>0$, and since $\ep
 tensor equal to that of an electromagnetic wave, we can tell
 that light is exactly on the border between forms of matter that fulfill the DEC and those
 that don't. Since the DEC is formulated as a non-strict inequality, it follows that light obeys the DEC.
+\end{eg}
 
-The reader is cautioned that it is not possible in general to read off a ``speed of energy flux''
-from the value of $T$ at a point, without knowing $T$'s derivatives. The previous discussion might
-suggest, for example, that $T_{xt}/T_{tt}$ could be interpreted as such a speed. This is false except as
-a Newtonian approximation.
-As a counterexample, one can easily construct static electromagnetic fields such that the Poynting vector
-is nonvanishing. $T_{xt}$ is exactly the $x$ component of the Poynting vector.
+\begin{eg}{No ``speed of flux''}\label{eg:t-of-static-em-fields}
+The foregoing discussion may have encouraged the reader to believe that it is possible in general
+to read off a ``speed of energy flux'' from the value of $T$ at a point. This is not true.
+
+The difficulty lies in the distinction between flow with and without accumulation, which is sometimes
+valid and sometimes not. In springtime in the Sierra Nevada, snowmelt adds water to alpine lakes
+more rapidly than it can flow out, and the water level rises. This is flow with accumulation. In the
+fall, the reverse happens, and we have flow with depletion (negative accumulation).
+
+Figure \subfigref{static-poynting-vector}{1} shows a second example in which the distinction seems valid.
+Charge is flowing through the lightbulb, but because there is no accumulation of charge in the DC circuit,
+we can't detect the flow by an electrostatic measurement; the wire does not attract the tiny bits
+of paper below it on the table.
+
+But we know that with different measurements, we could detect the flow of charge in \subfigref{static-poynting-vector}{1}.
+For example, the magnetic field from the wire would deflect a nearby magnetic compass. This shows that the distinction
+between flow with and without accumulation may be sometimes valid and sometimes invalid. Flow without accumulation
+may or may not be detectable; it depends on the physical context.
+<% marg(50) %>
+<%
+  fig(
+    'static-poynting-vector',
+    %q{Example \ref{eg:t-of-static-em-fields}.}
+  )
+%>
+<% end_marg %>
+
+In figure \subfigref{static-poynting-vector}{2}, an electric charge and a magnetic dipole are superimposed at a point.
+The Poynting vector\index{Poynting vector} $\vc{P}$ defined as $\vc{E}\times\vc{B}$ is used in electromagnetism as a measure of the
+flux of energy, and it tells the truth, for example, when the sun warms your sun on a 
+hot day. In \subfigref{static-poynting-vector}{2},
+however, all the fields are static. It seems as though there can be no flux of energy. But that doesn't
+mean that the Poynting vector is lying to us. It tells us that there is a pattern of flow, but it's flow
+without accumulation; the Poynting vector forms circular loops that close upon themselves, and electromagnetic
+energy is transported in and out of any volume at the same rate. We would perhaps prefer to have a mathematical
+rule that gave zero for the flux in this situation, but it's acceptable that our rule 
+$\vc{P}=\vc{E}\times\vc{B}$ gives a nonzero result, since it doesn't incorrectly predict an accumulation, which
+is what would be detectable.
+
+Now suppose we're presented with this stress-energy tensor, measured at a single point and expressed in some units:
+\begin{equation*}
+T\indices{^{\mu}^{\nu}} = \left( \begin{matrix}
+                   4.037\pm0.002 & 4.038\pm0.002 \\
+                   4.036\pm0.002 & 4.036\pm0.002
+      \end{matrix} \right) \qquad .
+\end{equation*}
+To within the experimental error bars, it has the right form to be many different things: 
+(1) We could have a universe filled with perfectly uniform dust, moving along the $x$ axis at some ultrarelativistic
+speed $v$ so great that the $\epsilon$ in $v=1-\epsilon$, as in example
+\ref{eg:t-of-em-wave}, is not detectably different from zero. (2) This could be a point sampled
+from an electromagnetic wave traveling
+along the $x$ axis. (3) It could be a point taken from figure \subfigref{static-poynting-vector}{2}.
+(In cases 2 and 3, the off-diagonal elements are simply the Poynting vector.)
+
+In cases 1 and 2, we would be inclined to interpret this stress-energy tensor by saying that its
+off-diagonal part measures the flux of mass-energy along the $x$ axis, while in case 3 we would reject
+such an interpretation. The trouble here is not so much in our interpretation of $T$ as in
+our Newtonian expectations about what is or isn't observable about fluxes that flow without accumulation.
+In Newtonian mechanics, a flow of mass is observable, regardless of whether there is accumulation, because
+it carries momentum with it; a flow of energy, however, is undetectable if there is no accumulation.
+The trouble here is that relativistically, we can't maintain this distinction between mass and energy.
+The Einstein field equations tell us that a flow of either will contribute equally to the stress-energy,
+and therefore to the surrounding gravitational field.
+
+The flow of energy in \subfigref{static-poynting-vector}{2} contributes to the gravitational field, and its
+contribution is changed, for example, if the magnetic field is reversed. The figure is in fact not
+a bad qualitative representation of the spacetime around a rotating, charged black hole. At large
+distances, however, the gravitational effect of the off-diagonal terms in $T$ becomes small, because they average
+to nearly zero over a sufficiently large spherical region. The distant gravitational field approaches that
+of a point mass with the same mass-energy.
 \end{eg}
 
 <% begin_sec("Geodesic motion of test particles") %>\label{geodesic-motion-details}
