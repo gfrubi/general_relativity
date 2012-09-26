@@ -58,10 +58,21 @@ where a factor of $G/c^4$ on the right is suppressed by our choice of units, and
 the basis of consistency with Newtonian gravity in the limit of weak fields and low velocities. The problem
 with this version of the field equations can be demonstrated by counting variables. $R$ and $T$ are
 symmetric tensors, so the field equation contains 10 constraints on the metric: 4 from the diagonal
-elements and 6 from the off-diagonal ones. In addition, conservation of mass-energy requires the divergence-free
-property $\nabla_b T^{ab}=0$,
-because otherwise, for example, we could have a mass-energy tensor that varied as $T^{00}=kt$, describing
-a region of space in which mass was uniformly appearing or disappearing at a constant rate. But this adds
+elements and 6 from the off-diagonal ones. 
+
+In addition, local conservation of mass-energy requires the div\-ergence-free\index{stress-energy tensor!divergence-free}
+property $\nabla_b T^{ab}=0$. In order to construct an example, we recall that the only
+component of $T$ for which we have so far introduced any physical interpretation is $T^{tt}$, which
+gives the density of mass-energy.
+Suppose we had a stress-energy tensor whose components were all zero,
+except for a time-time component varying as $T^{tt}=kt$. This would describe
+a region of space in which mass-energy was uniformly appearing or disappearing everywhere at a constant rate.
+To forbid such examples, we need the divergence-free property to hold. This is exactly analogous to the
+continuity equation in fluid mechanics or
+electromagnetism, $\partial \rho/\partial t+\nabla\cdot\vc{J}=0$ (or $\nabla_a J^a=0$),
+which states that the quantity of fluid or charge is conserved.
+
+But imposing the divergence-free condition adds
 4 more constraints on the metric, for a total of 14. The metric, however, is a symmetric rank-2 tensor itself,
 so it only has 10 independent components. This overdetermination of the metric suggests that the proposed field equation
 will not in general allow a solution to be evolved forward in time from a set of initial conditions given on
@@ -78,7 +89,13 @@ but can be proved by direct computation.) Therefore any stress-energy tensor tha
 is automatically divergenceless, and thus no additional constraints need to be applied in order to guarantee
 conservation of mass-energy.\label{einstein-tensor-div-free}
 
-Self-check: Does replacing $R_{ab}$ with $G_{ab}$ invalidate the Schwarzschild metric?
+Self-check: Does replacing $R_{ab}$ with $G_{ab}$ invalidate the Schwarz\-schild metric?
+
+This procedure of making local conservation of mass-energy ``baked in'' to the field equations is analogous
+to the way conservation of charge is treated in electricity and magnetism, where it follows from
+Maxwell's equations rather than having to be added as a separate constraint.
+
+
 <% end_sec %> % The Einstein tensor
 <% begin_sec("Interpretation of the stress-energy tensor") %>\label{sec:more-energy-mom-tensor}\index{stress-energy tensor}
 The stress-energy tensor was briefly introduced in section \ref{sec:energy-momentum-tensor} on page \pageref{sec:energy-momentum-tensor}.
@@ -138,10 +155,68 @@ T\indices{_{\mu'}_{\nu'}} \approx \left( \begin{matrix}
                    0 & 0 & 0 & 0    
       \end{matrix} \right) \qquad .
 \end{equation*}
+
 This motivates the interpretation of the time-space components of $T$ as the flux of mass-energy
 along each axis. In the primed frame, mass-energy with density $\rho$ flows in the $x$ direction at velocity
 $ v $, so that the rate at which mass-energy passes through a window of area $A$ in the $y-z$ plane is
 given by $\rho v  A$.
+
+This is also consistent with our imposition of the div\-ergence-free property,
+by which we were essentially stating $T^{tx}$ to be the rate of flow of
+$T^{tt}$.
+\end{eg}
+
+\begin{eg}{The center of mass-energy}\label{eg:center-of-me}\index{center of mass-energy}
+In Newtonian mechanics, for motion in one dimension, the total momentum of a system of particles is
+given by $p_{tot}=Mv_{cm}$, where $M$ is the total mass and $v_{cm}$ the velocity of the center of mass.
+Is there such a relation in relativity?
+
+Since mass and energy are equivalent, we expect that the relativistic equivalent of the center
+of mass would have to be a center of mass-energy.
+
+It should also be clear that a center of mass-energy can only be well defined for a region of spacetime
+that is small enough so that effects due to curvature are negligible. For example, we can have cosmological
+models in which space is finite, and expands like the surface of a balloon being blown up. If the model
+is homogeneous (there are no ``special points'' on the surface of the balloon),
+then there is no point in space that could be a center. (A real balloon has a center, but in our metaphor
+only the balloon's spherical surface correponds to physical space.) The fundamental issue here is
+the same geometrical one that caused us to conclude that there is no global conservation of
+mass-energy in general relativity (see section \ref{sec:no-conservation-laws}). In a curved
+spacetime, parallel transport is path-dependent, so we can't unambiguously define a way of adding vectors
+that occur in different places. The center of mass is defined by a sum of position vectors. From these
+considerations we conclude that the center of mass-energy is only well defined in special relativity, not
+general relativity.
+
+For simplicity, let's restrict ourselves to 1+1 dimensions, and
+adopt a frame of reference in which the center of mass is at rest at $x=0$.
+
+Since $T^{tt}$ is interpreted as the density of mass-energy, the position of the center of mass must
+be given by
+\begin{equation*}
+  0=\int x T^{tt} \der x \qquad .
+\end{equation*}
+By analogy with the Newtonian
+relation $p_{tot}=Mv_{cm}$, let's see what happens when we differentiate with respect to time.
+The velocity of the center of mass is then
+$0=\der x_{cm}/\der t=\int \partial_t T^{tt} x \der x$. Applying the
+divergence-free property $\partial_t T^{tt}+\partial_x T^{tx}=0$, this becomes 
+$0=-\int \partial_x T^{tx} x \der x$. Integration by parts gives us finally
+\begin{equation*}
+  0 = \int T^{tx} \der x \qquad .
+\end{equation*}
+We've already interpreted $T^{tx}$ as the rate of flow of mass-energy,
+which is another way of describing momentum. We can therefore interpret
+$T^{tx}$ as the density of momentum, and the right-hand side of this equation as the total
+momentum. The interpretation is that a system's center of mass-energy
+is at rest if and only if it has zero total momentum.
+
+Suppose, for example, that we prepare a uniform metal rod so that one end is hot
+and the other cold. We then deposit it in outer space, initially motionless relative to some observer.
+Although the rod itself is uniform, its mass-energy is very slightly nonuniform, so its center of mass-energy
+must be displaced a tiny bit away from the center, toward the hot end. As the rod approaches thermal
+equilibrium, the observer sees it accelerate very slightly and then come to rest again, so that its
+center of mass-energy remains fixed! An even stranger case is described in example
+\ref{eg:p-in-static-fields} on p.~\pageref{eg:p-in-static-fields}.
 \end{eg}
 
 Since the Einstein tensor is symmetric, the Einstein field equation requires that the stress-energy
@@ -563,6 +638,26 @@ a bad qualitative representation of the spacetime around a rotating, charged bla
 distances, however, the gravitational effect of the off-diagonal terms in $T$ becomes small, because they average
 to nearly zero over a sufficiently large spherical region. The distant gravitational field approaches that
 of a point mass with the same mass-energy.
+\end{eg}
+
+\begin{eg}{Momentum in static fields}\label{eg:p-in-static-fields}\index{center of mass-energy}
+Continuing the train of thought described in example \ref{eg:t-of-static-em-fields}, we can come up with situations that
+seem even more paradoxical. In figure \subfigref{static-poynting-vector}{2}, the total momentum of the fields
+vanishes by symmetry. This symmetry can, however, be broken by displacing the electric charge by $\Delta\vc{R}$
+perpendicular to the magnetic dipole vector $\vc{D}$. The total momentum no longer vanishes, and now lies
+in the direction of $\vc{D}\times\Delta\vc{R}$. But we have proved in example \ref{eg:center-of-me}
+on p.~\pageref{eg:center-of-me} that a system's center of mass-energy is at rest if and only if its total momentum
+is zero. Since this system's center of mass-energy is certainly at rest, where is the other momentum that
+cancels that of the electric and magnetic fields?
+
+Suppose, for example, that the magnetic dipole consists of a loop of copper
+wire with a current running around it. If we open a switch and
+extinguish the dipole, it appears that the system must recoil! This seems impossible, since the fields
+are static, and an electric charge does not interact with a magnetic dipole.
+
+Babson et al.\footnote{Am. J. Phys. 77 (2009) 826} have analyzed a number of examples of this type.
+In the present one, the mysterious ``other momentum'' can be attributed to a relativistic imbalance
+between the momenta of the electrons in the different parts of the wire.
 \end{eg}
 
 <% begin_sec("Geodesic motion of test particles") %>\label{geodesic-motion-details}

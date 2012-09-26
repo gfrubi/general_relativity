@@ -180,7 +180,7 @@ mass density in relativity is the stress-energy tensor $T^{ij}$,\index{stress-en
 whose 16 elements measure the local density of mass-energy and momentum, and also the rate of transport of
 these quantities in various directions.
 If we happen to be able to find a frame of reference in which the local matter is
-all at rest, then $T^{00}$ represents the mass density. The reason for the word ``stress'' in the name is
+all at rest, then $T^{tt}$ represents the mass density. The reason for the word ``stress'' in the name is
 that, for example, the flux of $x$-momentum in the $x$ direction is a measure of pressure.
 
 For the purposes of the present discussion,
