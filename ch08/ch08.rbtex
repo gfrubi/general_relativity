@@ -657,7 +657,11 @@ are static, and an electric charge does not interact with a magnetic dipole.
 
 Babson et al.\footnote{Am. J. Phys. 77 (2009) 826} have analyzed a number of examples of this type.
 In the present one, the mysterious ``other momentum'' can be attributed to a relativistic imbalance
-between the momenta of the electrons in the different parts of the wire.
+between the momenta of the electrons in the different parts of the wire. A subtle point about these
+examples is that even in the case of an idealized dipole of vanishingly small size, it makes a difference
+what structure we assume for the dipole. In particular, the field's momentum is nonzero for a dipole
+made from a current loop of infinitesimal size, but zero for a dipole made out of 
+two magnetic monopoles.\footnote{Milton and Meille, \url{arxiv.org/abs/1208.4826}}
 \end{eg}
 
 <% begin_sec("Geodesic motion of test particles") %>\label{geodesic-motion-details}
