@@ -67,7 +67,7 @@ This is represented in the above equation by the use of infinitesimal quantities
 
 <% begin_sec("Four-vectors") %>\label{sec:four-vectors}\index{four-vector}
 
-<% begin_sec("The velocity and acceleration four-vectors") %>\label{sec:v-four-vector}\index{four-vector!velocity}
+<% begin_sec("The velocity and acceleration four-vectors") %>\label{sec:v-four-vector}\index{four-vector!velocity}\index{velocity four-vector}
 Our basic Lorentz vector is the spacetime displacement $\der x^i$. Any other quantity that has the same behavior
 as $\der x^i$ under rotations and boosts is also a valid Lorentz vector. Consider a particle moving through space,
 as described in a Lorentz frame. Since the particle may be subject to nongravitational forces, the Lorentz frame
@@ -119,7 +119,7 @@ by a certain observer. The expression $\vc{t}\cdot\vc{x}=0$ can be interpreted a
 according to an observer whose world-line is tangent to $\vc{t}$, $\vc{x}$ represents a relationship of simultaneity.
 \end{eg}
 
-The four-acceleration is found by taking a second derivative with respect to proper time.\index{four-vector!acceleration}
+The four-acceleration is found by taking a second derivative with respect to proper time.\index{four-vector!acceleration}\index{acceleration four-vector}
 Its squared magnitude is
 only approximately equal to minus the squared magnitude of the classical acceleration three-vector, in the limit of small velocities.
 

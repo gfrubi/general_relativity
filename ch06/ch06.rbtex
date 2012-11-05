@@ -1389,7 +1389,7 @@ choice of coordinates. They carry out the calculation above, and discover the $u
 terms of $u$, the metric is well behaved, and the machinery of prediction never breaks down.
 
 The paradox posed
-earlier is resolved because Sylvester's law of inertia only applies to \emph{nonsingular} transformation $S$. If
+earlier is resolved because Sylvester's law of inertia only applies to a \emph{nonsingular} transformation $S$. If
 $S$ had been singular, then the $S^{-1}$ referred to in the theorem wouldn't even have existed. But the
 transformation from $u$ to $t$ has $\partial t/\partial u=0$ at $u=t=0$, so it is singular. This is all in
 keeping with the general philosophy of coordinate-invariance in relativity, which is that only smooth, one-to-one

@@ -1202,7 +1202,7 @@ two beams has been altered. This phase shift is called the Sagnac effect,\index{
 after M. Georges Sagnac, who observed the effect in 1913 and interpreted it, incorrectly, as evidence for the existence
 of the aether.\footnote{Comptes rendus de l'Acad\'{e}mie des science 157 (1913) 708}
 % translation in Rizzi and Ruggiero anthology
-The loop senses its own angular acceleration relative to an inertial reference frame.
+The loop senses its own angular velocity relative to an inertial reference frame.
 If we transport the loop while always carefully adjusting its orientation so as to prevent
 phase shifts, then its orientation has been preserved. 
 The atomic clocks used in the Hafele-Keating atomic-clock experiment\index{Hafele-Keating experiment}\index{atomic clocks}
@@ -1210,6 +1210,14 @@ described
 on page \pageref{sec:hafele-keating} were sensitive to Sagnac effects, and it was not practical
 to maintain their orientations while they were strapped into seats on a passenger jet, so
 this orientational effect had to be subtracted out of the data at the end of the experiment.
+<% marg(100) %>
+<%
+  fig(
+    'ring-laser-gyro',
+    %q{A ring laser gyroscope built for use in inertial guidance of aircraft.}
+  )
+%>
+<% end_marg %>
 
 In three spatial dimensions, we could build a spherical cavity with
 a reflective inner surface, and release a photon inside, \subfigref{photon-in-cavity-and-gyroscope}{2}.
