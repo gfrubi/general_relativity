@@ -251,7 +251,8 @@ A photon cannot decay into an electron and a positron, $\gamma \rightarrow e^++e
 in the absence of a charged particle to interact with.
 To see this, consider the process in the frame of reference
 in which the electron-positron pair has zero total momentum. In this frame, the photon must have had zero (three-)momentum,
-but a photon with zero momentum must have zero energy as well. This means that relativistic \emph{four}-momentum
+but a photon with zero momentum must have zero energy as well. This means that conservation of 
+relativistic \emph{four}-momentum
 has been violated: the timelike component of the four-momentum is the mass-energy, and it has increased
 from 0 in the initial state to at least $2mc^2$ in the final state.
 
@@ -685,7 +686,7 @@ The closely related topic of a uniform gravitational field in general relativity
 problem \ref{hw:uniform-field} on page \pageref{hw:uniform-field}.
 \end{eg}
 
-\begin{eg}{Accurate timing signals}\index{electromagnetic potential four-vector}
+\begin{eg}{Accurate timing signals}\label{eg:gps-timing}\index{electromagnetic potential four-vector}
 The relation between the potential $\vc{A}$ and the fields $\vc{E}$ and $\vc{B}$ given on page \pageref{potential-to-fields}
 can be written in manifestly covariant form as $F_{ij}=\partial_{[i} A_{j]}$, where $F$, called the electromagnetic tensor,\index{electromagnetic tensor}
 is an antisymmetric rank-two tensor whose six independent components correspond in a certain way with the components of the $\vc{E}$ and $\vc{B}$
@@ -694,6 +695,7 @@ that it will vanish in all coordinate systems, not just one. The GPS system\inde
 in the transmission of timing signals from the satellites to the users. The electromagnetic wave is modulated so that the bits
 it transmits are represented by phase reversals of the wave. At these phase reversals, $F$ vanishes, and this vanishing holds true
 regardless of the motion of the user's unit or its position in the earth's gravitational field.
+Cf.~problem \ref{hw:galilean-em} on p.~\pageref{hw:galilean-em}.
 \end{eg}
 
 <% end_sec %>
@@ -1143,7 +1145,8 @@ In general relativity, there is not any guarantee of orientability in space --- 
 of spacetimes of physical interest are in fact orientable in every desired way, and even for those that aren't, orientability still holds
 in any sufficiently small neighborhood.
 
-The other problem is simply that area has the wrong scaling properties to be a rank-0 tensor. We can get around this problem simply by
+The other problem is that area has the wrong scaling properties to be a rank-0 tensor.
+We can get around this problem by
 being willing to discuss quantities that don't transform exactly like tensors. Often we only care about transformations, such as
 rotations and translations, that don't involve
 any scaling. We saw in 
@@ -1379,6 +1382,23 @@ The laws of physics in our universe imply that for bodies with a certain range o
 equilibrium state. Suppose we knew of the existence of neutron stars, but didn't know the mass of the neutron.
 Infer upper and lower bounds on the mass of the neutron.
 <% end_hw %>
+
+<% begin_hw('galilean-em') %>
+Example \ref{eg:gps-timing} on p.~\pageref{eg:gps-timing} briefly introduced the electromagnetic potential four-vector
+$F_{ij}$, and this implicitly defines the transformation properties of 
+the electric and magnetic fields under
+a Lorentz boost $\vc{v}$.\index{electromagnetic potential four-vector}\index{electromagnetic fields!transformation properties of}
+To lowest order in $\vc{v}$, this transformation is given by
+\begin{align*}
+  \vc{E}' &\approx \vc{E}+\vc{v}\times\vc{B} \qquad \text{and}  \\
+  \vc{B}' &\approx \vc{B}-\vc{v}\times\vc{E} \qquad .  
+\end{align*}
+I'm not a historian of science, but apparently ca.~1905 people like Hertz believed that these were the
+\emph{exact} transformations of the field.\footnote{Montigny and Rousseaux, \url{arxiv.org/abs/physics/0512200}.}
+Show that this can't be the case, because performing two such transformations in a row does not
+in general result in a transformation of the same form.\hwsoln
+<% end_hw %>
+
 
 
 \end{hwsection}

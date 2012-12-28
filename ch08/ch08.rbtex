@@ -2156,7 +2156,7 @@ acceleration in its orbit.
 
 Not only is this acceleration numerically tiny for all small-scale systems of interest, but it is not
 guaranteed to produce a nonvanishing secular trend.
-For concreteness, let's keep talking about the earth-moon system.
+For concreteness, let's keep talking about the earth-sun system.
 The direction of the anomalous force on the earth
 is outward for an accelerating cosmological expansion, as we now know is the case for the present epoch.
 (It was inward during the matter-dominated epoch.)

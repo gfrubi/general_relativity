@@ -545,7 +545,8 @@ $tex_math_trivial_not_entities = "sin cos tan ln log exp arg".split(/ /)
 $tex_math_not_entities = {
                           'der'=>'d'  , # cases like "\der x" are special-cased elsewhere to avoid rendering with a space like "d x"
                           'pm'=>'&#177;' ,'parallel'=>'||',
-                          'sharp'=>'&#x266F;' , 'flat'=>'#x266D'   , 'ell'=>'&#8467;'
+#########                          'sharp'=>'&#x266F;' , 'flat'=>'&#x266D;'   , 'ell'=>'&#8467;'
+                          'sharp'=>'&#23157;' , 'flat'=>'&#23155;'   , 'ell'=>'&#8467;'
 }
 $tex_math_not_in_mediawiki = {'der'=>'d'  ,  'cancel'=>''}
 
