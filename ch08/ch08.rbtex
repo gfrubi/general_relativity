@@ -417,25 +417,32 @@ These are tests of general relativity's predictions about the gravitational fiel
 electric field. In addition, there is indirect confirmation (p.~\pageref{light-gravity-from-bbn}) that general relativity is correct when
 it comes to electromagnetic waves.
 <% end_sec %> % Experimental tests
-<% begin_sec("Energy of gravitational fields not included in the stress-energy tensor") %>
+<% begin_sec("Energy of gravitational fields not included in the stress-energy tensor") %>\index{energy!of gravitational fields}
 Summarizing the story of the Kreuzer and Bartlett-van Buren results, we find that observations verify to high precision
 one of the defining properties of general relativity, which is that \emph{all} forms of energy are equivalent to mass. That is,
 Einstein's famous $E=mc^2$ can be extended to gravitational effects, with the proviso that the source of gravitational fields
 is not really a scalar $m$ but the stress-energy tensor $T$.
 
 But there is an exception to this even-handed treatment of all types of energy, which is that the energy of the gravitational
-field itself is not included in $T$, and is not even generally a well-defined concept. In Newtonian gravity, we can have
+field itself is not included in $T$, and is not even generally a well-defined concept locally. 
+In Newtonian gravity, we can have
 conservation of energy if we attribute to the gravitational field a negative potential energy density $-\vc{g}^2/8\pi$.
-
-Self-check: Convince yourself that the negative sign makes sense, by considering the case where two equal masses start out
-far apart and then fall together and combine to make a single body with twice the mass.
-
 But the equivalence principle tells us that $\vc{g}$ is not a tensor, for we can always make $\vc{g}$ vanish locally
 by going into the frame of a free-falling observer, and yet the tensor transformation laws will never change a nonzero
 tensor to a zero tensor under a change of coordinates. Since the gravitational field is not a tensor, there is no way
 to add a term for it into the definition of the stress-energy, which is a tensor. The grammar and vocabulary of the tensor notation
 are specifically designed to prevent writing down such a thing, so that the language of general relativity is not even capable of expressing
 the idea that gravitational fields would themselves contribute to $T$.
+
+Self-check: (1) Convince yourself that the negative sign in the expression
+$-\vc{g}^2/8\pi$ makes sense, by considering the case where two equal masses start out
+far apart and then fall together and combine to make a single body with twice the mass.
+(2) The Newtonian gravitational field is the gradient of the gravitational potential $\phi$,
+which corresponds in the Newtonian limit to the time-time component of the metric.
+With this motivation, suppose someone proposes generalizing the Newtonian energy density
+$-(\vc{\nabla}\phi)^2/8\pi$ to a similar expression such as $-(\nabla_a g\indices{^a_b})(\nabla^c g\indices{_c^b})$,
+where $\nabla$ is now the covariant derivative, and $g$ is the metric, not the Newtonian field strength.
+What goes wrong?
 
 As a concrete example, we observe that the Hulse-Taylor binary pulsar system (p.~\pageref{hulse-taylor-pulsar})
 is gradually losing orbital energy, and that the rate of energy loss exactly matches general relativity's prediction
@@ -445,6 +452,37 @@ outgoing gravitational waves, but that energy is not included in $T$, and we hav
 evaluating that energy. Those techniques only turn out to apply to certain special types of spacetimes, such as
 asymptotically flat ones, and they do not allow a uniquely defined energy density to be attributed to a particular
 small region of space (for if they did, that would violate the equivalence principle).
+
+\begin{eg}{Gravitational energy is locally unmeasurable.}
+When a new form of energy is discovered, the way we establish that it is a form of energy
+is that it can be transformed to or from other forms of energy. For example, Becquerel discovered radioactivity
+by noticing that photographic plates left in a desk drawer along with radium salts became clouded: some new form
+of energy had been converted into previously known forms such as chemical energy. It is only in this limited sense that
+energy is ever locally observable, and this limitation prevents us from meaningfully defining certain measures of energy.
+For example we can never measure the local electrical potential in the same sense that we can  measure the local barometric
+pressure; a potential of 137 volts only has meaning relative to some other region of space taken to be at
+ground. Let's use the acronym MELT to refer to measurement of energy by the local transformation of that energy
+from one form into another.
+
+The reason MELT works is that energy (or actually the momentum four-vector)
+is locally conserved, as expressed by the zero-divergence property of the
+stress-energy tensor. Without conservation, there is no notion of transformation.
+The Einstein field equations imply this zero-divergence property, and the field equations have been
+well verified by a variety of observations, including many observations (such as solar system tests
+and observation of the Hulse-Taylor system) that in Newtonian terms would be described as involving
+(non-local) transformations between kinetic energy and the energy of the gravitational field.
+This agreement with observation is achieved by taking $T=0$ in vacuum, regardless of the gravitational
+field. Therefore any local transformation of gravitational field energy into another form of energy
+would be inconsistent with previous observation. This implies that MELT is impossible for gravitational field energy.
+
+In particular, suppose that observer A carries out a local MELT of gravitational field energy, and that A
+sees this as a process in which the gravitational field is reduced in intensity, causing the release of some
+other form of energy such as heat. Now consider the situation as seen by observer B, who is free-falling in the
+same local region. B says that there was never any gravitational field in the first place, and therefore sees
+heat as violating local conservation of energy. In B's frame, this is a nonzero divergence of
+the stress-energy tensor, which falsifies the Einstein field equations.
+\end{eg}
+
 <% end_sec %> % Energy of gravitational fields not included in the stress-energy tensor
 <% end_sec %> % The Einstein field equation
 

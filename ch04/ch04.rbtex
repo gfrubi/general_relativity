@@ -913,7 +913,7 @@ solar masses end up as black holes; see section \ref{sec:black-hole-formation}.\
 
 \pagebreak[4]
 
-<% begin_sec("Conservation laws") %>\index{conservation laws}
+<% begin_sec("Conservation laws") %>\index{conservation laws}\index{energy|seealso{conservation laws}}
 <% begin_sec("No general conservation laws") %>\label{sec:no-conservation-laws}
 Some of the first tensors we discussed were mass and charge, both rank-0 tensors, and the rank-1 momentum tensor, which
 contains both the classical energy and the classical momentum. Physicists originally decided that
