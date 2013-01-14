@@ -618,7 +618,8 @@ meant at rest relative to the Earth, which represented a special frame of refere
 naturally stop of its own accord, then there is no longer any way to single out one frame of reference,
 such as the one tied to the Earth, as being special. An equally good frame of reference is a
 car driving in a straight line down the interstate at constant speed. The earth and the car both represent
-valid \emph{inertial} frames of reference,\index{inertial frame}\index{frame of reference!inertial}
+valid \emph{inertial} frames of 
+reference,\index{inertial frame|see{frame, inertial}}\index{frame of reference!inertial}
 in which Newton's law of inertia is valid. On the other hand, there are other, noninertial frames of reference,
 in which the law of inertia is violated. For example, if the car decelerates suddenly, then it appears to the people
 in the car as if their bodies are being jerked forward, even though there is no physical object that could be
@@ -840,7 +841,8 @@ of general relativity, whereas in the Newtonian context it \emph{is} an inertial
 This usage is fairly standard,\footnote{Misner, Thorne, and Wheeler, \emph{Gravitation}, 1973, p.~18} but would have made
 Newton confused and Einstein unhappy. If we follow this usage, then we may sometimes have to say ``Newtonian-inertial''
 or ``Einstein-inertial.'' A more awkward, but also more precise, term is ``Lorentz frame,'' as used in this book;
-this seems to be widely understood.\footnote{\emph{ibid}, p.~19}\index{inertial frame!ambiguity in definition}\index{frame!inertial!ambiguity in definition}
+this seems to be widely 
+understood.\footnote{\emph{ibid}, p.~19}\index{frame of reference!inertial!ambiguity in definition}
 
 The distinction between special and general relativity has undergone a similar shift over the decades.
 Einstein originally defined the distinction in terms of the admissibility of accelerated frames of reference.

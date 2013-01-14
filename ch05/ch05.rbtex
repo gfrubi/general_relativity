@@ -1618,7 +1618,8 @@ area integral of the curvature within the loop or (2) the line integral of the C
 field) on the loop itself. Although I expressed the estimate as 1, it would have been equally valid to use 2.
 By Newton's shell theorem, the gravitational field is not sensitive to anything about its mass distribution other
 than its near spherical symmetry. The earth spins, and this does affect the stress-energy tensor, but since the velocity
-with which it spins is everywhere much smaller than $c$, the resulting effect, called \emph{frame-dragging},\index{frame-dragging}
+with which it spins is everywhere much smaller than $c$, the resulting effect, 
+called \emph{frame dragging},\index{frame dragging}
 is much smaller.
 \end{eg}
 
