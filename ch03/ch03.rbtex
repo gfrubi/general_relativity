@@ -506,7 +506,7 @@ to represent distances along the curve, but this wrongness is an inevitable fact
     'metric-motivation',
     %q{The tick marks on the line define a coordinate measured along the line. It is not possible
              to set up such a coordinate system globally so that the coordinate is uniform everywhere.
-             The arrows represent changes in the value coordinate; since the changes in the coordinate
+             The arrows represent changes in the value of the coordinate; since the changes in the coordinate
              are all equal, the arrows are all the same length.}
   )
 %>
@@ -523,20 +523,30 @@ then the function would be represented by taking the row vector's inner product 
 Of course the distinction between row and column vectors is pointless in a one-dimensional space, but
 it should be clear that this will provide an appropriate foundation for the generalization to more than one
 coordinate. The row and column vectors are referred to as one another's duals.\index{dual}
-Figure \figref{dual} shows the resulting picture. Anticipating the generalization to four-dimensional
-spacetime with coordinates $(x^0,x^1,x^2,x^3)$, we'll start referring to $x$ as $x^\mu$, although in our
-present one-dimensional example $\mu=0$ is fixed. The reason for the
-use of the odd-looking superscripts, rather than subscripts, will become clear shortly.
+Figure \figref{dual} shows the resulting picture.
 <% marg(30) %>
 <%
   fig(
     'dual',
-    %q{The vectors $\der x^\mu$ and $\der x_\mu$ are duals of each other.}
+    %q{The vectors $\der x^\mu$ and $\der x_\mu$ are duals of each other. For a more elegant reformulation of this
+       picture, see example \ref{eg:burke-dual} on p.~\pageref{eg:burke-dual}.}
   )
 %>
 <% end_marg %>
 
-The vectors drawn below the curve are called the contravariant vectors, notated $\der x^\mu$, and the ones
+Anticipating the generalization to four-dimensional
+spacetime with coordinates $(x^0,x^1,x^2,x^3)$, we'll start referring to $x$ as $x^\mu$, although in our
+present one-dimensional example $\mu=0$ is fixed. The reason for the
+use of the odd-looking superscripts, rather than subscripts, will become clear shortly.  It may also seem awkward
+or incorrect to use the symbol $x^\mu$, rather than $x$, as a name for the whole vector, since $x^\mu$ looks like
+a notation for one specific component of $x$. The letter $\mu$ is not ``bound,'' and purists might want to
+use a notation such as $x^{(\cdot)}$ or something reminiscent of set-builder notation, such as
+$\langle x^\mu | \mu \rangle$.  The convention of using $x^\mu$ to refer to the whole vector
+turns out to be convenient, however, and does not cause
+confusion in practice. Similarly, one often says things like ``the derivative of the function
+$x^2$,'' instead of the more cumbersome ``derivative of the function $f$ defined by $f(x)=x^2$.''
+
+The vectors drawn below the curve in figure \figref{dual} are called the contravariant vectors, notated $\der x^\mu$, and the ones
 above it are the covariant vectors, $\der x_\mu$.\index{covariant vector}\index{vector!covariant}\index{contravariant vector}\index{vector!contravariant}
 It's not particularly important to keep track of
 which is which, since the relationship between them is symmetric, like the relationship between row
@@ -547,7 +557,7 @@ Given a $\der x^\mu$, how do we find its dual $\der x_\mu$, and vice versa? In o
 a real number $g$ as a correction factor. If one of the vectors is shorter than it should be in a certain region,
 the correction factor serves to compensate by making its dual proportionately longer. The two possible mappings
 (covariant to contravariant and contravariant to covariant) are accomplished with factors of $g$ and $1/g$.
-The number $g$ is called the \emph{metric},\index{metric}
+The number $g$ is called the \emph{metric},\index{metric}\label{metric-introduced}
 and it encodes all the information about distances. For example, if $\phi$ represents longitude measured
 at the arctic circle, then the metric is the only source for the datum that a displacement $\der\phi$
 corresponds to 2540 km per radian.
@@ -565,13 +575,19 @@ of assuming a summation when an index is repeated, so this becomes
 
 <% begin_sec("The Euclidean metric") %>
 
-In a Euclidean plane, where the distinction between covariant and contravariant vectors is irrelevant,
+For Cartesian coordinates in a Euclidean plane, where one doesn't normally bother with
+the distinction between covariant and contravariant vectors,
 this expression for $\der s^2$ is simply the Pythagorean theorem, summed over two values of $i$ for the two coordinates:
 \begin{equation*}
   \der s^2 = \der x^i \der x_i = \der x^2 + \der y^2
 \end{equation*}
-The symbols $\der x$, $\der x^0$, and $\der x_0$ are all synonyms, and likewise for 
-$\der y$, $\der x^1$, and $\der x_1$.
+The symbols $\der x$, $\der s^0$, $\der x^0$, and $\der x_0$ are all synonyms, and likewise for 
+$\der y$, $\der s^1$, $\der x^1$, and $\der x_1$. (Because notations such as $\der s^1$ force the reader
+to keep track of which digits have been assigned to which letters, it is better practice to
+use notation such as $\der y$ or $\der s^y$; the latter notation could in principle be confused with
+one in which $y$ was a variable taking on values such as 0 or 1, but in reality we understand it from
+context, just as we understand that the $d$'s in $\der y/\der x$ are not referring to some variable $d$
+that stands for a number.)
 
 In the non-Euclidean case, the Pythagorean theorem is false;
 $\der x^\mu$ and $\der x_\mu$ are no longer synonyms, so their product is no
@@ -705,7 +721,7 @@ The area of the sphere is
 \end{align*}
 \end{eg}
 
-\begin{eg}{Inverse of the metric}
+\begin{eg}{Inverse of the metric}\label{eg:inverse-of-metric}
 \egquestion Relate $g^{ij}$ to $g_{ij}$.
 
 \eganswer The notation is intended to treat covariant and contravariant vectors completely symmetrically.
@@ -714,7 +730,122 @@ contravariant basis to a covariant one, and if the symmetry of the notation is t
 $g^{ij}$ must be the corresponding inverse matrix, which changes from the covariant basis to the
 contravariant one. The metric must always be invertible.
 \end{eg}
+
+In the one-dimensional case, p. \pageref{metric-introduced}, the metric at any given point was simply
+some number $g$, and we used factors of $g$ and $1/g$ to convert back and forth between covariant
+and contravariant vectors. Example \ref{eg:inverse-of-metric} makes it clear how to generalize this
+to more dimensions:
+\begin{align*}
+  x_a &= g_{ab}x^b \\
+  x^a &= g^{ab}x_b
+\end{align*}
+This is referred to as raising and lowering
+indices.\index{indices!raising and lowering}\index{raising an idex}\index{lowering an index}
+There is no need to memorize the positions of the indices in these rules; they are the only ones
+possible based on the grammatical rules, which are that summation only occurs over top-bottom pairs,
+and upper and lower indices have to match on both sides of the equals sign.
+This whole system, introduced by Einstein, is called ``index-gymnastics''
+notation.\index{index gymnastics notation}
+
+\begin{eg}{Vectors that naturally want upper or lower indices}
+Although the rules of duality and index-raising and -lowering treat the upper and lower indices
+in a completely symmetric way, the symmetry is broken as soon as we choose, for example, to
+associate a measurement on a ruler with $\Delta x^a$ rather than $\Delta x_a$. Once we do
+this, certain other vectors naturally want their indices to be a certain way. For example,
+the dot product $\der W=\vc{F}\cdot\der\vc{x}$ for computing mechanical work becomes,
+in index-gymnastics notation,
+\begin{equation*}
+  \der W = F_a \der x^a \qquad ,
+\end{equation*}
+where the alternative $\der W=F^a\der x_a$ is no good because we have arbitrarily chosen
+which way to write indices on a ruler measurement. Force
+wants to be a lower-index vector.
+\end{eg}
+
+\begin{eg}{Raising and lowering indices on a rank-two tensor}\label{eg:rank-two-indices}
+In physics we encounter various examples of matrices, such as the moment of inertia tensor
+from classical mechanics. These have two indices, not just one like a vector. Again, the rules
+for raising and lowering indices follow directly from grammar. For example,
+\begin{equation*}
+  A\indices{^a_b} = g^{ac}A_{cb}
+\end{equation*}
+and
+\begin{equation*}
+  A_{ab} = g_{ac}g_{bd}A^{cd} \qquad .
+\end{equation*}
+\end{eg}
+
+\begin{eg}{A matrix operating on a vector}\label{eg:mixed-indices}
+The row and column vectors from linear algebra are the covariant and contravariant vectors in our
+present terminology. (The convention is that covariant vectors are row vectors and contravariant ones
+column vectors, but I don't find this worth memorizing.) What about matrices? A matrix acting on
+a column vector gives another column vector, $\vc{q}=U\vc{p}$. Translating this into index-gymnastics
+notation, we have
+\begin{equation*}
+  q^a = U\indices{^\ldots_\ldots}p^b \qquad ,
+\end{equation*}
+where we want to figure out the correct placement of the indices on $U$. Grammatically, the only possible
+placement is
+\begin{equation*}
+  q^a = U\indices{^a_b}p^b \qquad .
+\end{equation*}
+This shows that the natural way to represent a column-vector-to-column-vector linear operator is
+as a rank-2 tensor with one upper index and one lower index.
+\end{eg}
+
+\pagebreak
+
+<%
+  fig(
+    'burke-dual',
+    %q{%
+      Example \ref{eg:burke-dual}.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
 <% end_sec %>
+\begin{eg}{A geometrical representation of duality}\label{eg:burke-dual}
+The idea of dual vectors was introduced in a cartoonish way in figure \figref{dual} on p.~\pageref{fig:dual},
+reproduced in figure \subfigref{burke-dual}{1}.
+A more elegant and rigorous, but slightly more abstract, representation is presented
+in the cult-classic book \emph{Div, Grad, and Curl are Dead} by 
+Burke.\footnote{Not to be confused with the classic but non-cult book \emph{Div, Grad, Curl, and All That}.
+Burke was killed in a car accident before he could put his wonderful book in final, publishable form, but
+it can be found in various places online.}
+The idea is to cut out all the excess baggage in \subfigref{burke-dual}{1}.
+
+First we restrict the representation to a particular point, \subfigref{burke-dual}{2}. The metric, after all, needn't have elements
+with constant values when expressed in any particular coordinate system, so it really exists only at a point
+(or within an infinitesimally small neighborhood around that point).
+Similarly, a vector in differential geometry is really something that lives at one point; if we wanted to move
+it somewhere else, we would have to parallel-transport it along a certain path, and the result would be
+path-dependent.
+
+We next note that the arrows drawn
+above the ``railroad tracks'' to represent the lower-index vectors do nothing more than connect one hash
+mark to the next. They carry no additional information beyond what was already present in the railroad tracks, so we can
+eliminate these arrows and simply associate an adjacent pair of hash marks with a lower-index vector. 
+The line along which the hash marks was drawn is also unnecessary. If we didn't have it, we could
+reconstuct it from the requirement that it pass through each hash mark perpendicularly. 
+
+The finite width
+of each hash mark is an arbitrary feature of the drawing having no mathematical meaning, so we extend
+them to infinite length. An upper-index vector is thus represented by a pair of infinite
+parallel lines, \subfigref{burke-dual}{4}.
+We would like this representation to be able to stand on its own without the information about
+orientation from \subfigref{burke-dual}{3}, so we put an arrowhead on one of the lines.
+
+The two lines in \subfigref{burke-dual}{4} are analogous
+to a close-up of two successive contour lines on a topographical map. The inner product of vectors
+like the ones in \subfigref{burke-dual}{3} and \subfigref{burke-dual}{4} is interpreted as a measure
+of how many of the lines in \subfigref{burke-dual}{4} would be crossed by an arrow with the length and
+orientation in \subfigref{burke-dual}{3}.
+\end{eg}
 
 
 <% begin_sec("The Lorentz metric") %>
@@ -744,6 +875,29 @@ Wheeler.
 
 Our universe does not have just one spatial dimension, it has three, so the full metric in a Lorentz
 frame is given by \linebreak $g=diag(+1,-1,-1,-1)$.
+
+\begin{eg}{Mixed covariant-contravariant form of the metric}
+In example \ref{eg:rank-two-indices} on p.~\pageref{eg:rank-two-indices}, we saw how to raise and lower
+indices on a rank-two tensor, and example \ref{eg:mixed-indices} showed that it is sometimes natural
+to consider the form in which one index is raised and one lowered. The metric itself is a rank-two tensor,
+so let's see what happens when we compute the mixed form $g\indices{^a_b}$ from the lower-index form.
+In general, we have
+\begin{equation*}
+  A\indices{^a_b} = g^{ac}A_{cb} \qquad ,
+\end{equation*}
+and substituting $g$ for $A$ gives
+\begin{equation*}
+  g\indices{^a_b} = g^{ac}g_{cb} \qquad .
+\end{equation*}
+But we already know that $g^{\ldots}$ is simply the inverse matrix of $g_{\ldots}$ (example \ref{eg:inverse-of-metric},
+p.~\pageref{eg:inverse-of-metric}), which means that $g\indices{^a_b}$ is simply the identity matrix. 
+That is, whereas a quantity like $g_{ab}$ or $g^{ab}$ carries all the information about our
+system of measurement at a given point, $g\indices{^a_b}$ carries no information at all.
+Where $g_{ab}$ or $g^{ab}$ can have both positive and negative elements, elements that have units,
+and off-diagonal elements, $g\indices{^a_b}$ is just a generic symbol carrying no information other than
+the dimensionality of the space.
+\end{eg}
+
 <% end_sec %>
 
 <% begin_sec("Isometry, inner products, and the Erlangen Program") %>
@@ -1278,12 +1432,24 @@ Do spacetimes with property G always violate L3 if L3 is taken globally?
 \hwsoln
 <% end_hw %>
 
+<% begin_hw('lorentz-si') %>
+Usually in relativity we pick units in which $c=1$. Suppose, however, that we want to use SI units. The
+convention is that coordinates are written with upper indices, so that, fixing the usual Cartesian
+coordinates in 1+1 dimensions of spacetime, an infinitesimal displacement
+between two events is notated $(\der s^t,\der s^x)$. In SI units,
+the two components of this vector have different units, which may seem strange but is perfectly legal.
+Describe the form of the metric, including the units of its elements. Describe the lower-index
+vector $\der s_a$.
+\hwsoln
+<% end_hw %>
+
 <% begin_hw('gps-t-discontinuity') %>
 Example \ref{eg:gps-rotating-frame} on page \pageref{eg:gps-rotating-frame} discusses the discontinuity that
 would result if one attempted to define a time coordinate for the GPS system that was synchronized globally
 according to observers in the rotating frame, in the sense that neighboring observers could verify the
 synchronization by exchanging electromagnetic signals. Calculate this discontinuity at the equator, and
 estimate the resulting error in position that would be experienced by GPS users.
+\hwsoln
 <% end_hw %>
 
 <% begin_hw('carousel-paradox') %>
