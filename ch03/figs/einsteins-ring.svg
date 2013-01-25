@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
+
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -13,9 +14,10 @@
    height="1052.3622047"
    id="svg2"
    sodipodi:version="0.32"
-   inkscape:version="0.46"
+   inkscape:version="0.48.3.1 r9886"
    sodipodi:docname="einsteins-ring.svg"
-   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   version="1.1">
   <defs
      id="defs4">
     <inkscape:perspective
@@ -43,16 +45,17 @@
      objecttolerance="10"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.2572349"
-     inkscape:cx="16.93001"
-     inkscape:cy="589.26934"
+     inkscape:zoom="21.479992"
+     inkscape:cx="22.262182"
+     inkscape:cy="582.6278"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1278"
      inkscape:window-height="996"
      inkscape:window-x="3"
-     inkscape:window-y="4" />
+     inkscape:window-y="4"
+     inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -76,13 +79,13 @@
        x="3.2957809"
        y="337.20807" />
     <image
-       y="401.65427"
-       x="36.439228"
-       id="image2446"
-       height="53.523159"
+       sodipodi:absref="/home/bcrowell/Documents/writing/books/genrel/ch03/figs/einsteins-ring-bitmaps/einsteins-ring.jpg"
+       xlink:href="einsteins-ring-bitmaps/einsteins-ring.jpg"
        width="54.514324"
-       sodipodi:absref="/home/bcrowell/Documents/writing/books/genrel/ch02/figs/einsteins-ring-bitmaps/einsteins-ring.jpg"
-       xlink:href="einsteins-ring-bitmaps/einsteins-ring.jpg" />
+       height="53.523159"
+       id="image2446"
+       x="36.439228"
+       y="401.65427" />
     <path
        style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.25pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="M 15.368372,468.492 C 19.687196,469.70695 22.754789,469.09592 24.444306,468.51994 C 26.133819,467.94396 29.247146,464.68992 29.247146,464.68992 C 29.247146,464.68992 29.389478,461.46895 29.315575,461.0846 C 29.241672,460.70024 27.908978,458.81068 27.908978,458.81068 L 25.663969,459.01841 L 16.155575,464.66369 L 15.050417,467.19847 L 14.679509,468.15032 L 15.368372,468.492 z"
@@ -111,7 +114,7 @@
        id="path2048" />
     <path
        sodipodi:type="arc"
-       style="fill:#000000;fill-opacity:0.75;fill-rule:evenodd;stroke:none;stroke-width:1pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        id="path13901"
        sodipodi:cx="95.175934"
        sodipodi:cy="737.2691"

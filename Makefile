@@ -90,15 +90,21 @@ post:
 	cp genrel.pdf ~/Lightandmatter/genrel
 
 prepress:
+	make preflight_figs
 	pdftk genrel.pdf cat 3-end output genrel_lulu.pdf
 	# Filtering through gs used to be necessary to convince Lulu not to complain about missing fonts.
 	# Now that should no longer be necessary, because recent versions of pdftex embed all fonts, and fullembed.map prevents subsetting.
 	# See meki:computer:apps:ghostscript, scripts/create_fullembed_file, and http://tex.stackexchange.com/questions/24002/turning-off-font-subsetting-in-pdftex
 	@rm -f temp.pdf
 
+preflight_figs:
+	@echo "checking all figures in all books for transparency, embedded fonts, bad structure..."
+	scripts/preflight_figs.pl
+	@echo "...done"
+
 all_figures:
 	# The following requires Inkscape 0.47 or later.
-	perl -e 'foreach my $$f(<*/ch*/figs/*.svg>) {$$g=$$f; $$g=~s/\.svg$$/.pdf/; print "g=$$g\n"; $$c="inkscape --export-text-to-path --export-pdf=$$g $$f  --export-area-drawing"; print "$$c\n"; system($$c)}'
+	perl -e 'foreach my $$f(<ch*/figs/*.svg>) {system("scripts/render_one_figure.pl $$f")}'
 
 handheld:
 	# see meki/zzz_misc/publishing for notes on how far I've progressed with this
