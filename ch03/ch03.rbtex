@@ -747,7 +747,7 @@ and upper and lower indices have to match on both sides of the equals sign.
 This whole system, introduced by Einstein, is called ``index-gymnastics''
 notation.\index{index gymnastics notation}
 
-\begin{eg}{Vectors that naturally want upper or lower indices}
+\begin{eg}{Vectors that naturally want upper or lower indices}\label{eg:force-is-lower-index}
 Although the rules of duality and index-raising and -lowering treat the upper and lower indices
 in a completely symmetric way, the symmetry is broken as soon as we choose, for example, to
 associate a measurement on a ruler with $\Delta x^a$ rather than $\Delta x_a$. Once we do
@@ -876,7 +876,7 @@ Wheeler.
 Our universe does not have just one spatial dimension, it has three, so the full metric in a Lorentz
 frame is given by \linebreak $g=diag(+1,-1,-1,-1)$.
 
-\begin{eg}{Mixed covariant-contravariant form of the metric}
+\begin{eg}{Mixed covariant-contravariant form of the metric}\label{eg:mixed-metric}
 In example \ref{eg:rank-two-indices} on p.~\pageref{eg:rank-two-indices}, we saw how to raise and lower
 indices on a rank-two tensor, and example \ref{eg:mixed-indices} showed that it is sometimes natural
 to consider the form in which one index is raised and one lowered. The metric itself is a rank-two tensor,
@@ -1440,6 +1440,46 @@ between two events is notated $(\der s^t,\der s^x)$. In SI units,
 the two components of this vector have different units, which may seem strange but is perfectly legal.
 Describe the form of the metric, including the units of its elements. Describe the lower-index
 vector $\der s_a$.
+\hwsoln
+<% end_hw %>
+
+<% begin_hw('ungrammatical') %>
+(a) Explain why the following expressions ain't got good grammar:
+$U_{aa}$, $x^a y^a$, $p^a-q_a$. (Recall our notational convention that Latin indices represent
+abstract indices, so that it would not make sense, for example, to interpret $U_{aa}$ as $U$'s
+$a$th diagonal element rather than as an implied sum.)\\
+(b) Which of these could also be nonsense in terms of units?
+\hwsoln
+<% end_hw %>
+
+<% begin_hw('lat-lon-force') %>
+Suppose that a mountaineer describes her location using coordinates $(\theta,\phi,h)$,
+representing colatitude, longitude, and altitude. Infer the units of the components of
+$\der s^a$, the elements of $g_{ab}$ and $g^{ab}$, and the components of a force vector $F_a$
+and its upper-index version $F^a$.
+\hwsoln
+<% end_hw %>
+
+<% begin_hw('burke-three-d') %>
+Generalize example \ref{eg:burke-dual} on p.~\pageref{eg:burke-dual} to three dimensions.
+\hwsoln
+<% end_hw %>
+
+\pagebreak
+
+<% begin_hw('burke-addition') %>
+Suppose you have a collection of pencils, some of which have been sharpened more times than others so that
+they they're shorter. You toss them all on the floor in random orientations, and you're then allowed to slide
+them around but not to rotate them. Someone asks you to make up a definition of whether or not a given
+set of three pencils ``cancels.'' If all pencils are treated equally (i.e., order doesn't matter),
+and if we respect the rotational invariance of Euclidean geometry, then you will be forced to reinvent
+vector addition and define cancellation of pencils $\vc{p}$, $\vc{q}$, and $\vc{r}$ as $\vc{p}+\vc{q}+\vc{r}=0$.
+Do something similar with ``pencil'' replaced by ``an oriented pairs of lines as in figure
+\subfigref{burke-dual}{4} on p.~\pageref{fig:burke-dual}.''
+<% end_hw %>
+
+<% begin_hw('contraction-of-metric') %>
+Describe the quantity $g\indices{^a_a}$. (Note the repeated index.)
 \hwsoln
 <% end_hw %>
 

@@ -229,6 +229,48 @@ Due to the SI units, it is not possible for the two nonzero elements of the metr
 same units. Let's arbitrarily fix $g_{tt}=1$. Then we must have $g_{xx}=c^{-2}$. Using the metric to
 lower the index on $\der s^a$, we find $\der s_a = (\der s^t,c^{-2} \der s^x)$.
 
+\hwsolnhdr{contraction-of-metric}
+
+According to the Einstein summation convention, the repeated index implies a sum, so the result is
+a scalar. As shown in
+example \ref{eg:mixed-metric} on p.~\pageref{eg:mixed-metric}, each term in the sum equals 1, so
+the result is unitless and simply equals the number of dimensions.
+
+\hwsolnhdr{ungrammatical}
+
+(a) The first two violate the rule that summation only occurs over up-down pairs of indices.
+The third expression would result in a quantity that couldn't be classified as either contravariant
+or covariant. (b) In differential geometry, different elements of the same tensor can have different
+units. Since, as remarked in the problem, $U_{aa}$ were to be interpreted as a sum, this mean adding things
+that had different units. In the expression $p^a-q_a$, even if we suppose that $p$ and $q$ both represent
+the same type of physical quantity, e.g., force, their covariant and contravariant versions would
+not necessarily have the same units unless we happened to be working in coordinates such that the
+metric was unitless.
+
+\hwsolnhdr{lat-lon-force}
+
+Assuming the mountaineer uses radians and the metric system, the coordinates have units
+1, 1, and m (where 1 means a unitless quantity and m means meters --- radians are not really units).
+Therefore the units of an infinitesimal difference in coordinates $\der s^a$ are
+also $(1,1,\munit)$. Because the coordinates are orthogonal, the metric is diagonal.
+If we want $g_{ab}\der s^a \der s^b$ to have units of $\munit^2$, then its diagonal elements
+must have units of $(\munit^2,\munit^2,1)$.
+%
+The upper-index metric $g^{ab}$ is the inverse of its lower-index version $g_{ab}$, so its units are
+$(\munit^{-2},\munit^{-2},1)$.
+%
+Mechanical work has units of $\nunit\cdot\munit$,
+so given $\der W=F_a \der s^a$, the units of $F_a$ must be $(\nunit\cdot\munit,\nunit\cdot\munit,\nunit)$.
+%
+As remarked in example \ref{eg:force-is-lower-index} on p.~\pageref{eg:force-is-lower-index},
+we wouldn't normally be interested in the upper-index force $F^a$, but raising the index
+using $g^{ab}$ gives $(\nunit/\munit,\nunit/\munit,\nunit)$.
+
+\hwsolnhdr{burke-three-d}
+
+The only aspect of the geometrical representation that needs to be changed is that instead of
+representing an upper-index vector using a pair of parallel lines, we should use a pair of parallel planes.
+
 \hwsolnhdr{gps-t-discontinuity}
 
 The coordinate $T$ would have a discontinuity of $2\pi\omega r^2/(1-\omega^2 r^2)$. Reinserting factors of $c$ to make it work
