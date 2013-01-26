@@ -836,7 +836,7 @@ orientation in \subfigref{burke-dual}{3}.
 <% begin_sec("The Lorentz metric") %>
 
 In a locally Euclidean space, the Pythagorean theorem allows us to express the metric in local Cartesian
-coordinates in the simple form $g_{\mu\mu}=+1$, $g_{\mu\nu}=0$, i.e., $g=diag(+1,+1,\ldots,+1)$.
+coordinates in the simple form $g_{\mu\mu}=+1$, $g_{\mu\nu}=0$, i.e., $g=\operatorname{diag}(+1,+1,\ldots,+1)$.
 This is not the appropriate metric for a locally Lorentz space. The axioms of Euclidean geometry
 E3 (existence of circles) and E4 (equality of right angles) describe the theory's invariance under rotations,
 and the Pythagorean theorem is consistent with this, because it gives the same answer for the length of
@@ -850,16 +850,16 @@ has a magnitude of exactly zero,
 \end{equation*}
 and this remains true after the Lorentz boost $(t,x) \rightarrow (\gamma t,\gamma x)$. It is a matter of convention
 which element of the metric to make positive and which to make negative. In this book, I'll use $g_{tt}=+1$ and $g_{xx}=-1$,
-so that $g=diag(+1,-1)$. This has the advantage that any line segment representing the timelike world-line of a physical object
+so that $g=\operatorname{diag}(+1,-1)$. This has the advantage that any line segment representing the timelike world-line of a physical object
 has a positive squared magnitude; the forward flow of time is represented as a positive number, in keeping with the
 philosophy that relativity is basically a theory of how causal relationships work. With this sign convention, spacelike vectors have positive
 squared magnitudes,  timelike ones  negative.
 The same convention is followed,
-for example, by Penrose. The opposite version, with $g=diag(-1,+1)$ is used by authors such as Wald and Misner, Thorne, and
+for example, by Penrose. The opposite version, with $g=\operatorname{diag}(-1,+1)$ is used by authors such as Wald and Misner, Thorne, and
 Wheeler.
 
 Our universe does not have just one spatial dimension, it has three, so the full metric in a Lorentz
-frame is given by \linebreak $g=diag(+1,-1,-1,-1)$.
+frame is given by \linebreak $g=\operatorname{diag}(+1,-1,-1,-1)$.
 
 \begin{eg}{Mixed covariant-contravariant form of the metric}\label{eg:mixed-metric}
 In example \ref{eg:rank-two-indices} on p.~\pageref{eg:rank-two-indices}, we saw how to raise and lower

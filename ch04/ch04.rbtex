@@ -1204,7 +1204,7 @@ In Cartesian coordinates in three dimensions, it is conventional to choose  $\ep
 $x$, $y$, and $z$ form a right-handed spatial coordinate system. In four dimensions, we take
 $\epsilon_{txyz}=+1$ when $t$ is future-timelike and $(x,y,z)$ are right-handed.
 
-In Euclidean three-space, in coordinates such that $g=diag(1,1,1)$, the vector cross product $\vc{A}=\vc{u}\times\vc{v}$, where we have
+In Euclidean three-space, in coordinates such that $g=\operatorname{diag}(1,1,1)$, the vector cross product $\vc{A}=\vc{u}\times\vc{v}$, where we have
 in mind the interpretation of $\vc{A}$ as area, can be expressed
 as $A_\mu=\epsilon_{\mu\kappa\lambda}u^\kappa v^\lambda$.
 
@@ -1323,7 +1323,7 @@ Does it matter whether the frame is inertial?
 <% end_hw %>
 
 <% begin_hw('matrix-noncommutative') %>
-Assume the metric $g=diag(+1,+1,+1)$. Which of the following correctly expresses the noncommutative
+Assume the metric $g=\operatorname{diag}(+1,+1,+1)$. Which of the following correctly expresses the noncommutative
 property of ordinary matrix multiplication?
 \begin{align*}
   A\indices{_i^j}B\indices{_{jk}} & \ne B\indices{_{jk}}A\indices{_i^j} \\

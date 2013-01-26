@@ -240,7 +240,7 @@ density of the mass-energy four-vector in the $\mu$ direction. In the comoving f
 coordinates, this means that $T\indices{_x_x}$, $T\indices{_y_y}$, and $T\indices{_z_z}$ should be
 interpreted as pressures. For example, $T\indices{_x_x}$ is the flux in the $x$ direction
 of $x$-momentum. This is simply the pressure, $P$, that would be exerted on a surface with its normal
-in the $x$ direction, so in the comoving frame we have $T\indices{_\mu_\nu}=diag(\rho,P,P,P)$.
+in the $x$ direction, so in the comoving frame we have $T\indices{_\mu_\nu}=\operatorname{diag}(\rho,P,P,P)$.
 For a fluid that is not in equilibrium, the pressure need not be isotropic, and the stress
 exerted by the fluid need not be perpendicular to the surface on which it acts. The space-space
 components of $T$ would then be the classical stress tensor, whose diagonal elements are the anisotropic
@@ -587,7 +587,7 @@ eigenvectors, which (ignoring terms of order $\epsilon^2$)
 are $(1,1+\epsilon)$ and $(1,1-\epsilon)$, with eigenvalues $2+2\epsilon$ and $0$, respectively.
 For $\epsilon<0$, the first of these is timelike, the second
 spacelike. We interpret them simply as the $t$ and $x$ basis vectors of the rest frame in which we originally
-described the dust. Using them as a basis, the stress-energy tensor takes on the form $diag(2+2\epsilon,0)$.
+described the dust. Using them as a basis, the stress-energy tensor takes on the form $\operatorname{diag}(2+2\epsilon,0)$.
 Except for a constant factor that we didn't bother to keep track of, this is the original form of the $T$
 in the dust's rest frame, and it clearly satisfies the DEC, since $P=0$.
 
@@ -596,7 +596,7 @@ to construct a boost corresponding to $-v$. We can nevertheless
 find a frame of reference in which the stress-energy tensor is diagonal, allowing us to check the DEC.
 The expressions found above for the eigenvectors and eigenvalues are still valid, but now the
 timelike and spacelike characters of the two basis vectors have been interchanged.
-The stress-energy tensor has the form $diag(0,2+2\epsilon)$, with $\rho=0$ and $P>0$, which
+The stress-energy tensor has the form $\operatorname{diag}(0,2+2\epsilon)$, with $\rho=0$ and $P>0$, which
 violates the DEC. As in this example, any flux of mass-energy at speeds greater than $c$ will violate
 the DEC.
 
@@ -961,7 +961,7 @@ with Newtonian gravity in the classical limit.
 To see why this attempt fails, consider a beam of
 light directed along the $x$ axis. Its momentum is equal to its energy (see page \pageref{sec:momentum-four-vector}),
 so its contributions to the local energy density and pressure are equal.
-Thus its contribution to the stress-energy tensor is of the form $T\indices{^\mu_\nu}=(\text{constant})\times diag(-1,1,0,0)$.
+Thus its contribution to the stress-energy tensor is of the form $T\indices{^\mu_\nu}=(\text{constant})\times \operatorname{diag}(-1,1,0,0)$.
 The trace vanishes, so the beam of light's coupling to gravity in the $c_2$ term is zero. As discussed on
 pp.~\pageref{kreuzer}-\pageref{end-kreuzer}, empirical tests of conservation of momentum would therefore
 constrain $c_2$ to be $\lesssim 10^{-8}$.
@@ -1299,8 +1299,8 @@ where dots indicate differentiation with respect to time.
 
 Since we have $G\indices{^a_b}$ with mixed upper and lower indices, we either have to convert it into $G_{ab}$, or write out the
 field equations in this mixed form. The latter turns out to be simpler. In terms of mixed indices, $g\indices{^a_b}$ is always simply
-$diag(1,1,1,1)$. Arbitrarily singling out $r=0$ for simplicity, we have $g=diag(1,-a^2,0,0)$. The stress-energy tensor is
-$T\indices{^\mu_\nu}=diag(-\rho,P,P,P)$.
+$\operatorname{diag}(1,1,1,1)$. Arbitrarily singling out $r=0$ for simplicity, we have $g=\operatorname{diag}(1,-a^2,0,0)$. The stress-energy tensor is
+$T\indices{^\mu_\nu}=\operatorname{diag}(-\rho,P,P,P)$.
 Substituting into $G\indices{^a_b}=8\pi T\indices{^a_b}+\Lambda g\indices{^a_b}$, we find
 \begin{align*}
   3\left(\frac{\dot{a}}{a}\right)^2 + 3ka^{-2} - \Lambda                     &= 8\pi\rho \\
@@ -2687,7 +2687,7 @@ The Einstein field equations are
 and when it is possible to adopt a frame of reference in which the local mass-energy is at rest on average,
 we can interpret the stress-energy tensor as
 \begin{equation*}
-  T\indices{^\mu_\nu}=diag(-\rho,P,P,P) \qquad ,
+  T\indices{^\mu_\nu}=\operatorname{diag}(-\rho,P,P,P) \qquad ,
 \end{equation*}
 where $\rho$ is the mass-energy density and $P$ is the pressure.
 Fix some point as the origin of a local Lorentzian coordinate system.
