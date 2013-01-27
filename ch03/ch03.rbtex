@@ -749,6 +749,23 @@ notation.\index{index gymnastics notation}
 
 \pagebreak
 
+\begin{eg}{Vectors that naturally want upper or lower indices}\label{eg:force-is-lower-index}
+Although the rules of duality and index-raising and -lowering treat the upper and lower indices
+in a completely symmetric way, the symmetry is broken as soon as we choose, for example, to
+associate a measurement on a ruler with $\Delta x^a$ rather than $\Delta x_a$. Once we do
+this, certain other vectors naturally want their indices to be a certain way. For example,
+the dot product $\der W=\vc{F}\cdot\der\vc{x}$ for computing mechanical work becomes,
+in index-gymnastics notation,
+\begin{equation*}
+  \der W = F_a \der x^a \qquad ,
+\end{equation*}
+where the alternative $\der W=F^a\der x_a$ is valid but less natural because we have arbitrarily chosen
+which way to write indices on a ruler measurement. Force wants to be a lower-index vector.
+
+The same result can be obtained from Newton's second law; see example \ref{eg:momentum-is-lower-index}
+on p.~\pageref{eg:momentum-is-lower-index}.
+\end{eg}
+
 \begin{eg}{Raising and lowering indices on a rank-two tensor}\label{eg:rank-two-indices}
 In physics we encounter various examples of matrices, such as the moment of inertia tensor
 from classical mechanics. These have two indices, not just one like a vector. Again, the rules
@@ -1441,7 +1458,9 @@ $a$th diagonal element rather than as an implied sum.)\\
 Suppose that a mountaineer describes her location using coordinates $(\theta,\phi,h)$,
 representing colatitude, longitude, and altitude. Infer the units of the components of
 $\der s^a$ and of the elements of $g_{ab}$ and $g^{ab}$. Given that the units of mechanical
-work should be newton-meters, infer the components of a force vector $F_a$
+work should be newton-meters 
+(cf \ref{eg:force-is-lower-index}, p.~\pageref{eg:force-is-lower-index}), infer
+the components of a force vector $F_a$
 and its upper-index version $F^a$.
 \hwsoln
 <% end_hw %>

@@ -605,6 +605,9 @@ as a subscript. With our new rule for interpreting indices on the bottom of deri
 the implied sum is seen to be written correctly. This rule is similar to the one for
 analyzing the units of derivatives written in Leibniz notation, with, e.g., $\der^2 x/\der t^2$ having
 units of meters per second squared.\label{derivative-flip-indices}
+That is, the flipping of the indices like this is required for  consistency so that
+everything will work out properly when we change our units of measurement, causing all our
+vector components to be rescaled.
 
 A quantity $v$ that transforms according to [1] or [2]
 is referred to as a rank-1 tensor,\index{tensor}\index{tensor!transformation law}
@@ -698,9 +701,23 @@ regardless of the motion of the user's unit or its position in the earth's gravi
 Cf.~problem \ref{hw:galilean-em} on p.~\pageref{hw:galilean-em}.
 \end{eg}
 
+\begin{eg}{Momentum wants a lower index}\label{eg:momentum-is-lower-index}
+In example \ref{eg:force-is-lower-index} on p.~\pageref{eg:force-is-lower-index}, we saw that
+once we arbitrarily chose to write ruler measurements in Euclidean three-space
+as $\Delta x^a$ rather than $\Delta x_a$, it became
+natural to think of the Newtonian force three-vector as ``wanting'' to be notated with
+a lower index.
+We can do something similar with the momentum 3- or 4-vector. The Lagrangian is a relativistic
+scalar, and in Lagrangian mechanics momentum is defined by
+$p_a = \partial L/\partial v^a$.
+The upper index in the denominator on the right becomes a lower index on the left by the same reasoning
+as was employed in the notation of the tensor transformation laws. Newton's second law shows that this is
+consistent with the result of example \ref{eg:force-is-lower-index}.
+\end{eg}
+
 <% end_sec %>
 
-<% begin_sec("Experimental tests") %>
+<% begin_sec("Experimental tests",4) %>
 
 <% begin_sec("Universality of tensor behavior") %>\label{tensor-universality}
 The techniques developed in this chapter allow us to make a variety of new predictions that can be
