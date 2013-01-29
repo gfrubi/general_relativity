@@ -4,7 +4,8 @@ use strict;
 
 # usage:
 #   relativise_svg.pl foo.svg
-# looks for absolute links in svg file and makes them relative
+# Looks for absolute links in svg file and makes them relative.
+# Also checks whether files linked to exist.
 
 use File::Spec; 
 use File::Basename;
@@ -20,17 +21,20 @@ open(F,"<$svg");
 my $xml = <F>;
 close F;
 
-# xlink:href="file:///home/bcrowell/Documents/writing/books/physics/share/me
-
-exit(0) unless $xml=~m@file:///@;
+# Absolute links look like this:
+#   xlink:href="file:///home/bcrowell/Documents/writing/books/physics/share/..."
+# After we relativise them, they look like this:
+#   xlink:href="foo/bar.jpg"
 
 my $cwd = Cwd::getcwd();
+my $svg_dir = File::Basename::dirname(abs_path($svg));
+my $original_xml = $xml;
 
 my @changes = ();
 while ($xml=~m@(file://(/[^'"]*))@g) {
   my $whole = $1;
   my $path = $2;
-  my $rel = relativise($path,File::Basename::dirname(abs_path($svg)),$cwd);
+  my $rel = relativise($path,$svg_dir,$cwd);
   print "changing absolute path in $svg to $rel\n";
   push @changes,[$whole,$rel];
 }
@@ -39,9 +43,20 @@ foreach my $change(@changes) {
   my $to = $change->[1];
   $xml =~ s/$from/$to/g;
 }
-open(F,">$svg");
-print F $xml;
-close F;
+
+while ($xml=~m@xlink:href\s*=\s*"([^'"]*)@g) {
+  my $rel = $1;
+  if ($rel=~/\.(png|jpg)$/ && !($rel=~/\A#/ || $rel=~/\Adata:;/)) {
+    my $abs = File::Spec->rel2abs($rel,$svg_dir);
+    -e $abs or err("file $rel doesn't exist, resolved to absolute path $abs");
+  }
+}
+
+if ($xml ne $original_xml) {
+  open(F,">$svg");
+  print F $xml;
+  close F;
+}
 
 sub err {
   my $message = shift;
