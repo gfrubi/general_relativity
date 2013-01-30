@@ -1,7 +1,5 @@
-% lmseries.cls
-%    This is meant to contain all code used by the 6 light and matter books that
-%    isn't shared with Discover Physics and Simple Nature.
-%
+\pdfminorversion=4 % force pdf 1.4 output; http://tex.stackexchange.com/questions/95973/is-pdftex-1-40-13-outputting-malformed-pdfs
+
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{genrel}
 

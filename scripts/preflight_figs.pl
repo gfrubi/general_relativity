@@ -16,7 +16,7 @@ my $count_err = 0;
 -x "scripts/preflight_one_fig.pl" or die "couldn't find scripts/preflight_one_fig.pl -- are you running me from home dir?";
 -x "scripts/relativise_svg.pl" or die "couldn't find scripts/relativise_svg.pl -- are you running me from home dir?";
 
-foreach my $svg(<@files>) {
+foreach my $svg(@files) {
   ++$count_svg;
   system("scripts/relativise_svg.pl $svg");
   my $err = `scripts/preflight_one_fig.pl $svg`;
