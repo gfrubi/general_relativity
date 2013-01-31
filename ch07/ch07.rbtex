@@ -23,25 +23,27 @@ of test particles, and that these could be interpreted as mass-energy and angula
 Generalizing, we want to consider the idea that a metric may be invariant
 when every point in spacetime is systematically shifted by some infinitesimal
 amount. For example, the Schwarzschild metric is invariant under $t\rightarrow t+\der t$.
-In coordinates $(x^0,x^1,x^2,x^3)=(t,r,\theta,\phi)$, we have a vector field  (\der t,0,0,0)
-that defines the time-translation symmetry, and it is conventional to split this into
-two factors, a finite vector field $\boldsymbol{\xi}$ and an infinitesimal scalar, so that the displacement vector is
-\begin{equation*}
-  \boldsymbol{\xi}\der t = (1,0,0,0)\der t \qquad .
-\end{equation*}
+When we apply this transformation to all the points in the geometry, we create a flow
+in the direction of the gradient $\partial_t$, which is a vector field.
 Such a field is called a Killing vector field, or simply a Killing
-vector, after Wilhelm Killing. When all the points in a space are displaced as specified by the Killing vector, they flow without expansion
-or compression. The path of a particular point, such as the dashed line in figure \figref{killing-vector}, under this flow is called
+vector, after Wilhelm Killing. When all the points in a space are
+displaced as specified by the Killing vector, they flow without expansion
+or compression. 
+
+The path of a particular point, such as the dashed circle in figure \figref{killing-vector}, under this flow is called
 its orbit.\index{orbit!Killing vector}\index{Killing vector!orbit} Although the term ``Killing vector'' is singular, it refers to the
-entire field of vectors, each of which differs in general from the others. For example, the $\boldsymbol{\xi}$ shown in figure \figref{killing-vector} has a greater
-magnitude than a $\boldsymbol{\xi}$ near the neck of the surface.
+entire field of vectors, each of which differs in general from the others. For example, the
+displacement from $\phi_1$ to $\phi_2$ shown in figure \figref{killing-vector} has a greater
+magnitude at the fat part of the surface than near the neck.
 <% marg(160) %>
 <%
   fig(
     'killing-vector',
     %q{The two-dimensional space has a symmetry which can be visualized by imagining it as a surface of revolution embedded in three-space.
        Without reference to any extrinsic features such as coordinates or embedding, an observer on this surface can detect the symmetry,
-       because there exists a vector field $\boldsymbol{\xi}\der u$ such that translation by $\boldsymbol{\xi}\der u$ doesn't change the distance between nearby points.}
+       because there exists a vector field  such that translation along the field doesn't change the distance between nearby points.
+       If we do decide to impose an angular coordinate $\phi$, then this field is naturally labeled
+       by the gradient of that coordinate, $\partial_\phi$.}
   )
 %>
 \spacebetweenfigs
@@ -53,11 +55,17 @@ magnitude than a $\boldsymbol{\xi}$ near the neck of the surface.
 %>
 <% end_marg %>
 
-The infinitesimal notation is designed to describe a continuous symmetry, not a discrete one. For example, the Schwarzschild spacetime
-also has a discrete time-reversal symmetry $t \rightarrow -t$. This can't be described by a Killing vector, because the
-displacement in time is not infinitesimal. 
+A Killing vector describes a continuous symmetry, not a discrete one. For example, the Schwarzschild spacetime
+also has a discrete time-reversal symmetry $t \rightarrow -t$. This can't be described by a Killing vector.
 
-\pagebreak[4]
+When a vector exists at a particular point, we're used to the luxury of being able to raise and lower its
+index at will. A Killing vector $\boldsymbol{\xi}$, however, is a field, so it exists at many different points at which the
+metric has differing values. Therefore its upper- and lower-index versions $\xi^a$ and $\xi_a$ are not
+equivalent. Which one is the actual Killing vector? Flows and gradients are always lower-index vectors.
+We can see this in partial-derivative notations like $\partial_t$ and $\partial_\phi$, and also geometrically
+in figure \figref{killing-vector}, where the Killing vector is defined by the two longitudinal lines,
+exactly as in our prototypical geometrical depiction of a lower-index vector in
+figure \subfigref{burke-dual}{4} on p.~\pageref{fig:burke-dual}.
 
 \begin{eg}{The Euclidean plane}\label{eg:euclidean-killing}
 The Euclidean plane has two Killing vectors corresponding to translation in two linearly independent directions, plus
@@ -86,8 +94,8 @@ are Killing vectors, while the second form gives us $\phi\rightarrow \phi+\der\p
 Although we may be able to find a particular coordinate system in which the existence of a Killing vector is manifest,
 its existence is an intrinsic property that holds regardless of whether we even employ coordinates.
 In general, we define a Killing vector not in terms of a particular
-system of coordinates but in purely geometrical terms: a space has a Killing vector $\boldsymbol{\xi}$ if translation by
-an infinitesimal amount $\boldsymbol{\xi}\der u$ doesn't change the distance between nearby points.
+system of coordinates but in purely geometrical terms: a space has a Killing vector $\boldsymbol{\xi}$ if translation
+that flows according to $\boldsymbol{\xi}$ doesn't change the distance between nearby points.
 Statements such as ``the spacetime has a timelike Killing vector''
 are therefore intrinsic, since both the timelike property and the property of being a Killing vector are
 coordinate-independent.
@@ -102,22 +110,14 @@ coordinate-independent.
 %>
 <% end_marg %>
 
-A more compact way of notating Killing vectors is based on the fact that a derivative
-such as $\partial/\partial x^0$ transforms not as an upper-index (contravariant)
-vector but as a lower-index (covariant) one (see p.~\pageref{derivative-flip-indices}). This is the reason for defining
-the shorthand notation $\partial_0=\partial/\partial x^0$, rather than $\partial^0=\partial/\partial x^0$.
-For this reason, the partial derivative operators ${\partial_0,\partial_1,\partial_2,\partial_3}$ can be used as a set of basis vectors
+The partial derivative operators ${\partial_0,\partial_1,\partial_2,\partial_3}$ can be used as a set of basis vectors
 for the space of covariant vectors at a particular point P in spacetime. This space is referred to as the
-tangent space\index{tangent space} for the reason shown in figure \figref{tangent-space}. In this notation,
-the Killing vector of the Schwarzschild metric we've been discussing can be notated simply as
-\begin{equation*}
-      \boldsymbol{\xi} =  \partial_t \qquad .
-\end{equation*}
+tangent space\index{tangent space} for the reason shown in figure \figref{tangent-space}.
 
-The tangent-space notation, like the infinitesimal notation, implicitly refers to continuous symmetries rather than discrete ones.
+The tangent-space notation implicitly refers to continuous symmetries rather than discrete ones.
 If a discrete symmetry carries a point $\zu{P}_1$ to some distant point $\zu{P}_2$, then $\zu{P}_1$ and $\zu{P}_2$
 have two different tangent planes, so there is not a uniquely defined notion
-of whether vectors $\boldsymbol{\xi}_1$ and $\boldsymbol{\xi}_2$ at these two points are equal --- or even approximately equal. 
+of whether vectors $\boldsymbol{\xi}$ and $\boldsymbol{\xi}'$ at these two points are equal --- or even approximately equal. 
 There can therefore be no well-defined way to construe a statement such as, ``$\zu{P}_1$ and $\zu{P}_2$
 are separated by a displacement $\boldsymbol{\xi}$.'' In the case of a
 continuous symmetry, on the other hand, the two tangent planes come closer and closer to coinciding as the distance $s$ between
