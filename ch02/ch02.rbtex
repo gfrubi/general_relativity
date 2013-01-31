@@ -957,10 +957,12 @@ of all energies travel at the same speed, i.e., whether the vacuum is dispersive
 <% begin_sec("Dispersion of the vacuum") %>\label{sec:lorentz-vacuum-dispersion}
 
 Some candidate quantum-mechanical theories of gravity, such as loop quantum gravity,\index{loop quantum gravity}
-predict a granular structure for spacetime at the Planck scale, $\sqrt{\hbar G/c^3}=10^{-35}$ m, which would naturally lead to
+predict a granular structure for spacetime at the Planck scale, $\sqrt{\hbar G/c^3}=10^{-35}$ m,
+which one could imagine might lead to
 deviations from $v=1$ that would become more and more significant for photons with wavelengths
 getting closer and closer to that scale. Lorentz-invariance would then be an approximation valid
-only at large scales.
+only at large scales. It turns out that the state of the art in loop quantum gravity is not
+yet sufficient to say whether or not such an effect should exist.
 <% marg(0) %>
 <%
   fig(
@@ -977,7 +979,7 @@ in 2009,\footnote{\url{http://arxiv.org/abs/0908.1832}} collected photons from s
 time of all the photons differed by no more than 2 seconds out of a total time in flight on the order
 of ten billion years, or about one part in $10^{17}$! A single superlative photon in the burst had an energy of 31 GeV,
 and its arrival within the same 2-second time window demonstrates Lorentz invariance over a vast range of photon energies,
-ruling out some versions of loop quantum gravity.
+contradicting heuristic estimates that had been made by some researchers in loop quantum gravity.
 
 <% end_sec %>
 

@@ -849,6 +849,51 @@ of how many of the lines in \subfigref{burke-dual}{4} would be crossed by an arr
 orientation in \subfigref{burke-dual}{3}.
 \end{eg}
 
+\pagebreak
+
+\begin{eg}{Systems without a metric}
+The type of distinction shown in example \ref{eg:burke-dual}, between vectors and their duals, may
+seem irrelevant if we can always raise and lower indices at will. We can't always do that, however,
+because in many perfectly ordinary situations there is no
+metric.
+
+Let's start with an example where we \emph{do} have a metric. 
+Let a billiard ball of unit mass be constrained by a diagonal wall to have $y<x$. 
+The Lagrangian formalism just leads to the expected Newtonian expressions for the momenta
+conjugate to $x$ and $y$, $p_x=\dot{x}$, $p_y=\dot{y}$. The force of constraint is $F_a=dp_a/dt$.
+Let $w^a$ be a vector parallel to the wall. Since we do happen to have a metric in this example,
+we can say that $F_aw^a=0$; most people would say that the force was perpendicular to the wall.
+
+Now consider the example shown in figure \figref{barbell}.
+The arm's weight is negligible compared to the unit mass of the gripped weight, and both the upper and
+lower arm have unit length. Because of the construction of the elbow joint, we have a constraint
+ $\theta \le \phi$. The conjugate momenta (which are actually angular momenta) turn out to be
+$p_\theta=\dot{\theta}+\cos(\phi-\theta)\dot{\phi}$ and a similar expression for $p_\phi$.
+The force of constraint is $F_a=dp_a/dt$. The surface of constraint can be represented by a vector
+$w^a$, which is on a diagonal line in the $(\phi,\theta)$ plane. But since there is no metric, it
+doesn't make sense to say that $F_a$ is perpendicular to $w^a$.
+<% marg(43) %>
+<%
+  fig(
+    'barbell',
+    %q{There is no natural metric on the space $(\theta,\phi)$.}
+  )
+%>
+<% end_marg %>
+
+In both of these examples, there is a natural way to state the orientation of the force of constraint
+relative to the surface of constraint, and it doesn't require a metric. Let the force vector
+be represented geometrically as shown in figure
+\subfigref{burke-dual}{4}. Then the pair of lines representing the force is \emph{parallel}
+to the surface of constraint, not perpendicular to it. This relationship of parallelism requires only
+affine geometry in the $(x,y)$ or $(\phi,\theta)$ plane.
+
+Finally we remark that although Euclidean three-space has a metric, 3+1-dimensional Galilean spacetime
+does not. In Galilean spacetime, for example, there is no meaningful way to compare a distance with
+a time. This is typical of affine geometry, in which distances along non-parallel lines are not
+comparable. In Galilean spacetime it is not possible to raise and lower indices at will, and the
+distinction between upper- and lower-index vectors is a real and physically important one.
+\end{eg}
 
 <% begin_sec("The Lorentz metric") %>
 
