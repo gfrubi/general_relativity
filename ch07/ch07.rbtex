@@ -108,7 +108,8 @@ vector but as a lower-index (covariant) one (see p.~\pageref{derivative-flip-ind
 the shorthand notation $\partial_0=\partial/\partial x^0$, rather than $\partial^0=\partial/\partial x^0$.
 For this reason, the partial derivative operators ${\partial_0,\partial_1,\partial_2,\partial_3}$ can be used as a set of basis vectors
 for the space of covariant vectors at a particular point P in spacetime. This space is referred to as the
-tangent space\index{tangent space} for the reason shown in figure \figref{tangent-space}. In this notation,
+tangent space\index{tangent space} for the reason shown in figure \figref{tangent-space}.\label{tangent-space}
+In this notation,
 the Killing vector of the Schwarzschild metric we've been discussing can be notated simply as
 \begin{equation*}
       \boldsymbol{\xi} =  \partial_t \qquad .

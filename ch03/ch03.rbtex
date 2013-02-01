@@ -547,11 +547,14 @@ confusion in practice. Similarly, one often says things like ``the derivative of
 $x^2$,'' instead of the more cumbersome ``derivative of the function $f$ defined by $f(x)=x^2$.''
 
 The vectors drawn below the curve in figure \figref{dual} are called the contravariant vectors, notated $\der x^\mu$, and the ones
-above it are the covariant vectors, $\der x_\mu$.\index{covariant vector}\index{vector!covariant}\index{contravariant vector}\index{vector!contravariant}
-It's not particularly important to keep track of
+above it are the covariant vectors, 
+$\der x_\mu$.\index{covariant vector}\index{contravariant vector}\index{vectors (covariant and contravariant)}
+It's often not particularly important to keep track of
 which is which, since the relationship between them is symmetric, like the relationship between row
 and column vectors. Each is the dual of the other. The arc length is given by $\int \der s =\int \sqrt{\der x^\mu \der x_\mu}$,
-or, equivalently we say $\der s^2=\der x^\mu \der x_\mu$. (Remember, $\mu=0$.)
+or, equivalently we say $\der s^2=\der x^\mu \der x_\mu$. (Remember, $\mu=0$.) Various ideas about
+covariant and contravariant vectors are introduced in different places in this book; a summary is given
+on p.~\pageref{vec-covec-summary}.
 
 Given a $\der x^\mu$, how do we find its dual $\der x_\mu$, and vice versa? In one dimension, we simply need to introduce
 a real number $g$ as a correction factor. If one of the vectors is shorter than it should be in a certain region,
@@ -812,6 +815,7 @@ as a rank-2 tensor with one upper index and one lower index.
 
 <% end_sec %>
 \begin{eg}{A geometrical representation of duality}\label{eg:burke-dual}
+\index{vectors (covariant and contravariant)!represented geometrically}%
 The idea of dual vectors was introduced in a cartoonish way in figure \figref{dual} on p.~\pageref{fig:dual},
 reproduced in figure \subfigref{burke-dual}{1}.
 A more elegant and rigorous, but slightly more abstract, representation is presented
@@ -851,7 +855,7 @@ orientation in \subfigref{burke-dual}{3}.
 
 \pagebreak
 
-\begin{eg}{Systems without a metric}
+\begin{eg}{Systems without a metric}\label{eg:systems-without-a-metric}
 The type of distinction shown in example \ref{eg:burke-dual}, between vectors and their duals, may
 seem irrelevant if we can always raise and lower indices at will. We can't always do that, however,
 because in many perfectly ordinary situations there is no
