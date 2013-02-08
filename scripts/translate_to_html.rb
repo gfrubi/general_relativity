@@ -310,7 +310,7 @@ if $util=~/[a-z]/ then
       csv.split(/\n/).each { |line|
         # command,\currenthwlabel ,0,0,
         # environment,hw,0,1,1
-        if line=~/\A(command|environment),([^,]*),([^,]*),([^,]*),([^,]*)\Z/ then
+        if line=~/\A(command|environment)\*?,([^,]*),([^,]*),([^,]*),([^,]*)\Z/ then
           type,name,n_req,n_opt,default = [$1,$2,$3.to_i,$4.to_i,$5]
           name.gsub!(/\s/,'')
           name.gsub!(/\\/,'') if type=='command'
@@ -359,21 +359,105 @@ if $util=~/[a-z]/ then
       # Note that <switch> mechanism is (a) broken when I generate it for displayed math, (b) further mangled by calibre, (c) not implemented by readers. All of this
       # makes it not at all useful. The only reason I'd want to use it would be in order to distribute a single epub that could be read by both old and new
       # readers. But old readers don't understand switch, so they display math twice, and new readers don't need switch if they have mathml.
+      # calibre generates:
+      #   <dc:creator opf:file-as="Unknown" opf:role="aut">Herman Melville</dc:creator>
+      # epub 3 wants:
+      #   <dc:creator id="creator">Herman Melville</dc:creator>
+      #   <meta refines="#creator" property="file-as">MELVILLE, HERMAN</meta>
+      #   <meta refines="#creator" property="role" scheme="marc:relators">aut</meta>
+      # calibre generates:
+      #   <dc:identifier id="uuid_id" opf:scheme="uuid">be2fd7f3-e91e-4257-9507-e6c3f7cb473a</dc:identifier>
+      # epub 3 wants something more like:
+      #   <dc:identifier id="pub-id">urn:isbn:9780316000000</dc:identifier>
+      #   <meta refines="#pub-id" property="identifier-type" scheme="onix:codelist5">15</meta>
+      # Stacey has:
+      #   <dc:identifier id="pub-id">urn:uuid:577f82c9-a78c-493d-a162-9086930d4451</dc:identifier>
+      #   <meta refines="#pub-id" property="identifier-type" scheme="xsd:string">15</meta>
       # -
+      #---------- Patch the table of contents.
+      toc = "#{tmpdir}/index.html"
+      xml = ''
+      File.open(toc,'r') { |f|
+        xml = f.gets(nil) # nil means read whole file
+        # calibre generates: <!DOCTYPE html> <html xmlns="http://www.w3.org/1999/xhtml">
+        # want: <html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+        xml.gsub!(/<\!DOCTYPE[^>]*>/,'') # why doesn't this work?
+        xml.gsub!(/<p [^>]*>/,'<li>')
+        xml.gsub!(/<\/p>/,'</li>')
+        xml.gsub!(/<b [^>]*>/,'')
+        xml.gsub!(/<\/b>/,'')
+        # li elements are only allowed to contain a elements:
+        preserve = ''
+        xml.scan(/(<li><a [^>]*>[^>]*<\/a><\/li>)/) { # match the legal pattern
+          preserve = preserve + $1 + "\n"
+        }
+        xml.gsub!(Regexp.new("<li>.*<\/li>",Regexp::MULTILINE),preserve) # delete everything from the first li to the last and replace it with the ok ones
+        # Strip chapter numbers, which are generated automatically by the ol:
+        xml.gsub!(/((<li><a [^>]*>)([^>]*)(<\/a><\/li>))/) {
+          whole,before,during,after = [$1,$2,$3,$4]
+          during.gsub!(/[\d\.]+\s*/,'')
+          before+during+after
+        }
+        if xml=~/(<html([^>]*)>)/ then
+          whole,attrs = [$1,$2]
+          xml.gsub!(/#{Regexp::quote(whole)}/) {"<html #{attrs} xmlns:epub=\"http://www.idpf.org/2007/ops\">"}
+        end
+        if xml=~/(<body[^>]*>)/ then
+          whole = $1
+          xml.gsub!(/#{Regexp::quote(whole)}/) {"#{whole}\n<nav epub:type=\"toc\" id=\"toc\"><ol>"}
+        end
+        if xml=~/(<\/body[^>]*>)/ then
+          whole = $1
+          xml.gsub!(/#{Regexp::quote(whole)}/) {"</ol></nav>\n#{whole}"}
+        end
+      }
+      File.open(toc,'w') { |f| f.print xml }
+      #---------- Patch package file.
       package_document = "#{tmpdir}/content.opf" # this is what calibre generates; other people's epubs can have it in, e.g., OPS/package.opf
       xml = ''
       File.open(package_document,'r') { |f|
         xml = f.gets(nil) # nil means read whole file
-        new_pkg = '<package xmlns="http://www.idpf.org/2007/opf" version="3.0" xml:lang="en" unique-identifier="uuid_id">'
+        new_pkg = '<package xmlns="http://www.idpf.org/2007/opf" version="3.0" xml:lang="en" unique-identifier="pub-id">'
         xml.gsub!(/<package[^>]+>/,new_pkg)
+        if xml=~/(<dc:creator([^>]+)>([^<]+)<\/dc:creator>)/ then
+          whole,attributes,author = [Regexp::quote($1),$2,$3]
+          creator = "<dc:creator id=\"creator\">#{author}</dc:creator>"
+          attributes.scan(/opf:([^=]+)=\"([^"]*)\"/) {
+            property,value = [$1,$2]
+            creator = creator + "\n<meta refines=\"#creator\" property=\"#{property}\">#{value}</meta>"
+          }
+          creator = creator + "___placeholder___" # find a reasonable place to stick in some more required stuff
+          xml.gsub!(/#{whole}/) {creator}
+        end
+        # <meta property="dcterms:modified">2012-01-13T01:13:00Z</meta>
+        xml.gsub!(/___placeholder___/) {
+          # http://idpf.org/epub/30/spec/epub30-publications.html#last-modified-date
+          "<meta property=\"dcterms:modified\">#{Time.now.strftime '%Y-%m-%dT%H:%M:%SZ'}</meta>"
+        }
+        # <item  href="index.html" id="html" media-type="application/xhtml+xml"/>
+        if xml=~/(<item([^>]+)(href="index.html")([^>]+)\/>)/ then
+          whole,before,href,after = [Regexp::quote($1),$2,$3,$4]
+          xml.gsub!(/#{whole}/) {"<item #{before} properties=\"nav\" #{href} #{after} />"}
+        end
+        xml.gsub!(/#{Regexp::quote(toc)}/) {
+          "<item properties=\"nav\" href=\"toc.ncx\" media-type=\"application/xhtml+xml\" id=\"ncx\"/>"
+        }
+        if xml=~/(<dc:identifier([^>]+)>([^<]+)<\/dc:identifier>)/ then
+          whole,attributes,identifier = [Regexp::quote($1),$2,$3]
+          i = "<dc:identifier id=\"pub-id\">urn:uuid:#{identifier}</dc:identifier>\n"
+          i = i +"<meta refines=\"#pub-id\" property=\"identifier-type\" scheme=\"xsd:string\">15</meta>"
+          xml.gsub!(/#{whole}/) {i}
+        end
         xml.gsub!(/(<item\s+([^\/]|"[^"]*")*\/>)/) {
           item = $1 # e.g., item=<item href="ch01_split_000.xhtml" id="html15" media-type="application/xhtml+xml"/>
           if item=~/media-type="application\/xhtml\+xml"/ then # don't do images, just html
             #$stderr.print "item=#{item}\n"
             if item=~/href="([^"]+)"/ then html_file="#{tmpdir}/#{$1}" end
             p = []
-            if file_contains(html_file,/<math/)==true then p.push("mathml") end
-            if file_contains(html_file,/<switch/)==true then p.push("switch") end
+            ['math','svg','switch'].each { |x|
+              if x=='math' then y='mathml' else y=x end
+              if file_contains(html_file,/<#{x}/)==true then p.push(y) end
+            }
             if item=~/properties="([^"]*)"/ then 
               p.concat($1.split(/\s+/))
             else

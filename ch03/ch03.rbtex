@@ -59,7 +59,7 @@ the curvature of the space varies from one point to the next, and clearly we don
 Riemann sums an infinite number of times, once at each point in space.
 \end{eg}
 
-<% begin_sec("The affine parameter revisited, and parallel transport") %>
+<% begin_sec("Affine notions and parallel transport") %>
 
 <% begin_sec("The affine parameter in curved spacetime") %>
 An important example of the differential, i.e., local, nature of our geometry
@@ -176,6 +176,135 @@ the segments $n\zu{q}_n$ drift more and more out of alignment with the curve.
 <% end_sec %> % parallel transport
 
 <% end_sec %>
+
+
+<% begin_sec("Vectors",nil,'affine-vectors') %>
+I've been referring casually to vectors, but it's not immediately clear what a vector means in the context
+of curved spacetime.  The freshman physics notion of a vector carries all kinds of baggage, including
+ideas like rotation of vectors and a magnitude that is positive for nonzero vectors. We also used to
+assume the ability to represent vectors as arrows, i.e., geometrical figures of finite size that could be
+transported to other places --- but in a curved geometry, it is not in general possible to transport a
+figure to another location without distorting its shape, so there is no notion of congruence. This
+unavailability of congruence is the reason for drawing the vectors
+in figures \figref{path-dependence-of-parallel-transport} and \figref{affine-not-geodesic} as tangents to the
+underlying space. Intuitively, we want to think of these vectors as arrows that are infinitesimally small, so that
+they fit on the curved surface without having to be bent. In the pictures, we simply scale them up to make
+them visible without an infinitely powerful microscope, and this scaling only makes them \emph{appear} to rise out
+of the space in which they live.
+
+<% begin_sec("Affine measurement of vectors") %>
+On the infinitesimal scale, curvature is negligible, parallelism loses its ambiguity,
+and we're back to a flat affine geometry. What does a vector mean in affine geometry, and what is the
+associated system of measurement? We can't always use clocks and rulers to measure these vectors,
+since, for example, a lightlike vector has a measure of zero by either of these methods.
+In general, measurement means comparing one thing to another. For example, we could use the hourly
+performance of a pendulum-driven cuckoo
+clock to measure the rate at which the earth spins, but we could equally well take our planet's
+rotation as the standard and use it to measure the frequency with which the bird pops out of the door.
+Once we have two things to
+compare against one another, measurement is reduced to a process of counting (figure
+\figref{affine-par-in-curved-spacetime}, p.~\pageref{fig:affine-par-in-curved-spacetime}), and
+the result is a real number. Schematically, let's represents this measurement process with
+a graphical notation called birdtracks,\index{birdtracks notation}
+with icons to represent the things being compared:\footnote{The system used in this book
+follows the one defined by Cvitanovi\'{c}, which was based closely on a graphical
+notation due to Penrose. For a more complete exposition, see the Wikipedia article
+``Penrose graphical notation'' and Cvitanovi\'{c}'s 
+online book at \url{birdtracks.eu}.}\index{birdtracks}\index{Cvitanovi\'{c}, Predrag}
+\index{Penrose!graphical notation for tensors}\index{tensor!Penrose graphical notation}
+\index{vector!Penrose graphical notation}
+\begin{equation*}
+  \bigoplus \longrightarrow \bigodot
+\end{equation*}
+Although the measurement relationship is nearly symmetric, the arrow has a direction, because,
+for example, the measurement of the earth's rotational period in terms of the clock's frequency is
+$(24\ \zu{hr})(1\ \zu{hr}^{-1})=24$, but the clock's period in terms of the earth's frequency
+is $1/24$. We say that the relationship is not symmetric but ``dual.'' By the way, it doesn't matter
+how we arrange these diagrams on the page. The notations $\bigoplus \longrightarrow \bigodot$
+and $\bigodot \longleftarrow \bigoplus$ mean exactly the same thing, and Penrose draws
+them vertically rather than horizontally. Although we won't develop the birdtracks system in detail,
+in its most elaborate form it
+can be used as a complete notational system, and expressing ideas
+like the inverse of a matrix and proving complicated mathematical theorems.
+
+Suppose that $\bigodot$ is a displacement in the affine plane, and we want to think of it as the
+thing being measured. Then we expect that the measurement process represented by $\bigoplus$
+produces a real-valued result and is a linear function of $\bigodot$. Since the relationship
+between $\bigoplus$ and $\bigodot$ is dual, we expect that $\bigoplus$ also belongs to some
+vector space. For example, vector spaces allow multiplication by a scalar:
+we could double the frequency of the cuckoo clock by making the bird
+come out on the half hour as well as on the hour, forming $2\bigoplus$. Measurement should
+be a linear function of both vectors; we say it is ``bilinear.'' 
+<% end_sec %>
+
+<% begin_sec("Duality") %>\index{dual vector}\index{vector!dual}
+The two vectors
+$\bigoplus$ and $\bigodot$ inhabit two different vector spaces, and they have different units:
+$\zu{hr}^{-1}$ and hr. The ``flavor'' of the vector is represented by whether the arrow goes into
+it or comes out. Just as we used notation like $\overrightarrow{v}$ in freshman physics to
+tell vectors apart from scalars, we can employ arrows in the Penrose graphical notation as part of the notation for
+the vector, so that
+instead of writing the two vectors as $\bigoplus$ and $\bigodot$, we can notate them
+as $\bigoplus\rightarrow$ and $\rightarrow\bigodot$. Performing a measurement is like plumbing.
+We join the two ``pipes,'' $\bigoplus\rightarrow\rightarrow\bigodot$ and simplify to
+$\bigoplus\longrightarrow\bigodot$.
+
+In two dimensions, there are natural ways of visualizing these two vector spaces.
+We've already been describing $\bigodot\rightarrow$ as a displacement. Its vector space is the
+space of such displacements.\footnote{In terms of the primitive notions used in the axiomatization
+in section \ref{sec:affine-geometry}, a displacement could be described as
+an equivalence class of segments such that
+for any two segments in the class AB and CD, AB and CD form a parallelogram.}
+A vector in the dual space such as $\bigoplus\rightarrow$
+can be visualized as a set of parallel, evenly spaced lines
+on a topographic map, \subfigref{vector-measuring-covector}{2}, with an arrowhead to show which way is ``downhill.''
+The act of measurement consists of counting how many of these
+lines are crossed by a certain vector, \subfigref{vector-measuring-covector}{3}.
+<% marg(50) %>
+<%
+  fig(
+    'vector-measuring-covector',
+    %q{1. A displacement vector. 2. A vector from the space dual to the space of displacements.
+       3. The cuckoo clock chimes 24 times in one rotation of the earth.}
+  )
+%>
+<% end_marg %>
+<% end_sec %>
+
+<% begin_sec("Affine versus metrical measurement",nil,'affine-vs-metrical') %>
+The example of the cuckoo clock may be a little misleading.
+
+An actual clock can, if we wish, be carried along a noninertial world-line over unlimited
+distances. Affine measurement, however, does not provide any notion of comparing lengths measured
+along non-parallel lines. We could think of $\bigoplus\rightarrow$ as being the ghost of
+a cuckoo clock. Because it's a ghost, we can't grab it and take it places. It simply drifts
+forever through space along a timelike inertial world-line, i.e., a geodesic.
+
+There is also a sense in which a clock or ruler is \emph{less} powerful than the affine notion
+of measurement. For example, we can never use a clock to measure the length of a lightlike vector;
+in the limit as the clock is accelerated to near light speed, time dilation causes it to stop ticking
+at all, and the result of the measurement approaches zero, which is not useful. But it's
+perfectly all right to have a ghost cuckoo clock moving at or above the speed of light. It has no
+dynamics and doesn't interact with its environment, so, for example, it doesn't have infinite kinetic
+energy if it moves at the speed of light.
+
+There is no angular measure in affine geometry, and in particular there is no notion of perpendicularity,
+only parallelism. In relativity, simultaneity is expressed as perpendicularity of a displacement vector
+to an observer's displacement vector. A measurement process like
+$\bigoplus\longrightarrow\bigodot$ is analogous to a dot product, and 
+affine geometry does allow us to make statements like
+$\bigoplus\longrightarrow\bigodot=0$, but $\bigoplus\rightarrow$ and $\rightarrow\bigodot$ can't both
+be displacement vectors. If one is a displacement, then the other belongs to the vector space that is
+dual to the space of displacements. Since the notion of a frame of reference depends on establishing
+what the observer considers simultaneous, affine measurement isn't powerful enough to describe frames
+of reference.
+
+Vectors do not have their own lengths or magnitudes unless we introduce more metrical apparatus. We will do this
+in section \ref{sec:metric}.
+<% end_sec %>
+
+<% end_sec %>
+
 <% begin_sec("Models",nil,'models') %>
 
 A typical first reaction to the phrase ``curved spacetime'' --- or even ``curved space,'' for that matter ---
@@ -487,9 +616,7 @@ lightlike line.
 
 <% end_sec %> % Coordinate independence
 <% end_sec %>
-<% begin_sec("The metric") %>
-
-
+<% begin_sec("The metric",nil,'metric') %>
 Applying these considerations to the creation of a manifestly intrinsic notation, consider a coordinate
 $x$ defined along a certain curve, which is not necessarily a geodesic. For concreteness, imagine this curve
 to exist in two spacelike dimensions, which we can visualize as the surface of a sphere embedded in Euclidean
@@ -516,23 +643,62 @@ Now suppose we want to integrate the arc length of a segment of this curve. The 
 infinitesimal. In the integrated length, each little vector should contribute some amount, which is a scalar.
 This scalar is not simply the magnitude of the vector, $\der s \ne \sqrt{\der\vc{x}\cdot\der\vc{x}}$, since the vectors are the wrong length. We therefore
 need some mathematical rule, some function, that accepts a vector as its input and gives a scalar as its
-output. This function is a locally adjustable fudge factor that compensates for the wrong lengths of the
-little vectors. Since the space is locally flat and uniform, the function must be linear, and from linear algebra,
-we know that the most general function of this kind is an inner product. If the little arrow is a row vector,
-then the function would be represented by taking the row vector's inner product with some column vector to give $\der s^2$.
+output. We are led back to the notion, introduced in section \ref{sec:affine-vectors}, of
+the dual of a vector. But, as discussed on p.~\pageref{subsec:affine-vs-metrical}, the purely affine
+notion of vectors and their duals is not enough to define the length of a vector. To accomplish that,
+we need to introduce some further machinery called a metric.
+
+The assumption that a metric exists is
+nontrivial. There is no metric in Galilean spacetime, for example, since in the limit $c\rightarrow\infty$
+the units used to measure timelike and spacelike displacements
+are not comparable.\index{metric!none in Galilean spacetime}\label{no-galilean-metric}
+Assuming the existence of a metric is equivalent to assuming that the universe
+holds at least one physically manipulable clock or ruler that can be moved over long distances and
+accelerated as desired. In the distant future, large and causally isolated regions of the cosmos may
+contain only massless particles such as photons, which cannot be used to build clocks (or, equivalently,
+rulers); the
+physics of these regions will be fully describable without a metric.
+If, on the other hand, our world contains not just zero or one but two or more clocks, then the metric
+hypothesis requires that these clocks maintain a consistent relative rate when accelerated along the same
+world-line. This consistency is what allows us to think of relativity as a theory of space and time
+rather than a theory of clocks and rulers.
+There are other relativistic theories of gravity besides general relativity, and some
+of these violate this hypothesis.
+
+The arrows and tick marks are of course the one-dimensional incarnations of the
+geometrical representations of vectors and their duals in \figref{vector-measuring-covector}
+on p.~\pageref{fig:vector-measuring-covector}. Fixing a metric allows us to define the proper
+scaling of the tick marks relative to the arrows at a given point, i.e., in the birdtracks
+notation it gives us a natural way of taking a displacement vector such as $\rightarrow\bigodot$,
+with the arrow pointing into the symbol, and making a corresponding dual vector
+$\leftarrow\bigodot$, with the arrow coming out. This is a little like cloning a person but making
+the clone be of the opposite sex. Hooking them up like $\bigodot\rightarrow\bigodot$ then tells us
+the squared magnitude of the vector. For example, if $\rightarrow\bigodot$ is an infinitesimal timelike displacement,
+then $\bigodot\rightarrow\bigodot$ is the squared time interval $\der s^2$ measured by a clock traveling
+along that displacement in spacetime.
+
+The birdtracks notation is nice because it is manifestly independent of any system of coordinates --- it
+doesn't even use letters of the alphabet! However, in practical calculations we will often need to
+make contact with coordinate-based data. 
+It is then natural to represent the displacements and their duals in figure \figref{metric-motivation} 
+as a row and column vectors.
 Of course the distinction between row and column vectors is pointless in a one-dimensional space, but
 it should be clear that this will provide an appropriate foundation for the generalization to more than one
-coordinate. The row and column vectors are referred to as one another's duals.\index{dual}
+coordinate.
 Figure \figref{dual} shows the resulting picture.
-<% marg(30) %>
+
 <%
   fig(
     'dual',
-    %q{The vectors $\der x^\mu$ and $\der x_\mu$ are duals of each other. For a more elegant reformulation of this
-       picture, see example \ref{eg:burke-dual} on p.~\pageref{eg:burke-dual}.}
+    %q{%
+      The vectors $\der x^\mu$ and $\der x_\mu$ are duals of each other. 
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
   )
 %>
-<% end_marg %>
 
 Anticipating the generalization to four-dimensional
 spacetime with coordinates $(x^0,x^1,x^2,x^3)$, we'll start referring to $x$ as $x^\mu$, although in our
@@ -615,7 +781,7 @@ rank of the tensor.\index{rank of a tensor}\index{tensor!rank} Tensors are discu
 more rigorously, in chapter \ref{ch:tensors}. For our present purposes, it is important to note that just because
 we write a symbol with subscripts or superscripts, that doesn't mean it deserves to be called a tensor. This point
 can be understood in the more elementary context of Newtonian scalars and vectors. For example, we can define
-a Newtonian ``vector'' $\vc{u}=(m,T,e)$, where $m$ is the mass of the moon, $T$ is the temperature in
+a Euclidean ``vector'' $\vc{u}=(m,T,e)$, where $m$ is the mass of the moon, $T$ is the temperature in
 Chicago, and $e$ is the charge of the electron. This creature $\vc{u}$ doesn't deserve to be called a vector,
 because it doesn't behave as a vector under rotation. Similarly, a tensor is required to behave in a certain
 way under rotations and Lorentz boosts.\label{tensor-intro}
@@ -667,6 +833,11 @@ it is used in the text by Wald (1984), but not in Misner, Thorne, and Wheeler (1
 literature uses a notation in which the Greek and Latin indices are instead used to distinguish between
 timelike and spacelike components of a vector, but this usage is dying out, since it inappropriately
 singles out a distinction between time and space that is not actually preserved under a Lorentz boost.
+
+Birdtracks notation is simply a different representation of abstract index notation.
+One can in fact label arrows on a birdtracks diagram with letters, but the labels don't imply coordinates.
+They are simply for reference, as in assembly instructions that direct us to 
+insert tab A in slot B.\index{birdtracks notation!equivalent to abstract index notation}
 
 \begin{eg}{Oblique Cartesian coordinates}\label{eg:oblique-cartesian}
 \egquestion Oblique Cartesian coordinates are like normal Cartesian coordinates in the plane, but their axes are at at
@@ -750,8 +921,6 @@ and upper and lower indices have to match on both sides of the equals sign.
 This whole system, introduced by Einstein, is called ``index-gymnastics''
 notation.\index{index gymnastics notation}
 
-\pagebreak
-
 \begin{eg}{Vectors that naturally want upper or lower indices}\label{eg:force-is-lower-index}
 Although the rules of duality and index-raising and -lowering treat the upper and lower indices
 in a completely symmetric way, the symmetry is broken as soon as we choose, for example, to
@@ -798,65 +967,17 @@ placement is
 \end{equation*}
 This shows that the natural way to represent a column-vector-to-column-vector linear operator is
 as a rank-2 tensor with one upper index and one lower index.
+
+In birdtracks notation, a rank-2 tensor is something that has two arrows connected to it.
+Our example becomes
+$\rightarrow q = \rightarrow U \rightarrow p$. That the result is itself an upper-index
+vector is shown by the fact that the right-hand-side taken as a whole has a single external arrow 
+coming into it.\index{birdtracks notation!rank-2 tensor}
 \end{eg}
-
-<%
-  fig(
-    'burke-dual',
-    %q{%
-      Example \ref{eg:burke-dual}.
-    },
-    {
-      'width'=>'wide',
-      'sidecaption'=>true
-    }
-  )
-%>
-
 <% end_sec %>
-\begin{eg}{A geometrical representation of duality}\label{eg:burke-dual}
-\index{vectors (covariant and contravariant)!represented geometrically}%
-The idea of dual vectors was introduced in a cartoonish way in figure \figref{dual} on p.~\pageref{fig:dual},
-reproduced in figure \subfigref{burke-dual}{1}.
-A more elegant and rigorous, but slightly more abstract, representation is presented
-in the cult-classic book \emph{Div, Grad, and Curl are Dead} by 
-Burke.\footnote{Not to be confused with the classic but non-cult book \emph{Div, Grad, Curl, and All That}.
-Burke was killed in a car accident before he could put his wonderful book in final, publishable form, but
-it can be found in various places online.}
-The idea is to cut out all the excess baggage in \subfigref{burke-dual}{1}.
-
-First we restrict the representation to a particular point, \subfigref{burke-dual}{2}. The metric, after all, needn't have elements
-with constant values when expressed in any particular coordinate system, so it really exists only at a point
-(or within an infinitesimally small neighborhood around that point).
-Similarly, a vector in differential geometry is really something that lives at one point; if we wanted to move
-it somewhere else, we would have to parallel-transport it along a certain path, and the result would be
-path-dependent.
-
-We next note that the arrows drawn
-above the ``railroad tracks'' to represent the lower-index vectors do nothing more than connect one hash
-mark to the next. They carry no additional information beyond what was already present in the railroad tracks, so we can
-eliminate these arrows and simply associate an adjacent pair of hash marks with a lower-index vector. 
-The line along which the hash marks was drawn is also unnecessary. If we didn't have it, we could
-reconstuct it from the requirement that it pass through each hash mark perpendicularly. 
-
-The finite width
-of each hash mark is an arbitrary feature of the drawing having no mathematical meaning, so we extend
-them to infinite length. An upper-index vector is thus represented by a pair of infinite
-parallel lines, \subfigref{burke-dual}{4}.
-We would like this representation to be able to stand on its own without the information about
-orientation from \subfigref{burke-dual}{3}, so we put an arrowhead on one of the lines.
-
-The two lines in \subfigref{burke-dual}{4} are analogous
-to a close-up of two successive contour lines on a topographical map. The inner product of vectors
-like the ones in \subfigref{burke-dual}{3} and \subfigref{burke-dual}{4} is interpreted as a measure
-of how many of the lines in \subfigref{burke-dual}{4} would be crossed by an arrow with the length and
-orientation in \subfigref{burke-dual}{3}.
-\end{eg}
-
-\pagebreak
 
 \begin{eg}{Systems without a metric}\label{eg:systems-without-a-metric}
-The type of distinction shown in example \ref{eg:burke-dual}, between vectors and their duals, may
+The distinction between vectors and their duals may
 seem irrelevant if we can always raise and lower indices at will. We can't always do that, however,
 because in many perfectly ordinary situations there is no
 metric.
@@ -888,14 +1009,13 @@ doesn't make sense to say that $F_a$ is perpendicular to $w^a$.
 In both of these examples, there is a natural way to state the orientation of the force of constraint
 relative to the surface of constraint, and it doesn't require a metric. Let the force vector
 be represented geometrically as shown in figure
-\subfigref{burke-dual}{4}. Then the pair of lines representing the force is \emph{parallel}
+\subfigref{vector-measuring-covector}{2} on p.~\pageref{fig:vector-measuring-covector}. Then
+the pair of lines representing the force is \emph{parallel}
 to the surface of constraint, not perpendicular to it. This relationship of parallelism requires only
 affine geometry in the $(x,y)$ or $(\phi,\theta)$ plane.
 
-Finally we remark that although Euclidean three-space has a metric, 3+1-dimensional Galilean spacetime
-does not. In Galilean spacetime, for example, there is no meaningful way to compare a distance with
-a time. This is typical of affine geometry, in which distances along non-parallel lines are not
-comparable. In Galilean spacetime it is not possible to raise and lower indices at will, and the
+Finally we remark that since Galilean spacetime lacks a metric (see p.~\pageref{no-galilean-metric}),
+it is not possible to raise and lower Galilean indices at will, and the
 distinction between upper- and lower-index vectors is a real and physically important one.
 \end{eg}
 
@@ -947,6 +1067,11 @@ system of measurement at a given point, $g\indices{^a_b}$ carries no information
 Where $g_{ab}$ or $g^{ab}$ can have both positive and negative elements, elements that have units,
 and off-diagonal elements, $g\indices{^a_b}$ is just a generic symbol carrying no information other than
 the dimensionality of the space.
+
+The metric tensor is so commonly used that it is simply left out of birdtrack diagrams.
+Consistency is maintained because
+because $g\indices{^a_b}$ is the identity matrix, so $\rightarrow g \rightarrow$
+is the same as $\rightarrow \rightarrow$.\index{birdtracks notation!metric omitted in}
 \end{eg}
 
 <% end_sec %>

@@ -10,7 +10,7 @@
   )
 %>
 
-<% begin_sec("Affine properties of Lorentz geometry") %>
+<% begin_sec("Affine properties of Lorentz geometry",nil,'affine-geometry') %>
 
 The geometrical treatment of space, time, and gravity only requires as its basis the equivalence of
 inertial and gravitational mass. That equivalence holds for Newtonian gravity, so it is indeed possible

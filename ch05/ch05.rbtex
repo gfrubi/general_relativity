@@ -947,6 +947,8 @@ The explicit computation of the Christoffel symbols from the metric is deferred 
 section \ref{sec:from-metric-to-curvature}, but the intervening sections \ref{sec:geodesic-equation}
 and \ref{sec:torsion} can be omitted on a first reading without loss of continuity.
 
+\pagebreak
+
 \begin{eg}{Christoffel symbols on the globe}\label{eg:christoffel-on-globe}
 As a qualitative example, consider the geodesic airplane trajectory shown in figure \figref{christoffel-on-globe},
 from London to Mexico City. In physics it is customary to work with the colatitude, $\theta$, measured down from
@@ -1000,18 +1002,30 @@ To compute the covariant derivative of a higher-rank tensor, we just add more co
   \nabla_a U_b^c = \partial_a U_b^c - \Gamma\indices{^d_{ba}}U_d^c+\Gamma\indices{^c_{ad}}U_b^d            \qquad .
 \end{align*}
 
-With the partial derivative $\partial_a$, it does not make sense to use the metric to raise the index
-and form $\partial^a$. It \emph{does} make sense to do so with covariant derivatives, so $\nabla^a = g^{ab} \nabla_b$
+With the partial derivative $\partial_\mu$, it does not make sense to use the metric to raise the index
+and form $\partial^\mu$. It \emph{does} make sense to do so with covariant derivatives, so $\nabla^a = g^{ab} \nabla_b$
 is a correct identity.
 
-<% begin_sec("Comma and semicolon notation") %>
+<% begin_sec("Comma, semicolon, and birdtracks notation") %>
 Some authors use superscripts with commas and semicolons to indicate partial and covariant derivatives. The following
 equations give equivalent notations for the same derivatives:
 \begin{align*}
-  \partial_a X_b &= X_{b,a} \\
+  \partial_\mu X_\nu &= X_{\nu,\mu} \\
   \nabla_a   X_b &= X_{b;a} \\
   \nabla^a   X_b &= X\indices{_b^{;a}} 
 \end{align*}
+Figure \figref{nabla-birdtracks} shows two examples of the corresponding
+birdtracks notation. Because birdtracks are meant to be manifestly coordinate-independent, they
+do not have a way of expressing non-covariant derivatives.
+\index{birdtracks notation!covariant derivative}
+<% marg(130) %>
+<%
+  fig(
+    'nabla-birdtracks',
+    %q{Birdtracks notation for the covariant derivative.}
+  )
+%>
+<% end_marg %>
 <% end_sec %> % Comma and semicolon notation
 <% end_sec %> % covariant derivative in GR
 
@@ -1020,7 +1034,7 @@ equations give equivalent notations for the same derivatives:
 <% begin_sec("The geodesic equation") %>\label{sec:geodesic-equation}
 In this section, which can be skipped at a first reading, we show how the Christoffel symbols can be used to
 find differential equations that describe geodesics.\index{geodesic!differential equation for}\label{geodesic-diffeq}\index{geodesic equation}
-<% marg(30) %>
+<% marg(0) %>
 <%
   fig(
     'geodesic-parallel-transports-tangent',
