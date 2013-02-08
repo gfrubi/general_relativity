@@ -224,8 +224,8 @@ how we arrange these diagrams on the page. The notations $\bigoplus \longrightar
 and $\bigodot \longleftarrow \bigoplus$ mean exactly the same thing, and Penrose draws
 them vertically rather than horizontally. Although we won't develop the birdtracks system in detail,
 in its most elaborate form it
-can be used as a complete notational system, and expressing ideas
-like the inverse of a matrix and proving complicated mathematical theorems.
+can be used as a complete notational system, expressing ideas
+like the inverse of a matrix and proofs of theorems.
 
 Suppose that $\bigodot$ is a displacement in the affine plane, and we want to think of it as the
 thing being measured. Then we expect that the measurement process represented by $\bigoplus$
@@ -250,7 +250,7 @@ We join the two ``pipes,'' $\bigoplus\rightarrow\rightarrow\bigodot$ and simplif
 $\bigoplus\longrightarrow\bigodot$.
 
 In two dimensions, there are natural ways of visualizing these two vector spaces.
-We've already been describing $\bigodot\rightarrow$ as a displacement. Its vector space is the
+We've already been describing $\rightarrow\bigodot$ as a displacement. Its vector space is the
 space of such displacements.\footnote{In terms of the primitive notions used in the axiomatization
 in section \ref{sec:affine-geometry}, a displacement could be described as
 an equivalence class of segments such that
@@ -646,7 +646,7 @@ need some mathematical rule, some function, that accepts a vector as its input a
 output. We are led back to the notion, introduced in section \ref{sec:affine-vectors}, of
 the dual of a vector. But, as discussed on p.~\pageref{subsec:affine-vs-metrical}, the purely affine
 notion of vectors and their duals is not enough to define the length of a vector. To accomplish that,
-we need to introduce some further machinery called a metric.
+we need to introduce some further machinery called a \emph{metric}.\index{metric}\label{metric-introduced}
 
 The assumption that a metric exists is
 nontrivial. There is no metric in Galilean spacetime, for example, since in the limit $c\rightarrow\infty$
@@ -712,7 +712,8 @@ turns out to be convenient, however, and does not cause
 confusion in practice. Similarly, one often says things like ``the derivative of the function
 $x^2$,'' instead of the more cumbersome ``derivative of the function $f$ defined by $f(x)=x^2$.''
 
-The vectors drawn below the curve in figure \figref{dual} are called the contravariant vectors, notated $\der x^\mu$, and the ones
+The vectors drawn below the curve in figure \figref{dual} are called the contravariant vectors, notated $\der x^\mu$, and the 
+tick marks
 above it are the covariant vectors, 
 $\der x_\mu$.\index{covariant vector}\index{contravariant vector}\index{vectors and dual vectors}
 It's often not particularly important to keep track of
@@ -726,7 +727,7 @@ Given a $\der x^\mu$, how do we find its dual $\der x_\mu$, and vice versa? In o
 a real number $g$ as a correction factor. If one of the vectors is shorter than it should be in a certain region,
 the correction factor serves to compensate by making its dual proportionately longer. The two possible mappings
 (covariant to contravariant and contravariant to covariant) are accomplished with factors of $g$ and $1/g$.
-The number $g$ is called the \emph{metric},\index{metric}\label{metric-introduced}
+The number $g$ is the metric,
 and it encodes all the information about distances. For example, if $\phi$ represents longitude measured
 at the arctic circle, then the metric is the only source for the datum that a displacement $\der\phi$
 corresponds to 2540 km per radian.
@@ -988,6 +989,14 @@ The Lagrangian formalism just leads to the expected Newtonian expressions for th
 conjugate to $x$ and $y$, $p_x=\dot{x}$, $p_y=\dot{y}$. The force of constraint is $F_a=dp_a/dt$.
 Let $w^a$ be a vector parallel to the wall. Since we do happen to have a metric in this example,
 we can say that $F_aw^a=0$; most people would say that the force was perpendicular to the wall.
+<% marg(0) %>
+<%
+  fig(
+    'barbell',
+    %q{There is no natural metric on the space $(\theta,\phi)$.}
+  )
+%>
+<% end_marg %>
 
 Now consider the example shown in figure \figref{barbell}.
 The arm's weight is negligible compared to the unit mass of the gripped weight, and both the upper and
@@ -997,14 +1006,6 @@ $p_\theta=\dot{\theta}+\cos(\phi-\theta)\dot{\phi}$ and a similar expression for
 The force of constraint is $F_a=dp_a/dt$. The surface of constraint can be represented by a vector
 $w^a$, which is on a diagonal line in the $(\phi,\theta)$ plane. But since there is no metric, it
 doesn't make sense to say that $F_a$ is perpendicular to $w^a$.
-<% marg(43) %>
-<%
-  fig(
-    'barbell',
-    %q{There is no natural metric on the space $(\theta,\phi)$.}
-  )
-%>
-<% end_marg %>
 
 In both of these examples, there is a natural way to state the orientation of the force of constraint
 relative to the surface of constraint, and it doesn't require a metric. Let the force vector
@@ -1640,7 +1641,8 @@ and its upper-index version $F^a$.
 <% end_hw %>
 
 <% begin_hw('burke-three-d') %>
-Generalize example \ref{eg:burke-dual} on p.~\pageref{eg:burke-dual} to three dimensions.
+Generalize figure \subfigref{vector-measuring-covector}{2}
+on p.~\pageref{fig:vector-measuring-covector} to three dimensions.
 \hwsoln
 <% end_hw %>
 
@@ -1654,7 +1656,8 @@ set of three pencils ``cancels.'' If all pencils are treated equally (i.e., orde
 and if we respect the rotational invariance of Euclidean geometry, then you will be forced to reinvent
 vector addition and define cancellation of pencils $\vc{p}$, $\vc{q}$, and $\vc{r}$ as $\vc{p}+\vc{q}+\vc{r}=0$.
 Do something similar with ``pencil'' replaced by ``an oriented pairs of lines as in figure
-\subfigref{burke-dual}{4} on p.~\pageref{fig:burke-dual}.''
+\subfigref{vector-measuring-covector}{2}
+on p.~\pageref{fig:vector-measuring-covector}.
 <% end_hw %>
 
 <% begin_hw('contraction-of-metric') %>
