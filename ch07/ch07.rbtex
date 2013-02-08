@@ -132,18 +132,6 @@ which varies as $s^2$, and therefore becomes negligible in the limit $s\rightarr
 
 Self-check: Find another Killing vector of the Schwarzschild metric, and express it in the tangent-vector notation.
 
-Confusingly, it is customary to express contravariant and covariant vectors by summing over basis vectors
-like this:\label{abuse-of-notation}
-\begin{align*}
-  \vc{v} &= v^\mu \partial_\mu \\
-  \boldsymbol{\omega} &= \omega_\mu \der x^\mu \qquad .
-\end{align*}
-This is somewhat of an abuse of notation, driven by the desire to have up-down pairs of indices to sum
-according to the usual rules of the Einstein notation convention. But by that convention, a quantity like
-$\vc{v}$ or $\boldsymbol{\omega}$ with no indices is a scalar, and that's not the case here.
-The intention is that $v$ is to be a contravariant vector, with upper indices --- but it appears that we're
-writing it as a sum of covariant vectors $\partial_\mu$! This muddle is the result of trying to make the
-Einstein notation do too many things at once.
 
 It can be shown that an equivalent condition for a field to be a Killing vector is $\nabla_a \boldsymbol{\xi}_b+\nabla_b \boldsymbol{\xi}_a = 0$.
 This relation, called the Killing equation,\index{Killing equation}
@@ -158,8 +146,6 @@ The Euclidean plane has two translational Killing vectors $(1,0)$ and $(0,1)$, i
 These same vectors could be expressed as $(1,1)$ and $(1,-1)$ in coordinate system that was rescaled and
 rotated by 45 degrees.
 \end{eg}
-
-\vfill
 
 \begin{eg}{A cylinder}\label{eg:cylinder-killing}
 The local properties of a cylinder, such as intrinsic flatness, are the same as the local properties of
@@ -180,8 +166,6 @@ rather than $(x,y)$, giving $\partial_z$ and $\partial_\phi$.
 %>
 <% end_marg %>
 
-\vfill
-
 \begin{eg}{A sphere}\label{eg:sphere-killing}
 A sphere is like a plane or a cylinder in that it is a two-dimensional space in which no point has
 any properties that are intrinsically different than any other. We might expect, then, that it would
@@ -199,8 +183,6 @@ the vectors in the tangent plane at one point. If that were the case, then we co
 linearly independent Killing vectors in this two-dimensional space. When we say ``Killing vector'' we're really referring to the
 Killing vector \emph{field}, which is defined everywhere on the space.
 \end{eg}
-
-\pagebreak
 
 \begin{eg}{Proving nonexistence of Killing vectors}
 \egquestion Find all Killing vectors of these two metrics:
@@ -253,6 +235,37 @@ this metric has a removable degeneracy of the same type as the one described in 
 As discussed in that section, the signature is invariant only under \emph{nonsingular} transformations, but the
 transformation that converts these coordinates to Cartesian ones is singular.
 \end{eg}
+
+<% begin_sec("Inappropriate mixing of notational systems") %>
+Confusingly, it is customary to express vectors and dual vectors by summing over basis vectors
+like this:\label{abuse-of-notation}
+\begin{align*}
+  \vc{v} &= v^\mu \partial_\mu \\
+  \boldsymbol{\omega} &= \omega_\mu \der x^\mu \qquad .
+\end{align*}
+This is an abuse of notation, driven by the desire to have up-down pairs of indices to sum
+according to the usual rules of the Einstein notation convention. But by that convention, a quantity like
+$\vc{v}$ or $\boldsymbol{\omega}$ with no indices is a scalar, and that's not the case here. The
+products on the right are not tensor products, i.e., the indices aren't being contracted.
+
+This muddle is the result of trying to make the
+Einstein notation do too many things at once and of trying to preserve a clumsy and outdated system of notation and
+terminology originated by Sylvester in 1853. 
+In pure abstract index notation, there are not
+six flavors of objects as in the two equations above but only two: vectors like $v^a$ and dual vectors
+like $\omega_a$. The Sylvester notation is the prevalent one among
+mathematicians today, because their predecessors committed themselves to it a century before the
+development of alternatives like abstract index notation and birdtracks. The Sylvester system is inconsistent with
+the way physicists today think of vectors and dual vectors as being defined by their transformation
+properties, because Sylvester considers
+$\vc{v}$ and $\boldsymbol{\omega}$ to be invariant. 
+
+Mixing the two systems
+leads to the kinds of notational clashes described above. As a particularly absurd example, a physicist
+who is asked to suggest a notation for a vector will typically pick up a pen
+and write $v^\mu$. We are then led to say that a vector is written in a concrete basis as
+a linear combination of dual vectors $\partial_\mu$!
+<% end_sec %>
 
 <% begin_sec("Conservation laws") %>\label{sec:killing-conservation}\index{conservation laws!from Killing vectors}
 Whenever a spacetime has a Killing vector, geodesics have a constant value of $v^b \xi_b$, where $v^b$ is

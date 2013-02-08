@@ -212,42 +212,48 @@ frame in a particular neighborhood of spacetime (page \pageref{equivalence-local
 \item[] There is no way to associate a preferred tensor field with spacetime (page \pageref{equivalence-no-preferred-field}).
 \end{itemize}
 
-\emph{Covariant and contravariant vectors}\\\label{vec-covec-summary}
-\index{covariant vector!summarized}\index{vectors (covariant and contravariant)!summarized}
+\emph{Vectors}\\\label{vec-covec-summary}
+\index{covariant vector!summarized}\index{vectors and dual vectors!summarized}
 \index{contravariant vector!summarized}
+\index{vector!summarized}\index{vectors and dual vectors!summarized}
+\index{dual vector!summarized}
 
 Coordinates cannot in general be added on a manifold, so they don't form a vector space,
 but infinitesimal coordinate differences can and do. The vector space in which the
 coordinate differences exist is a different space at every point, referred to as the
 tangent space at that point (see p.~\pageref{tangent-space}).
 
-\emph{Contravariant vectors} are notated with upper indices, $x^a$, and are represented by column vectors
-or geometrically by arrows.
+\emph{Vectors} are written in abstract index notation with upper indices, $x^a$, and are
+represented by column vectors, arrows, or birdtracks with incoming arrows, $\rightarrow x$.
 
-\emph{Covariant vectors}, also known as covectors, dual vectors, or 1-forms,
-are notated with lower indices, $x_a$, and are represented by row vectors
-or geometrically by ordered pairs of parallel lines (example \ref{eg:burke-dual}, p.~\pageref{eg:burke-dual}).
+\emph{Dual vectors}, also known as covectors or 1-forms,
+are written in abstract index notation with lower indices, $x_a$, and are represented by row vectors,
+ordered pairs of parallel lines (see p.~\pageref{fig:vector-measuring-covector}), or
+birdtracks with outgoing arrows, $\leftarrow x$.
+
+In concrete-index notation,
+the $x^\mu$ are a list of numbers, referred to as the vector's
+contravariant components, while $x_\mu$ would be the covariant components of a dual vector.
 
 Fundamentally the distinction between the two types of vectors is defined by the tensor
 transformation laws, p.~\pageref{sec:tensor-transformation-law}. For example, an odometer reading is
 contravariant because converting it from kilometers to meters increases it. A temperature
 gradient is covariant because converting it from degrees/km to degrees/m decreases it.
 
-In the absence of a metric, every physical quantity has a definite covariant or contravariant
+In the absence of a metric, every physical quantity has a definite vector or dual vector
 character. Infinitesimal coordinate differences $\der x^a$ and velocities $\der x^a/\der\tau$
-are contravariant, while momentum $p_a$ and force $F_a$ are covariant (example
-\ref{eg:momentum-is-lower-index}, p.~\pageref{eg:momentum-is-lower-index}).
-Many ordinary and interesting real-world systems lack a metric, e.g.,
-Galilean spacetime, or a mechanical system described with generalized coordinates
-(example \ref{eg:systems-without-a-metric}, p.~\pageref{eg:systems-without-a-metric}).
-
+are vectors, while momentum $p_a$ and force $F_a$ are dual (see
+p.~\pageref{eg:momentum-is-lower-index}).
+Many ordinary and interesting real-world systems lack a metric
+(see p.~\pageref{eg:systems-without-a-metric}).
 When a metric is present, we can raise and lower indices at will.
 There is a perfect duality symmetry between the two types of vectors, but
-this symmetry is broken by the convention that measurements with rulers have upper indices,
-so, for example, a ruler measurement used as input to a calculation must be interpreted as
-a $\Delta x^a$, not a $\Delta x_a$.
+this symmetry is broken by the convention that a measurement with a ruler is a
+$\Delta x^a$, not a $\Delta x_a$.
 
 For consistency with the transformation laws,
-differentiation with respect to a quantity flips the index, e.g., $\partial_{a}=\partial/\partial x^a$.
-This leads to a universal abuse of notation described on p.~\pageref{abuse-of-notation}.
+differentiation with respect to a quantity flips the index, e.g., $\partial_{\mu}=\partial/\partial x^\mu$.
+The operators $\partial_{\mu}$ are often used as basis vectors for the tangent plane. In general,
+expressing vectors in a basis using the Einstein notation convention results in
+an ugly notational clash described on p.~\pageref{abuse-of-notation}.
 \end{document}

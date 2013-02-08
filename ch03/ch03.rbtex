@@ -714,7 +714,7 @@ $x^2$,'' instead of the more cumbersome ``derivative of the function $f$ defined
 
 The vectors drawn below the curve in figure \figref{dual} are called the contravariant vectors, notated $\der x^\mu$, and the ones
 above it are the covariant vectors, 
-$\der x_\mu$.\index{covariant vector}\index{contravariant vector}\index{vectors (covariant and contravariant)}
+$\der x_\mu$.\index{covariant vector}\index{contravariant vector}\index{vectors and dual vectors}
 It's often not particularly important to keep track of
 which is which, since the relationship between them is symmetric, like the relationship between row
 and column vectors. Each is the dual of the other. The arc length is given by $\int \der s =\int \sqrt{\der x^\mu \der x_\mu}$,
