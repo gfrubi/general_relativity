@@ -487,28 +487,11 @@ me permission to use it, but that doesn't mean you have permission to use it.}
         {}{}
         {}
 %========================= graphicx package=========================
-\newif\ifpdf
-\ifx\pdfoutput\undefined
-\pdffalse % we are not running PDFLaTeX
-\else
-\pdfoutput=1 % we are running PDFLaTeX
-\pdftrue
-\fi
-
-\ifpdf
-\usepackage[pdftex]{graphicx}
-\else
 \usepackage{graphicx}
-\fi
 %========================= AtBeginDocument stuff=========================
 \AtBeginDocument{
   \newboolean{hwhavetrailing}
-  %------------------------------- pdf stuff
-	\ifpdf
-	\DeclareGraphicsExtensions{.pdf,.jpg,.png}
-	\else
-	\DeclareGraphicsExtensions{.eps,.jpg,.png}
-	\fi
+  \DeclareGraphicsExtensions{.pdf,.jpg,.png}
   \newcommand{\chapdir}{glub}
   %------------------------------- equation spacing 
   \myeqnspacing
