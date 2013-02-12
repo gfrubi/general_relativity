@@ -14,7 +14,7 @@
 \newcounter{hwctr}[chapter]
 %====================== packages =====================================================
 \RequirePackage[leqno]{amsmath}
-\RequirePackage{url,tensor,learn-cmd-syntax,tikz,etoolbox,birdtracks}
+\RequirePackage{url,tensor,learn-cmd-syntax,tikz,birdtracks}
 \StartSaveCommands % for learn-cmd-syntax
 %====================== pull in sub-packages =====================================================
 \RequirePackage{lmlanguage,lmlayout,lmcommon,lmfigs,lmenvironments}

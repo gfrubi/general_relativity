@@ -243,7 +243,7 @@ tell vectors apart from scalars, we can employ arrows in the Penrose graphical n
 the vector, so that
 instead of writing the two vectors as $c$ and $e$, we can notate them
 as __birddualvec(c) and __birdvec(e). Performing a measurement is like plumbing.
-We join the two ``pipes,'' __birddualvec(c)\hspace{-1em}__birdvec(e) and simplify to
+We join the two ``pipes,'' __birddualvec(c)__birdvec(e) and simplify to
 __birdscalarproduct(c,e).
 
 In two dimensions, there are natural ways of visualizing these two vector spaces.

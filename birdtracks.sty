@@ -1,64 +1,33 @@
 % see http://tex.stackexchange.com/questions/97507/typesetting-inline-penrose-cvitanovic-tensor-diagrams-birdtracks/97604
-% Using the tikz versions looks slicker, but makes it harder to produce html.
+% If we're producing html output, these aren't invoked; see genrel.m4, which defines macros
+% like __birdvec(x).
 
-\pgfdeclarelayer{nodelayer}
-\pgfdeclarelayer{edgelayer}
-\pgfsetlayers{edgelayer,nodelayer,main}
 \tikzstyle{arrow}=[draw=black,arrows=-latex]
-
-\newtoggle{lotsatikz} % from etoolbox package
-\toggletrue{lotsatikz}
-
-\iftoggle{lotsatikz}{
+\tikzstyle{revarrow}=[draw=black,arrows=latex-]
 
 \newcommand{\birdvec}[1]{%
-\begin{tikzpicture}[baseline=(n0.base),thick]
-  \begin{pgfonlayer}{nodelayer}
-    \node[inner xsep=0em] (n0) at (0, 0) {$#1$};
-    \node[inner xsep=0em] (n1) at ([xshift=-0.9em]n0.west) {};
-  \end{pgfonlayer}
-  \begin{pgfonlayer}{edgelayer}
-    \draw [style=arrow] (n1) to (n0);
-  \end{pgfonlayer}
+\begin{tikzpicture}[baseline=(n0.base)]
+  \node[inner xsep=0em] (n0) at (0, 0) {$#1$};
+  \draw [style=revarrow] (n0.west) to ++(-0.8em,0);
 \end{tikzpicture}
 }
 \newcommand{\birddualvec}[1]{%
-\begin{tikzpicture}[baseline=(n0.base),thick]
-  \begin{pgfonlayer}{nodelayer}
-    \node[inner xsep=0em] (n0) at (0, 0) {$#1$};
-    \node[inner xsep=0em] (n1) at +([xshift=0.9em]n0.east) {};
-  \end{pgfonlayer}
-  \begin{pgfonlayer}{edgelayer}
-    \draw [style=arrow] (n0) to (n1);
-  \end{pgfonlayer}
+\begin{tikzpicture}[baseline=(n0.base)]
+  \node[inner xsep=0em] (n0) at (0, 0) {$#1$};
+  \draw [style=arrow] (n0.east) to ++(0.8em,0);
 \end{tikzpicture}
 }
 \newcommand{\birdscalarproduct}[2]{
-\begin{tikzpicture}[baseline=(n0.base),thick]
-  \begin{pgfonlayer}{nodelayer}
+\begin{tikzpicture}[baseline=(n0.base)]
     \node[inner xsep=0em] (n0) at (0, 0) {$#1$};
-    \node[inner xsep=0em] (n1) at +([xshift=1.2em]n0.east) {$#2$};
-  \end{pgfonlayer}
-  \begin{pgfonlayer}{edgelayer}
+    \node[inner xsep=0em] (n1) at +([xshift=1.0em]n0.east) {$#2$};
     \draw [style=arrow] (n0) to (n1);
-  \end{pgfonlayer}
 \end{tikzpicture}
 }
 \newcommand{\birdflipscalarproduct}[2]{
-\begin{tikzpicture}[baseline=(n0.base),thick]
-  \begin{pgfonlayer}{nodelayer}
+\begin{tikzpicture}[baseline=(n0.base)]
     \node[inner xsep=0em] (n0) at (0, 0) {$#2$};
-    \node[inner xsep=0em] (n1) at +([xshift=1.2em]n0.east) {$#1$};
-  \end{pgfonlayer}
-  \begin{pgfonlayer}{edgelayer}
+    \node[inner xsep=0em] (n1) at +([xshift=1.0em]n0.east) {$#1$};
     \draw [style=arrow] (n1) to (n0);
-  \end{pgfonlayer}
 \end{tikzpicture}
-}
-
-}{%
-\newcommand{\birdvec}[1]{\ensuremath{\rightarrow #1}}
-\newcommand{\birddualvec}[1]{\ensuremath{#1 \rightarrow}}
-\newcommand{\birdscalarproduct}[2]{\ensuremath{#1 \rightarrow #2}}
-\newcommand{\birdflipscalarproduct}[2]{\ensuremath{#2 \leftarrow #1}}
 }
