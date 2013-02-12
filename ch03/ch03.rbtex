@@ -212,47 +212,47 @@ notation due to Penrose. For a more complete exposition, see the Wikipedia artic
 ``Penrose graphical notation'' and Cvitanovi\'{c}'s 
 online book at \url{birdtracks.eu}.}\index{birdtracks}\index{Cvitanovi\'{c}, Predrag}
 \index{Penrose!graphical notation for tensors}\index{tensor!Penrose graphical notation}
-\index{vector!Penrose graphical notation}\newcommand{\cuckoovec}{c}\newcommand{\earthvec}{e}
+\index{vector!Penrose graphical notation}
 \begin{equation*}
-  \birdscalarproduct{\cuckoovec}{\earthvec}
+  __birdscalarproduct(c,e)
 \end{equation*}
 Although the measurement relationship is nearly symmetric, the arrow has a direction, because,
 for example, the measurement of the earth's rotational period in terms of the clock's frequency is
 $(24\ \zu{hr})(1\ \zu{hr}^{-1})=24$, but the clock's period in terms of the earth's frequency
 is $1/24$. We say that the relationship is not symmetric but ``dual.'' By the way, it doesn't matter
-how we arrange these diagrams on the page. The notations \birdscalarproduct{\cuckoovec}{\earthvec}
-and \birdflipscalarproduct{\cuckoovec}{\earthvec} mean exactly the same thing, and expressions like this can even be drawn
-vertically.
+how we arrange these diagrams on the page. The notations __birdscalarproduct(c,e)
+and __birdflipscalarproduct(c,e) mean exactly the same thing, and expressions like this can even be drawn
+vertically. __web
 
-Suppose that $\earthvec$ is a displacement in the affine plane, and we want to think of it as the
-thing being measured. Then we expect that the measurement process represented by $\cuckoovec$
-produces a real-valued result and is a linear function of $\earthvec$. Since the relationship
-between $\cuckoovec$ and $\earthvec$ is dual, we expect that $\cuckoovec$ also belongs to some
+Suppose that $e$ is a displacement in the affine plane, and we want to think of it as the
+thing being measured. Then we expect that the measurement process represented by $c$
+produces a real-valued result and is a linear function of $e$. Since the relationship
+between $c$ and $e$ is dual, we expect that $c$ also belongs to some
 vector space. For example, vector spaces allow multiplication by a scalar:
 we could double the frequency of the cuckoo clock by making the bird
-come out on the half hour as well as on the hour, forming $2\cuckoovec$. Measurement should
+come out on the half hour as well as on the hour, forming $2c$. Measurement should
 be a linear function of both vectors; we say it is ``bilinear.'' 
 <% end_sec %>
 
 <% begin_sec("Duality") %>\index{dual vector}\index{vector!dual}
 The two vectors
-$\cuckoovec$ and $\earthvec$ inhabit two different vector spaces, and they have different units:
+$c$ and $e$ inhabit two different vector spaces, and they have different units:
 $\zu{hr}^{-1}$ and hr. The ``flavor'' of the vector is represented by whether the arrow goes into
 it or comes out. Just as we used notation like $\overrightarrow{v}$ in freshman physics to
 tell vectors apart from scalars, we can employ arrows in the Penrose graphical notation as part of the notation for
 the vector, so that
-instead of writing the two vectors as $\cuckoovec$ and $\earthvec$, we can notate them
-as \birddualvec{\cuckoovec} and \birdvec{\earthvec}. Performing a measurement is like plumbing.
-We join the two ``pipes,'' \birddualvec{\cuckoovec}\hspace{-1em}\birdvec{\earthvec} and simplify to
-\birdscalarproduct{\cuckoovec}{\earthvec}.
+instead of writing the two vectors as $c$ and $e$, we can notate them
+as __birddualvec(c) and __birdvec(e). Performing a measurement is like plumbing.
+We join the two ``pipes,'' __birddualvec(c)\hspace{-1em}__birdvec(e) and simplify to
+__birdscalarproduct(c,e).
 
 In two dimensions, there are natural ways of visualizing these two vector spaces.
-We've already been describing \birdvec{\earthvec} as a displacement. Its vector space is the
+We've already been describing __birdvec(e) as a displacement. Its vector space is the
 space of such displacements.\footnote{In terms of the primitive notions used in the axiomatization
 in section \ref{sec:affine-geometry}, a displacement could be described as
 an equivalence class of segments such that
 for any two segments in the class AB and CD, AB and CD form a parallelogram.}
-A vector in the dual space such as \birddualvec{\cuckoovec}
+A vector in the dual space such as __birddualvec(c)
 can be visualized as a set of parallel, evenly spaced lines
 on a topographic map, \subfigref{vector-measuring-covector}{2}, with an arrowhead to show which way is ``downhill.''
 The act of measurement consists of counting how many of these
@@ -273,7 +273,7 @@ The example of the cuckoo clock may be a little misleading.
 
 An actual clock can, if we wish, be carried along a noninertial world-line over unlimited
 distances. Affine measurement, however, does not provide any notion of comparing lengths measured
-along non-parallel lines. We could think of \birddualvec{\cuckoovec} as being the ghost of
+along non-parallel lines. We could think of __birddualvec(c) as being the ghost of
 a cuckoo clock. Because it's a ghost, we can't grab it and take it places. It simply drifts
 forever through space along a timelike inertial world-line, i.e., a geodesic.
 
@@ -288,9 +288,9 @@ energy if it moves at the speed of light.
 There is no angular measure in affine geometry, and in particular there is no notion of perpendicularity,
 only parallelism. In relativity, simultaneity is expressed as perpendicularity of a displacement vector
 to an observer's displacement vector. A measurement process like
-\birdscalarproduct{\cuckoovec}{\earthvec} is analogous to a dot product, and 
+__birdscalarproduct(c,e) is analogous to a dot product, and 
 affine geometry does allow us to make statements like
-$\birdscalarproduct{\cuckoovec}{\earthvec}=0$, but \birddualvec{\cuckoovec} and \birdvec{\earthvec} can't both
+$__birdscalarproduct(c,e)=0$, but __birddualvec(c) and __birdvec(e) can't both
 be displacement vectors. If one is a displacement, then the other belongs to the vector space that is
 dual to the space of displacements. Since the notion of a frame of reference depends on establishing
 what the observer considers simultaneous, affine measurement isn't powerful enough to describe frames
@@ -666,14 +666,14 @@ The arrows and tick marks are of course the one-dimensional incarnations of the
 geometrical representations of vectors and their duals in \figref{vector-measuring-covector}
 on p.~\pageref{fig:vector-measuring-covector}. Fixing a metric allows us to define the proper
 scaling of the tick marks relative to the arrows at a given point, i.e., in the birdtracks
-notation it gives us a natural way of taking a displacement vector such as \birdvec{s},
+notation it gives us a natural way of taking a displacement vector such as __birdvec(s),
 with the arrow pointing into the symbol, and making a corresponding dual vector
-\birddualvec{s}, with the arrow coming out. This is a little like cloning a person but making
-the clone be of the opposite sex. Hooking them up like \birdscalarproduct{s}{s} then tells us
-the squared magnitude of the vector. For example, if \birdvec{\der x} is an infinitesimal timelike displacement,
-then \birdscalarproduct{\der x}{\der x} is the squared time interval $\der x^2$ measured by a clock traveling
+__birddualvec(s), with the arrow coming out. This is a little like cloning a person but making
+the clone be of the opposite sex. Hooking them up like __birdscalarproduct(s,s) then tells us
+the squared magnitude of the vector. For example, if __birdvec(\der x) is an infinitesimal timelike displacement,
+then __birdscalarproduct(\der x,\der x) is the squared time interval $\der x^2$ measured by a clock traveling
 along that displacement in spacetime. (Note that in the notation $\der x^2$, it's clear that $\der x$ is a
-scalar, because unlike \birdvec{\der x} and \birddualvec{\der x} it doesn't have any arrow coming in or
+scalar, because unlike __birdvec(\der x) and __birddualvec(\der x) it doesn't have any arrow coming in or
 out of it.)
 Figure \figref{dual} shows the resulting picture.
 
@@ -681,7 +681,7 @@ Figure \figref{dual} shows the resulting picture.
   fig(
     'dual',
     %q{%
-      The vectors \birdvec{\der x} and \birddualvec{\der x} are duals of each other. 
+      The vectors __birdvec(\der x) and __birddualvec(\der x) are duals of each other. 
     },
     {
       'width'=>'wide',
@@ -700,10 +700,10 @@ it should be clear that this will provide an appropriate foundation for the gene
 coordinate.
 Anticipating the generalization to four-dimensional
 spacetime, we'll start referring to 
-the displacement \birdvec{\der x} as $\der x^0$, although in our
+the displacement __birdvec(\der x) as $\der x^0$, although in our
 present one-dimensional example there is no $\der x^1$, $\der x^2$, or $\der x^3$. The reason for the
 use of the odd-looking superscript is to distinguish this number from
-the (single) component of \birddualvec{\der x}, which we write as $\der x_0$, which is a different
+the (single) component of __birddualvec(\der x), which we write as $\der x_0$, which is a different
 number and may have different units. To keep track of which index-based notation corresponds to which birdtracks
 notation, think of water flowing downhill. A symbol like $\der x_\mu$ has its subscript
 hanging down below it, so if $\der x$ was a basin and $_\mu$ a hose, water would flow out of the basin.

@@ -83,11 +83,15 @@ foreach (<ch*/*.rbtex>) {
   my $o = $file;
   $o =~ s/\.rbtex//;
   my $outfile_base = $o . "temp";
+  my $postm4 = "$outfile_base.postm4";
   my $d = "ch$ch";
-  my $cmd = "BOOK_OUTPUT_FORMAT='print' DIR='$d' $eruby $file >$outfile_base.tex"; # is always executed by sh, not bash or whatever
+  my $web_flag = ($web==1 ? 1 : 0);
+  my $cmd = "m4 -P -D __web='$web_flag' genrel.m4 $file >$postm4";
+  do_system($cmd,$file,'m4');
+  my $cmd = "BOOK_OUTPUT_FORMAT='print' DIR='$d' $eruby $postm4 >$outfile_base.tex"; # is always executed by sh, not bash or whatever
   do_system($cmd,$file,'eruby (print)');
   if ($web==1) {
-    my $cmd = "BOOK_OUTPUT_FORMAT='web' DIR='$d' $eruby $file >$outfile_base.temp"; # is always executed by sh, not bash or whatever
+    my $cmd = "BOOK_OUTPUT_FORMAT='web' DIR='$d' $eruby $postm4 >$outfile_base.temp"; # is always executed by sh, not bash or whatever
     do_system($cmd,$file,'eruby (web)');
     my $html;
     if ($wiki) {
