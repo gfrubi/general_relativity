@@ -292,7 +292,10 @@ plane tangent to a certain point, or, equivalently, in an infinitesimally small 
 <% begin_sec("Affine measurement of vectors") %>
 And parallelism provides affine geometry. What does a vector mean in affine geometry, and what is the
 associated system of measurement?
-In general, measurement means comparing one thing to another. For example, we could use the hourly
+In general, measurement means comparing one thing to another. 
+Before even getting into the full system of affine geometry, let's consider the one-dimensional
+example of a line of time.
+We could use the hourly
 emergence of a mechanical bird from a pendulum-driven cuckoo
 clock to measure the rate at which the earth spins, but we could equally well take our planet's
 rotation as the standard and use it to measure the frequency with which the bird pops out of the door.
@@ -332,10 +335,11 @@ be a linear function of both vectors; we say it is ``bilinear.''
 
 <% begin_sec("Duality") %>\index{dual vector}\index{vector!dual}
 The two vectors
-$c$ and $e$ inhabit two different vector spaces, and they have different units:
+$c$ and $e$ inhabit two different one-dimensional vector spaces, and they have different units:
 $\zu{hr}^{-1}$ and hr. The ``flavor'' of the vector is represented by whether the arrow goes into
 it or comes out. Just as we used notation like $\overrightarrow{v}$ in freshman physics to
-tell vectors apart from scalars, we can employ arrows in the Penrose graphical notation as part of the notation for
+tell vectors apart from scalars, we can employ arrows in the birdtracks
+notation as part of the notation for
 the vector, so that
 instead of writing the two vectors as $c$ and $e$, we can notate them
 as __birddualvec(c) and __birdvec(e). Performing a measurement is like plumbing.
@@ -362,39 +366,146 @@ lines are crossed by a certain vector, \subfigref{vector-measuring-covector}{3}.
   )
 %>
 <% end_marg %>
-<% end_sec %>
 
-<% begin_sec("Affine versus metrical measurement",nil,'affine-vs-metrical') %>
-The example of the cuckoo clock may be a little misleading.
+A confusing and nonstandardized jungle of notation and terminology has grown up around these concepts. For now,
+let's refer to a vector such as __birdvec(e), with the arrow coming in, simply as a ``vector,''
+and the type like __birddualvec(c) as a ``dual vector.''
+In the one-dimensional example of the earth and the cuckoo clock, the roles played by the two
+vectors were completely equivalent, and it didn't matter which one we expressed as a vector
+and which as a dual vector. Example \ref{eg:force-is-lower-index} shows that it is sometimes
+more natural to take one quantity as a vector and another as a dual vector. Example
+\ref{eg:systems-without-a-metric} shows that we sometimes have no choice at all as to which
+is which.
 
-An actual clock can, if we wish, be carried along a noninertial world-line over unlimited
-distances. Affine measurement, however, does not provide any notion of comparing lengths measured
-along non-parallel lines. We could think of __birddualvec(c) as being the ghost of
-a cuckoo clock. Because it's a ghost, we can't grab it and take it places. It simply drifts
-forever through space along a timelike inertial world-line, i.e., a geodesic.
+\begin{eg}{Force is a dual vector}\label{eg:force-is-lower-index}
+For example,
+the dot product $\der W=\vc{F}\cdot\der\vc{x}$ for computing mechanical work becomes,
+in birdtracks notation,
+\begin{equation*}
+  \der W = __birdscalarproduct(F,\der x) \qquad .
+\end{equation*}
+This shows that force is more naturally considered to be a dual vector rather than a vector.
+The symmetry between vectors and dual vectors is broken by considering displacements like
+__birdvec(\der x) to be vectors, and this asymmetry then spreads to other quantities such as force.
 
-There is also a sense in which a clock or ruler is \emph{less} powerful than the affine notion
-of measurement. For example, we can never use a clock to measure the length of a lightlike vector;
-in the limit as the clock is accelerated to near light speed, time dilation causes it to stop ticking
-at all, and the result of the measurement approaches zero, which is not useful. But it's
-perfectly all right to have a ghost cuckoo clock moving at or above the speed of light. It has no
-dynamics and doesn't interact with its environment, so, for example, it doesn't have infinite kinetic
-energy if it moves at the speed of light.
+The same result can be obtained from Newton's second law; see example \ref{eg:momentum-is-lower-index}
+on p.~\pageref{eg:momentum-is-lower-index}.
+\end{eg}
 
-There is no angular measure in affine geometry, and in particular there is no notion of perpendicularity,
-only parallelism. In relativity, simultaneity is expressed as perpendicularity of a displacement vector
-to an observer's displacement vector. A measurement process like
-__birdscalarproduct(c,e) is analogous to a dot product, and 
-affine geometry does allow us to make statements like
-$__birdscalarproduct(c,e)=0$, but __birddualvec(c) and __birdvec(e) can't both
-be displacement vectors. If one is a displacement, then the other belongs to the vector space that is
-dual to the space of displacements. Since the notion of a frame of reference depends on establishing
-what the observer considers simultaneous, affine measurement isn't powerful enough to describe frames
-of reference.
+\begin{eg}{Systems without a metric}\label{eg:systems-without-a-metric}
+The freshman-mechanics way of thinking about vectors and scalar products contains the hidden assumption
+that we have, besides affine measurement, an additional piece of measurement apparatus called the metric (section
+\ref{sec:metric}, p.~\pageref{sec:metric}). Without yet having to formally define what we mean by
+a metric, we can say roughly that it supplies the conveniences that we're used to having in the
+Euclidean plane, but that are not present in affine geometry. In particular, it allows us to define
+the notion that one vector is perpendicular to another vector, or that one dual vector is perpendicular
+to another dual vector.
 
-Vectors do not have their own lengths or magnitudes unless we introduce more metrical apparatus. We will do this
-in section \ref{sec:metric}.
-<% end_sec %>
+Let's start with an example where the hidden assumption is valid, and we \emph{do} have a metric. 
+Let a billiard ball of unit mass be constrained by a diagonal wall to have $C\le 0$, where
+$C=y-x$. 
+The Lagrangian formalism just leads to the expected Newtonian expressions for the momenta
+conjugate to $x$ and $y$, $p_x=\dot{x}$, $p_y=\dot{y}$, and these
+form a dual vector $__birddualvec(p)$.
+The force of constraint is $__birddualvec(F)=__birddualvec(\der p)/dt$.
+Let $__birddualvec(w)=__birddualvec((\operatorname{grad}\: C))$
+be the gradient of the constraint function. 
+The vectors __birddualvec(F) and __birddualvec(w) both belong to the space of dual vectors, and they
+are parallel to each other.
+Since we do happen to have a metric in this example, it is also possible to say, as most people
+would, that the force is perpendicular to the wall.
+
+Now consider the example shown in figure \figref{barbell}.
+The arm's weight is negligible compared to the unit mass of the gripped weight, and both the upper and
+lower arm have unit length. Elbows don't bend backward, so we have a constraint
+$C \le 0$, where $C=\theta-\phi$, and as before we can define
+define a dual vector $__birddualvec(w)=__birddualvec((\operatorname{grad}\: C))$ that is parallel to the line of constraint
+in the $(\theta,\phi)$ plane.
+The conjugate momenta (which are actually angular momenta) turn out to be
+$p_\theta=\dot{\theta}+\cos(\phi-\theta)\dot{\phi}$ and a similar expression for $p_\phi$.
+As in the example of the billiard ball,
+The force of constraint is parallel to __birddualvec(w).
+There is no metric that naturally applies to the $(\theta,\phi)$ plane, so we have no
+notion of perpendicularity, and it
+doesn't make sense to say that __birddualvec(F) is perpendicular to the line of constraint. 
+<% marg(65) %>
+<%
+  fig(
+    'barbell',
+    %q{There is no natural metric on the space $(\theta,\phi)$.}
+  )
+%>
+<% end_marg %>
+
+Finally we remark that since four-dimensional Galilean spacetime
+lacks a metric (see p.~\pageref{no-galilean-metric}),
+the distinction between vectors and dual vectors in Galilean relativity
+is a real and physically important one. The only reason people were historically able
+to ignore this distinction was that Galilean spacetime splits into independent time and
+spatial parts, with the spatial part having a metric.
+\end{eg}
+
+\begin{eg}{No simultaneity without a metric}
+We'll see in section \ref{sec:lorentz-geometry}
+that one way of defining the distinction between Galilean and Lorentz geometry is
+that in Lorentzian spacetime, simultaneity is observer-dependent.
+Without a metric, there can be no notion of simultaneity at all, not even a frame-dependent one. In figure
+\figref{no-affine-simultaneity}, the fact that the observer considers events
+P and Q to be simultaneous is represented by the fact that the observer's
+displacement vector __birdvec(o) is perpendicular to the displacement __birdvec(s)
+from P to Q. In affine geometry, we can't express perpendicularity.
+\end{eg}
+<% marg(50) %>
+<%
+  fig(
+    'no-affine-simultaneity',
+    %q{The free-falling observer considers P and Q to be simultaneous.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Waves}\label{eg:affine-waves}
+Depictions of dual vectors as in figure \subfigref{vector-measuring-covector}{2} on
+p.~\pageref{fig:vector-measuring-covector} evoke plane waves. This makes sense, because
+the phase $\theta$ of a wave is a scalar, and the gradient of a scalar is a dual vector.
+The dual vector $__birddualvec(k)=__birddualvec((\operatorname{grad}\theta))=(\omega,k_x,\ldots)$ is 
+called the frequency vector.\index{frequency vector}
+If __birdvec(o) represents the displacement of an observer from one event in spacetime
+to another, then __birdscalarproduct(k,o) is the number of radians of the wave's phase that wash
+over the observer's position. The frequency vector is discussed further in
+section \ref{sec:doppler} on p.~\pageref{sec:doppler}.
+
+There is a dispersion relation between a wave's frequency and wavenumber.
+For example, surface waves in deep water obey the constraint $C=0$, where
+$C=\omega^4-\alpha^2 k^2$ and $\alpha$ is a constant with units of acceleration, relating
+to the acceleration of gravity. (Since the water is infinitely deep, there is no other scale that
+could enter into the constraint.)
+
+When a wave is modulated, it can transport energy and momentum and transmit information,
+i.e., act as an agent of cause and effect between events. How fast does it go?
+If a certain bump on the envelope with which the
+wave is modulated visits spacetime events P and Q, then whatever frequency and wavelength
+the wave has near the bump are observed to be the same at P and Q. In general,
+$k$ and $\omega$ are constant along the spacetime displacement of any point on the envelope,
+so the spacetime displacement $__birdvec(s)$ from P to Q must satisfy
+the condition $__birdscalarproduct((\operatorname{grad}C),s)=0$. The set of solutions to this
+equation is the world-line of the bump, and the inverse slope of this world-line is called the
+\emph{group velocity}. In our example of water waves, the group velocity is $\alpha/2\omega$.
+
+The quantity $\omega/k$ is referred to as the \emph{phase velocity}. In our example of
+the water waves, the phase velocity is $\omega/k=\alpha/\omega$, which is twice the
+group velocity. The phase velocity lacks
+physical interest, because it is not the velocity at which any ``stuff'' moves. The birdtracks
+notation expresses this fact by refusing to let us use information about the phase $\theta$
+to decide whether events P and Q could have been linked by the wave's motion. 
+The only quantity we can extract from the phase information is the frequency vector __birddualvec(k),
+and one can say loosely that this is the phase velocity vector. But it's not really a vector at all,
+it's a dual vector. The displacement __birdvec(s) from P to Q is a vector, not a dual vector.
+Since __birddualvec(k) and __birdvec(s) belong to different vector spaces, we can't say whether they
+are parallel.\index{group velocity}\index{phase velocity}
+\end{eg}
+
+<% end_sec %> % Duality
 
 <% end_sec %> % Vectors
 
@@ -1324,15 +1435,6 @@ Self-check: Apply similar reasoning to a Galilean boost.
 
 To see how this mathematical fact would play out as a physical effect, we need to consider how to make a physical manifestation of
 the concept of a direction in space.
-<% marg(0) %>
-<%
-  fig(
-    'photon-in-cavity-and-gyroscope',
-    %q{Inertial devices for maintaining a direction in space: 1. A ring laser. 2. The photon in a perfectly reflective spherical cavity.
-          3. A gyroscope.}
-  )
-%>
-<% end_marg %>
 
 \label{sagnac}
 In two space dimensions, we can construct a ring laser,\index{ring laser} \subfigref{photon-in-cavity-and-gyroscope}{1},
@@ -1354,6 +1456,14 @@ on page \pageref{sec:hafele-keating} were sensitive to Sagnac effects, and it wa
 to maintain their orientations while they were strapped into seats on a passenger jet, so
 this orientational effect had to be subtracted out of the data at the end of the experiment.
 <% marg(100) %>
+<%
+  fig(
+    'photon-in-cavity-and-gyroscope',
+    %q{Inertial devices for maintaining a direction in space: 1. A ring laser. 2. The photon in a perfectly reflective spherical cavity.
+          3. A gyroscope.}
+  )
+%>
+\spacebetweenfigs
 <%
   fig(
     'ring-laser-gyro',

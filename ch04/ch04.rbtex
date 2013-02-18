@@ -351,8 +351,10 @@ size of the universe for the three different regimes. Some of the simpler cases 
 
 <% end_sec %> % momentum 4-vector
 
-<% begin_sec("The frequency four-vector and the relativistic Doppler shift") %>\label{sec:doppler}\index{frequency four-vector}\index{Doppler shift}
-Frequency is to time as the wavenumber\index{wavenumber} $k=1/\lambda$ is to space, so when treating waves relativistically it is
+<% begin_sec("The frequency vector and the relativistic Doppler shift") %>\label{sec:doppler}\index{frequency vector}\index{Doppler shift}
+The frequency vector was introduced in example \ref{eg:affine-waves} on p.~\pageref{eg:affine-waves}.
+In the spirit of index-gymnastics notation,
+frequency is to time as the wavenumber\index{wavenumber} $k=1/\lambda$ is to space, so when treating waves relativistically it is
 natural to conjecture that there is a four-frequency $f_a$ made by assembling $(f,\vc{k})$, which behaves as a Lorentz vector. This is correct, since
 we already know that $\partial_a$ transforms as a covariant vector, and for a scalar wave of the form
 $A=A_\zu{o}\exp\left[2\pi i f_ax^a\right]$ the partial derivative operator is identical to multiplication by $2\pi f_a$.

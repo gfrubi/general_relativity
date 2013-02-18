@@ -517,8 +517,8 @@ Now suppose we want to integrate the arc length of a segment of this curve. The 
 infinitesimal. In the integrated length, each little vector should contribute some amount, which is a scalar.
 This scalar is not simply the magnitude of the vector, $\der s \ne \sqrt{\der\vc{x}\cdot\der\vc{x}}$, since the vectors are the wrong length. We therefore
 need some mathematical rule, some function, that accepts a vector as its input and gives a scalar as its
-output. We are led back to the notion, introduced in section \ref{sec:affine-vectors}, of
-the dual of a vector. But, as discussed on p.~\pageref{subsec:affine-vs-metrical}, the purely affine
+output. We are led back to the notion, introduced in section \ref{subsec:affine-vectors}, of
+the dual of a vector. But the purely affine
 notion of vectors and their duals is not enough to define the length of a vector. To accomplish that,
 we need to introduce some further machinery called a \emph{metric}.\index{metric}\label{metric-introduced}
 
@@ -580,7 +580,7 @@ spacetime, we'll start referring to
 the displacement __birdvec(\der x) as $\der x^0$, although in our
 present one-dimensional example there is no $\der x^1$, $\der x^2$, or $\der x^3$. The reason for the
 use of the odd-looking superscript is to distinguish this number from
-the (single) component of __birddualvec(\der x), which we write as $\der x_0$, which is a different
+the (single) component of __birddualvec(\der x), which we write as $\der x_0$ and which is a different
 number and may have different units. To keep track of which index-based notation corresponds to which birdtracks
 notation, think of water flowing downhill. A symbol like $\der x_\mu$ has its subscript
 hanging down below it, so if $\der x$ was a basin and $_\mu$ a hose, water would flow out of the basin.
@@ -594,12 +594,10 @@ turns out to be convenient, however, and does not cause
 confusion in practice. Similarly, one often says things like ``the derivative of the function
 $x^2$,'' instead of the more cumbersome ``derivative of the function $f$ defined by $f(x)=x^2$.''
 
-
 In an older and conceptually incompatible notation and terminology due to Sylvester (1853),
 one refers to $\der x^\mu$ as a contravariant vector, and $\der x_\mu$ as covariant. The confusing
 terminology is summarized on p.~\pageref{vec-covec-summary}.
 \index{covariant vector}\index{contravariant vector}\index{vectors and dual vectors}
-
 
 Given a $\der x^\mu$, how do we find its dual $\der x_\mu$, and vice versa? In one dimension, we simply need to introduce
 a real number $g$ as a correction factor. If one of the vectors is shorter than it should be in a certain region,
@@ -800,22 +798,11 @@ and upper and lower indices have to match on both sides of the equals sign.
 This whole system, introduced by Einstein, is called ``index-gymnastics''
 notation.\index{index gymnastics notation}
 
-\begin{eg}{Vectors that naturally want upper or lower indices}\label{eg:force-is-lower-index}
 Although the rules of duality and index-raising and -lowering treat the upper and lower indices
 in a completely symmetric way, the symmetry is broken as soon as we choose, for example, to
 associate a measurement on a ruler with $\Delta x^a$ rather than $\Delta x_a$. Once we do
-this, certain other vectors naturally want their indices to be a certain way. For example,
-the dot product $\der W=\vc{F}\cdot\der\vc{x}$ for computing mechanical work becomes,
-in index-gymnastics notation,
-\begin{equation*}
-  \der W = F_a \der x^a \qquad ,
-\end{equation*}
-where the alternative $\der W=F^a\der x_a$ is valid but less natural because we have arbitrarily chosen
-which way to write indices on a ruler measurement. Force wants to be a lower-index vector.
-
-The same result can be obtained from Newton's second law; see example \ref{eg:momentum-is-lower-index}
-on p.~\pageref{eg:momentum-is-lower-index}.
-\end{eg}
+this, certain other vectors naturally want their indices to be a certain way. See example
+\ref{eg:force-is-lower-index}, p.~\pageref{eg:force-is-lower-index}.
 
 \begin{eg}{Raising and lowering indices on a rank-two tensor}\label{eg:rank-two-indices}
 In physics we encounter various examples of matrices, such as the moment of inertia tensor
@@ -855,48 +842,10 @@ coming into it.\index{birdtracks notation!rank-2 tensor}
 \end{eg}
 <% end_sec %>
 
-\begin{eg}{Systems without a metric}\label{eg:systems-without-a-metric}
 The distinction between vectors and their duals may
 seem irrelevant if we can always raise and lower indices at will. We can't always do that, however,
 because in many perfectly ordinary situations there is no
-metric.
-
-Let's start with an example where we \emph{do} have a metric. 
-Let a billiard ball of unit mass be constrained by a diagonal wall to have $y<x$. 
-The Lagrangian formalism just leads to the expected Newtonian expressions for the momenta
-conjugate to $x$ and $y$, $p_x=\dot{x}$, $p_y=\dot{y}$. The force of constraint is $F_a=dp_a/dt$.
-Let $w^a$ be a vector parallel to the wall. Since we do happen to have a metric in this example,
-we can say that $F_aw^a=0$; most people would say that the force was perpendicular to the wall.
-<% marg(0) %>
-<%
-  fig(
-    'barbell',
-    %q{There is no natural metric on the space $(\theta,\phi)$.}
-  )
-%>
-<% end_marg %>
-
-Now consider the example shown in figure \figref{barbell}.
-The arm's weight is negligible compared to the unit mass of the gripped weight, and both the upper and
-lower arm have unit length. Because of the construction of the elbow joint, we have a constraint
- $\theta \le \phi$. The conjugate momenta (which are actually angular momenta) turn out to be
-$p_\theta=\dot{\theta}+\cos(\phi-\theta)\dot{\phi}$ and a similar expression for $p_\phi$.
-The force of constraint is $F_a=dp_a/dt$. The surface of constraint can be represented by a vector
-$w^a$, which is on a diagonal line in the $(\phi,\theta)$ plane. But since there is no metric, it
-doesn't make sense to say that $F_a$ is perpendicular to $w^a$.
-
-In both of these examples, there is a natural way to state the orientation of the force of constraint
-relative to the surface of constraint, and it doesn't require a metric. Let the force vector
-be represented geometrically as shown in figure
-\subfigref{vector-measuring-covector}{2} on p.~\pageref{fig:vector-measuring-covector}. Then
-the pair of lines representing the force is \emph{parallel}
-to the surface of constraint, not perpendicular to it. This relationship of parallelism requires only
-affine geometry in the $(x,y)$ or $(\phi,\theta)$ plane.
-
-Finally we remark that since Galilean spacetime lacks a metric (see p.~\pageref{no-galilean-metric}),
-it is not possible to raise and lower Galilean indices at will, and the
-distinction between upper- and lower-index vectors is a real and physically important one.
-\end{eg}
+metric. See example \ref{eg:systems-without-a-metric}, p.~\pageref{eg:systems-without-a-metric}.
 
 <% begin_sec("The Lorentz metric") %>
 
