@@ -10,13 +10,13 @@
   )
 %>
 
-<% begin_sec("Affine properties of Lorentz geometry",nil,'affine-geometry') %>
 
 The geometrical treatment of space, time, and gravity only requires as its basis the equivalence of
-inertial and gravitational mass. That equivalence holds for Newtonian gravity, so it is indeed possible
+inertial and gravitational mass. Given this assumption, we can describe the trajectory of any
+free-falling test particle as a geodesic.
+Equivalence of inertial and gravitational mass holds for Newtonian gravity, so it is indeed possible
 to redo Newtonian gravity as a theory of curved spacetime. This project was carried out by the French mathematician
-Cartan,\index{Cartan!curved-spacetime theory of Newtonian gravity}\label{cartan-newtonian}
-as summarized very readably in section 17.5 of \emph{The Road to Reality} by Roger Penrose.
+Cartan.\index{Cartan!curved-spacetime theory of Newtonian gravity}\label{cartan-newtonian}
 The geometry of the local reference frames is very simple.
 The three space dimensions have an approximately Euclidean geometry, and the time dimension is
 entirely separate from them. This is referred to as a Euclidean spacetime with 3+1 dimensions.
@@ -37,6 +37,9 @@ by Minkowski in 1907, so a Lorentz frame is often referred to as a Minkowski fra
 To describe this Lorentz geometry, we need to add
 more structure on top of the axioms O1-O4 of ordered geometry, but it will not be the additional
 Euclidean structure of E3-E4, it will be something different.
+To see how to proceed, let's start by thinking about what bare minimum of
+geometrical machinery is needed in order to set
+up frames of reference.
 <% marg(0) %>
 <%
   fig(
@@ -46,9 +49,13 @@ Euclidean structure of E3-E4, it will be something different.
 %>
 <% end_marg %>
 
-To see how to proceed, let's consider the bare minimum of geometrical apparatus that would be necessary
-in order to set up frames of reference. The following argument shows that the main missing ingredient is merely
-a concept of parallelism.
+<% begin_sec("Affine properties of Lorentz geometry",4,'affine-geometry') %>
+<% begin_sec("Parallelism and measurement") %>
+We think of a frame of reference as a body of measurements or possible measurements to be made
+by some observer. Ordered geometry lacks measure.
+The following argument shows that merely by adding a notion of parallelism to our geometry, we
+automatically gain a system of measurement.
+
 We only expect Lorentz frames to be local, but we do need them
 to be big enough to cover at least some amount of spacetime. If Betty does an E\"{o}tv\"{o}s experiment
 by releasing a pencil and a lead ball side by side, she is essentially trying to release them at the same
@@ -255,9 +262,143 @@ the v and t axes would be perpendicular, but affine geometry has no notion of an
 
 Self-check: If multiplication is defined in terms of affine area, prove the commutative property $ab=ba$ and the
 distributive rule $a(b+c)=ab+bc$ from axioms A1-A3.
+
+<% end_sec %> % Parallelism and measurement
+
+<% begin_sec("Vectors",nil,'affine-vectors') %>
+We have a system of measurement. Can it be extended to include vectors?
+It's not immediately clear what a vector means in the context
+of curved spacetime.  The freshman physics notion of a vector carries all kinds of baggage, including
+ideas like rotation of vectors and a magnitude that is positive for nonzero vectors. We also used to
+assume the ability to represent vectors as arrows, i.e., geometrical figures of finite size that could be
+transported to other places --- but in a curved geometry, it is not in general possible to transport a
+figure to another location without distorting its shape, so there is no notion of congruence.
+For this reason, it's better to visualize vectors as tangents to the underlying space, as
+in figure \figref{tangent-vector}.
+Intuitively, we want to think of these vectors as arrows that are infinitesimally small, so that
+they fit on the curved surface without having to be bent. In the pictures, we simply scale them up to make
+them visible without an infinitely powerful microscope, and this scaling only makes them \emph{appear} to rise out
+of the space in which they live. Parallelism doesn't exist on the curved surface, but it does exist in the
+plane tangent to a certain point, or, equivalently, in an infinitesimally small region of the surface.
+<% marg(40) %>
+<%
+  fig(
+    'tangent-vector',
+    %q{A vector can be thought of as lying in the plane tangent to a certain point.}
+  )
+%>
+<% end_marg %>
+
+<% begin_sec("Affine measurement of vectors") %>
+And parallelism provides affine geometry. What does a vector mean in affine geometry, and what is the
+associated system of measurement?
+In general, measurement means comparing one thing to another. For example, we could use the hourly
+emergence of a mechanical bird from a pendulum-driven cuckoo
+clock to measure the rate at which the earth spins, but we could equally well take our planet's
+rotation as the standard and use it to measure the frequency with which the bird pops out of the door.
+Once we have two things to
+compare against one another, measurement is reduced to a process of counting (figure
+\figref{lattice-construction}, p.~\pageref{fig:lattice-construction}).
+Schematically, let's represent this measurement process with
+the following notation, which is part of a system called called birdtracks:\index{birdtracks notation}%
+\footnote{The system used in this book
+follows the one defined by Cvitanovi\'{c}, which was based closely on a graphical
+notation due to Penrose. For a more complete exposition, see the Wikipedia article
+``Penrose graphical notation'' and Cvitanovi\'{c}'s 
+online book at \url{birdtracks.eu}.}\index{birdtracks}\index{Cvitanovi\'{c}, Predrag}
+\index{Penrose!graphical notation for tensors}\index{tensor!Penrose graphical notation}
+\index{vector!Penrose graphical notation}
+\begin{equation*}
+  __birdscalarproduct(c,e)
+\end{equation*}
+Here $c$ represents the cuckoo clock and $e$ the rotation of the earth.
+Although the measurement relationship is nearly symmetric, the arrow has a direction, because,
+for example, the measurement of the earth's rotational period in terms of the clock's frequency is
+$(24\ \zu{hr})(1\ \zu{hr}^{-1})=24$, but the clock's period in terms of the earth's frequency
+is $1/24$. We say that the relationship is not symmetric but ``dual.'' By the way, it doesn't matter
+how we arrange these diagrams on the page. The notations __birdscalarproduct(c,e)
+and __birdflipscalarproduct(c,e) mean exactly the same thing, and expressions like this can even be drawn
+vertically.
+
+Suppose that $e$ is a displacement along some one-dimensional line of time, and we want to think of it as the
+thing being measured. Then we expect that the measurement process represented by $c$
+produces a real-valued result and is a linear function of $e$. Since the relationship
+between $c$ and $e$ is dual, we expect that $c$ also belongs to some
+vector space. For example, vector spaces allow multiplication by a scalar:
+we could double the frequency of the cuckoo clock by making the bird
+come out on the half hour as well as on the hour, forming $2c$. Measurement should
+be a linear function of both vectors; we say it is ``bilinear.'' 
 <% end_sec %>
 
+<% begin_sec("Duality") %>\index{dual vector}\index{vector!dual}
+The two vectors
+$c$ and $e$ inhabit two different vector spaces, and they have different units:
+$\zu{hr}^{-1}$ and hr. The ``flavor'' of the vector is represented by whether the arrow goes into
+it or comes out. Just as we used notation like $\overrightarrow{v}$ in freshman physics to
+tell vectors apart from scalars, we can employ arrows in the Penrose graphical notation as part of the notation for
+the vector, so that
+instead of writing the two vectors as $c$ and $e$, we can notate them
+as __birddualvec(c) and __birdvec(e). Performing a measurement is like plumbing.
+We join the two ``pipes'' in __birddualvec(c)__birdvec(e) and simplify to
+__birdscalarproduct(c,e).
 
+In two dimensions, there are natural ways of visualizing these two vector spaces.
+We've already been describing __birdvec(e) as a displacement. Its vector space is the
+space of such displacements.\footnote{In terms of the primitive notions used in the axiomatization
+in section \ref{sec:affine-geometry}, a displacement could be described as
+an equivalence class of segments such that
+for any two segments in the class AB and CD, AB and CD form a parallelogram.}
+A vector in the dual space such as __birddualvec(c)
+can be visualized as a set of parallel, evenly spaced lines
+on a topographic map, \subfigref{vector-measuring-covector}{2}, with an arrowhead to show which way is ``downhill.''
+The act of measurement consists of counting how many of these
+lines are crossed by a certain vector, \subfigref{vector-measuring-covector}{3}.
+<% marg(50) %>
+<%
+  fig(
+    'vector-measuring-covector',
+    %q{1. A displacement vector. 2. A vector from the space dual to the space of displacements.
+       3. The cuckoo clock chimes 24 times in one rotation of the earth.}
+  )
+%>
+<% end_marg %>
+<% end_sec %>
+
+<% begin_sec("Affine versus metrical measurement",nil,'affine-vs-metrical') %>
+The example of the cuckoo clock may be a little misleading.
+
+An actual clock can, if we wish, be carried along a noninertial world-line over unlimited
+distances. Affine measurement, however, does not provide any notion of comparing lengths measured
+along non-parallel lines. We could think of __birddualvec(c) as being the ghost of
+a cuckoo clock. Because it's a ghost, we can't grab it and take it places. It simply drifts
+forever through space along a timelike inertial world-line, i.e., a geodesic.
+
+There is also a sense in which a clock or ruler is \emph{less} powerful than the affine notion
+of measurement. For example, we can never use a clock to measure the length of a lightlike vector;
+in the limit as the clock is accelerated to near light speed, time dilation causes it to stop ticking
+at all, and the result of the measurement approaches zero, which is not useful. But it's
+perfectly all right to have a ghost cuckoo clock moving at or above the speed of light. It has no
+dynamics and doesn't interact with its environment, so, for example, it doesn't have infinite kinetic
+energy if it moves at the speed of light.
+
+There is no angular measure in affine geometry, and in particular there is no notion of perpendicularity,
+only parallelism. In relativity, simultaneity is expressed as perpendicularity of a displacement vector
+to an observer's displacement vector. A measurement process like
+__birdscalarproduct(c,e) is analogous to a dot product, and 
+affine geometry does allow us to make statements like
+$__birdscalarproduct(c,e)=0$, but __birddualvec(c) and __birdvec(e) can't both
+be displacement vectors. If one is a displacement, then the other belongs to the vector space that is
+dual to the space of displacements. Since the notion of a frame of reference depends on establishing
+what the observer considers simultaneous, affine measurement isn't powerful enough to describe frames
+of reference.
+
+Vectors do not have their own lengths or magnitudes unless we introduce more metrical apparatus. We will do this
+in section \ref{sec:metric}.
+<% end_sec %>
+
+<% end_sec %> % Vectors
+
+<% end_sec %> % Affine properties of Lorentz geometry
 
 <% begin_sec("Relativistic properties of Lorentz geometry") %>\label{sec:lorentz-geometry}
 
