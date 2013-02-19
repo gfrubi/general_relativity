@@ -354,7 +354,7 @@ an equivalence class of segments such that
 for any two segments in the class AB and CD, AB and CD form a parallelogram.}
 A vector in the dual space such as __birddualvec(c)
 can be visualized as a set of parallel, evenly spaced lines
-on a topographic map, \subfigref{vector-measuring-covector}{2}, with an arrowhead to show which way is ``downhill.''
+on a topographic map, \subfigref{vector-measuring-covector}{2}, with an arrowhead to show which way is ``uphill.''
 The act of measurement consists of counting how many of these
 lines are crossed by a certain vector, \subfigref{vector-measuring-covector}{3}.
 <% marg(50) %>
@@ -377,6 +377,19 @@ more natural to take one quantity as a vector and another as a dual vector. Exam
 \ref{eg:systems-without-a-metric} shows that we sometimes have no choice at all as to which
 is which.
 
+Given a scalar field $f$, its gradient $\operatorname{grad} f$ at any given point is a dual vector.
+In birdtracks notation, we can indicate this by writing it with an
+outward-pointing arrow, $__birddualvec((\operatorname{grad} f))$.
+<% marg(25) %>
+<%
+  fig(
+    'isotherms',
+    %q{Constant-temperature curves for January in North America, at intervals of $4\degcunit$.
+       The temperature gradient at a given point is a dual vector.}
+  )
+%>
+<% end_marg %>
+
 \begin{eg}{Force is a dual vector}\label{eg:force-is-lower-index}
 For example,
 the dot product $\der W=\vc{F}\cdot\der\vc{x}$ for computing mechanical work becomes,
@@ -385,8 +398,8 @@ in birdtracks notation,
   \der W = __birdscalarproduct(F,\der x) \qquad .
 \end{equation*}
 This shows that force is more naturally considered to be a dual vector rather than a vector.
-The symmetry between vectors and dual vectors is broken by considering displacements like
-__birdvec(\der x) to be vectors, and this asymmetry then spreads to other quantities such as force.
+(If the force can be derived as the gradient of a potential, we get the same result by
+noting that gradients are dual vectors.)
 
 The same result can be obtained from Newton's second law; see example \ref{eg:momentum-is-lower-index}
 on p.~\pageref{eg:momentum-is-lower-index}.
@@ -491,6 +504,16 @@ so the spacetime displacement $__birdvec(s)$ from P to Q must satisfy
 the condition $__birdscalarproduct((\operatorname{grad}C),s)=0$. The set of solutions to this
 equation is the world-line of the bump, and the inverse slope of this world-line is called the
 \emph{group velocity}. In our example of water waves, the group velocity is $\alpha/2\omega$.
+<% marg(60) %>
+<%
+  fig(
+    'dispersion',
+    %q{Points on the graph satisfy the dispersion relation $C=0$ for water waves.
+       At a given point on the graph, the dual vector $__birddualvec((\operatorname{grad}C))$
+       tells us the group velocity.}
+  )
+%>
+<% end_marg %>
 
 The quantity $\omega/k$ is referred to as the \emph{phase velocity}. In our example of
 the water waves, the phase velocity is $\omega/k=\alpha/\omega$, which is twice the
@@ -500,7 +523,7 @@ notation expresses this fact by refusing to let us use information about the pha
 to decide whether events P and Q could have been linked by the wave's motion. 
 The only quantity we can extract from the phase information is the frequency vector __birddualvec(k),
 and one can say loosely that this is the phase velocity vector. But it's not really a vector at all,
-it's a dual vector. The displacement __birdvec(s) from P to Q is a vector, not a dual vector.
+it's a dual vector. The displacement __birdvec(s) from P to Q is a vector.
 Since __birddualvec(k) and __birdvec(s) belong to different vector spaces, we can't say whether they
 are parallel.\index{group velocity}\index{phase velocity}
 \end{eg}
