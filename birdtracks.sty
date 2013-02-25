@@ -31,3 +31,10 @@
     \draw [style=arrow] (n1) to (n0);
 \end{tikzpicture}
 }
+\newcommand{\birdgrad}[1]{%
+\begin{tikzpicture}[baseline=(n0.base)]
+  \node[inner xsep=0em] (n0) at (0, 0) {$#1$};
+  \node [style=circle,draw=black,minimum size=1.3\baselineskip] (c0) at (n0) {};
+  \draw [style=arrow] (c0.east) to ++(0.8em,0);
+\end{tikzpicture}
+}

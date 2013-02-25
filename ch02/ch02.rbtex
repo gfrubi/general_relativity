@@ -266,32 +266,9 @@ distributive rule $a(b+c)=ab+bc$ from axioms A1-A3.
 <% end_sec %> % Parallelism and measurement
 
 <% begin_sec("Vectors",nil,'affine-vectors') %>
-We have a system of measurement. Can it be extended to include vectors?
-It's not immediately clear what a vector means in the context
-of curved spacetime.  The freshman physics notion of a vector carries all kinds of baggage, including
-ideas like rotation of vectors and a magnitude that is positive for nonzero vectors. We also used to
-assume the ability to represent vectors as arrows, i.e., geometrical figures of finite size that could be
-transported to other places --- but in a curved geometry, it is not in general possible to transport a
-figure to another location without distorting its shape, so there is no notion of congruence.
-For this reason, it's better to visualize vectors as tangents to the underlying space, as
-in figure \figref{tangent-vector}.
-Intuitively, we want to think of these vectors as arrows that are infinitesimally small, so that
-they fit on the curved surface without having to be bent. In the pictures, we simply scale them up to make
-them visible without an infinitely powerful microscope, and this scaling only makes them \emph{appear} to rise out
-of the space in which they live. Parallelism doesn't exist on the curved surface, but it does exist in the
-plane tangent to a certain point, or, equivalently, in an infinitesimally small region of the surface.
-<% marg(40) %>
-<%
-  fig(
-    'tangent-vector',
-    %q{A vector can be thought of as lying in the plane tangent to a certain point.}
-  )
-%>
-<% end_marg %>
 
 <% begin_sec("Affine measurement of vectors") %>
-And parallelism provides affine geometry. What does a vector mean in affine geometry, and what is the
-associated system of measurement?
+We have a system of measurement. Can it be extended to include vectors?
 In general, measurement means comparing one thing to another. 
 Before even getting into the full system of affine geometry, let's consider the one-dimensional
 example of a line of time.
@@ -365,6 +342,14 @@ lines are crossed by a certain vector, \subfigref{vector-measuring-covector}{3}.
        3. The cuckoo clock chimes 24 times in one rotation of the earth.}
   )
 %>
+\spacebetweenfigs
+<%
+  fig(
+    'isotherms',
+    %q{Constant-temperature curves for January in North America, at intervals of $4\degcunit$.
+       The temperature gradient at a given point is a dual vector.}
+  )
+%>
 <% end_marg %>
 
 A confusing and nonstandardized jungle of notation and terminology has grown up around these concepts. For now,
@@ -378,17 +363,17 @@ more natural to take one quantity as a vector and another as a dual vector. Exam
 is which.
 
 Given a scalar field $f$, its gradient $\operatorname{grad} f$ at any given point is a dual vector.
-In birdtracks notation, we can indicate this by writing it with an
-outward-pointing arrow, $__birddualvec((\operatorname{grad} f))$.
-<% marg(25) %>
-<%
-  fig(
-    'isotherms',
-    %q{Constant-temperature curves for January in North America, at intervals of $4\degcunit$.
-       The temperature gradient at a given point is a dual vector.}
-  )
-%>
-<% end_marg %>
+In birdtracks notation, we have to indicate this by writing it with an
+outward-pointing arrow, $__birddualvec((\operatorname{grad} f))$. Because
+gradients occur so frequently, we have a special shorthand for them, which is
+simply a circle:
+\begin{equation*}
+  __birdgrad(f)
+\end{equation*}
+In the context of  spacetime with a metric and curvature, we'll see that the usual definition
+of the gradient in terms of partial derivatives should be modified with correction terms to
+form something called a covariant derivative. When we get to that point on p.~\pageref{nabla-birdtracks},
+we'll commandeer the circle notation for that operation.\label{birdtracks-circle-not-covariant}
 
 \begin{eg}{Force is a dual vector}\label{eg:force-is-lower-index}
 For example,
@@ -398,8 +383,8 @@ in birdtracks notation,
   \der W = __birdscalarproduct(F,\der x) \qquad .
 \end{equation*}
 This shows that force is more naturally considered to be a dual vector rather than a vector.
-(If the force can be derived as the gradient of a potential, we get the same result by
-noting that gradients are dual vectors.)
+The symmetry between vectors and dual vectors is broken by considering displacements like
+__birdvec(\der x) to be vectors, and this asymmetry then spreads to other quantities such as force.
 
 The same result can be obtained from Newton's second law; see example \ref{eg:momentum-is-lower-index}
 on p.~\pageref{eg:momentum-is-lower-index}.
@@ -427,6 +412,14 @@ The vectors __birddualvec(F) and __birddualvec(w) both belong to the space of du
 are parallel to each other.
 Since we do happen to have a metric in this example, it is also possible to say, as most people
 would, that the force is perpendicular to the wall.
+<% marg(65) %>
+<%
+  fig(
+    'barbell',
+    %q{There is no natural metric on the space $(\theta,\phi)$.}
+  )
+%>
+<% end_marg %>
 
 Now consider the example shown in figure \figref{barbell}.
 The arm's weight is negligible compared to the unit mass of the gripped weight, and both the upper and
@@ -441,14 +434,6 @@ The force of constraint is parallel to __birddualvec(w).
 There is no metric that naturally applies to the $(\theta,\phi)$ plane, so we have no
 notion of perpendicularity, and it
 doesn't make sense to say that __birddualvec(F) is perpendicular to the line of constraint. 
-<% marg(65) %>
-<%
-  fig(
-    'barbell',
-    %q{There is no natural metric on the space $(\theta,\phi)$.}
-  )
-%>
-<% end_marg %>
 
 Finally we remark that since four-dimensional Galilean spacetime
 lacks a metric (see p.~\pageref{no-galilean-metric}),
@@ -493,17 +478,6 @@ For example, surface waves in deep water obey the constraint $C=0$, where
 $C=\omega^4-\alpha^2 k^2$ and $\alpha$ is a constant with units of acceleration, relating
 to the acceleration of gravity. (Since the water is infinitely deep, there is no other scale that
 could enter into the constraint.)
-
-When a wave is modulated, it can transport energy and momentum and transmit information,
-i.e., act as an agent of cause and effect between events. How fast does it go?
-If a certain bump on the envelope with which the
-wave is modulated visits spacetime events P and Q, then whatever frequency and wavelength
-the wave has near the bump are observed to be the same at P and Q. In general,
-$k$ and $\omega$ are constant along the spacetime displacement of any point on the envelope,
-so the spacetime displacement $__birdvec(s)$ from P to Q must satisfy
-the condition $__birdscalarproduct((\operatorname{grad}C),s)=0$. The set of solutions to this
-equation is the world-line of the bump, and the inverse slope of this world-line is called the
-\emph{group velocity}. In our example of water waves, the group velocity is $\alpha/2\omega$.
 <% marg(60) %>
 <%
   fig(
@@ -515,6 +489,17 @@ equation is the world-line of the bump, and the inverse slope of this world-line
 %>
 <% end_marg %>
 
+When a wave is modulated, it can transport energy and momentum and transmit information,
+i.e., act as an agent of cause and effect between events. How fast does it go?
+If a certain bump on the envelope with which the
+wave is modulated visits spacetime events P and Q, then whatever frequency and wavelength
+the wave has near the bump are observed to be the same at P and Q. In general,
+$k$ and $\omega$ are constant along the spacetime displacement of any point on the envelope,
+so the spacetime displacement $__birdvec(s)$ from P to Q must satisfy
+the condition $__birdscalarproduct((\operatorname{grad}C),s)=0$. The set of solutions to this
+equation is the world-line of the bump, and the inverse slope of this world-line is called the
+\emph{group velocity}. In our example of water waves, the group velocity is $\alpha/2\omega$.
+
 The quantity $\omega/k$ is referred to as the \emph{phase velocity}. In our example of
 the water waves, the phase velocity is $\omega/k=\alpha/\omega$, which is twice the
 group velocity. The phase velocity lacks
@@ -523,7 +508,7 @@ notation expresses this fact by refusing to let us use information about the pha
 to decide whether events P and Q could have been linked by the wave's motion. 
 The only quantity we can extract from the phase information is the frequency vector __birddualvec(k),
 and one can say loosely that this is the phase velocity vector. But it's not really a vector at all,
-it's a dual vector. The displacement __birdvec(s) from P to Q is a vector.
+it's a dual vector. The displacement __birdvec(s) from P to Q is a vector, not a dual vector.
 Since __birddualvec(k) and __birdvec(s) belong to different vector spaces, we can't say whether they
 are parallel.\index{group velocity}\index{phase velocity}
 \end{eg}

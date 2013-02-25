@@ -1016,8 +1016,10 @@ equations give equivalent notations for the same derivatives:
 \end{align*}
 Figure \figref{nabla-birdtracks} shows two examples of the corresponding
 birdtracks notation. Because birdtracks are meant to be manifestly coordinate-independent, they
-do not have a way of expressing non-covariant derivatives.
-\index{birdtracks notation!covariant derivative}
+do not have a way of expressing non-covariant derivatives. We no longer want to use the circle
+as a notation for a non-covariant gradient as we did when we first introduced it on
+p.~\pageref{birdtracks-circle-not-covariant}.
+\index{birdtracks notation!covariant derivative}\label{nabla-birdtracks}
 <% marg(130) %>
 <%
   fig(

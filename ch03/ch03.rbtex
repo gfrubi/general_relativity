@@ -59,6 +59,30 @@ the curvature of the space varies from one point to the next, and clearly we don
 Riemann sums an infinite number of times, once at each point in space.
 \end{eg}
 
+<% begin_sec("Tangent vectors") %>
+It's not immediately clear what a vector means in the context
+of curved spacetime.  The freshman physics notion of a vector carries all kinds of baggage, including
+ideas like rotation of vectors and a magnitude that is positive for nonzero vectors. We also used to
+assume the ability to represent vectors as arrows, i.e., geometrical figures of finite size that could be
+transported to other places --- but in a curved geometry, it is not in general possible to transport a
+figure to another location without distorting its shape, so there is no notion of congruence.
+For this reason, it's better to visualize vectors as tangents to the underlying space, as
+in figure \figref{tangent-vector}.
+Intuitively, we want to think of these vectors as arrows that are infinitesimally small, so that
+they fit on the curved surface without having to be bent. In the pictures, we simply scale them up to make
+them visible without an infinitely powerful microscope, and this scaling only makes them \emph{appear} to rise out
+of the space in which they live.
+<% marg(40) %>
+<%
+  fig(
+    'tangent-vector',
+    %q{A vector can be thought of as lying in the plane tangent to a certain point.}
+  )
+%>
+<% end_marg %>
+
+<% end_sec %>
+
 <% begin_sec("Affine notions and parallel transport") %>
 
 <% begin_sec("The affine parameter in curved spacetime") %>
@@ -145,19 +169,7 @@ Parallel transport is path-dependent, as shown in figure \figref{path-dependence
            a different answer than transporting it along AC.}
   )
 %>
-<% end_marg %>
-
-<% begin_sec("Affine parameters defined only along geodesics") %>
-In the context of flat spacetime, the affine parameter was defined only along lines, not arbitrary curves, and
-could not be compared between lines running in different directions. In curved spacetime, the same limitation is
-present, but with ``along lines'' replaced by ``along geodesics.'' Figure \figref{affine-not-geodesic} shows what goes wrong if we try to apply
-the construction to a world-line that isn't a geodesic. One definition of a geodesic is that it's the
-course we'll end up following if we navigate by keeping a fixed bearing relative to an inertial guidance
-device such as gyroscope; that is,
-the tangent to a geodesic, when parallel-transported farther along the geodesic, is still tangent.
-A non-geodesic curve lacks this property, and the effect on the construction of the affine parameter is that
-the segments $n\zu{q}_n$ drift more and more out of alignment with the curve.
-<% marg(20) %>
+\spacebetweenfigs
 <%
   fig(
     'affine-not-geodesic',
@@ -170,6 +182,17 @@ the segments $n\zu{q}_n$ drift more and more out of alignment with the curve.
   )
 %>
 <% end_marg %>
+
+<% begin_sec("Affine parameters defined only along geodesics") %>
+In the context of flat spacetime, the affine parameter was defined only along lines, not arbitrary curves, and
+could not be compared between lines running in different directions. In curved spacetime, the same limitation is
+present, but with ``along lines'' replaced by ``along geodesics.'' Figure \figref{affine-not-geodesic} shows what goes wrong if we try to apply
+the construction to a world-line that isn't a geodesic. One definition of a geodesic is that it's the
+course we'll end up following if we navigate by keeping a fixed bearing relative to an inertial guidance
+device such as gyroscope; that is,
+the tangent to a geodesic, when parallel-transported farther along the geodesic, is still tangent.
+A non-geodesic curve lacks this property, and the effect on the construction of the affine parameter is that
+the segments $n\zu{q}_n$ drift more and more out of alignment with the curve.
 
 <% end_sec %> % only along geodesics
 
