@@ -514,12 +514,13 @@ lightlike line.
 <% end_sec %> % Coordinate independence
 <% end_sec %>
 <% begin_sec("The metric",nil,'metric') %>
-Applying these considerations to the creation of a manifestly intrinsic notation, consider a coordinate
+Consider a coordinate
 $x$ defined along a certain curve, which is not necessarily a geodesic. For concreteness, imagine this curve
 to exist in two spacelike dimensions, which we can visualize as the surface of a sphere embedded in Euclidean
 3-space. These concrete features are not strictly necessary, but they drive home the point that we should
-not expect to be able to define $x$ so that it varies at a steady rate with elapsed distance; it is not
-possible to define this type of uniform, Cartesian coordinate system on the surface of a sphere. In
+not expect to be able to define $x$ so that it varies at a steady rate with elapsed distance; for example,
+we know that it will not be possible to define a two-dimensional Cartesian grid on the surface of
+a sphere. In
 the figure, the tick marks are therefore not evenly spaced. This is perfectly all right, given the coordinate
 invariance of general relativity. Since the incremental changes in $x$ \emph{are}
 equal, I've represented them below the curve as little vectors of equal length. They are the wrong length
@@ -536,35 +537,22 @@ to represent distances along the curve, but this wrongness is an inevitable fact
 %>
 <% end_marg %>
 
+
 Now suppose we want to integrate the arc length of a segment of this curve. The little vectors are
 infinitesimal. In the integrated length, each little vector should contribute some amount, which is a scalar.
-This scalar is not simply the magnitude of the vector, $\der s \ne \sqrt{\der\vc{x}\cdot\der\vc{x}}$, since the vectors are the wrong length. We therefore
-need some mathematical rule, some function, that accepts a vector as its input and gives a scalar as its
-output. We are led back to the notion, introduced in section \ref{subsec:affine-vectors}, of
-the dual of a vector. But the purely affine
-notion of vectors and their duals is not enough to define the length of a vector. To accomplish that,
-we need to introduce some further machinery called a \emph{metric}.\index{metric}\label{metric-introduced}
+This scalar is not simply the magnitude of the vector,
+$\der s \ne \sqrt{\der\vc{x}\cdot\der\vc{x}}$, since the vectors are the wrong length. 
+Figure \figref{metric-motivation}
+is clearly reminiscent of the geometrical picture of vectors and dual vectors developed
+on p.~\pageref{visualize-vectors-and-duals}.
+But the purely affine
+notion of vectors and their duals is not enough to define the length of a vector in general; it is only
+sufficient to define a length relative to other lengths along the same geodesic.
+When vectors lie along different geodesics, we need to be able to specify the additional conversion
+factor that allows us to compare one to the other. The piece of machinery that allows us to do
+this is called a \emph{metric}.\index{metric}\label{metric-introduced}
 
-The assumption that a metric exists is
-nontrivial. There is no metric in Galilean spacetime, for example, since in the limit $c\rightarrow\infty$
-the units used to measure timelike and spacelike displacements
-are not comparable.\index{metric!none in Galilean spacetime}\label{no-galilean-metric}
-Assuming the existence of a metric is equivalent to assuming that the universe
-holds at least one physically manipulable clock or ruler that can be moved over long distances and
-accelerated as desired. In the distant future, large and causally isolated regions of the cosmos may
-contain only massless particles such as photons, which cannot be used to build clocks (or, equivalently,
-rulers); the
-physics of these regions will be fully describable without a metric.
-If, on the other hand, our world contains not just zero or one but two or more clocks, then the metric
-hypothesis requires that these clocks maintain a consistent relative rate when accelerated along the same
-world-line. This consistency is what allows us to think of relativity as a theory of space and time
-rather than a theory of clocks and rulers.
-There are other relativistic theories of gravity besides general relativity, and some
-of these violate this hypothesis.
-
-The arrows and tick marks are of course the one-dimensional incarnations of the
-geometrical representations of vectors and their duals in \figref{vector-measuring-covector}
-on p.~\pageref{fig:vector-measuring-covector}. Fixing a metric allows us to define the proper
+Fixing a metric allows us to define the proper
 scaling of the tick marks relative to the arrows at a given point, i.e., in the birdtracks
 notation it gives us a natural way of taking a displacement vector such as __birdvec(s),
 with the arrow pointing into the symbol, and making a corresponding dual vector
@@ -590,37 +578,31 @@ Figure \figref{dual} shows the resulting picture.
   )
 %>
 
-The birdtracks notation is nice because it is manifestly independent of any system of coordinates.
-However, in practical calculations we will often need to
-make contact with coordinate-based data. 
-It is then natural to represent the displacements and their duals 
-as row and column vectors.
-Of course the distinction between row and column vectors is pointless in a one-dimensional space, but
-it should be clear that this will provide an appropriate foundation for the generalization to more than one
-coordinate.
-Anticipating the generalization to four-dimensional
-spacetime, we'll start referring to 
-the displacement __birdvec(\der x) as $\der x^0$, although in our
-present one-dimensional example there is no $\der x^1$, $\der x^2$, or $\der x^3$. The reason for the
-use of the odd-looking superscript is to distinguish this number from
-the (single) component of __birddualvec(\der x), which we write as $\der x_0$ and which is a different
-number and may have different units. To keep track of which index-based notation corresponds to which birdtracks
-notation, think of water flowing downhill. A symbol like $\der x_\mu$ has its subscript
-hanging down below it, so if $\der x$ was a basin and $_\mu$ a hose, water would flow out of the basin.
-
-We will also use the symbol $x^\mu$, rather than $x$, as a name for the whole vector, 
-even though $x^\mu$ looks like
-a notation for one specific component of $x$. The letter $\mu$ is not ``bound,'' and purists might want to
-use a notation such as $x^{(\cdot)}$ or something reminiscent of set-builder notation, such as
-$\langle x^\mu | \mu \rangle$.  The convention of using $x^\mu$ to refer to the whole vector
-turns out to be convenient, however, and does not cause
-confusion in practice. Similarly, one often says things like ``the derivative of the function
-$x^2$,'' instead of the more cumbersome ``derivative of the function $f$ defined by $f(x)=x^2$.''
-
+In the abstract index notation introduced on p.~\pageref{abstract-index-notation},
+the vectors __birdvec(\der x) and __birddualvec(\der x) are written
+$\der x^a$ and $\der x_a$. When a specific coordinate system has been fixed,
+we write these with concrete, Greek indices, $\der x^\mu$ and $\der x_\mu$.
 In an older and conceptually incompatible notation and terminology due to Sylvester (1853),
 one refers to $\der x^\mu$ as a contravariant vector, and $\der x_\mu$ as covariant. The confusing
 terminology is summarized on p.~\pageref{vec-covec-summary}.
 \index{covariant vector}\index{contravariant vector}\index{vectors and dual vectors}
+
+The assumption that a metric exists is
+nontrivial. There is no metric in Galilean spacetime, for example, since in the limit $c\rightarrow\infty$
+the units used to measure timelike and spacelike displacements
+are not comparable.\index{metric!none in Galilean spacetime}\label{no-galilean-metric}
+Assuming the existence of a metric is equivalent to assuming that the universe
+holds at least one physically manipulable clock or ruler that can be moved over long distances and
+accelerated as desired. In the distant future, large and causally isolated regions of the cosmos may
+contain only massless particles such as photons, which cannot be used to build clocks (or, equivalently,
+rulers); the
+physics of these regions will be fully describable without a metric.
+If, on the other hand, our world contains not just zero or one but two or more clocks, then the metric
+hypothesis requires that these clocks maintain a consistent relative rate when accelerated along the same
+world-line. This consistency is what allows us to think of relativity as a theory of space and time
+rather than a theory of clocks and rulers.
+There are other relativistic theories of gravity besides general relativity, and some
+of these violate this hypothesis.
 
 Given a $\der x^\mu$, how do we find its dual $\der x_\mu$, and vice versa? In one dimension, we simply need to introduce
 a real number $g$ as a correction factor. If one of the vectors is shorter than it should be in a certain region,
@@ -635,9 +617,8 @@ Now let's generalize to more than one dimension. Because globally Cartesian coor
 imposed on a curved space, the constant-coordinate lines will in general be neither evenly spaced nor
 perpendicular to one another. If we construct a local set of basis vectors lying along the intersections of the constant-coordinate
 surfaces, they will not form an orthonormal set. We would like to have an expression of the form
-$\der s^2=\Sigma\der x^\mu \der x_\mu$ for the squared arc length, and in differential geometry we practice
-the convenient notational convention, introduced by Einstein,
-of assuming a summation when an index is repeated, so this becomes
+$\der s^2=\Sigma\der x^\mu \der x_\mu$ for the squared arc length, and using the Einstein summation
+notation this becomes
 \begin{equation*}
   \der s^2=\der x^\mu \der x_\mu \qquad .
 \end{equation*}
@@ -646,9 +627,9 @@ of assuming a summation when an index is repeated, so this becomes
 
 For Cartesian coordinates in a Euclidean plane, where one doesn't normally bother with
 the distinction between covariant and contravariant vectors,
-this expression for $\der s^2$ is simply the Pythagorean theorem, summed over two values of $i$ for the two coordinates:
+this expression for $\der s^2$ is simply the Pythagorean theorem, summed over two values of $\mu$ for the two coordinates:
 \begin{equation*}
-  \der s^2 = \der x^i \der x_i = \der x^2 + \der y^2
+  \der s^2 = \der x^\mu \der x_\mu = \der x^2 + \der y^2
 \end{equation*}
 The symbols $\der x$, $\der s^0$, $\der x^0$, and $\der x_0$ are all synonyms, and likewise for 
 $\der y$, $\der s^1$, $\der x^1$, and $\der x_1$. (Because notations such as $\der s^1$ force the reader
@@ -673,18 +654,22 @@ ungrammatical.
 
 Self-check: Why does it make sense to demand that the metric be symmetric?
 
-In an introductory course in Newtonian mechanics, one makes a distinction between vectors, which have
-a direction in space, and scalars, which do not. These are specific examples of \emph{tensors},\index{tensor} which
-can be expressed as objects with $m$ superscripts and $n$ subscripts. A scalar has $m=n=0$. A covariant vector has
-$(m,n)=(0,1)$, a contravariant vector $(1,0)$, and the metric $(0,2)$. We refer to the number of indices as the
+On p.~\pageref{vector-vs-scalar} we encountered the distinction among scalars, vectors, and dual
+vectors. These are specific examples of \emph{tensors},\index{tensor} which
+can be expressed in the birdtracks notation as objects with $m$ arrows coming in and $n$ coming out,
+or. In index notation, we have $m$ superscripts and $n$ subscripts. A scalar has $m=n=0$. A dual vector has
+$(m,n)=(0,1)$, a vector $(1,0)$, and the metric $(0,2)$. We refer to the number of indices as the
 rank of the tensor.\index{rank of a tensor}\index{tensor!rank} Tensors are discussed in more detail, and defined
 more rigorously, in chapter \ref{ch:tensors}. For our present purposes, it is important to note that just because
 we write a symbol with subscripts or superscripts, that doesn't mean it deserves to be called a tensor. This point
 can be understood in the more elementary context of Newtonian scalars and vectors. For example, we can define
 a Euclidean ``vector'' $\vc{u}=(m,T,e)$, where $m$ is the mass of the moon, $T$ is the temperature in
 Chicago, and $e$ is the charge of the electron. This creature $\vc{u}$ doesn't deserve to be called a vector,
-because it doesn't behave as a vector under rotation. Similarly, a tensor is required to behave in a certain
-way under rotations and Lorentz boosts.\label{tensor-intro}
+because it doesn't behave as a vector under rotation. 
+The general philosophy is that a tensor is something that has certain properties under changes of coordinates.
+For example, we've already seen on p.~\pageref{scaling-vectors-and-duals}
+the different scaling behavior of tensors with ranks $(1,0)$, $(0,0)$, and $(0,1)$.
+\label{tensor-intro}
 
 When discussing the symmetry of rank-2 tensors, it is convenient to introduce
 the following notation:\index{tensor!symmetric}\index{tensor!antisymmetric}\index{symmetrization}\index{antisymmetrization}\label{symmetry-notation}
@@ -704,6 +689,10 @@ Self-check: Characterize an antisymmetric rank-2 tensor in two dimensions.
 
 \eganswer If we change our units of measurement so that $x^\mu \rightarrow \alpha x^\mu$,
 while demanding that $\der s^2$ come out the same, then we need $g_{\mu\nu} \rightarrow \alpha^{-2}g_{\mu\nu}$.
+
+Comparing with p.~\pageref{scaling-vectors-and-duals}, we deduce the general rule that a
+tensor of rank $(m,n)$ transforms under scaling by picking up a
+factor of $\alpha^{m-n}$.
 \end{eg}
 
 \begin{eg}{Polar coordinates}\label{eg:metric-in-polar-coords}
@@ -717,10 +706,8 @@ elements of the metric $g_{rr}=1$ and $g_{\theta\theta}=r^2$.
 
 Notice how in example \ref{eg:metric-in-polar-coords} we started from the generally valid relation $\der s^2=g_{\mu\nu} \der x^\mu \der x^\nu$,
 but soon began writing down facts like  $g_{\theta\theta}=r^2$ that were only valid in this particular
-coordinate system. To make it clear when this is happening, we adopt a convention introduced by Roger Penrose\index{Penrose, Roger}
-known as the abstract index notation.\index{abstract index notation}
-In this convention, Latin superscripts and subscripts indicate that an equation is of general validity,
-without regard to any choice of coordinate system, while Greek ones are used for coordinate-dependent equations.
+coordinate system. To make it clear when this is happening, we maintain the distinction between abtract
+Latin indices and concrete Greek indices introduced on p.~\pageref{abstract-index-notation}.
 For example, we can write the general expression for squared differential arc length with Latin indices,
 \begin{equation*}
   \der s^2=g_{ij} \der x^i \der x^j \qquad ,
@@ -728,16 +715,7 @@ For example, we can write the general expression for squared differential arc le
 because it holds regardless of the coordinate system, whereas the vanishing of the off-diagonal
 elements of the metric in Euclidean polar coordinates has to be written as $g_{\mu\nu}=0$ for $\mu \ne \nu$,
 since it would in general be false if we used a different coordinate system to describe the same Euclidean plane.
-The advantages of this notation became widely apparent to relativists starting around 1980, so for example
-it is used in the text by Wald (1984), but not in Misner, Thorne, and Wheeler (1970). Some of the older
-literature uses a notation in which the Greek and Latin indices are instead used to distinguish between
-timelike and spacelike components of a vector, but this usage is dying out, since it inappropriately
-singles out a distinction between time and space that is not actually preserved under a Lorentz boost.
-
-Birdtracks notation is simply a different representation of abstract index notation.
-One can in fact label arrows on a birdtracks diagram with letters, but the labels don't imply coordinates.
-They are simply for reference, as in assembly instructions that direct us to 
-insert tab A in slot B.\index{birdtracks notation!equivalent to abstract index notation}
+\index{abstract index notation}
 
 \begin{eg}{Oblique Cartesian coordinates}\label{eg:oblique-cartesian}
 \egquestion Oblique Cartesian coordinates are like normal Cartesian coordinates in the plane, but their axes are at at
@@ -820,12 +798,6 @@ possible based on the grammatical rules, which are that summation only occurs ov
 and upper and lower indices have to match on both sides of the equals sign.
 This whole system, introduced by Einstein, is called ``index-gymnastics''
 notation.\index{index gymnastics notation}
-
-Although the rules of duality and index-raising and -lowering treat the upper and lower indices
-in a completely symmetric way, the symmetry is broken as soon as we choose, for example, to
-associate a measurement on a ruler with $\Delta x^a$ rather than $\Delta x_a$. Once we do
-this, certain other vectors naturally want their indices to be a certain way. See example
-\ref{eg:force-is-lower-index}, p.~\pageref{eg:force-is-lower-index}.
 
 \begin{eg}{Raising and lowering indices on a rank-two tensor}\label{eg:rank-two-indices}
 In physics we encounter various examples of matrices, such as the moment of inertia tensor

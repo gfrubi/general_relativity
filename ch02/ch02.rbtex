@@ -267,7 +267,7 @@ distributive rule $a(b+c)=ab+bc$ from axioms A1-A3.
 
 <% begin_sec("Vectors",nil,'affine-vectors') %>
 
-<% begin_sec("Vectors distinguished from scalars") %>
+<% begin_sec("Vectors distinguished from scalars") %>\label{vector-vs-scalar}\index{vector!defined}\index{scalar!defined}
 We've been discussing subjects like the center of mass that in freshman mechanics would
 be described in terms of vectors and scalars, the distinction being that vectors have
 a direction in space and scalars don't. As we make the transition to relativity,
@@ -357,7 +357,7 @@ more natural to take one quantity as a vector and another as a dual vector. Exam
 is which.
 <% end_sec %> % Duality
 
-<% begin_sec("Scaling") %>\index{dual vector}\index{vector!dual}
+<% begin_sec("Scaling") %>\label{scaling-vectors-and-duals}
 In birdtracks notation, a scalar is a quantity that has no external arrows at all. Since the
 expression $__birdscalarproduct(c,e)=24$ has no external arrows, only internal ones, it represents
 a scalar. This makes sense because it's a count, and a count is a scalar.
@@ -374,7 +374,7 @@ expected from the freshman-physics concept of a vector as something transforming
 way under rotations.
 <% end_sec %> % Scaling
 
-<% begin_sec("Geometrical visualization") %>
+<% begin_sec("Geometrical visualization") %>\label{visualize-vectors-and-duals}
 In two dimensions, there are natural ways of visualizing the different vector spaces inhabited by
 vectors and dual vectors.
 We've already been describing a vector like __birdvec(e) as a displacement. Its vector space is the
@@ -558,7 +558,7 @@ Since __birddualvec(k) and __birdvec(s) belong to different vector spaces, we ca
 are parallel.\index{group velocity}\index{phase velocity}
 \end{eg}
 
-<% begin_sec("Abstract index notation") %>
+<% begin_sec("Abstract index notation") %>\label{abstract-index-notation}
 Expressions in birdtracks notation such as
 \begin{equation*}
   __birdgrad(C)s
@@ -571,6 +571,9 @@ There is in fact a systematic way of representing any such expression using only
 and superscripts. This is called abstract index notation, and was introduced by Roger Penrose
 at around the same time he invented birdtracks. For practical reasons, it was the abstract index
 notation that caught on.\index{abstract index notation}
+\index{birdtracks notation!equivalent to abstract index notation}
+\index{abstract index notation!equivalent to birdtracks}
+\index{abstract index notation}
 
 The idea is as follows. Suppose we wanted to describe a complicated birdtrack
 verbally, so that someone else could draw it. 
