@@ -267,9 +267,29 @@ distributive rule $a(b+c)=ab+bc$ from axioms A1-A3.
 
 <% begin_sec("Vectors",nil,'affine-vectors') %>
 
+<% begin_sec("Vectors distinguished from scalars") %>
+We've been discussing subjects like the center of mass that in freshman mechanics would
+be described in terms of vectors and scalars, the distinction being that vectors have
+a direction in space and scalars don't. As we make the transition to relativity,
+we are forced to refine this distinction. For example, we used to consider time as
+a scalar, but the Hafele-Keating experiment shows that time is different in different
+frames of reference, which isn't something that's supposed to happen with scalars
+such as mass or temperature. In affine geometry, it doesn't make much sense to say that
+a vector has a magnitude and direction, since non-parallel magnitudes aren't comparable,
+and there is no system of angular measurement in which to describe a direction.
+
+A better way of defining vectors and scalars is that scalars are absolute, vectors
+relative. If I have three apples in a bowl, then all observers in all frames of
+reference agree with me on the number three. But if my terrier pup pulls on the leash
+with a certain force vector, that vector has to be defined in relation to other things.
+It might be three times the strength of some force that we define as one newton, and 
+in the same direction as the earth's magnetic field.
+
+In general, measurement means comparing one thing to another. The number of apples in
+the bowl isn't a measurement, it's a count.
+<% end_sec %> % Vectors and scalars
+
 <% begin_sec("Affine measurement of vectors") %>
-We have a system of measurement. Can it be extended to include vectors?
-In general, measurement means comparing one thing to another. 
 Before even getting into the full system of affine geometry, let's consider the one-dimensional
 example of a line of time.
 We could use the hourly
@@ -277,7 +297,7 @@ emergence of a mechanical bird from a pendulum-driven cuckoo
 clock to measure the rate at which the earth spins, but we could equally well take our planet's
 rotation as the standard and use it to measure the frequency with which the bird pops out of the door.
 Once we have two things to
-compare against one another, measurement is reduced to a process of counting (figure
+compare against one another, measurement is reduced to counting (figure
 \figref{lattice-construction}, p.~\pageref{fig:lattice-construction}).
 Schematically, let's represent this measurement process with
 the following notation, which is part of a system called called birdtracks:\index{birdtracks notation}%
@@ -289,13 +309,14 @@ online book at \url{birdtracks.eu}.}\index{birdtracks}\index{Cvitanovi\'{c}, Pre
 \index{Penrose!graphical notation for tensors}\index{tensor!Penrose graphical notation}
 \index{vector!Penrose graphical notation}
 \begin{equation*}
-  __birdscalarproduct(c,e)
+  __birdscalarproduct(c,e) = 24
 \end{equation*}
 Here $c$ represents the cuckoo clock and $e$ the rotation of the earth.
 Although the measurement relationship is nearly symmetric, the arrow has a direction, because,
 for example, the measurement of the earth's rotational period in terms of the clock's frequency is
-$(24\ \zu{hr})(1\ \zu{hr}^{-1})=24$, but the clock's period in terms of the earth's frequency
-is $1/24$. We say that the relationship is not symmetric but ``dual.'' By the way, it doesn't matter
+$__birdscalarproduct(c,e)=(24\ \zu{hr})(1\ \zu{hr}^{-1})=24$, but the clock's period in terms of the earth's frequency
+is $__birdscalarproduct(e,c)=1/24$. We say that the relationship is
+not symmetric but ``dual.'' By the way, it doesn't matter
 how we arrange these diagrams on the page. The notations __birdscalarproduct(c,e)
 and __birdflipscalarproduct(c,e) mean exactly the same thing, and expressions like this can even be drawn
 vertically.
@@ -310,10 +331,12 @@ come out on the half hour as well as on the hour, forming $2c$. Measurement shou
 be a linear function of both vectors; we say it is ``bilinear.'' 
 <% end_sec %>
 
+
 <% begin_sec("Duality") %>\index{dual vector}\index{vector!dual}
-The two vectors
-$c$ and $e$ inhabit two different one-dimensional vector spaces, and they have different units:
-$\zu{hr}^{-1}$ and hr. The ``flavor'' of the vector is represented by whether the arrow goes into
+The two vectors $c$ and $e$ have different units,
+$\zu{hr}^{-1}$ and hr, and
+inhabit two different one-dimensional vector spaces.
+The ``flavor'' of the vector is represented by whether the arrow goes into
 it or comes out. Just as we used notation like $\overrightarrow{v}$ in freshman physics to
 tell vectors apart from scalars, we can employ arrows in the birdtracks
 notation as part of the notation for
@@ -323,8 +346,38 @@ as __birddualvec(c) and __birdvec(e). Performing a measurement is like plumbing.
 We join the two ``pipes'' in __birddualvec(c)__birdvec(e) and simplify to
 __birdscalarproduct(c,e).
 
-In two dimensions, there are natural ways of visualizing these two vector spaces.
-We've already been describing __birdvec(e) as a displacement. Its vector space is the
+A confusing and nonstandardized jungle of notation and terminology has grown up around these concepts. For now,
+let's refer to a vector such as __birdvec(e), with the arrow coming in, simply as a ``vector,''
+and the type like __birddualvec(c) as a ``dual vector.''
+In the one-dimensional example of the earth and the cuckoo clock, the roles played by the two
+vectors were completely equivalent, and it didn't matter which one we expressed as a vector
+and which as a dual vector. Example \ref{eg:force-is-lower-index} shows that it is sometimes
+more natural to take one quantity as a vector and another as a dual vector. Example
+\ref{eg:systems-without-a-metric} shows that we sometimes have no choice at all as to which
+is which.
+<% end_sec %> % Duality
+
+<% begin_sec("Scaling") %>\index{dual vector}\index{vector!dual}
+In birdtracks notation, a scalar is a quantity that has no external arrows at all. Since the
+expression $__birdscalarproduct(c,e)=24$ has no external arrows, only internal ones, it represents
+a scalar. This makes sense because it's a count, and a count is a scalar.
+
+A convenient way of summarizing all of our categories of variablies is by their behavior
+when we convert units, i.e., when we rescale our space. If we switch our time unit from
+hours to minutes, the number of apples in a bowl is unchanged, the earth's period of
+rotation gets 60 times bigger, and the frequency of the cuckoo clock changes by a
+factor of 1/60. In other words, a quantity $u$ under rescaling of coordinates
+by a factor $\alpha$ becomes $\alpha^p u$, where the exponents $-1$, $0$, and $+1$
+correspond to dual vectors, scalars, and vectors, respectively. We can therefore see that
+these distinctions are of interest even in one dimension, contrary to what one would have
+expected from the freshman-physics concept of a vector as something transforming in a certain
+way under rotations.
+<% end_sec %> % Scaling
+
+<% begin_sec("Geometrical visualization") %>
+In two dimensions, there are natural ways of visualizing the different vector spaces inhabited by
+vectors and dual vectors.
+We've already been describing a vector like __birdvec(e) as a displacement. Its vector space is the
 space of such displacements.\footnote{In terms of the primitive notions used in the axiomatization
 in section \ref{sec:affine-geometry}, a displacement could be described as
 an equivalence class of segments such that
@@ -339,7 +392,8 @@ lines are crossed by a certain vector, \subfigref{vector-measuring-covector}{3}.
   fig(
     'vector-measuring-covector',
     %q{1. A displacement vector. 2. A vector from the space dual to the space of displacements.
-       3. The cuckoo clock chimes 24 times in one rotation of the earth.}
+       3. Measurement is reduced to counting.
+          The cuckoo clock chimes 24 times in one rotation of the earth.}
   )
 %>
 \spacebetweenfigs
@@ -351,16 +405,8 @@ lines are crossed by a certain vector, \subfigref{vector-measuring-covector}{3}.
   )
 %>
 <% end_marg %>
+<% end_sec %> % Geometrical visualization
 
-A confusing and nonstandardized jungle of notation and terminology has grown up around these concepts. For now,
-let's refer to a vector such as __birdvec(e), with the arrow coming in, simply as a ``vector,''
-and the type like __birddualvec(c) as a ``dual vector.''
-In the one-dimensional example of the earth and the cuckoo clock, the roles played by the two
-vectors were completely equivalent, and it didn't matter which one we expressed as a vector
-and which as a dual vector. Example \ref{eg:force-is-lower-index} shows that it is sometimes
-more natural to take one quantity as a vector and another as a dual vector. Example
-\ref{eg:systems-without-a-metric} shows that we sometimes have no choice at all as to which
-is which.
 
 Given a scalar field $f$, its gradient $\operatorname{grad} f$ at any given point is a dual vector.
 In birdtracks notation, we have to indicate this by writing it with an
@@ -376,8 +422,7 @@ form something called a covariant derivative. When we get to that point on p.~\p
 we'll commandeer the circle notation for that operation.\label{birdtracks-circle-not-covariant}
 
 \begin{eg}{Force is a dual vector}\label{eg:force-is-lower-index}
-For example,
-the dot product $\der W=\vc{F}\cdot\der\vc{x}$ for computing mechanical work becomes,
+The dot product $\der W=\vc{F}\cdot\der\vc{x}$ for computing mechanical work becomes,
 in birdtracks notation,
 \begin{equation*}
   \der W = __birdscalarproduct(F,\der x) \qquad .
@@ -513,7 +558,53 @@ Since __birddualvec(k) and __birdvec(s) belong to different vector spaces, we ca
 are parallel.\index{group velocity}\index{phase velocity}
 \end{eg}
 
-<% end_sec %> % Duality
+<% begin_sec("Abstract index notation") %>
+Expressions in birdtracks notation such as
+\begin{equation*}
+  __birdgrad(C)s
+\end{equation*}
+can be awkward to type on a computer, which is why we've already been occasionally resorting to
+more linear notations such as $__birdscalarproduct((\operatorname{grad}C),s)$. As we encounter
+more complicated birdtracks, the diagrams will sometimes look like complicated electrical schematics, and
+the problem of generating them on a keyboard will get more acute.
+There is in fact a systematic way of representing any such expression using only ordinary subscripts
+and superscripts. This is called abstract index notation, and was introduced by Roger Penrose
+at around the same time he invented birdtracks. For practical reasons, it was the abstract index
+notation that caught on.\index{abstract index notation}
+
+The idea is as follows. Suppose we wanted to describe a complicated birdtrack
+verbally, so that someone else could draw it. 
+The diagram would be made up of various smaller parts, a typical one looking something
+like the scalar product $__birdscalarproduct(u,v)$. The verbal instructions might be: ``We have
+an object $u$ with an arrow coming out of it. For reference, let's label this arrow as $a$.
+Now remember that other object $v$ I had you draw before? There was an arrow coming into
+that one, which we also labeled $a$. Now connect up the two arrows labeled $a$.''
+
+Shortening this lengthy description to its bare minimum, Penrose renders it like
+this: $u_av^a$. Subscripts depict arrows coming out of a symbol (think of water flowing
+from a tank out through a pipe below). Superscripts indicate arrows going in. When
+the same letter is used as both a superscript and a subscript, the
+two arrows are to be piped together.
+
+Abstract index notation evolved out of an earlier one 
+called the Einstein summation convention,\index{Einstein summation convention}
+in which superscripts and subscripts referred to specific coordinates.
+For example, we might take 0 to be the time coordinate, 1 to be $x$, and so on.
+A symbol like $u_\gamma$ would then indicate a component of the dual vector $u$,
+which could be its $x$ component if $\gamma$ took on the value 1. Repeated indices
+were summed over. 
+
+The advantage of the birdtrack and abstract index notations is that they are
+coordinate-independent, so that an equation written in them is valid regardless
+of the choice of coordinates. The Einstein and Penrose notations look very similar,
+so for example if we want to take a general result expressed in Penrose notation
+and apply it in a specific coordinate system, there is essentially no translation
+required. In fact, the two notations look so similar that we need an explicit way
+to tell which is which, so that we can tell whether or not a particular result
+is coordinate-independent. We therefore use the convention that Latin indices
+represent abstract indices, whereas Greek ones imply a specific coordinate system
+and can take on numerical values, e.g., $\gamma=1$.
+<% end_sec %> % Abstract index notation
 
 <% end_sec %> % Vectors
 
