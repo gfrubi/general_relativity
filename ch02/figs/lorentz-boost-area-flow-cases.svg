@@ -71,7 +71,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -103,18 +103,18 @@
            y="353.06256"
            x="24.000446"
            id="tspan3154"
-           sodipodi:role="line">x</tspan></text>
+           sodipodi:role="line">t</tspan></text>
       <text
          sodipodi:linespacing="100%"
          id="text3156"
          y="472.97473"
          x="156.80882"
-         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans"
          xml:space="preserve"><tspan
            y="472.97473"
            x="156.80882"
            id="tspan3158"
-           sodipodi:role="line">t</tspan></text>
+           sodipodi:role="line">x</tspan></text>
       <rect
          y="386.96411"
          x="36.606419"
@@ -152,18 +152,18 @@
            y="532.2478"
            x="18.811243"
            id="tspan2414"
-           sodipodi:role="line">x</tspan></text>
+           sodipodi:role="line">t</tspan></text>
       <text
          sodipodi:linespacing="100%"
          id="text2416"
          y="652.15997"
          x="151.61963"
-         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans"
          xml:space="preserve"><tspan
            y="652.15997"
            x="151.61963"
            id="tspan2418"
-           sodipodi:role="line">t</tspan></text>
+           sodipodi:role="line">x</tspan></text>
       <rect
          y="566.14935"
          x="31.417215"
@@ -207,18 +207,18 @@
            y="714.05969"
            x="40.359318"
            id="tspan2430"
-           sodipodi:role="line">x</tspan></text>
+           sodipodi:role="line">t</tspan></text>
       <text
          sodipodi:linespacing="100%"
          id="text2432"
          y="833.97186"
          x="173.16769"
-         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans"
          xml:space="preserve"><tspan
            y="833.97186"
            x="173.16769"
            id="tspan2434"
-           sodipodi:role="line">t</tspan></text>
+           sodipodi:role="line">x</tspan></text>
       <rect
          y="747.96124"
          x="52.96529"

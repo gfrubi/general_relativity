@@ -488,7 +488,7 @@ to ignore this distinction was that Galilean spacetime splits into independent t
 spatial parts, with the spatial part having a metric.
 \end{eg}
 
-\begin{eg}{No simultaneity without a metric}
+\begin{eg}{No simultaneity without a metric}\label{eg:no-simult-without-metric}
 We'll see in section \ref{sec:lorentz-geometry}
 that one way of defining the distinction between Galilean and Lorentz geometry is
 that in Lorentzian spacetime, simultaneity is observer-dependent.
@@ -616,9 +616,7 @@ and can take on numerical values, e.g., $\gamma=1$.
 <% begin_sec("Relativistic properties of Lorentz geometry") %>\label{sec:lorentz-geometry}
 
 We now want to pin down the properties of the Lorentz geometry that are left unspecified by the affine treatment.
-This can approached either by looking for an appropriate metric, or by finding the appropriate rules for
-distorting parallelograms when switching from one frame of reference to another frame is in motion relative
-to the first. In either case, we need some further input from experiments in order to show us how to proceed.
+We need some further input from experiments in order to show us how to proceed.
 We take the following as empirical facts about flat spacetime:\footnote{These facts are summarized
 for convenience on page \pageref{lorentz-summary} in the back of the book.}\label{lorentz-geometry-postulates}
 
@@ -636,7 +634,10 @@ for convenience on page \pageref{lorentz-summary} in the back of the book.}\labe
            observers in different inertial frames do not agree on the simultaneity of events.
 \end{itemize}
 
-Define affine parameters $t$ and $x$ for time and position, and construct a $(t,x)$ plane. Although
+Define affine parameters $t$ and $x$ for time and position, and construct a $(t,x)$ plane. Axiom L1
+guarantees that spacetime is flat, allowing us to do this; if spacetime had, for example, a curvature
+like that of a sphere, then the axioms of affine geometry would fail, and
+it would be impossible to lay out such a global grid of parallels. Although
 affine geometry treats all directions symmetrically, we're going beyond the affine aspects of
 the space, and $t$ does play a different role than $x$
 here, as shown, for example, by L4 and L5.
@@ -645,10 +646,22 @@ In the $(t,x)$ plane, consider a rectangle with one corner at the origin O. We c
 as representing the world-lines of two objects that are both initially at rest in this frame;
 they remain at rest (L2), so the right and left edges are parallel.
 
+How do we know that this is a rectangle and not some other kind of parallelogram? In purely affine
+geometry, there is no notion of perpendicularity, so this distinction is meaningless.
+But implicit in the existence of inertial frames (L2) is the assumption that spacetime has
+some additional structure that allows a particular observer to decide what events he considers
+to be simultaneous (example \ref{eg:no-simult-without-metric}, p.~\pageref{eg:no-simult-without-metric}).
+He then considers his own world-line, i.e., his $t$ axis, to be perpendicular to a proposed
+$x$ axis if points on the $x$ axis are simultaneous to him.
+
 We now define a second frame of reference such that the origins of the two frames coincide, but they
 are in motion relative to one another with velocity $v$. The transformation $L$ from the first frame to
 the second is referred to as a Lorentz boost
 with velocity $v$.\index{boost}\index{Lorentz boost} $L$ depends on $v$.
+By equivalence of inertial frames (L3), an observer in the new frame considers his own $t$ axis 
+to be perpendicular to his own $x$, even though they don't look that way in 
+figure \figref{lorentz-boosted-rectangle}. Thus, although we assume some notion of perpendicularity, we
+do not assume that it looks the same as the Euclidean one.
 
 By homogeneity of spacetime (L1), $L$ must be linear, so the original rectangle will be
 transformed into a parallelogram in the new frame; this is also consistent with L3, which requires that the
