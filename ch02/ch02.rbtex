@@ -628,11 +628,14 @@ for convenience on page \pageref{lorentz-summary} in the back of the book.}\labe
                   We can construct such a frame by using a particular particle, which is not subject to any forces, as a reference point.
 \item[L3] \emph{Equivalence of inertial frames:} If a frame is in constant-velocity translational motion relative to an inertial frame, then it is also an inertial frame.
               No experiment can distinguish one preferred inertial frame from all the others.
-\item[L4] \emph{Causality:} If an observer in certain inertial frame observes that event A causes event B, then observers in other inertial frames agree
-              that A causes B, not the other way around.
-\item[L5] \emph{No simultaneity:} The experimental evidence in section \ref{sec:time-experiments} shows that
-           observers in different inertial frames do not agree on the simultaneity of events.
+\item[L4] \emph{Causality:} There exist events 1 and 2 such that $t_1<t_2$ in all frames. 
+\item[L5] \emph{Relativity of time:} There exist events 1 and 2 and frames of reference
+        $(t,x)$ and $(t',x')$ such that $t_1<t_2$, but $t'_1>t'_2$.
 \end{itemize}
+
+L4 makes it possible to have an event 1 that causes an event 2, with all observers agreeing on which
+caused which. L5 is supported by the experimental evidence in section \ref{sec:time-experiments};
+if L5 were false, then space and time could work as imagined by Galileo and Newton.
 
 Define affine parameters $t$ and $x$ for time and position, and construct a $(t,x)$ plane. Axiom L1
 guarantees that spacetime is flat, allowing us to do this; if spacetime had, for example, a curvature
@@ -831,7 +834,7 @@ always propagated in empty space with a definite velocity $c$ which is
 independent of the state of motion of the emitting body.''
 \end{itemize}
 Einstein's P1 is essentially the same as our L3 (equivalence of inertial frames). He implicitly assumes
-something equivalent to our L1 (homogeneity and isotropy of spacetime). In his system, our L5 (no simultaneity)
+something equivalent to our L1 (homogeneity and isotropy of spacetime). In his system, our L5 (relativity of time)
 is a theorem proved from the axioms P1-P2, whereas in our system, his P2 is a theorem proved from the axioms L1-L5.
 <% marg(-20) %>
 <%
