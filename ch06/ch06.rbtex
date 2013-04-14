@@ -1123,7 +1123,7 @@ imaged directly in the near future.\footnote{\url{arxiv.org/abs/0906.4040}}
 <% end_sec %> % observational
 
 <% begin_sec("Singularities and cosmic censorship") %>\index{singularity}\index{cosmic censorship}
-
+<% begin_sec("Informal ideas") %>
 Since we observe that black holes really do exist, maybe we should take the singularity at $r=0$ seriously.
 Physically, it says that the mass density and tidal forces blow up to infinity there.
 
@@ -1156,23 +1156,6 @@ slime or your lost socks. In more technical language, a singularity would consti
 unitarity and an acute instance of the
 information paradox (see page \pageref{information-paradox}).\index{unitarity}\index{information paradox}\label{slime-and-socks}
 
-To formalize these ideas, we need to define the type of singularity that is of concern. It is still a matter of active
-theoretical research how one can most usefully define these concepts, but 
-Penrose\footnote{``Gravitational collapse,'' in
-Proceedings of the symposium on gravitational radiation and gravitational collapse,
-Warsaw, 1973. \url{adsabs.harvard.edu/full/1974IAUS...64...82P}} proposed the following two
-candidates as definitions of what he called a \emph{naked} singularity:\index{singularity!naked}\index{naked singularity}
-
-\begin{itemize}
-\item \emph{Global definition:} A naked singularity is one from which timelike or lightlike world-lines can
-originate and then escape to infinity.
-\item \emph{Local definition:} A naked singularity is one that is timelike, in the sense that an observer with a
-timelike world-line can have the singularity sometimes in his future light-cone and sometimes in his past light-cone.
-\end{itemize}
-
-\noindent The local definition has the advantage that it excludes cosmological singularities. Neither
-definition includes the black hole singularity described by the Schwarzschild metric.
-
 There is no obvious reason
 that general relativity should not allow naked singularities,
 but neither do we know of any real-world process by which one could be formed by gravitational collapse.
@@ -1181,7 +1164,106 @@ hypothesis states that the laws of physics prevent the formation of naked singul
 initial conditions. ``Generic'' is a necessary addition to Penrose's original 1969 formulation, since
 Choptuik showed in 1993 that certain perfectly fine-tuned
 initial conditions allowed collapse to a naked singularity.\footnote{Phys. Rev. Lett. 70, p.~9}
+<% end_sec %> % Informal ideas
+<% begin_sec("Formal definitions") %>
+The remainder of this subsection provides a more formal exposition of the definitions relating to
+singularities. It can be skipped without loss of continuity.
 
+The reason we care about singularities is  that they indicate an incompleteness of the theory, and the
+theory's inability to make predictions. One of the simplest things we could ask any theory to do would
+be to predict the trajectories of test particles. For example, Maxwell's equations correctly predict the motion
+of an electron in a uniform magnetic field, but they fail to predict the motion of an electron that
+collides head-on with a positron. It might have been natural for someone in Maxwell's era (assuming
+they were informed about the existence of positrons and told to assume that both particles were pointlike)
+to guess that the two particles would scatter through one another at $\theta=0$, their velocities momentarily becoming
+infinite. But it would have been equally natural for this person to refuse to make a prediction.
+
+Similarly, if a particle hits a black hole singularity, we should not expect general relativity to make
+a definite prediction. It doesn't. Not only does the geodesic equation break down, but if we were to
+naively continue the particle's geodesic by assuming that it scatters in the forward direction, the
+continuation would be a world-line whose future-time direction pointed into the singularity rather than back
+out of it.
+
+We would therefore like to define a singularity as a situation in which the geodesics of test particles
+can't be extended indefinitely. But what does ``indefinitely'' mean? If the test particle is a photon, then
+the metric length of its world-line is zero. We get around this by defining length in terms of an affine
+parameter.
+
+<% marg(35) %>
+<%
+  fig(
+    'conical-singularity',
+    %q{A conical singularity.
+           The cone has zero intrinsic curvature everywhere except at its tip.
+           Geodesic 1 can be extended infinitely far, but geodesic 2 cannot; since the metric is
+           undefined at the tip, there is no sensible way to define how geodesic 2 should be extended.}
+  )
+%>
+<% end_marg %>
+
+Definition: A spacetime is said to be geodesically incomplete if there exist timelike or lightlike geodesics
+that cannot be extended past some finite affine parameter into the past or future.\index{geodesic incompleteness}
+
+Geodesic incompleteness defines what we mean by a singularity. A geodesically incomplete spacetime
+has one or more singularities in it.\index{singularity!formal definition}
+The Schwarzschild spacetime has a singularity at $r=0$, but not at the event horizon, since geodesics
+continue smoothly past the event horizon. Cosmological spacetimes contain a Big Bang singularity which
+prevents geodesics from being extended beyond a certain point in the \emph{past}.
+
+There are two types of singularities, curvature singularities and conical singularities.
+The examples above are curvature singularities. Figure \figref{conical-singularity} shows an example
+of a conical singularity.\index{singularity!conical}\index{conical singularity} (Cf.~figure \figref{cone},
+\pageref{fig:cone}.)
+As one approaches a curvature singularity, the curvature of spacetime diverges to infinity, as measured by
+a curvature invariant such as the Ricci scalar.
+In 2+1-dimensional relativity, curvature vanishes identically, and the only kind of gravity that exists
+is due to conical singularities. Conical singularities are not expected to be present in our universe, since
+there is no known mechanism by which they could be formed by gravitational collapse.
+
+Actual singularities involving geodesic incompleteness are to be distinguished from coordinate singularities,
+which are not really singularities at all. In the Schwarzschild spacetime, as described in Schwarzschild's
+original coordinates, some components of the metric blow up at the event horizon, but this is not an
+actual singularity. This coordinate system can be replaced with a different one in which the metric
+is well behaved.
+
+The reason curvature scalars are useful as tests for an actual curvature singularity is that
+since they're scalars, they can't diverge in one coordinate system but stay finite
+in another. We define a singularity to be a curvature singularity if timelike or lightlike geodesics
+can only be extended to some finite affine parameter, and some curvature scalar (not
+necessarily every such scalar) approaches infinity as we approach this value of the affine
+parameter. Anything that is not a curvature singularity is considered a conical singularity.
+
+A singularity is not considered to be a point in a spacetime; it's more like a hole
+in the topology of the manifold. For example, the Big Bang didn't
+occur at a point.
+
+Because a singularity isn't a point or a point-set,
+we can't define its timelike or spacelike character in quite the way
+we would with, say, a curve. 
+A timelike singularity is one such that an observer with a
+timelike world-line can have the singularity sometimes in his future
+light-cone and sometimes in his past light-cone.\footnote{Penrose,
+Gravitational radiation and gravitational collapse; Proceedings of the Symposium, Warsaw, 1973. Dordrecht, D. Reidel Publishing Co. pp. 82-91, free online 
+at \url{adsabs.harvard.edu/full/1974IAUS...64...82P}}\index{singularity!timelike}
+
+Schwarzschild and Big Bang singularities are
+spacelike. (Note that in the Schwarzschild metric, the
+Schwarzschild $r$ and $t$ coordinates swap their timelike and spacelike
+characters inside the event horizon.)
+
+The definition of a timelike singularity is local.
+A timelike singularity would be one
+that you could have sitting on your desk, where you could
+look at it and poke it with a stick.
+
+A naked singularity is one from which timelike or lightlike world-lines can
+originate and then escape to infinity. The Schwarzschild metric's singularity is not naked.
+This notion is global.\index{singularity!naked}
+
+If either a timelike or a naked singularity can be formed by gravitational collapse from
+realistic initial conditions, then it would create severe difficulties for physicists wishing
+to make predictions using the laws of physics.
+<% end_sec %> % Formal definitions
 <% end_sec %> % singularities
 
 <% begin_sec("Hawking radiation") %>\label{sec:hawking-radiation}
