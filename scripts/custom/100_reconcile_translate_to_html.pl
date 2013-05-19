@@ -22,7 +22,6 @@ my @copies = (
   "/home/bcrowell/Documents/writing/books/calc/scripts/translate_to_html.rb",
   "/home/bcrowell/Documents/writing/books/genrel/scripts/translate_to_html.rb",
   "/home/bcrowell/Documents/writing/books/physics/scripts/translate_to_html.rb",
-  "/home/bcrowell/Documents/writing/books/thompson/scripts/translate_to_html.rb"
 );
 
 my $master_mod = last_modification_time($master);

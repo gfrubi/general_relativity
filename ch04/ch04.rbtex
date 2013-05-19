@@ -1418,6 +1418,15 @@ Show that this can't be the case, because performing two such transformations in
 in general result in a transformation of the same form.\hwsoln
 <% end_hw %>
 
+<% begin_hw('tachyon-instability') %>
+We know of massive particles, whose velocity vectors always lie inside the future light cone,
+and massless particles, whose velocities lie on it. In principle, we could have a third
+class of particles, called tachyons,\index{tachyon}
+with spacelike velocity vectors. Tachyons would have $m^2<0$, i.e., their masses would have to be
+imaginary. Show that it is possible to pick momentum four-vectors $\vc{p}_1$ and $\vc{p}_2$ for
+a pair of tachyons such that $\vc{p}_1+\vc{p}_2=0$. This implies that the vacuum would be unstable
+with respect to spontaneous creation of tachyon-antitachyon pairs.
+<% end_hw %>
 
 
 \end{hwsection}

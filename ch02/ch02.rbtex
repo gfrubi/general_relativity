@@ -475,7 +475,7 @@ in the $(\theta,\phi)$ plane.
 The conjugate momenta (which are actually angular momenta) turn out to be
 $p_\theta=\dot{\theta}+\cos(\phi-\theta)\dot{\phi}$ and a similar expression for $p_\phi$.
 As in the example of the billiard ball,
-The force of constraint is parallel to __birddualvec(w).
+the force of constraint is parallel to __birddualvec(w).
 There is no metric that naturally applies to the $(\theta,\phi)$ plane, so we have no
 notion of perpendicularity, and it
 doesn't make sense to say that __birddualvec(F) is perpendicular to the line of constraint. 
