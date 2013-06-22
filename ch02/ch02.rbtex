@@ -1543,7 +1543,7 @@ A boost along the $x$ axis tangles up the $x$ and $t$ coordinates. A $y$-boost m
 consecutive boosts along $x$ and $y$ can cause $x$ and $y$ to mix. The result, as we'll see in more detail below,
 is that two consecutive boosts along non-collinear axes are not equivalent to a single boost; they are equivalent
 to a boost plus a spatial rotation. The remainder of this section discusses this effect, known as Thomas precession,
-in more detail; it can be omitted on a first reading.
+in more detail; it can be omitted on a first reading.\index{Thomas precession}
 
 Self-check: Apply similar reasoning to a Galilean boost.
 

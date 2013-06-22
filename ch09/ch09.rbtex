@@ -436,6 +436,15 @@ second $\omega^2$ arises because the smaller $\omega$
 is, the longer the wavelength, and the greater the inefficiency in radiation caused by the small size of the source
 compared to the wavelength.
 
+\begin{eg}{AM radio}
+Commercial AM radio uses wavelengths of several hundred meters, so AM dipole antennas are usually orders of magnitude
+shorter than a wavelength. This causes severe attentuation in both transmission and reception. (There
+are theorems called reciprocity theorems that relate efficiency of transmission to efficiency of
+reception.) Receivers therefore need to use of a large amount of amplification.
+This doesn't cause problems, because the ambient sources of RF noise are attenuated by the short
+antenna just as severely as the signal.
+\end{eg}
+
 Since our universe doesn't seem to have particles with negative mass, we can't form a gravitational dipole by
 putting positive and negative masses on opposite ends of a stick --- and furthermore, such a stick will not spin freely
 about its center, because its center of mass does not lie at its center! In a more realistic system, such as the
@@ -457,7 +466,7 @@ gravitational forces, with the result that orbits tend to decay. This argument o
 if the forces are constant over time, then the time delay has no effect. For example, in the semi-Newtonian limit the field
 of a sheet of mass is independent of distance from the sheet. (The electrical analog of this fact is easily proved using
 Gauss's law.) If two parallel sheets fall toward one another, then neither is subject to a time-varying force, so there
-will be no dissipation of energy. In general, we expect that there will be no gravitational radiation from a particle unless
+will be no radiation. In general, we expect that there will be no gravitational radiation from a particle unless
 the third derivative of its position $\der^3 x/\der t^3$ is nonzero. (The same is true for electric quadrupole radiation.)
 In the special case where the position oscillates sinusoidally, the chain rule tells us that taking the third derivative
 is equivalent to bringing out a factor of $\omega^3$. Since the amplitude of gravitational waves is proportional to
