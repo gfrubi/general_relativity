@@ -1506,7 +1506,7 @@ due to Lorentz contraction by a factor $\gamma$, this requires that the density 
 as described by the observer O who remained at the origin. This scenario turns out to be identical to the Milne
 universe under the change of coordinates from spatially flat coordinates
 $(T,R)$ to FRW coordinates $(t,r)$, where $t=T/\gamma$ is the proper time
-and $r=v\gamma$.
+and $r=v\gamma$. (Cf.~problem \ref{hw:nontrivial-curvature-in-one-plus-one}, p.~\pageref{hw:nontrivial-curvature-in-one-plus-one}.)
 
 The Milne universe may be useful as an innoculation against the common misconception that the Big Bang was
 an explosion of matter spreading out into a preexisting vacuum. Such a description seems obviously incompatible

@@ -1973,6 +1973,24 @@ Prove that a torus is a manifold.\hwsoln
 Prove that a sphere is not homeomorphic to a torus.\hwsoln
 <% end_hw %>
 
+<% begin_hw('nontrivial-curvature-in-one-plus-one') %>
+Curvature on a Riemannian space in 2 dimensions is a topic that goes back to Gauss and has
+a simple interpretation: the only intrinsic measure of curvature is a single number, the Gaussian curvature.
+What about 1+1 dimensions? The simplest metrics I can think of are of the form $ds^2=dt^2-f(t)dx^2$.
+(Something like $ds^2=f(t)dt^2-dx^2$ is obviously equivalent to Minkowski space under a change
+of coordinates, while $ds^2=f(x)dt^2-dx^2$ is the same as the original example except that
+we've swapped $x$ and $t$.) Playing around with simple examples, one stumbles across the seemingly
+mysterious fact that  the metric $ds^2=dt^2-t^2dx^2$ is flat, while $ds^2=dt^2-tdx^2$ is not.
+This seems to require some simple explanation. Consider the metric $ds^2=dt^2-t^p dx^2$.\hwendpart
+(a) Calculate the Christoffel symbols by hand.\hwendpart
+(b) Use a computer algebra system such as Maxima to show that the Ricci tensor vanishes only when $p=2$.\hwsoln
+
+\hwremark{The explanation is that in the case $p=2$, the $x$ coordinate is expanding in proportion to
+the $t$ coordinate. This can be interpreted as a situation in which our length scale is defined by a lattice
+of test particles that expands inertially. Since their motion is inertial, no gravitational fields are required
+in order to explain the observed change in the length scale; cf.~the Milne universe, p.~\pageref{milne}.}
+<% end_hw %>
+
 
 \end{hwsection}
 
