@@ -638,6 +638,7 @@ had been whirled at the end of a rope. In my opinion this is an unnatural way of
 rotation is the result of gravitational or nongravitational forces. (2) Referring to observation, it is clearly artificial
 to treat the spatial curvature and Thomas effects separately,
 since neither one can be disentangled from the other by varying the quantities $n$, $m$, and $r$.
+For more discussion, see \url{tinyurl.com/me3qf8o}.% http://physics.stackexchange.com/questions/8043/decomposing-geodetic-de-sitter-effect-into-thomas-precession-and-spatial-curvatu
 
 <% end_sec %> % 2+1 dimensions
 
@@ -1504,6 +1505,17 @@ The metric of coordinates $(\theta,\phi)$ on the unit sphere is $\der s^2=\der\t
 (c) Prove that the singularity is a coordinate singularity.
 <% end_hw %>
 
+<% begin_hw('black-hole-slingshot') %>
+(a) Space probes in our solar system often use a slingshot maneuver. In the simplest case, the probe
+is scattered gravitationally through an angle of 180 degrees by a planet. Show that in some
+other frame such as the rest frame of the sun, in which
+the planet has speed $u$ toward the incoming probe, the maneuver adds $2u$ to the speed of the probe.
+(b) Suppose that we replace the planet with a black hole, and the space probe with a light ray. Why
+doesn't this accelerate the ray to a speed greater than $c$?
+\hwsoln
+<% end_hw %>
+
+
 <% begin_hw('astroid') %>
 The curve given parametrically by $(\cos^3 t,\sin^3 t)$ is called an astroid. 
 The arc length along this curve is given by $s=(3/2)\sin^2 t$, and its 
@@ -1511,6 +1523,7 @@ curvature by $k=-(2/3)\csc 2t$. By rotating this astroid about the $x$ axis, we 
 that can be described by coordinates $(t,\phi)$, where $\phi$ is the angle of rotation.
 (a) Find the metric on this surface.
 (b) Identify any singularities, and classify them as coordinate or intrinsic singularities.
+\hwsoln
 <% end_hw %>
 
 <% begin_hw('carousel-singularities') %>
