@@ -212,8 +212,35 @@ frame-invariant.
 Applying $E^2-p^2=m^2$ to the special case of a massless particle, we have $|p|=E$,
 which demonstrates, for example, that a beam of light exerts pressure when it is absorbed or reflected by
 a surface.\label{light-has-momentum-2}\footnote{cf.~p.~\pageref{light-has-momentum-1}}
-A massless particle must also travel at exactly the speed of light, since $|p| \rightarrow E$
-requires $m\gamma v \rightarrow m\gamma $; conversely, a massive particle always has $|v|<1$.\label{c-is-speed-of-massless-particles}
+Example \ref{eg:massless-at-c-proofs} gives two arguments to the effect that
+a massless particle must also travel at exactly the speed of light.
+Conversely, a massive particle is always slower than light.\label{c-is-speed-of-massless-particles}
+
+\begin{eg}{Massless particles travel at $c$}\label{eg:massless-at-c-proofs}
+We demonstrate this by showing that if we suppose the opposite, then
+there are two different consequences, either of which would be physically unacceptable.
+
+When a particle does have a nonvanishing mass, we have
+\begin{equation*}
+\lim_{E/m\rightarrow\infty} |v| \quad = \quad  \lim_{E/m\rightarrow\infty} \frac{|p|}{E} \quad = \quad 1 \qquad .
+\end{equation*}
+Thus if we had
+a massless particle with $|v|\ne 1$, its behavior would be different from the limiting behavior of
+massive particles. But this is physically unacceptable because then
+we would have a magic method for detecting arbitrarily small masses such
+as $10^{-10000000000}$ kg. We don't actually know that the photon, for example, is \emph{exactly}
+massless; see example \ref{eg:photon-mass} on p.~\pageref{eg:photon-mass}.
+
+Furthermore, suppose that a massless particle had $|v|<1$ in the frame of some observer. Then some
+other observer could be at rest relative to the particle. In such a frame,
+the particle's three-momentum $\mathbf{p}$ is zero by symmetry, since there is no preferred
+direction for it. Then $E^2=p^2+m^2$ is zero as well, so the particle's entire energy-momentum
+four-vector is zero. But a four-vector that vanishes in one frame also vanishes in every
+other frame. That means we're talking about a particle that can't undergo scattering, emission, or
+absorption, and is therefore undetectable by any experiment. This is physically unacceptable because
+we don't consider phenomena (e.g., invisible fairies) to be of physical interest if they are
+undetectable even in principle.
+\end{eg}
 
 \begin{eg}{Constraints on polarization}\label{eg:polzn-constraints}\index{polarization!of light}\index{transverse polarization!of light}
 We observe that electromagnetic waves are always polarized transversely, never longitudinally.
@@ -1288,7 +1315,7 @@ In a frame whose origin is instantaneously moving along with a certain system's 
 at a certain time, the time-space components of $L$ vanish, and the components $L^{yz}$, $L^{zx}$, and $L^{xy}$ coincide
 in the nonrelativistic limit with the $x$, $y$, and $z$ components of the Newtonian angular momentum vector. 
 We can also define a three-dimensional object
-$L^a=\epsilon_{abc}L^{bc}$ (with tensor-density $\epsilon$) that
+$L^a=\epsilon_{abc}L^{bc}$ (with three-dimensional tensor-density $\epsilon$ in the spatial dimensions) that
 doesn't transform like a tensor.
 <% end_sec %> % Angular momentum
 <% end_sec %> % Things that aren't quite tensors
