@@ -71,11 +71,19 @@ This is represented in the above equation by the use of infinitesimal quantities
 Our basic Lorentz vector is the spacetime displacement $\der x^i$. Any other quantity that has the same behavior
 as $\der x^i$ under rotations and boosts is also a valid Lorentz vector. Consider a particle moving through space,
 as described in a Lorentz frame. Since the particle may be subject to nongravitational forces, the Lorentz frame
-cannot be made to coincide (except perhaps momentarily) with the particle's rest frame. Dividing the infinitesimal displacement
-by an infinitesimal proper time interval, we have the four-velocity vector $v^i=\der x^i/\der\tau$,\index{velocity vector}
-whose components in a Lorentz coordinate system are $(\gamma,\gamma v^1,\gamma v^2,\gamma v^3)$, where $v^\mu$, $\mu=1,$ 2, 3,
-is the ordinary three-component velocity vector as defined in classical mechanics. The four-velocity's squared magnitude $v^iv_i$ is
-always exactly 1, even if the particle is not moving at the speed of light.
+cannot be made to coincide (except perhaps momentarily) with the particle's rest frame.
+If $\der x^i$ is not lightlike, then the corresponding infinitesimal proper time interval $\der\tau$ is
+nonzero. As with Newtonian three-vectors, dividing a four-vector by a Lorentz scalar produces another
+quantity that transforms as a four-vector, so
+dividing the infinitesimal displacement
+by a nonzero infinitesimal proper time interval, we have
+the four-velocity vector $v^i=\der x^i/\der\tau$,\index{velocity vector}
+whose components in a Lorentz coordinate system
+are $(\gamma,\gamma u^1,\gamma u^2,\gamma u^3)$, where $(u^1,u^2,u^3)$
+is the ordinary three-component velocity vector as defined in classical
+mechanics. The four-velocity's squared magnitude $v^iv_i$ is
+always exactly 1, even though the particle is not moving at the speed of light. (If it were moving at the
+speed of light, we would have $\der\tau=0$, and $v$ would be undefined.)
 
 When we hear something referred to as a ``vector,''
 we usually take this is a statement that it not only transforms as a vector, but also that it adds as a vector.
@@ -83,7 +91,7 @@ But we have already seen in section \ref{sec:velocity-addition} on page \pageref
 velocities in relativity do not add linearly; therefore they clearly cannot add linearly when dressed in the clothing of four-vectors.
 We've also seen in section \ref{sec:boosts-causing-rotations} that the combination of
 non-collinear boosts is noncommutative, and is generally equivalent to a boost plus a spatial rotation; this is also not
-consistent with linear addition of four vectors. At the risk of beating a dead horse, a four-velocity's squared magnitude is
+consistent with linear addition of four-vectors. At the risk of beating a dead horse, a four-velocity's squared magnitude is
 always 1, and this is not consistent with being able to add four-velocity vectors.
 
 \begin{eg}{A zero velocity vector?}\label{eg:zero-v-vector}
@@ -149,30 +157,55 @@ As $t$ approaches infinity, $\der x/\der t$ approaches the speed of light.
 <% end_sec %> % v and a
 
 <% begin_sec("The momentum four-vector") %>\label{sec:momentum-four-vector}\index{momentum four-vector}\index{four-vector!momentum}
+<% begin_sec("Definition for a material particle") %>
 If we hope to find something
-that plays the role of momentum in relativity, then the momentum three-vector clearly needs to be generalized to some
-kind of four-vector, and if it is to satisfy the correspondence principle then its definition should probably
+that plays the role of momentum in relativity, then the
+momentum three-vector probably needs to be generalized to some
+kind of four-vector. If so, then the law of conservation of momentum will be valid regardless of one's
+frame of reference, which is necessary.\footnote{We are not guaranteed that this is the right way to proceed,
+since the converse is not true: some three-vectors such as the
+electric and magnetic fields are embedded in rank-2 tensors in more complicated ways than this.
+See section \ref{sec:e-and-b-not-four-vectors}, p.~\pageref{sec:e-and-b-not-four-vectors}.}
+
+If we are to satisfy the correspondence principle then the relativistic definition of momentum should probably
 look as much as possible like the nonrelativistic one.
-In subsection \ref{sec:v-four-vector}, we obtained the velocity four-vector. 
-Multiplying by the particle's mass, we have the four-momentum $p^i=mv^i$, which in Lorentz coordinates is
+In subsection \ref{sec:v-four-vector}, we defined the velocity four-vector in the case of
+a particle whose $\der x^i$ is not lightlike.
+Let's assume for the moment that it makes sense to think of mass as a scalar.
+As with Newtonian three-vectors, multiplying a Lorentz scalar by a four-vector vector produces another
+quantity that transforms as a four-vector.
+We therefore conjecture that the four-momentum of a material particle can be defined
+as $p^i=mv^i$, which in Lorentz coordinates is
 $(m\gamma,m\gamma v^1,m\gamma v^2,m\gamma v^3)$. There is no \emph{a priori} guarantee that this is right, but it's
 the most reasonable thing to guess. It needs to be checked against experiment, and also for consistency with
 the other parts of our theory.
 
 The spacelike components look like the classical momentum vector
 multiplied by a factor of $\gamma$, the interpretation being that to an observer in this frame, the moving particle's
-inertia is increased relative to its classical value. Such an effect is indeed observed experimentally.
+inertia is increased relative to its value in the particle's rest frame. Such an effect is indeed observed experimentally.
 This is why particle accelerators are so big and expensive.
 As the particle approaches the speed of light, $\gamma$ diverges, so greater and greater forces are needed in order
-to produce the same acceleration. 
+to produce the same acceleration. In relativistic scattering processes with material particles,
+we find empirically that
+the four-momentum we've defined is conserved, which confirms that our conjectures above are valid,
+and in particular that the quantity we're calling $m$ can be treated as a Lorentz scalar, and this is
+what all physicists do today. The reader is cautioned, however, that up until about 1950, it was common
+to use the word ``mass'' for the combination $m\gamma$ (which is what occurs in the Lorentz-coordinate
+form of the momentum vector), while referring to $m$ as the ``rest mass.'' This archaic terminology is
+only used today in some popular-level books and low-level school textbooks.
+<% end_sec %> % Definition for a material particle
 
+<% begin_sec("Equivalence of mass and energy") %>
 The momentum four-vector has locked within it the reason for Einstein's famous
 $E=mc^2$, which in our relativistic units becomes simply $E=m$. To see why, consider the experimentally measured
 inertia of a physical object made out of atoms. The subatomic particles are all moving, and many of the velocities,
 e.g., the velocities of the electrons, are quite relativistic. This has the effect of increasing the experimentally
-determined inertial mass, by a factor of $\gamma$ averaged over all the particles.
-The same must be true for the gravitational mass, based on the equivalence principle
-as verified by E\"{o}tv\"{o}s experiments. If the object is heated, the velocities will increase on the average,
+determined inertial mass of the whole object, by a factor of $\gamma$ averaged over all the particles ---
+even though the masses of the individual particles are invariant Lorentz scalars.
+(This same increase must also be observed for the gravitational mass, based on the equivalence principle
+as verified by E\"{o}tv\"{o}s experiments.)
+
+Now if the object is heated, the velocities will increase on the average,
 resulting in a further increase in its mass. Thus, a certain amount of heat energy is equivalent to a certain amount
 of mass. But if heat energy contributes to mass, then the same must be true for other forms of energy. For example,
 suppose that heating leads to a chemical reaction, which converts some heat into electromagnetic binding energy.
@@ -181,39 +214,41 @@ allow the object to spontaneously change its own mass, and then by conservation 
 spontaneously change its own velocity, which would clearly violate the principle of relativity. We conclude that
 mass and energy are equivalent, both inertially and gravitationally. In relativity, neither is separately conserved;
 the conserved quantity is their sum, referred to as the mass-energy, $E$.\index{mass-energy}
-The timelike component of the four-momentum, $m\gamma$, is interpreted as the mass-energy of the particle,
-consisting of its mass $m$ plus its kinetic energy $m(\gamma-1)$. An alternative derivation, by Einstein, is given
+An alternative derivation, by Einstein, is given
 in example \ref{eg:einstein-mc2} on page \pageref{eg:einstein-mc2}.
+<% end_sec %> % Equivalence of mass and energy
 
-\begin{eg}{Gravitational redshifts}\label{eg:pound-rebka}
-Since a photon's energy $E$ is equivalent to a certain gravitational mass $m$, photons that rise or fall in a gravitational
-field must lose or gain energy, and this should be observed as a redshift or blueshift in the frequency.
-We expect the change in gravitational potential energy to be $E\Delta \phi$, giving a corresponding opposite change in the photon's
-energy, so that $\Delta E/E=\Delta \phi$. In metric units, this becomes $\Delta E/E=\Delta \phi/c^2$, and in the
-field near the Earth's surface we have $\Delta E/E=gh/c^2$.
-This is the same result that was found in section \ref{sec:gravitational-redshifts} based only on the equivalence
-principle, and verified experimentally by Pound and Rebka as described in section \ref{sec:pound-rebka}.
-\end{eg}
+<% begin_sec("Energy is the timelike component of the four-momentum") %>
+The Lorentz transformation of a zero vector is always zero. This means that the momentum
+four-vector of a material object can't equal zero in the object's rest frame, since then
+it would be zero in all other frames as well. So for an object of mass $m$, let its
+momentum four-vector in its rest frame be $(f(m),0,0,0)$, where $f$ is some function that
+we need to determine, and $f$ can depend only on $m$ since there is no other property of
+the object that can be dynamically relevant here. Since conservation laws are additive, $f$ has to
+be $f(m)=km$ for some universal constant $k$. In where $c=1$, $k$ is unitless.
+Since we want to recover the
+appropriate Newtonian limit for massive bodies, and since $v_t=1$ in that limit, we need $k=1$.
+Transforming the momentum four-vector from the particle's rest frame into some other frame,
+we find that the timelike component is no longer $m$. We interpret this as the relativistic mass-energy, $E$.
 
 Since the momentum four-vector was obtained from the magni\-tude-1 velocity four-vector through multiplication by $m$,
 its squared magnitude $p^ip_i$ is equal to the square of the particle's mass.
 Writing $p$ for the magnitude of the momentum three-vector, and $E$ for the mass-energy, we
-find the useful relation $E^2-p^2=m^2$.
+find the useful relation $m^2=E^2-p^2$.
+We take this to be the relativistic \emph{definition} the mass of any particle, including one
+whose $\der x^i$ is lightlike.
+<% end_sec %> % Energy is the timelike component of the four-momentum
 
-A common source of confusion for beginners in relativity is the distinction between quantities that are conserved and
-quantities that are the same in all frames. There is nothing relativistic about this distinction. Before Einstein,
-physicists already knew that observers in different frames of reference would agree on the mass of a particle. That is,
-$m$ was known to be frame-invariant. They also knew that energy was conserved. But just because energy was conserved,
-that didn't mean that it had to be the same for observers in all frames of reference. The kinetic energy of the chair
-you're sitting in is millions of joules in a frame of reference tied to the axis of the earth. In relativity, $m$
-is frame-invariant (i.e., a Lorentz scalar), but the conserved quantity is the momentum four-vector, which is not
-frame-invariant.
-
-Applying $E^2-p^2=m^2$ to the special case of a massless particle, we have $|p|=E$,
-which demonstrates, for example, that a beam of light exerts pressure when it is absorbed or reflected by
-a surface.\label{light-has-momentum-2}\footnote{cf.~p.~\pageref{light-has-momentum-1}}
+<% begin_sec("Particles traveling at $c$") %>
+The definition of four-momentum as $p^i=mv^i$ only works for particles that move at less than $c$. For those
+that move at $c$, the four-velocity is undefined.
+As we'll see in example \ref{eg:massless-at-c-proofs} on p.~\pageref{eg:massless-at-c-proofs}, this
+class of particles is exactly those that are massless. As shown on p.~\pageref{light-has-momentum-1},
+the three-momentum of a light wave is given by $p=E$.\label{light-has-momentum-2}
+The fact that this momentum is nonzero implies that for light $p^i=mv^i$ represents an indeterminate form.
+The fact that this momentum equals $E$ is consistent with our definition of mass as $m^2=E^2-p^2$.
 Example \ref{eg:massless-at-c-proofs} gives two arguments to the effect that
-a massless particle must also travel at exactly the speed of light.
+any massless particle must also travel at exactly the speed of light.
 Conversely, a massive particle is always slower than light.\label{c-is-speed-of-massless-particles}
 
 \begin{eg}{Massless particles travel at $c$}\label{eg:massless-at-c-proofs}
@@ -241,6 +276,20 @@ absorption, and is therefore undetectable by any experiment. This is physically 
 we don't consider phenomena (e.g., invisible fairies) to be of physical interest if they are
 undetectable even in principle.
 \end{eg}
+
+<% end_sec %> % Particles traveling at $c$
+
+\begin{eg}{Gravitational redshifts}\label{eg:pound-rebka}
+Since a photon's energy $E$ is equivalent to a certain gravitational mass $m$, photons that rise or fall in a gravitational
+field must lose or gain energy, and this should be observed as a redshift or blueshift in the frequency.
+We expect the change in gravitational potential energy to be $E\Delta \phi$, giving a corresponding opposite change in the photon's
+energy, so that $\Delta E/E=\Delta \phi$. In metric units, this becomes $\Delta E/E=\Delta \phi/c^2$, and in the
+field near the Earth's surface we have $\Delta E/E=gh/c^2$.
+This is the same result that was found in section \ref{sec:gravitational-redshifts} based only on the equivalence
+principle, and verified experimentally by Pound and Rebka as described in section \ref{sec:pound-rebka}.
+\end{eg}
+
+
 
 \begin{eg}{Constraints on polarization}\label{eg:polzn-constraints}\index{polarization!of light}\index{transverse polarization!of light}
 We observe that electromagnetic waves are always polarized transversely, never longitudinally.
