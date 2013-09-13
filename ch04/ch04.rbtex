@@ -247,9 +247,19 @@ class of particles is exactly those that are massless. As shown on p.~\pageref{l
 the three-momentum of a light wave is given by $p=E$.\label{light-has-momentum-2}
 The fact that this momentum is nonzero implies that for light $p^i=mv^i$ represents an indeterminate form.
 The fact that this momentum equals $E$ is consistent with our definition of mass as $m^2=E^2-p^2$.
-Example \ref{eg:massless-at-c-proofs} gives two arguments to the effect that
-any massless particle must also travel at exactly the speed of light.
-Conversely, a massive particle is always slower than light.\label{c-is-speed-of-massless-particles}
+<% end_sec %> % Particles traveling at $c$
+
+<% begin_sec("Mass is not additive") %>
+Since the momentum four-vector $p^a$ is additive, and our definition of mass as
+$p^ap_a$ depends on the vector in a nonlinear way, it follows that mass is not additive
+(even for particles that are not interacting but are simply considered collectively).
+<% end_sec %> % Mass is not additive
+
+\begin{eg}{Mass of two light waves}
+Let the momentum of a certain light wave be $(p_t,p_x)=(E,E)$,
+and let another such wave have momentum $(E,-E)$. The total momentum is
+$(2E,0)$. Thus this pair of massless particles has a collective mass of $2E$.
+\end{eg}
 
 \begin{eg}{Massless particles travel at $c$}\label{eg:massless-at-c-proofs}
 We demonstrate this by showing that if we suppose the opposite, then
@@ -277,7 +287,6 @@ we don't consider phenomena (e.g., invisible fairies) to be of physical interest
 undetectable even in principle.
 \end{eg}
 
-<% end_sec %> % Particles traveling at $c$
 
 \begin{eg}{Gravitational redshifts}\label{eg:pound-rebka}
 Since a photon's energy $E$ is equivalent to a certain gravitational mass $m$, photons that rise or fall in a gravitational
