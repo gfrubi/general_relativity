@@ -100,11 +100,11 @@ Maxwell's equations rather than having to be added as a separate constraint.
 <% begin_sec("Interpretation of the stress-energy tensor") %>\label{sec:more-energy-mom-tensor}\index{stress-energy tensor}
 The stress-energy tensor was briefly introduced in section \ref{sec:energy-momentum-tensor} on page \pageref{sec:energy-momentum-tensor}.
 By applying the Newtonian limit of the field equation to the Schwarzschild metric, we find that
-$T_{tt}$ is to be identified as the mass density $\rho$. The Schwarzschild metric describes a spacetime using coordinates
+$T^{tt}$ is to be identified as the mass density $\rho$. The Schwarzschild metric describes a spacetime using coordinates
 in which the mass is at rest. In the cosmological applications we'll be considering shortly,
 it also makes sense to adopt a frame of reference in which the local mass-energy is, on average, at rest,
-so we can continue to think of $T_{tt}$ as the (average) mass density. By symmetry, $T$ must be diagonal in
-such a frame. For example, if we had $T_{tx}\ne 0$, then the positive $x$ direction would be distinguished from
+so we can continue to think of $T^{tt}$ as the (average) mass density. By symmetry, $T$ must be diagonal in
+such a frame. For example, if we had $T^{tx}\ne 0$, then the positive $x$ direction would be distinguished from
 the negative $x$ direction, but there is nothing that would allow such a distinction.
 
 \begin{eg}{Dust in a different frame}\label{eg:dust-stress-energy}
@@ -117,7 +117,7 @@ Since the dust is nonrelativistic, we can obtain the Newtonian limit by using un
 letting $c$ approach infinity. In Cartesian coordinates, the components of the stress-energy have units that
 cause them to scale like
 \begin{equation*}
-T\indices{_\mu_\nu} \propto \left( \begin{matrix}
+T\indices{^\mu^\nu} \propto \left( \begin{matrix}
                    1 & 1/c & 1/c & 1/c \\
                    1/c & 1/c^2 & 1/c^2 & 1/c^2 \\
                    1/c & 1/c^2 & 1/c^2 & 1/c^2 \\
@@ -125,9 +125,9 @@ T\indices{_\mu_\nu} \propto \left( \begin{matrix}
       \end{matrix} \right) \qquad .
 \end{equation*}
 In the limit of $c\rightarrow\infty$, we can therefore take the only source of gravitational fields
-to be $T\indices{_t_t}$, which in Newtonian gravity must be the mass density $\rho$, so
+to be $T\indices{^t^t}$, which in Newtonian gravity must be the mass density $\rho$, so
 \begin{equation*}
-T\indices{^\mu_\nu} = \left( \begin{matrix}
+T\indices{^\mu^\nu} = \left( \begin{matrix}
                    \rho & 0 & 0 & 0 \\
                    0 & 0 & 0 & 0 \\
                    0 & 0 & 0 & 0 \\
@@ -136,7 +136,7 @@ T\indices{^\mu_\nu} = \left( \begin{matrix}
 \end{equation*}
 Under a Lorentz boost by $ v $ in the $x$ direction, the tensor transformation law gives
 \begin{equation*}
-T\indices{_{\mu'}_{\nu'}} = \left( \begin{matrix}
+T\indices{^{\mu'}^{\nu'}} = \left( \begin{matrix}
                    \gamma^2\rho & \gamma^2 v \rho & 0 & 0 \\
                    \gamma^2 v \rho & \gamma^2 v ^2\rho & 0 & 0 \\
                    0 & 0 & 0 & 0 \\
@@ -148,7 +148,7 @@ each dust particle's mass-energy is increased by a factor of $\gamma$, and lengt
 multiplies the density of dust particles by a factor of $\gamma$.
 In the limit of small boosts, the stress-energy tensor becomes
 \begin{equation*}
-T\indices{_{\mu'}_{\nu'}} \approx \left( \begin{matrix}
+T\indices{^{\mu'}^{\nu'}} \approx \left( \begin{matrix}
                    \rho &  v \rho & 0 & 0 \\
                     v \rho & 0 & 0 & 0 \\
                    0 & 0 & 0 & 0 \\
@@ -232,15 +232,36 @@ This shows that it can be rather subtle to interpret the stress-energy tensor an
 observables. For more on this connection, and the case of electromagnetic fields, see examples
 \ref{eg:t-of-em-wave} and \ref{eg:t-of-static-em-fields} on p.~\pageref{eg:t-of-em-wave}.
 
-In example \ref{eg:dust-stress-energy}, we found that $T\indices{_x_t}$ had to be interpreted as the
-flux of $T\indices{_t_t}$ (i.e., the flux of mass-energy) across the $x$ axis. Lorentz invariance
+In example \ref{eg:dust-stress-energy}, we found that $T\indices{^x^t}$ had to be interpreted as the
+flux of $T\indices{^t^t}$ (i.e., the flux of mass-energy) across the $x$ axis. Lorentz invariance
 requires that we treat $t$, $x$, $y$, and $z$ symmetrically, and this forces us to adopt the
-following interpretation: $T\indices{_\mu_\nu}$, where $\mu$ is spacelike, is the flux of the
+following interpretation: $T\indices{^\mu^\nu}$, where $\mu$ is spacelike, is the flux of the
 density of the mass-energy four-vector in the $\mu$ direction. In the comoving frame, in Cartesian
-coordinates, this means that $T\indices{_x_x}$, $T\indices{_y_y}$, and $T\indices{_z_z}$ should be
-interpreted as pressures. For example, $T\indices{_x_x}$ is the flux in the $x$ direction
+coordinates, this means that $T\indices{^x^x}$, $T\indices{^y^y}$, and $T\indices{^z^z}$ should be
+interpreted as pressures. For example, $T\indices{^x^x}$ is the flux in the $x$ direction
 of $x$-momentum. This is simply the pressure, $P$, that would be exerted on a surface with its normal
-in the $x$ direction, so in the comoving frame we have $T\indices{_\mu_\nu}=\operatorname{diag}(\rho,P,P,P)$.
+in the $x$ direction, so in the comoving frame we have $T\indices{^\mu^\nu}=\operatorname{diag}(\rho,P,P,P)$.
+
+\begin{eg}{Signs and placement of indices}
+The stress-energy tensor can be written in the forms $T^{ab}$, $T\indices{^a_b}$, and $T_{ab}$.
+As in the examples above, it is the upper-index form that is usually taken to be the one that relates
+to physical measurements of quantities such as density and pressure. Thus if $n_a$ is a unit vector,
+then $p^b=T^{ab}n_a$ is the flux of (upper-index) momentum through the surface that has $n_a$ as its
+normal. For the reasons discussed on p.~\pageref{visualize-vectors-and-duals}, it is natural to
+describe the normal as a lower-index vector. For a perfect fluid, the upper-index form is
+always $T\indices{^\mu^\nu}=\operatorname{diag}(\rho,P,P,P)$, regardless of the choice of signature.
+
+However, there is a sense in which it is more natural to consider momentum as a lower-index vector
+(example \ref{eg:momentum-is-lower-index}, p.~\pageref{eg:momentum-is-lower-index}), and one
+would then prefer the mixed-index form, $p_b=T\indices{^a_b}n_a$. A disadvantage of this form is
+that since the upper-index version is the one that connects directly to measurements, the signs
+in $T\indices{^a_b}$ depend on the choice of signature. For a perfect fluid, we have
+$T\indices{^a_b}=\operatorname{diag}(\rho,-P,-P,-P)$ for the $+---$ signature used in this
+book, but $T\indices{^a_b}=\operatorname{diag}(-\rho,P,P,P)$ for the $-+++$ signature.
+\end{eg}
+
+
+
 For a fluid that is not in equilibrium, the pressure need not be isotropic, and the stress
 exerted by the fluid need not be perpendicular to the surface on which it acts. The space-space
 components of $T$ would then be the classical stress tensor, whose diagonal elements are the anisotropic
@@ -287,7 +308,7 @@ mass $m_a$, which measures its ability to create gravitational fields, and its \
 which measures the force it feels when placed in an externally generated 
 field.\index{mass!active gravitational}\index{gravitational mass!active}\index{mass!passive gravitational}\index{gravitational mass!passive}
 For experiments using laboratory-scale material objects at nonrelativistic velocities, the Newtonian limit
-applies, and we can think of active gravitational mass as a scalar, with a density $T_{tt}=\rho$.
+applies, and we can think of active gravitational mass as a scalar, with a density $T^{tt}=\rho$.
 
 To understand how this relates to pressure as a source of gravitational fields, it is helpful to
 consider a case where $P$ is about the same as $\rho$, which occurs for light. Light is inherently

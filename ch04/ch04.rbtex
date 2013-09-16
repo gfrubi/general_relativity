@@ -799,7 +799,7 @@ scalar, and in Lagrangian mechanics momentum is defined by
 $p_a = \partial L/\partial v^a$.
 The upper index in the denominator on the right becomes a lower index on the left by the same reasoning
 as was employed in the notation of the tensor transformation laws. Newton's second law shows that this is
-consistent with the result of example \ref{eg:force-is-lower-index}.
+consistent with the result of example \ref{eg:force-is-lower-index} on p.~\pageref{eg:force-is-lower-index}.
 \end{eg}
 
 <% end_sec %>
