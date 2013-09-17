@@ -1175,7 +1175,9 @@ us that this Newtonian picture is incorrect. A physical object that approaches t
 mass $M$, with $M/r$ sufficiently large, has no causal future lying at larger values of $r$. The conclusion
 is that there is a limit on the tensile strength of any substance, imposed purely by general relativity, and we
 can state this limit without having to know anything about the physical nature of the interatomic forces.
-Cf. homework problem \ref{hw:speed-of-sound} and section \ref{sec:carousel}, as well as some references given in
+A more complete treatment of the tension in the rope is given in example \ref{eg:rope-in-sch}
+on p.~\pageref{eg:rope-in-sch}.
+Cf. also homework problem \ref{hw:speed-of-sound} and section \ref{sec:carousel}, as well as some references given in
 the remark following problem \ref{hw:speed-of-sound}.
 \end{eg}
 

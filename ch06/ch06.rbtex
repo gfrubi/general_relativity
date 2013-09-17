@@ -450,7 +450,7 @@ Continuing in this fashion, the results are as follows:
 
 <% end_sec %> % series solution
 
-<% begin_sec("The closed-form solution") %>
+<% begin_sec("The closed-form solution") %>\label{exact-schwarzschild-formula}
 
 The solution is unexpectedly simple, and can be put into closed form. The approximate result we found for $h$ was in fact exact.
 For $k$ we have a geometric series $1/(1-2/r)$, and when we reinsert the factor of $m$ in the only way that makes the units

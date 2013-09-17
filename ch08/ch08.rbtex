@@ -241,27 +241,6 @@ coordinates, this means that $T\indices{^x^x}$, $T\indices{^y^y}$, and $T\indice
 interpreted as pressures. For example, $T\indices{^x^x}$ is the flux in the $x$ direction
 of $x$-momentum. This is simply the pressure, $P$, that would be exerted on a surface with its normal
 in the $x$ direction, so in the comoving frame we have $T\indices{^\mu^\nu}=\operatorname{diag}(\rho,P,P,P)$.
-
-\begin{eg}{Signs and placement of indices}
-The stress-energy tensor can be written in the forms $T^{ab}$, $T\indices{^a_b}$, and $T_{ab}$.
-As in the examples above, it is the upper-index form that is usually taken to be the one that relates
-to physical measurements of quantities such as density and pressure. Thus if $n_a$ is a unit vector,
-then $p^b=T^{ab}n_a$ is the flux of (upper-index) momentum through the surface that has $n_a$ as its
-normal. For the reasons discussed on p.~\pageref{visualize-vectors-and-duals}, it is natural to
-describe the normal as a lower-index vector. For a perfect fluid, the upper-index form is
-always $T\indices{^\mu^\nu}=\operatorname{diag}(\rho,P,P,P)$, regardless of the choice of signature.
-
-However, there is a sense in which it is more natural to consider momentum as a lower-index vector
-(example \ref{eg:momentum-is-lower-index}, p.~\pageref{eg:momentum-is-lower-index}), and one
-would then prefer the mixed-index form, $p_b=T\indices{^a_b}n_a$. A disadvantage of this form is
-that since the upper-index version is the one that connects directly to measurements, the signs
-in $T\indices{^a_b}$ depend on the choice of signature. For a perfect fluid, we have
-$T\indices{^a_b}=\operatorname{diag}(\rho,-P,-P,-P)$ for the $+---$ signature used in this
-book, but $T\indices{^a_b}=\operatorname{diag}(-\rho,P,P,P)$ for the $-+++$ signature.
-\end{eg}
-
-
-
 For a fluid that is not in equilibrium, the pressure need not be isotropic, and the stress
 exerted by the fluid need not be perpendicular to the surface on which it acts. The space-space
 components of $T$ would then be the classical stress tensor, whose diagonal elements are the anisotropic
@@ -505,6 +484,118 @@ the stress-energy tensor, which falsifies the Einstein field equations.
 \end{eg}
 
 <% end_sec %> % Energy of gravitational fields not included in the stress-energy tensor
+
+<% begin_sec("Some examples") %>
+
+We conclude this introduction to the stress-energy tensor with some illustrative examples.
+
+\begin{eg}{Signs and placement of indices}
+The stress-energy tensor can be written in the forms $T^{ab}$, $T\indices{^a_b}$, and $T_{ab}$.
+As in the examples above, it is the upper-index form that is usually taken to be the one that relates
+to physical measurements of quantities such as density and pressure. Thus if $n_a$ is a unit vector,
+then $p^b=T^{ab}n_a$ is the flux of (upper-index) momentum through the surface that has $n_a$ as its
+normal. For the reasons discussed on p.~\pageref{visualize-vectors-and-duals}, it is natural to
+describe the normal as a lower-index vector. For a perfect fluid, the upper-index form is
+always $T\indices{^\mu^\nu}=\operatorname{diag}(\rho,P,P,P)$, regardless of the choice of signature.
+
+However, there is a sense in which it is more natural to consider momentum as a lower-index vector
+(example \ref{eg:momentum-is-lower-index}, p.~\pageref{eg:momentum-is-lower-index}), and one
+would then prefer the mixed-index form, $p_b=T\indices{^a_b}n_a$. A disadvantage of this form is
+that since the upper-index version is the one that connects directly to measurements, the signs
+in $T\indices{^a_b}$ depend on the choice of signature. In the case of a perfect fluid,
+with metric $(1,-1,-1,-1)$, we have
+$T\indices{^a_b}=\operatorname{diag}(\rho,-P,-P,-P)$,
+while with metric $(-1,1,1,1)$ it becomes
+$T\indices{^a_b}=\operatorname{diag}(-\rho,P,P,P)$.
+\end{eg}
+
+\begin{eg}{A rope dangling in a Schwarzschild spacetime}\label{eg:rope-in-sch}
+Suppose we want to lower a bucket on a rope toward the event horizon of a black hole.
+We have already made some qualitative remarks about this idea in example \ref{eg:newtonian-black-hole}
+on p.~\pageref{eg:newtonian-black-hole}. This seemingly whimsical example turns out to be a good
+demonstration of some techniques, and can also be used in thought experiments that illustrate the
+definition of mass in general relativity and that probe some ideas about
+quantum gravity.\footnote{Brown, ``Tensile Strength and the Mining of Black Holes,'' \url{arxiv.org/abs/1207.3342}}
+
+The Schwarzschild metric (p.~\pageref{exact-schwarzschild-formula}) is
+\begin{equation*}
+  ds^2 = f^2 \der t^2 - f^{-2}\der r^2 + \ldots \qquad ,
+\end{equation*}
+where $f=(1-2m/r)^{1/2}$, and $\ldots$ represents angular terms. We will end up needing the following
+Christoffel symbols:
+\begin{align*}
+  \Gamma\indices{^t_r_t} &= -\Gamma\indices{^r_r_r} = f'/f = m/r(r-2m) \\
+  \Gamma\indices{^r_t_t} &= f^3 f' = mr^{-3}(r-2m) \\
+  \Gamma\indices{^\theta_\theta_r} &= \Gamma\indices{^\phi_\phi_r} = r^{-1}
+\end{align*}
+
+Since the spacetime has spherical symmetry, it ends up being more convenient to consider a rope whose shape,
+rather than being cylindrical, is a cone defined by some set of $(\theta,\phi)$. For convenience we take
+this set to cover unit solid angle. The final results obtained in this way can be readily converted into
+statements about a cylindrical rope. We let $\mu$ be the mass per unit length of the rope, and $T$ the
+tension. Both of these may depend on $r$. The corresponding energy density and tensile stress
+are $\rho=\mu/A=\mu/r^2$ and $S=T/A$. The corresponding stress-energy tensor is
+\begin{equation*}
+  T^{\kappa\nu} = \operatorname{diag}(\rho,-S,0,0) = r^{-2}\operatorname{diag}(\mu,-T,0,0) \qquad ,
+\end{equation*}
+where the minus signs follow from the fact that the stress is tensile rather than
+compressional, and the zeroes are because the rope is assumed to be made of fibers that have stength only
+in the radial direction.
+By writing the stress-energy tensor in this form, which is independent of $t$, we have assumed static
+equilibrium outside the event horizon. \emph{Inside} the horizon, the $r$ coordinate is the timelike one,
+the spacetime itself is not static, and we do not expect to find static solutions, for the reasons
+given on p.~\pageref{eg:newtonian-black-hole}.
+
+Conservation of energy is automatically satisfied, since there is no time dependence. Conservation of
+radial momentum is expressed by
+\begin{equation*}
+  \nabla_\kappa T^{\kappa r} = 0 \qquad ,
+\end{equation*}
+or
+\begin{equation*}
+  0 = \nabla_r T^{r r} + \nabla_t T^{t r} + \nabla_\theta T^{\theta r} + \nabla_\phi T^{\phi r}   \qquad .
+\end{equation*}
+It would be tempting to throw away all but the first term, since $T$ is diagonal, and therefore
+$T^{t r}=T^{\theta r}=T^{\phi r}=0$. However, a covariant derivative can be nonzero even when
+the symbol being differentiated vanishes identically. Writing out these four terms, we have
+\begin{align*}
+  0 = &\partial_r T^{rr} + 2\Gamma\indices{^r_r_r}T^{r r} \\
+      +& \Gamma\indices{^t_t_r}T^{r r}       + \Gamma\indices{^r_t_t}T^{t t} \\
+      +& \Gamma\indices{^\theta_\theta_r}T^{r r} \\
+      +& \Gamma\indices{^\phi_\phi_r}T^{r r} \qquad ,
+\end{align*}
+where each line corresponds to one covariant derivative. Evaluating this, we have
+\begin{align*}
+  0 = S' - \frac{f'}{f}S - f^3 f' \rho + \frac{2S}{r} \qquad ,
+\end{align*}
+where primes denote differentiation with respect to $r$. Note that since no terms of the
+form $\partial_rT^{tt}$ occur, this expression is valid regardless of whether we take $\rho$ to
+be constant or varying. Thus we are free to take $\rho\propto r^{-2}$, so that $\mu$ is constant,
+and this means that our result is equally applicable to a uniform cylindrical rope.
+
+This is a differential equation that tells us how the tensile stress in the rope varies along its
+length. The coefficients involving $f$ and $f'$ blow up at the event horizon, which is as expected,
+since we do not expect to be able to lower the rope to or below the horizon.
+
+Let's check the Newtonian limit. In this limit, we have
+$f\approx 1-\Phi$, $f'/f\approx f^3f'\approx g$ (with $g>0$), and $\rho\gg S$, which gives
+\begin{equation*}
+  0 = S' - g\rho + \frac{2S}{r} \qquad .
+\end{equation*}
+Changing to the variables $T$ and $\mu$, we obtain the expected Newtonian relation $T'=\mu g$.
+
+Returning to the full general-relativistic result, it can be shown that
+for a loaded rope with no mass of its own, we have a finite result for $\lim_{r\rightarrow\infty} S$,
+even when the bucket is brought arbitrarily close to the horizon. However, this is
+misleading without the caveat that for $\mu<T$, the speed of transverse waves in the rope
+is greater than $c$, which is not possible for any known form of matter --- it would violate the
+null energy condition, discussed in the following section.
+\end{eg}
+
+<% end_sec %> % Some examples
+
+
+
 <% end_sec %> % The Einstein field equation
 
 <% begin_sec("Energy conditions") %>\index{energy conditions}

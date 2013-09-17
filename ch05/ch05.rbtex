@@ -947,6 +947,11 @@ The explicit computation of the Christoffel symbols from the metric is deferred 
 section \ref{sec:from-metric-to-curvature}, but the intervening sections \ref{sec:geodesic-equation}
 and \ref{sec:torsion} can be omitted on a first reading without loss of continuity.
 
+An important gotcha is that when we evaluate a particular component of a covariant
+derivative such as $\nabla_2 v^3$, it is possible for the result to be nonzero
+even if the component $v^3$ vanishes identically. This can be seen in example
+\ref{eg:rope-in-sch} on p.~\pageref{eg:rope-in-sch}.
+
 \pagebreak
 
 \begin{eg}{Christoffel symbols on the globe}\label{eg:christoffel-on-globe}
