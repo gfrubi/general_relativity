@@ -309,6 +309,20 @@ directions of polarization should be permitted. For a wave that propagates at $c
 in which the wave is at rest (see p.~\pageref{sec:frames-at-c}).
 \end{eg}
 
+\begin{eg}{Relativistic work-energy theorem}
+In Einstein's original 1905 paper on relativity, he assumed without providing any justification that
+the Newtonian work-energy relation $W=Fd$ was valid relativistically. One way of justifying this is
+that we can construct a simple machine with a mechanical advantage $A$ and a reduction of motion by $1/A$,
+with these ratios being exact 
+relativistically.\footnote{For an explicit example,
+see \url{bit.ly/1aUXIa8}.} % http://physics.stackexchange.com/a/78147/4552
+One can then calculate, as Einstein did,
+\begin{equation*}
+  W = \int \frac{\der p}{\der t} \der x = \int \frac{\der p}{\der v}\frac{\der x}{\der t}\der v = m(\gamma-1) \qquad ,
+\end{equation*}
+which is consistent with our result for $E$ as a function of $\gamma$ if we equate it to $E(\gamma)-E(1)$.
+\end{eg}
+
 \begin{eg}{The Dirac sea}\label{eg:dirac-sea}\index{Dirac sea}\index{Gell-Mann, Murray}
 A great deal of physics can be derived from the T.H.~White's principle that ``whatever is not forbidden in compulsory'' --- originally
 intended for ants but applied to particles by Gell-Mann.

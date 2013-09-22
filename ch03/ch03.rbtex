@@ -994,14 +994,6 @@ The following example was historically important, because Einstein used it to co
 described by non-Euclidean geometry.\footnote{The example is described in Einstein's paper ``The Foundation of the General Theory of Relativity.''
 An excerpt, which includes the example, is given on p.~\pageref{einstein-foundation}.} Its interpretation is also fairly subtle, and the early relativists
 had some trouble with it.
-
-Suppose that observer A is on a spinning carousel while observer B stands on the ground.
-B says that A is accelerating, but by the equivalence principle A can say that she is at rest in a
-gravitational field, while B is free-falling out from under her. B measures the radius and circumference
-of the carousel, and finds that their ratio is $2\pi$. A carries out similar measurements, but when she
-puts her meter-stick in the azimuthal direction it becomes Lorentz-contracted by the factor $\gamma=(1-\omega^2r^2)^{-1/2}$, so she finds that the
-ratio is greater than $2\pi$. In A's coordinates, the spatial geometry is non-Euclidean, and the metric
-differs from the Euclidean one found in example \ref{eg:metric-in-polar-coords} on page \pageref{eg:metric-in-polar-coords}.
 <% marg(50) %>
 <%
   fig(
@@ -1010,6 +1002,14 @@ differs from the Euclidean one found in example \ref{eg:metric-in-polar-coords} 
   )
 %>
 <% end_marg %>
+
+Suppose that observer A is on a spinning carousel while observer B stands on the ground.
+B says that A is accelerating, but by the equivalence principle A can say that she is at rest in a
+gravitational field, while B is free-falling out from under her. B measures the radius and circumference
+of the carousel, and finds that their ratio is $2\pi$. A carries out similar measurements, but when she
+puts her meter-stick in the azimuthal direction it becomes Lorentz-contracted by the factor $\gamma=(1-\omega^2r^2)^{-1/2}$, so she finds that the
+ratio is greater than $2\pi$. In A's coordinates, the spatial geometry is non-Euclidean, and the metric
+differs from the Euclidean one found in example \ref{eg:metric-in-polar-coords} on page \pageref{eg:metric-in-polar-coords}.
 
 Observer A feels a force that B considers to be fictitious,
 but that, by the equivalence principle, A can say is a perfectly real gravitational force. According to A, an observer
