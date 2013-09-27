@@ -421,7 +421,7 @@ of the gradient in terms of partial derivatives should be modified with correcti
 form something called a covariant derivative. When we get to that point on p.~\pageref{nabla-birdtracks},
 we'll commandeer the circle notation for that operation.\label{birdtracks-circle-not-covariant}
 
-\begin{eg}{Force is a dual vector}\label{eg:force-is-lower-index}
+\begin{eg}{Force is a dual vector}\label{eg:force-is-lower-index}\index{force!is a dual vector}
 The dot product $\der W=\vc{F}\cdot\der\vc{x}$ for computing mechanical work becomes,
 in birdtracks notation,
 \begin{equation*}
