@@ -557,8 +557,7 @@ The Schwarzschild metric (p.~\pageref{exact-schwarzschild-formula}) is
 where $f=(1-2m/r)^{1/2}$, and $\ldots$ represents angular terms. We will end up needing the following
 Christoffel symbols:
 \begin{align*}
-  \Gamma\indices{^t_r_t} &= -\Gamma\indices{^r_r_r} = f'/f = m/r(r-2m) \\
-  \Gamma\indices{^r_t_t} &= f^3 f' = mr^{-3}(r-2m) \\
+  \Gamma\indices{^t_t_r} &= f'/f = m/r(r-2m) \\
   \Gamma\indices{^\theta_\theta_r} &= \Gamma\indices{^\phi_\phi_r} = r^{-1}
 \end{align*}
 
@@ -578,7 +577,7 @@ The results of example \ref{eg:perfect-fluid-tensorial} show that the mixed-inde
 be the most convenient, since it can be expressed without messy factors of $f$.
 We have
 \begin{equation*}
-  T\indices{^\kappa_\nu} = \operatorname{diag}(\rho,-S,0,0) = r^{-2}\operatorname{diag}(\mu,-T,0,0) \qquad .
+  T\indices{^\kappa_\nu} = \operatorname{diag}(\rho,S,0,0) = r^{-2}\operatorname{diag}(\mu,T,0,0) \qquad .
 \end{equation*}
 By writing the stress-energy tensor in this form, which is independent of $t$, we have assumed static
 equilibrium outside the event horizon. \emph{Inside} the horizon, the $r$ coordinate is the timelike one,
@@ -613,6 +612,39 @@ where primes denote differentiation with respect to $r$. Note that since no term
 form $\partial_rT\indices{^t_t}$ occur, this expression is valid regardless of whether we take $\mu$ to
 be constant or varying. Thus we are free to take $\rho\propto r^{-2}$, so that $\mu$ is constant,
 and this means that our result is equally applicable to a uniform cylindrical rope.
+The result can be checked by the following Maxima code:
+
+\begin{listing}{1}
+load(ctensor);
+ct_coords:[t,r,theta,phi];
+depends(f,r);
+depends(ten,r); /* tension depends on r */
+depends(mu,r); /* mass/length depends on r */
+lg:matrix([f^2,0,0,0],
+          [0,-f^-2,0,0],
+          [0,0,-r^2,0],
+          [0,0,0,-r^2*sin(theta)^2]);
+cmetric();
+christof(mcs);
+/* stress-energy tensor, T^mu_nu */
+t:r^-2*matrix(
+  [mu,0,0,0],
+  [0,ten,0,0],
+  [0,0,0,0],
+  [0,0,0,0]
+);
+/*
+  Compute covariant derivative of the stress-energy
+  tensor with respect to its first index. The 
+  function checkdiv is defined so that the first 
+  index has to be covariant (lower); the T I'm 
+  putting in is T^mu_nu, and since it's symmetric,
+  that's the same as T_mu^nu.
+*/
+checkdiv(t);
+\end{listing}
+
+
 
 This is a differential equation that tells us how the tensile stress in the rope varies along its
 length. The coefficients involving $f$ and $f'$ blow up at the event horizon, which is as expected,
