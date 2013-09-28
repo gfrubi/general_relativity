@@ -969,7 +969,8 @@ $a$ is the lab's acceleration, $y$ is the height from floor to ceiling, and $c$ 
     'maxwellian-momentum-of-light',
     %q{An electromagnetic wave strikes an ohmic surface. The wave's electric field excites an oscillating current density $\vc{J}$.
             The wave's magnetic field then acts on these currents, producing a force in the direction of the wave's propagation.
-            This is a pre-relativistic argument that light must possess inertia.}
+            This is a pre-relativistic argument that light must possess inertia.
+            The first experimental confirmation of this prediction is shown in figure \figref{nichols-radiometer}.}
   )
 %>
 <% end_marg %>
@@ -1020,6 +1021,21 @@ Further interpretation:
            a difference in the rate at which time itself flows, depending on the gravitational potential. This is
            consistent with the empirical results presented in section \ref{sec:hafele-keating}, p.~\pageref{sec:hafele-keating}.
 \end{itemize}
+
+<% marg(200) %>
+<%
+  fig(
+    'nichols-radiometer',          
+    %q{A simplified drawing of the 1903 experiment by Nichols and Hull that verified the predicted momentum  
+       of light waves. Two circular mirrors were hung from a fine quartz fiber, inside an evacuated  
+       bell jar. A 150 mW beam of light was shone on one of the mirrors for 6 s, producing a tiny rotation,  
+       which was measurable by an optical lever (not shown). The force was within 0.6\%
+       of the theoretically predicted value    
+       of $0.001\ \mu\nunit$.      
+       For comparison, a short clipping of a single human hair weighs $\sim 1\ \mu\nunit$.}
+  )
+%>
+<% end_marg %>
 
 \begin{eg}{Chiao's paradox revisited}\label{eg:chiao-energy}\index{Chiao's paradox}\index{equivalence principle!application to charged particles}
 The equivalence principle says that electromag\-netic waves have gravitational mass as well as inertial mass, so it seems clear that the same

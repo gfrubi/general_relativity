@@ -489,46 +489,13 @@ the stress-energy tensor, which falsifies the Einstein field equations.
 
 We conclude this introduction to the stress-energy tensor with some illustrative examples.
 
-\begin{eg}{Signs and placement of indices}
-The stress-energy tensor can be written in the forms $T^{ab}$, $T\indices{^a_b}$, and $T_{ab}$.
-As in the examples above, it is the upper-index form that is usually taken to be the one that relates
-to physical measurements of quantities such as density and pressure. Thus if $n_a$ is a unit vector,
-then $p^b=T^{ab}n_a$ is the flux of (upper-index) momentum through the surface that has $n_a$ as its
-normal. For the reasons discussed on p.~\pageref{visualize-vectors-and-duals}, it is natural to
-describe the normal as a lower-index vector. For a perfect fluid, the upper-index form is
-always $T\indices{^\mu^\nu}=\operatorname{diag}(\rho,P,P,P)$, regardless of the choice of signature.
-
-However, there is a sense in which it is more natural to consider momentum as a lower-index vector
-(example \ref{eg:momentum-is-lower-index}, p.~\pageref{eg:momentum-is-lower-index}), and one
-would then prefer the mixed-index form, $p_b=T\indices{^a_b}n_a$. A disadvantage of this form is
-that since the upper-index version is the one that connects directly to measurements, the signs
-in $T\indices{^a_b}$ depend on the choice of signature. In the case of a perfect fluid,
-with metric $(1,-1,-1,-1)$, we have
-$T\indices{^a_b}=\operatorname{diag}(\rho,-P,-P,-P)$,
-while with metric $(-1,1,1,1)$ it becomes
-$T\indices{^a_b}=\operatorname{diag}(-\rho,P,P,P)$.
-\end{eg}
-
 \begin{eg}{A perfect fluid}\label{eg:perfect-fluid-tensorial}
 For a perfect fluid, we have
 \begin{equation*}
   T_{ab}=(\rho+P)v_a v_b -s Pg_{ab} \qquad ,
 \end{equation*}
-where $s=1$ for our $+---$ signature or $-1$ for the signature $-+++$;
-$v$ represents the coordinate velocity of the fluid's rest frame; and $a$ and $b$ are abstract indices,
-i.e., this is an identity that is valid regardless of the choice of coordinates. Since both sides are
-written in valid index-gymnastics notation, we can raise and lower indices at will.
-
-Let's check for consistency with our results for dust from example
-\ref{eg:dust-stress-energy} on p.~\pageref{eg:dust-stress-energy}. Raising both indices and setting
-$P=0$, we have $T^{ab}=\rho v^a v^b$. Define coordinates such that the spacelike coordinates of
-the rest frame are constant, and let these be Cartesian coordinates such that 
-$g_{\mu\nu}=\operatorname{diag}(+1,-1,-1,-1)$. Then the properly normalized velocity vector
-of the rest frame is simply $v^\mu=(1,0,0,0)$, and we recover the previous result $T^{tt}=\rho$.
-
-Retaining these coordinates but generalizing to $P\ne 0$, one can easily check that
-with the proper sign for $s$, we have $T^{\mu\nu}=T_{\mu\nu}=\operatorname{diag}(\rho,P,P,P)$,
-but $T\indices{^\mu_\nu}=T\indices{_\mu^\nu}=s\operatorname{diag}(\rho,-P,-P,-P)$.
+where $s=1$ for our $+---$ signature or $-1$ for the signature $-+++$, and
+$v$ represents the coordinate velocity of the fluid's rest frame.
 
 Suppose that the metric is diagonal, but its components are varying, 
 $g_{\alpha\beta}=\operatorname{diag}(A^2,-B^2,\ldots)$. The properly normalized
@@ -557,7 +524,7 @@ The Schwarzschild metric (p.~\pageref{exact-schwarzschild-formula}) is
 where $f=(1-2m/r)^{1/2}$, and $\ldots$ represents angular terms. We will end up needing the following
 Christoffel symbols:
 \begin{align*}
-  \Gamma\indices{^t_t_r} &= f'/f = m/r(r-2m) \\
+  \Gamma\indices{^t_t_r} &= f'/f \\
   \Gamma\indices{^\theta_\theta_r} &= \Gamma\indices{^\phi_\phi_r} = r^{-1}
 \end{align*}
 
@@ -611,8 +578,32 @@ where each line corresponds to one covariant derivative. Evaluating this, we hav
 where primes denote differentiation with respect to $r$. Note that since no terms of the
 form $\partial_rT\indices{^t_t}$ occur, this expression is valid regardless of whether we take $\mu$ to
 be constant or varying. Thus we are free to take $\rho\propto r^{-2}$, so that $\mu$ is constant,
-and this means that our result is equally applicable to a uniform cylindrical rope.
-The result can be checked by the following Maxima code:
+and this means that our result is equally applicable to a uniform cylindrical rope. This result is
+checked using computer software in example \ref{eg:rope-in-sch-cas}.
+
+This is a differential equation that tells us how the tensile stress in the rope varies along its
+length. The coefficient $f'/f=m/r(r-2m)$ blows up at the event horizon, which is as expected,
+since we do not expect to be able to lower the rope to or below the horizon.
+
+Let's check the Newtonian limit, where the gravitational field is $g$ and the potential is $\Phi$.
+In this limit, we have
+$f\approx 1-\Phi$, $f'/f\approx g$ (with $g>0$), and $\mu\gg T$, resulting in
+\begin{equation*}
+  0 = T' - g\mu \qquad .
+\end{equation*}
+which is the expected Newtonian relation.
+
+Returning to the full general-relativistic result, it can be shown that
+for a loaded rope with no mass of its own, we have a finite result for $\lim_{r\rightarrow\infty} S$,
+even when the bucket is brought arbitrarily close to the horizon. However, this is
+misleading without the caveat that for $\mu<T$, the speed of transverse waves in the rope
+is greater than $c$, which is not possible for any known form of matter --- it would violate the
+null energy condition, discussed in the following section.
+\end{eg}
+
+\begin{eg}{The rope, using computer algebra}\label{eg:rope-in-sch-cas}
+The result of example \ref{eg:rope-in-sch} can be checked with the following
+Maxima code:
 
 \begin{listing}{1}
 load(ctensor);
@@ -643,28 +634,8 @@ t:r^-2*matrix(
 */
 checkdiv(t);
 \end{listing}
-
-
-
-This is a differential equation that tells us how the tensile stress in the rope varies along its
-length. The coefficients involving $f$ and $f'$ blow up at the event horizon, which is as expected,
-since we do not expect to be able to lower the rope to or below the horizon.
-
-Let's check the Newtonian limit, where the gravitational field is $g$ and the potential is $\Phi$.
-In this limit, we have
-$f\approx 1-\Phi$, $f'/f\approx g$ (with $g>0$), and $\mu\gg T$, resulting in
-\begin{equation*}
-  0 = T' - g\mu \qquad .
-\end{equation*}
-which is the expected Newtonian relation.
-
-Returning to the full general-relativistic result, it can be shown that
-for a loaded rope with no mass of its own, we have a finite result for $\lim_{r\rightarrow\infty} S$,
-even when the bucket is brought arbitrarily close to the horizon. However, this is
-misleading without the caveat that for $\mu<T$, the speed of transverse waves in the rope
-is greater than $c$, which is not possible for any known form of matter --- it would violate the
-null energy condition, discussed in the following section.
 \end{eg}
+
 
 <% end_sec %> % Some examples
 
