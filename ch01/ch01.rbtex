@@ -970,7 +970,8 @@ $a$ is the lab's acceleration, $y$ is the height from floor to ceiling, and $c$ 
     %q{An electromagnetic wave strikes an ohmic surface. The wave's electric field excites an oscillating current density $\vc{J}$.
             The wave's magnetic field then acts on these currents, producing a force in the direction of the wave's propagation.
             This is a pre-relativistic argument that light must possess inertia.
-            The first experimental confirmation of this prediction is shown in figure \figref{nichols-radiometer}.}
+            The first experimental confirmation of this prediction is shown in figure \figref{nichols-radiometer}.
+            See Nichols and Hull, "The pressure due to radiation," Phys. Rev. (Series I) 17 (1903) 26.}
   )
 %>
 <% end_marg %>

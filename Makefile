@@ -41,9 +41,8 @@ book:
 web:
 	@make preflight
 	scripts/translate_to_html.rb --write_config_and_exit
-	WOPT='$(WOPT) --modern' $(RUN_ERUBY) w #... xhtml
-	WOPT='$(WOPT) --html5' $(RUN_ERUBY) w #... html 5
-	$(RUN_ERUBY) w #... html
+	WOPT='$(WOPT) --html5' $(RUN_ERUBY)  w     #... html 5 with mathml
+	WOPT='$(WOPT) --mathjax' $(RUN_ERUBY) w    #... html 4 with mathjax
 	# To set options, do, e.g., "WOPT='--no_write' make web". Options are documented in translate_to_html.rb.
 
 
