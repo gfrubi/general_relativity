@@ -137,7 +137,10 @@ boilerplate:
     For serious reading, you want the <a href="#{$config["url"]}">Adobe Acrobat
     version</a>.</p>
     <p><a href="..">Table of Contents</a></p>
-    <p>(c) 1998-2011 Benjamin Crowell, licensed under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative
+    </div>
+  copyright_footer_html: |-
+    <div class="topstuff">
+    <p>(c) 1998-2013 Benjamin Crowell, licensed under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative
     Commons Attribution-ShareAlike license</a>.
     Photo credits are given at the end of the Adobe Acrobat version.</p>
     </div>

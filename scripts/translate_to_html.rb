@@ -530,7 +530,7 @@ unless format.keys.sort.join(',')=="html5,modern,wiki,xhtml" then fatal_error("f
   # --- google_ad_html ---
   if what=='google_ad_html' then
     if !format['wiki'] then
-      if format['xhtml'] then
+      if format['xhtml'] and !format['html5'] then
         return get_boilerplate_from_custom_file('google_ad_xhtml',format)
       else
         return get_boilerplate_from_custom_file('google_ad_html',format)
@@ -546,6 +546,14 @@ unless format.keys.sort.join(',')=="html5,modern,wiki,xhtml" then fatal_error("f
       return get_boilerplate_from_custom_file('disclaimer_html',format)
     end
   end
+  # --- copyright_footer_html ---
+  if what=='copyright_footer_html' then
+    if format['wiki'] then
+      return ''
+    else
+      return get_boilerplate_from_custom_file('copyright_footer_html',format)
+    end
+  end
   # --- valid_icon ---
   if what=='valid_icon' then
   # In the following, the main point of the icon is to allow me to tell, for testing purposes, whether I'm seeing the xhtml version
@@ -558,6 +566,14 @@ unless format.keys.sort.join(',')=="html5,modern,wiki,xhtml" then fatal_error("f
   end
 end
 end # boilerplate
+
+def generate_ad_if_appropriate
+  if $test_mode then
+    $stderr.print "***************** not putting an ad in #{$config['book']}, ch. #{$ch}, for testing purposes\n"
+  else
+    if $config['standalone']==0 then return boilerplate('google_ad_html',$format) + "\n" end
+  end
+end
 #===================================================================================================================================================
 
 
@@ -852,7 +868,8 @@ def preprocess(tex,command_data,style_files)
 end
 
 def apply_custom_macros(tex,command_data,style)
-  # command_data looks like [cmds,info], where info looks like {"unitdot":{"n_req":0,"n_opt":0},...}; only lists commands that we've specifically been told to handle
+  # command_data looks like [cmds,info], where info looks like {"unitdot":{"n_req":0,"n_opt":0},...}; 
+  #         only lists commands that we've specifically been told to handle
   # style is the LaTeX source code defining these commands
   curly = "(?:(?:{[^{}]*}|[^{}]*)*)" # match anything, as long as any curly braces in it are paired properly, and not nested
   max_depth = 30
@@ -883,11 +900,13 @@ def process(tex,environment_data)
     # FIXME: The following is meant to get the divs *after* the <h2> for a section, so that the css "clear" mechanism works properly.
     # This should really be handled by making parse return an array of triplets, (h,t,m), rather than (t,m).
     h = ''
+    level = nil
     1.upto(2) { |i|
       if t =~ /^(\s*<h#{i}>(?:<a #{$anchor}=[^>]+><\/a>)?(?:[^<>]+)<\/h#{i}>)((.|\n)*)/ then
-        h,t=$1,$2
+        h,t,level=$1,$2,i
       end
     }
+    if level==2 then result = result + "___AD___" end
     result = result + h + m + t # m has to come first, because that causes it to be positioned as close as possible to the top of the section
   }
   return result
@@ -962,6 +981,12 @@ def postprocess(tex)
   $mathml_entities_to_numbers.each_pair { |k,v| tex.gsub!(/\&#{k};/,v) } # see comments near top of file
 
   if !$wiki then tex =  "<div class=\"container\">\n"+tex+"</div>\n" end
+
+  # Google only allows three ads per page.
+  1.upto(3) {
+    tex.sub!(/___AD___/) {generate_ad_if_appropriate}
+  }
+  tex.gsub!(/___AD___/,'') # eliminate the rest
 
   return tex
 end
@@ -2216,8 +2241,10 @@ def find_figure(name,width_type)
         if debug then $stderr.print "debugging: didn't find #{name}.#{fmt} in #{dir}\n" end
       else
         if debug then $stderr.print "debugging: found #{name} in #{dir}\n" end
-        found_in_dir = dir
-        found_in_fmt = fmt
+        if found_in_dir.nil? then # prefer the earliest in the list
+          found_in_dir = dir
+          found_in_fmt = fmt
+        end
       end
     }
   }
@@ -2400,6 +2427,7 @@ def parse(t,level,current_section,environment_data)
           s_num = ''
         else
           h_start = "<h#{level}>"
+          #if level==2 then h_start="___AD___"+h_start end # wrong place in html, is after <div class="margin">
           h_end   = "</h#{level}>"
           s_name = ($config['forbid_anchors_and_links']==0 ? "<a #{$anchor}=\"#{ll}\"></a>" : '')
           s_num = s + ' '
@@ -2554,11 +2582,7 @@ if $wiki then
 HEAD
 end # if wiki
 
-if $test_mode then
-  $stderr.print "***************** not putting an ad in #{$config['book']}, ch. #{$ch}, for testing purposes\n"
-else
-  if $config['standalone']==0 then print boilerplate('google_ad_html',$format) + "\n" end
-end
+# print generate_ad_if_appropriate # ... google only allows 3 per page, so don't waste one here
 
 if $want_chapter_toc then print $chapter_toc + "</div>" end
 end
@@ -2669,6 +2693,7 @@ tex = postprocess(tex)
 
 print_head() # uses $chapter_toc
 print tex
+print boilerplate('copyright_footer_html',$format)
 print_footnotes_and_append_to_index(tex) # has the side-effect of writing to index.html
 
 warn_about_macros_not_handled(tex)
