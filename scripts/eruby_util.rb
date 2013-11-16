@@ -36,10 +36,22 @@ $web_command_marker = 'ZZZWEB:'
 
 $count_section_commands = 0
 $section_level = -1
+$section_label_stack = [] # see begin_sec() and end_sec(); unlabeled sections have ''
+$section_title_stack = []
+$section_most_recently_begun = nil # title of the section that was the most recent one successfully processed
 
 def fatal_error(message)
   $stderr.print "eruby_util.rb: #{message}\n"
+  $stderr.print stack_dump()
   exit(-1)
+end
+
+def stack_dump
+  result = "section title stack = "+$section_title_stack.join(',')+"\n"
+  if !$section_most_recently_begun.nil? then
+    result = result + "most recent begin_sec successfully processed was for #{$section_most_recently_begun}\n"
+  end
+  return result
 end
 
 def save_complaint(message)
@@ -653,6 +665,14 @@ def die(name,message)
   exit(-1)
 end
 
+# new qwe
+def self_check(label,text)
+  text.gsub!(/\n+\Z/) {""} # strip excess newlines at the end
+  text.gsub!(/\\\\/) {"\\"} # double backslashes to single; this is just a shortcut because I screwed up and unnecessarily changed a bunch of \ to \\
+  print "\\begin{selfcheck}{#{label}}\n#{text}\n\\end{selfcheck}\n"
+  write_to_answer_data('self_check',label)
+end
+
 def begin_hw(name,difficulty=1,options={})
   if difficulty==nil then difficulty=1 end # why doesn't this happen by default?
   if calc() then options['calc']=false end
@@ -665,27 +685,39 @@ def begin_hw(name,difficulty=1,options={})
 end
 
 def hw_solution()
-  $hw_has_solution[$hw_number] = true
+  $hw_has_solution[$hw_number] = true # for problems.csv
   print "\\hwsoln"
   write_to_answer_data('answer')
 end
 
+def hw_hint(label)
+  print "\\hwhint{hwhint:#{label}}"
+  write_to_answer_data('hint')
+end
+
+def hw_answer()
+  print "\\hwans{hwans:#{$hw[$hw_number]}}"
+  write_to_answer_data('bare_answer')
+end
+
 $answer_data_file = 'answers.csv'
 $answer_data = []
-$answer_text = {}
+$answer_text = {'answer'=>{},'hint'=>{},'self_check'=>{},'bare_answer'=>{}}
+$answer_long_label_to_short = {}
 
 def clear_answer_data
   File.open($answer_data_file,'w') { |f| }
 end
 
-def write_to_answer_data(type)
-  # type = 'self_check','bare_answer','answer'
+def write_to_answer_data(type,label=nil)
+  if label==nil then label = $hw[$hw_number] end
   File.open($answer_data_file,'a') { |f|
-    f.print "#{$ch.to_i},#{$hw[$hw_number]},#{type}\n"
+    f.print "#{$ch.to_i},#{label},#{type}\n"
   }
 end
 
 def read_answer_data()
+  $answer_data = []
   if ! File.exist?($answer_data_file) then return end
   File.open($answer_data_file,'r') { |f|
     a = f.gets(nil) # nil means read whole file
@@ -709,37 +741,51 @@ def print_end_matter_section_header(header)
 end
 
 def print_answers_of_one_type(lo_ch,hi_ch,type,header)
+  #$stderr.print "print_answers_of_one_type, type=#{type}\n"
   read_answer_data()
   print "\\hwanssection{#{header}}\n\n"
   last_ch = -1
   for ch in lo_ch..hi_ch do
     $answer_data.each { |a|
+      #$stderr.print "type=",type,' ',a.join(','),"\n" if ch==0 && a[0]==0
       name = a[1]
       if ch==a[0] && type==a[2] then
         if last_ch!=ch then
-          print '\par\pagebreak[3]\vspace{2mm}\noindent\formatlikesubsection{Solutions for chapter '+ch.to_s+'}\\\\*'
+          describe_them = {'answer'=>'Solutions','hint'=>'Hints','self_check'=>'Answers to self-checks','bare_answer'=>'Answers'}[type]
+          print '\par\pagebreak[3]\vspace{2mm}\noindent\formatlikesubsection{'+describe_them+' for chapter '+ch.to_s+'}\\\\*'
         end
         last_ch = ch
-        if $answer_text[name].nil? then
-          $stderr.print "No answer text available for problem #{name}\n"
+        long = answer_short_label_to_long(name,type)
+        if long==nil then
+          save_complaint("No answer text available for problem #{name}, type #{type}")
         else
-          print answer_header(name,type)+$answer_text[name]
+          print answer_header(long,type)+$answer_text[type][long]
         end
       end
     }
   end
 end
 
+def answer_short_label_to_long(short,type)
+  $answer_long_label_to_short.each { |long,s|
+    if s==short and !$answer_text[type][long].nil? then return long end
+  }
+  return nil
+end
+
 def answer_header(label,type)
-  macro = ''
-  if type=='self_check' then macro='scanshdr' end
-  if type=='bare_answer' then macro='hwanshdr' end
-  if type=='answer' then macro='hwsolnhdr' end
-  if macro=='' then
-    $stderr.print "error in eruby_util.rb, answer_header(), illegal type: #{type}\n"
-    return ''
-  end
-  return "\\#{macro}{#{label}}\\\\*\n"
+  macro = {'answer'=>'hwsolnhdr','hint'=>'hinthdr','self_check'=>'scanshdr','bare_answer'=>'hwanshdr'}[type]
+  if macro==nil then fatal_error("error in eruby_util.rb, answer_header(), illegal type: #{type}") end
+  short_label = $answer_long_label_to_short[label]
+  return "\\#{macro}{#{short_label}}\\\\*\n"
+end
+
+def list_some_problems(names)
+  a = []
+  names.each { |name|
+    a.push("p.~\\pageref{hw:#{name}}, \\#\\ref{hw:#{name}}")
+  }
+  print a.join("; ")
 end
 
 def hw_ref(name)
@@ -751,18 +797,71 @@ def end_hw()
   print "\\end{homework}"
 end
 
-def self_check_answer(label,text)
-  $answer_text[label] = text
-  print "\\scanshdr{#{label}}\\\\*\n#{text}"
+def hint_text(label,text=nil)
+  set_answer_text(label,"hint-"+label,text,'hint')
 end
 
-def bare_answer(label,text)
-  $answer_text[label] = text
-  print "\\hwanshdr{#{label}}\\\\*\n#{text}"
+def self_check_answer(label,text=nil)
+  set_answer_text(label,nil,text,'self_check')
 end
 
-def answer(label,text)
-  $answer_text[label] = text
+def bare_answer(label,text=nil)
+  set_answer_text(label,nil,text,'bare_answer')
+end
+
+def answer(label,text=nil) # don't call this directly
+  set_answer_text(label,nil,text,'answer')
+end
+
+def set_answer_text(label,long_label,text,type)
+  # long_label is because some problems may have both hint and answer, etc.
+  # short label is used only for latex references
+  if long_label==nil then long_label = label end
+  text = handle_answer_text_caching(long_label,text,type)
+  $answer_text[type][long_label] = text
+  $answer_long_label_to_short[long_label] = label 
+end
+
+def handle_answer_text_caching(label,text,type)
+  file = File.expand_path("../share/answers") + "/" + label + ".tex"
+  have_file = FileTest.exist?(file)
+  gave_text = text!=nil
+  if gave_text && ! have_file then
+    File.open(file,'w') { |f|
+      f.print text+"\n\n"
+    }
+  end
+  if gave_text && have_file then
+    # so I can cut and paste to replace the old version that includes the text with the new version that doesn't
+    func = {'answer'=>"answer",'hint'=>'hint_text','self_check'=>'self_check_answer','bare_answer'=>'bare_answer'}[type]
+    $stderr.print "<% #{func}(\"#{label}\") %>\n" 
+  end
+  if !gave_text && ! have_file then
+    $stderr.print "error in eruby_util.rb, handle_answer_text_caching: file #{file} doesn't exist\n"
+    text = ''
+  end
+  if !gave_text then
+    File.open(file,'r') { |f|
+      text = f.gets(nil) # nil means slurp whole file
+    }
+    text.gsub!(/\n+\Z/) {"\n\n"} # exactly two newlines at the end
+  end
+  return text
+end
+
+def conditionally_include_file(condition,filename)
+  if !condition then return end
+  if FileTest.exist?(filename) then
+    File.open(filename,'r') { |f|
+      text = f.gets(nil) # nil means slurp whole file
+      if text =~ /<%/ then 
+        fatal_error("error in eruby_util.rb, conditionally_include_file: file #{filename} contains eruby")
+      end
+      print text
+    }
+  else
+    fatal_error("error in eruby_util.rb, conditionally_include_file: file #{filename} doesn't exist")
+  end
 end
 
 def part_title(title)
