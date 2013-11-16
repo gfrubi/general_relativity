@@ -85,6 +85,8 @@ $config.keys.each { |k|
 # "Missing \endcsname inserted" in a few isolated cases where I use a pageref inside
 # the caption of a figure. See meki latex notes for more details. In these cases, I
 # can get the refs using eruby instead of latex. See pageref_workaround() and ref_workaround() below.
+# I also use this in LM, problems 3-2, 3-3, and 3-4, where they need to refer to the page where the blank form is given for sketching graphs;
+# that doesn't work if I try to use the label associated with the floating figure, which points to the page from which it was invoked.
 
 # Code similar to this is duplicated in translate_to_html.rb:
 refs_file = 'save.ref'
@@ -277,7 +279,15 @@ def mm(x)
   return sprintf((x+0.5).to_i.to_s,"%d")
 end
 
-
+# severities:
+#   1 = figure too low or high by more than 50 mm
+# I currently have no other types of warnings with higher severities.
+# I currently only report severity>1, so the calls to warn_marg() with severity=1 are noops.
+# The warnings with severity=1 were too copious, had too many false positives, and were
+# obscuring other, more important errors. They seldom if ever succeeded in locating anything
+# that was actually a problem.
+# Checks for colliding figures, which are a serious error, happen in a separate
+# script, check_for_colliding_figures.rb.
 def warn_marg(severity,nmarg,page,message)
   # First, figure out what figures are associated with the current margin block.
   mine = {}
@@ -293,7 +303,9 @@ def warn_marg(severity,nmarg,page,message)
       }
     end
   end
-  $stderr.print "warning, severity #{severity} nmarg=#{nmarg}, ch. #{$ch}, p. #{page}, #{mine.keys.join(',')}: #{message}\n"
+  if severity>1 then
+    $stderr.print "warning, severity #{severity} nmarg=#{nmarg}, ch. #{$ch}, p. #{page}, #{mine.keys.join(',')}: #{message}\n"
+  end
 end
 
 def pos_file_exists
@@ -440,7 +452,8 @@ end
 
 def fig(name,caption=nil,options={})
   default_options = {
-    'anonymous'=>'default',# true means figure has no figure number, but still gets labeled (which is, e.g., necessary for photo credits)
+    'anonymous'=>'default',# true means figure has no figure number, but still gets labeled (which is, e.g., 
+                           #      necessary for photo credits)
                            # default is false, except if caption is a null string, in which case it defaults to true
     'width'=>'narrow',     # 'narrow'=52 mm, 'wide'=113 mm, 'fullpage'=171 mm
                            #   refers to graphic, not graphic plus caption (which is greater for sidecaption option)
@@ -456,7 +469,8 @@ def fig(name,caption=nil,options={})
     'float'=>'default',    # defaults to false for narrow, true for wide or fullpage (because I couldn't get odd-even to work reliably for those if not floating)
     'floatpos'=>'h',       # standard latex positioning parameter for floating figures
     'narrowfigwidecaption'=>false, # currently only supported with float and !anonymous
-    'suffix'=>'',          # for use when a figure is used in more than one place, and we need to make the label unique
+    'suffix'=>'',          # for use when a figure is used in more than one place, and we need to make the label unique;
+                           #   typically 'suffix'=>'2'; don't need this option on the first fig, only the second
     'text'=>nil,           # if it exists, puts the text in the figure rather than a graphic (name is still required for labeling)
                            #      see macros \starttextfig and \finishtextfig
     'raw'=>false           # used for anonymous inline figures, e.g., check marks; generates a raw call to includegraphics
@@ -514,6 +528,7 @@ def process_fig_web(name,caption,options)
   anon = '0'
   anon = '1' if options['anonymous']
   if text==nil then
+    if options['width']=='wide' then print "\n" end # kludgy fix for problem with html translator
     print "#{$web_command_marker}fig,#{name},#{options['width']},#{anon},#{caption}END_CAPTION\n"
   else
     text.gsub!(/\n/,' ')
@@ -665,7 +680,6 @@ def die(name,message)
   exit(-1)
 end
 
-# new qwe
 def self_check(label,text)
   text.gsub!(/\n+\Z/) {""} # strip excess newlines at the end
   text.gsub!(/\\\\/) {"\\"} # double backslashes to single; this is just a shortcut because I screwed up and unnecessarily changed a bunch of \ to \\
@@ -879,22 +893,46 @@ def end_ex
   print "\\end{handson}"
 end
 
-def end_sec()
+# Examples:
+#   end_sec()
+#   end_sec('spacetime-interval') ... try to use this form, which acts as a check on whether the hierarchy
+#             of sections is out of whack
+# It's OK if begin_sec() gives a label but end_sec() doesn't.
+def end_sec(label='')
+  debug = false
   $count_section_commands += 1
   $section_level -= 1
+  if debug then $stderr.print ('  '*$section_level)+"end_sec('#{label}')\n" end
+  began_sec = $section_label_stack.pop # is '' if the section was unlabeled, nil if the stack was empty
+  began_title = $section_title_stack.pop
+  if began_sec.nil? then fatal_error("end_sec('#{label}') occurs without any begin_sec") end
+  if label!=began_sec and !(began_sec!='' and label=='') then
+    fatal_error("mismatch between labels, begin_sec(\"#{began_title}\",...,'#{began_sec}') and end_sec('#{label}')") 
+  end
 end
 
+# example of use: begin_sec("The spacetime interval",nil,'spacetime-interval',{'optional'=>true})
+# In this example, the LaTeX label  might be sec:spacetime-interval in LM, subsec:spacetime-interval in SN.
+# The corresponding end_sec could use an optional arg, end_sec('spacetime-interval'), which helps to make
+# sure the hierarchical structure doesn't get out of whack. The structure tends to get out of whack when
+# different books share text, using m4 conditionals.
 def begin_sec(title,pagebreak=nil,label='',options={})
+  debug = false
   $count_section_commands += 1
+  if debug then $stderr.print ('  '*$section_level)+"begin_sec(\"#{title}\",#{pagebreak},\"#{label}\")\n" end
   $section_level += 1
+  $section_label_stack.push(label) # if not labeled, then label is ''
+  $section_title_stack.push(title)
   # In LM, section level 1=section, 2=subsection, 3=subsubsection; 0 would be chapter, but chapters aren't done with begin_sec()
-  if $section_level==0 || $section_level>3 then
+  if $section_level==0 || $section_level>4 then
     e=''
     if $section_level==0 then e='zero section level (happens in NP Preface)' end
     if $section_level>3 then e='section level is too deep' end
     $stderr.print "warning, at #{$count_section_commands}th section command, ch #{$ch}, section #{title}, section level=#{$section_level}, #{e}\n"
     $section_level = 1
   end
+  # Guard against the easy error of writing begin_sec("title","label"), leaving out pagebreak.
+  unless pagebreak.nil? or pagebreak.kind_of?(Integer) then fatal_error("begin_sec(\"#{title}\",\"#{pagebreak}\",...) has non-integer second argument; did you leave out the pagebreak parameter?") end
   if pagebreak==nil then pagebreak=4-$section_level end
   if pagebreak>4 then pagebreak=4 end
   if pagebreak<0 then pagebreak=0 end
@@ -914,7 +952,7 @@ def begin_sec(title,pagebreak=nil,label='',options={})
     if options['toc']==false then
       macro = 'mysubsectionnotoc'
     else
-      macro = 'mysubsection'
+      if options['optional'] then macro='myoptionalsubsection' else macro = 'mysubsection' end
     end
     label_level = 'subsec'
   end
@@ -922,10 +960,18 @@ def begin_sec(title,pagebreak=nil,label='',options={})
     macro = 'subsubsection'
     label_level = 'subsubsec'
   end
+  if $section_level==4 then
+    macro = 'myssssection'
+    label_level = 'subsubsubsec'
+  end
   #$stderr.print "level=#{$section_level}, title=#{title}\n"
   title = alter_titlecase(title,$section_level)
-  if label != '' then label="\\label{#{label_level}:#{label}}" end
+  if label != '' then
+    label="\\label{#{label_level}:#{label}}"
+  end
   print "\\#{macro}#{pagebreak}{#{title}}#{label}\n"
+  $section_most_recently_begun = title
+  #$stderr.print "in begin_sec(), eruby_util.rb: level=#{$section_level}, title=#{title}, macro=#{macro}\n"
 end
 
 # The following allows me to control what's titlecase and what's not, simply by changing book.config. Since text can be shared between books,
@@ -975,7 +1021,11 @@ def remove_titlecase(title)
            # ... the negative lookbehind prevents, e.g., damped and example from becoming DAmped and ExAmple
            # If I had a word like "amplification" in a title, I'd need to special-case that below and change it back.
   }
-  foo.gsub!(/Machine/,"machine") # LM 4.4
+  foo.gsub!(/or Machines/,"or machines") # LM 4.4 (Ernst Mach)
+  foo.gsub!(/simple Machines/,"simple machines") # LM 8.3 (Ernst Mach)
+  foo.gsub!(/e=mc/,"E=mc") # LM 25
+  foo.gsub!(/ke=/,"KE=") # Mechanics 12.4
+  foo.gsub!(/k=/,"K=") # Mechanics 12.4; in case I switch from KE to K
   # logic above can't handle multi-word patterns
   proper_nouns()["multiword"].each { |proper| # e.g., proper="Big Bang"
     foo.gsub!(/#{Regexp::quote(proper.downcase)}/) {proper} 
