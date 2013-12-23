@@ -99,13 +99,13 @@ always 1, and this is not consistent with being able to add four-velocity vector
 frame in which the object is at rest, and its four-velocity is zero?
 
 \eganswer No. In general, the Lorentz transformation preserves the magnitude of vectors, so it can never transform a vector with
-a zero magnitude into one with zero magnitude. Since this is a material object
-(not a ray oflight) we can transform into a frame in which the object is at rest,
+a zero magnitude into one with nonzero magnitude. Since this is a material object
+(not a ray of light) we can transform into a frame in which the object is at rest,
 but an object at rest does not have a vanishing four-velocity. It has a four-velocity
 of $(1,0,0,0)$.
 \end{eg}
 
-Example \ref{eg:zero-v-vector} suggests a nice way of thinking about velocity vectors, which is that every timelike
+Example \ref{eg:zero-v-vector} suggests a nice way of thinking about velocity vectors, which is that every
 velocity vector represents a potential observer.
 An observer is a material object, and therefore has a timelike velocity vector. This observer writes her own
 velocity vector as  $(1,0,0,0)$, i.e., as the unit vector in the timelike direction. Often when we see an expression
@@ -129,7 +129,7 @@ according to an observer whose world-line is tangent to $\vc{t}$, $\vc{x}$ repre
 
 The four-acceleration is found by taking a second derivative with respect to proper time.\index{four-vector!acceleration}\index{acceleration four-vector}
 Its squared magnitude is
-only approximately equal to minus the squared magnitude of the classical acceleration three-vector, in the limit of small velocities.
+only approximately equal to minus the squared magnitude of the Newtonian acceleration three-vector, in the limit of small velocities.
 
 \begin{eg}{Constant acceleration}\label{eg:hyperbolic-motion}
 \egquestion Suppose a spaceship moves so that the acceleration is judged to be the constant value $a$ by an observer on board. Find the
@@ -236,7 +236,7 @@ its squared magnitude $p^ip_i$ is equal to the square of the particle's mass.
 Writing $p$ for the magnitude of the momentum three-vector, and $E$ for the mass-energy, we
 find the useful relation $m^2=E^2-p^2$.
 We take this to be the relativistic \emph{definition} the mass of any particle, including one
-whose $\der x^i$ is lightlike.
+whose $\der x^i$ is lightlike.\index{mass!defined}
 <% end_sec %> % Energy is the timelike component of the four-momentum
 
 <% begin_sec("Particles traveling at $c$") %>
@@ -1278,26 +1278,14 @@ $W$, known as the weight of the tensor density.\index{weight of a tensor density
 
 \begin{eg}{Area as a tensor density}
 In a Euclidean plane, making our rulers longer by a factor of $k$ causes the area measured in the new coordinates
-to decrease by a factor of $1/k^2$. The rescaling is represented by a matrix of partial
+to increase by a factor of $k^2$. The rescaling is represented by a matrix of partial
 derivatives that is simply $kI$, where $I$ is the identity matrix. The determinant is $k^2$. Therefore
-area is a tensor density of weight $-1$.
+area is a tensor density of weight $+1$.
 \end{eg}
 
 \begin{eg}{Mass density}
 A piece of aluminum foil as a certain number of milligrams per square centimeter.
-Stretching rulers by $k$ causes this number to increase by $k^2$, so this mass density has $W=+1$.
-\end{eg}
-
-\begin{eg}{Length in the Euclidean plane}
-Let a line segment of unit length be parallel to the $x$ axis in the Euclidean plane.
-Then the transformation $(x,y)\rightarrow (x/k,y)$ changes its length to $1/k$, which would
-lead us to imagine that length was a tensor density with $W=-1/2$. But
-$(x,y)\rightarrow (x,y/k)$ doesn't change the length at all, suggesting $W=0$ (a pure tensor).
-The result is that length is not a tensor or tensor density of any kind.
-
-Generalizing to more than two dimensions, an $m$-dimensional volume embedded in an
-$n$-dimensional space is a tensor density with $W=-1$ if and only if $m=n$; for $m<n$,
-the $m$-volume isn't a tensor density at all.
+Shrinking rulers by $1/k$ causes this number to decrease by $k^{-2}$, so this mass density has $W=-1$.
 \end{eg}
 
 In Weyl's apt characterization,\footnote{Hermann Weyl, ``Space-Time-Matter,'' 1922, p.~109, available online at \url{archive.org/details/spacetimematter00weyluoft}.} 
@@ -1353,8 +1341,8 @@ to use $\sqrt{-g}$ as the correction factor rather than $\sqrt{g}$.
 <% end_sec %> % Tensorial $\epsilon$
 <% begin_sec("Tensor-density $\\epsilon$") %>
 The other option is to let $\epsilon$ have the same $0$ and $\pm1$ values at all points. Then $\epsilon$ is clearly not a tensor, because
-it doesn't scale by a factor of $k^n$ when the coordinates are scaled by $k$; $\epsilon$ is a tensor density with weight $+1$ for the upper-index version
-and $-1$ for the lower-index one. The relation $A_\mu=\epsilon_{\mu\kappa\lambda}u^\kappa v^\lambda$ gives an area that is a tensor density,
+it doesn't scale by a factor of $k^n$ when the coordinates are scaled by $k$; $\epsilon$ is a tensor density with weight $-1$ for the upper-index version
+and $+1$ for the lower-index one. The relation $A_\mu=\epsilon_{\mu\kappa\lambda}u^\kappa v^\lambda$ gives an area that is a tensor density,
 not a tensor, because $A$ is not written in terms of purely tensorial quantities. Scaling the coordinates by $k$ leaves $\epsilon_{\mu\kappa\lambda}$
 unchanged, scales up $u^\kappa v^\lambda$ by $k^2$, and scales up the area by $k^2$, as expected.
 <% end_sec %> % Tensor-density $\epsilon$
@@ -1406,7 +1394,7 @@ Find $1-v$ for such a proton.
 <% end_hw %>
 
 <% begin_hw('pe-vacuum') %>
-Prove that a photon in a vacuum cannot absorb a photon. (This is the reason that the ability of
+Prove that an electron in a vacuum cannot absorb a photon. (This is the reason that the ability of
 materials to absorb gamma-rays is strongly dependent on atomic number $Z$. The case of $Z=0$
 corresponds to the vacuum.)
 <% end_hw %>

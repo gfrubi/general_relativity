@@ -362,7 +362,7 @@ In birdtracks notation, a scalar is a quantity that has no external arrows at al
 expression $__birdscalarproduct(c,e)=24$ has no external arrows, only internal ones, it represents
 a scalar. This makes sense because it's a count, and a count is a scalar.
 
-A convenient way of summarizing all of our categories of variablies is by their behavior
+A convenient way of summarizing all of our categories of variables is by their behavior
 when we convert units, i.e., when we rescale our space. If we switch our time unit from
 hours to minutes, the number of apples in a bowl is unchanged, the earth's period of
 rotation gets 60 times bigger, and the frequency of the cuckoo clock changes by a
@@ -1572,9 +1572,7 @@ If we transport the loop while always carefully adjusting its orientation so as 
 phase shifts, then its orientation has been preserved. 
 The atomic clocks used in the Hafele-Keating atomic-clock experiment\index{Hafele-Keating experiment}\index{atomic clocks}
 described
-on page \pageref{sec:hafele-keating} were sensitive to Sagnac effects, and it was not practical
-to maintain their orientations while they were strapped into seats on a passenger jet, so
-this orientational effect had to be subtracted out of the data at the end of the experiment.
+on page \pageref{sec:hafele-keating} were subject to the Sagnac effect.
 <% marg(100) %>
 <%
   fig(

@@ -1,3 +1,18 @@
+# (c) 2006-2013 Benjamin Crowell, GPL licensed
+# 
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#
+#
+#         Always edit the version of this file in /home/bcrowell/Documents/programming/eruby_util_for_books/eruby_util.rb --
+#         it will automatically get copied over into the various projects the next time I do a "make" or a
+#         "make preflight".
+#
+#
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+# This script is used in the freshman survey books (Light and Matter, ...) and in General Relativity.
+# It's not used in Calculus, which has a different layout.
+
 # See INTERNALS for documentation on all the files: geom.pos, marg.pos, chNN.pos,
 # figfeedbackNN, all.pos.
 
@@ -665,7 +680,14 @@ def fig_print(name,caption,options,dir)
     end
   end
   #============================================================================
-  if !$fig_handled then
+  if $fig_handled then
+    # Kludge: when figure is like ../../../foo/bar/baz, label includes the .. stuff; make a valid label.
+    # A better way to do this would be to have the macros never generate a label, and have the following
+    # be the only way a label is ever generated.
+    if name=~/\/([^\/]+)$/ then
+      spit("\\label{fig:#{$1}}")
+    end
+  else
     die(name,"not handled")
   end
 end

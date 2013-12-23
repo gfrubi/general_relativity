@@ -802,7 +802,7 @@ to ``special relativity.''
     %q{One planet rotates about its axis and the other does not. As discussed in more detail on p.~\pageref{einstein-two-planets},
        Einstein believed that general relativity was even more radically egalitarian about frames of reference than
        it really is. He thought that if the planets were alone in an otherwise empty universe, there would be no way to tell
-       which planet was really rotating and which was not, so that B's tidal bulge would have to disappear. There
+       which planet was really rotating and which was not, so that B's equatorial bulge would have to disappear. There
        would be no way to tell which planet's surface was a Lorentz frame.},
     {
       'suffix'=>'-1'
@@ -1051,7 +1051,8 @@ causes a radiation reaction which back-reacts on the particle, causing its orbit
 <% end_sec %> %  Gravitational red-shifts
 
 <% begin_sec("The Pound-Rebka experiment") %>\label{sec:pound-rebka}\index{Pound-Rebka experiment}\index{red-shift!gravitational}
-The 1959 Pound-Rebka experiment at Harvard\footnote{Phys. Rev. Lett. 4 (1960) 337} was the first quantitative test of the equivalence principle to be carried out
+The 1959 Pound-Rebka experiment at Harvard\footnote{Phys. Rev. Lett. 4 (1960) 337} was
+one of the first high-precision, relativistic tests of the equivalence principle to be carried out
 under controlled conditions, and in this section we will discuss it in detail.
 
 When $y$ is on the order of magnitude of the height of a building, the value of $\Delta E/E=gy/c^2$ is $\sim 10^{-14}$, so

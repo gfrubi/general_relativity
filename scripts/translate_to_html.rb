@@ -2166,7 +2166,7 @@ end
 $read_topic_map = false
 $topic_map = {}
 def find_topic(ch,book,own)
-  if book=='calc' || book=='genrel' then return own end
+  if book=='calc' || book=='genrel'  || book=='sr' then return own end
 
   # Topic maps are also used in scripts/BookData.pm.
   if !$read_topic_map then
@@ -2211,7 +2211,7 @@ def find_figure(name,width_type)
   # width_type = 'narrow' , 'wide' , 'fullpage' , 'raw'
 
   # Allow for kludges like fig('../../../lm/vw/figs/doppler',...), which I do in an E&M chapter of LM.
-  if name=~/^\.\.\/\.\.\/\.\.\/lm/ then
+  if name=~/^\.\./ then
     return name
   end
 

@@ -84,7 +84,7 @@ In particular, we will see in section \ref{sec:black-hole-horizon} that black ho
   fig(
     'photon-chasing-spaceship',
     %q{A spaceship (curved world-line) moves with an acceleration perceived as constant by its passengers.
-         The photon (straight world-line) come closer and closer to the ship, but will never quite catch up.}
+         The photon (straight world-line) comes closer and closer to the ship, but will never quite catch up.}
   )
 %>
 <% end_marg %>
