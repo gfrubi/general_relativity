@@ -1608,7 +1608,7 @@ carry out a complete mathematical development of the angular momentum vector in 
 for example, in Misner, Thorne, and Wheeler, \emph{Gravitation}, pp. 157-159.} The equivalence principle, however,
 allows us to bypass such technical details. Suppose that we seal the two devices inside black boxes, with identical
 external control panels for initializing them and reading them out. We initialize them identically, and then
-transport them along side-by-side world-lines. Classically, both the mechanical gyroscope and the photon-gyroscope
+transport them along side-by-side world-lines. Nonrelativistically, both the mechanical gyroscope and the photon-gyroscope
 would maintain absolute, fixed directions in space. Relativistically, they will not necessarily maintain their
 orientations. For example, we've already seen in section \ref{lorentz-three-dim} that there are reasons to
 expect that their orientations will change if they are subjected to accelerations that are not all along the
@@ -1639,14 +1639,14 @@ send the box around the square path shown in figure \figref{thomas-hammers}
 at constant speed. The gyroscope defines a local coordinate system, which according to classical
 physics would maintain its orientation. At each corner of the square, the box has its velocity vector changed abruptly,
 as represented by the hammer. We assume that the hits with the hammer are transmitted to the gyroscope at its center
-of mass, so that they do not result in any torque. Classically, if the set of gyroscopes travels once around
+of mass, so that they do not result in any torque. Nonrelativistically, if the set of gyroscopes travels once around
 the square, it should end up at the same place and in the same orientation, so that the coordinate system it defines
 is identical with the original one.
 <% marg(50) %>
 <%
   fig(
     'thomas-hammers',
-    %q{Classically, the gyroscope should not rotate as long as the forces from the hammer are all transmitted to
+    %q{Nonrelativistically, the gyroscope should not rotate as long as the forces from the hammer are all transmitted to
               it at its center of mass.}
   )
 %>
@@ -1765,9 +1765,9 @@ can be measured at the same point in space, e.g., by comparing it with a twin gy
 \begin{itemize}
 \item[] A gyroscope transported around a closed loop in flat spacetime changes its orientation compared with
              one that is not accelerated.
-\item[] This is a purely relativistic effect, since a classical gyroscope does not change its axis of rotation
+\item[] This is a purely relativistic effect, since a Newtonian gyroscope does not change its axis of rotation
        unless subjected to a torque; if the boosts are accomplished by forces that act at the gyroscope's center of mass,
-       then there is no classical explanation for the effect.
+       then there is no nonrelativistic explanation for the effect.
 \item[] The effect can occur in the absence of any gravitational fields. That is, this is a phenomenon of special relativity.
 \item[] The composition of two or more Lorentz boosts along different axes is not equivalent to a single boost; it is
              equivalent to a boost plus a spatial rotation.

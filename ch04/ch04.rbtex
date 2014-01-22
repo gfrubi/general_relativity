@@ -1163,7 +1163,7 @@ We expect it to have the following properties:
 Restricting our attention to the equatorial plane $\theta=\pi/2$,
 the simplest modification that has these three properties is to add a term of the form
 \begin{equation*}
-  f(\ldots) L\:\der\phi\:\der t \qquad ,
+  f(\ldots) L\der\phi\der t \qquad ,
 \end{equation*}
 where $(\ldots)$ again gives the $r$-dependence and $L$ is a constant, interpreted as the angular momentum.
 A detailed treatment is beyond the scope of this book,

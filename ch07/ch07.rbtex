@@ -23,9 +23,10 @@ of test particles, and that these could be interpreted as mass-energy and angula
 Generalizing, we want to consider the idea that a metric may be invariant
 when every point in spacetime is systematically shifted by some infinitesimal
 amount. For example, the Schwarzschild metric is invariant under $t\rightarrow t+\der t$.
-In coordinates $(x^0,x^1,x^2,x^3)=(t,r,\theta,\phi)$, we have a vector field  (\der t,0,0,0)
+In coordinates $(x^0,x^1,x^2,x^3)=(t,r,\theta,\phi)$, we have a vector field  $(\der t,0,0,0)$
 that defines the time-translation symmetry, and it is conventional to split this into
-two factors, a finite vector field $\boldsymbol{\xi}$ and an infinitesimal scalar, so that the displacement vector is
+two factors, a finite vector field
+$\boldsymbol{\xi}$ and an infinitesimal scalar, so that the displacement vector is
 \begin{equation*}
   \boldsymbol{\xi}\der t = (1,0,0,0)\der t \qquad .
 \end{equation*}

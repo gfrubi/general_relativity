@@ -488,6 +488,7 @@ def fig(name,caption=nil,options={})
                            #   typically 'suffix'=>'2'; don't need this option on the first fig, only the second
     'text'=>nil,           # if it exists, puts the text in the figure rather than a graphic (name is still required for labeling)
                            #      see macros \starttextfig and \finishtextfig
+                           #      marked below as "# bug ------------- not really correct"??
     'raw'=>false           # used for anonymous inline figures, e.g., check marks; generates a raw call to includegraphics
     # not yet implemeted: 
     #    translated=false

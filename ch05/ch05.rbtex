@@ -887,7 +887,7 @@ of normal coordinates on a sphere, which do not have a constant metric.)
 Now suppose we transform into a new coordinate system $X$, which is not normal.
 The metric $G$, expressed in this coordinate system, is not constant.
 Applying the tensor
-transformation law, we have $V =  v \:\der X/\der x$, and differentiation
+transformation law, we have $V =  v \der X/\der x$, and differentiation
 with respect to $X$ will not give zero, because the factor $\der X/\der x$ isn't constant. This is the wrong answer:
 $V$ isn't really varying, it just appears to vary because $G$ does.
 

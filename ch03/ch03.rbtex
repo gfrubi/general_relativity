@@ -718,7 +718,8 @@ since it would in general be false if we used a different coordinate system to d
 \index{abstract index notation}
 
 \begin{eg}{Oblique Cartesian coordinates}\label{eg:oblique-cartesian}
-\egquestion Oblique Cartesian coordinates are like normal Cartesian coordinates in the plane, but their axes are at at
+\egquestion Oblique Cartesian coordinates are like
+normal Cartesian coordinates in the plane, but their axes are at at
 an angle $\phi \ne \pi/2$ to one another. Find the metric in these coordinates. The space is globally Euclidean.
 
 \eganswer Since the coordinates differ from Cartesian coordinates only in the angle between the axes, not in their

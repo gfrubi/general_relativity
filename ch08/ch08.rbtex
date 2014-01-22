@@ -1115,11 +1115,9 @@ metric. We then have something like $G_{ab} = c_1 T_{ab}+c_2 g_{ab} T\indices{^c
 the two constants $c_1$ and $c_2$ would be constrained by the requirement that the theory agree
 with Newtonian gravity in the classical limit.
 
-To see why this attempt fails, consider a beam of
-light directed along the $x$ axis. Its momentum is equal to its energy (see page \pageref{sec:momentum-four-vector}),
-so its contributions to the local energy density and pressure are equal.
-Thus its contribution to the stress-energy tensor is of the form $T\indices{^\mu_\nu}=(\text{constant})\times \operatorname{diag}(-1,1,0,0)$.
-The trace vanishes, so the beam of light's coupling to gravity in the $c_2$ term is zero. As discussed on
+To see why this attempt fails, note that the stress-energy tensor of an electromagnetic field
+is traceless, $T\indices{^c_c}=0$.
+Therefore the beam of light's coupling to gravity in the $c_2$ term is zero. As discussed on
 pp.~\pageref{kreuzer}-\pageref{end-kreuzer}, empirical tests of conservation of momentum would therefore
 constrain $c_2$ to be $\lesssim 10^{-8}$.
 \end{eg}
