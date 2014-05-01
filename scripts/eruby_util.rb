@@ -710,8 +710,26 @@ def self_check(label,text)
   write_to_answer_data('self_check',label)
 end
 
+def read_whole_file(file)
+  x = ''
+  File.open(file,'r') { |f|
+    x = f.gets(nil) # nil means read whole file
+  }
+  return x
+end
+
+
+def hw(name,options={},difficulty=1) # used in Fundamentals of Calculus, which has all hw in chNN/hw
+  if difficulty==nil then difficulty=1 end
+  begin_hw(name,difficulty,options)
+  x = read_whole_file("ch#{$ch}/hw/#{name}.tex")
+  print x.sub(/\n+$/,'')+"\n" # exactly one newline at end before \end{homework}
+  if options['solution'] then hw_solution() end
+  end_hw
+end
+
 def begin_hw(name,difficulty=1,options={})
-  if difficulty==nil then difficulty=1 end # why doesn't this happen by default?
+  if difficulty==nil then difficulty=1 end
   if calc() then options['calc']=false end
   calc = ''
   if options['calc'] then calc='1' end
@@ -1045,6 +1063,7 @@ def remove_titlecase(title)
            # If I had a word like "amplification" in a title, I'd need to special-case that below and change it back.
   }
   foo.gsub!(/or Machines/,"or machines") # LM 4.4 (Ernst Mach)
+  foo.gsub!(/motion Machine/,"motion machine") # LM 10 (Ernst Mach)
   foo.gsub!(/simple Machines/,"simple machines") # LM 8.3 (Ernst Mach)
   foo.gsub!(/e=mc/,"E=mc") # LM 25
   foo.gsub!(/ke=/,"KE=") # Mechanics 12.4
@@ -1118,7 +1137,9 @@ def chapter(number,title,label,caption='',options={})
     'width'=>'wide',       # 'wide'=113 mm, 'fullpage'=171 mm
                            #   refers to graphic, not graphic plus caption (which is greater for sidecaption option)
     'sidecaption'=>false,
-    'special_width'=>nil   # used in CL4, to let part of the figure hang out into the margin
+    'special_width'=>nil,  # used in CL4, to let part of the figure hang out into the margin
+    'short_title'=>nil,      # used in TOC; if omitted, taken from title
+    'very_short_title'=>nil  # used in running headers; if omitted, taken from short_title
   }
   $section_level += 1
   $ch = number
@@ -1128,6 +1149,8 @@ def chapter(number,title,label,caption='',options={})
       options[option]=default
     end
   }
+  if options['short_title']==nil then options['short_title']=title end
+  if options['very_short_title']==nil then options['very_short_title']=options['short_title'] end
   opener = options['opener']
   if opener!='' then
     if !figure_exists_in_my_own_dir?(opener) then
@@ -1161,7 +1184,7 @@ def chapter_print(number,title,label,caption,options)
   has_opener = (opener!='')
   result = nil
   if !has_opener then
-    result = "\\mychapter{#{title}}"
+    result = "\\mychapter{#{options['short_title']}}{#{options['very_short_title']}}{#{title}}"
   else
     opener=~/([^\/]+)$/     # opener could be, e.g., ../../../9share/optics/figs/crepuscular-rays
     opener_label = $1
