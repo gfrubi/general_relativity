@@ -576,11 +576,9 @@ therefore expect to be able to find the metric from the potential. But the
 example of the rotating earth shows that this need not be the case for a general stationary field.
 In that example, there are effects like frame-dragging that clearly cannot be deduced from $\Phi$;
 for by symmetry, $\Phi$ is independent of azimuthal angle, and therefore it cannot distinguish
-between the direction of rotation and the contrary direction. The best we can do in a general
-stationary spacetime is to specify a pair of scalar potentials, sometimes known as Hansen's 
-potentials,\index{potential!not defined in arbitrary spacetimes}\index{potential!Hansen's}
-one analogous to $\Phi$ and the other giving information about angular momentum. Only
-a static spacetime can be described by a single potential.
+between the direction of rotation and the contrary direction. In a static spacetime, these
+rotational effects don't exist; a static vacuum spacetime can be described completely in terms
+of a single scalar potential.
 
 It is also important to step back and think about why relativity does not offer a gravitational
 potential with the same general utility as its Newtonian counterpart.\index{potential!relativistic vs. Newtonian}
