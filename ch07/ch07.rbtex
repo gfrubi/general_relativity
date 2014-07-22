@@ -578,11 +578,10 @@ In that example, there are effects like frame-dragging that clearly cannot be de
 for by symmetry, $\Phi$ is independent of azimuthal angle, and therefore it cannot distinguish
 between the direction of rotation and the contrary direction. In a static spacetime, these
 rotational effects don't exist; a static vacuum spacetime can be described completely in terms
-of a single scalar potential.
+of a single scalar potential plus information about the spatial curvature.
 
-It is also important to step back and think about why relativity does not offer a gravitational
+There are two main reasons why relativity does not offer a gravitational
 potential with the same general utility as its Newtonian counterpart.\index{potential!relativistic vs. Newtonian}
-There are two main issues.
 
 The Einstein field equations are nonlinear. Therefore one cannot, in general, find the field
 created by a given set of sources by adding up the potentials. At best this is a possible

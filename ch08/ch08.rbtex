@@ -1632,7 +1632,7 @@ FRW cosmology.
 One of the Penrose-Hawking singularity theorems\index{Penrose-Hawking singularity theorems} proves that it
 is not.\footnote{Hawking and Ellis, ``The Cosmic Black-Body Radiation and the Existence of Singularities in Our Universe,''
 Astrophysical Journal, 152 (1968) 25. Available online at \url{articles.adsabs.harvard.edu}.}
-This particular singularity theorm requires three conditions: (1) the strong energy condition holds; (2) there are no closed timelike curves; and
+This particular singularity theorem requires three conditions: (1) the strong energy condition holds; (2) there are no closed timelike curves; and
 (3) a trapped surface exists in the past timelike geodesics originating at some point.
 The requirement of a trapped surface can fail if the universe is inhomogeneous to $\gtrsim 10^{-4}$, but observations
 of the cosmic microwave background rule out any inhomogeneity this large (see p.~\pageref{sec:evidence-for-homogeneity}). The other possible failure of the assumptions is that if the cosmological constant is large enough, it violates the strong

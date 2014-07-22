@@ -92,7 +92,7 @@ post:
 
 prepress:
 	make preflight_figs
-	pdftk genrel.pdf cat 3-end output genrel_lulu.pdf
+	scripts/pdf_extract_pages.rb genrel.pdf 3-end genrel_lulu.pdf
 	# Filtering through gs used to be necessary to convince Lulu not to complain about missing fonts.
 	# Now that should no longer be necessary, because recent versions of pdftex embed all fonts, and fullembed.map prevents subsetting.
 	# See meki:computer:apps:ghostscript, scripts/create_fullembed_file, and http://tex.stackexchange.com/questions/24002/turning-off-font-subsetting-in-pdftex
