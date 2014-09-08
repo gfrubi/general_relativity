@@ -22,6 +22,7 @@ PROBLEMS_CSV = problems.csv
 
 default:
 	@make preflight
+	@scripts/before_each.rb
 	$(RUN_ERUBY)
 	# perl -e 'foreach $$f(<ch*>) {if (-d $$f) {$$f=~/ch(\d\d)/; $$n=$$1; $$c = "cd ch$$n && ../fruby ch$$n.rbtex >ch$${n}temp.tex && cd -"; print "$$c\n"; system $$c}}'
 	$(DO_PDFLATEX)
@@ -81,6 +82,7 @@ clean:
 
 very_clean:
 	make clean
+	rm -f brief-toc.tex brief-toc-new.tex
 
 preflight:
 	@@chmod +x scripts/custom/*

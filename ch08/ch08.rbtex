@@ -1002,7 +1002,7 @@ made by all the sources, and we can take this as a sum over point sources. For a
 placed at $x_\zu{o}$, the field $g(x)$ is odd under reflection about $x_\zu{o}$. The derivative
 of the field $g'(x)$ is even. Since $g'$ is even, we can't control its sign at $x=0$ by choosing
 $x_\zu{o}>0$ or $x_\zu{o}<0$. The only way to control the sign of $g'$ is by choosing the sign of $m$.
-Therefore if the sign of the externally imposed field's derivative is wrong, we can never never null
+Therefore if the sign of the externally imposed field's derivative is wrong, we can never null
 it out. Figure \figref{nulling-gravity} shows a special case of this theorem.
 
 The theorem does not apply to three dimensions, and it does not prove that all fields are impossible

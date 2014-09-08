@@ -57,6 +57,7 @@ $section_level = -1
 $section_label_stack = [] # see begin_sec() and end_sec(); unlabeled sections have ''
 $section_title_stack = []
 $section_most_recently_begun = nil # title of the section that was the most recent one successfully processed
+$conditional_stack = []
 
 def fatal_error(message)
   $stderr.print "eruby_util.rb: #{message}\n"
@@ -194,6 +195,27 @@ end
 
 def dir
   return ENV['DIR']
+end
+
+# argument can be 0, 1, true, or false; don't do, e.g., !__sn, because in ruby !0 is false
+def begin_if(condition)
+  if condition.class() == Fixnum then
+    if condition==1 then condition=true else condition=false end
+  end
+  if condition.class()!=TrueClass && condition.class()!=FalseClass then
+    die('(begin_if)',"begin_if called with argument of class #{condition.class()}, should be Fixnum, true, or false")
+  end
+  $conditional_stack.push(condition)
+  if !condition then
+    print "\n\\begin{comment}\n" # requires comment package; newlines before and after are required by that package
+  end
+end
+
+def end_if
+  condition = $conditional_stack.pop
+  if !condition then
+    print "\n\\end{comment}\n" # requires comment package; newlines before and after are required by that package
+  end
 end
 
 def pos_file
@@ -1024,21 +1046,6 @@ def handle_answer_text_caching(label,text,type)
   return text
 end
 
-def conditionally_include_file(condition,filename)
-  if !condition then return end
-  if FileTest.exist?(filename) then
-    File.open(filename,'r') { |f|
-      text = f.gets(nil) # nil means slurp whole file
-      if text =~ /<%/ then 
-        fatal_error("error in eruby_util.rb, conditionally_include_file: file #{filename} contains eruby")
-      end
-      print text
-    }
-  else
-    fatal_error("error in eruby_util.rb, conditionally_include_file: file #{filename} doesn't exist")
-  end
-end
-
 def part_title(title)
   title = alter_titlecase(title,-1)
   print "\\mypart{#{title}}"
@@ -1306,8 +1313,12 @@ def chapter_print(number,title,label,caption,options)
   opener = options['opener']
   has_opener = (opener!='')
   result = nil
+  append = "\\anchor{anchor-#{label}}" # navigator package
+  File.open('brief-toc-new.tex','a') { |f|
+    f.print "\\brieftocentry{#{label}}{#{title}} \\\\\n" # LM and Me. don't use brief-toc-new.tex
+  }
   if !has_opener then
-    result = "\\mychapter{#{options['short_title']}}{#{options['very_short_title']}}{#{title}}"
+    result = "\\mychapter{#{options['short_title']}}{#{options['very_short_title']}}{#{title}}#{append}"
   else
     opener=~/([^\/]+)$/     # opener could be, e.g., ../../../9share/optics/figs/crepuscular-rays
     opener_label = $1
@@ -1317,26 +1328,26 @@ def chapter_print(number,title,label,caption,options)
       if caption!='' then
         if !options['sidecaption'] then
           if options['special_width']==nil then
-            result = "\\mychapterwithopener{#{opener}}{#{caption}}{#{title}}#{ol}"
+            result = "\\mychapterwithopener{#{opener}}{#{caption}}{#{title}}#{ol}#{append}"
           else
-            result = "\\specialchapterwithopener{#{options['special_width']}}{#{opener}}{#{caption}}{#{title}}#{ol}"
+            result = "\\specialchapterwithopener{#{options['special_width']}}{#{opener}}{#{caption}}{#{title}}#{ol}#{append}"
           end
         else
           if options['anonymous'] then
-            result = "\\mychapterwithopenersidecaptionanon{#{opener}}{#{caption}}{#{title}}#{ol}"
+            result = "\\mychapterwithopenersidecaptionanon{#{opener}}{#{caption}}{#{title}}#{ol}#{append}"
           else
-            result = "\\mychapterwithopenersidecaption{#{opener}}{#{caption}}{#{title}}#{ol}"
+            result = "\\mychapterwithopenersidecaption{#{opener}}{#{caption}}{#{title}}#{ol}#{append}"
           end
         end
       else
-        result = "\\mychapterwithopenernocaption{#{opener}}{#{title}}#{ol}"
+        result = "\\mychapterwithopenernocaption{#{opener}}{#{title}}#{ol}#{append}"
       end
     else
       if options['anonymous'] then
         if caption!='' then
-          result = "\\mychapterwithfullpagewidthopener{#{opener}}{#{caption}}{#{title}}#{ol}"
+          result = "\\mychapterwithfullpagewidthopener{#{opener}}{#{caption}}{#{title}}#{ol}#{append}"
         else
-          result = "\\mychapterwithfullpagewidthopenernocaption{#{opener}}{#{title}}#{ol}"
+          result = "\\mychapterwithfullpagewidthopenernocaption{#{opener}}{#{title}}#{ol}#{append}"
         end
       else
         $stderr.print "********************************* ch #{ch}full page width chapter openers are only supported as anonymous figures ************************************\n"
