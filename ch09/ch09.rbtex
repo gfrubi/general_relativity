@@ -510,7 +510,7 @@ of the data.
 
 \vfill
 
-\begin{hwsection}
+<% begin_hw_sec %>
 
 <% begin_hw('why-geodesics-for-test-particles') %>\index{geodesic!as world-line of a test particle}
 (a) Starting on page \pageref{sec:geometrical-gravity}, we have associated geodesics with the world-lines of low-mass
@@ -551,6 +551,6 @@ elements, because there are two elements in the matrix that each contribute an e
 % wave_exact_plane.mac
 <% end_hw %>
 
-\end{hwsection}
+<% end_hw_sec %>
 
 <% end_chapter %>

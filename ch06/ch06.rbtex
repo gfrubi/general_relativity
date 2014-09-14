@@ -1491,7 +1491,7 @@ of signature. However, there is more than one such formulation, and they do not 
 about signature changes.
 <% end_sec %> % Degenerate solutions
 
-\begin{hwsection}
+<% begin_hw_sec %>
 
 <% begin_hw('geometrized-power') %>
 Show that in geometrized units, power is unitless. Find the equivalent in watts of
@@ -1591,6 +1591,6 @@ surface, and evolving a new version of the spacetime backward and forward from t
 <% end_hw %>
 
 
-\end{hwsection}
+<% end_hw_sec %>
 
 <% end_chapter %>

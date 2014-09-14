@@ -374,12 +374,15 @@ me permission to use it, but that doesn't mean you have permission to use it.}
   \noindent\formatlikesubsection{\langkey}\\*
   The notation \hwcheckmark indicates that a computerized answer check is available online.
 }
-\newenvironment{hwsection}{
+\newenvironment{hwsection}[1][Problems]{
     \setcounter{secnumdepth}{0}          % Don't number this section.
     \renewcommand{\printthesection}{}    % Footers should read ``Problems,'' not ``Section X.Y Problems''
     \hwcaptions                          % figures in hw section don't have a, b, c, labels
     \setcounter{figure}{0}               %
-    \mysection{\langproblems}                 % Has the side-effect of generating a page break.
+    \begingroup
+    \renewcommand{\addcontentsline}[3]{}% temporarily disable \addcontentsline
+    \mysection{#1}                       % Has the side-effect of generating a page break.
+    \endgroup
     \setcounter{secnumdepth}{2}          % Start numbering sections again.
                                          % The \setcounter{secnumdepth} stuff is the way the author of titlesec suggests doing
                                          % this. Using section* messes up footers & toc. 
@@ -467,9 +470,17 @@ me permission to use it, but that doesn't mean you have permission to use it.}
 	\setlength{\belowdisplayshortskip}{2mm plus 1mm minus 1mm}
 }
 %==============================toc==================================
-\newcommand{\link}[2]{\jumplink{anchor-#1}{#2}} % navigator package
+\newcommand{\link}[2]{\protect\jumplink{anchor-#1}{\textcolor{blue}{#2}}} % navigator package
 \newcommand{\brieftocentry}[3][\quad]% #1=\hfill (LM and Me.) or \quad (other books), #2=label, #3=title, 
             {\link{#2}{\ref{#2}} & \link{#2}{#3} #1 \link{#1}{\pageref{#2}}}
+\newcommand{\toclinewithlink}[4]% #1=subsection, etc., #2=label, #3=title, #4=\thesubsection, etc.
+  {%
+    \addcontentsline{toc}{#1}{\protect\numberline{#4}\link{#2}{#3}}%
+  }
+\newcommand{\toclinewithoutlink}[4]% #1=subsection, etc., #2=label, #3=title, #4=\thesubsection, etc.
+  {%
+    \addcontentsline{toc}{#1}{\protect\numberline{#4}#3}%
+  }
 %For the following, see the documentation for tocloft.sty:
 \renewcommand{\contentsname}{}
 \setlength{\cftbeforetoctitleskip}{0mm}

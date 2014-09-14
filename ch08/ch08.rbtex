@@ -2829,7 +2829,7 @@ is so large that it shows our universe to be essentially as non-Machian as gener
 
 <% end_sec %> % Mach's principle revisited
 
-\begin{hwsection}
+<% begin_hw_sec %>
 
 
 <% begin_hw('nuclear-pressure') %>
@@ -2955,7 +2955,7 @@ universe. What is the result in the case of the radiation-dominated universe?
 
 
 
-\end{hwsection}
+<% end_hw_sec %>
 
 
 

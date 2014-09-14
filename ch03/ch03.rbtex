@@ -525,18 +525,6 @@ the figure, the tick marks are therefore not evenly spaced. This is perfectly al
 invariance of general relativity. Since the incremental changes in $x$ \emph{are}
 equal, I've represented them below the curve as little vectors of equal length. They are the wrong length
 to represent distances along the curve, but this wrongness is an inevitable fact of life in relativity.
-<% marg(30) %>
-<%
-  fig(
-    'metric-motivation',
-    %q{The tick marks on the line define a coordinate measured along the line. It is not possible
-             to set up such a coordinate system globally so that the coordinate is uniform everywhere.
-             The arrows represent changes in the value of the coordinate; since the changes in the coordinate
-             are all equal, the arrows are all the same length.}
-  )
-%>
-<% end_marg %>
-
 
 Now suppose we want to integrate the arc length of a segment of this curve. The little vectors are
 infinitesimal. In the integrated length, each little vector should contribute some amount, which is a scalar.
@@ -551,6 +539,18 @@ sufficient to define a length relative to other lengths along the same geodesic.
 When vectors lie along different geodesics, we need to be able to specify the additional conversion
 factor that allows us to compare one to the other. The piece of machinery that allows us to do
 this is called a \emph{metric}.\index{metric}\label{metric-introduced}
+
+<% marg(300) %>
+<%
+  fig(
+    'metric-motivation',
+    %q{The tick marks on the line define a coordinate measured along the line. It is not possible
+             to set up such a coordinate system globally so that the coordinate is uniform everywhere.
+             The arrows represent changes in the value of the coordinate; since the changes in the coordinate
+             are all equal, the arrows are all the same length.}
+  )
+%>
+<% end_marg %>
 
 Fixing a metric allows us to define the proper
 scaling of the tick marks relative to the arrows at a given point, i.e., in the birdtracks
@@ -1416,7 +1416,7 @@ field lines without making them cut through one another.
 
 <% end_sec %> % Coordinate independence as a choice of gauge
 <% end_sec %> % Interpretation of coordinate independence
-\begin{hwsection}
+<% begin_hw_sec %>
 
 <% begin_hw('cylinder-spacetime') %>
 Consider a spacetime that is locally exactly like the standard Lorentzian spacetime described in ch.~\ref{ch:flat}, but that
@@ -1567,6 +1567,6 @@ What goes wrong if you instead try to associate $v$ with the phase velocity?
 <% end_hw %>
 
 
-\end{hwsection}
+<% end_hw_sec %>
 
 <% end_chapter %>

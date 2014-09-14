@@ -1222,7 +1222,7 @@ theory, and verified the predicted size of the effect to a precision of 10\%.
 
 
 
-\begin{hwsection}
+<% begin_hw_sec %>
 
 <% begin_hw('acceleration-of-gravity') %>
 In classical mechanics, one hears the term ``the acceleration of gravity,'' which doesn't
@@ -1312,6 +1312,6 @@ principle in the case of a neutron and a proton in low earth orbit.\hwendpart
 <% end_hw %>
 
 
-\end{hwsection}
+<% end_hw_sec %>
 
 <% end_chapter %>

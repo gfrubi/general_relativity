@@ -1208,6 +1208,17 @@ the landscape, so the sample points C and E are different, but this just confirm
 flat.\footnote{This point was mentioned on page \pageref{riemann-curvature-tensor}, in connection with the
 definition of the Riemann tensor.}
 
+<% marg(-300) %>
+<%
+  fig(
+    'torsion-gyroscopes',
+    %q{The gyroscopes both rotate when transported from A to B, causing Helen to navigate along BC, which does not form
+           a right angle with AB. The angle between the two gyroscopes' axes is always the same, so the rotation
+           is not locally observable, but it does produce an observable gap between C and E.}
+  )
+%>
+<% end_marg %>
+
 None of this seems surprising yet, but there are now two qualitatively different ways that her analysis of her data
 could turn out, indicating qualitatively different things about the laws of physics in her universe.
 The definition of the derivative as a limit requires that she repeat the experiment at
@@ -1235,16 +1246,6 @@ Models of spaces with torsion do exist. In particular, we can see that torsion d
 of logical contradiction as the varying-scalar-in-a-box idea. Since all vectors twist by the same amount when transported,
 inner products are preserved, so it is not possible to put two vectors in one box and get the scalar-in-a-box
 paradox by watching their inner product change when the box is transported.
-<% marg(83) %>
-<%
-  fig(
-    'torsion-gyroscopes',
-    %q{The gyroscopes both rotate when transported from A to B, causing Helen to navigate along BC, which does not form
-           a right angle with AB. The angle between the two gyroscopes' axes is always the same, so the rotation
-           is not locally observable, but it does produce an observable gap between C and E.}
-  )
-%>
-<% end_marg %>
 
 Note that the
 elbows ABC and ADE are not right angles. If Helen had brought a pair of gyrocompasses with her, one for $x$ and one for
@@ -1273,7 +1274,7 @@ to prove that no model of a two-space embedded in a three-space can have torsion
 
 Generalizing to more dimensions, the torsion tensor is odd under the full spacetime reflection
 $x_a \rightarrow -x_a$, i.e., a parity inversion plus a time-reversal, PT. 
-<% marg(0) %>
+<% marg(300) %>
 <%
   fig(
     'torsion-screw',
@@ -1884,7 +1885,7 @@ preserves the dimensionality of a manifold.
 <% end_sec %> % Local-coordinate definition of a manifold
 
 <% end_sec %> % Manifolds
-\begin{hwsection}
+<% begin_hw_sec %>
 
 <% begin_hw('gaussian-curvature-at-edge') %>
 Example \ref{eg:lightning-rod} on p.~\pageref{eg:lightning-rod} discussed some examples in electrostatics where the charge density on the surface of a conductor
@@ -1997,7 +1998,7 @@ in order to explain the observed change in the length scale; cf.~the Milne unive
 <% end_hw %>
 
 
-\end{hwsection}
+<% end_hw_sec %>
 
 
 <% end_chapter %>

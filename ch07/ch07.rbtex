@@ -771,7 +771,7 @@ change in mass in such a way as to preserve conservation of energy.\footnote{\ur
 
 
 
-\begin{hwsection}
+<% begin_hw_sec %>
 
 <% begin_hw('screw') %>
 Example \ref{eg:cylinder-killing} on page \pageref{eg:cylinder-killing} gave the Killing vectors
@@ -824,6 +824,6 @@ Give a counterexample.
 \hwsoln
 <% end_hw %>
 
-\end{hwsection}
+<% end_hw_sec %>
 
 <% end_chapter %>

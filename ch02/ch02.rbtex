@@ -1993,7 +1993,7 @@ the cognoscenti of relativity theory (Einstein included!) were quite surprised.'
 <% end_sec %> % Geometry of Flat Spacetime
 
 
-\begin{hwsection}
+<% begin_hw_sec %>
 
 \vfill
 
@@ -2101,6 +2101,6 @@ functions. The \verb@taylor@ function will happily work on matrices, not just sc
 <% end_hw %>
 
 
-\end{hwsection}
+<% end_hw_sec %>
 
 <% end_chapter %>

@@ -1380,7 +1380,7 @@ doesn't transform like a tensor.
 <% end_sec %> % Angular momentum
 <% end_sec %> % Things that aren't quite tensors
 
-\begin{hwsection}
+<% begin_hw_sec %>
 
 <% begin_hw('photon-four-velocity') %>
 Describe the four-velocity of a photon.
@@ -1516,6 +1516,6 @@ with respect to spontaneous creation of tachyon-antitachyon pairs.
 <% end_hw %>
 
 
-\end{hwsection}
+<% end_hw_sec %>
 
 <% end_chapter %>

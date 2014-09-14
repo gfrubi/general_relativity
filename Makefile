@@ -93,6 +93,7 @@ post:
 	cp genrel.pdf ~/Lightandmatter/genrel
 
 prepress:
+	PREPRESS=1 make book
 	make preflight_figs
 	scripts/pdf_extract_pages.rb genrel.pdf 3-end genrel_lulu.pdf
 	# Filtering through gs used to be necessary to convince Lulu not to complain about missing fonts.
