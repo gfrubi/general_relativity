@@ -472,7 +472,9 @@ me permission to use it, but that doesn't mean you have permission to use it.}
 %==============================toc==================================
 \newcommand{\link}[2]{\protect\jumplink{anchor-#1}{\textcolor{blue}{#2}}} % navigator package
 \newcommand{\brieftocentry}[3][\quad]% #1=\hfill (LM and Me.) or \quad (other books), #2=label, #3=title, 
-            {\link{#2}{\ref{#2}} & \link{#2}{#3} #1 \link{#1}{\pageref{#2}}}
+            {\ref{#2} & #3 #1 \pageref{#2}}
+\newcommand{\brieftocentrywithlink}[3][\quad]% #1=\hfill (LM and Me.) or \quad (other books), #2=label, #3=title, 
+            {\link{#2}{\ref{#2}} & \link{#2}{#3} #1 \link{#2}{\pageref{#2}}}
 \newcommand{\toclinewithlink}[4]% #1=subsection, etc., #2=label, #3=title, #4=\thesubsection, etc.
   {%
     \addcontentsline{toc}{#1}{\protect\numberline{#4}\link{#2}{#3}}%
