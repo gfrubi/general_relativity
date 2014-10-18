@@ -428,7 +428,7 @@ The simplest radiating source is therefore an oscillating electric dipole $D=D_\
 is small compared to a wavelength of the radiation, then the radiation is an inefficient process; at any
 point in space, there is only a small difference in path length between the positive and negative portions of the dipole,
 so there tends to be strong cancellation of their contributions, which were emitted with opposite phases.
-The result is that the wave's electromagnetic potential four-vector (section \ref{sec:em-four-vector}) is proportional
+The result is that the wave's electromagnetic potential four-vector (section \ref{subsec:em-four-vector}) is proportional
 to $D_\zu{o}\omega$, the fields to $D_\zu{o}\omega^2$, and the radiated power to $D_\zu{o}^2\omega^4$. The factor of
 $\omega^4$ can be broken down into $(\omega^2)(\omega^2)$, where the first factor of $\omega^2$ occurs for
 reasons similar to the ones that explain the $\omega^2$ factor for the monopole radiation of sound, while the

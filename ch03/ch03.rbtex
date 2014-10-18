@@ -1398,7 +1398,7 @@ so we describe it using either the two fields $(\vc{E},\vc{B})$, a pair of poten
 electrical potential $\phi$, measured in volts, but also a vector potential $\vc{A}$, which you may or may not have encountered.
 Briefly, the electric field is given not by $-\nabla\phi$ but by $-\nabla\phi-\partial\vc{A}/\partial t$,
 while the magnetic field is the curl of $\vc{A}$. This is introduced at greater
-length in section \ref{sec:em-four-vector} on page \pageref{sec:em-four-vector}.}\label{em-gauge-first-mentioned}
+length in section \ref{subsec:em-four-vector} on page \pageref{subsec:em-four-vector}.}\label{em-gauge-first-mentioned}
 or two sets of field
 lines. There are similar incidence conditions and local field equations (Maxwell's equations).
 

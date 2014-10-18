@@ -823,7 +823,7 @@ If we're going to allow a function of this form, then based on the coordinate-in
 it seems that we should probably allow $\alpha$ to be any function at all of the 
 spacetime coordinates. The proper generalization of $\Phi \rightarrow \Phi-\delta\Phi$ is
 now $A_b \rightarrow A_b-\partial_b \alpha$, where $A_b$ is the electromagnetic potential four-vector
-(section \ref{sec:em-four-vector}, page \pageref{sec:em-four-vector}).
+(section \ref{subsec:em-four-vector}, page \pageref{subsec:em-four-vector}).
 
 Self-check: Suppose we said we would allow $\alpha$ to be a function of $t$, but forbid it to depend on
 the spatial coordinates. Prove that this would violate Lorentz invariance.

@@ -261,7 +261,7 @@ and let another such wave have momentum $(E,-E)$. The total momentum is
 $(2E,0)$. Thus this pair of massless particles has a collective mass of $2E$.
 \end{eg}
 
-\begin{eg}{Massless particles travel at $c$}\label{eg:massless-at-c-proofs}
+\begin{eg}{Massless particles travel at $c$}\label{eg:massless-at-c-proofs}\label{c-is-speed-of-massless-particles}
 We demonstrate this by showing that if we suppose the opposite, then
 there are two different consequences, either of which would be physically unacceptable.
 
@@ -599,7 +599,7 @@ The electromagnetic field actually transforms as a rank-2 tensor.
 
 <% end_sec %> % A non-example: electric and magnetic fields
 
-<% begin_sec("The electromagnetic potential four-vector") %>\label{sec:em-four-vector}\index{electromagnetic potential four-vector}
+<% begin_sec("The electromagnetic potential four-vector",nil,'em-four-vector') %>\index{electromagnetic potential four-vector}
 An electromagnetic quantity that \emph{does} transform as a four-vector is the potential.
 On page \pageref{em-gauge-first-mentioned}, I mentioned the fact, which may or may not already be familiar to you,
 that whereas the Newtonian gravitational field's polarization properties allow it to be described using a single
