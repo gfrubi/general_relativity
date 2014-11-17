@@ -351,8 +351,157 @@ it fails condition $2'$ because it has only two independent Killing vectors (exa
 Condition 2 is violated because the Gaussian curvature is zero. Or if we wish, the plane violates
 $2'$ because $\partial_x$ and $\partial_y$ commute, but none of the Killing vectors of a 2-sphere commute.
 \end{eg}
-
 <% end_sec %> % Spherical symmetry
+
+<% marg(-300) %>
+<%
+  fig(
+    'penrose-minkowski',
+    %q{Penrose diagram for flat spacetime.}
+  )
+%>
+<% end_marg %>
+
+<% begin_sec("Penrose diagrams",nil,'penrose-diagrams') %>
+Many of the most difficult and interesting topics in general relativity can be studied within the context
+of two types of spherically symmetric spacetimes: (1) a nonrotating black hole, such as 
+the Schwarzschild spacetime; and (2) a cosmological spacetime
+that is homogeneous and isotropic. (In the latter case, there is a higher level of symmetry, since there
+is no central point.) When a spacetime is spherically symmetric, it can be represented using a
+Penrose diagram, also known as a Penrose-Carter diagram or causal diagram.
+
+<% begin_sec("Flat spacetime",nil,'penrose-minkowski') %>
+As a warmup, figure \figref{penrose-minkowski} shows a Penrose diagram for flat (Minkowski) spacetime.
+The diagram looks $1+1$-dimensional, but the convention is that spherical
+symmetry is assumed, so two more dimensions are hidden, and we're really portraying $3+1$ dimensions. A typical point
+on the interior of the diamond region represents a 2-sphere.
+On this type of diagram, light cones look just like they would on a
+ normal spacetime diagram of Minkowski space, but distance scales are highly distorted.
+The diamond represents the entire spacetime, with the distortion fitting
+ this entire infinite region into that
+ finite area on the page. Despite the distortion, the diagram shows lightlike surfaces as 45-degree diagonals.
+Spacelike and timelike geodesics, however, are distorted, as shown by the curves in the diagram.
+
+The distortion becomes greater as we move away from the center of the diagram, and becomes infinite near the
+edges. Because of this infinite distortion, the points $i^-$ and $i^+$ actually represent 3-spheres. All timelike
+curves start at $i^-$ and end at $i^+$, which are
+idealized points at infinity, like the vanishing points in perspective drawings. We can think of $i^+$ as the
+``Elephants' graveyard,'' where massive particles go when they die. Similarly, lightlike curves begin on
+$\mathscr{I}^-$ (which includes its mirror image on the left) and end on $\mathscr{I}^+$ (which is likewise
+mirror-duplicated). The point at $i^0$ is an infinitely distant endpoint for spacelike curves.
+Because of the spherical symmetry, the left and right halves of the diagram are redundant. 
+
+It is possible to make
+up explicit formulae that translate back and forth between Minkowski coordinates and points on the diamond, but in
+general this is not necessary. In fact, the utility of the diagrams is that they let us think about causal relationships
+in coordinate-independent ways. A light cone on the diagram looks exactly like a normal light cone.
+
+Since this particular spacetime is homogeneous, it makes no difference what spatial
+location on the diagram we pick as our axis of symmetry.
+For example, we could arbitrarily pick the left-hand corner,
+the central timelike geodesic (drawn straight)
+or one of the other timelike geodesics (represented as if it were curved).
+<% end_sec('penrose-minkowski') %>
+
+<% begin_sec("Schwarzschild spacetime",nil,'penrose-schwarzschild') %>
+Figure \figref{penrose-schwarzschild} is a Penrose diagram for the Schwarzschild spacetime, i.e., a Minkowski
+spacetime in which a black hole exists, but in which the black hole did not form by gravitational collapse.
+This spacetime isn't homogeneous; it has a specific location that is its center of spherical symmetry, and this
+is the vertical line on the left marked $r=0$.
+The triangle is the spacetime inside the event horizon; we could have copied it across
+the $r=0$ line if we had so desired, but the copies would have been redundant.
+
+The Penrose diagram makes it easy to
+reason about causal relationships. For example, we can see that if a particle reaches a point inside the event
+horizon, its entire causal future lies inside the horizon, and all of its possible future world-lines intersect
+the singularity. The horizon is a lightlike surface, which makes sense, because it's defined as
+the boundary of the set of points from which a light ray could reach $\mathscr{I}^+$.
+<% end_sec('penrose-schwarzschild') %>
+
+<% marg(0) %>
+<%
+  fig(
+    'penrose-schwarzschild',
+    %q{Penrose diagram for Schwarzschild spacetime: a black hole that didn't form by gravitational collapse.}
+  )
+%>
+<% end_marg %>
+
+<% begin_sec("Astrophysical black hole",nil,'penrose-black-hole') %>
+Figure \figref{penrose-black-hole} is a Penrose diagram for a black hole that has formed by gravitational collapse.
+Using this type of diagram, we can address one of the most vexing FAQs about black holes.
+If a distant observer watches the collapsing cloud of matter from which the black hole forms, her
+optical observations will show that the light from the matter becomes more and more gravitationally
+redshifted, and if she wishes, she can interpret this as an example of gravitational time dilation.
+As she waits longer and longer, the light signals from the infalling matter take longer and longer to arrive.
+The redshift approaches infinity as the matter approaches the horizon, so the light waves ultimately become too
+low in energy to be detectable by any given instrument. Furthermore, her patience (or her lifetime) will run out,
+because the time on her clock approaches infinity as she waits to get signals from matter that is approaching
+the horizon. This is all exactly as it should be, since the horizon is by definition the boundary of her observable
+universe. (A light ray emitted from the horizon will end up at $i^+$, which is
+an end-point of timelike world-lines reached only by observers who have experienced an infinite amount of proper time.)
+
+<% marg(300) %>
+<%
+  fig(
+    'penrose-black-hole',
+    %q{Penrose diagram for a black hole formed by gravitational collapse.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'penrose-black-hole-2',
+    %q{According to the distant observer, does the infalling matter ever reach the singularity?}
+  )
+%>
+<% end_marg %>
+
+People who are bothered by these issues often acknowledge the external \emph{unobservability}
+of matter passing through the horizon, and then want to pass from this to questions like, 
+``Does that mean the black hole never really forms?''
+This presupposes that our distant observer has a uniquely defined notion of simultaneity that applies to a
+region of space stretching from her own position to the interior of the black hole, so that
+she can say what's going on inside the black hole ``now.'' But the notion of simultaneity in general relativity is
+even more limited than its counterpart in special relativity.
+Not only is simultaneity in general relativity observer-dependent, as in special relativity,
+but it is also local rather than global.
+
+
+In figure \figref{penrose-black-hole-2}, E is an event on the world-line of an observer. The
+spacelike surface $\zu{S}_1$ is one possible ``now'' for this observer. According to
+this surface, no particle has ever fallen in and reached the
+horizon; every such particle has a world-line that intersects $\zu{S}_1$,
+and therefore it's still on its way in.
+
+$\zu{S}_2$ is another possible ``now'' for the same
+observer at the same time. According to this definition of ``now,''
+all the particles have passed the event horizon, but none have hit the singularity yet.
+Finally, $\zu{S}_3$ is a ``now'' according to which all the particles have hit the singularity.
+
+If this was special relativity, then we could decide which surface was the
+correct notion of simultaneity for the observer, based on the
+observer's state of motion. But in general relativity, this only works locally (which
+is why I made all three surfaces coincide near E). There is no
+well-defined way of deciding which is the correct way
+of globally extending this notion of simultaneity.
+
+Although it may seem strange that we can't say whether the
+singularity has ``already'' formed according to a distant observer,
+this is really just an inevitable result of the fact that the
+singularity is spacelike. The same thing happens in the case of a
+Schwarzschild spacetime, which we think of as a description of an
+eternal black hole, i.e., one that has always existed and always
+will. On the similar Penrose diagram for an eternal black hole, we
+can still draw a spacelike surface like $\zu{S}_1$ or $\zu{S}_2$, representing a
+definition of ``now'' such that the singularity doesn't exist yet.
+
+
+
+<% end_sec('penrose-black-hole') %>
+
+
+<% end_sec('penrose-diagrams') %> % Penrose diagrams
 
 <% begin_sec("Static and stationary spacetimes") %>\label{sec:static-and-stationary}
 <% begin_sec("Stationary spacetimes") %>
