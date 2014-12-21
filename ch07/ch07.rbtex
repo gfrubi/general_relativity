@@ -107,7 +107,7 @@ space is particular to a given point, figure \figref{tangent-space}. A different
 every point, so that vectors at different points, occupying different spaces, can be compared
 only by parallel transport. Furthermore, we really have \emph{two} such spaces at a given point,
 a space of contravariant vectors and a space of covariant ones. These are referred to as the
-tangent and cotangent spaces.\index{tangent space}\label{tangent-space}
+tangent and cotangent spaces.\index{tangent vector}\label{tangent-space}% index entry for tangent space is a cross ref
 The infinitesimal displacements
 we've been discussing belong to the contravariant (upper-index) space, but by lowering and index
 we can just as well discuss them as covariant vectors. The customary way of notating Killing vectors

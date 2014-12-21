@@ -59,7 +59,7 @@ the curvature of the space varies from one point to the next, and clearly we don
 Riemann sums an infinite number of times, once at each point in space.
 \end{eg}
 
-<% begin_sec("Tangent vectors") %>
+<% begin_sec("Tangent vectors") %>\label{tangent-vector-intuitive}
 It's not immediately clear what a vector means in the context
 of curved spacetime.  The freshman physics notion of a vector carries all kinds of baggage, including
 ideas like rotation of vectors and a magnitude that is positive for nonzero vectors. We also used to
