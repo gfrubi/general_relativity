@@ -196,9 +196,9 @@ Alice, but only a couple of days for Betty.
 
 
 <% end_sec %>
-<% begin_sec("Experimental tests of the nature of time") %>\label{sec:time-experiments}
+<% begin_sec("Experimental tests of the nature of time",nil,'time-experiments') %>
 
-<% begin_sec("The Hafele-Keating experiment") %>\label{sec:hafele-keating}\index{Hafele-Keating experiment}\index{atomic clocks}
+<% begin_sec("The Hafele-Keating experiment",nil,'hafele-keating') %>\index{Hafele-Keating experiment}\index{atomic clocks}
 In 1971, J.C. Hafele and R.E. Keating\footnote{Hafele and Keating, Science, 177 (1972), 168}
 of the U.S. Naval Observatory brought atomic clocks aboard commercial
 airliners and went around the world, once from east to west and once from west to east. (The clocks had their
@@ -266,7 +266,8 @@ much smaller, indicating that the ``clock'' constituted by nuclear decay process
 by the motion of the muons.
 <% end_sec %> % muons
 
-<% begin_sec("Gravitational red-shifts") %>\label{gravitational-redshifts}
+<% begin_sec("Gravitational red-shifts") %>%
+\label{gravitational-redshifts}%not a sec:--- label
 The first  experiment that isolated the gravitational effect on time was a 1925 measurement by W.S. Adams of the spectrum
 of light emitted from the surface of the white dwarf star Sirius B. The gravitational field at the surface of Sirius B
 is $4\times 10^5 g$, and the gravitational potential is about 3,000 times greater than at the Earth's surface. The emission lines of hydrogen were red-shifted,
@@ -302,7 +303,7 @@ interpreted as the gravitational effect effect on time, matching the relativisti
 
 <% end_sec %>
 
-<% begin_sec("Non-simultaneity and the maximum speed of cause and effect") %>\label{sec:max-speed-of-cause-and-effect}
+<% begin_sec("Non-simultaneity and the maximum speed of cause and effect",nil,'max-speed-of-cause-and-effect') %>
 We've seen that time flows at different rates for different observers.
 Suppose that Alice and Betty repeat their Hafele-Keating-style experiment, but this time they are allowed to
 communicate during the trip. Once Betty's ship completes its initial acceleration away from Betty,
@@ -445,7 +446,7 @@ We'll also see that in general relativity O1 is almost always true, but there ar
 <% end_sec %>
 <% begin_sec("The equivalence principle") %>
 
-<% begin_sec("Proportionality of inertial and gravitational mass") %>\label{ep-mass}
+<% begin_sec("Proportionality of inertial and gravitational mass",nil,'ep-mass') %>
 What physical interpretation should we give to the ``lines'' described in ordered geometry?
 Galileo described an experiment (which he may or may not have actually performed) in which he simultaneously
 dropped a cannonball and a musket ball from a tall tower. The two objects hit the ground simultaneously,
@@ -485,7 +486,7 @@ so different charges placed in the same electric field will in general have \emp
 <% end_marg %>
 <% end_sec %> % Proportionality of inertial and gravitational mass
 
-<% begin_sec("Geometrical treatment of gravity") %>\label{sec:geometrical-gravity}
+<% begin_sec("Geometrical treatment of gravity",nil,'geometrical-gravity') %>
 Einstein realized that this special property of the gravitational force made it possible to describe
 gravity in purely geometrical terms. We define the
 world-lines of small\footnote{The reason for the restriction to small objects is essentially gravitational radiation. 
@@ -520,7 +521,7 @@ events infinitesimally close together. Even for randomly chosen events far apart
 violate O1 is zero.
 <% end_sec %> % Geometrical treatment of gravity
 
-<% begin_sec("E\\\"{o}tv\\\"{o}s experiments") %>\label{sec:eotvos}
+<% begin_sec("E\\\"{o}tv\\\"{o}s experiments",nil,'eotvos') %>
 Einstein's entire system breaks down if there is any violation, no matter how small, of the proportionality
 between inertial and gravitational mass, and it therefore becomes very interesting to search experimentally
 for such a violation. For example, we might wonder whether neutrons and protons had slightly different ratios of
@@ -706,7 +707,7 @@ it would falsify the equivalence principle. Cf.~example \ref{eg:shielding}, p.~\
 <% end_marg %>
 
 <% end_sec %> % Lorentz frames
-<% begin_sec("Operational definition of a Lorentz frame") %>\label{operational-lorentz}
+<% begin_sec("Operational definition of a Lorentz frame",nil,'operational-lorentz') %>
 We can define a Lorentz frame in operational terms
 using an idealized variation (figure \figref{waage-box}) on a device actually built by Harold Waage\index{Waage, Harold} at Princeton as a lecture demonstration to be used
 by his partner in crime John Wheeler.\index{Wheeler, John}\label{lorentz-frame-box}
@@ -866,7 +867,7 @@ relativity in 2009 using a matter interferometer in a vertical plane, specifical
 whether there was any violation of special relativity in a uniform gravitational field. Their experiment is interpreted purely as a test of special
 relativity, not general relativity.
 <% end_sec %> % Terminology
-<% begin_sec("Chiao's paradox") %>\label{sec:chiao-paradox}\index{Chiao's paradox}\index{equivalence principle!application to charged particles}
+<% begin_sec("Chiao's paradox",nil,'chiao-paradox') %>\index{Chiao's paradox}\index{equivalence principle!application to charged particles}
 The remainder of this subsection deals with the subtle question of whether and how the equivalence
 principle can be applied to charged particles. You may wish to skip it on a first reading. The short
 answer is that using the equivalence principle to make conclusions about charged particles is like
@@ -944,7 +945,7 @@ p.~\pageref{hw:dewitt-estimate}).
 <% end_sec %> % The equivalence principle
 
 
-<% begin_sec("Gravitational red-shifts") %>\label{sec:gravitational-redshifts}
+<% begin_sec("Gravitational red-shifts",nil,'gravitational-redshifts') %>
 Starting on page \pageref{gravity-affects-time}, we saw experimental evidence that the rate of flow of time
 changes with height in a gravitational field. We can now see that this is required by the equivalence principle.
 
@@ -1050,7 +1051,7 @@ causes a radiation reaction which back-reacts on the particle, causing its orbit
 
 <% end_sec %> %  Gravitational red-shifts
 
-<% begin_sec("The Pound-Rebka experiment") %>\label{sec:pound-rebka}\index{Pound-Rebka experiment}\index{red-shift!gravitational}
+<% begin_sec("The Pound-Rebka experiment",nil,'pound-rebka') %>\index{Pound-Rebka experiment}\index{red-shift!gravitational}
 The 1959 Pound-Rebka experiment at Harvard\footnote{Phys. Rev. Lett. 4 (1960) 337} was
 one of the first high-precision, relativistic tests of the equivalence principle to be carried out
 under controlled conditions, and in this section we will discuss it in detail.

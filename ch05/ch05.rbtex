@@ -1718,7 +1718,7 @@ like $0\le x \le 1$, the boundary points 0 and 1 can only be moved in one direct
 %>
 <% end_marg %>
 
-A toplogical space is too general for us because it can include spaces like fractals, infinite-dimensional spaces,
+A topological space is too general for us because it can include spaces like fractals, infinite-dimensional spaces,
 and spaces that have different numbers of dimensions in different regions.
 It is nevertheless useful to recognize certain concepts that can be defined using only the generic apparatus of
 a topological space, so that we know they do not depend in any way on the presence of a metric.
@@ -1816,17 +1816,7 @@ As usual when we say that something is ``local,''
 a question arises as to how local is local enough. The language in the definition above about ``any sufficiently small neighborhood''
 is logically akin to the Weierstrass $\epsilon$-$\delta$ approach: if Alice gives Bob a manifold and a point on a manifold,
 Bob can always find some neighborhood around that point that is compatible with coordinates, but it may be an extremely small
-neighborhood. As discussed in section \ref{sec:models}, a method that is equally rigorous --- and usually much more
-convenient in differential geometry --- is to use infinitesimals. For example, suppose that we want to write down
-a metric in the form $\der s^2=g_{ab}\der x^a\der x^b$. Infinitesimal distances like $\der x^a$ are always small enough to
-fit in \emph{any} open set of real numbers. In fact, an alternative definition of an open set, in a space with a Euclidean
-metric, is one in which every point can be surrounded by an infinitesimal ball. Similarly, if we want to calculate Christoffel
-symbols, the Riemann tensor, etc., then all we need is the ability to take derivatives, and this only requires infinitesimal
-coordinate changes. Likewise the equivalence principle says that a spacetime is compatible with a Lorentzian metric at every
-point, and this only requires an infinitesimal amount of elbow-room.
-
-In practice, we never have to break up a manifold into infinitely many pieces, each of them infinitesimally small, in order
-to have well-behaved coordinates.
+neighborhood.
 
 \begin{eg}{Coordinates on a circle}
 If we are to define coordinates on a circle, they should be continuous functions. The angle $\phi$ about the center therefore
@@ -1851,8 +1841,6 @@ The local-coordinate definition only states that a manifold \emph{can} be coordi
 the functions that define the coordinate maps are not part of the definition of the manifold,
 so, for example, if two people define coordinates patches on the unit circle in different ways,
 they are still talking about exactly the same manifold.
-
-We conclude with a few examples relating to homeomorphism.
 
 \begin{eg}{Open line segment homeomorphic to a line}
 Let L be an open line segment, such as the open interval $(0,1)$.
@@ -1883,6 +1871,88 @@ preserves the dimensionality of a manifold.
 
 
 <% end_sec %> % Local-coordinate definition of a manifold
+
+<% begin_sec("Differentiable manifolds") %>\index{manifold!differentiable}\index{manifold!smooth}
+A differentiable manifold means a manifold with enough extra structure so you can do
+calculus on it, but this extra structure doesn't necessarily include anything as fancy as
+a metric. As a concrete example, suppose that in a $1+1$-dimensional Galilean universe, observer Alice constructs
+a global coordinate system $(t,x)$. Her spacetime is clearly
+a manifold, based on the local-coordinate definition, and this is true even though Galilean spacetime doesn't
+have a metric. Meanwhile, observer Bob constructs his own coordinate system $(t',x')$. But something disturbing
+happens when Alice constructs the transition map from Bob's coordinate grid to hers. As shown in figure
+\figref{not-a-smooth-manifold}, Bob's grid has a kink in it. ``Bob,'' says Alice, ``something is
+wrong with your coordinate system. I hypothesize that at a certain time, which we can call $t=0$, an invisible
+giant struck your body with an invisible croquet mallet and suddenly changed your state of motion.''
+``No way, Alice,'' Bob answers. ``I didn't feel anything happen at $t=0$. I think you're the one who got
+whacked.''
+<% marg(60) %>
+<%
+  fig(
+    'not-a-smooth-manifold',
+    %q{``Bob, your manifold isn't smooth!''}
+  )
+%>
+<% end_marg %>
+
+By a differentiable manifold we mean one in which this sort of controversy never happens.
+The manifold comes with an a collection of local coordinate systems, called \emph{charts},\index{chart}
+and wherever these charts overlap, the transition map is differentiable. Every coordinate
+is a differentiable function of every other coordinate. In fact, we will assume for convenience
+that not just the first derivative but derivatives of all orders are defined. This makes our
+manifold not just a differentiable manifold but a \emph{smooth manifold}.
+This definition sounds coordinate-dependent, but it isn't. Our collection of charts (called an
+\emph{atlas})\index{atlas}
+can contain infinitely many possible coordinate systems; we can even specify that it contains \emph{all}
+possible coordinate systems that could be obtained from one another by any diffeomorphism.
+<% end_sec %>
+
+<% begin_sec("The tangent space") %>\index{tangent space}\label{subsec:tangent-space}
+In this optional section
+we formalize the notion of the tangent space, following a treatment given more formally and at greater length by
+Nowik and Katz.\footnote{``Differential geometry via infinitesimal displacements,'' \url{arxiv.org/abs/1405.0984}}
+Let M be an $n$-dimensional smooth manifold, so that locally it looks like Euclidean space, describable
+by real-number coordinates $x$, $y$, \ldots We now enhance M to form a new topological space,
+in which the coordinates can include not only real numbers, but numbers that differ infinitesimally from
+reals, as outlined in example \ref{infinitesimals} on p.~\pageref{infinitesimals}. From now on when we say things like
+``the manifold,'' we mean this enhanced version. Fix some infinitesimal
+number $\epsilon$ for once and for all, and define the notation $x=O(\epsilon)$ to mean that
+$x/\epsilon$ is not infinite.\footnote{As usual in this type of ``big-$O$'' notation, we abuse the equals sign
+somewhat. In particular, the equals sign here is not symmetric. For more detail, see the
+Wikipedia article ``Big O notation.''}
+
+Points in the manifold are considered \emph{close}
+if the Euclidean distance between them in coordinate space is
+$O(\epsilon)$. This definition sounds coordinate-dependent, but isn't, and sounds like it's assuming an actual 
+Euclidean metric,
+but isn't; an equivalent and manifestly coordinate-independent definition is that for every smooth real function in a
+neighborhood of the points, the function differs at these points by an amount that is $O(\epsilon)$.
+Define a \emph{prevector} at point P as a pair (P,Q) of points that are close.
+Define prevectors to be equivalent if the difference between them is infinitesimal even compared to 
+$\epsilon$.
+
+Definition: A tangent vector at point P is the set of all prevectors at P that are equivalent to
+a particular prevector at P.
+
+The \emph{tangent space}\index{tangent space} $T_\zu{P}$ is the set of all tangent vectors at P.
+It has the structure of a vector space over the reals
+simply by using the coordinate differences to define the vector-space operations, just as we would
+do if $(P,Q)$ meant an arrow extending from P to Q, as in freshman physics.
+
+By this definition, 
+tangent spaces at close points are compatible, simply by doing what you'd expect with the coordinates;
+for example, if P and Q are close, then we can add a vector from $T_\zu{P}$ to a vector from $T_\zu{Q}$.
+This makes it possible to define things like derivatives of vectors in the same manner as for
+a Euclidean space.
+
+For an alternative definition of the tangent space, see ch.~2 of Carroll.\footnote{Lecture Notes on General Relativity,
+\url{http://ned.ipac.caltech.edu/level5/March01/Carroll3/Carroll_contents.html}.}
+Briefly, this involves taking a tangent vector to be something that behaves like a directional derivative.
+In particular, a partial derivative with respect to a coordinate such as $\partial/\partial x$ qualifies
+as a tangent vector, which we think of as pointing in the $x$ direction. The set of such coordinate
+derivatives forms a basis for the tangent space and gives a convenient way of notating tangent 
+vectors.\label{partials-as-basis-of-tangent-space} We will find this notation convenient in
+section \ref{sec:killing-vectors}, p.~\pageref{sec:killing-vectors}.
+<% end_sec %>
 
 <% end_sec %> % Manifolds
 <% begin_hw_sec %>

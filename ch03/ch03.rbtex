@@ -72,6 +72,9 @@ Intuitively, we want to think of these vectors as arrows that are infinitesimall
 they fit on the curved surface without having to be bent. In the pictures, we simply scale them up to make
 them visible without an infinitely powerful microscope, and this scaling only makes them \emph{appear} to rise out
 of the space in which they live.
+
+A more formal definition of the notion of a tangent vector is given on
+p.~\pageref{subsec:tangent-space}.\index{tangent vector}
 <% marg(40) %>
 <%
   fig(
@@ -83,7 +86,7 @@ of the space in which they live.
 
 <% end_sec %>
 
-<% begin_sec("Affine notions and parallel transport") %>
+<% begin_sec("Affine notions and parallel transport",4) %>
 
 <% begin_sec("The affine parameter in curved spacetime") %>
 An important example of the differential, i.e., local, nature of our geometry

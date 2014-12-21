@@ -12,7 +12,7 @@
 
 This chapter is not required in order to understand the later material.
 
-<% begin_sec("Killing vectors") %>\index{Killing vector}
+<% begin_sec("Killing vectors",nil,'killing-vectors') %>\index{Killing vector}%\label{sec:killing-vectors}
 The Schwarzschild metric is an example of a highly symmetric spacetime. It has
 continuous symmetries in space (under rotation) and in time (under translation
 in time). In addition, it has discrete symmetries under spatial reflection and
@@ -111,7 +111,8 @@ tangent and cotangent spaces.\index{tangent space}\label{tangent-space}
 The infinitesimal displacements
 we've been discussing belong to the contravariant (upper-index) space, but by lowering and index
 we can just as well discuss them as covariant vectors. The customary way of notating Killing vectors
-makes use of the fact that the partial derivative operators
+makes use of the fact, mentioned in passing on p.~\pageref{partials-as-basis-of-tangent-space},
+that the partial derivative operators
 ${\partial_0,\partial_1,\partial_2,\partial_3}$ form the basis for a vector space.
 In this notation,
 the Killing vector of the Schwarzschild metric we've been discussing can be notated simply as
@@ -362,7 +363,7 @@ $2'$ because $\partial_x$ and $\partial_y$ commute, but none of the Killing vect
 %>
 <% end_marg %>
 
-<% begin_sec("Penrose diagrams",nil,'penrose-diagrams') %>
+<% begin_sec("Penrose diagrams",nil,'penrose-diagrams') %>\index{Penrose diagram}\index{causal diagram}
 Many of the most difficult and interesting topics in general relativity can be studied within the context
 of two types of spherically symmetric spacetimes: (1) a nonrotating black hole, such as 
 the Schwarzschild spacetime; and (2) a cosmological spacetime
@@ -386,9 +387,11 @@ The distortion becomes greater as we move away from the center of the diagram, a
 edges. Because of this infinite distortion, the points $i^-$ and $i^+$ actually represent 3-spheres. All timelike
 curves start at $i^-$ and end at $i^+$, which are
 idealized points at infinity, like the vanishing points in perspective drawings. We can think of $i^+$ as the
-``Elephants' graveyard,'' where massive particles go when they die. Similarly, lightlike curves begin on
-$\mathscr{I}^-$ (which includes its mirror image on the left) and end on $\mathscr{I}^+$ (which is likewise
-mirror-duplicated). The point at $i^0$ is an infinitely distant endpoint for spacelike curves.
+``Elephants' graveyard,'' where massive particles go when they die. Similarly, lightlike curves 
+end on $\mathscr{I}^+$ (which
+includes its mirror image on the left), referred to as \emph{null infinity}.\footnote{See also
+p.~\pageref{no-hair-null-infinity}.}\label{null-infinity-intro}
+The point at $i^0$ is an infinitely distant endpoint for spacelike curves.
 Because of the spherical symmetry, the left and right halves of the diagram are redundant. 
 
 It is possible to make
@@ -693,12 +696,18 @@ is timelike for large $r$, so the Schwarzschild spacetime is asymptotically stat
 The no-hair theorems say that relativity only has a small repertoire of types of black-hole singularities,
 defined as singularities inside regions of space that are causally disconnected from the universe, in the sense that
 future light-cones of points in the region do not extend to infinity.\footnote{For a more formal statement of
-this, see Hawking and Ellis, ``The Large Scale Structure of Space-Time,'' p.~315. Essentially, the region must be a connected
-region on a spacelike three-surface, and there must be no lightlike world-lines that connect points in that region
-to null infinity. Null infinity is defined formally using conformal techniques, but basically
-refers to points that are infinitely far away in both space and time, and have the two infinities \emph{equal} in a certain
-sense, so that a free light ray could end up there. The definition is based on the assumption that the surrounding spacetime
-is asymptotically flat, since otherwise null infinity can't be defined. It is not actually necessary to assume a singularity
+this, see Hawking and Ellis, ``The Large Scale Structure of 
+Space-Time,'' p.~315. Essentially, the region must be a connected
+region on a spacelike three-surface, and there must be no lightlike world-lines that connect points
+in that region
+to null infinity. Null infinity\index{null infinity}\label{no-hair-null-infinity}
+was introduced briefly on p.~\pageref{null-infinity-intro} is defined formally using conformal techniques, but basically
+refers to points that are infinitely far away in both space and time, and have the 
+two infinities \emph{equal} in a certain
+sense, so that a free light ray could end up there. The definition is based on the
+assumption that the surrounding spacetime
+is asymptotically flat, since otherwise null infinity can't be defined. It is not
+actually necessary to assume a singularity
 as part of the definition; the no-hair theorems guarantee that one exists.} That is, a black hole is defined as\index{black hole!definition}
 a singularity hidden behind an event horizon, and since the definition of an event horizon is dependent on
 the observer, we specify an observer infinitely far away. The theorems cannot classify naked singularities,
