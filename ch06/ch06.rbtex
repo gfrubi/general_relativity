@@ -436,7 +436,7 @@ The approximate solution we've found so far (reinserting the $m$'s),
   \der s^2 \approx \left(1-\frac{2m}{r}\right)\der t^2 - \left(1+\frac{2m}{r}\right)\der r^2 - r^2 \der\theta^2 - r^2 \sin^2\theta \der\phi^2 \qquad ,
 \end{equation*}
 was first derived by Einstein in 1915, and he used it to solve the problem of the non-Keplerian relativistic correction
-to the orbit of Mercury, which was one of the  first  empirical tests of general relativity.\index{Mercury!orbit of}
+to the orbit of Mercury, which was one of the  first  empirical tests of general relativity.\index{Mercury, orbit of}
 % See Earman, p. 5
 
 Continuing in this fashion, the results are as follows:
@@ -644,7 +644,7 @@ For more discussion, see \url{tinyurl.com/me3qf8o}.% http://physics.stackexchang
 
 <% end_sec %> % geodetic effect
 
-<% begin_sec("Orbits") %>\label{sec:schwarzschild-orbits}
+<% begin_sec("Orbits") %>\label{sec:schwarzschild-orbits}\index{Mercury, orbit of}
 The main event of Newton's \emph{Principia Mathematica} is his proof of Kepler's laws. Similarly, Einstein's
 first important application in general relativity, which he began before he even had the exact form of the
 Schwarzschild metric in hand, was to find the non-Newtonian behavior of the planet Mercury. The planets deviate
@@ -653,19 +653,19 @@ why the major axis of a planet's elliptical orbit is expected to gradually rotat
 taken into account, however, there was a remaining discrepancy of about 40 seconds of arc per century,
 or $6.6\times 10^{-7}$ radians per orbit. The direction of the effect was in the forward direction, in the sense that if we view Mercury's
 orbit from above the ecliptic, so that it orbits in the counterclockwise direction, then the gradual rotation
-of the major axis is also counterclockwise. In other words, Mercury spends more time near perihelion than
-it should nonrelativistically. During this time, it sweeps out a greater angle than nonrelativistically expected, so that
-when it flies back out and away from the sun, its orbit has rotated counterclockwise.
+of the major axis is also counterclockwise.
 
 % 43*(1/100)*(1/365.25)*(115.9)*(1/3600)*pi/180
 %    6.61510182764023*10^-7
 
-We can at least qualitatively understand the reason for such an effect based on the spatial part of the curvature
+As a very rough hand-wavy explanation for this effect, consider the spatial part of the curvature
 of the spacetime surrounding the sun. This spatial curvature is positive, so a circle's circumference is less than
-$2\pi$ times its radius. This causes Mercury to get back to a previously visited angular position before it has had time
-to complete its Newtonian cycle of radial motion.
+$2\pi$ times its radius. We could imagine that this would
+cause Mercury to get back to a previously visited angular position before it has had time
+to complete its Newtonian cycle of radial motion. Arguments such as this one, however, should not be taken too
+seriously. A mathematical analysis is required.
 
-Based on the examples in section \ref{sec:estimates}, we also expect that the effect will be of order
+Based on the examples in section \ref{sec:estimates}, we expect that the effect will be of order
 $m/r$, where $m$ is the mass of the sun and $r$ is the radius of Mercury's orbit.
 This works out to be $2.5\times10^{-8}$, which is smaller than the observed precession by a factor
 of about 26.
@@ -1111,7 +1111,7 @@ neutron stars. These hypothetical creatures have names like black stars, gravast
 and electroweak stars. Although there is no evidence that these theories are right or that these objects exist,
 we are faced with the question of how to determine whether a given object is really a black hole or one of these other species.
 The defining characteristic of a black hole is that it has an event horizon rather than a physical surface. If
-an object is not a black hole, than by conservation of
+an object is not a black hole, then by conservation of
 energy any matter that falls onto it must release its gravitational potential energy when it hits that surface.
 Cygnus X-1 has a copious supply of matter falling onto it from its supergiant companion, and Sagittarius A* likewise
 accretes a huge amount of gas from the stellar wind of nearby stars.
@@ -1515,6 +1515,21 @@ doesn't this accelerate the ray to a speed greater than $c$?
 \hwsoln
 <% end_hw %>
 
+<% begin_hw('impact-in-finite-proper-time') %>
+An observer outside a black hole's event horizon can never observe a test particle falling past the
+event horizon and later hitting the singularity. We could therefore wonder whether general relativity's
+predictions about the interior of a black hole, and the singularity in particular, are even a testable
+scientific theory. However, the observer could herself fall into the black hole. The question is then
+whether she would reach the singularity within a finite proper time; if so, then it is observable to her.
+The purpose of this problem is to prove that this is so, using the techniques of section
+\ref{sec:schwarzschild-orbits}, p.~\pageref{sec:schwarzschild-orbits}. Suppose for simplicity that
+the observer starts at rest far away from the black hole, and falls directly inward toward it.
+(a) In the notation of section \ref{sec:schwarzschild-orbits}, what are the values of $E$ and $L$ in this case?
+(b) Find the function $r(s)$, i.e., the observer's Schwarzschild radial coordinate as a function of her
+proper time, and show that she does reach the singularity in finite proper time.
+\hwsoln
+<% end_hw %>
+
 
 <% begin_hw('astroid') %>
 The curve given parametrically by $(\cos^3 t,\sin^3 t)$ is called an astroid. 
@@ -1525,6 +1540,8 @@ that can be described by coordinates $(t,\phi)$, where $\phi$ is the angle of ro
 (b) Identify any singularities, and classify them as coordinate or intrinsic singularities.
 \hwsoln
 <% end_hw %>
+
+\pagebreak
 
 <% begin_hw('carousel-singularities') %>
 (a) Section \ref{sec:carousel} (p. \pageref{sec:carousel}) gave a flat-spacetime metric in rotating polar coordinates,

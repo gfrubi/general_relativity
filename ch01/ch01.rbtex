@@ -701,7 +701,7 @@ it would falsify the equivalence principle. Cf.~example \ref{eg:shielding}, p.~\
 <%
   fig(
     'upsidasium',
-    %q{Bars of upsidasium are kept in special warehouses, bolted to the ground. Copyright Jay Ward Productions, used under U.S. fair use excpetion to copyright law.}
+    %q{Bars of upsidasium are kept in special warehouses, bolted to the ground. Copyright Jay Ward Productions, used under U.S. fair use exception to copyright law.}
   )
 %>
 <% end_marg %>
@@ -709,7 +709,8 @@ it would falsify the equivalence principle. Cf.~example \ref{eg:shielding}, p.~\
 <% end_sec %> % Lorentz frames
 <% begin_sec("Operational definition of a Lorentz frame",nil,'operational-lorentz') %>
 We can define a Lorentz frame in operational terms
-using an idealized variation (figure \figref{waage-box}) on a device actually built by Harold Waage\index{Waage, Harold} at Princeton as a lecture demonstration to be used
+using an idealized variation (figure \figref{waage-box}) on a device actually built
+by Harold Waage\index{Waage, Harold} at Princeton as a lecture demonstration to be used
 by his partner in crime John Wheeler.\index{Wheeler, John}\label{lorentz-frame-box}
 Build a sealed chamber whose contents are isolated from all nongravitational forces. Of the four
 known forces of nature, the three we need to exclude are the strong nuclear force, the weak nuclear force, and
@@ -765,12 +766,15 @@ undetectable if there is not enough other matter nearby.
 <% end_sec %> % Operational definition of a Lorentz frame
 
 <% begin_sec("Locality of Lorentz frames") %>
-It would be convenient if we could define a single Lorentz frame that would cover the entire universe, but we can't.
-In figure \figref{local-lorentz-frames}, two girls simultaneously drop down from tree branches --- one in Los
-Angeles and one in Mumbai.
-The girl free-falling in Los Angeles defines a Lorentz frame, and in that frame, other objects falling
-nearby will also have straight world-lines. But in the LA girl's frame of reference, the girl falling in Mumbai
-does not have a straight world-line: she is accelerating up toward the LA girl with an acceleration of about $2g$.
+It would be convenient if we could define a single Lorentz frame that
+would cover the entire universe, but we can't.  In figure
+\figref{local-lorentz-frames}, two girls simultaneously drop down from
+tree branches --- one in Los Angeles and one in Mumbai.  The girl
+free-falling in Los Angeles defines a Lorentz frame, and in that
+frame, other objects falling nearby will also have straight
+world-lines. But in the LA girl's frame of reference, the girl falling
+in Mumbai does not have a straight world-line: she is accelerating up
+toward the LA girl with an acceleration of about $2g$. 
 <% marg(35) %>
 <%
   fig(

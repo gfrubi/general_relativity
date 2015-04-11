@@ -621,14 +621,19 @@ field.
 <% begin_sec("Static spacetimes") %>\index{static spacetime}
 
 
-In addition to synchronizing all clocks to the same frequency, we might also like to be able to
-match all their phases using Einstein synchronization, which requires transitivity.
-Transitivity is frame-dependent. For example, flat spacetime allows transitivity if we use the usual
-coordinates. However, if we change into a rotating frame of reference, transitivity fails (see p.~\pageref{sec:carousel}).
-If coordinates exist in which a particular spacetime has transitivity, then that spacetime is said to be static.\index{static spacetime}
-In these coordinates, the metric is diagonalized, and since there are no space-time cross-terms like $\der x\der t$ in the metric, such
-a spacetime is invariant under time reversal. Roughly speaking, a static spacetime is one in which there
-is no rotation.
+In addition to synchronizing all clocks to the same frequency, we
+might also like to be able to match all their phases using Einstein
+synchronization, which requires transitivity.  Transitivity is
+frame-dependent. For example, flat spacetime allows transitivity if we
+use the usual coordinates. However, if we change into a rotating frame
+of reference, transitivity fails (see p.~\pageref{sec:carousel}).  If
+coordinates exist in which a particular spacetime has transitivity,
+then that spacetime is said to be static.\index{static spacetime} In
+these coordinates, the metric is diagonalized, and since there are no
+space-time cross-terms like $\der x\der t$ in the metric, such a
+spacetime is invariant under time reversal. Roughly speaking, a static
+spacetime is one in which there is no rotation.
+% https://www.physicsforums.com/threads/when-can-a-metric-be-put-in-diagonal-form.798380/
 <% end_sec %> % Static spacetimes
 
 <% begin_sec("Birkhoff's theorem") %>
