@@ -79,7 +79,7 @@ will not in general allow a solution to be evolved forward in time from a set of
 a spacelike surface, and this turns out to be true. It can in fact be shown that the only possible solutions
 are those in which the traces $R=R\indices{^a_a}$ and $T=T\indices{^a_a}$ are constant throughout spacetime.
 
-The solution is to replace $R_{ab}$ in the field equations with the a different tensor $G_{ab}$, called the
+The solution is to replace $R_{ab}$ in the field equations with a different tensor $G_{ab}$, called the
 Einstein tensor,\index{Einstein tensor} defined by $G_{ab}=R_{ab}-(1/2)Rg_{ab}$,\index{Einstein field equation}\index{field equation, Einstein}\label{einstein-field-equation}
 \begin{equation*}
   G_{ab} = 8\pi T_{ab} \qquad .
@@ -1096,13 +1096,13 @@ Because of these issues, Einstein decided to try to patch up his field equation 
 universe.
 Looking back over the considerations that led us to this form of the equation, we see that it is
 very nearly uniquely determined by the following criteria:
-\begin{itemize}
-\item It should be consistent with experimental evidence for local conservation of mass-energy and momentum.
+\begin{enumerate}
+\item It should be consistent with experimental evidence for local conservation of energy-momentum.
 \item It should satisfy the equivalence principle.
 \item It should be coordinate-independent.
-\item It should be equivalent to Newtonian gravity in the appropriate limit.
+\item It should be equivalent to Newtonian gravity or ``plain'' general relativity in the appropriate limit.
 \item It should not be overdetermined.
-\end{itemize}
+\end{enumerate}
 This is not meant to be a rigorous proof, just a general observation that it's not easy to tinker with the
 theory without breaking it.
 
@@ -1122,23 +1122,50 @@ pp.~\pageref{kreuzer}-\pageref{end-kreuzer}, empirical tests of conservation of 
 constrain $c_2$ to be $\lesssim 10^{-8}$.
 \end{eg}
 
-One way in which we \emph{can} change the field equation without violating any of these is to add a term $\Lambda g_{ab}$, giving
+One way in which we \emph{can} change the field equation without violating any of these 
+requirements is to add a term $\Lambda g_{ab}$, giving
 \begin{equation*}
   G_{ab} = 8\pi T_{ab} + \Lambda g_{ab} \qquad ,
 \end{equation*}
-which is what we will refer to as the Einstein field equation.\footnote{In books that use a $-+++$ metric rather then our
-$+---$, the sign of the cosmological constant term is reversed relative to ours.}
-The universal constant $\Lambda$ is called the cosmological constant.\index{cosmological constant}\index{Einstein field equation}
-Einstein originally introduced a positive cosmological constant because he wanted relativity to be able to describe a static universe.
-To see why it would have this effect, compare its behavior with that of an ordinary fluid.
-When an ordinary fluid, such as the exploding air-gas mixture in a car's cylinder, expands, it does work on its environment,
-and therefore by conservation of energy its own internal energy is reduced. A positive cosmological constant,
-however, acts like a certain amount of mass-energy built into every cubic meter of vacuum. Thus when it
-expands, it \emph{releases} energy. Its pressure is negative. Another way of verifying these statements
-is by observing that for a given cosmological constant, we can always observe the $\Lambda g_{ab}$ term in the
-field equations into the $8\pi T_{ab}$, as if the cosmological constant were some form of matter.
+which is what we will refer to as the Einstein field
+equation.\footnote{In books that use a $-+++$ metric rather then our
+$+---$, the sign of the cosmological constant term is reversed
+relative to ours.}
+As we'll see in example \ref{eg:lambda-must-be-constant} on p.~\pageref{eg:lambda-must-be-constant},
+this is consistent with conservation of energy-momentum (requirement 1 above) if and only if $\Lambda$ is constant.
+In example \ref{eg:lambda-is-cosmological} we find that its effects are only significant on the largest scales,
+which makes it undetectable, for example, in solar-system tests (criterion 4).
+For these reasons  $\Lambda$ is referred to as the
+cosmological constant.\index{cosmological constant}\index{Einstein
+field equation} As we'll see below, Einstein introduced it in order to make a certain type of cosmology work.
 
-Now consider the following pseudo-classical argument.
+We could also choose to absorb
+the $\Lambda g_{ab}$ term in the field equations into the $8\pi
+T_{ab}$, as if the cosmological constant term were due to some form of matter.
+It would then be a perfect fluid (example \ref{eg:perfect-fluid-tensorial}, p.~\pageref{eg:perfect-fluid-tensorial})
+with a negative pressure, and it would violate the strong energy condition
+(example \ref{eg:lambda-energy-conditions}, p.~\pageref{eg:lambda-energy-conditions}).
+When we think of it this way, it's common these days to refer to it
+as \emph{dark energy}.
+But even if we think of it as analogous to a matter field, its constancy means that it has none of its
+own independent degrees of freedom. It can't vibrate, rotate, flow, be compressed or rarefied, heated or cooled.
+It acts like a kind of energy that is automatically built in to every cubic centimeter of space.
+This is closely related to the fact that its contribution to the stress-energy tensor is proportional
+to the metric. One way of stating the equivalence principle (requirement 2 above)
+is that space itself does not come equipped with any other tensor besides the metric.
+
+Einstein originally introduced a positive cosmological
+constant because he wanted relativity to be able to describe a static
+universe.  To see why it would have this effect, compare its behavior
+with that of an ordinary fluid.  When an ordinary fluid, such as the
+exploding air-gas mixture in a car's cylinder, expands, it does work
+on its environment, and therefore by conservation of energy its own
+internal energy is reduced. A positive cosmological constant, however,
+acts like a certain amount of mass-energy built into every cubic meter
+of vacuum. Thus when it expands, it \emph{releases} energy. Its
+pressure is negative. 
+
+Now consider the following semi-relativistic argument.
 Although we've already seen (page \pageref{no-separate-k-and-u}) that there is no useful way to separate the
 roles of kinetic and potential energy in general relativity, suppose that there are some quantities analogous
 to them in the description of the universe as a whole. (We'll see below that the universe's contraction and
@@ -1147,6 +1174,23 @@ If the universe contracts, a cubic meter of space becomes less than a cubic mete
 The cosmological-constant energy associated with that volume is reduced, so some energy has been consumed.
 The kinetic energy of the collapsing matter goes down, and the collapse is decelerated.
 
+\begin{eg}{Cosmological constant must be constant}\label{eg:lambda-must-be-constant}
+If $\Lambda$ is thought of as a form of matter, then it becomes 
+natural to ask whether\label{varying-lambda}\index{cosmological constant!no variation of}
+it's spread more thickly in some places than others: is the cosmological ``constant'' really constant?
+The following argument shows that it cannot vary.
+The field equations are $G_{ab}=8\pi T_{ab}+\Lambda g_{ab}$.
+Taking the divergence of both sides, we have $\nabla^a G_{ab}=8\pi \nabla^a T_{ab}+\nabla^a (\Lambda g_{ab})$.
+The left-hand side vanishes (see p.~\pageref{einstein-tensor-div-free}). Since laboratory experiments have
+verified conservation of mass-energy to high precision for all the forms of matter represented by $T$,
+we have $\nabla^a T_{ab}=0$ as well. Applying the product rule to the term $\nabla^a (\Lambda g_{ab})$,
+we get $g_{ab}\nabla^a\Lambda+\Lambda\nabla^a g_{ab}$. But the covariant derivative of the metric vanishes,
+so the result is simply $\nabla_b\Lambda$. Thus any variation in the cosmological constant over space or time
+violates the field equations, and the violation is equivalent to the violation we would get from a form of matter
+than didn't conserve mass-energy locally.
+\end{eg}
+
+\begin{eg}{Cosmological constant is cosmological}\label{eg:lambda-is-cosmological}
 The addition of the $\Lambda$ term constitutes a change to the \emph{vacuum} field equations, and the good agreement
 between theory and experiment in the case of, e.g., Mercury's orbit puts an upper limit on $\Lambda$ then implies
 that $\Lambda$ must be small. For an
@@ -1160,7 +1204,9 @@ Looking at the role played by $r$ in the estimate, we see that the
 upper bound could have been made tighter by increasing $r$. Observations on galactic scales, for example, constrain it much
 more tightly. This justifies the description of $\Lambda$ as cosmological:
 the larger the scale, the more significant the effect of a nonzero $\Lambda$ would be.
+\end{eg}
 
+\begin{eg}{Energy conditions}\label{eg:lambda-energy-conditions}
 Since the right-hand side of the field equation is $8\pi T_{ab} + \Lambda g_{ab}$, it is possible to consider
 the cosmological constant as a type of matter contributing to the stress-energy tensor.\index{energy conditions!violated by cosmological constant}
 We then have $\rho=-P=\Lambda/8\pi$.\label{lambda-and-energy-conditions}
@@ -1175,20 +1221,9 @@ is not too surprising, because quantum fields are known to violate
 various energy conditions.
 For example, the energy density between two parallel conducting plates
 is negative due to the Casimir effect.\index{Casimir effect}
+\end{eg}
 
-If $\Lambda$ is thought of as a form of matter, then it becomes 
-natural to ask whether\label{varying-lambda}\index{cosmological constant!no variation of}
-it's spread more thickly in some places than others: is the cosmological ``constant'' really constant?
-The following argument shows that it cannot vary.
-The field equations are $G_{ab}=8\pi T_{ab}+\Lambda g_{ab}$.
-Taking the divergence of both sides, we have $\nabla^a G_{ab}=8\pi \nabla^a T_{ab}+\nabla^a (\Lambda g_{ab})$.
-The left-hand side vanishes (see p.~\pageref{einstein-tensor-div-free}). Since laboratory experiments have
-verified conservation of mass-energy to high precision for all the forms of matter represented by $T$,
-we have $\nabla^a T_{ab}=0$ as well. Applying the product rule to the term $\nabla^a (\Lambda g_{ab})$,
-we get $g_{ab}\nabla^a\Lambda+\Lambda\nabla^a g_{ab}$. But the covariant derivative of the metric vanishes,
-so the result is simply $\nabla_b\Lambda$. Thus any variation in the cosmological constant over space or time
-violates the field equations, and the violation is equivalent to the violation we would get from a form of matter
-than didn't conserve mass-energy locally.
+
 <% end_sec %> % The cosmological constant
 <% end_sec %> % Sources in general relativity
 
@@ -1205,7 +1240,8 @@ from the deep sky that has been traveling through space for billions of years, t
 today's. For example, quasars were common in the early universe but are uncommon today. 
 
 In the present-day universe, stars
-use up deuterium nuclei, but there are no known processes that could replenish their supply. We therefore expect that
+use up deuterium nuclei,\index{deuterium!evidence for finite age of universe}
+but there are no known processes that could replenish their supply. We therefore expect that
 the abundance of deuterium in the universe should decrease over time. If the universe had existed for an infinite
 time, we would expect that all its deuterium would have been lost, and yet we observe that deuterium does exist
 in stars and in the interstellar medium.
@@ -1619,7 +1655,9 @@ produces gravitational fields as predicted by general relativity. We saw on p.~\
 electric fields do produce gravitational fields as predicted, but this is not the same as an empirical confirmation
 that electromagnetic waves also act as gravitational sources in exactly the manner that general relativity claims.
 We do, however, have a consistency check in the form of the abundances of nuclei. Calculations of nuclear reactions
-in the early, radiation-dominated universe predict certain abundances of hydrogen, helium, and deuterium. In particular,
+in the early, radiation-dominated universe predict certain abundances 
+of hydrogen, helium, and deuterium.\index{deuterium!test of cosmological models}
+In particular,
 the relative abundance of helium and deuterium is a sensitive test of the relationships among $a$, $\dot{a}$, and $\ddot{a}$
 predicted by the FRW equations, and they confirm these relationships to a precision of about $5\pm 4$\%.\footnote{Steigman,
 Ann. Rev. Nucl. Part. Sci. 57 (2007) 463. These tests are stated in terms of the Hubble ``constant'' $H=\dot{a}/a$,
@@ -2482,7 +2520,7 @@ background, especially by the 1989-1993 COBE probe, and its 2001-2009 successor,
 positioned at the L2 Lagrange point of the earth-sun system, beyond the Earth on the line
 connecting sun and earth.\footnote{Komatsu et al., 2010, \url{arxiv.org/abs/1001.4538}}
 The temperature of the cosmic microwave background radiation is not the same in all directions, and
-its can be measured at different angles.
+it can be measured at different angles.
 In a universe with negative spatial
 curvature, the sum of the interior angles of a triangle is less than the Euclidean value of 180 degrees.
 Therefore if we observe a variation in the CMB over some angle, the distance between two points on
