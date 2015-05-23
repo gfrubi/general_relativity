@@ -1034,7 +1034,7 @@ To make this notion of light cones ``pointing at the source'' more rigorous, we 
 Let the set of all points in a spacetime (or some open subset of it) be expressed as the union of geodesics. This is referred to as a foliation
 in geodesics, or a congruence. Let the velocity vector tangent to such a curve be $u^a$. Then we define $\Theta=\nabla_a u^a$. This is exactly
 analogous to the classical notion of the divergence of the velocity field of a fluid, which is a measure of compression or expansion.
-Since $\Theta$ is a scalar,
+Since $\Theta$ is a scalar,\label{volume-expansion}
 it is coordinate-independent. Negative values of $\Theta$ indicate that the geodesics are converging, so that volumes of space shrink. A trapped
 surface is one on which $\Theta$ is negative when we foliate with lightlike geodesics oriented outward along normals to the surface.
 
@@ -2996,5 +2996,123 @@ universe. What is the result in the case of the radiation-dominated universe?
 <% end_hw_sec %>
 
 
+<% begin_sec("Historical note: the steady-state model") %>
+From 1948 until around the mid-1960s, the Big Bang theory had viable competition in the form of
+the steady-state model,\index{steady-state cosmology}
+originated by the British trio of Fred Hoyle, Hermann Bondi, and 
+Thomas Gold.\index{Hoyle, Fred}\index{Bondi, Hermann}\index{Gold, Thomas}
+Legend has it that
+they came up with the idea after seeing a horror movie called Dead of Night, in which events from
+the beginning of the story repeat themselves later. This led
+them to imagine that the universe could, although expanding, remain locally in the same state
+at all times. If this were to happen, the empty space being opened up between the galaxies
+would have to be filled back up by the spontaneous creation of matter.
+The model holds a strong philosophical appeal because it generalizes the Copernican principle
+so that it applies not just to conditions everywhere in space but also at all times.
+
+They published the
+idea in a pair of back-to-back papers, one by Bondi and 
+Gold\footnote{``The Steady-State Theory of the Expanding Universe,'' MNRAS 108 (1948) 252;
+\url{adsabs.harvard.edu/cgi-bin/nph-bib_query?bibcode=1948MNRAS.108..252B}} and one by
+Hoyle,\footnote{``A New Model for the Expanding Universe,'' MNRAS 108 (1948) 372,
+\url{adsabs.harvard.edu/cgi-bin/nph-bib_query?bibcode=1948MNRAS.108..372H}
+} with comments
+appended to the former on the differences between the two approaches. The Bondi-Gold paper is
+especially fun to read, because it is written in nontechnical language and shows a type of
+daring and creative science that is not often encountered today. Much of it reads like a
+catalog of cherished principles of physics that were to be given up,
+including Lorentz invariance, general relativity,
+the equivalence principle, and possibly the laws of
+conservation of charge and mass-energy. The following is a brief sketch (in slightly
+different notation) of the Hoyle's more mathematically
+detailed ideas, as sketched in his original paper. Although Hoyle eventually fleshed out the ideas more
+thoroughly, by the time he had done so the steady-state theory was already on its way to being
+crushed under the weight of contrary observations.
+
+Since the model is always to be in the same state, the quantity $\dot{a}/a$ must always be
+the same, i.e., the Hubble constant really is a constant over time. This requires exponential
+growth, which means that the geometry is that of de Sitter space.
+In any model that assigns an infinite age to the universe, one must explain why
+the universe has not undergone heat death due to the second law of thermodynamics.
+The steady-state model successfully addresses this problem, because the exponential
+expansion is rapid enough to prevent thermal equilibrium from happening.
+
+To understand more about why the theory took the form it did, it is helpful to look at some general physical
+considerations about symmetry. As Bondi and Gold admit candidly,
+any theory of this type is likely to violate Lorentz invariance.
+We can observe an evacuated box and wait for hydrogen atoms to appear.
+When they appear, they're in some state of motion, at least on the average. This
+state of motion defines a preferred frame. In addition to breaking symmetry under Lorentz transformations,
+the theory lacks time-reversal invariance (because matter appears but never disappears)
+and charge-conjugation symmetry (because matter appears but antimatter doesn't).
+All of these asymmetries arise because in this approach, we try to explain the observed
+asymmetries of the cosmological state of the universe as arising directly from asymmetries in
+the underlying local laws of physics. Such an approach is very different from the modern one,
+in which we expect the asymmetries to arise from either boundary conditions or instabilities
+(spontaneous symmetry breaking).
+
+Hoyle postulates a massless, chargeless, scalar field $C$, called the ``C field.'' Normally we would expect such a field
+to obey the wave equation $\nabla_a\nabla^a C=0$. Hoyle's C field does not, however,
+evolve according to any Lorentz-invariant dynamical law. Instead it simply evolves as
+$C=t$, where $t$ is a preferred time coordinate. In any cosmological model in which the matter
+fields are modeled as perfect fluids, we have a preferred time coordinate which is
+the proper time of an observer at rest with respect
+to the fluid, and in the Hoyle model we do assume that this is the time $t$ we should use
+in defining $C$. However, Hoyle's theory is different because it gives this preferred time a role
+in the local laws of physics, thereby breaking Lorentz invariance. 
+
+The scalar field $C$ cannot have any
+directly observable effects, since then its time-evolution would distinguish one epoch of the universe
+from another.
+Instead we form the gradient $\nabla_a C$. This gives a vector, which can be interpreted as a velocity vector defining the
+preferred frame of reference. An observer in this frame is at rest relative to the local cosmological
+fluid, observes the universe to be homogeneous, and also observes that when new atoms are created
+from the vacuum, they are on the average at rest. Thus $\nabla_a C$ is observable.
+
+The contribution of the C field to the stress-energy must be a rank-two tensor, and the only
+obvious way to try to construct it is something like $-k\nabla_a \nabla_b C$.
+The minus sign must be present in order to preserve local conservation of energy-momentum, without which
+the Einstein field equations become inconsistent. As ordinary matter, with positive energy,
+is created, an equal amount of negative energy is created in the C field.
+(This was Hoyle's more conservative approach.
+Bondi and Gold advocated replacing general relativity completely rather than modifying it.)
+The positive constant $k$ is chosen so as to agree with the observed value of the Hubble constant in
+relation to the density of matter.
+If the derivatives had been ordinary partial derivatives, they would vanish because $C$ is linear
+in time, but the covariant derivatives do not vanish, and in fact the stress-energy is a tensor
+measuring the rate of cosmological expansion; its trace is the volume expansion $\Theta$ defined on
+p.~\pageref{volume-expansion}.
+We can now see why we could not take the C field to evolve according to the usual wave
+equation $\nabla_a\nabla^a C=0$; if it did, then we would have $\Theta=0$, and the universe would not be expanding.
+
+Like the cosmological constant, the C field is taken to be a universally
+prescribed property of the vacuum. There is a difference, however, because the cosmological constant's
+contribution to the stress-energy is proportional to the metric, which preserves the equivalence
+principle. As remarked at the end of the Bondi-Gold paper, the C field violates the equivalence
+principle. No calculation is spelled out, but they say based on a personal communication from Hoyle
+that the field exerts a force on matter which produces a significant acceleration in an atom,
+but a negligible one in a star.
+
+A claimed selling point of the C field was that it would prevent the formation of singularities,
+including both a Big Bang singularity and black holes. This is reasonable, since its negative
+energy density violates various energy conditions, and the Hawking-Penrose singularity theorems
+depend on those energy conditions.
+
+Because the C field does not obey the proper wave equation for a massless, spin-zero particle,
+there is no obvious way to make up a dynamical law for its evolution in order to replace the
+fixed relation $C=t$, and we do not expect to have any classical field theory for the C field.
+Hoyle did attempt to add dynamics to the model by making it into what is known as a ``direct
+field,'' which was a type of action-at-a-distance theory that in the 1960s was believed to be
+a good candidate for the fundamental description of the forces of physics. (Quantum field
+theory had not developed to the point where it could handle the strong or weak nuclear forces.)
+Such theories were shown to be nonviable as quantum theories in 1963 by Currie, Jordan, and
+Sudarshan.
+
+The steady-state model began to succumb to contrary evidence when Ryle and coworkers counted radio
+sources and found that they did not show the statistical behavior predicted by the model.
+The coup de grace came with the discovery of the cosmic microwave background, which demonstrated directly
+that the universe had once been much hotter than it is now.
+
+<% end_sec %>
 
 <% end_chapter %>
