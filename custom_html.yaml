@@ -46,6 +46,9 @@ environment:
   hw:
     n_req: 3
     n_opt: 0
+  homeworkforcelabel:
+    n_req: 4
+    n_opt: 0
   hwsection:
     generate_header:
     - 2

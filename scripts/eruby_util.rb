@@ -1187,16 +1187,29 @@ def sectioning_command_with_href(cmd,section_level,label,label_level,title)
   # - 
   # similar code in begin_hw_sec
   # -
-  t = <<-TEX
-    %\\begingroup
+  t1 = <<-TEX
     \\let\\oldacl\\addcontentsline
     \\renewcommand{\\addcontentsline}[3]{}% temporarily disable \\addcontentsline
+    TEX
+  t2 = <<-TEX
     #{anchor_command_1}#{cmd}#{label_command}#{anchor_command_2}
-    %\\endgroup
+    TEX
+  t3 = <<-TEX
     \\let\\addcontentsline\\oldacl
+    TEX
+  t4 = <<-TEX
     \\#{toc_macro}{#{name_level}}{#{complete_label}}{#{title}}{\\the#{name_level}}
     TEX
-  return t
+  return mark_to_ignore_for_web(t1)+t2+mark_to_ignore_for_web(t3+t4)
+end
+
+def mark_to_ignore_for_web(tex)
+  k = rand(1000000000000)
+  return <<-TEX
+    %begin_ignore_for_web:#{k}
+    #{tex}
+    %end_ignore_for_web:#{k}
+  TEX
 end
 
 def is_prepress

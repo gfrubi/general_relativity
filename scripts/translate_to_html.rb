@@ -814,6 +814,15 @@ def preprocess(tex,command_data,style_files)
   style = ''
   style_files.each { |s|  style = style + "\n" + slurp_file(s) }
 
+  # delete material marked to be ignored by me
+  ignore_these_keys = []
+  tex.scan(/begin_ignore_for_web:(\d+)/) {
+    ignore_these_keys.push($1)
+  }
+  ignore_these_keys.each { |n|
+    tex.sub!(Regexp.new("%begin_ignore_for_web:#{n}.*%end_ignore_for_web:#{n}\n",Regexp::MULTILINE),'') 
+  }
+
   # Convert summary and hwsection environments into sections, which is what they really are, anyway.
   ['summary','hwsection'].each { |s|
     a = {'summary'=>'Summary','hwsection'=>'Homework Problems'}[s]
@@ -1272,10 +1281,12 @@ def parse_section(tex,environment_data)
             top = "\n\n"
             bottom = "\n\n"
           else
-            top = "\n\n<div class=\"#{x}\">\n\n"
+            type_of_div = x
+            if x=='homeworkforcelabel' then type_of_div='homework' end
+            top = "\n\n<div class=\"#{type_of_div}\">\n\n"
             bottom = "\n\n</div>\n\n"
           end
-          if x=~/\A(homework|hw)\Z/ then 
+          if x=~/\A(homework|hw|homeworkforcelabel)\Z/ then 
             d = "<b>#{hw}</b>. " + d
             hw+=1
             if args[1]!='' && !$wiki && $config['forbid_anchors_and_links']==0 then top = top + "<a #{$anchor}=\"hw:#{arg}\"></a>" end
@@ -2057,6 +2068,8 @@ def parse_eensy_weensy(t)
   tex.gsub!(/\\index{#{curly}}/,'') # This actually gets taken care of earlier by duplicated code. Probably not necessary to have it here as well.
   tex.gsub!(/\\noindent/,'') # Should pay attention to this, but it would be really hard.
   tex.gsub!(/\\write18{#{curly}}/,'')
+  tex.gsub!(/\\anchor{#{curly}}/,'')
+  tex.gsub!(/\\link{#{curly}}/,'')
   # kludge, needed in SN 10:
   tex.gsub!(/\\formatlikecaption{/,'') 
   tex.gsub!(/\\normalsize/,'') 
