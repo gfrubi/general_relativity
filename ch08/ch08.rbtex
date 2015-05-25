@@ -2148,8 +2148,32 @@ only mass is a black hole of mass $m$ located at $r=0$. Near the black hole, the
 the Schwarzschild metric.
 As argued in section \ref{sec:observability-of-expansion}, page \pageref{sec:observability-of-expansion},
 this is a simple example of how cosmological expansion does not cause all structures in the universe to grow at the same rate.
-\end{eg}
 % sch_de_sitter.mac
+\end{eg}
+
+\begin{eg}{Conservation of energy-momentum}\label{eg:de-sitter-cons}
+Suppose that we assume the de Sitter geometry, and ask what type of matter fields are necessary to create it.
+We know that a cosmological constant will do the job, but could we have some other matter field that
+would also work? Suppose that the matter field is constrained to be a perfect fluid.
+The total stress-energy is then of the form $T^\mu_\nu=\operatorname{diag}(\rho,-P,-P,-P)$
+in Cartesian coordinates. (See
+example \ref{eg:perfect-fluid-tensorial} on p.~\pageref{eg:perfect-fluid-tensorial}
+for the signs,
+some of which depend on our use of the $+---$ signature.)
+The divergence
+$\nabla_\mu T^\mu_t$ measures the rate at which an observer says energy is being created, and we need this to be zero.
+This expression is one of those tricky examples where the covariant derivative can be nonzero even when the
+thing being differentiated vanishes identically.
+The divergence is
+$\nabla_tT\indices{^t_t}+\nabla_xT\indices{^x_t}$, and the term that doesn't vanish is the
+\emph{second} one, even though $T\indices{^x_t}=0$.
+Using the nonvanishing Christoffel symbols this becomes
+$\Gamma^x_{xt}T\indices{^t_t}-\Gamma^x_{tx}T\indices{^x_x}=\frac{\dot{a}}{a}(\rho+P)$,
+so that $\rho+P=0$. This condition is satisfied by a cosmological constant. Our result is that
+the only way to get a de Sitter geometry is with matter fields that exactly mimic a cosmological
+constant. This is of some historical interest in the context of the steady-state cosmologies,
+section \ref{sec:steady-state}, p.~\pageref{sec:steady-state}.
+\end{eg}
 
 <% begin_sec("The Big Bang singularity in a universe with a cosmological constant") %>\label{bb-singularity-with-lambda}
 On page \pageref{bb-singularity-without-lambda} we discussed the possibility that the Big Bang singularity was an artifact of the
@@ -2924,16 +2948,12 @@ He postulates a massless, chargeless, scalar field $C$, called the ``C field,''
 the letter ``C'' standing for ``creation.''
 Suppose that the C field's contribution to the stress-energy tensor ends up being that of
 a perfect fluid with the same rest frame as the ordinary matter.
-The total stress-energy is then of the form $T^\mu_\nu=\operatorname{diag}(\rho,-P,-P,-P)$
-in Cartesian coordinates. (See
-example \ref{eg:perfect-fluid-tensorial} on p.~\pageref{eg:perfect-fluid-tensorial}
-for the signs,
-some of which depend on our use of the $+---$ signature.)
 The rate of creation of mass-energy is then given by the divergence
-$\nabla_\mu T^\mu_t$, and we need this to be zero. Evaluating this expression
-using the Christoffel symbols for de Sitter space, we have
-$\Gamma^x_{xt}T\indices{^t_t}-\Gamma^x_{tx}T\indices{^x_x}=\frac{\dot{a}}{a}(\rho+P)$.
-If the ordinary matter is dust, then clearly the C field will either need to contribute negative
+$\nabla_\mu T^\mu_t$, and we need this to be zero. As shown in example \ref{eg:de-sitter-cons}
+on p.~\pageref{eg:de-sitter-cons}, this requires that our total stress-energy mimic that
+of a cosmological constant, with $\rho+P=0$.
+Since the ordinary matter has $\rho>0$ and $P>0$,
+the C field will either need to contribute negative
 energy density or negative pressure.
 We'll see below that Hoyle's model is constructed so that the C field has zero energy and negative pressure.
 One will often see the C field described incorrectly as having negative energy to cancel out the
@@ -2955,7 +2975,7 @@ the underlying local laws of physics. Such an approach is very different from th
 in which we expect the asymmetries to arise from either boundary conditions or instabilities
 (spontaneous symmetry breaking).
 
-Because the C field is massless and charless, we would normally expect it
+Because the C field is massless and chargeless, we would normally expect it
 to obey the wave equation $\nabla_a\nabla^a C=0$. Hoyle's field does not, however,
 evolve according to any Lorentz-invariant dynamical law. Instead it simply evolves as
 $C=t$, where $t$ is a preferred time coordinate. In any cosmological model in which the matter
@@ -2973,9 +2993,12 @@ preferred frame of reference. An observer in this frame is at rest relative to t
 fluid, observes the universe to be homogeneous, and also observes that when new atoms are created
 from the vacuum, they are on the average at rest. Thus $\nabla_a C$ is observable.
 
-The contribution of the C field to the stress-energy must be a rank-two tensor, and Hoyle
-constructs it as an expression $k\nabla_a \nabla_b C$. (The only other obvious possibility would have been
-something proportional to $\nabla_a C \nabla_b C$.)
+The contribution of the C field to the stress-energy must be a rank-two tensor, and 
+if we want to construct such a tensor, the only good possibility that occurs to me\footnote{
+The only other obvious possibility would have been
+something like $-k\nabla_a C \nabla_b C$. This would be the stress-energy of a negative-mass
+dust, which would be unacceptable for the reasons discussed earlier.} is
+an $k\nabla_a \nabla_b C$, with $k$ a positive constant.
 If the derivatives had been ordinary partial derivatives, the second derivative
 would have vanished because $C$ is linear
 in time, but the covariant derivatives do not vanish, and in fact the second derivative is a tensor
@@ -3014,7 +3037,7 @@ all of the energy conditions listed on p.~\pageref{table-of-energy-conditions} e
 The Penrose singularity theorem depends on the null energy condition, and the
 Hawking singularity theorem requires either the strong or the null energy condition.
 
-Because the C field does not obey the proper wave equation for a massless, spin-zero particle,
+Because we can't make the C field obey the proper wave equation for a massless, spin-zero particle,
 there is no obvious way to make up a dynamical law for its evolution in order to replace the
 fixed relation $C=t$, and we do not expect to have any classical field theory for the C field.
 Hoyle did attempt to add dynamics to the model by making it into what is known as a ``direct

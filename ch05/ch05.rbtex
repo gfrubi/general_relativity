@@ -950,7 +950,8 @@ and \ref{sec:torsion} can be omitted on a first reading without loss of continui
 An important gotcha is that when we evaluate a particular component of a covariant
 derivative such as $\nabla_2 v^3$, it is possible for the result to be nonzero
 even if the component $v^3$ vanishes identically. This can be seen in example
-\ref{eg:rope-in-sch} on p.~\pageref{eg:rope-in-sch}.
+\ref{eg:rope-in-sch} on p.~\pageref{eg:rope-in-sch} and example
+\ref{eg:de-sitter-cons} on p.~\pageref{eg:de-sitter-cons}.
 
 \pagebreak
 
