@@ -679,7 +679,7 @@ strong energy condition  &  $\rho+3P \ge 0$ and $\rho+P \ge 0$ \\
 dominant energy condition & $\rho \ge 0$ and $|P| \le \rho$ \\
 weak energy condition    &  $\rho \ge 0$ and $\rho+P \ge 0$ \\
 null energy condition    &  $\rho+P \ge 0$ \\
-\end{tabular}
+\end{tabular}\label{table-of-energy-conditions}
 
 \noindent These are arranged roughly in order from strongest to weakest.
 They all have to do with the idea that negative mass-energy doesn't seem to exist in our universe, i.e., that
@@ -1498,7 +1498,8 @@ where dots indicate differentiation with respect to time.
 Since we have $G\indices{^a_b}$ with mixed upper and lower indices, we either have to convert it into $G_{ab}$, or write out the
 field equations in this mixed form. The latter turns out to be simpler. In terms of mixed indices, $g\indices{^a_b}$ is always simply
 $\operatorname{diag}(1,1,1,1)$. Arbitrarily singling out $r=0$ for simplicity, we have $g=\operatorname{diag}(1,-a^2,0,0)$. The stress-energy tensor is
-$T\indices{^\mu_\nu}=\operatorname{diag}(-\rho,P,P,P)$.
+$T\indices{^\mu_\nu}=\operatorname{diag}(\rho,-P,-P,-P)$. (See
+example \ref{eg:perfect-fluid-tensorial} on p.~\pageref{eg:perfect-fluid-tensorial} for the signs.)
 Substituting into $G\indices{^a_b}=8\pi T\indices{^a_b}+\Lambda g\indices{^a_b}$, we find
 \begin{align*}
   3\left(\frac{\dot{a}}{a}\right)^2 + 3ka^{-2} - \Lambda                     &= 8\pi\rho \\
@@ -1508,7 +1509,7 @@ Rearranging a little, we have a set of differential equations known as the Fried
 \begin{align*}
   \frac{\ddot{a}}{a}   \quad          &= \frac{1}{3}\Lambda - \frac{4\pi}{3}(\rho+3P) \\
   \left(\frac{\dot{a}}{a}\right)^2    &= \frac{1}{3}\Lambda + \frac{8\pi}{3}\rho-k a^{-2} \qquad .
-\end{align*}
+\end{align*}\label{friedmann-equations}
 
 % This now checks out against Carroll, \url{http://nedwww.ipac.caltech.edu/level5/March01/Carroll3/Carroll8.html }, except for the
 %       lambda terms, which he doesn't include.
@@ -2100,8 +2101,8 @@ First we recall the geodesic equation
   \frac{\der^2 x^i}{\der\lambda^2} = \Gamma\indices{^i_{jk}} \frac{\der x^j}{\der\lambda} \frac{\der x^k}{\der\lambda} \qquad .
 \end{equation*}
 from page \pageref{geodesic-diffeq}. The nonvanishing Christoffel symbols for the 1+1-dimensional metric 
-$\der s^2 = \der t^2 - a^2 \der r^2$ are $\Gamma\indices{^r_{tr}}=\dot{a}/a$ and $\Gamma\indices{^t_{rr}}=-\dot{a}a$.
-Setting $T=1$ for convenience, we have $\Gamma\indices{^r_{tr}}=1$ and $\Gamma\indices{^t_{rr}}=-e^{-2t}$.
+$\der s^2 = \der t^2 - a^2 \der r^2$ are $\Gamma\indices{^r_{tr}}=\dot{a}/a$ and $\Gamma\indices{^t_{rr}}=\dot{a}a$.
+Setting $T=1$ for convenience, we have $\Gamma\indices{^r_{tr}}=1$ and $\Gamma\indices{^t_{rr}}=e^{-2t}$.
 % geodesic_vacuum_dominated.mac
 
 We conjecture that the particle remains at the same value of $r$. Given this conjecture, the particle's
@@ -2884,7 +2885,7 @@ they came up with the idea after seeing a horror movie called Dead of Night, in 
 the beginning of the story repeat themselves later. This led
 them to imagine that the universe could, although expanding, remain locally in the same state
 at all times. If this were to happen, the empty space being opened up between the galaxies
-would have to be filled back up by the spontaneous creation of matter.
+would have to be filled back in by the spontaneous creation of matter.
 The model holds a strong philosophical appeal because it generalizes the Copernican principle
 so that it applies not just to conditions everywhere in space but also at all times.
 
@@ -2901,7 +2902,7 @@ daring and creative science that is not often encountered today. Much of it read
 catalog of cherished principles of physics that were to be given up,
 including Lorentz invariance, general relativity,
 the equivalence principle, and possibly the laws of
-conservation of charge and mass-energy. The following is a brief sketch (in slightly
+conservation of charge and mass-energy. The following is a brief presentation (in slightly
 different notation) of the Hoyle's more mathematically
 detailed ideas, as sketched in his original paper. Although Hoyle eventually fleshed out the ideas more
 thoroughly, by the time he had done so the steady-state theory was already on its way to being
@@ -2914,6 +2915,31 @@ In any model that assigns an infinite age to the universe, one must explain why
 the universe has not undergone heat death due to the second law of thermodynamics.
 The steady-state model successfully addresses this problem, because the exponential
 expansion is rapid enough to prevent thermal equilibrium from happening.
+
+Hoyle sets out to preserve local conservation of energy-momentum, without which
+the Einstein field equations become inconsistent.
+(This was Hoyle's more conservative approach.
+Bondi and Gold advocated replacing general relativity completely rather than modifying it.)
+He postulates a massless, chargeless, scalar field $C$, called the ``C field,''
+the letter ``C'' standing for ``creation.''
+Suppose that the C field's contribution to the stress-energy tensor ends up being that of
+a perfect fluid with the same rest frame as the ordinary matter.
+The total stress-energy is then of the form $T^\mu_\nu=\operatorname{diag}(\rho,-P,-P,-P)$
+in Cartesian coordinates. (See
+example \ref{eg:perfect-fluid-tensorial} on p.~\pageref{eg:perfect-fluid-tensorial}
+for the signs,
+some of which depend on our use of the $+---$ signature.)
+The rate of creation of mass-energy is then given by the divergence
+$\nabla_\mu T^\mu_t$, and we need this to be zero. Evaluating this expression
+using the Christoffel symbols for de Sitter space, we have
+$\Gamma^x_{xt}T\indices{^t_t}-\Gamma^x_{tx}T\indices{^x_x}=\frac{\dot{a}}{a}(\rho+P)$.
+If the ordinary matter is dust, then clearly the C field will either need to contribute negative
+energy density or negative pressure.
+We'll see below that Hoyle's model is constructed so that the C field has zero energy and negative pressure.
+One will often see the C field described incorrectly as having negative energy to cancel out the
+positive energy of the matter being created. That wouldn't have worked, because then the total
+energy density $\rho$ would always be zero, which is not what we observe. (For example,
+the Friedmann equation for $\ddot{a}/a$ relates $\rho$ to the square of the Hubble constant.)
 
 To understand more about why the theory took the form it did, it is helpful to look at some general physical
 considerations about symmetry. As Bondi and Gold admit candidly,
@@ -2929,8 +2955,8 @@ the underlying local laws of physics. Such an approach is very different from th
 in which we expect the asymmetries to arise from either boundary conditions or instabilities
 (spontaneous symmetry breaking).
 
-Hoyle postulates a massless, chargeless, scalar field $C$, called the ``C field.'' Normally we would expect such a field
-to obey the wave equation $\nabla_a\nabla^a C=0$. Hoyle's C field does not, however,
+Because the C field is massless and charless, we would normally expect it
+to obey the wave equation $\nabla_a\nabla^a C=0$. Hoyle's field does not, however,
 evolve according to any Lorentz-invariant dynamical law. Instead it simply evolves as
 $C=t$, where $t$ is a preferred time coordinate. In any cosmological model in which the matter
 fields are modeled as perfect fluids, we have a preferred time coordinate which is
@@ -2939,7 +2965,7 @@ to the fluid, and in the Hoyle model we do assume that this is the time $t$ we s
 in defining $C$. However, Hoyle's theory is different because it gives this preferred time a role
 in the local laws of physics, thereby breaking Lorentz invariance. 
 
-The scalar field $C$ cannot have any
+The value of the scalar field $C$ cannot have any
 directly observable effects, since then its time-evolution would distinguish one epoch of the universe
 from another.
 Instead we form the gradient $\nabla_a C$. This gives a vector, which can be interpreted as a velocity vector defining the
@@ -2947,21 +2973,31 @@ preferred frame of reference. An observer in this frame is at rest relative to t
 fluid, observes the universe to be homogeneous, and also observes that when new atoms are created
 from the vacuum, they are on the average at rest. Thus $\nabla_a C$ is observable.
 
-The contribution of the C field to the stress-energy must be a rank-two tensor, and the only
-obvious way to try to construct it is something like $-k\nabla_a \nabla_b C$.
-The minus sign must be present in order to preserve local conservation of energy-momentum, without which
-the Einstein field equations become inconsistent. As ordinary matter, with positive energy,
-is created, an equal amount of negative energy is created in the C field.
-(This was Hoyle's more conservative approach.
-Bondi and Gold advocated replacing general relativity completely rather than modifying it.)
-The positive constant $k$ is chosen so as to agree with the observed value of the Hubble constant in
-relation to the density of matter.
-If the derivatives had been ordinary partial derivatives, they would vanish because $C$ is linear
-in time, but the covariant derivatives do not vanish, and in fact the stress-energy is a tensor
-measuring the rate of cosmological expansion; its trace is the volume expansion $\Theta$ defined on
-p.~\pageref{volume-expansion}.
+The contribution of the C field to the stress-energy must be a rank-two tensor, and Hoyle
+constructs it as an expression $k\nabla_a \nabla_b C$. (The only other obvious possibility would have been
+something proportional to $\nabla_a C \nabla_b C$.)
+If the derivatives had been ordinary partial derivatives, the second derivative
+would have vanished because $C$ is linear
+in time, but the covariant derivatives do not vanish, and in fact the second derivative is a tensor
+measuring the rate of cosmological expansion; the trace $\nabla^a\nabla_a C$ is the volume expansion $\Theta$ defined on
+p.~\pageref{volume-expansion}. For de Sitter space, $\Theta$ has a constant value equal to three times the Hubble
+constant $H_\zu{0}$.
 We can now see why we could not take the C field to evolve according to the usual wave
 equation $\nabla_a\nabla^a C=0$; if it did, then we would have $\Theta=0$, and the universe would not be expanding.
+
+When we evaluate the second derivative for the de Sitter metric, the only nonvanishing Christoffel
+symbols that occur are $\Gamma\indices{^t_{xx}}=\Gamma\indices{^t_{yy}}=\Gamma\indices{^t_{zz}}=\dot{a}a$.
+We find $T^t_t=0$ and $T^x_x=T^y_y=T^z_z=k\Theta/3$. Thus the C field's mass-energy density is
+zero, while for its pressure we have $P=-k\Theta/3$, which is negative.
+% This checks against Hoyle 1948. His C_ab is basically the stress-energy of the C field (no sign flip).
+% He gives C_11<0, and C_11 is P (not -P), regardless of signature.
+
+For simplicity, we take the ordinary matter to be dust. The total stress-energy then consists of
+an energy density $\rho$ that is due only to the dust, and a negative pressure $P$ that comes
+only from the C field. If we require both of these to be constant, take the cosmological constant
+to be zero, set $a=e^{H_\zu{0}t}=e^{\Theta t/3}$,
+and substitute into the Friedmann equations on p.~\pageref{friedmann-equations}, we
+find $P=-\rho$, or $k=3\rho/\Theta=\rho/H_\zu{0}$.
 
 Like the cosmological constant, the C field is taken to be a universally
 prescribed property of the vacuum. There is a difference, however, because the cosmological constant's
@@ -2972,9 +3008,11 @@ that the field exerts a force on matter which produces a significant acceleratio
 but a negligible one in a star.
 
 A claimed selling point of the C field was that it would prevent the formation of singularities,
-including both a Big Bang singularity and black holes. This is reasonable, since its negative
-energy density violates various energy conditions, and the Hawking-Penrose singularity theorems
-depend on those energy conditions.
+including both a Big Bang singularity and black holes. This is reasonable, 
+since the C field violates
+all of the energy conditions listed on p.~\pageref{table-of-energy-conditions} except for the trace energy condition.
+The Penrose singularity theorem depends on the null energy condition, and the
+Hawking singularity theorem requires either the strong or the null energy condition.
 
 Because the C field does not obey the proper wave equation for a massless, spin-zero particle,
 there is no obvious way to make up a dynamical law for its evolution in order to replace the

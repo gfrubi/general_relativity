@@ -1548,7 +1548,9 @@ def handle_table_one(original)
           if !File.exist?(temp) then $stderr.print "error, temp file #{temp} doesn't exist"; exit(-1) end
           fmt = 'html'
           if $xhtml then fmt='xhtml' end
-          unless system("#{$config['script_dir']}/latex_table_to_html.pl #{temp} #{$config['sty_dir']}/lmmath.sty #{fmt} >/dev/null") then $stderr.print "error, #{$?}"; exit(-1) end
+          unless system("#{$config['script_dir']}/latex_table_to_html.pl #{temp} #{$config['sty_dir']}/lmmath.sty #{fmt} >/dev/null") then
+            $stderr.print "warning, error translating table to html, #{$?}"
+          end
           html = slurp_file(temp_html)
           if html.nil? then html='' end
           html.gsub!(/\n*$/,"\n") # exactly one newline at the end
@@ -2635,7 +2637,12 @@ chipmunk.scan(/(\\\w+({[^}]*})?)/) {
   whole.gsub!(/\n.*/,'') # if it inadvertently eats thousands of lines and thinks it's one macro, don't print it all
   if !math_ok then macros_not_handled[whole]=1 end
 }
-unless macros_not_handled.keys.empty? then $stderr.print "Warning: the following macros were not handled in this chapter: "+macros_not_handled.keys.join(' ')+"\n" end
+unless macros_not_handled.keys.empty? then 
+  File.open("macros_not_handled",'a') { |f|
+    f.print "Warning: the following macros were not handled in chapter #{$ch}: "+macros_not_handled.keys.join(' ')+"\n" 
+  }
+  $stderr.print "Warning: some macros were not handled. See list in the file macros_not_handled.\n"
+end
 end
 #------------------------------------------------------------------------------------------------------------------------------------
 def print_footnotes_and_append_to_index(tex)
