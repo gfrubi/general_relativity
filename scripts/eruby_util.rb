@@ -1456,26 +1456,35 @@ def toc_photo_credit(description,credit)
   $photo_credits.push(['',description,credit,'contents'])
 end
 
-def pagenum_or_zero(label)
-  if label == '' then return 0 end
+def cover_photo_credit(description,credit)
+  $photo_credits.push(['',description,credit,'cover'])
+end
+
+# normally returns real page number; returns 1 for cover, 2 for contents
+def pagenum_of_credit(credit)
+  label = credit[0]
+  type = credit[3]
+  if type=='cover' then return 1 end
+  if type=='contents' then return 2 end
+  if label == '' then return 0 end # shouldn't actually happen
   l = 'fig:'+label
   if $ref[l]==nil then return 0 else return $ref[l][1] end
 end
 
 def print_photo_credits
-  $photo_credits.sort{ |a,b| pagenum_or_zero(a[0]) <=> pagenum_or_zero(b[0]) }.each { |c|
+  $photo_credits.sort{ |a,b| pagenum_of_credit(a) <=> pagenum_of_credit(b) }.each { |c|
     label = c[0]
     description = c[1]
     credit = c[2]
     type = c[3]
-    #print "label #{label}="
-    #if $ref[label]!=nil then print $ref[label][1] end
     if type=='normal' then
       print "\\cred{#{label}}{#{description}}{#{credit}}\n"
-    else
+    end
+    if type=='contents' then
       print "\\docred{Contents}{#{description}}{#{credit}}\n"
     end
+    if type=='cover' then
+      print "\\docred{Cover}{#{description}}{#{credit}}\n"
+    end
   }
-  #$ref.keys.each { |k|    print k,$ref[k]  }
-
 end

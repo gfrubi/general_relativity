@@ -354,14 +354,6 @@ $2'$ because $\partial_x$ and $\partial_y$ commute, but none of the Killing vect
 \end{eg}
 <% end_sec %> % Spherical symmetry
 
-<% marg(-300) %>
-<%
-  fig(
-    'penrose-minkowski',
-    %q{Penrose diagram for flat spacetime.}
-  )
-%>
-<% end_marg %>
 
 <% begin_sec("Penrose diagrams",nil,'penrose-diagrams') %>\index{Penrose diagram}\index{causal diagram}
 Many of the most difficult and interesting topics in general relativity can be studied within the context
@@ -370,6 +362,8 @@ the Schwarzschild spacetime; and (2) a cosmological spacetime
 that is homogeneous and isotropic. (In the latter case, there is a higher level of symmetry, since there
 is no central point.) When a spacetime is spherically symmetric, it can be represented using a
 Penrose diagram, also known as a Penrose-Carter diagram or causal diagram.
+(A Penrose diagram can also be constructed in the case of a spacetime in which tidal forces vanish,
+even if there is no spherical symmetry.)
 
 <% begin_sec("Flat spacetime",nil,'penrose-minkowski') %>
 As a warmup, figure \figref{penrose-minkowski} shows a Penrose diagram for flat (Minkowski) spacetime.
@@ -382,6 +376,15 @@ The diamond represents the entire spacetime, with the distortion fitting
  this entire infinite region into that
  finite area on the page. Despite the distortion, the diagram shows lightlike surfaces as 45-degree diagonals.
 Spacelike and timelike geodesics, however, are distorted, as shown by the curves in the diagram.
+
+<% marg(300) %>
+<%
+  fig(
+    'penrose-minkowski',
+    %q{Penrose diagram for flat spacetime.}
+  )
+%>
+<% end_marg %>
 
 The distortion becomes greater as we move away from the center of the diagram, and becomes infinite near the
 edges. Because of this infinite distortion, the points $i^-$ and $i^+$ actually represent 3-spheres. All timelike
@@ -414,13 +417,6 @@ is the vertical line on the left marked $r=0$.
 The triangle is the spacetime inside the event horizon; we could have copied it across
 the $r=0$ line if we had so desired, but the copies would have been redundant.
 
-The Penrose diagram makes it easy to
-reason about causal relationships. For example, we can see that if a particle reaches a point inside the event
-horizon, its entire causal future lies inside the horizon, and all of its possible future world-lines intersect
-the singularity. The horizon is a lightlike surface, which makes sense, because it's defined as
-the boundary of the set of points from which a light ray could reach $\mathscr{I}^+$.
-<% end_sec('penrose-schwarzschild') %>
-
 <% marg(0) %>
 <%
   fig(
@@ -429,6 +425,14 @@ the boundary of the set of points from which a light ray could reach $\mathscr{I
   )
 %>
 <% end_marg %>
+
+The Penrose diagram makes it easy to
+reason about causal relationships. For example, we can see that if a particle reaches a point inside the event
+horizon, its entire causal future lies inside the horizon, and all of its possible future world-lines intersect
+the singularity. The horizon is a lightlike surface, which makes sense, because it's defined as
+the boundary of the set of points from which a light ray could reach $\mathscr{I}^+$.
+<% end_sec('penrose-schwarzschild') %>
+
 
 <% begin_sec("Astrophysical black hole",nil,'penrose-black-hole') %>
 Figure \figref{penrose-black-hole} is a Penrose diagram for a black hole that has formed by gravitational collapse.

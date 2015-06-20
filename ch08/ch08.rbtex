@@ -2172,7 +2172,10 @@ $\Gamma^x_{xt}T\indices{^t_t}-\Gamma^x_{tx}T\indices{^x_x}=\frac{\dot{a}}{a}(\rh
 so that $\rho+P=0$. This condition is satisfied by a cosmological constant. Our result is that
 the only way to get a de Sitter geometry is with matter fields that exactly mimic a cosmological
 constant. This is of some historical interest in the context of the steady-state cosmologies,
-section \ref{sec:steady-state}, p.~\pageref{sec:steady-state}.
+section \ref{sec:steady-state}, p.~\pageref{sec:steady-state}. It may seem mysterious that
+we have obtained this result by requiring conservation of energy-momentum, but we could also
+have done it using the Einstein field equations. In fact these are not two separate requirements,
+since the field equations require conservation of energy-momentum in order to be consistent.
 \end{eg}
 
 <% begin_sec("The Big Bang singularity in a universe with a cosmological constant") %>\label{bb-singularity-with-lambda}
