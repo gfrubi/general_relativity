@@ -1067,8 +1067,22 @@ the slope to be $2.4\times10^{-15}$, which, as shown in the figure is an excelle
 
 \end{eg}
 
+<% begin_sec("Geodesics and stationary action") %>\index{geodesic!stationary action}\index{action}\index{stationary action}
+One way of characterizing geodesics in spacetime is by using an action principle. This is similar
+to characterizing a geodesic in Euclidean space as a line of minimum length between two points.
+For a timelike geodesic from event P to event Q, we have a proper time $\tau$. In Lorentz spacetime,
+this proper time is greater than it would have been for any non-geodesic motion from P to Q.
+In curved spacetime, we must weaken this statement somewhat. The proper time may not be a global
+maximum, but it is stationary. Stationarity means that if we vary the curve by some small amount, not moving any part of
+it by a coordinate distance greater than $\epsilon$, then the change in
+$\tau$ is of order $\epsilon^2$.
+
+For spacelike geodesics in Lorentz spacetime, the proper length is stationary, but small deformations of the
+curve can either increase or decrease the proper length. The stationary action approach does not work well
+for lightlike geodesics.
 <% end_sec %>
 
+<% end_sec %>
 
 <% begin_sec("The light cone",4) %>
 
