@@ -356,14 +356,16 @@ $2'$ because $\partial_x$ and $\partial_y$ commute, but none of the Killing vect
 
 
 <% begin_sec("Penrose diagrams",nil,'penrose-diagrams') %>\index{Penrose diagram}\index{causal diagram}
-Many of the most difficult and interesting topics in general relativity can be studied within the context
-of two types of spherically symmetric spacetimes: (1) a nonrotating black hole, such as 
-the Schwarzschild spacetime; and (2) a cosmological spacetime
-that is homogeneous and isotropic. (In the latter case, there is a higher level of symmetry, since there
-is no central point.) When a spacetime is spherically symmetric, it can be represented using a
+We can't directly visualize a four-dimensional manifold. When a spacetime has a symmetry, however, we may
+be able to visualize the relevant properties the whole thing by considering a lower-dimensional part of it.
+By analogy, if we wanted to visualize the structure of the earth's interior, we might draw a diagram showing
+a two-dimensional section through its center. In fact, we could get rid of two dimensions and simply draw
+a diagram of a single radial line running from the earth's core to its surface; each point on this line would
+then represent a sphere. If we do this in general relativity, for a spacetime that is spherically symmetric,
+then we can reduce the four-dimensional to a two-dimensional one, with each point representing a two-sphere.
+By applying some further tricks, we will see that we can end up with
+a very convenient and useful visualization called a
 Penrose diagram, also known as a Penrose-Carter diagram or causal diagram.
-(A Penrose diagram can also be constructed in the case of a spacetime in which tidal forces vanish,
-even if there is no spherical symmetry.)
 
 <% begin_sec("Flat spacetime",nil,'penrose-minkowski') %>
 As a warmup, figure \figref{penrose-minkowski} shows a Penrose diagram for flat (Minkowski) spacetime.
@@ -409,15 +411,7 @@ the central timelike geodesic (drawn straight)
 or one of the other timelike geodesics (represented as if it were curved).
 <% end_sec('penrose-minkowski') %>
 
-<% begin_sec("Schwarzschild spacetime",nil,'penrose-schwarzschild') %>
-Figure \figref{penrose-schwarzschild} is a Penrose diagram for the Schwarzschild spacetime, i.e., a Minkowski
-spacetime in which a black hole exists, but in which the black hole did not form by gravitational collapse.
-This spacetime isn't homogeneous; it has a specific location that is its center of spherical symmetry, and this
-is the vertical line on the left marked $r=0$.
-The triangle is the spacetime inside the event horizon; we could have copied it across
-the $r=0$ line if we had so desired, but the copies would have been redundant.
-
-<% marg(0) %>
+<% marg(-300) %>
 <%
   fig(
     'penrose-schwarzschild',
@@ -425,6 +419,16 @@ the $r=0$ line if we had so desired, but the copies would have been redundant.
   )
 %>
 <% end_marg %>
+
+<% begin_sec("Schwarzschild spacetime",nil,'penrose-schwarzschild') %>
+Figure \figref{penrose-schwarzschild} is a Penrose diagram for the Schwarzschild spacetime, i.e., a 
+spacetime that looks like Minkowski space, except that it has one eternal black hole in it.
+This is a black hole that did not form by gravitational collapse.
+This spacetime isn't homogeneous; it has a specific location that is its center of spherical symmetry, and this
+is the vertical line on the left marked $r=0$.
+The triangle is the spacetime inside the event horizon; we could have copied it across
+the $r=0$ line if we had so desired, but the copies would have been redundant.
+
 
 The Penrose diagram makes it easy to
 reason about causal relationships. For example, we can see that if a particle reaches a point inside the event
