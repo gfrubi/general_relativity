@@ -506,10 +506,51 @@ eternal black hole, i.e., one that has always existed and always
 will. On the similar Penrose diagram for an eternal black hole, we
 can still draw a spacelike surface like $\zu{S}_1$ or $\zu{S}_2$, representing a
 definition of ``now'' such that the singularity doesn't exist yet.
-
-
-
 <% end_sec('penrose-black-hole') %>
+
+<% begin_sec("Penrose diagrams in general",nil,'general-penrose') %>
+Ideally we would like to generalize the procedure for drawing Penrose diagrams so that we would be
+able to uniquely determine one for any spacetime. This turns out to be not so clear-cut.
+The procedure would go something like this:
+
+\begin{enumerate}
+    \item Make an $n$-dimensional section or projection, where usually, but not always, $n=2$.
+    \item Do a conformal transformation to reduce the resulting manifold to a flat one of finite size.
+    \item Adjoin idealized surfaces and points at infinity.
+\end{enumerate}
+
+At step 1, we want to take advantage of any symmetries, such as
+rotational symmetry, so that the final result will be informative, be
+representative of the whole spacetime, and accurately depict causal
+relationships in the original spacetime. If the original spacetime has a low
+degree of symmetry (e.g., a spacetime containing three black holes arranged in a triangle),
+then this might require $n>2$. At this step we also need to
+make sure that lightlike geodesics in the original space correspond
+properly to lightlike geodesics in the submanifold. 
+
+It is not possible in general to do what is required in step 2 by making a conformal transformation
+to change a manifold into a flat one. A manifold that can be flattened in this way is called conformally
+flat. All two-dimensional manifolds are conformally flat, so in the $n=2$ case this is guaranteed.
+For $n>3$ we will usually not have conformal flatness if there are gravitational waves or tidal
+forces present.\index{conformal flatness}
+
+The most problematic part, surprisingly, is step 3. This topic goes under the general
+heading of ``boundary constructions.''\index{boundary constructions}
+Reviews are available on this topic.\footnote{Ashley, ``Singularity theorems and the abstract boundary construction,''
+\url{https://digitalcollections.anu.edu.au/handle/1885/46055}.
+Garcia-Parrado and Senovilla, ``Causal structures and causal boundaries,''
+\url{http://arxiv.org/abs/gr-qc/0501069}.}
+There are a number of more or less specific techniques for constructing a boundary, with an alphabet
+soup of names including the g-boundary, c-boundary, b-boundary, and a-boundary.
+As someone who is not a specialist in this subfield, the impression I get is that this is an area
+of research that has turned out badly and has never produced any useful results, but work continues,
+and it is possible that at some point the smoke will clear. As a simple example of what one would like
+to get, but doesn't get, from these studies, it would seem natural to ask how many dimensions there are
+in a black hole singularity. Different answers come back from the different methods. For example,
+the b-boundary approach says that both black-hole and cosmological singularities are zero-dimensional
+points, while in the c-boundary method (which was designed to harmonize with Penrose diagrams) they
+are three-surfaces (as one would imagine from the Penrose diagrams).
+<% end_sec('general-penrose') %>
 
 
 <% end_sec('penrose-diagrams') %> % Penrose diagrams

@@ -2598,15 +2598,6 @@ constant is definitely positive.
 %>
 <% end_marg %>
 
-<% marg(-10) %>
-<%
-  fig(
-    'eisenstein-bao',
-    %q{The acoustic peak in the BAO correlation function. Redrawn from Eisenstein, New Astronomy Reviews. 49 (2005) 360,
-       as reproduced in Bassett and Hlozek, 2009, \url{arxiv.org/abs/0910.5224}.}
-  )
-%>
-<% end_marg %>
 <% begin_sec("Density of matter from baryonic acoustic oscillations") %>\index{baryon acoustic oscillations}
 Efforts such as the Sloan Digital Sky Survey have made three-dimensional maps of the density of luminous
 matter in the universe.\footnote{Sanchez et al., 2012, \url{arxiv.org/abs/1203.6616}} The distribution is
@@ -2630,6 +2621,15 @@ ruler at which the peak in $\xi(s)$ occurs. In cosmological models, these result
 $\Omega_M$, while being relatively insensitive to $\Omega_\Lambda$, and they are therefore complementary
 to both the supernova data and the CMB results.
 <% end_sec %> % Density of matter from baryonic acoustic oscillations
+<% marg(300) %>
+<%
+  fig(
+    'eisenstein-bao',
+    %q{The acoustic peak in the BAO correlation function. Redrawn from Eisenstein, New Astronomy Reviews. 49 (2005) 360,
+       as reproduced in Bassett and Hlozek, 2009, \url{arxiv.org/abs/0910.5224}.}
+  )
+%>
+<% end_marg %>
 
 <% begin_sec("Conclusions about cosmology") %>
 Figure \figref{cosmology-parameters} summarizes what we can conclude about our universe, parametrized in terms of a
