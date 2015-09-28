@@ -17,7 +17,7 @@
    inkscape:export-filename="1.png"
    inkscape:export-xdpi="150"
    inkscape:export-ydpi="150"
-   sodipodi:docname="penrose-swarzschild.svg">
+   sodipodi:docname="penrose-schwarzschild.svg">
   <defs
      id="defs4">
     <marker
@@ -55,14 +55,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.9019246"
-     inkscape:cx="418.14103"
-     inkscape:cy="694.48192"
+     inkscape:zoom="19.36435"
+     inkscape:cx="529.21787"
+     inkscape:cy="653.22919"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1280"
-     inkscape:window-height="998"
+     inkscape:window-width="1440"
+     inkscape:window-height="872"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -182,14 +182,6 @@
            id="tspan3804-2">i</tspan><tspan
            style="font-size:10px;baseline-shift:super"
            id="tspan3802-55">0</tspan></tspan></text>
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:0.8;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-       id="rect3801"
-       width="104.5508"
-       height="104.5508"
-       x="556.51306"
-       y="-99.181076"
-       transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)" />
     <path
        style="color:#000000;fill:none;stroke:#000000;stroke-width:0.80000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:3.20000005, 3.20000005;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
        d="m 390.30479,323.18186 73.57294,0"
@@ -220,7 +212,7 @@
          x="399.0993"
          y="318.33899">singularity</tspan></text>
     <path
-       style="color:#000000;fill:none;stroke:#000000;stroke-width:0.80000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:0.8;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
        d="m 389.76697,396.99149 0,-73.73532"
        id="path3013"
        inkscape:connector-curvature="0"
@@ -239,5 +231,11 @@
          y="387.16144"><tspan
    style="font-style:italic;-inkscape-font-specification:Liberation Sans Italic"
    id="tspan3809">r</tspan>=0</tspan></text>
+    <path
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:0.80000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 463.7732,323.29379 -73.97151,74.05427 74.02248,73.87815 73.95033,-73.78546 z"
+       id="path3798"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
   </g>
 </svg>
