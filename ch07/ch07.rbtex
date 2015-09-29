@@ -551,6 +551,46 @@ the b-boundary approach says that both black-hole and cosmological singularities
 points, while in the c-boundary method (which was designed to harmonize with Penrose diagrams) they
 are three-surfaces (as one would imagine from the Penrose diagrams).
 <% end_sec('general-penrose') %>
+<% begin_sec("Global hyperbolicity",nil,'global-hyperbolicity') %>\index{global hyperbolicity}
+Causality refers to our vaguely defined feeling that the world should have an orderly progression of cause and
+effect. Making this notion more precise is surprisingly difficult. Penrose diagrams, and their associated
+concepts, are essentially
+representations of the causal structure of spacetime, and these turn out to be helpful in putting together one of
+the more satisfying attempts to define causality. This definition is called global hyperbolicity.
+The obscure terminology is related to the classification of partial differential equations.
+
+Some definitions are required as a preliminary. Consider a set S of events in spacetime.
+S is \emph{bounded} if it does not include any of the idealized points on the Penrose diagram that we have added at 
+infinity.\footnote{More rigorously,
+this is equivalent to saying that for any geodesic in S, there is a bound on the affine parameter.}
+S is \emph{closed} if it contains its own boundary.\footnote{To make this more precise,
+we proceed as described in section \ref{subsec:tangent-space},
+p.~\pageref{subsec:tangent-space} by enlarging the set of points in our spacetime manifold M to include points at
+infinitesimal distances from one of the original points. Then S is closed if, for any point in the enlarged
+version of S, there is a point lying at an infinitesimal distance from it in the original version of S.}
+S is \emph{compact} if it is closed and bounded.
+
+Definition: A spacetime is globally hyperbolic if: (1) there are no closed, timelike curves (CTCs),\footnote{For
+precision, the condition needs to be made a little stronger. We want no closed, non-spacelike curves, and
+we also want it to be impossible for curves to exist that are arbitrarily close to being such curves, in the
+sense that for any event, there exists a neighborhood around it that can never be revisited.} and
+(2) given any two events P and Q, the intersection of the future light cone of P (including both the interior
+and the lightlike boundary) with the past light cone of Q is a compact set.
+
+In a globally hyperbolic spacetime, initial-value problems always have unique solutions. That is, we can
+pick a spacelike surface and give the value of a wave on that surface, and the wave equation will then
+have a unique solution. Such a surface is called a Cauchy surface.\index{Cauchy surface}
+
+We can readily verify by inspection of the Penrose digrams that the spacetimes described earlier in this
+section are globally hyperbolic.
+Condition 2 implies that the intersection doesn't contain any singularities or points at infinity.
+Although black hole spacetimes do contain singularities, the spacelike nature of these singularities implies
+that they can never lie in the intersection of light cones as referred to in the definition.
+If we had a singularity that was timelike, it could lie in the intersection, and global hyperbolicity would
+be violated (see p.~\pageref{slime-and-socks}).
+
+
+<% end_sec('global-hyperbolicity') %>
 
 
 <% end_sec('penrose-diagrams') %> % Penrose diagrams

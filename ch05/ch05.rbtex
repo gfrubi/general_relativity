@@ -1907,14 +1907,21 @@ can contain infinitely many possible coordinate systems; we can even specify tha
 possible coordinate systems that could be obtained from one another by any diffeomorphism.
 <% end_sec %>
 
-<% begin_sec("The tangent space") %>\index{tangent vector}\index{tangent space|see {tangent vector}}\label{subsec:tangent-space}
+<% begin_sec("The tangent space",nil,'tangent-space') %>\index{tangent vector}\index{tangent space|see {tangent vector}}\label{subsec:tangent-space}
 We now formalize the intuitive notion of a tangent vector (p.~\pageref{tangent-vector-intuitive}),
 following Nowik and Katz.\footnote{``Differential geometry via infinitesimal displacements,'' \url{arxiv.org/abs/1405.0984}}
 Let M be an $n$-dimensional smooth manifold, so that locally it looks like Euclidean space, describable
 by real-number coordinates $x$, $y$, \ldots We now enhance M to form a new topological space,
 in which the coordinates can include not only real numbers, but numbers that differ infinitesimally from
 reals, as outlined in example \ref{infinitesimals} on p.~\pageref{infinitesimals}. From now on when we say things like
-``the manifold,'' we mean this enhanced version. Fix some infinitesimal
+``the manifold,'' we mean this enhanced version.\footnote{It is possible to define
+a different and larger enhancement, called $^*\zu{M}$, that would include points with infinitely large
+coordinates. For example, suppose we have a coordinate patch with bounds on the coordinates that can be
+written down using inequalities, $t>0$, $0\le \theta \le \pi/4$, \ldots Then $^*\zu{M}$ would contain
+any finite, infinitesimal, and infinite values of $(t,\theta,\ldots)$ satisfying these inequalities,
+and this would include infinite values of $t$. We will not do this here, because the inclusion of idealized
+points at infinity is more useful in relativity if we do it using a different approach, discussed
+in section \ref{subsec:general-penrose}, p.~\pageref{subsec:general-penrose}.} Fix some infinitesimal
 number $\epsilon$ for once and for all, and define the notation $x=O(\epsilon)$ to mean that
 $x/\epsilon$ is not infinite.\footnote{As usual in this type of ``big $O$'' notation, we abuse the equals sign
 somewhat. In particular, the equals sign here is not symmetric. For more detail, see the

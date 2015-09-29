@@ -1120,7 +1120,7 @@ In many cases, this is much shorter than the half-life of the excited nuclear st
 therefore the Doppler shift averages out to nearly zero.
 
 Effect (2) is still much bigger than the $10^{-14}$ size of the effect to be measured. It can be avoided by exploiting
-the M\"{o}ssbauer effect,\index{M\"{o}ssbauer effect} in which a nucleus in a solid substance at low temperature
+the M\"{o}ssbauer effect,\index{Mossbauer effect} in which a nucleus in a solid substance at low temperature
 emits or absorbs a gamma-ray photon, but with significant probability the recoil is
 taken up not by the individual nucleus but by a vibration of the atomic lattice as a whole. Since the recoil energy
 varies as $p^2/2m$, the large mass of the lattice leads to a very small dissipation of energy into the recoiling lattice.
