@@ -440,7 +440,9 @@ the boundary of the set of points from which a light ray could reach $\mathscr{I
 
 <% begin_sec("Astrophysical black hole",nil,'penrose-black-hole') %>
 Figure \figref{penrose-black-hole} is a Penrose diagram for a black hole that has formed by gravitational collapse.
-Using this type of diagram, we can address one of the most vexing FAQs about black holes.
+Using this type of diagram, we can succinctly address one of the most vexing FAQs about black holes. (Cf.~section
+\ref{subsec:black-hole-infalling-matter}, p.~\pageref{subsec:black-hole-infalling-matter},
+where we took a more cumbersome approach without Penrose diagrams.)
 If a distant observer watches the collapsing cloud of matter from which the black hole forms, her
 optical observations will show that the light from the matter becomes more and more gravitationally
 redshifted, and if she wishes, she can interpret this as an example of gravitational time dilation.
@@ -515,7 +517,7 @@ The procedure would go something like this:
 
 \begin{enumerate}
     \item Make an $n$-dimensional section or projection, where usually, but not always, $n=2$.
-    \item Do a conformal transformation to reduce the resulting manifold to a flat one of finite size.
+    \item Do a transformation to reduce the resulting manifold to a flat one of finite size.
     \item Adjoin idealized surfaces and points at infinity.
 \end{enumerate}
 
@@ -527,6 +529,17 @@ degree of symmetry (e.g., a spacetime containing three black holes arranged in a
 then this might require $n>2$. At this step we also need to
 make sure that lightlike geodesics in the original space correspond
 properly to lightlike geodesics in the submanifold. 
+
+For step 2, we have already given a geometrical characterization of the type of transformation we have
+in mind, which is called a \emph{conformal transformation}.\index{conformal transformation}
+It turns out to be possible to encapsulate this idea in a simple analytic way.
+Given a spacetime with a metric $g$, we define a fictitious metric $\tilde{g}=\Omega^2 G$, where
+$\Omega$ is a nonzero real number that varies from point to point. The idea here is that $g$ and
+$\tilde{g}$ agree on where the light cone is, but they disagree on the measurement of distances and
+times. The same manifold equipped with
+the fictitious metric $\tilde{g}$ is the one being drawn on the page when we make a Penrose diagram.
+We let $\Omega\rightarrow0$ as we approach the idealized boundary regions like $i^0$ and $\mathscr{I}^+$,
+and this is what causes the Penrose diagram to take up finite space on the page.
 
 It is not possible in general to do what is required in step 2 by making a conformal transformation
 to change a manifold into a flat one. A manifold that can be flattened in this way is called conformally
@@ -574,18 +587,19 @@ S is \emph{compact} if it is closed and bounded.
 Figure \figref{compact-and-noncompact} shows a spacetime containing a black hole that forms by gravitational
 collapse. Point P is inside the event horizon, Q outside. Consider the following four point-sets:
 
-$\zu{S}_1$ is the interior of P's future-directed light cone.
+$I^+(\zu{P})$, called the \emph{chronological future}\index{chronological future} of P, is the interior of P's future-directed light cone.
 
-$\zu{S}_2$ is like $\zu{S}_1$, but also includes events that are on the boundary of the light cone, i.e., events
+$J^+(\zu{P})$ is like $I^+(\zu{P})$, but also includes events that are on the boundary of the light cone, i.e., events
 that cannot be connected to P by a timelike curve but that can be connected to it by a lightlike curve.
+We call this the \emph{causal future}\index{causal future} of P, since it is the set of events that could be caused by P.
 
-$\zu{S}_3$ and $\zu{S}_4$ are the analogous sets built on Q.
+$I^+(\zu{Q})$ and $J^+(\zu{Q})$ are the analogous sets built on Q.
 
-Of these four sets, only $\zu{S}_2$ is compact. $\zu{S}_1$ is noncompact because it is not closed.
-$\zu{S}_3$ and $\zu{S}_4$ are noncompact because they are not bounded; they include idealized
+Of these four sets, only $J^+(\zu{P})$ is compact. $I^+(\zu{P})$ is noncompact because it is not closed.
+$I^+(\zu{Q})$ and $J^+(\zu{Q})$ are noncompact because they are not bounded; they include idealized
 points at infinity that lie in $i^+$ and $\mathscr{I}^+$.
-
 \end{eg}
+
 <% marg(100) %>
 <%
   fig(
@@ -595,12 +609,15 @@ points at infinity that lie in $i^+$ and $\mathscr{I}^+$.
 %>
 <% end_marg %>
 
+In addition to the notation introduced in example \ref{eg:compact-and-noncompact}, we will need
+the similar notations $I^-$ and $J^-$ for the corresponding past light-cones.
+
 Definition: A spacetime is globally hyperbolic if: (1) there are no closed, timelike curves (CTCs),\footnote{For
 precision, the condition needs to be made a little stronger. We want no closed, non-spacelike curves, and
 we also want it to be impossible for curves to exist that are arbitrarily close to being such curves, in the
 sense that for any event, there exists a neighborhood around it that can never be revisited.} and
-(2) given any two events P and Q, the intersection of the future light cone of P (including both the interior
-and the lightlike boundary) with the past light cone of Q is a compact set.
+(2) given any two events P and Q, the intersection of $J^+(\zu{P})$ and $J^-(\zu{Q})$ is compact.
+(Condition 2 is required only when P and Q are points in the manifold, not boundary points.)
 
 In a globally hyperbolic spacetime, initial-value problems always have unique solutions. That is, we can
 pick a spacelike surface and give the value of a wave on that surface, and the wave equation will then
@@ -611,8 +628,44 @@ section are globally hyperbolic.
 Condition 2 implies that the intersection doesn't contain any singularities or points at infinity.
 Although black hole spacetimes do contain singularities, the spacelike nature of these singularities implies
 that they can never lie in the intersection of light cones as referred to in the definition.
-If we had a singularity that was timelike, it could lie in the intersection, and global hyperbolicity would
-be violated (see p.~\pageref{slime-and-socks}).
+Therefore such spacetimes are globally hyperbolic.
+
+\begin{eg}{Global hyperbolicity}
+Figure \subfigref{not-globally-hyperbolic}{1} shows a piece cut out of Minkowski space. The dashed outline
+is meant to indicate that the
+piece doesn't include its boundary. This spacetime is not globally hyperbolic. For certain choices
+of events P and Q, the intersection $J^+(\zu{P})\cap J^-(\zu{Q})$ could extend out to the cut at the
+edge. Since the spacetime doesn't include its boundary, this intersection would not be compact.
+
+In \subfigref{not-globally-hyperbolic}{2} we have the same example, but now the boundary is included.
+This set is not a manifold, which excludes it from consideration as a spacetime in general relativity.
+
+Figure \subfigref{not-globally-hyperbolic}{3} is a picture of Minkowski space with a timelike singularity
+in it (dashed line). Singularities are not point-sets in the manifold, so topologically,
+this is like Minkowski space with a single timelike curve surgically removed. Global hyperbolicity fails
+because the intersection $J^+(\zu{P})\cap J^-(\zu{Q})$ could surround the singularity, and would
+not be compact because it would not include its boundary at the singularity.
+This violation of global hyperbolicity indicates a failure of causality in such a spacetime
+(see p.~\pageref{slime-and-socks}).
+
+By cutting off the lower half of the diamond representing Minkowski spacetime, we obtain
+figure \subfigref{not-globally-hyperbolic}{4}. The dashed line indicates that the boundary is not included,
+and therefore this is a manifold. It is also globally hyperbolic. This example suggests that global
+hyperbolicity does not necessarily capture everything we might ever want to describe in a definition of
+causality. If a paleontologist living in this spacetime finds a dinosaur fossil embedded in a rock,
+she will naturally infer that a dinosaur lived at some point in the past, causing the fossil to exist.
+But perhaps this is not the case --- the hypothetical dinosaur might be one that would have existed before
+the boundary.
+\end{eg}
+<% marg(300) %>
+<%
+  fig(
+    'not-globally-hyperbolic',
+    %q{Example \ref{eg:compact-and-noncompact}.}
+  )
+%>
+<% end_marg %>
+
 
 
 <% end_sec('global-hyperbolicity') %>
@@ -656,16 +709,21 @@ finite time.
 <% end_sec %> % Static spacetime
 
 <% begin_sec("Isolated systems") %>
-<% begin_sec("Asymptotic flatness") %>
+<% begin_sec("Asymptotic flatness",nil,'asymptotic-flatness') %>
 This unfortunate feature of our definition of stationarity --- its empirical unverifiability --- is something that
 in general we just have to live with. But there is an alternative in the special case of an isolated system,
 such as our galaxy or a black hole. It may be a good approximation to ignore distant matter, modeling such a system
-with a spacetime that is almost flat everywhere except in the region nearby. Such a spacetime is called asymptotically flat.\index{asymptotically flat}
+with a spacetime that is asymptotically flat.\index{asymptotic flatness}
+The notion of asymptotic flatness was introduced informally on p.~\pageref{asymptotic-flatness-idea}.
 Formulating the definition of this term rigorously and in a coordinate-invariant way involves a large amount of technical machinery,
 since we are not guaranteed to be presented in advance with a special, physically significant set of coordinates that would
-lead directly to a quantitative way of defining words like ``nearby.'' The reader who wants a rigorous definition is referred to
-Hawking and Ellis.
-<% end_sec %> % Asymptotic flatness
+lead directly to a quantitative way of defining words like ``nearby.'' 
+The essential idea is that a spacetime is asymptotically flat if it is possible to perform a conformal transformation in such a
+way that the result has idealized regions at infinity $i^0$, $\mathscr{I}^+$, and $\mathscr{I}^-$ (but not $i^+$ and $i^-$)
+that look like those of Minkowski space.
+The reader who wants to see the full machinery presented can find presentations in various places, such as
+Hawking and Ellis, ch.~11 of Wald, or the online review article ``Conformal Infinity'' at \url{livingreviews.org}.
+<% end_sec('asymptotic-flatness') %> % Asymptotic flatness
 
 <% begin_sec("Asymptotically stationary spacetimes") %>
 In the case of an asymptotically flat spacetime, we say that it is also asymoptotically stationary\index{stationary!asymptotically}

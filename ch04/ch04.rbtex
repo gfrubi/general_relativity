@@ -1109,9 +1109,9 @@ continuous symmetry of a spacetime.
 Another special case where conservation laws work is that if the spacetime we're studying gets very flat at large distances
 from a small system we're studying, then we can define a far-away boundary that surrounds the system,
 measure the flux through that boundary, and find the system's charge.
-For such asymptotically
-flat spacetimes, we can also get around the problems that crop up with conserved vectors, such as
-momentum.
+For such \emph{asymptotic flatness}\index{asymptotic flatness} spacetimes, we
+can also get around the problems that crop up with conserved vectors, such as
+momentum. (Asymptotic flatness is discussed in more detail in section \ref{subsec:asymptotic-flatness}.)\label{asymptotic-flatness-idea}
 If the spacetime far away is nearly flat, then parallel transport loses its path-dependence,
 so we can unambiguously define a notion of parallel-transporting all the contributions to the
 flux to one arbitrarily chosen point P and then adding them. Asymptotic flatness also allows

@@ -993,7 +993,7 @@ He may not notice anything special at all about his local environment. (Or he ma
 nevertheless great enough to kill him.)
 
 <% end_sec %> % singularities
-<% begin_sec("Event horizon") %>\label{sec:black-hole-horizon}\index{black hole!event horizon}
+<% begin_sec("Event horizon",nil,'black-hole-horizon') %>\index{black hole!event horizon}
 
 Even though $r=2m$ isn't a real singularity, interesting things do happen there. For $r<2m$, the sign of
 $g_{tt}$ becomes negative, while $g_{rr}$ is positive. In our $+---$ signature, this has the following
@@ -1014,7 +1014,11 @@ The gravitational time dilation in the Schwarzschild field, relative to a clock 
 square root of the $g_{tt}$ component of the metric. This goes to zero at the event horizon, meaning that,
 for example, a photon emitted from the event horizon will be infinitely redshifted when it reaches an observer
 at infinity. This makes sense, because the photon is then undetectable, just as it would be if it had been
-emitted from \emph{inside} the event horizon. If matter is falling into a black hole, then due to time dilation
+emitted from \emph{inside} the event horizon.
+<% end_sec('black-hole-horizon') %>
+
+<% begin_sec("Infalling matter",nil,'black-hole-infalling-matter') %>
+If matter is falling into a black hole, then due to time dilation
 an observer at infinity ``sees'' that matter as slowing down more and more as it approaches the horizon. This
 has some counterintuitive effects. A radially infalling particle has $\der ^2r/\der t^2>0$ once it falls past
 a certain point, which could be interpreted as a gravitational repulsion.
@@ -1041,7 +1045,10 @@ Regardless of where they say the matter is, they all agree on the spacetime curv
 Birkhoff's theorem (p.~\pageref{birkhoff}) tells us that any spherically symmetric vacuum spacetime is
 Schwarzschild in form, so it doesn't matter where we say the matter is, as long as it's distributed in
 a spherically symmetric way and surrounded by vacuum.
-<% end_sec %> % event horizon
+
+A particularly nice way of summarizing and understanding these issues is with the use of a Penrose
+diagram, as discussed in section \ref{subsec:penrose-black-hole}.
+<% end_sec('black-hole-infalling-matter') %>
 <% begin_sec("Expected formation") %>\label{sec:black-hole-formation}\index{black hole!formation}
 
 Einstein and Schwarzschild
