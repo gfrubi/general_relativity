@@ -355,7 +355,7 @@ $2'$ because $\partial_x$ and $\partial_y$ commute, but none of the Killing vect
 <% end_sec %> % Spherical symmetry
 
 
-<% begin_sec("Penrose diagrams",nil,'penrose-diagrams') %>\index{Penrose diagram}\index{causal diagram}
+<% begin_sec("Penrose diagrams and causality",nil,'penrose-diagrams') %>\index{Penrose diagram}\index{causal diagram}
 We can't directly visualize a four-dimensional manifold. When a spacetime has a symmetry, however, we may
 be able to visualize the relevant properties the whole thing by considering a lower-dimensional part of it.
 By analogy, if we wanted to visualize the structure of the earth's interior, we might draw a diagram showing
@@ -569,6 +569,31 @@ p.~\pageref{subsec:tangent-space} by enlarging the set of points in our spacetim
 infinitesimal distances from one of the original points. Then S is closed if, for any point in the enlarged
 version of S, there is a point lying at an infinitesimal distance from it in the original version of S.}
 S is \emph{compact} if it is closed and bounded.
+
+\begin{eg}{Compact and noncompact light cones}\label{eg:compact-and-noncompact}
+Figure \figref{compact-and-noncompact} shows a spacetime containing a black hole that forms by gravitational
+collapse. Point P is inside the event horizon, Q outside. Consider the following four point-sets:
+
+$\zu{S}_1$ is the interior of P's future-directed light cone.
+
+$\zu{S}_2$ is like $\zu{S}_1$, but also includes events that are on the boundary of the light cone, i.e., events
+that cannot be connected to P by a timelike curve but that can be connected to it by a lightlike curve.
+
+$\zu{S}_3$ and $\zu{S}_4$ are the analogous sets built on Q.
+
+Of these four sets, only $\zu{S}_2$ is compact. $\zu{S}_1$ is noncompact because it is not closed.
+$\zu{S}_3$ and $\zu{S}_4$ are noncompact because they are not bounded; they include idealized
+points at infinity that lie in $i^+$ and $\mathscr{I}^+$.
+
+\end{eg}
+<% marg(100) %>
+<%
+  fig(
+    'compact-and-noncompact',
+    %q{Example \ref{eg:compact-and-noncompact}.}
+  )
+%>
+<% end_marg %>
 
 Definition: A spacetime is globally hyperbolic if: (1) there are no closed, timelike curves (CTCs),\footnote{For
 precision, the condition needs to be made a little stronger. We want no closed, non-spacelike curves, and
