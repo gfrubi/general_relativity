@@ -970,10 +970,10 @@ One way to test whether a singularity is a coordinate singularity is to calculat
 the coordinate system. We can take the trace of the Ricci tensor, $R\indices{^a_a}$, known as the scalar curvature or
 Ricci scalar,\index{Ricci scalar}\index{curvature!Ricci scalar}\index{scalar curvature}\index{curvature!scalar}
 but since the Ricci tensor is zero, it's not surprising that that is zero. A different scalar we can construct
-is the product $R^{abcd}R_{abcd}$ of the Riemann tensor with itself. This is known as the Kretchmann invariant.\index{Kretchmann invariant}\index{curvature!Kretchmann invariant}
+is the product $R^{abcd}R_{abcd}$ of the Riemann tensor with itself. This is known as the Kretschmann invariant.\index{Kretschmann invariant}\index{curvature!Kretschmann invariant}
 The Maxima command \verb@lriemann(true)@ displays
 the nonvanishing components of $R_{abcd}$. The component that misbehaves the most severely at $r=0$ is $R_{trrt}=2m/r^3$.
-Because of this, the Kretchmann invariant blows up like $r^{-6}$ as $r\rightarrow 0$. This shows that the singularity at $r=0$
+Because of this, the Kretschmann invariant blows up like $r^{-6}$ as $r\rightarrow 0$. This shows that the singularity at $r=0$
 is a real, physical singularity.
 
 The singularity at $r=2m$, on the
@@ -1187,14 +1187,40 @@ to guess that the two particles would scatter through one another at $\theta=0$,
 infinite. But it would have been equally natural for this person to refuse to make a prediction.
 
 Similarly, if a particle hits a black hole singularity, we should not expect general relativity to make
-a definite prediction. It doesn't. Not only does the geodesic equation break down, but if we were to
-naively continue the particle's geodesic by assuming that it scatters in the forward direction, the
-continuation would be a world-line whose future-time direction pointed into the singularity rather than back
-out of it.
+a definite prediction. It doesn't, because the geodesic equation breaks down.
 
 We would therefore like to define a singularity as a situation in which the geodesics of test particles
 can't be extended indefinitely. But what does ``indefinitely'' mean? If the test particle is a photon, then
 the metric length of its world-line is zero. We get around this by defining length in terms of an affine
+parameter.
+
+
+Definition: A spacetime is said to be geodesically incomplete if there exist timelike or lightlike geodesics
+that cannot be extended past some finite affine parameter into the past or future.\index{geodesic incompleteness}
+
+Geodesic incompleteness defines what we mean by a singularity. A geodesically incomplete spacetime
+has one or more singularities in it.\index{singularity!formal definition}
+The Schwarzschild spacetime has a singularity at $r=0$, but not at the event horizon, since geodesics
+continue smoothly past the event horizon. Cosmological spacetimes contain a Big Bang singularity which
+prevents geodesics from being extended beyond a certain point in the \emph{past}.
+
+Actual singularities involving geodesic incompleteness are to be distinguished from coordinate singularities,
+which are not really singularities at all. In the Schwarzschild spacetime, as described in Schwarzschild's
+original coordinates, some components of the metric blow up at the event horizon, but this is not an
+actual singularity. This coordinate system can be replaced with a different one in which the metric
+is well behaved.
+
+There are two types of singularities: curvature singularities and non-curvature singularities.
+
+The examples above are examples of curvature singularities, which can be recognized because
+there are scalar measures of curvature such as the Kretschmann invariant that blow up.
+These indicate that tidal forces blow up to infinity, and would destroy any observer.
+
+The reason curvature scalars are useful as tests for a curvature singularity is that
+since they're scalars, they can't diverge in one coordinate system but stay finite
+in another. We define a singularity to be a curvature singularity if timelike or lightlike geodesics
+can only be extended to some finite affine parameter, and some curvature scalar (not
+necessarily every such scalar) approaches infinity as we approach this value of the affine
 parameter.
 
 <% marg(35) %>
@@ -1209,37 +1235,49 @@ parameter.
 %>
 <% end_marg %>
 
-Definition: A spacetime is said to be geodesically incomplete if there exist timelike or lightlike geodesics
-that cannot be extended past some finite affine parameter into the past or future.\index{geodesic incompleteness}
-
-Geodesic incompleteness defines what we mean by a singularity. A geodesically incomplete spacetime
-has one or more singularities in it.\index{singularity!formal definition}
-The Schwarzschild spacetime has a singularity at $r=0$, but not at the event horizon, since geodesics
-continue smoothly past the event horizon. Cosmological spacetimes contain a Big Bang singularity which
-prevents geodesics from being extended beyond a certain point in the \emph{past}.
-
-There are two types of singularities, curvature singularities and conical singularities.
-The examples above are curvature singularities. Figure \figref{conical-singularity} shows an example
-of a conical singularity.\index{singularity!conical}\index{conical singularity} (Cf.~figure \figref{cone},
+Singularities can also occur without any blow-up in the curvature. An example of this is
+a conical singularity,
+figure
+\figref{conical-singularity}.\index{singularity!conical}\index{conical singularity} (Cf.~figure \figref{cone},
 \pageref{fig:cone}.)
-As one approaches a curvature singularity, the curvature of spacetime diverges to infinity, as measured by
-a curvature invariant such as the Ricci scalar.
 In 2+1-dimensional relativity, curvature vanishes identically, and the only kind of gravity that exists
-is due to conical singularities. Conical singularities are not expected to be present in our universe, since
-there is no known mechanism by which they could be formed by gravitational collapse.
+is due to conical singularities. Another example of a non-curvature singularity
+is provided by the Taub-NUT family of spacetimes\index{Taub-NUT spacetimes}
+(Hawking and Ellis, sections 5.8 and 8.5), in which some lightlike geodesics spiral in toward a horizon,
+but tidal forces do not blow up at the horizon. There is no clear reason to expect that
+non-curvature singularities could actually exist in our universe, but neither is there any proof that
+they cannot be formed by natural processes.
 
-Actual singularities involving geodesic incompleteness are to be distinguished from coordinate singularities,
-which are not really singularities at all. In the Schwarzschild spacetime, as described in Schwarzschild's
-original coordinates, some components of the metric blow up at the event horizon, but this is not an
-actual singularity. This coordinate system can be replaced with a different one in which the metric
-is well behaved.
 
-The reason curvature scalars are useful as tests for an actual curvature singularity is that
-since they're scalars, they can't diverge in one coordinate system but stay finite
-in another. We define a singularity to be a curvature singularity if timelike or lightlike geodesics
-can only be extended to some finite affine parameter, and some curvature scalar (not
-necessarily every such scalar) approaches infinity as we approach this value of the affine
-parameter. Anything that is not a curvature singularity is considered a conical singularity.
+
+
+\begin{eg}{A non-curvature singularity}
+Consider the metric
+\begin{equation*}
+  \der s^2 = \frac{1}{t}\der t^2 - t\der \theta^2
+\end{equation*}
+in 1+1 dimensions, where $\theta$ is an angle running around the circle.
+This is a simplified version of a Taub-NUT spacetime.
+Lightlike geodesics have $\der s=0$, so $\der t/t=\der\theta$, and
+$\theta=(\text{const})\pm\ln t$. Single out the geodesic $\theta=\ln t$, which is defined only for $t>0$.
+We will show that this geodesic is incomplete at $t=0$, which requires showing that although the geodesic wraps
+around the circle infinitely many times as $t$ goes to zero, the affine parameter remains finite.
+
+The nonvanishing Christoffel symbols
+are $\Gamma\indices{^t_{tt}}=-1/2t$, $\Gamma\indices{^\theta_{\theta t}}=\Gamma\indices{^\theta_{t\theta}}=1/2t$,
+and $\Gamma\indices{^t_{\theta\theta}}=t/2$. The resulting geodesic equations are
+\begin{align*}
+  \ddot{t} &= \frac{\dot{t}^2}{2t}-\frac{t}{2}\dot{\theta}^2 \\
+  \ddot{\theta} &= -\frac{\dot{t}}{\dot{\theta}}{t} \qquad ,
+\end{align*}
+where dots represent differentiation with respect to the affine parameter $\lambda$.
+Implicit differentiation of the equation $\theta=\ln t$ gives $\dot{\theta}=\dot{t}/t$, and plugging this in
+to the first geodesic equation results in $\ddot{t}=0$. We can therefore take $t=\lambda$. (We could
+also take $t=a\lambda+b$, which would result in a different and equally valid affine parameter.)
+We thus find that this geodesic exists only for affine parameters $\lambda>0$, and as claimed, it is incomplete,
+and we have a singularity.
+Since curvature vanishes identically in 1+1 dimensions, this is a non-curvature singularity.
+\end{eg}
 
 A singularity is not considered to be a point in a spacetime; it's more like a hole
 in the topology of the manifold. For example, the Big Bang didn't

@@ -630,12 +630,26 @@ Although black hole spacetimes do contain singularities, the spacelike nature of
 that they can never lie in the intersection of light cones as referred to in the definition.
 Therefore such spacetimes are globally hyperbolic.
 
+<% marg(300) %>
+<%
+  fig(
+    'not-globally-hyperbolic',
+    %q{Example \ref{eg:compact-and-noncompact}.}
+  )
+%>
+<% end_marg %>
+
 \begin{eg}{Global hyperbolicity}
 Figure \subfigref{not-globally-hyperbolic}{1} shows a piece cut out of Minkowski space. The dashed outline
 is meant to indicate that the
 piece doesn't include its boundary. This spacetime is not globally hyperbolic. For certain choices
 of events P and Q, the intersection $J^+(\zu{P})\cap J^-(\zu{Q})$ could extend out to the cut at the
 edge. Since the spacetime doesn't include its boundary, this intersection would not be compact.
+It's easy to see why causality fails in this spacetime. If we pick a spacelike surface near the bottom
+of the diagram, it would only cut through a small part of the bottom of the spacetime. At later times,
+the spacetime grows at a rate that is greater than $c$. Therefore such a surface cannot be used as
+a Cauchy surface; given the initial conditions on this surface, we cannot predict what will happen in
+the parts of the universe that are outside its causal future.
 
 In \subfigref{not-globally-hyperbolic}{2} we have the same example, but now the boundary is included.
 This set is not a manifold, which excludes it from consideration as a spacetime in general relativity.
@@ -655,16 +669,11 @@ hyperbolicity does not necessarily capture everything we might ever want to desc
 causality. If a paleontologist living in this spacetime finds a dinosaur fossil embedded in a rock,
 she will naturally infer that a dinosaur lived at some point in the past, causing the fossil to exist.
 But perhaps this is not the case --- the hypothetical dinosaur might be one that would have existed before
-the boundary.
+the boundary. This creationism-flavored violation of causality is of a different flavor than the 
+situation we would have had if the bottom edge of the diagram had been a big bang singularity; in that
+case, we would have had a knowable \emph{reason} why chains of cause and effect could not be extended back into
+the past beyond a certain time.
 \end{eg}
-<% marg(300) %>
-<%
-  fig(
-    'not-globally-hyperbolic',
-    %q{Example \ref{eg:compact-and-noncompact}.}
-  )
-%>
-<% end_marg %>
 
 
 
