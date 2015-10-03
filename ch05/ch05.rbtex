@@ -1057,18 +1057,18 @@ A geodesic can be defined as a world-line that preserves tangency under parallel
 essentially a mathematical way of expressing the notion that we have previously expressed more informally in terms of ``staying on course'' or
 moving ``inertially.''
 
-A curve can be specified by giving functions $x^i(\lambda)$ for its coordinates, where $\lambda$ is a real parameter. A vector lying tangent to the
-curve can then be calculated using partial derivatives, $T^i=\partial x^i/\partial\lambda$. There are three ways in which a vector
+A curve can be specified by giving functions $x^\mu(\lambda)$ for its coordinates, where $\lambda$ is a real parameter. A vector lying tangent to the
+curve can then be calculated using partial derivatives, $T^\mu=\partial x^\mu/\partial\lambda$. There are three ways in which a vector
 function of $\lambda$ could change: (1) it could change for the trivial reason that the metric is changing, so that its components
 changed when expressed in the new metric; (2) it could change its components perpendicular to the curve; or (3) it could change its
 component parallel to the curve. Possibility 1 should not really be considered a change at all, and the definition of the covariant
-derivative is specifically designed to be insensitive to this kind of thing. 2 cannot apply to $T^i$, which is tangent by construction.
-It would therefore be convenient if $T^i$ happened to
+derivative is specifically designed to be insensitive to this kind of thing. 2 cannot apply to $T^\mu$, which is tangent by construction.
+It would therefore be convenient if $T^\mu$ happened to
 be always the same length. If so, then 3 would not happen either, and
 we could reexpress the definition of a geodesic by saying that the covariant derivative of
-$T^i$ was zero. For this reason, we will assume for the remainder of this section that the parametrization of the curve has
-this property. In a Newtonian context, we could imagine the $x^i$ to be purely spatial coordinates, and $\lambda$ to be
-a universal time coordinate. We would then interpret $T^i$ as the velocity, and the restriction would be to a parametrization
+$T^\mu$ was zero. For this reason, we will assume for the remainder of this section that the parametrization of the curve has
+this property. In a Newtonian context, we could imagine the $x^\mu$ to be purely spatial coordinates, and $\lambda$ to be
+a universal time coordinate. We would then interpret $T^\mu$ as the velocity, and the restriction would be to a parametrization
 describing motion with constant speed. In relativity, the restriction is that $\lambda$ must be an affine parameter.
 For example, it could be the proper time of a particle, if the curve in question is timelike.
 <% end_sec %> % Characterization of the geodesic
@@ -1076,7 +1076,7 @@ For example, it could be the proper time of a particle, if the curve in question
 <% begin_sec("Covariant derivative with respect to a parameter") %>
 The notation of section \ref{sec:covariant-derivative} is not quite adapted to our present purposes, since it allows us to
 express a covariant derivative with respect to one of the coordinates, but not with respect to a parameter such as $\lambda$.
-We would like to notate the covariant derivative of $T^i$ with respect to $\lambda$ as $\nabla_\lambda T^i$, even though
+We would like to notate the covariant derivative of $T^\mu$ with respect to $\lambda$ as $\nabla_\lambda T^\mu$, even though
 $\lambda$ isn't a coordinate.
 To connect the two types of derivatives, we can use a total derivative. To make the idea clear, here is how we calculate a total derivative
 for a scalar function $f(x,y)$, without tensor notation:
@@ -1087,21 +1087,23 @@ This is just the generalization of the chain rule to a function of two variables
 then this would tell us the rate of change of the temperature as a thermometer was carried through space. Applying this to
 the present problem, we express the total covariant derivative as
 \begin{align*}
-  \nabla_\lambda T^i &= (\nabla_b T^i) \frac{\der x^b}{\der\lambda} \\
-                     &= \left(\partial_b T^i + \Gamma\indices{^i_{bc}}T^c\right) \frac{\der x^b}{\der\lambda} \qquad .
+  \nabla_\lambda T^\mu &= (\nabla_\kappa T^\mu) \frac{\der x^\kappa}{\der\lambda} \\
+                     &= \left(\partial_\kappa T^\mu + \Gamma\indices{^\mu_{\kappa\nu}}T^\nu\right) \frac{\der x^\kappa}{\der\lambda} \qquad .
 \end{align*}
 <% end_sec %> % Covariant derivative with respect to a parameter
 
 <% begin_sec("The geodesic equation") %>
-Recognizing $\partial_b T^i \der x^b/\der\lambda$ as a total non-covariant derivative, we find
+Recognizing $\partial_\kappa T^\mu \der x^\kappa/\der\lambda$ as a total non-covariant derivative, we find
 \begin{equation*}
-  \nabla_\lambda T^i = \frac{\der T^i}{\der\lambda} + \Gamma\indices{^i_{bc}}T^c \frac{\der x^b}{\der\lambda} \qquad .
+  \nabla_\lambda T^\mu = \frac{\der T^\mu}{\der\lambda} + \Gamma\indices{^\mu_{\kappa\nu}}T^\nu \frac{\der x^\kappa}{\der\lambda} \qquad .
 \end{equation*}
-Substituting $\partial x^i/\partial\lambda$ for $T^i$, and setting the covariant derivative equal to zero, we obtain
+Substituting $\partial x^\mu/\partial\lambda$ for $T^\mu$, and setting the covariant derivative equal to zero, we obtain
 \begin{equation*}
-  \frac{\der^2 x^i}{\der\lambda^2} + \Gamma\indices{^i_{bc}} \frac{\der x^c}{\der\lambda} \frac{\der x^b}{\der\lambda} = 0 .
+  \frac{\der^2 x^\mu}{\der\lambda^2} + \Gamma\indices{^\mu_{\kappa\nu}} \frac{\der x^\nu}{\der\lambda} \frac{\der x^b}{\der\lambda} = 0 .
 \end{equation*}
-This is known as the geodesic equation.
+This is known as the geodesic equation. There is a factor of two that is a common gotcha when applying this equation.
+The symmetry of the Christoffel symbols $\Gamma\indices{^\mu_{\kappa\nu}}=\Gamma\indices{^\mu_{\nu\kappa}}$
+implies that when $\kappa$ and $\nu$ are distinct, the same term will appear twice in the summation.
 
 If this differential equation is satisfied for one affine
 parameter $\lambda$, then it is also satisfied for any other affine parameter $\lambda'=a\lambda+b$, where $a$ and $b$
@@ -1124,11 +1126,11 @@ if the geodesic were not uniquely determined, then particles would have no way o
 geodesic equation guarantees uniqueness. To see this, consider the following algorithm for determining a numerical
 approximation to a geodesic:\label{geodesic-algorithm}
 \begin{enumerate}
-\item Initialize $\lambda$, the $x^i$ and their derivatives $\der x^i/\der\lambda$. Also, set a small step-size $\Delta\lambda$ by which
+\item Initialize $\lambda$, the $x^\mu$ and their derivatives $\der x^\mu/\der\lambda$. Also, set a small step-size $\Delta\lambda$ by which
         to increment $\lambda$ at each step below.
-\item For each $i$, calculate $\der^2 x^i/\der\lambda^2$ using the geodesic equation.
-\item Add $(\der^2 x^i/\der\lambda^2)\Delta\lambda$ to the currently stored value of $\der x^i/\der\lambda$.
-\item Add $(\der x^i/\der\lambda)\Delta\lambda$ to $x^i$.
+\item For each $i$, calculate $\der^2 x^\mu/\der\lambda^2$ using the geodesic equation.
+\item Add $(\der^2 x^\mu/\der\lambda^2)\Delta\lambda$ to the currently stored value of $\der x^\mu/\der\lambda$.
+\item Add $(\der x^\mu/\der\lambda)\Delta\lambda$ to $x^\mu$.
 \item Add $\Delta\lambda$ to $\lambda$.
 \item Repeat steps 2-5 until the geodesic has been extended to the desired affine distance.
 \end{enumerate}
@@ -2000,6 +2002,14 @@ determines the charge density?\hwsoln
 Show, as claimed on page \pageref{sec:numerical-geodesic}, that
 for polar coordinates in a Euclidean plane, $\Gamma\indices{^r_{\phi\phi}}=-r$ and
 $\Gamma\indices{^\phi_{r\phi}}=1/r$.
+<% end_hw %>
+
+<% begin_hw('taub-christoffel') %>
+In 1+1 dimensions, let the metric be $\der s^2 = \frac{1}{t}\der t^2 - t\der \theta^2$,
+where $\theta$ is an angle running around the circle. 
+Calculate all the nonvanishing Christoffel symbols by hand. These will be
+used in example \ref{eg:simple-taub-nut} on p.~\pageref{eg:simple-taub-nut}, where
+we investigate some further properties of this interesting spacetime.\hwsoln
 <% end_hw %>
 
 

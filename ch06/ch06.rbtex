@@ -1251,21 +1251,26 @@ they cannot be formed by natural processes.
 
 
 
-\begin{eg}{A non-curvature singularity}
+\begin{eg}{A non-curvature singularity}\label{eg:simple-taub-nut}
 Consider the metric
 \begin{equation*}
   \der s^2 = \frac{1}{t}\der t^2 - t\der \theta^2
 \end{equation*}
 in 1+1 dimensions, where $\theta$ is an angle running around the circle.
 This is a simplified version of a Taub-NUT spacetime.
-Lightlike geodesics have $\der s=0$, so $\der t/t=\der\theta$, and
-$\theta=(\text{const})\pm\ln t$. Single out the geodesic $\theta=\ln t$, which is defined only for $t>0$.
-We will show that this geodesic is incomplete at $t=0$, which requires showing that although the geodesic wraps
-around the circle infinitely many times as $t$ goes to zero, the affine parameter remains finite.
+Lightlike geodesics have $\der s=0$, so $\der t/t=\pm\der\theta$, and
+$\theta=(\text{const})\pm\ln (\pm t)$, where the two signs can be chosen independently.
+Single out the geodesic $\theta=\ln t$, which is defined only for $t>0$.
+It wraps
+around the circle infinitely many times as $t$ goes to zero, and
+we would like to know whether it is incomplete there.
+If the affine parameter goes to infinity as $t$ approaches zero, then the geodesic is
+\emph{not} incomplete.
 
 The nonvanishing Christoffel symbols
 are $\Gamma\indices{^t_{tt}}=-1/2t$, $\Gamma\indices{^\theta_{\theta t}}=\Gamma\indices{^\theta_{t\theta}}=1/2t$,
-and $\Gamma\indices{^t_{\theta\theta}}=t/2$. The resulting geodesic equations are
+and $\Gamma\indices{^t_{\theta\theta}}=t/2$ (problem \ref{hw:taub-christoffel},
+p.~\pageref{hw:taub-christoffel}). The resulting geodesic equations are
 \begin{align*}
   \ddot{t} &= \frac{\dot{t}^2}{2t}-\frac{t}{2}\dot{\theta}^2 \\
   \ddot{\theta} &= -\frac{\dot{t}}{\dot{\theta}}{t} \qquad ,
@@ -1274,14 +1279,21 @@ where dots represent differentiation with respect to the affine parameter $\lamb
 Implicit differentiation of the equation $\theta=\ln t$ gives $\dot{\theta}=\dot{t}/t$, and plugging this in
 to the first geodesic equation results in $\ddot{t}=0$. We can therefore take $t=\lambda$. (We could
 also take $t=a\lambda+b$, which would result in a different and equally valid affine parameter.)
-We thus find that this geodesic exists only for affine parameters $\lambda>0$, and as claimed, it is incomplete,
-and we have a singularity.
-Since curvature vanishes identically in 1+1 dimensions, this is a non-curvature singularity.
+If $\lambda$ had gone to $-\infty$ as $t$ went to zero, then we would have demonstrated
+that the geodesic was complete.
+It approaches a finite limit instead, which suggests, but does not prove, that it is incomplete.
+
+A more thorough analysis (Hawking and Ellis, sec.~5.8) shows that although a change of coordinates
+allow the counterclockwise geodesics to be continued through $t=0$, but the clockwise ones
+remain incomplete. A different change of coordinates extends the clockwise but not the counterclockwise ones.
+In all cases there are incomplete geodesics, so we do have a singularity.
+Since curvature singularities don't exist in less than 3+1 dimensions, this is a non-curvature singularity.
+(A calculation also shows that this particular spacetime is flat.)
 \end{eg}
 
 A singularity is not considered to be a point in a spacetime; it's more like a hole
 in the topology of the manifold. For example, the Big Bang didn't
-occur at a point.
+occur at a point or set of points.
 
 Because a singularity isn't a point or a point-set,
 we can't define its timelike or spacelike character in quite the way
