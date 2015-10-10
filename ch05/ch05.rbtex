@@ -1708,8 +1708,8 @@ any predefined set of coordinates.
 
 There is a general notion of a topological space, which is too general for our purposes. In such a space, the
 only structure we are guaranteed is that certain sets are defined as ``open,''\index{open set}
-in the same sense that an interval like $0< x < 1$ is called ``open.'' Any point in an open set can be
-moved around without leaving the set. An open set is essentially a set without a boundary, for in a set
+in the same sense that an interval like $0< x < 1$ is called ``open.'' A point in an open set can be
+moved in any direction without leaving the set. An open set is essentially a set without a boundary, for in a set
 like $0\le x \le 1$, the boundary points 0 and 1 can only be moved in one direction without taking them outside.
 <% marg(20) %>
 <%
@@ -1747,7 +1747,7 @@ has Lebesgue covering dimension $n$, is a homogeneous space under its own homeom
 this is sufficient to characterize a manifold completely, but it suffices to rule out all the counterexamples of which I know.}
 \begin{itemize}
 \item[M1] Dimension: M's dimension is $n$.
-\item[M2] Homogeneity: No point has any property that distinguishes it from any other point.
+\item[M2] Homogeneity: No point has any locally definable property that distinguishes it from any other point.
 \item[M3] Completeness: M is complete, in the sense that specifying an arbitrarily small neighborhood gives a unique definition of a point.
 \end{itemize}
 
@@ -1801,6 +1801,72 @@ them passes through P. (Cf.~problem \ref{hw:frw-time-reversal}, p.~\pageref{hw:f
 \end{eg}
 
 <% end_sec %> % Topological definition of a manifold
+
+<% begin_sec("Hausdorff property",nil,'hausdorff') %>
+Pioneering topologist Felix Hausdorff defined the following property of a topological space:
+
+\noindent \emph{Hausdorff property:} Given any two points, it is possible to find disjoint 
+neighborhoods of them.\index{Hausdorff space}
+
+\noindent A joke/mnemonic, which probably works best for people with a certain type of British accent, is that
+in a Hausdorff space, any two points can be ``housed off'' from one another inside their own nonintersecting
+open sets. The notion appeals strongly to our intuitive ideas about how space and time behave, and the
+standard definition of a manifold implies that it is Hausdorff. When we model
+Minkowski space using real-number coordinates, it is Hausdorff. Since the equivalence principle says that spacetime
+is locally Minkowski, we could also say  that it implies spacetime is Hausdorff.
+However, general relativity allows spacetime to behave badly in cases such as singularities, so it is imaginable
+that our universe contains points that violate the Hausdorff property. There are interesting
+and physically well-motivated
+spacetimes, such as some versions of the Taub-NUT space,\index{Taub-NUT spacetime}
+that are non-Hausdorff. Since we have no empirical data on the behavior of spacetime under the most
+extreme conditions, we cannot say whether spacetime is really Hausdorff. One should maintain
+some skepticism about whether such an idealized category is even meaningful in science, since
+it refers to phenomena at arbitrarily small scales, whereas theories and measurements are limited
+in the scales they can deal with. A good discussion of the Hausdorff property as applied to relativity is given by 
+Earman.\footnote{John Earman, `Pruning some branches from ``branching spacetimes'','
+\url{pitt.edu/~jearman/Earman2008a.pdf}}
+
+\begin{eg}{Branching universes}\label{eg:branching}
+Figure \figref{branching} shows spacetime diagrams of $1+1$-dimensional universes that branch like a tree.
+These are meant to be pictures of classical general relativity, although some of the strongest motivation
+for considering such possibilities comes from attempts to construct a theory of quantum gravity. In such
+theories, it is commonly expected that spacetime will have a structure at the Planck scale that is a kind
+of ``quantum foam.''
+
+<% marg(300) %>
+<%
+  fig(
+    'branching',
+    %q{Example \ref{eg:branching}.}
+  )
+%>
+<% end_marg %>
+
+The example in \subfigref{branching}{1} is a manifold, and is Hausdorff. This is an example of topology
+change, meaning that the spacelike section at one time has a different topology than the section at
+another.\footnote{For a recent treatment, see Borde, 1994,
+``Topology change in classical general relativity," \url{arxiv.org/abs/gr-qc/9406053}.}\index{topology change}
+Although such a branching can occur without the existence of any singularities,
+theorems by Tipler and Geroch show that other types of misbehavior must occur, including causality violations
+and the need for forms of matter that violate energy conditions.
+
+Figure \subfigref{branching}{2} is qualitatively different. Here we have formed a spacetime by gluing together
+three pieces. No curvature is implied; these could be three pieces of Minkowski space.
+The spacetime is not a manifold, since the points at the join have different local properties than points
+elsewhere. 
+The machinery of general relativity breaks down in a case like this, but for example we could imagine that
+a geodesic in this spacetime could fork off into two different geodesics after the split.
+
+Yet a third possibility is to reinterpret \subfigref{branching}{2} so that there are two different copies of
+the seam. For example, we could let the portion of the diagram extending into the past be represented by
+points with $t<0$, while the two branches continuing into the future could each have $t\ge 0$, so that
+for a given $x$ we would have two different events with coordinates $(t=0,x)$.
+It would not be possible to put these two points into disjoint neighborhoods, so this version of the space is
+not Hausdorff.
+\end{eg}
+
+
+<% end_sec('hausdorff') %>
 
 <% begin_sec("Local-coordinate definition of a manifold") %>
 An alternative way of characterizing an  $n$-manifold is as an object that can locally be described by
