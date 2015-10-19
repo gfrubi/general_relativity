@@ -1194,12 +1194,14 @@ can't be extended indefinitely. But what does ``indefinitely'' mean? If the test
 the metric length of its world-line is zero. We get around this by defining length in terms of an affine
 parameter.
 
-
 Definition: A spacetime is said to be geodesically incomplete if there exist timelike or lightlike geodesics
-that cannot be extended past some finite affine parameter into the past or future.\index{geodesic incompleteness}
+that cannot be extended past some finite affine parameter into the past or 
+future.\index{geodesic incompleteness}
 
-Geodesic incompleteness defines what we mean by a singularity. A geodesically incomplete spacetime
-has one or more singularities in it.\index{singularity!formal definition}
+\noindent This is also a pretty good working definition of what we mean when we say that a spacetime
+contains a singularity,\index{singularity!formal definition}
+although it may not be optimal for all 
+purposes.\footnote{Geroch, "What is a singularity in general relativity?," Ann Phys 48 (1968) 526.}
 The Schwarzschild spacetime has a singularity at $r=0$, but not at the event horizon, since geodesics
 continue smoothly past the event horizon. Cosmological spacetimes contain a Big Bang singularity which
 prevents geodesics from being extended beyond a certain point in the \emph{past}.
@@ -1212,18 +1214,33 @@ is well behaved.
 
 There are two types of singularities: curvature singularities and non-curvature singularities.
 
-The examples above are examples of curvature singularities, which can be recognized because
+The examples above are examples of curvature singularities, which can often be recognized because
 there are scalar measures of curvature such as the Kretschmann invariant that blow up.
 These indicate that tidal forces blow up to infinity, and would destroy any observer.
 
 The reason curvature scalars are useful as tests for a curvature singularity is that
 since they're scalars, they can't diverge in one coordinate system but stay finite
-in another. We define a singularity to be a curvature singularity if timelike or lightlike geodesics
+in another. A sufficient condition for
+a singularity to be a curvature singularity if timelike or lightlike geodesics
 can only be extended to some finite affine parameter, and some curvature scalar (not
 necessarily every such scalar) approaches infinity as we approach this value of the affine
 parameter.
 
-<% marg(35) %>
+
+Singularities can also occur without any blow-up in the curvature. An example of this is
+a conical singularity,
+figure
+\figref{conical-singularity}.\index{singularity!conical}\index{conical singularity} (Cf.~figure \figref{cone},
+\pageref{fig:cone}.)
+In 2+1-dimensional relativity, curvature vanishes identically in the case of a vacuum,
+and the only kind of curvature singularity we can have
+is a non-curvature singularity. Another example of a non-curvature singularity
+is provided by the Taub-NUT family of spacetimes\index{Taub-NUT spacetimes}
+(Hawking and Ellis, sections 5.8 and 8.5), in which some lightlike geodesics spiral in toward a horizon,
+but tidal forces do not blow up at the horizon. There is no clear reason to expect that
+non-curvature singularities could actually exist in our universe, but neither is there any proof that
+they cannot be formed by natural processes.
+<% marg(300) %>
 <%
   fig(
     'conical-singularity',
@@ -1234,22 +1251,6 @@ parameter.
   )
 %>
 <% end_marg %>
-
-Singularities can also occur without any blow-up in the curvature. An example of this is
-a conical singularity,
-figure
-\figref{conical-singularity}.\index{singularity!conical}\index{conical singularity} (Cf.~figure \figref{cone},
-\pageref{fig:cone}.)
-In 2+1-dimensional relativity, curvature vanishes identically, and the only kind of gravity that exists
-is due to conical singularities. Another example of a non-curvature singularity
-is provided by the Taub-NUT family of spacetimes\index{Taub-NUT spacetimes}
-(Hawking and Ellis, sections 5.8 and 8.5), in which some lightlike geodesics spiral in toward a horizon,
-but tidal forces do not blow up at the horizon. There is no clear reason to expect that
-non-curvature singularities could actually exist in our universe, but neither is there any proof that
-they cannot be formed by natural processes.
-
-
-
 
 \begin{eg}{A non-curvature singularity}\label{eg:simple-taub-nut}
 Consider the metric
@@ -1283,10 +1284,16 @@ If $\lambda$ had gone to $-\infty$ as $t$ went to zero, then we would have demon
 that the geodesic was complete.
 It approaches a finite limit instead, which suggests, but does not prove, that it is incomplete.
 
-A more thorough analysis (Hawking and Ellis, sec.~5.8) shows that although a change of coordinates
-allow the counterclockwise geodesics to be continued through $t=0$, but the clockwise ones
-remain incomplete. A different change of coordinates extends the clockwise but not the counterclockwise ones.
-In all cases there are incomplete geodesics, so we do have a singularity.
+The change of coordinates $\theta\rightarrow\theta-\ln t$
+allows the counterclockwise lightlike geodesics to be continued through $t=0$. (Because this transformation is not
+a diffeomorphism, it is not just a renaming of points but an actual physical change in the structure of
+the spacetime; it is equivalent to cutting apart the halves with $t<0$ and $t>0$ and gluing them back
+together in a different way.)
+The corresponding geodesics in the clockwise direction, however,
+remain incomplete.
+A different change of coordinates extends the clockwise but not the counterclockwise ones.
+In all cases there are incomplete geodesics, so it still appears that we do have a singularity.
+(For more discussion of this example, see Hawking and Ellis, sec.~5.8.)
 Since curvature singularities don't exist in less than 3+1 dimensions, this is a non-curvature singularity.
 (A calculation also shows that this particular spacetime is flat.)
 \end{eg}
