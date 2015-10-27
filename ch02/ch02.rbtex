@@ -50,7 +50,7 @@ up frames of reference.
 <% end_marg %>
 
 <% begin_sec("Affine properties of Lorentz geometry",4,'affine-geometry') %>
-<% begin_sec("Parallelism and measurement") %>
+<% begin_sec("Parallelism and measurement",nil,'parallelism-and-measurement') %>
 We think of a frame of reference as a body of measurements or possible measurements to be made
 by some observer. Ordered geometry lacks measure.
 The following argument shows that merely by adding a notion of parallelism to our geometry, we
@@ -127,7 +127,7 @@ to set O1-O4.\footnote{The axioms are summarized for convenient reference in the
 The notation [PQRS] means that events P, Q, S, and R form a parallelogram, and is defined
 as the statement that the lines determined by PQ and RS never meet at a point, and similarly for PR and QS.
 
-\begin{itemize}
+\begin{itemize}\label{affine-axioms}
 \item[A1] Constructibility of parallelograms: Given any P, Q, and R, there exists S such that [PQRS], and if P, Q, and R are distinct then S is unique.
 \item[A2] Symmetric treatment of the sides of a parallelogram: If [PQRS], then [QRSP], [QPSR], and [PRQS].
 \item[A3] Lines parallel to the same line are parallel to one another: If [ABCD] and [ABEF], then [CDEF].

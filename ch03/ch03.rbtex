@@ -88,15 +88,59 @@ p.~\pageref{subsec:tangent-space}.\index{tangent vector}
 
 <% begin_sec("Affine notions and parallel transport",4) %>
 
-<% begin_sec("The affine parameter in curved spacetime") %>
-An important example of the differential, i.e., local, nature of our geometry
-is the generalization of the affine parameter to a context broader than affine geometry.
-
+<% begin_sec("The affine parameter in curved spacetime: a rough sketch") %>
+We want to be able to measure things in curved spacetime. There turn out to be two complementary systems of
+measurement we can apply: affine measure and metric measure.
+Affine measure in a flat geometry was introduced in
+section \ref{subsec:parallelism-and-measurement}, p.~\pageref{subsec:parallelism-and-measurement}.
+Surprisingly, it turns out to be quite easy to generalize this to the curved case.
 Our construction of the affine parameter with a scaffolding of parallelograms
-depended on the existence and uniqueness of parallels expressed by A1, so we might
+depended on the existence and uniqueness of parallels expressed by axiom A1 on p.~\pageref{affine-axioms}, so we might
 imagine that there was no point in trying to generalize the construction to curved spacetime. But the equivalence principle tells
 us that spacetime is locally affine to some approximation. Concretely, clock-time is one example of an affine parameter, and the
 curvature of spacetime clearly can't prevent us from building a clock and releasing it on a free-fall trajectory.
+
+More generally, we can use the fact that every segment of a geodesic is geometrically similar to every other segment.
+For example, consider an arc of the earth's equator spanning one degree of longitude. That arc could be slid along
+the equator to a different location, then expanded to cover 3 degrees of longitude. The two arcs are similar.
+
+\begin{eg}{Geodesics are special}
+The following three non-examples show that this is a special property of geodesics.
+
+The property is not enjoyed by
+a non-geodesic curve. A segment of a pentagon that encompasses one of the vertices is not
+similar to some other segment that is straight.
+
+Another non-example involving non-geodesics is the curve that we get in 1+1-dimensional spacetime
+by joining together the positive $x$ axis and the positive $t$ axis. We can never take a one-year
+segment of the $t$ axis and, through any combination of boosts and rotations, make it coincide with
+a one-light-year piece of the $x$ axis. The original segment is timelike, and any boost or rotation will
+preserve its timelike character.
+
+Furthermore, it is not true in general, when curvature exists,
+that we can take any geometrical figure, transport it wherever we like, and also scale it as we like.
+For example, Euclidean geometry is a good approximation on small portions of the Earth's spherical
+surface, so a roadmap can be made in the shape of a rectangle with four right-angle corners. However,
+it is not possible to scale up such a rectangle; to map a large portion of the world, we have to
+introduce distortions of the type used in map projections.
+\end{eg}
+
+Because geodesics have this special property, we can slide any portion of a geodesic to anywhere else
+on the geodesic and employ it as a standard of measure. This gives us a complete system of measurement
+along that geodesic, and it works regardless of whether the geodesic is timelike, lightlike, or spacelike.
+But as in flat geometry, affine measurement does not allow us to compare lengths
+along one geodesic to lengths along another.
+
+<% end_sec %>
+
+<% begin_sec("The affine parameter in more detail") %>
+When we originally defined affine measure in
+section \ref{subsec:parallelism-and-measurement}, p.~\pageref{subsec:parallelism-and-measurement},
+for a flat space, we did it through the explicit construction of a scaffolding.
+An important example of the differential, i.e., local, nature of our geometry
+is the generalization of the scaffolding construction from 
+to a context broader than affine geometry.
+
 To generalize the recipe for the construction (figure \figref{affine-par-in-curved-spacetime}), the first obstacle is the ambiguity of the 
 instruction to construct parallelogram $01\zu{q}_0\zu{q}_1$, which requires us to draw $1\zu{q}_1$ parallel to
 $0\zu{q}_0$. Suppose we construe this as an instruction to make the two segments initially parallel, i.e.,
