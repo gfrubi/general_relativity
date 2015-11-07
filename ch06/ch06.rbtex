@@ -1298,9 +1298,23 @@ Since curvature singularities don't exist in less than 3+1 dimensions, this is a
 (A calculation also shows that this particular spacetime is flat.)
 \end{eg}
 
-A singularity is not considered to be a point in a spacetime; it's more like a hole
+A singularity is not considered to be a point or set of points in a spacetime; it's more like a hole
 in the topology of the manifold. For example, the Big Bang didn't
-occur at a point or set of points.
+occur at a point or set of points. A singularity represents a breakdown in the metric, and without a metric
+we may not even be able to tell the difference between one point and many.
+
+\begin{eg}{One point, or many?}
+Suppose I have a two-dimensional space with coordinates $(u,v)$, and I
+ask you whether $\zu{S}=\{(u,v)|v=0\}$ is a point or a curve, while refusing to divulge what metric
+I have in mind. You'd probably say
+S was a curve, and if the metric was $\der s^2=\der u^2+\der v^2$, you'd be
+right. On the other hand, if the metric was $\der s^2=v^2\der u^2+\der v^2$, S
+would be a point. 
+
+This was an example where there were two possible
+metrics we could imagine. At a singularity, it's even worse. There is
+\emph{no} possible metric that we can extend to the singularity. 
+\end{eg}
 
 Because a singularity isn't a point or a point-set,
 we can't define its timelike or spacelike character in quite the way
