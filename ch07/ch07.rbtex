@@ -548,7 +548,7 @@ For $n>3$ we will usually not have conformal flatness if there are gravitational
 forces present.\index{conformal flatness}
 
 The most problematic part, surprisingly, is step 3. This topic goes under the general
-heading of ``boundary constructions.''\index{boundary constructions}
+heading of ``boundary constructions.''\index{boundary constructions}\label{boundary-constructions}
 Reviews are available on this topic.\footnote{Ashley, ``Singularity theorems and the abstract boundary construction,''
 \url{https://digitalcollections.anu.edu.au/handle/1885/46055}.
 Garcia-Parrado and Senovilla, ``Causal structures and causal boundaries,''
@@ -559,7 +559,8 @@ As someone who is not a specialist in this subfield, the impression I get is tha
 of research that has turned out badly and has never produced any useful results, but work continues,
 and it is possible that at some point the smoke will clear. As a simple example of what one would like
 to get, but doesn't get, from these studies, it would seem natural to ask how many dimensions there are
-in a black hole singularity. Different answers come back from the different methods. For example,
+in a black hole singularity. (See p.~\pageref{singularity-dim-elementary} for a discussion of why this
+is a nontrivial question.) Different answers come back from the different methods. For example,
 the b-boundary approach says that both black-hole and cosmological singularities are zero-dimensional
 points, while in the c-boundary method (which was designed to harmonize with Penrose diagrams) they
 are three-surfaces (as one would imagine from the Penrose diagrams).

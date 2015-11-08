@@ -1301,7 +1301,9 @@ Since curvature singularities don't exist in less than 3+1 dimensions, this is a
 A singularity is not considered to be a point or set of points in a spacetime; it's more like a hole
 in the topology of the manifold. For example, the Big Bang didn't
 occur at a point or set of points. A singularity represents a breakdown in the metric, and without a metric
-we may not even be able to tell the difference between one point and many.
+we may not even be able to tell the difference between one point and many. For more on these issues, see
+the discussion of boundary constructions on 
+p.~\pageref{boundary-constructions}.\label{singularity-dim-elementary}
 
 \begin{eg}{One point, or many?}
 Suppose I have a two-dimensional space with coordinates $(u,v)$, and I
