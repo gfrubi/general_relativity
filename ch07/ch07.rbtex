@@ -818,7 +818,7 @@ spacetime is one in which there is no rotation.
 % https://www.physicsforums.com/threads/when-can-a-metric-be-put-in-diagonal-form.798380/
 <% end_sec %> % Static spacetimes
 
-<% begin_sec("Birkhoff's theorem") %>
+<% begin_sec("Birkhoff's theorem",nil,'birkhoff') %>
 Birkhoff's theorem,\index{Birkhoff's theorem}\label{birkhoff} proved below, states that in the case of spherical symmetry, 
 the vacuum field equations have a solution, the Schwarzschild spacetime, which is unique up to a choice of coordinates
 and the value of $m$.
@@ -828,19 +828,7 @@ Schwarzschild metric on p.~\pageref{sec:complete-sch}. These were: (1) the vacuu
 Birkhoff's theorem says that the assumption of staticity was not necessary.
 That is, even if the mass distribution contracts and expands over time, the exterior solution is still the Schwarzschild solution.
 Birkhoff's theorem holds because gravitational waves are transverse, not longitudinal (see p.~\pageref{grav-waves-transverse}),
-so the mass distribution's radial throbbing cannot generate a gravitational wave. Birkhoff's theorem is similar to
-the no-hair theorems describing black holes.\index{no-hair theorems}\index{black hole!no-hair theorem}
-The most general no-hair theorem states that a black hole is completely characterized by its mass, charge, and
-angular momentum. Other than these three numbers, nobody on the outside can recover any information that was possessed by the matter and
-energy that were sucked into the black hole.
-
-It has been proposed\footnote{Johannsen and Psaltis, http://arxiv.org/abs/1008.3902v1}
-that the no-hair theorem for nonzero angular momentum and zero charge could be tested empirically by
-observations of Sagittarius A*.\index{Sagittarius A*} If the observations are consistent with the no-hair theorem, it would
-be taken as supporting the validity of general relativity and the interpretation of this object as a supermassive black hole.
-If not, then there are various possibilities, including a failure of general relativity to be the correct theory of strong
-gravitational fields, or a failure of one of the theorem's other assumptions, such as the nonexistence of closed timelike curves
-in the surrounding universe.
+so the mass distribution's radial throbbing cannot generate a gravitational wave.
 
 Proof of Birkhoff's theorem: Spherical symmetry
 guarantees that we can introduce coordinates $r$ and $t$ such that the surfaces of constant $r$ and $t$ have the structure of
@@ -880,6 +868,23 @@ defined geometry found by removing the coordinate singularities from this form o
 Since the metric's components are all independent of $t$, $\partial_t$ is a Killing vector, and it
 is timelike for large $r$, so the Schwarzschild spacetime is asymptotically static.
 
+<% end_sec('birkhoff') %> % Birkhoff's theorem
+
+<% begin_sec("No-hair theorems",nil,'no-hair') %>
+ Birkhoff's theorem is similar to a set of theorems called
+no-hair theorems describing black holes.\index{no-hair theorems}\index{black hole!no-hair theorem}
+The most general no-hair theorem states that a black hole is completely characterized by its mass, charge, and
+angular momentum. Other than these three numbers, nobody on the outside can recover any information that was possessed by the matter and
+energy that were sucked into the black hole.
+
+It has been proposed\footnote{Johannsen and Psaltis, http://arxiv.org/abs/1008.3902v1}
+that the no-hair theorem for nonzero angular momentum and zero charge could be tested empirically by
+observations of Sagittarius A*.\index{Sagittarius A*} If the observations are consistent with the no-hair theorem, it would
+be taken as supporting the validity of general relativity and the interpretation of this object as a supermassive black hole.
+If not, then there are various possibilities, including a failure of general relativity to be the correct theory of strong
+gravitational fields, or a failure of one of the theorem's other assumptions, such as the nonexistence of closed timelike curves
+in the surrounding universe.
+
 The no-hair theorems say that relativity only has a small repertoire of types of black-holes,
 defined as regions of space that are causally disconnected from the universe, in the sense that
 future light-cones of points in the region do not extend to 
@@ -908,14 +913,30 @@ to small enough radii), whereas the no-hair theorems assume an event horizon and
 the metric, including its symmetries.
 
 The no-hair theorems cannot classify naked singularities,
-i.e., those not hidden behind horizons, because the role of naked singularities in relativity is the subject
+i.e., those not hidden behind horizons. The role of naked singularities in relativity is the subject
 of the cosmic censorship hypothesis, which is an open problem. The theorems do not rule out the
 Big Bang singularity, because we cannot define the notion of an observer infinitely far from the Big Bang.
 We can also see that Birkhoff's theorem does not prohibit the Big Bang, because
 cosmological models are not vacuum solutions with $\Lambda=0$. Black string
 solutions are not ruled out by Birkhoff's theorem because they would lack spherical symmetry,
-so we need the arguments given on p.~\pageref{sec:schwarzschild-d-dimensions} to show that they don't exist.\index{black string}
-<% end_sec %> % Birkhoff's theorem
+so we need the arguments given on 
+p.~\pageref{sec:schwarzschild-d-dimensions} to show that they don't exist.\index{black string}
+
+We saw on pp.~\pageref{singularity-dim-elementary} and \pageref{boundary-constructions} that
+there is no clearly defined way to treat a singularity as a geometrical object, and that this
+ambiguity extends even to such seemingly straightforward questions as how many dimensions it has.
+Geometrically, as Gertrude Stein said about Oakland, there's ``no there there.''\label{no-there-there}
+We could also ask whether a black hole singularity has any \emph{physical properties}.
+If so, then the no-hair theorems would limit the list of such properties to at most three.
+But we cannot ascribe these properties to the singularity itself.
+Rather, they are properties of some large region of the spacetime, measurable by an observer at
+asymptotic infinity. Such an observer cannot say whether a black hole's mass is a property of
+the singularity; she cannot even say whether the singularity exists ``now.'' In this sense
+a black hole singularity is not an ``it.'' Asking about ``its'' properties is like asking what
+time it is when the tip of the minute hand is at the center
+of the clock. The dial only exists around the circumference of the circle, not at its center.
+<% end_sec('no-hair') %>
+
 
 <% begin_sec("The gravitational potential") %>
 When Pound and Rebka made the first observation of gravitational redshifts, these shifts were
