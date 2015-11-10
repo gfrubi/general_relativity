@@ -316,7 +316,7 @@ oscillatory plane wave solution to the field equations.
 
 Our best solution so far was of the form
 \begin{equation*}
-  \der s^2 = \der t^2 - \left(1+f\right)\der x^2 - \frac{\der y^2}{1+f} - \der z^2 \qquad ,
+  \der s^2 = \der t^2 - \left(1+f\right)\der x^2 - \frac{\der y^2}{1+f} - \der z^2\eqquad,
 \end{equation*}
 where $f=A\sin (z-t)$. This doesn't seem likely to be an exact solution for large amplitudes, since
 the $x$ and $y$ coordinates are treated asymmetrically. In the extreme case of $|A| \ge 1$, there
@@ -360,7 +360,7 @@ solution (problem \ref{hw:real-exponential}).
 \begin{eg}{An exact, oscillatory, non-monochromatic solution}\label{eg:rindler-pq}
 Assume a metric of the form
 \begin{equation*}
-  \der s^2 = \der t^2 - p(z-t)^2\der x^2 - q(z-t)^2\der y^2 - \der z^2 \qquad ,
+  \der s^2 = \der t^2 - p(z-t)^2\der x^2 - q(z-t)^2\der y^2 - \der z^2\eqquad,
 \end{equation*}
 where $p$ and $q$ are arbitrary functions. Such a metric would clearly represent
 some kind of transverse-polarized plane wave traveling at velocity $c(=1)$ in the $z$ direction.
@@ -387,7 +387,7 @@ $2\pi$ (problem \ref{hw:rindler-pq}).
 \begin{eg}{An exact, plane, monochromatic wave}\label{eg:exact-plane}
 Any metric of the form
 \begin{equation*}
-  \der s^2 = (1-h)\der t^2 - \der x^2 - \der y^2 - (1+h)\der z^2 +2h\der z\der t \qquad ,
+  \der s^2 = (1-h)\der t^2 - \der x^2 - \der y^2 - (1+h)\der z^2 +2h\der z\der t\eqquad,
 \end{equation*}
 where $h=f(z-t)xy$, and $f$ is any function, is an exact solution of the field equations (problem \ref{hw:exact-plane}).
 
@@ -483,7 +483,7 @@ that the radiated power should depend on $(m/r)^5$.
 Reinserting the proper constants to give an equation that allows practical calculation
 in SI units, we have
 \begin{equation*}
-  P = k \frac{G^4}{c^5} \left(\frac{m}{r}\right)^5 \qquad ,
+  P = k \frac{G^4}{c^5} \left(\frac{m}{r}\right)^5\eqquad,
 \end{equation*}
 where $k$ is a unitless constant of order unity.
 

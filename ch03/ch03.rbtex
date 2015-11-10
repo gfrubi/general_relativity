@@ -667,7 +667,7 @@ surfaces, they will not form an orthonormal set. We would like to have an expres
 $\der s^2=\Sigma\der x^\mu \der x_\mu$ for the squared arc length, and using the Einstein summation
 notation this becomes
 \begin{equation*}
-  \der s^2=\der x^\mu \der x_\mu \qquad .
+  \der s^2=\der x^\mu \der x_\mu\eqquad.
 \end{equation*}
 
 <% begin_sec("The Euclidean metric") %>
@@ -693,7 +693,7 @@ only the covariant quantities occur. By local flatness, the relationship between
 contravariant vectors is linear, and the most general relationship of this kind is given by making
 the metric a symmetric matrix $g_{\mu\nu}$. Substituting $\der x_\mu=g_{\mu\nu}x^\nu$, we have
 \begin{equation*}
-  \der s^2=g_{\mu\nu} \der x^\mu \der x^\nu \qquad ,
+  \der s^2=g_{\mu\nu} \der x^\mu \der x^\nu\eqquad,
 \end{equation*}
 where there are now implied sums over both $\mu$ and $\nu$. Notice how implied sums occur only when
 the repeated index occurs once as a superscript and once as a subscript; other combinations are
@@ -757,7 +757,7 @@ coordinate system. To make it clear when this is happening, we maintain the dist
 Latin indices and concrete Greek indices introduced on p.~\pageref{abstract-index-notation}.
 For example, we can write the general expression for squared differential arc length with Latin indices,
 \begin{equation*}
-  \der s^2=g_{ij} \der x^i \der x^j \qquad ,
+  \der s^2=g_{ij} \der x^i \der x^j\eqquad,
 \end{equation*}
 because it holds regardless of the coordinate system, whereas the vanishing of the off-diagonal
 elements of the metric in Euclidean polar coordinates has to be written as $g_{\mu\nu}=0$ for $\mu \ne \nu$,
@@ -778,7 +778,7 @@ $\der x^2 = \der s \csc\phi$. We then have
 \begin{align*}
   \der s^2 &= g_{ij} \der x^i \der x^j \\
            &= \der s^2 (\cot^2\phi+\csc^2\phi-2g_{12}\cos\phi\csc\phi) \\
-  g_{12}   &= \cos\phi \qquad .
+  g_{12}   &= \cos\phi\eqquad.
 \end{align*}
 \end{eg}
 <% marg(50) %>
@@ -856,7 +856,7 @@ for raising and lowering indices follow directly from grammar. For example,
 \end{equation*}
 and
 \begin{equation*}
-  A_{ab} = g_{ac}g_{bd}A^{cd} \qquad .
+  A_{ab} = g_{ac}g_{bd}A^{cd}\eqquad.
 \end{equation*}
 \end{eg}
 
@@ -867,12 +867,12 @@ column vectors, but I don't find this worth memorizing.) What about matrices? A 
 a column vector gives another column vector, $\vc{q}=U\vc{p}$. Translating this into index-gymnastics
 notation, we have
 \begin{equation*}
-  q^a = U\indices{^\ldots_\ldots}p^b \qquad ,
+  q^a = U\indices{^\ldots_\ldots}p^b\eqquad,
 \end{equation*}
 where we want to figure out the correct placement of the indices on $U$. Grammatically, the only possible
 placement is
 \begin{equation*}
-  q^a = U\indices{^a_b}p^b \qquad .
+  q^a = U\indices{^a_b}p^b\eqquad.
 \end{equation*}
 This shows that the natural way to represent a column-vector-to-column-vector linear operator is
 as a rank-2 tensor with one upper index and one lower index.
@@ -903,7 +903,7 @@ It is not circles in the $(t,x)$ plane that are invariant, but light cones, and 
 by giving $g_{tt}$ and $g_{xx}$ opposite signs and equal absolute values. A lightlike vector $(t,x)$, with $t=x$, therefore
 has a magnitude of exactly zero,
 \begin{equation*}
-  s^2 = g_{tt}t^2+g_{xx}x^2 = 0 \qquad ,
+  s^2 = g_{tt}t^2+g_{xx}x^2 = 0\eqquad,
 \end{equation*}
 and this remains true after the Lorentz boost $(t,x) \rightarrow (\gamma t,\gamma x)$. It is a matter of convention
 which element of the metric to make positive and which to make negative. In this book, I'll use $g_{tt}=+1$ and $g_{xx}=-1$,
@@ -925,11 +925,11 @@ to consider the form in which one index is raised and one lowered. The metric it
 so let's see what happens when we compute the mixed form $g\indices{^a_b}$ from the lower-index form.
 In general, we have
 \begin{equation*}
-  A\indices{^a_b} = g^{ac}A_{cb} \qquad ,
+  A\indices{^a_b} = g^{ac}A_{cb}\eqquad,
 \end{equation*}
 and substituting $g$ for $A$ gives
 \begin{equation*}
-  g\indices{^a_b} = g^{ac}g_{cb} \qquad .
+  g\indices{^a_b} = g^{ac}g_{cb}\eqquad.
 \end{equation*}
 But we already know that $g^{\ldots}$ is simply the inverse matrix of $g_{\ldots}$ (example \ref{eg:inverse-of-metric},
 p.~\pageref{eg:inverse-of-metric}), which means that $g\indices{^a_b}$ is simply the identity matrix. 
@@ -989,7 +989,7 @@ the Euclidean isometries are locally valid as a description of geometry on the E
 \begin{eg}{The triangle inequality}\index{triangle inequality}
 In Euclidean geometry, the triangle inequality $|\vc{b}+\vc{c}|<|\vc{b}|+|\vc{c}|$ follows from
 \begin{equation*}
- (|\vc{b}|+|\vc{c}|)^2-(\vc{b}+\vc{c})\cdot(\vc{b}+\vc{c})=2(|\vc{b}||\vc{c}|-\vc{b}\cdot\vc{c}) \ge 0  \qquad .
+ (|\vc{b}|+|\vc{c}|)^2-(\vc{b}+\vc{c})\cdot(\vc{b}+\vc{c})=2(|\vc{b}||\vc{c}|-\vc{b}\cdot\vc{c}) \ge 0\eqquad.
 \end{equation*}
 The reason this quantity always comes out positive is that for two vectors of fixed magnitude, the
 greatest dot product is always achieved in the case where they lie along the same direction.
@@ -1122,11 +1122,11 @@ by applying the change of coordinates $\theta'=\theta-\omega t$.
 First we take the Euclidean metric of example \ref{eg:metric-in-polar-coords} on page \pageref{eg:metric-in-polar-coords} and rewrite it as
 a (globally) Lorentzian metric in spacetime for observer B,
 \begin{equation}
-  \der s^2=\der t^2 - \der r^2 - r^2\der \theta^2 \qquad .
+  \der s^2=\der t^2 - \der r^2 - r^2\der \theta^2\eqquad.
 \end{equation}
 Applying the transformation into A's coordinates, we find
 \begin{equation}\label{eq:rotating-lab-metric}
-  \der s^2=(1-\omega^2 r^2)\der t^2 - \der r^2 - r^2\der \theta'^2 - 2\omega r^2\der\theta'\der t \qquad .
+  \der s^2=(1-\omega^2 r^2)\der t^2 - \der r^2 - r^2\der \theta'^2 - 2\omega r^2\der\theta'\der t\eqquad.
 \end{equation}
 %%%%%%%%% See carousel1.mac. Checked that it comes out flat.
 Recognizing $\omega r$ as the velocity of one frame relative to another, and
@@ -1158,7 +1158,7 @@ is at rest relative to the rotating disk?
 A trick for improving the situation is to eliminate the $\der\theta'\der t$ cross-term by
 completing the square in the metric [\ref{eq:rotating-lab-metric}]. The result is
 \begin{equation*}
-  \der s^2=(1-\omega^2 r^2)\left[\der t+\frac{\omega r^2}{1-\omega^2 r^2}\der\theta'\right]^2 - \der r^2 - \frac{r^2}{1-\omega^2r^2}\der \theta'^2  \qquad .
+  \der s^2=(1-\omega^2 r^2)\left[\der t+\frac{\omega r^2}{1-\omega^2 r^2}\der\theta'\right]^2 - \der r^2 - \frac{r^2}{1-\omega^2r^2}\der \theta'^2\eqquad.
 \end{equation*}
 The interpretation of the quantity in square brackets is as follows. Suppose that two observers situate themselves on the
 edge of the disk, separated by an infinitesimal angle $\der\theta'$. They then synchronize their clocks by exchanging
@@ -1170,7 +1170,7 @@ square brackets is the same in both cases, so the amount by which the clocks mus
 \end{equation*}
 Substituting this into the metric, we are left with the purely spatial metric
 \begin{equation}\label{eq:rotating-spatial}
-  \der s^2= - \der r^2 - \frac{r^2}{1-\omega^2r^2}\der \theta'^2  \qquad .
+  \der s^2= - \der r^2 - \frac{r^2}{1-\omega^2r^2}\der \theta'^2\eqquad.
 \end{equation}
 The factor of
 $(1-\omega^2r^2)^{-1}=\gamma^2$ in the $\der \theta'^2$ term is simply the expected Lorentz-contraction factor.
@@ -1190,7 +1190,7 @@ the speed of the disk becomes equal to the speed of light.
 
 It might appear that we could now define a global coordinate
 \begin{equation*}
-  T = t + \frac{\omega r^2}{1-\omega^2 r^2}\theta'  \qquad ,
+  T = t + \frac{\omega r^2}{1-\omega^2 r^2}\theta'\eqquad,
 \end{equation*}
 interpreted as a time coordinate that was synchronized in
 a consistent way for all points on the disk. The trouble with this interpretation becomes evident when we

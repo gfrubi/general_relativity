@@ -52,7 +52,7 @@ Given these difficulties, it's not surprising that Einstein's first attempt at i
 his field equation was a dead end. He postulated that the field equation would have the Ricci tensor on
 one side, and the stress-energy tensor $T^{ab}$ (page \pageref{sec:energy-momentum-tensor}) on the other,
 \begin{equation*}
-  R_{ab} = 8\pi T_{ab} \qquad ,
+  R_{ab} = 8\pi T_{ab}\eqquad,
 \end{equation*}
 where a factor of $G/c^4$ on the right is suppressed by our choice of units, and the $8\pi$ is determined on
 the basis of consistency with Newtonian gravity in the limit of weak fields and low velocities. The problem
@@ -82,7 +82,7 @@ are those in which the traces $R=R\indices{^a_a}$ and $T=T\indices{^a_a}$ are co
 The solution is to replace $R_{ab}$ in the field equations with a different tensor $G_{ab}$, called the
 Einstein tensor,\index{Einstein tensor} defined by $G_{ab}=R_{ab}-(1/2)Rg_{ab}$,\index{Einstein field equation}\index{field equation, Einstein}\label{einstein-field-equation}
 \begin{equation*}
-  G_{ab} = 8\pi T_{ab} \qquad .
+  G_{ab} = 8\pi T_{ab}\eqquad.
 \end{equation*}
 The Einstein tensor is constructed exactly so that it is divergence-free, $\nabla_b G^{ab}=0$. (This is not obvious,
 but can be proved by direct computation.) Therefore any stress-energy tensor that satisfies the field equation
@@ -122,7 +122,7 @@ T\indices{^\mu^\nu} \propto \left( \begin{matrix}
                    1/c & 1/c^2 & 1/c^2 & 1/c^2 \\
                    1/c & 1/c^2 & 1/c^2 & 1/c^2 \\
                    1/c & 1/c^2 & 1/c^2 & 1/c^2
-      \end{matrix} \right) \qquad .
+      \end{matrix} \right)\eqquad.
 \end{equation*}
 In the limit of $c\rightarrow\infty$, we can therefore take the only source of gravitational fields
 to be $T\indices{^t^t}$, which in Newtonian gravity must be the mass density $\rho$, so
@@ -132,7 +132,7 @@ T\indices{^\mu^\nu} = \left( \begin{matrix}
                    0 & 0 & 0 & 0 \\
                    0 & 0 & 0 & 0 \\
                    0 & 0 & 0 & 0    
-      \end{matrix} \right) \qquad .
+      \end{matrix} \right)\eqquad.
 \end{equation*}
 Under a Lorentz boost by $ v $ in the $x$ direction, the tensor transformation law gives
 \begin{equation*}
@@ -141,7 +141,7 @@ T\indices{^{\mu'}^{\nu'}} = \left( \begin{matrix}
                    \gamma^2 v \rho & \gamma^2 v ^2\rho & 0 & 0 \\
                    0 & 0 & 0 & 0 \\
                    0 & 0 & 0 & 0    
-      \end{matrix} \right) \qquad .
+      \end{matrix} \right)\eqquad.
 \end{equation*}
 The over-all factor of $\gamma^2$ arises because of the combination of two effects:
 each dust particle's mass-energy is increased by a factor of $\gamma$, and length contraction also
@@ -153,7 +153,7 @@ T\indices{^{\mu'}^{\nu'}} \approx \left( \begin{matrix}
                     v \rho & 0 & 0 & 0 \\
                    0 & 0 & 0 & 0 \\
                    0 & 0 & 0 & 0    
-      \end{matrix} \right) \qquad .
+      \end{matrix} \right)\eqquad.
 \end{equation*}
 
 This motivates the interpretation of the time-space components of $T$ as the flux of mass-energy
@@ -193,7 +193,7 @@ adopt a frame of reference in which the center of mass is at rest at $x=0$.
 Since $T^{tt}$ is interpreted as the density of mass-energy, the position of the center of mass must
 be given by
 \begin{equation*}
-  0=\int x T^{tt} \der x \qquad .
+  0=\int x T^{tt} \der x\eqquad.
 \end{equation*}
 By analogy with the Newtonian
 relation $p_{tot}=Mv_{cm}$, let's see what happens when we differentiate with respect to time.
@@ -202,7 +202,7 @@ $0=\der x_{cm}/\der t=\int \partial_t T^{tt} x \der x$. Applying the
 divergence-free property $\partial_t T^{tt}+\partial_x T^{tx}=0$, this becomes 
 $0=-\int \partial_x T^{tx} x \der x$. Integration by parts gives us finally
 \begin{equation*}
-  0 = \int T^{tx} \der x \qquad .
+  0 = \int T^{tx} \der x\eqquad.
 \end{equation*}
 We've already interpreted $T^{tx}$ as the rate of flow of mass-energy,
 which is another way of describing momentum. We can therefore interpret
@@ -372,7 +372,7 @@ nonstandard coupling to pressure, $\zeta_3$ to internal energy, and $\zeta_1$ to
 models agree with perfect-fluid models, one obtains $(-2/3)\zeta_1=\zeta_3=-\zeta_4=x$.} Will considers a model consisting of
 pointlike particles interacting through static electrical forces, and shows that for such a system,
 \begin{equation*}
-  m_a = m_p + \frac{1}{2}x U_e \qquad ,
+  m_a = m_p + \frac{1}{2}x U_e\eqquad,
 \end{equation*}
 where $U_e$ is the electrical energy. The Kreuzer experiment then requires $|x| < 6\times 10^{-2}$, meaning that
 pressure does contribute to gravitational fields as predicted by general relativity, to within a precision of 6\%.
@@ -493,7 +493,7 @@ We conclude this introduction to the stress-energy tensor with some illustrative
 \begin{eg}{A perfect fluid}\label{eg:perfect-fluid-tensorial}
 For a perfect fluid, we have
 \begin{equation*}
-  T_{ab}=(\rho+P)v_a v_b -s Pg_{ab} \qquad ,
+  T_{ab}=(\rho+P)v_a v_b -s Pg_{ab}\eqquad,
 \end{equation*}
 where $s=1$ for our $+---$ signature or $-1$ for the signature $-+++$, and
 $v$ represents the coordinate velocity of the fluid's rest frame.
@@ -506,7 +506,7 @@ The various forms of the stress-energy tensor then look like the following:
 \begin{align*}
   T_{00} = A^2\rho   \quad & \quad T_{11} = B^2 P \\
   T\indices{^0_0} = s\rho   \quad & \quad T\indices{^1_1} = - sP \\
-  T^{00} = A^{-2}\rho   \quad & \quad T^{11} = B^{-2} P \qquad .
+  T^{00} = A^{-2}\rho   \quad & \quad T^{11} = B^{-2} P\eqquad.
 \end{align*}
 \end{eg}
 
@@ -520,7 +520,7 @@ quantum gravity.\footnote{Brown, ``Tensile Strength and the Mining of Black Hole
 
 The Schwarzschild metric (p.~\pageref{exact-schwarzschild-formula}) is
 \begin{equation*}
-  ds^2 = f^2 \der t^2 - f^{-2}\der r^2 + \ldots \qquad ,
+  ds^2 = f^2 \der t^2 - f^{-2}\der r^2 + \ldots\eqquad,
 \end{equation*}
 where $f=(1-2m/r)^{1/2}$, and $\ldots$ represents angular terms. We will end up needing the following
 Christoffel symbols:
@@ -545,7 +545,7 @@ The results of example \ref{eg:perfect-fluid-tensorial} show that the mixed-inde
 be the most convenient, since it can be expressed without messy factors of $f$.
 We have
 \begin{equation*}
-  T\indices{^\kappa_\nu} = \operatorname{diag}(\rho,S,0,0) = r^{-2}\operatorname{diag}(\mu,T,0,0) \qquad .
+  T\indices{^\kappa_\nu} = \operatorname{diag}(\rho,S,0,0) = r^{-2}\operatorname{diag}(\mu,T,0,0)\eqquad.
 \end{equation*}
 By writing the stress-energy tensor in this form, which is independent of $t$, we have assumed static
 equilibrium outside the event horizon. \emph{Inside} the horizon, the $r$ coordinate is the timelike one,
@@ -555,12 +555,12 @@ given on p.~\pageref{eg:newtonian-black-hole}.
 Conservation of energy is automatically satisfied, since there is no time dependence. Conservation of
 radial momentum is expressed by
 \begin{equation*}
-  \nabla_\kappa T\indices{^\kappa_r} = 0 \qquad ,
+  \nabla_\kappa T\indices{^\kappa_r} = 0\eqquad,
 \end{equation*}
 or
 \begin{equation*}
   0 = \nabla_r T\indices{^r_r} + \nabla_t T\indices{^t_r} 
-          + \nabla_\theta T\indices{^\theta_r} + \nabla_\phi T\indices{^\phi_r}   \qquad .
+          + \nabla_\theta T\indices{^\theta_r} + \nabla_\phi T\indices{^\phi_r}\eqquad.
 \end{equation*}
 It would be tempting to throw away all but the first term, since $T$ is diagonal, and therefore
 $T\indices{^t_r}=T\indices{^\theta_r}=T\indices{^\phi_r}=0$.
@@ -570,11 +570,11 @@ the symbol being differentiated vanishes identically. Writing out these four ter
   0 = &\partial_r T\indices{^r_r} + \Gamma\indices{^r_r_r}T\indices{^r_r}- \Gamma\indices{^r_r_r}T\indices{^r_r} \\
       +& \Gamma\indices{^t_t_r}T\indices{^r_r}       - \Gamma\indices{^t_t_r}T\indices{^t_t} \\
       +& \Gamma\indices{^\theta_\theta_r}T\indices{^r_r} \\
-      +& \Gamma\indices{^\phi_\phi_r}T\indices{^r_r} \qquad ,
+      +& \Gamma\indices{^\phi_\phi_r}T\indices{^r_r}\eqquad,
 \end{align*}
 where each line corresponds to one covariant derivative. Evaluating this, we have
 \begin{align*}
-  0 = T' + \frac{f'}{f}T - \frac{f'}{f}\mu \qquad ,
+  0 = T' + \frac{f'}{f}T - \frac{f'}{f}\mu\eqquad,
 \end{align*}
 where primes denote differentiation with respect to $r$. Note that since no terms of the
 form $\partial_rT\indices{^t_t}$ occur, this expression is valid regardless of whether we take $\mu$ to
@@ -590,7 +590,7 @@ Let's check the Newtonian limit, where the gravitational field is $g$ and the po
 In this limit, we have
 $f\approx 1-\Phi$, $f'/f\approx g$ (with $g>0$), and $\mu\gg T$, resulting in
 \begin{equation*}
-  0 = T' - g\mu \qquad .
+  0 = T' - g\mu\eqquad.
 \end{equation*}
 which is the expected Newtonian relation.
 
@@ -705,14 +705,14 @@ along the $x$ axis gave a stress-energy tensor
 T\indices{_{\mu}_{\nu}} = \gamma^2\rho \left( \begin{matrix}
                     1 &  v  \\
                     v  &  v^2 
-      \end{matrix} \right) \qquad ,
+      \end{matrix} \right)\eqquad,
 \end{equation*}
 where we now suppress the $y$ and $z$ parts, which vanish. For $v\rightarrow 1$, this becomes
 \begin{equation*}
 T\indices{_{\mu}_{\nu}} = \rho' \left( \begin{matrix}
                    1 & 1 \\
                    1 & 1
-      \end{matrix} \right) \qquad ,
+      \end{matrix} \right)\eqquad,
 \end{equation*}
 where $\rho'$ is the energy density as measured in the new frame.
 As a source of gravitational fields, this ultrarelativistic dust is indistinguishable from any other form
@@ -736,7 +736,7 @@ a stress-energy tensor that (ignoring multiplicative constants) looks like:
 \left( \begin{matrix}
                     1 &  1+\epsilon  \\
                     1+\epsilon  &  1+2\epsilon
-      \end{matrix} \right) \qquad .
+      \end{matrix} \right)\eqquad.
 \end{equation*}
 
 If $\epsilon$ is negative, we have ultrarelativistic dust, and we can verify that it satisfies the DEC
@@ -808,7 +808,7 @@ Now suppose we're presented with this stress-energy tensor, measured at a single
 T\indices{^{\mu}^{\nu}} = \left( \begin{matrix}
                    4.037\pm0.002 & 4.038\pm0.002 \\
                    4.036\pm0.002 & 4.036\pm0.002
-      \end{matrix} \right) \qquad .
+      \end{matrix} \right)\eqquad.
 \end{equation*}
 To within the experimental error bars, it has the right form to be many different things: 
 (1) We could have a universe filled with perfectly uniform dust, moving along the $x$ axis at some ultrarelativistic
@@ -1126,7 +1126,7 @@ constrain $c_2$ to be $\lesssim 10^{-8}$.
 One way in which we \emph{can} change the field equation without violating any of these 
 requirements is to add a term $\Lambda g_{ab}$, giving
 \begin{equation*}
-  G_{ab} = 8\pi T_{ab} + \Lambda g_{ab} \qquad ,
+  G_{ab} = 8\pi T_{ab} + \Lambda g_{ab}\eqquad,
 \end{equation*}
 which is what we will refer to as the Einstein field
 equation.\footnote{In books that use a $-+++$ metric rather then our
@@ -1367,11 +1367,11 @@ field equation in which the properties of space are homogeneous and isotropic,
 but the over-all scale of space is increasing as described by some scale function $a(t)$. Because of
 coordinate invariance, the metric can still be written in a variety of forms. One such form is
 \begin{equation*}
-  \der s^2 = \der t^2 - a(t)^2\der\ell^2 \qquad ,
+  \der s^2 = \der t^2 - a(t)^2\der\ell^2\eqquad,
 \end{equation*}
 where the spatial part is
 \begin{equation*}
-  \der\ell^2 = f(r)\der r^2 + r^2 \der\theta^2 + r^2 \sin^2\theta \der\phi^2 \qquad .
+  \der\ell^2 = f(r)\der r^2 + r^2 \der\theta^2 + r^2 \sin^2\theta \der\phi^2\eqquad.
 \end{equation*}
 
 To interpret the coordinates, we note that if an observer is able to determine the functions $a$ and $f$ for her universe,
@@ -1420,7 +1420,7 @@ The result is $f=1/(1-kr^2)$, where $k=-1$, 0, or 1.
 
 The resulting metric, called the Robertson-Walker metric, is
 \begin{equation*}
-  \der s^2 = \der t^2 - a^2\left(\frac{\der r^2}{1-kr^2} + r^2 \der\theta^2 + r^2 \sin^2\theta \der\phi^2\right) \qquad .
+  \der s^2 = \der t^2 - a^2\left(\frac{\der r^2}{1-kr^2} + r^2 \der\theta^2 + r^2 \sin^2\theta \der\phi^2\right)\eqquad.
 \end{equation*}
 
 The form of $\der\ell^2$ shows us that $k$ can be interpreted
@@ -1491,7 +1491,7 @@ einstein(true);
 The result is
 \begin{align*}
   G\indices{^t_t} &= 3\left(\frac{\dot{a}}{a}\right)^2 + 3ka^{-2} \\
-  G\indices{^r_r} = G\indices{^\theta_\theta} = G\indices{^\phi_\phi} &= 2\frac{\ddot{a}}{a} + \left(\frac{\dot{a}}{a}\right)^2 + ka^{-2} \qquad ,
+  G\indices{^r_r} = G\indices{^\theta_\theta} = G\indices{^\phi_\phi} &= 2\frac{\ddot{a}}{a} + \left(\frac{\dot{a}}{a}\right)^2 + ka^{-2}\eqquad,
 \end{align*}
 where dots indicate differentiation with respect to time.
 
@@ -1503,12 +1503,12 @@ example \ref{eg:perfect-fluid-tensorial} on p.~\pageref{eg:perfect-fluid-tensori
 Substituting into $G\indices{^a_b}=8\pi T\indices{^a_b}+\Lambda g\indices{^a_b}$, we find
 \begin{align*}
   3\left(\frac{\dot{a}}{a}\right)^2 + 3ka^{-2} - \Lambda                     &= 8\pi\rho \\
-  2\frac{\ddot{a}}{a} + \left(\frac{\dot{a}}{a}\right)^2 + ka^{-2} - \Lambda &= -8\pi P \qquad .
+  2\frac{\ddot{a}}{a} + \left(\frac{\dot{a}}{a}\right)^2 + ka^{-2} - \Lambda &= -8\pi P\eqquad.
 \end{align*}
 Rearranging a little, we have a set of differential equations known as the Friedmann equations,\index{Friedmann equations}
 \begin{align*}
   \frac{\ddot{a}}{a}   \quad          &= \frac{1}{3}\Lambda - \frac{4\pi}{3}(\rho+3P) \\
-  \left(\frac{\dot{a}}{a}\right)^2    &= \frac{1}{3}\Lambda + \frac{8\pi}{3}\rho-k a^{-2} \qquad .
+  \left(\frac{\dot{a}}{a}\right)^2    &= \frac{1}{3}\Lambda + \frac{8\pi}{3}\rho-k a^{-2}\eqquad.
 \end{align*}\label{friedmann-equations}
 
 % This now checks out against Carroll, \url{http://nedwww.ipac.caltech.edu/level5/March01/Carroll3/Carroll8.html }, except for the
@@ -2027,12 +2027,12 @@ The latest data show that our universe, in the present epoch, is dominated by th
 so as an approximation we can write the Friedmann equations as
 \begin{align*}
   \frac{\ddot{a}}{a}   \quad          &= \frac{1}{3}\Lambda  \\
-  \left(\frac{\dot{a}}{a}\right)^2    &= \frac{1}{3}\Lambda  \qquad .
+  \left(\frac{\dot{a}}{a}\right)^2    &= \frac{1}{3}\Lambda\eqquad.
 \end{align*}
 This is referred to as a vacuum-dominated universe.
 The solution is
 \begin{equation*}
-  a = \exp\left[\sqrt{\frac{\Lambda}{3}} \: t\right] \qquad ,
+  a = \exp\left[\sqrt{\frac{\Lambda}{3}} \: t\right]\eqquad,
 \end{equation*}
 where observations show that $\Lambda\sim 10^{-26}\ \kgunit/\munit^3$, giving $\sqrt{3/\Lambda}\sim 10^{11}$ years.
 
@@ -2066,7 +2066,7 @@ radiation). It does not, however, imply that the universe is static in the
 sense that had been assumed until Hubble's observations.
 The $r$-$t$ part of the metric is
 \begin{equation*}
-  \der s^2 = \der t^2 - a^2 \der r^2 \qquad ,
+  \der s^2 = \der t^2 - a^2 \der r^2\eqquad,
 \end{equation*}
 where $a$ blows up exponentially with time, and the $k$-dependence has been
 neglected, as it was in the approximation to the Friedmann equations
@@ -2098,7 +2098,7 @@ In this example we confirm the above interpretation in the special case where th
 than being released in motion at the origin, is released at some nonzero radius $r$, with $\der r/\der t=0$ initially.
 First we recall the geodesic equation
 \begin{equation*}
-  \frac{\der^2 x^i}{\der\lambda^2} = \Gamma\indices{^i_{jk}} \frac{\der x^j}{\der\lambda} \frac{\der x^k}{\der\lambda} \qquad .
+  \frac{\der^2 x^i}{\der\lambda^2} = \Gamma\indices{^i_{jk}} \frac{\der x^j}{\der\lambda} \frac{\der x^k}{\der\lambda}\eqquad.
 \end{equation*}
 from page \pageref{geodesic-diffeq}. The nonvanishing Christoffel symbols for the 1+1-dimensional metric 
 $\der s^2 = \der t^2 - a^2 \der r^2$ are $\Gamma\indices{^r_{tr}}=\dot{a}/a$ and $\Gamma\indices{^t_{rr}}=\dot{a}a$.
@@ -2203,7 +2203,7 @@ epoch, in which the cosmological constant was negligible compared to the materia
 The equation of state
 for nonrelativistic matter (p. \pageref{eg:dust-and-radiation-cosm}) is
 \begin{equation*}
- P=0 \qquad .
+ P=0\eqquad.
 \end{equation*}
 The dilution of the dust with cosmological expansion gives
 \begin{equation*}
@@ -2212,7 +2212,7 @@ The dilution of the dust with cosmological expansion gives
 (see example \ref{eg:dust-dilution}). The Friedmann equations become
 \begin{align*}
   \frac{\ddot{a}}{a}   \quad          &=  - \frac{4\pi}{3}\rho \\
-  \left(\frac{\dot{a}}{a}\right)^2    &= \frac{8\pi}{3}\rho-k a^{-2} \qquad ,
+  \left(\frac{\dot{a}}{a}\right)^2    &= \frac{8\pi}{3}\rho-k a^{-2}\eqquad,
 \end{align*}
 where for compactness $\rho$'s dependence on $a$, with some constant of proportionality, is not shown explicitly.
 A static solution, with constant $a$, is impossible, and $\ddot{a}$ is negative, which we can interpret in Newtonian
@@ -2248,7 +2248,7 @@ Let the constant of proportionality in the equation of state $\rho \propto a^{-3
 $-4\pi\rho/3=-ca^{-3}$. The Friedmann equations are
 \begin{align*}
   \ddot{a} &= -ca^{-2} \\
-  \dot{a} &= \sqrt{2c} a^{-1/2} \qquad .
+  \dot{a} &= \sqrt{2c} a^{-1/2}\eqquad.
 \end{align*}
 Looking for a solution of the form $a\propto t^p$, we find that by choosing $p=2/3$ we can simultaneously
 satisfy both equations. The constant $c$ is also fixed, and we can investigate this most transparently
@@ -2342,7 +2342,7 @@ by explicit calculation.
 Local conservation of mass-energy is expressed by the zero divergence of the stress-energy tensor,
 $\nabla_jT^{jb}=0$. The definition of the covariant derivative gives
 \begin{equation*}
-  \nabla_j T^{bc} = \partial_j T^{bc}+\Gamma^b_{jd}T^{dc}+\Gamma^c_{jd}T^{bd} \qquad .
+  \nabla_j T^{bc} = \partial_j T^{bc}+\Gamma^b_{jd}T^{dc}+\Gamma^c_{jd}T^{bd}\eqquad.
 \end{equation*}
 For convenience, we carry out the calculation at $r=0$; if conservation holds here, then it holds everywhere
 by homogeneity.
@@ -2354,11 +2354,11 @@ mix $t$ or $t'$ with the other coordinates, so by the tensor transformation law 
 There are a number of Christoffel symbols involved, but the only three of relevance that don't vanish at
 $r=0$ turn out to be $\Gamma^r_{rt}=\Gamma^\theta_{\theta t}=\Gamma^\phi_{\phi t}=\dot{a}/a$. The result is
 \begin{equation*}
-  \nabla_\mu T^{t\mu} = \partial_tT^{tt}+3\frac{\dot{a}}{a} T^{tt} \qquad ,
+  \nabla_\mu T^{t\mu} = \partial_tT^{tt}+3\frac{\dot{a}}{a} T^{tt}\eqquad,
 \end{equation*}
 or $\dot{\rho}/\rho=-3\dot{a}/a$, which can be rewritten as
 \begin{equation*}
-  \frac{\der}{\der t} \ln\rho = -3 \frac{\der}{\der t} \ln a \qquad ,
+  \frac{\der}{\der t} \ln\rho = -3 \frac{\der}{\der t} \ln a\eqquad,
 \end{equation*}
 producing the proportionality originally claimed.
 \end{eg}
@@ -2491,12 +2491,12 @@ expansion by shrinking!
 
 The function $a(t)$, however, has to satisfy the Friedmann equations, one of which is (in units with $G \ne 1$)
 \begin{equation*}
-  \frac{\ddot{a}}{a} = G\left[\frac{1}{3}\Lambda - \frac{4\pi}{3}(\rho+3P)\right] \qquad .
+  \frac{\ddot{a}}{a} = G\left[\frac{1}{3}\Lambda - \frac{4\pi}{3}(\rho+3P)\right]\eqquad.
 \end{equation*}
 The present epoch of the universe seems to be well modeled by dark energy described by a constant $\Lambda$ plus
 dust with $P\ll \rho$. Differentiating both sides with respect to time gives
 \begin{equation*}
- \frac{\der}{\der t}\left(\frac{\ddot{a}}{a}\right) \propto \dot{\rho} \qquad ,
+ \frac{\der}{\der t}\left(\frac{\ddot{a}}{a}\right) \propto \dot{\rho}\eqquad,
 \end{equation*}
 with a negative constant of proportionality.
 This ensures that the sign of the effect is always as expected from the naive Manichean image of
@@ -2516,7 +2516,7 @@ $  r/r_\zu{o} = [M+(4\pi/3) \rho_\zu{o} r_\zu{o}^3]/[M+(4\pi/3) \rho r^3] $, whi
 in $ \dot{r}/r_o \approx -(4\pi/3) G \omega_o^{-2}\dot{\rho} $. Application of the Friedmann
 equations yields
 \begin{equation*}
-  \dot{r}/r_\zu{o} =  \omega_o^{-2} (d/dt)(\ddot{a}/a) \qquad ,
+  \dot{r}/r_\zu{o} =  \omega_o^{-2} (d/dt)(\ddot{a}/a)\eqquad,
 \end{equation*}
 which is valid generally, not just for $P=0$. The $\omega_o^{-2}$ factor shows that the effect is smaller
 for more tightly bound systems.
@@ -2831,7 +2831,7 @@ on its interior, as predicted by general relativity.
 Brans and Dicke were also able to calculate cosmological models, and in a typical model with a nearly spatially flat
 universe, they found $\phi$ would vary according to
 \begin{equation*}
-  \phi = 8\pi \frac{4+3\omega}{6+4\omega} \rho_o t_o^2 \left(\frac{t}{t_o}\right)^{2/(4+3\omega)} \qquad ,
+  \phi = 8\pi \frac{4+3\omega}{6+4\omega} \rho_o t_o^2 \left(\frac{t}{t_o}\right)^{2/(4+3\omega)}\eqquad,
 \end{equation*}
 where $\rho_o$ is the density of matter in the universe at time $t=t_o$.
 When the density of matter is small, $G$ is large, which has the same observational consequences as
@@ -3106,12 +3106,12 @@ one ``back to back'' to create a single solution on a single, connected manifold
 <% begin_hw('field-equations-parity') %>
 The Einstein field equations are
 \begin{equation*}
-  G_{ab} = 8\pi T_{ab} + \Lambda g_{ab} \qquad ,
+  G_{ab} = 8\pi T_{ab} + \Lambda g_{ab}\eqquad,
 \end{equation*}
 and when it is possible to adopt a frame of reference in which the local mass-energy is at rest on average,
 we can interpret the stress-energy tensor as
 \begin{equation*}
-  T\indices{^\mu_\nu}=\operatorname{diag}(-\rho,P,P,P) \qquad ,
+  T\indices{^\mu_\nu}=\operatorname{diag}(-\rho,P,P,P)\eqquad,
 \end{equation*}
 where $\rho$ is the mass-energy density and $P$ is the pressure.
 Fix some point as the origin of a local Lorentzian coordinate system.
@@ -3136,14 +3136,14 @@ Astrophysical Journal, 152 (1968) 25,\\ \url{http://articles.adsabs.harvard.edu/
 <% begin_hw('uniform-field-sources') %>\index{uniform gravitational field}\index{gravitational field!uniform}
 In problem \ref{hw:uniform-field} on page \pageref{hw:uniform-field}, we analyzed the properties of the metric
 \begin{equation*}
-  \der s^2 = e^{2gz}\der t^2-\der z^2 \qquad .
+  \der s^2 = e^{2gz}\der t^2-\der z^2\eqquad.
 \end{equation*}
 (a) In that problem we found that this metric had the same properties at all points in space.
 Verify in particular that it has the same scalar curvature $R$ at all points in space.\hwendpart
 (b) Show that this is a vacuum solution in the two-dimensional $(t,z)$ space.\hwendpart
 (c) Suppose we try to generalize this metric to four dimensions as
 \begin{equation*}
-\der s^2 = e^{2gz}\der t^2-\der x^2 - \der y^2 - \der z^2 \qquad .
+\der s^2 = e^{2gz}\der t^2-\der x^2 - \der y^2 - \der z^2\eqquad.
 \end{equation*}
 Show that this requires an Einstein tensor with unphysical  properties.\hwendpart
 \hwsoln

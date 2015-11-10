@@ -28,7 +28,7 @@ that defines the time-translation symmetry, and it is conventional to split this
 two factors, a finite vector field
 $\boldsymbol{\xi}$ and an infinitesimal scalar, so that the displacement vector is
 \begin{equation*}
-  \boldsymbol{\xi}\der t = (1,0,0,0)\der t \qquad .
+  \boldsymbol{\xi}\der t = (1,0,0,0)\der t\eqquad.
 \end{equation*}
 Such a field is called a Killing vector field, or simply a Killing
 vector, after Wilhelm Killing. When all the points in a space are displaced as specified by the Killing vector, they flow without expansion
@@ -67,7 +67,7 @@ set of these is is
 \begin{align*}
   \boldsymbol{\xi}_1 &= (1,0) \\
   \boldsymbol{\xi}_2 &= (0,1) \\
-  \boldsymbol{\xi}_3 &= (-y,x) \qquad .
+  \boldsymbol{\xi}_3 &= (-y,x)\eqquad.
 \end{align*}
 A theorem from classical geometry\footnote{Coxeter, \emph{Introduction to Geometry}, ch.~3} states that any transformation in the Euclidean plane that preserves distances
 and handedness can be expressed either as a translation or as a rotation about some point. The transformations that
@@ -117,7 +117,7 @@ ${\partial_0,\partial_1,\partial_2,\partial_3}$ form the basis for a vector spac
 In this notation,
 the Killing vector of the Schwarzschild metric we've been discussing can be notated simply as
 \begin{equation*}
-      \boldsymbol{\xi} =  \partial_t \qquad .
+      \boldsymbol{\xi} =  \partial_t\eqquad.
 \end{equation*}
 
 The partial derivative notation, like the infinitesimal notation, implicitly refers to continuous symmetries rather than discrete ones.
@@ -190,7 +190,7 @@ Killing vector \emph{field}, which is defined everywhere on the space.
 \egquestion Find all Killing vectors of these two metrics:
 \begin{align*}
 \der s^2 &= e^{-x}\der x^2+e^x\der y^2 \\
-\der s^2 &= \der x^2+x^2\der y^2 \qquad .
+\der s^2 &= \der x^2+x^2\der y^2\eqquad.
 \end{align*}
 
 \eganswer Since both metrics are manifestly independent of $y$, it follows that $\partial_y$ is a Killing vector for both of them.
@@ -243,7 +243,7 @@ Confusingly, it is customary to express vectors and dual vectors by summing over
 like this:\label{abuse-of-notation}
 \begin{align*}
   \vc{v} &= v^\mu \partial_\mu \\
-  \boldsymbol{\omega} &= \omega_\mu \der x^\mu \qquad .
+  \boldsymbol{\omega} &= \omega_\mu \der x^\mu\eqquad.
 \end{align*}
 This is an abuse of notation, driven by the desire to have up-down pairs of indices to sum
 according to the usual rules of the Einstein notation convention. But by that convention, a quantity like
@@ -848,7 +848,7 @@ between different times, and this can be done so as to keep the metric free of a
 The metric can therefore be written in the form\footnote{On the same surfaces referred to in the preceding footnote,
 the functions $h$ and $k$ may to go to 0 or $\infty$. These turn out to be nothing more serious than coordinate singularities.}
 \begin{equation*}
-  \der s^2 = h(t,r)\der t^2 - k(t,r)\der r^2 - r^2(\der\theta^2+\sin^2\theta \der\phi^2) \qquad .
+  \der s^2 = h(t,r)\der t^2 - k(t,r)\der r^2 - r^2(\der\theta^2+\sin^2\theta \der\phi^2)\eqquad.
 \end{equation*}
 This has to be a solution of the vacuum field equations, $R_{ab}=0$, and in particular a quick calculation
 with Maxima shows that $R_{rt}=-\partial_t k/k^2r$, so $k$ must be independent of time.
@@ -860,7 +860,7 @@ speeds up and slows down in unison. General relativity is coordinate-independent
 observable effects, and we can absorb it into a redefinition of $t$ that will cause $h$ to be time-independent. Thus the metric can be expressed
 in the time-independent diagonal form
 \begin{equation*}
-  \der s^2 = h(r)\der t^2 - k(r)\der r^2 - r^2(\der\theta^2+\sin^2\theta \der\phi^2) \qquad .
+  \der s^2 = h(r)\der t^2 - k(r)\der r^2 - r^2(\der\theta^2+\sin^2\theta \der\phi^2)\eqquad.
 \end{equation*}
 We have already solved the field equations for a metric of this
 form and found as a solution the Schwarzschild spacetime.\footnote{The Schwarzschild \emph{spacetime} is the uniquely
@@ -1000,7 +1000,7 @@ The 1+1-dimensional metric
 is the one that uniquely satisfies our expectations based on the equivalence principle (example \ref{eg:gps}, p.~\pageref{eg:gps}), and it is a vacuum solution.
 We might logically try to generalize this to 3+1 dimensions as follows:
 \begin{equation*}
-  \der s^2 = e^{2gz}\der t^2-\der x^2 - \der y^2 - \der z^2 \qquad .
+  \der s^2 = e^{2gz}\der t^2-\der x^2 - \der y^2 - \der z^2\eqquad.
 \end{equation*}
 But a funny thing happens now --- simply by slapping on the two new Cartesian axes $x$ and $y$, it turns out
 that we have made our vacuum solution into a non-vacuum solution, and not only that, but the
@@ -1033,7 +1033,7 @@ metric should have transverse spatial coefficients that decrease with height.
 
 With this motivation, let's consider a metric of the form
 \begin{equation*}
-  \der s^2 = e^{2z}\der t^2-e^{-2jz}\der x^2 - e^{-2kz}\der y^2 - \der z^2 \qquad ,
+  \der s^2 = e^{2z}\der t^2-e^{-2jz}\der x^2 - e^{-2kz}\der y^2 - \der z^2\eqquad,
 \end{equation*}
 where $j$ and $k$ are constants, and I've taken $g=1$ for convenience.\footnote{A metric of this general form is referred to as a Kasner
 metric. One usually sees it written with a logarithmic change of variables, so that $z$ appears in the base rather than

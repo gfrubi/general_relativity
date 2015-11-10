@@ -425,7 +425,7 @@ we'll commandeer the circle notation for that operation.\label{birdtracks-circle
 The dot product $\der W=\vc{F}\cdot\der\vc{x}$ for computing mechanical work becomes,
 in birdtracks notation,
 \begin{equation*}
-  \der W = __birdscalarproduct(F,\der x) \qquad .
+  \der W = __birdscalarproduct(F,\der x)\eqquad.
 \end{equation*}
 This shows that force is more naturally considered to be a dual vector rather than a vector.
 The symmetry between vectors and dual vectors is broken by considering displacements like
@@ -763,7 +763,7 @@ the other side of the diagonal, at $(\gamma,v\gamma)$. Computing the cross produ
 $\zu{P}'\zu{R}'$ and $\zu{P}'\zu{Q}'$, we find the area of $\zu{P}'\zu{Q}'\zu{R}'\zu{S}'$ to be $\gamma^2(1-v^2)$, and setting this equal
 to 1 gives
 \begin{equation*}
-  \gamma = \frac{1}{\sqrt{1-v^2}} \qquad .
+  \gamma = \frac{1}{\sqrt{1-v^2}}\eqquad.
 \end{equation*}
 <% marg(70) %>
 <%
@@ -901,7 +901,7 @@ due to $\Delta\Phi\ne 0$.
 Expanding the Lorentz gamma factor in a Taylor series, we find that the kinematic effect amounts to
 $\Delta t/t = \gamma-1\approx v^2/2$. The mismatch in rates between the two clocks is
 \begin{equation*}
-  \frac{\Delta t}{t} \approx \frac{1}{2}v^2 -\Delta\Phi \qquad ,
+  \frac{\Delta t}{t} \approx \frac{1}{2}v^2 -\Delta\Phi\eqquad,
 \end{equation*}
 where $\Delta\Phi=\Phi_{\text{equator}}-\Phi_{\text{pole}}$, and a factor of $1/c^2$ on the right is suppressed
 because $c=1$. But this expression for $\Delta t/t$ vanishes,
@@ -955,7 +955,7 @@ When $\Delta\Phi$ is small, $e^{\Delta\Phi}\approx 1+\Delta\Phi$, and we have a 
 equal to $\Delta\Phi$. The total effect for a GPS satellite is thus
 (inserting factors of $c$ for calculation with SI units, and using positive signs for blueshifts)
 \begin{equation*}
-  \frac{1}{c^2}\left(+\Delta\Phi-\frac{v^2}{2}\right) = 5.2\times10^{-10} - 0.9\times10^{-10} \qquad ,
+  \frac{1}{c^2}\left(+\Delta\Phi-\frac{v^2}{2}\right) = 5.2\times10^{-10} - 0.9\times10^{-10}\eqquad,
 \end{equation*}
 where the first term is gravitational and the second kinematic. A more detailed analysis includes various time-varying
 effects, but this is the constant part. For this reason, the atomic clocks aboard the satellites are set to
@@ -1210,7 +1210,7 @@ relativistically, we start by rewriting the Lorentz transformation as the matrix
     \sinh\eta & \cosh\eta
   \end{array}
   \right)
-  \qquad ,
+\eqquad,
 \end{equation*}
 where $\eta=\tanh^{-1} v$ is called the \emph{rapidity}.\index{rapidity}
 We are guaranteed that the matrix can be written in this form, because its area-preserving
@@ -1676,7 +1676,7 @@ $M$.
 
 In this notation, the hammer strikes can be represented by a series of four Lorentz boosts,
 \begin{equation*}
-  T = L(v\hat{\vc{x}}) \: L(v\hat{\vc{y}}) \: L(-v\hat{\vc{x}}) \: L(-v\hat{\vc{y}}) \qquad ,
+  T = L(v\hat{\vc{x}}) \: L(v\hat{\vc{y}}) \: L(-v\hat{\vc{x}}) \: L(-v\hat{\vc{y}})\eqquad,
 \end{equation*}
 where we assume that the square has negligible size,
 so that all four Lorentz boosts act in a way that preserves the origin of the coordinate systems. (We have no convenient way in
@@ -1755,7 +1755,7 @@ computation. The (\%o9) indicates that this is Maxima's output from the ninth an
 \end{listing}
 In other words,
 \begin{equation*}
-  T\left(\begin{array}{c}0 \\ 1 \\ 0\end{array}\right) = \left(\begin{array}{c}0 \\ 1 \\ -v^2\end{array}\right) + \ldots \qquad ,
+  T\left(\begin{array}{c}0 \\ 1 \\ 0\end{array}\right) = \left(\begin{array}{c}0 \\ 1 \\ -v^2\end{array}\right) + \ldots\eqquad,
 \end{equation*}
 where $\ldots$ represents higher-order terms in $v$.
 Suppose that we use the initial frame of reference, before $T$ is applied, to determine that
@@ -1940,7 +1940,7 @@ Over one full period of the motion, we have $\chi=\int k |\vc{a}\times\vc{v}| \d
 particle's velocity vector traces a circle of area $A=\pi v^2$ on the velocity disk. Equating $A$ and $\chi$, we
 find $k=1/2$. The result is that in the limit of low velocities, the rate of rotation is
 \begin{equation*}
- \boldsymbol{\Omega} \approx \frac{1}{2}\vc{a}\times\vc{v} \qquad ,
+ \boldsymbol{\Omega} \approx \frac{1}{2}\vc{a}\times\vc{v}\eqquad,
 \end{equation*}
 where $\boldsymbol{\Omega}$ is the angular velocity vector of the rotation.
 In the special case of circular motion, this can be written as $\Omega=(1/2)v^2\omega$, where $\omega=2\pi/T$ is

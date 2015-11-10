@@ -47,18 +47,18 @@ accelerated observer described in examples \ref{eg:hyperbolic-motion} on page \p
 and \ref{eg:const-accel-metric} on page \pageref{eg:const-accel-metric}. Recalling these earlier results,
 we have for the ship's equation of motion in an inertial frame
 \begin{equation*}
-  x = \frac{1}{a}\left(\sqrt{1+a^2t^2}-1\right) \qquad ,
+  x = \frac{1}{a}\left(\sqrt{1+a^2t^2}-1\right)\eqquad,
 \end{equation*}
 and for the metric in the ship's frame
 \begin{align*}
   g'_{t't'} &= (1+ax')^2 \\
-  g'_{x'x'} &= -1 \qquad .
+  g'_{x'x'} &= -1\eqquad.
 \end{align*}
 Since this metric was derived by a change of coordinates from a flat-space metric, and the Ricci curvature is an intrinsic
 property, we expect that this one also has zero Ricci curvature. This is straightforward to verify. The nonvanishing
 Christoffel symbols are
 \begin{equation*}
-  \Gamma\indices{^{t'}_{x't'}} = \frac{a}{1+ax'} \quad \text{and} \quad \Gamma\indices{^{x'}_{t't'}}=a(1+ax') \qquad .
+  \Gamma\indices{^{t'}_{x't'}} = \frac{a}{1+ax'} \quad \text{and} \quad \Gamma\indices{^{x'}_{t't'}}=a(1+ax')\eqquad.
 \end{equation*}
 The only elements of the Riemann tensor that look like they might be nonzero are $R\indices{^{t'}_{t'x'x'}}$ and $R\indices{^{x'}_{t'x't'}}$,
 but both of these in fact vanish.
@@ -265,7 +265,7 @@ is good enough for all but the most precise applications, such as the GPS networ
 <% begin_sec("The zero-mass case") %>\label{zero-mass-christoffel}
 First let's demonstrate the trivial solution with flat spacetime. In spherical coordinates, we have
 \begin{equation*}
-  \der s^2 = \der t^2 - \der r^2 - r^2 \der\theta^2 - r^2 \sin^2\theta \der\phi^2 \qquad .
+  \der s^2 = \der t^2 - \der r^2 - r^2 \der\theta^2 - r^2 \sin^2\theta \der\phi^2\eqquad.
 \end{equation*}
 The nonvanishing Christoffel symbols (ignoring swaps of the lower indices) are:
 \begin{align*}
@@ -370,14 +370,14 @@ going to be symmetric under $t \rightarrow -t$, $\theta \rightarrow -\theta$, an
 can't have any off-diagonal elements.\footnote{For more about time-reversal symmetry, see p.~\pageref{sec:sch-t-reversal}.} The result is that we have narrowed the metric down to something of the
 form
 \begin{equation*}
-  \der s^2 = h(r)\der t^2 - k(r)\der r^2 - r^2 \der\theta^2 - r^2 \sin^2\theta \der\phi^2 \qquad ,
+  \der s^2 = h(r)\der t^2 - k(r)\der r^2 - r^2 \der\theta^2 - r^2 \sin^2\theta \der\phi^2\eqquad,
 \end{equation*}
 where both $h$ and $k$ approach 1 for $r\rightarrow\infty$, where spacetime is flat.
 
 For guidance in how to construct $h$ and $k$, let's consider the acceleration of a test particle at $r \gg m$, which we
 know to be $-m/r^2$, since nonrelativistic physics applies there. We have
 \begin{equation*}
-  \nabla_t v^r = \partial_t v^r + \Gamma\indices{^r_{tc}}v^c \qquad .
+  \nabla_t v^r = \partial_t v^r + \Gamma\indices{^r_{tc}}v^c\eqquad.
 \end{equation*}
 An observer free-falling along with the particle observes its acceleration to be zero, and a tensor that is zero in
 one coordinate system is zero in all others. Since the covariant derivative is a tensor, we conclude that $ \nabla_t v^r=0$
@@ -386,7 +386,7 @@ then initially its velocity four-vector is $(1,0,0,0)$, so we find that its acce
 $-\Gamma\indices{^r_{tt}}=-\frac{1}{2}g^{rr}\partial_rg_{tt}=-\frac{1}{2}h'/k$. Setting this equal to
 $-m/r^2$, we find $h'/k=2m/r^2$ for $r \gg m$. Since $k \approx 1$ for large $r$, we have
 \begin{equation*}
-   h' \approx \frac{2m}{r^2} \quad \text{for $r \gg m$} \qquad .
+   h' \approx \frac{2m}{r^2} \quad \text{for $r \gg m$}\eqquad.
 \end{equation*}
 The interpretation of this calculation is as follows. We assert the equivalence
 principle, by which the acceleration of a free-falling particle can be said to be zero. After some calculations, we find that
@@ -433,7 +433,7 @@ limit(r^4*ric[1,1],r,inf);
 The result is $(b_1-2)/2$, so let's set $b_1=2$.
 The approximate solution we've found so far (reinserting the $m$'s),
 \begin{equation*}
-  \der s^2 \approx \left(1-\frac{2m}{r}\right)\der t^2 - \left(1+\frac{2m}{r}\right)\der r^2 - r^2 \der\theta^2 - r^2 \sin^2\theta \der\phi^2 \qquad ,
+  \der s^2 \approx \left(1-\frac{2m}{r}\right)\der t^2 - \left(1+\frac{2m}{r}\right)\der r^2 - r^2 \der\theta^2 - r^2 \sin^2\theta \der\phi^2\eqquad,
 \end{equation*}
 was first derived by Einstein in 1915, and he used it to solve the problem of the non-Keplerian relativistic correction
 to the orbit of Mercury, which was one of the  first  empirical tests of general relativity.\index{Mercury, orbit of}
@@ -456,7 +456,7 @@ The solution is unexpectedly simple, and can be put into closed form. The approx
 For $k$ we have a geometric series $1/(1-2/r)$, and when we reinsert the factor of $m$ in the only way that makes the units
 work, we get $1/(1-2m/r)$. The result for the metric is
 \begin{equation*}
-  \der s^2 = \left(1-\frac{2m}{r}\right)\der t^2 - \left(\frac{1}{1-2m/r}\right)\der r^2 - r^2 \der\theta^2 - r^2 \sin^2\theta \der\phi^2 \qquad .
+  \der s^2 = \left(1-\frac{2m}{r}\right)\der t^2 - \left(\frac{1}{1-2m/r}\right)\der r^2 - r^2 \der\theta^2 - r^2 \sin^2\theta \der\phi^2\eqquad.
 \end{equation*}
 This is called the Schwarzschild metric.\index{Schwarzschild metric}
 A quick calculation in Maxima demonstrates that it is an exact solution for all $r$, i.e., the Ricci tensor vanishes everywhere,
@@ -508,12 +508,12 @@ Parallel-transport of a gyroscope's angular momentum around
 a circle of constant $r$ gives
 \begin{align*}
   \nabla_\phi L^\phi &= 0 \\
-  \nabla_\phi L^r &= 0 \qquad .
+  \nabla_\phi L^r &= 0\eqquad.
 \end{align*}
 Computing the covariant derivatives, we have
 \begin{align*}
   0 &= \partial_\phi L^\phi + \Gamma\indices{^\phi_{\phi r}}L^r \\
-  0 &= \partial_\phi L^r    + \Gamma\indices{^r_{\phi \phi}}L^\phi  \qquad .
+  0 &= \partial_\phi L^r    + \Gamma\indices{^r_{\phi \phi}}L^\phi\eqquad.
 \end{align*}
 The Christoffel symbols are $\Gamma\indices{^\phi_{\phi r}}=1/r$ and $\Gamma\indices{^r_{\phi \phi}}=-r$.
 This is all made to look needlessly complicated because $L^\phi$ and $L^r$ are expressed in different
@@ -522,7 +522,7 @@ the $r$ and $\phi$ directions that are rotating. To see this more transparently,
 $P$ for $L^\phi$ and $Q$ for $L^r$, so that
 \begin{align*}
   P' &= -Q \\
-  Q' &= P \qquad ,
+  Q' &= P\eqquad,
 \end{align*}
 which have solutions such as $P=\sin\phi$, $Q=\cos\phi$. For each orbit ($2\pi$ change in $\phi$), the basis vectors
 rotate by $2\pi$, so the angular momentum vector once again has the same components. In other words, it
@@ -542,7 +542,7 @@ with $-r+2m$. The differential equations for the components of the $L$ vector, a
 convenience, are now
 \begin{align*}
   P' &= -Q \\
-  Q' &= (1-\epsilon)P \qquad ,
+  Q' &= (1-\epsilon)P\eqquad,
 \end{align*}
 where $\epsilon=2m$. The solutions rotate with frequency $\omega'=\sqrt{1-\epsilon}$.
 The result is that when the basis vectors rotate by $2\pi$, the components no longer return to their original values;
@@ -582,7 +582,7 @@ Setting the covariant derivatives equal to zero gives
   0 &= \partial_\phi L^\phi + \Gamma\indices{^\phi_{\phi r}} L^r \\
   0 &= \partial_\phi L^r    + \Gamma\indices{^r   _{\phi \phi}} L^\phi \\
   0 &= \partial_t L^r       + \Gamma\indices{^r   _{t t}} L^t \\
-  0 &= \partial_t L^t       + \Gamma\indices{^t_{t r}} L^r  \qquad .
+  0 &= \partial_t L^t       + \Gamma\indices{^t_{t r}} L^r\eqquad.
 \end{align*}
 
 Self-check: There are not just four but six covariant derivatives that could in principle have occurred, and in these six covariant
@@ -599,7 +599,7 @@ Putting all this together in matrix form, we have $L'=ML$, where
     0 & -\epsilon/2\omega(1-\epsilon) & 0
   \end{array}
   \right)
-  \qquad .
+\eqquad.
 \end{equation*}
 The solutions of this differential equation oscillate like $e^{i \Omega t}$, where $i\Omega$ is an
 eigenvalue of the matrix.
@@ -678,7 +678,7 @@ the relevant conserved quantities of the motion. Nonrelativistically, these are 
 
 Consider a rock falling directly toward the sun. The Schwarzschild metric is of the special form
 \begin{equation*}
-  \der s^2 = h(r)\der t^2 - k(r)\der r^2 - \ldots \qquad .
+  \der s^2 = h(r)\der t^2 - k(r)\der r^2 - \ldots\eqquad.
 \end{equation*}
 The rock's trajectory is a geodesic, so it extremizes the proper time $s$ between any two events fixed in spacetime,
 just as a piece of string stretched across a curved surface extremizes its length. Let the rock pass
@@ -688,12 +688,12 @@ Approximating the geodesic using two line segments, the proper time is
 \begin{align*}
   s &= s_1 + s_2 \\
     &= \sqrt{h_1 t_1^2-k_1 r_1^2} + \sqrt{h_2 t_2^2-k_2 r_2^2} \\
-    &= \sqrt{h_1 t_1^2-k_1 r_1^2} + \sqrt{h_2 (T-t_1)^2-k_2 r_2^2} \qquad ,
+    &= \sqrt{h_1 t_1^2-k_1 r_1^2} + \sqrt{h_2 (T-t_1)^2-k_2 r_2^2}\eqquad,
 \end{align*}
 where $T=t_1+t_2$ is fixed. If this is to be extremized with respect to $t_1$, then $\der s/\der t_1=0$,
 which leads to
 \begin{equation*}
-  0 = \frac{h_1t_1}{s_1} - \frac{h_2t_2}{s_2} \qquad ,
+  0 = \frac{h_1t_1}{s_1} - \frac{h_2t_2}{s_2}\eqquad,
 \end{equation*}
 which means that
 \begin{equation*}
@@ -763,7 +763,7 @@ an orbit in the plane $\theta=\pi/2$,
 \begin{align*}
   1 &= g^{tt}p_t^2 - g^{rr}p_r^2 - g^{\phi\phi}p_\phi^2 \\
     &= g^{tt}p_t^2 - g_{rr}(p^r)^2 - g^{\phi\phi}p_\phi^2 \\
-    &= \frac{1}{1-2m/r}E^2 - \frac{1}{1-2m/r} \left(\frac{\der r}{\der s}\right)^2 - \frac{1}{r^2} L^2 \qquad .
+    &= \frac{1}{1-2m/r}E^2 - \frac{1}{1-2m/r} \left(\frac{\der r}{\der s}\right)^2 - \frac{1}{r^2} L^2\eqquad.
 \end{align*}
 Rearranging terms and writing $\dot{r}$ for $\der r/\der s$, this becomes
 \begin{align*}
@@ -771,7 +771,7 @@ Rearranging terms and writing $\dot{r}$ for $\der r/\der s$, this becomes
 \intertext{or}
   \dot{r}^2 &= E^2-U^2 \\
 \intertext{where}
-  U^2 &= (1-2m/r)(1+L^2/r^2) \qquad .
+  U^2 &= (1-2m/r)(1+L^2/r^2)\eqquad.
 \end{align*}
 
 There is a varied and strange family of orbits in the Schwarzschild field, including bizarre knife-edge trajectories
@@ -784,7 +784,7 @@ Relativistically, a circular orbit occurs when there is only one turning
 point at which $\dot{r}=0$. This requires that $E^2$ equal the minimum value of $U^2$, which occurs at
 \begin{align*}
   r &= \frac{L^2}{2m}\left(1+\sqrt{1-12m^2/L^2}\right)\\
-    &\approx \frac{L^2}{m}(1-\epsilon) \qquad ,
+    &\approx \frac{L^2}{m}(1-\epsilon)\eqquad,
 \end{align*}
 where $\epsilon=3(m/L)^2$.
 A planet in a nearly circular orbit oscillates between perihelion and aphelion with a period that depends on
@@ -798,12 +798,12 @@ the curvature of $U^2$ at its minimum. We have
 The period of the oscillations is
 \begin{align*}
   \Delta s_{osc} &= 2\pi\sqrt{2/k} \\
-    &= 2\pi L^3m^{-2}(1-\epsilon) \qquad .
+    &= 2\pi L^3m^{-2}(1-\epsilon)\eqquad.
 \end{align*}
 The period of the azimuthal motion is
 \begin{align*}
   \Delta s_{az} &= 2\pi r^2/L \\
-                &= 2\pi L^3 m^{-2} (1-2\epsilon) \qquad .
+                &= 2\pi L^3 m^{-2} (1-2\epsilon)\eqquad.
 \end{align*}
 The periods are slightly mismatched because of the relativistic correction terms. The period of the
 radial oscillations is longer, so that, as expected, the perihelion shift is in the forward direction.
@@ -1274,7 +1274,7 @@ and $\Gamma\indices{^t_{\theta\theta}}=t/2$ (problem \ref{hw:taub-christoffel},
 p.~\pageref{hw:taub-christoffel}). The resulting geodesic equations are
 \begin{align*}
   \ddot{t} &= \frac{\dot{t}^2}{2t}-\frac{t}{2}\dot{\theta}^2 \\
-  \ddot{\theta} &= -\frac{\dot{t}}{\dot{\theta}}{t} \qquad ,
+  \ddot{\theta} &= -\frac{\dot{t}}{\dot{\theta}}{t}\eqquad,
 \end{align*}
 where dots represent differentiation with respect to the affine parameter $\lambda$.
 Implicit differentiation of the equation $\theta=\ln t$ gives $\dot{\theta}=\dot{t}/t$, and plugging this in
@@ -1431,7 +1431,7 @@ Passing back to the weak-field limit of general relativity, the equivalence prin
 the $g_{tt}$ term of the metric be approximately
 $1+2\Phi$, so we find that the metric has the form
 \begin{equation*}
- \der s^2 \approx (1-2mr^{-(d-3)})\der t^2 - (\ldots)\der r^2 - r^2 \der\theta^2 - r^2 \sin^2\theta \der\phi^2 \qquad .
+ \der s^2 \approx (1-2mr^{-(d-3)})\der t^2 - (\ldots)\der r^2 - r^2 \der\theta^2 - r^2 \sin^2\theta \der\phi^2\eqquad.
 \end{equation*}
 This looks like the Schwarzschild form with no other change than a generalization of the exponent, and in fact Tangherlini
 showed in 1963 that for $d>4$, one obtains the exact solution simply by applying the same change of 
@@ -1523,7 +1523,7 @@ that we recover the familiar form $\der s^2=\der u^2-\der\ell^2$ for the metric.
   g_{tt} &= \left(\frac{\partial u}{\partial t}\right)^2 g_{uu} \\
   -t &= \left(\frac{\partial u}{\partial t}\right)^2 \\
 \intertext{with solution}
-  u &= \pm \frac{2}{3} t^{3/2} \quad , \quad t<0 \qquad .
+  u &= \pm \frac{2}{3} t^{3/2} \quad , \quad t<0\eqquad.
 \end{align*}
 There is no solution for $t>0$.
 <% marg(30) %>
@@ -1628,13 +1628,13 @@ that can be described by coordinates $(t,\phi)$, where $\phi$ is the angle of ro
 <% begin_hw('carousel-singularities') %>
 (a) Section \ref{sec:carousel} (p. \pageref{sec:carousel}) gave a flat-spacetime metric in rotating polar coordinates,
 \begin{equation*}
-  \der s^2=(1-\omega^2 r^2)\der t^2 - \der r^2 - r^2\der \theta'^2 - 2\omega r^2\der\theta'\der t \qquad .
+  \der s^2=(1-\omega^2 r^2)\der t^2 - \der r^2 - r^2\der \theta'^2 - 2\omega r^2\der\theta'\der t\eqquad.
 \end{equation*}
 Identify the two values of $r$ at which singularities occur, and classify them as coordinate or non-coordinate
 singularities.\hwendpart
 (b) The corresponding spatial metric was found to be
 \begin{equation*}
-  \der s^2= - \der r^2 - \frac{r^2}{1-\omega^2r^2}\der \theta'^2 \qquad .
+  \der s^2= - \der r^2 - \frac{r^2}{1-\omega^2r^2}\der \theta'^2\eqquad.
 \end{equation*}
 Identify the two values of $r$ at which singularities occur, and classify them as coordinate or non-coordinate
 singularities.\hwendpart

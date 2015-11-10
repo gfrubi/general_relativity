@@ -56,7 +56,7 @@ time accumulated on a moving clock is
 \begin{align*}
   s &= \int \der s \\
     &= \int \sqrt{g_{ij} \der x^i \der x^j} \\
-    &= \int \sqrt{1-\left(\frac{\der x}{\der t}\right)^2-\left(\frac{\der y}{\der t}\right)^2-\left(\frac{\der z}{\der t}\right)^2} \der t \qquad ,
+    &= \int \sqrt{1-\left(\frac{\der x}{\der t}\right)^2-\left(\frac{\der y}{\der t}\right)^2-\left(\frac{\der z}{\der t}\right)^2} \der t\eqquad,
 \end{align*}
 which only contains an explicit dependence on the clock's velocity, not its acceleration.
 This is an example of the clock ``postulate'' referred to in the remark at the end of homework problem \ref{hw:clock-postulate}
@@ -138,18 +138,18 @@ motion $x(t)$ as measured by an observer in an inertial frame.
 \eganswer Let $\tau$ stand for the ship's proper time, and let dots indicate derivatives with respect to $\tau$.
 The ship's velocity has magnitude 1, so
 \begin{equation*}
-  \dot{t}^2-\dot{x}^2 = 1 \qquad .
+  \dot{t}^2-\dot{x}^2 = 1\eqquad.
 \end{equation*}
 An observer who is instantaneously at rest with respect to the ship judges is to have a four-acceleration $(0,a,0,0)$
 (because the low-velocity limit applies).
 The observer in the $(t,x)$ frame agrees on the magnitude of this vector, so
 \begin{equation*}
-  \ddot{t}^2-\ddot{x}^2=-a^2 \qquad .
+  \ddot{t}^2-\ddot{x}^2=-a^2\eqquad.
 \end{equation*}
 The solution of these differential equations is $t=\frac{1}{a}\sinh a\tau$, \linebreak[4] $x=\frac{1}{a}\cosh a\tau$, and eliminating
 $\tau$ gives
 \begin{equation*}
-  x = \frac{1}{a}\sqrt{1+a^2t^2} \qquad .
+  x = \frac{1}{a}\sqrt{1+a^2t^2}\eqquad.
 \end{equation*}
 As $t$ approaches infinity, $\der x/\der t$ approaches the speed of light.
 \end{eg}
@@ -267,7 +267,7 @@ there are two different consequences, either of which would be physically unacce
 
 When a particle does have a nonvanishing mass, we have
 \begin{equation*}
-\lim_{E/m\rightarrow\infty} |v| \quad = \quad  \lim_{E/m\rightarrow\infty} \frac{|p|}{E} \quad = \quad 1 \qquad .
+\lim_{E/m\rightarrow\infty} |v| \quad = \quad  \lim_{E/m\rightarrow\infty} \frac{|p|}{E} \quad = \quad 1\eqquad.
 \end{equation*}
 Thus if we had
 a massless particle with $|v|\ne 1$, its behavior would be different from the limiting behavior of
@@ -318,7 +318,7 @@ relativistically.\footnote{For an explicit example,
 see \url{bit.ly/1aUXIa8}.} % http://physics.stackexchange.com/a/78147/4552
 One can then calculate, as Einstein did,
 \begin{equation*}
-  W = \int \frac{\der p}{\der t} \der x = \int \frac{\der p}{\der v}\frac{\der x}{\der t}\der v = m(\gamma-1) \qquad ,
+  W = \int \frac{\der p}{\der t} \der x = \int \frac{\der p}{\der v}\frac{\der x}{\der t}\der v = m(\gamma-1)\eqquad,
 \end{equation*}
 which is consistent with our result for $E$ as a function of $\gamma$ if we equate it to $E(\gamma)-E(1)$.
 \end{eg}
@@ -463,7 +463,7 @@ one spatial dimension.
 For a light wave, $f=k$, so the frequency vector in 1+1 dimensions is simply $(f,f)$. Putting this through a Lorentz
 transformation, we find
 \begin{equation*}
-  f' = (1+v)\gamma f = \sqrt{\frac{1+v}{1-v}} f \qquad ,
+  f' = (1+v)\gamma f = \sqrt{\frac{1+v}{1-v}} f\eqquad,
 \end{equation*}
 where the second form displays more clearly the symmetic form of the relativistic relationship, such that
 interchanging the roles of source and observer is equivalent to flipping the sign of $v$. That is, the relativistic
@@ -651,7 +651,7 @@ way that the potential $\Phi$ relates to the electric field. $\vc{A}$ is known a
 relation between the potentials and the fields is
 \begin{align*}
   \vc{E} &= -\nabla\Phi - \frac{\partial\vc{A}}{\partial t} \\
-  \vc{B} &= \nabla\vc{A} \qquad .
+  \vc{B} &= \nabla\vc{A}\eqquad.
 \end{align*}
 An excellent discussion of the vector potential from a purely classical point of view
 is given in the classic \emph{Feynman Lectures}.\footnote{\emph{The Feynman Lectures on Physics}, Feynman, Leighton, and Sands, Addison Wesley Longman, 1970}
@@ -676,7 +676,7 @@ For a contravariant vector, $v'_\mu = \frac{1}{a} v_\mu$. Generalizing to more t
 dimension, and to a possibly nonlinear transformation, we have
 \begin{align}
   v'^\mu &=  v^\kappa \frac{\partial x'^\mu}{\partial x^\kappa} \\
-  v'_\mu &=  v_\kappa \frac{\partial x^\kappa}{\partial x'^\mu} \qquad .
+  v'_\mu &=  v_\kappa \frac{\partial x^\kappa}{\partial x'^\mu}\eqquad.
 \end{align}
 Note the inversion of the partial derivative in one equation compared to the other.
 Because these equations describe a change from one coordinate system to another,
@@ -721,7 +721,7 @@ zero, and all the derivatives for $\kappa=\mu$ equal 1.
 
 In equation [2], it is tempting to write
 \begin{equation*}
-  \frac{\partial x^\kappa}{\partial x'^\mu} = \frac{1}{\frac{\partial x'^\mu}{\partial x^\kappa}} \qquad \text{(wrong!)} \qquad ,
+  \frac{\partial x^\kappa}{\partial x'^\mu} = \frac{1}{\frac{\partial x'^\mu}{\partial x^\kappa}} \qquad \text{(wrong!)}\eqquad,
 \end{equation*}
 but this would give infinite results for the mixed terms! Only in the case of functions of a single
 variable is it possible to flip derivatives in this way; it doesn't work for partial derivatives.
@@ -743,18 +743,18 @@ of a rank-0 tensor.
 Let's see the effect on Lorentzian metric $g$ of the transformation
 \begin{equation*}
   t' = t   \qquad
-  x' = x+\frac{1}{2}at^2 \qquad .
+  x' = x+\frac{1}{2}at^2\eqquad.
 \end{equation*}
 The inverse transformation is
 \begin{equation*}
   t = t'   \qquad
-  x = x'-\frac{1}{2}at'^2 \qquad .
+  x = x'-\frac{1}{2}at'^2\eqquad.
 \end{equation*}
 The tensor transformation law gives
 \begin{align*}
   g'_{t't'} &= 1-(at')^2 \\
   g'_{x'x'} &= -1 \\
-  g'_{x't'} &= -at' \qquad .
+  g'_{x't'} &= -at'\eqquad.
 \end{align*}
 Clearly something bad happens at $at'=\pm1$, when the relative velocity surpasses the
 speed of light: the $t't'$ component of the metric vanishes and then reverses its sign.
@@ -949,7 +949,7 @@ the core of the star becomes a white dwarf, but once fusion ceases completely th
 state. Now consider the nuclear reactions\index{neutron star}
 \begin{align*}
   \zu{n} & \rightarrow \zu{p} + e^- + \bar{\nu} \\
-  \zu{p} & + e^-  \rightarrow \zu{n} + \nu \qquad ,
+  \zu{p} & + e^-  \rightarrow \zu{n} + \nu\eqquad,
 \end{align*}
 which happen due to the weak nuclear force. The first of these releases 0.8 MeV, and has a half-life of 14 minutes.
 This explains why free neutrons are not observed in significant numbers in our universe, e.g., in cosmic rays.
@@ -1144,12 +1144,12 @@ is externally detectable via its effect on the spacetime metric.
 What would the form of such a metric be? Spherical coordinates in flat spacetime give a metric
 like this:
 \begin{equation*}
-  \der s^2 = \der t^2 - \der r^2 - r^2 \der\theta^2 - r^2 \sin^2\theta \der\phi^2 \qquad .
+  \der s^2 = \der t^2 - \der r^2 - r^2 \der\theta^2 - r^2 \sin^2\theta \der\phi^2\eqquad.
 \end{equation*}
 We'll see in chapter \ref{ch:vacuum} that for a non-rotating black hole, the metric is of the
 form
 \begin{equation*}
-  \der s^2 = (\ldots)\der t^2 - (\ldots)\der r^2 - r^2 \der\theta^2 - r^2 \sin^2\theta \der\phi^2 \qquad ,
+  \der s^2 = (\ldots)\der t^2 - (\ldots)\der r^2 - r^2 \der\theta^2 - r^2 \sin^2\theta \der\phi^2\eqquad,
 \end{equation*}
 where $(\ldots)$ represents functions of $r$. In fact, there is nothing special about the metric of a black
 hole, at least far away; the same external metric applies to \emph{any}
@@ -1163,7 +1163,7 @@ We expect it to have the following properties:
 Restricting our attention to the equatorial plane $\theta=\pi/2$,
 the simplest modification that has these three properties is to add a term of the form
 \begin{equation*}
-  f(\ldots) L\der\phi\der t \qquad ,
+  f(\ldots) L\der\phi\der t\eqquad,
 \end{equation*}
 where $(\ldots)$ again gives the $r$-dependence and $L$ is a constant, interpreted as the angular momentum.
 A detailed treatment is beyond the scope of this book,
@@ -1497,7 +1497,7 @@ a Lorentz boost $\vc{v}$.\index{electromagnetic potential four-vector}\index{ele
 To lowest order in $\vc{v}$, this transformation is given by
 \begin{align*}
   \vc{E}' &\approx \vc{E}+\vc{v}\times\vc{B} \qquad \text{and}  \\
-  \vc{B}' &\approx \vc{B}-\vc{v}\times\vc{E} \qquad .  
+  \vc{B}' &\approx \vc{B}-\vc{v}\times\vc{E}\eqquad.  
 \end{align*}
 I'm not a historian of science, but apparently ca.~1905 people like Hertz believed that these were the
 \emph{exact} transformations of the field.\footnote{Montigny and Rousseaux, \url{arxiv.org/abs/physics/0512200}.}
