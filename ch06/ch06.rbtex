@@ -1195,7 +1195,7 @@ the metric length of its world-line is zero. We get around this by defining leng
 parameter.
 
 Definition: A spacetime is said to be geodesically incomplete if there exist timelike or lightlike geodesics
-that cannot be extended past some finite affine parameter into the past or 
+that cannot be extended beyond some finite affine parameter into the past or 
 future.\index{geodesic incompleteness}
 
 \noindent This is also a pretty good working definition of what we mean when we say that a spacetime
@@ -1215,7 +1215,9 @@ is well behaved.
 There are two types of singularities: curvature singularities and non-curvature singularities.
 
 The examples above are examples of curvature singularities, which can often be recognized because
-there are scalar measures of curvature such as the Kretschmann invariant that blow up.
+there are scalar measures of curvature such as $R^{abcd}R_{abcd}$, known as 
+the Kretschmann invariant,\index{Kretchmann invariant}
+that blow up.
 These indicate that tidal forces blow up to infinity, and would destroy any observer.
 
 The reason curvature scalars are useful as tests for a curvature singularity is that
@@ -1226,6 +1228,47 @@ can only be extended to some finite affine parameter, and some curvature scalar 
 necessarily every such scalar) approaches infinity as we approach this value of the affine
 parameter.
 
+\begin{eg}{Incompleteness with finite curvature scalars}
+Consider the $1+1$-dimensional spacetime described by the metric
+\begin{align*}
+  & \der s^2 = A(\der t^2-\der x^2) \\
+  & A = 1/(1+e^t),
+\end{align*}
+with $-\infty<x<\infty$ and $-\infty<t<\infty$. 
+For large negative $t$ it is indistinguishable from Minkowski space.
+The following Maxima code computes its Riemann tensor
+and the scalar curvature $R$ and the Kretchmann invariant $K$.
+\begin{listing}{1}
+load(ctensor);
+dim:2;
+ct_coords:[t,x];
+u:1/(1+exp(t));
+lg:matrix([u,0],
+  [0,-u]);
+cmetric();
+ricci(true);
+lriemann(true);
+uriemann(true);
+scurvature();/* scalar curvature */
+rinvariant(); /* Kretchmann */
+\end{listing}
+The results for the two curvature scalars are
+\begin{align*}
+  R &= (1+e^{-t})^{-1} \qquad \text{and} \\
+  K &= (1+e^{-t})^{-2},
+\end{align*}
+both of which are finite everywhere; they go from 0 at large negative times to 1 at large positive times.
+
+From these results we would not imagine that there was any singularity present, but blow-ups of curvature
+scalars are only a sufficient condition for geodesic incompleteness, not a necessary one. Consider the
+timelike curve $x=0$, which by symmetry is a geodesic.
+If we integrate the proper time along this geodesic, we get a finite limit as $t\rightarrow\infty$.
+Since proper time qualifies as an affine parameter, this geodesic is incomplete.
+
+But it is not so obvious that this spacetime is ``really'' singular. It is possible that we could
+smoothly extend it beyond $t=+\infty$. If so, then the singularity at $t=+\infty$ would be a kind of fake
+singularity, of the type that we could obtain simply by chopping off the part of Minkowski space with $t\ge 0$.
+\end{eg}
 
 Singularities can also occur without any blow-up in the curvature. An example of this is
 a conical singularity,
@@ -1346,6 +1389,7 @@ This notion is global.\index{singularity!naked}
 If either a timelike or a naked singularity can be formed by gravitational collapse from
 realistic initial conditions, then it would create severe difficulties for physicists wishing
 to make predictions using the laws of physics.
+
 <% end_sec %> % Formal definitions
 <% end_sec %> % singularities
 
