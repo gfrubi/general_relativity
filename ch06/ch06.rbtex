@@ -1212,9 +1212,24 @@ original coordinates, some components of the metric blow up at the event horizon
 actual singularity. This coordinate system can be replaced with a different one in which the metric
 is well behaved.
 
+\begin{eg}{A harmless blow-up}\label{eg:harmless}
+Let's define coordinates $(t,y)$ in the region of spacetime where you're sitting and reading this book.
+Let $(0,0)$ be your current time and position, and for convenience let this be an inertial frame (so that your motion
+is not geodesic). The Riemann tensor, expressed in these coordinates, has a component $R_{tyyt}=2Gm/r^3$, where
+$m$ and $r$ are the mass and radius of the earth. This has the finite value of
+$1.5\times10^{-6}\ \sunit^{-2}$, which expresses the strength of a tidal effect near the earth's surface.
+
+Now define a new coordinate $u=y^3$. Applying the tensor transformation law, we have
+\begin{equation*}
+  R_{tuut} = R_{tyyt}\left(\frac{\partial y}{\partial u}\right)^2,
+\end{equation*}
+which is infinite at $y=0$. This example demonstrates that we cannot test for a singularity by looking for
+a blow-up of the components of a curvature tensor at certain coordinates or as the coordinates approach some limit.
+\end{eg}
+
 There are two types of singularities: curvature singularities and non-curvature singularities.
 
-The examples above are examples of curvature singularities, which can often be recognized because
+The big bang and black hole singularities are examples of curvature singularities, which can often be recognized because
 there are scalar measures of curvature such as $R^{abcd}R_{abcd}$, known as 
 the Kretschmann invariant,\index{Kretchmann invariant}
 that blow up.
@@ -1222,13 +1237,19 @@ These indicate that tidal forces blow up to infinity, and would destroy any obse
 
 The reason curvature scalars are useful as tests for a curvature singularity is that
 since they're scalars, they can't diverge in one coordinate system but stay finite
-in another. A sufficient condition for
-a singularity to be a curvature singularity if timelike or lightlike geodesics
+in another (cf.~example \ref{eg:harmless}). A sufficient condition for
+a singularity to be a curvature singularity is if timelike or lightlike geodesics
 can only be extended to some finite affine parameter, and some curvature scalar (not
 necessarily every such scalar) approaches infinity as we approach this value of the affine
-parameter.
+parameter. 
 
-\begin{eg}{Incompleteness with finite curvature scalars}
+But we should not expect this to be a necessary condition for a curvature singularity.
+Example \ref{eg:incomplete-but-two-finite-curvature-scalars} below shows that
+the most commonly occurring curvature scalars may not be enough to catch the presence of a
+singularity. This is not too surprising, since curvature scalars do not suffice to tell us
+everything there is to know about the curvature of a spacetime (example \ref{eg:vsi}).
+
+\begin{eg}{Incompleteness with finite curvature scalars}\label{eg:incomplete-but-two-finite-curvature-scalars}
 Consider the $1+1$-dimensional spacetime described by the metric
 \begin{align*}
   & \der s^2 = A(\der t^2-\der x^2) \\
@@ -1268,6 +1289,40 @@ Since proper time qualifies as an affine parameter, this geodesic is incomplete.
 But it is not so obvious that this spacetime is ``really'' singular. It is possible that we could
 smoothly extend it beyond $t=+\infty$. If so, then the singularity at $t=+\infty$ would be a kind of fake
 singularity, of the type that we could obtain simply by chopping off the part of Minkowski space with $t\ge 0$.
+% https://www.physicsforums.com/threads/curvature-singularity-with-well-behaved-kretschmann-scalar.842614/
+\end{eg}
+
+\begin{eg}{Vanishing curvature scalars}\label{eg:vsi}
+We remarked above that curvature scalars do not in general suffice to tell us everything about the
+curvature of a spacetime.
+In fact, there is an entire class of curved spacetimes such that \emph{every}
+curvature invariant vanishes everywhere. 
+Schmidt\footnote{``Why do all the curvature invariants of a gravitational wave vanish?,"
+\url{arxiv.org/abs/gr-qc/9404037}}
+gives the example
+\begin{equation*}
+  \der s^2 = \der u\der v-a^2(u)\der w^2,
+\end{equation*}
+where $a$ is an arbitrary nonlinear function. The eigenvalues of this metric are
+1, $-1$, and $-a^2$, so its signature is $+--$, i.e., this is general relativity in $2+1$ dimensions.
+A computation shows that the space is not flat, since, e.g., $R_{uu}=-a''/a$.
+The $u$ and $v$ directions are lightlike, so this metric represents a wavelike disturbance
+traveling at the speed of light. (Since the Ricci tensor doesn't vanish, this isn't a vacuum solution,
+and we don't have a gravitational wave in vacuum. Such waves,
+as described in ch.~\ref{ch:waves}, are transverse and can only exist in $3+1$ or more dimensions.)
+
+The lightlike character of $u$ and $v$ motivates us to consider coordinate transformations
+of the form $(u,v)\rightarrow (uD,v/D)$, because in the case $a=0$, which is flat,
+this would be a Lorentz boost with a Doppler shift factor $D$.
+In the case where $D$ approaches zero, we are chasing the wave at a velocity approaching $c$,
+so the wave Doppler-shifts to undetectability. All components of the Riemann tensor, as well as
+their derivatives, approach zero.
+
+Now consider any curvature scalar $I$ that is expressible as a continuous function of the Riemann tensor and its derivatives.
+By continuity, $I$ approaches zero as $D\rightarrow0$.
+But curvature scalars are scalars, so they are invariant under coordinate transformations. It therefore
+follows that $I=0$ identically, regardless of the value of $D$. Thus we have a spacetime that,
+although curved, has no nonvanishing curvature scalars anywhere.
 \end{eg}
 
 Singularities can also occur without any blow-up in the curvature. An example of this is
@@ -1283,7 +1338,7 @@ is provided by the Taub-NUT family of spacetimes\index{Taub-NUT spacetimes}
 but tidal forces do not blow up at the horizon. There is no clear reason to expect that
 non-curvature singularities could actually exist in our universe, but neither is there any proof that
 they cannot be formed by natural processes.
-<% marg(300) %>
+<% marg(80) %>
 <%
   fig(
     'conical-singularity',

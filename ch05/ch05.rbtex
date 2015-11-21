@@ -1099,7 +1099,7 @@ Recognizing $\partial_\kappa T^\mu \der x^\kappa/\der\lambda$ as a total non-cov
 \end{equation*}
 Substituting $\partial x^\mu/\partial\lambda$ for $T^\mu$, and setting the covariant derivative equal to zero, we obtain
 \begin{equation*}
-  \frac{\der^2 x^\mu}{\der\lambda^2} + \Gamma\indices{^\mu_{\kappa\nu}} \frac{\der x^\nu}{\der\lambda} \frac{\der x^b}{\der\lambda} = 0 .
+  \frac{\der^2 x^\mu}{\der\lambda^2} + \Gamma\indices{^\mu_{\kappa\nu}} \frac{\der x^\nu}{\der\lambda} \frac{\der x^\kappa}{\der\lambda} = 0 .
 \end{equation*}
 This is known as the geodesic equation. There is a factor of two that is a common gotcha when applying this equation.
 The symmetry of the Christoffel symbols $\Gamma\indices{^\mu_{\kappa\nu}}=\Gamma\indices{^\mu_{\nu\kappa}}$
