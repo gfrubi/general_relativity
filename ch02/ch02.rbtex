@@ -507,56 +507,6 @@ from P to Q. In affine geometry, we can't express perpendicularity.
 %>
 <% end_marg %>
 
-\begin{eg}{Waves}\label{eg:affine-waves}
-Depictions of dual vectors as in figure \subfigref{vector-measuring-covector}{2} on
-p.~\pageref{fig:vector-measuring-covector} evoke plane waves. This makes sense, because
-the phase $\theta$ of a wave is a scalar, and the gradient of a scalar is a dual vector.
-The dual vector $__birddualvec(k)=__birddualvec((\operatorname{grad}\theta))=(\omega,k_x,\ldots)$ is 
-called the frequency vector.\index{frequency vector}
-If __birdvec(o) represents the displacement of an observer from one event in spacetime
-to another, then __birdscalarproduct(k,o) is the number of radians of the wave's phase that wash
-over the observer's position. The frequency vector is discussed further in
-section \ref{sec:doppler} on p.~\pageref{sec:doppler}.
-
-There is a dispersion relation between a wave's frequency and wavenumber.
-For example, surface waves in deep water obey the constraint $C=0$, where
-$C=\omega^4-\alpha^2 k^2$ and $\alpha$ is a constant with units of acceleration, relating
-to the acceleration of gravity. (Since the water is infinitely deep, there is no other scale that
-could enter into the constraint.)
-<% marg(60) %>
-<%
-  fig(
-    'dispersion',
-    %q{Points on the graph satisfy the dispersion relation $C=0$ for water waves.
-       At a given point on the graph, the dual vector $__birddualvec((\operatorname{grad}C))$
-       tells us the group velocity.}
-  )
-%>
-<% end_marg %>
-
-When a wave is modulated, it can transport energy and momentum and transmit information,
-i.e., act as an agent of cause and effect between events. How fast does it go?
-If a certain bump on the envelope with which the
-wave is modulated visits spacetime events P and Q, then whatever frequency and wavelength
-the wave has near the bump are observed to be the same at P and Q. In general,
-$k$ and $\omega$ are constant along the spacetime displacement of any point on the envelope,
-so the spacetime displacement $__birdvec(s)$ from P to Q must satisfy
-the condition $__birdscalarproduct((\operatorname{grad}C),s)=0$. The set of solutions to this
-equation is the world-line of the bump, and the inverse slope of this world-line is called the
-\emph{group velocity}. In our example of water waves, the group velocity is $\alpha/2\omega$.
-
-The quantity $\omega/k$ is referred to as the \emph{phase velocity}. In our example of
-the water waves, the phase velocity is $\omega/k=\alpha/\omega$, which is twice the
-group velocity. The phase velocity lacks
-physical interest, because it is not the velocity at which any ``stuff'' moves. The birdtracks
-notation expresses this fact by refusing to let us use information about the phase $\theta$
-to decide whether events P and Q could have been linked by the wave's motion. 
-The only quantity we can extract from the phase information is the frequency vector __birddualvec(k),
-and one can say loosely that this is the phase velocity vector. But it's not really a vector at all,
-it's a dual vector. The displacement __birdvec(s) from P to Q is a vector, not a dual vector.
-Since __birddualvec(k) and __birdvec(s) belong to different vector spaces, we can't say whether they
-are parallel.\index{group velocity}\index{phase velocity}
-\end{eg}
 
 <% begin_sec("Abstract index notation") %>\label{abstract-index-notation}
 Expressions in birdtracks notation such as

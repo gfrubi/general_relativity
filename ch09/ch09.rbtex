@@ -37,7 +37,7 @@ At very high amplitudes, one can even have such exotic phenomena as the formatio
 is focused into a small region. None of these phenomena is ever likely to be observed empirically, since all gravitational
 waves in our universe have extremely small amplitudes.}
 
-Although extremely well founded theoretically, this turns out to be extremely difficult to test empirically.
+Although well founded theoretically, this turns out to be difficult to test empirically.
 In a 2003 experiment,\footnote{\url{http://arxiv.org/abs/astro-ph/0302294}}
 Fomalont and Kopeikin used a world-wide array of radio telescopes to observe a conjunction in which Jupiter passed within $3.7'$ of a quasar,
 so that the quasar's radio waves came within about 3 light-seconds of the planet on their way to the earth.
@@ -352,7 +352,7 @@ solution to the field equations.
 Unfortunately, the whole story ends up being too good to be true. The resulting metric has complex-valued
 elements. If general relativity were a linear field theory, then we could apply the usual technique of
 forming linear combinations of expressions of the form $e^{+i\ldots}$ and $e^{-i\ldots}$, so as to give
-a real result. Unfortunately the field equations of general relativity are nonlinear, so the resulting
+a real result. But the field equations of general relativity are nonlinear, so the resulting
 linear combination is no longer a solution. The best we can do is to make a non-oscillatory real exponential
 solution (problem \ref{hw:real-exponential}).
 \end{eg}

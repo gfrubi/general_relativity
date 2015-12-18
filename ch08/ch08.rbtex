@@ -3001,7 +3001,7 @@ if we want to construct such a tensor, the only good possibility that occurs to 
 The only other obvious possibility would have been
 something like $-k\nabla_a C \nabla_b C$. This would be the stress-energy of a negative-mass
 dust, which would be unacceptable for the reasons discussed earlier.} is
-an $k\nabla_a \nabla_b C$, with $k$ a positive constant.
+$k\nabla_a \nabla_b C$, with $k$ a positive constant.
 If the derivatives had been ordinary partial derivatives, the second derivative
 would have vanished because $C$ is linear
 in time, but the covariant derivatives do not vanish, and in fact the second derivative is a tensor
