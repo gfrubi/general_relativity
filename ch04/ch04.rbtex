@@ -1270,11 +1270,19 @@ rotations and translations, that don't involve
 any scaling. We saw in 
 section \ref{sec:lorentz-geometry} on p.~\pageref{sec:lorentz-geometry} that Lorentz boosts also have the special property of
 preserving area in a space-time plane containing the boost.
-We therefore define a \emph{tensor density}\index{tensor density} as a quantity that transforms like a tensor under rotations, translations, and boosts,
-but that rescales and possibly flips its sign under other types of coordinate transformations. In general, the additional factor comes from
-the determinant $d$ of the matrix consisting of the partial derivatives $\partial x'^\mu/\partial x^\nu$ (called the Jacobian matrix).\index{Jacobian matrix}
+We therefore define a \emph{tensor density}\index{tensor density} as a quantity that
+transforms like a tensor under rotations, translations, and boosts,
+but that rescales and possibly flips its sign under other types of
+coordinate transformations. In general, the additional factor comes from
+the determinant $d$ of the matrix consisting of the partial derivatives
+$\partial x'^\mu/\partial x^\nu$ (called the Jacobian matrix).\index{Jacobian matrix}
 This determinant is raised to a power
-$W$, known as the weight of the tensor density.\index{weight of a tensor density} Weight zero corresponds to the case of a real tensor.
+$W$, known as the weight of the tensor density.\index{weight of a tensor density} Weight
+zero corresponds to the case of a real tensor. The definition of the sign of $W$ is not standardized in the
+literature. The convention in this book is the one used by Carroll and Weinberg, but the opposite sign is
+used, for example, by Misner, Thorne, and Wheeler, and in the Wikipedia article ``Tensor density.''
+
+\pagebreak[4]
 
 \begin{eg}{Area as a tensor density}
 In a Euclidean plane, making our rulers longer by a factor of $k$ causes the area measured in the new coordinates
