@@ -1285,7 +1285,7 @@ used, for example, by Misner, Thorne, and Wheeler, and in the Wikipedia article 
 \pagebreak[4]
 
 \begin{eg}{Area as a tensor density}
-In a Euclidean plane, making our rulers longer by a factor of $k$ causes the area measured in the new coordinates
+In a Euclidean plane, making our rulers shorter by a factor of $k$ causes the area measured in the new coordinates
 to increase by a factor of $k^2$. The rescaling is represented by a matrix of partial
 derivatives that is simply $kI$, where $I$ is the identity matrix. The determinant is $k^2$. Therefore
 area is a tensor density of weight $+1$.
@@ -1377,7 +1377,7 @@ $V$ as the spatial volume that the observer says is spanned by the
 <% end_sec %> % 
 <% begin_sec("Angular momentum") %>\index{angular momentum}
 As discussed above, angular momentum cannot be a rank-1 tensor.
-One approach is to define a rank-2 angular momentum tensor $L^{ab}=r^ap^b$. 
+One approach is to define a rank-2 angular momentum tensor $L^{ab}=r^ap^b-r^bp^a$. 
 
 In a frame whose origin is instantaneously moving along with a certain system's center of mass
 at a certain time, the time-space components of $L$ vanish, and the components $L^{yz}$, $L^{zx}$, and $L^{xy}$ coincide
