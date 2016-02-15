@@ -1104,12 +1104,16 @@ nor is there any plausible model that would allow this much mass to exist in equ
 without emitting enough light to be observable.
 
 The existence of supermassive black holes is surprising. Gas clouds with masses greater than about 100 solar masses
-cannot form stable stars, so supermassive black holes cannot be the end-point of the evolution of heavy stars.
+cannot normally form stable stars, so supermassive black holes cannot be the end-point of the evolution of heavy stars.
 Mergers of multiple stars to form more massive objects are generally statistically unlikely, since a star is such a small
 target in relation to the distance between the stars. Once astronomers were confronted with the empirical fact of their
 existence, a variety of mechanisms was proposed for their formation. Little is known about which of these mechanisms
 is correct, although the existence of quasars in the early universe is interpreted as evidence that mass accreted
 rapidly onto supermassive black holes in the early stages of the evolution of the galaxies.
+As of 2016, an explanation getting a lot of attention
+is that in the early universe, there was a brief period in which
+the ambient conditions allowed the creation of supermassive black holes by direct 
+collapse.\footnote{See, e.g., \url{http://arxiv.org/abs/1402.5675}}
 
 A skeptic could object that although Cygnus X-1 and Sagittarius A* are more compact than is believed possible
 for a neutron star, this does not necessarily prove that they are black holes. Indeed, speculative theories
@@ -1117,8 +1121,11 @@ have been proposed in which exotic objects could exist that are intermediate in 
 neutron stars. These hypothetical creatures have names like black stars, gravastars, quark stars, boson stars, Q-balls,
 and electroweak stars. Although there is no evidence that these theories are right or that these objects exist,
 we are faced with the question of how to determine whether a given object is really a black hole or one of these other species.
-The defining characteristic of a black hole is that it has an event horizon rather than a physical surface. If
-an object is not a black hole, then by conservation of
+The defining characteristic of a black hole is that it has an event horizon rather than a physical surface. 
+We currently have two ways of probing the structure of these stars at the radii where general relativity predicts
+the existence of an event horizon.
+
+If an object is not a black hole, then by conservation of
 energy any matter that falls onto it must release its gravitational potential energy when it hits that surface.
 Cygnus X-1 has a copious supply of matter falling onto it from its supergiant companion, and Sagittarius A* likewise
 accretes a huge amount of gas from the stellar wind of nearby stars.
@@ -1128,6 +1135,13 @@ of the luminosity of the accretion disk. But this is not physically possible, be
 limits on the efficiency with which the gas can radiate away its energy before hitting the surface.
 We can therefore conclude that Sagittarius A* must have an event horizon. Its event horizon may be
 imaged directly in the near future.\footnote{\url{arxiv.org/abs/0906.4040}}
+
+A second approach is through the observation of gravitational waves. As discussed in more detail in
+ch.~\ref{ch:waves}, 2016 saw the first direct observation of gravitational waves. The waveform that
+was detected (figure \figref{ligo-signals-overlaid}, p.~\pageref{fig:ligo-signals-overlaid})
+fits very well with the predictions of general relativity for the merger of two black holes.
+It seems very unlikely that a waveform with this time-scale and characteristic shape could have been
+produced unless general relativity's description of black holes is correct in detail.
 <% end_sec %> % observational
 
 <% begin_sec("Singularities and cosmic censorship") %>\index{singularity}\index{cosmic censorship}
