@@ -23,49 +23,59 @@ it seems likely to apply to general
 relativity as well, at least for low-amplitude waves on a flat background.
 As early as 1913, before Einstein had even developed the full theory of general relativity, he
 had carried out calculations in the weak-field limit showing that gravitational effects should propagate
-at $c$.\index{gravitational waves!propagation at $c$} This seems eminently reasonable, since (a) it is likely to be consistent with causality, and (b) $G$ and $c$ are the
+at $c$.\index{gravitational waves!propagation at $c$}
+We will work out an argument to this effect (using a different technique
+than Einstein's) in section \ref{subsec:gw-expected-properties}.
+This seems eminently reasonable, since (a) it is likely to be consistent with causality, and (b) $G$ and $c$ are the
 only constants with units that appear in the field equations (obscured by our choice of units, in which $G=1$ and $c=1$),
 and the only velocity-scale that can be constructed from
 these two constants is $c$ itself.\footnote{High-amplitude waves need \emph{not} propagate at $c$. For example, general relativity predicts
 that a gravitational-wave pulse propagating on a background of curved spacetime develops a trailing edge that propagates at less
 than $c$ (Misner, Thorne, and Wheeler, p. 957).
-This effect is weak when the amplitude is small or the wavelength is short compared to the scale of the background curvature.
-It makes sense that the effect vanishes when background curvature is absent, since there is then no fixed scale. Dispersion
-requires that different wavelengths propagate at different speeds, but without a scale there is no reason for any wavelength
-to behave any differently from any other.\index{gravitational waves!propagation at less than $c$, for high amplitudes}
-At very high amplitudes, one can even have such exotic phenomena as the formation of black holes when enough wave energy
-is focused into a small region. None of these phenomena is ever likely to be observed empirically, since all gravitational
-waves in our universe have extremely small amplitudes.}
+This effect is weak when the amplitude is small or the wavelength is short compared to the scale of the background 
+curvature.\index{gravitational waves!propagation at less than $c$, for high amplitudes}}
 
-Although well founded theoretically, this turns out to be difficult to test empirically.
-In a 2003 experiment,\footnote{\url{http://arxiv.org/abs/astro-ph/0302294}}
-Fomalont and Kopeikin used a world-wide array of radio telescopes to observe a conjunction in which Jupiter passed within $3.7'$ of a quasar,
-so that the quasar's radio waves came within about 3 light-seconds of the planet on their way to the earth.
-Since Jupiter moves with $v=4\times10^{-5}$, one expects naively that
-the radio waves passing by it should be deflected by the field produced by Jupiter at the position it \emph{had} 3 seconds earlier.
-This position differs from its present position by about $10^{-4}$ light-seconds, and the result should be a difference in
-propagation time, which should be different when observed from different locations on earth. Fomalont and Kopeikin measured
-these phase differences with picosecond precision, and found them to be in good agreement with the predictions of general
-relativity. The real excitement started when they published their result with the interpretation that they had measured,
-for the first time, the speed of gravity, and found it to be within 20\% error bars of $c$. Samuel\footnote{\url{http://arxiv.org/abs/astro-ph/0304006}}
-and Will\footnote{\url{http://arxiv.org/abs/astro-ph/0301145}} published refutations, arguing that Kopeikin's
-calculations contained mistakes, and that what had really been measured was the speed of light, not the speed
-of gravity.
+As shown by the following timeline, Einstein's prediction was surprisingly difficult to verify.
 
-The reason that the interpretation of this type of experiment is likely to be controversial is that
-although we do have theories of gravity that are viable alternatives to general relativity (e.g., the Brans-Dicke theory,\index{Brans-Dicke theory}
-in which the gravitational constant is a dynamically changing variable), such theories have generally been carefully designed to agree with general
-relativity in the weak-field limit, and in particular every such theory (or at least every theory that remains viable given
-current experimental data) predicts that gravitational effects
-propagate at $c$ in the weak-field limit. Without an alternative theory to act as a framework --- one that \emph{disagrees} with
-relativity about the speed of gravity --- it is difficult to know whether an observation
-that agrees with relativity is a test of this specific aspect of relativity.
+\begin{tabular}{lp{90mm}}
+1913 & Einstein predicts gravitational waves traveling at $c$. \\
+1982 & Hulse-Taylor pulsar (pp.~\pageref{hulse-taylor-pulsar}, \pageref{subsec:gw-empirical-evidence})
+       seen to lose energy at the rate predicted by general relativity's prediction of gravitational radiation.\\
+2016 & Direct detection of gravitational waves from a collision of two black holes. The data suggest a velocity
+       on the same order of magnitude as $c$.
+\end{tabular}
+
+Why did this process take over a century? Naive arguments suggest that it should have been much easier.
+Workers as early as Newton and Laplace had investigated the consequences of a gravitational force that
+propagated at some finite speed. It is easy to show that, if nonrelativistic ideas about spacetime are retained,
+the predicted results are dramatic and not consistent with observation. For example, the earth and moon orbit
+about their common center of mass, which is inside the earth but offset from the earth's center.
+Suppose that we retain Newton's ideas about spacetime, but modify Newton's law of gravity to incorporate
+a time delay, with changes in the gravitational field propagating at some speed $u$. The force acting on the
+moon would then point toward the earth's location at a slightly earlier time, and this force would therefore
+have a component parallel to the moon's direction of motion. The force would do positive work on the moon and
+also exert a positive torque, the result being that the moon would spiral away. This is not consistent with the
+fact that the earth-moon system has remained fairly stable for billions of years, unless we take $u$ to be
+very large. From the stability of orbits in the solar system, Laplace estimated $u\gtrsim 10^{15}\ \munit/\sunit$,
+many orders of magnitude greater than $c$. This seemed to support the Newtonian picture, in which gravity acts
+instantaneously at a distance. A time delay in Newtonian spacetime would also have been easily detected by
+twentieth-century measurements using space probes and radio astronomy.\footnote{For an example of an erroneous
+2003 claim to have performed such a test, see Fomalont and Kopeikin, \url{http://arxiv.org/abs/astro-ph/0302294}.
+Their claims were debunked by  Samuel, \url{http://arxiv.org/abs/astro-ph/0304006},
+and Will, \url{http://arxiv.org/abs/astro-ph/0301145}.}
+
+The trouble with such arguments is that when we substitute relativistic spacetime for Newtonian spacetime,
+it is no longer expected that a time-delayed field will point toward the retarded position of the source.
+For example, if an electric charge moves inertially, and is observed in a frame in which it is moving, then
+Lorentz invariance requires that its electric field lines be straight, and converge on the charge's \emph{present}
+position in that frame.\footnote{Crowell, Special Relativity, section 10.4} The speed of gravity therefore
+turns out to be much harder to measure than Laplace had believed.
 <% end_sec %> % The speed of gravity
 
 <% begin_sec("Gravitational radiation") %>
-<% begin_sec("Empirical evidence") %>\index{gravitational waves!empirical evidence for}
-So we still don't know, a century after Einstein found the field equations, whether gravitational ``ripples'' travel at $c$.
-Nevertheless, we do have strong empirical evidence that such ripples exist. The Hulse-Taylor system (page \pageref{hulse-taylor-pulsar})
+<% begin_sec("Empirical evidence",nil,'gw-empirical-evidence') %>\index{gravitational waves!empirical evidence for}
+The first strong empirical evidence of gravitational waves came in 1982. The Hulse-Taylor system
+(page \pageref{hulse-taylor-pulsar})
 contains two neutron stars orbiting around their common center of mass, and the period of the orbit is observed to be decreasing
 gradually over time (figure \figref{pulsar-period-decreasing}). This is interpreted as evidence that the stars are losing energy to radiation of 
 gravitational waves.\footnote{Stairs, ``Testing General Relativity with Pulsar Timing,'' \url{http://relativity.livingreviews.org/Articles/lrr-2003-5/}}
@@ -96,14 +106,29 @@ amount of momentum, causing the black holes to recoil at a velocity greater than
 merged galaxy.
 
 Although the energy loss from systems such as the Hulse-Taylor binary provide strong evidence that gravitational waves
-exist and carry enery, we would also like to detect them directly. This would not only be a definitive
-test of a century-old prediction of general relativity, it would also open a window into a completely new method of
-astronomical observation. A series of attempts is under way to observe gravitational waves directly using interferometers,
-which detect oscillations in the lengths of their own arms. These can be either ground-based or space-based.
-The early iterations of the ground-based LIGO interferometer did not detect gravitational waves, but a new version, Advanced LIGO, is under construction.
-A space-based system, LISA, has been proposed for launch in 2020, but its funding is uncertain.
+exist and carry energy, physicists and astronomers still wanted to detect them directly, and serious attempts to
+design and build such systems began around 1962. The design that finally achieved success used interferometers
+which detect oscillations in the lengths of their own arms.
+The first gravitational-wave event was detected, by this method, in 2016,
+by the Advanced LIGO collaboration.\footnote{\url{https://dcc.ligo.org/LIGO-P150914/public}}
+The event is believed to have been the result of the collision of two black holes.
+
+<%
+  fig(
+    'ligo-signals-overlaid',
+    %q{%
+      The gravitational waveform observed in 2016 by Advanced Ligo.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+A complementary space-based system, LISA, has been proposed for launch in 2020, but its funding is uncertain.
 The two devices would operate in complementary frequency ranges (figure \figref{ligo-and-lisa-sensitivities}).
-A selling point of LISA is that if it is launched, there are a number of known sources in the sky that
+A selling point of LISA is that if it is launched, there are a number of sources in the sky, with known properties, that
 are known to be easily within its range of sensitivity.\footnote{G. Nelemans, ``The Galactic Gravitational wave foreground,''
 \url{arxiv.org/abs/0901.1778v1}} One excellent candidate is
 HM Cancri, a pair of white dwarfs with an orbital period of 5.4 minutes, shorter than that of any 
@@ -121,6 +146,19 @@ other known binary star.\footnote{Roelofs et al., ``Spectroscopic Evidence for a
     }
   )
 %>
+
+The initial detection of gravitational waves by Advanced LIGO provided two kinds of tests of
+general relativity's prediction that gravitational waves propagate at $c$. Advanced LIGO consists of
+two interferometers, separated by a distance of 3002 km, which corresponds to $T=10\ \zu{ms}$ at the speed of light.
+Let $\theta$ be the angle between the wave's direction of propagation and the line connecting the two interferometers.
+Then the difference in time between the arrival of the wave at the two instruments is
+$t=T(c/u)\cos\theta$, where $u$ is the velocity of the waves. The event detected in 2016 had $t=7\ \zu{ms}$,
+which is consistent with any value of $u$ less than about $1.4c$, and suggests $u\sim c$. Furthermore, the
+waveform detected in this event was a ``chirp'' that glided up in frequency. Since the wave was in transit
+for over a billion years, and the waveform lasted a fraction of a second, it follows that gravitational waves
+within this frequency range all travel at very nearly the same velocity, i.e., there is a very tight upper
+limit on the dispersion of gravitational waves.
+
 <% end_sec %> % Empirical evidence
 <% begin_sec("Energy content") %>\index{gravitational waves!energy content}
 Even without performing the calculations for a system like the Hulse-Taylor binary, it is easy to show that if such waves exist, they must be
@@ -200,7 +238,7 @@ that is conserved. In this restricted sense, we are assured that the books balan
 waves really does mean the \emph{transmission} of a fixed amount of energy.
 <% end_sec %> % Energy content
 
-<% begin_sec("Expected properties") %>
+<% begin_sec("Expected properties",nil,'gw-expected-properties') %>
 To see what properties we should expect for gravitational radiation, first consider the reasoning that led to the construction of
 the Ricci and Einstein tensors. If a certain volume of space is filled with test particles, then the Ricci and Einstein
 tensors measure the tendency for this volume to ``accelerate;'' i.e., $-\der^2 V/\der t^2$ is a measure of the attraction of
