@@ -836,7 +836,8 @@ amount, than a precisely similar clock situated at one of the
 poles under otherwise identical conditions'' (p.~\pageref{einstein-goof}). This was a
 reasonable prediction at the time, but we now know that it was incorrect because it neglected
 gravitational time dilation. 
-In the description of the Hafele-Keating experiment using atomic clocks aboard airplanes (p. \pageref{sec:hafele-keating}), 
+In the description of the Hafele-Keating experiment using
+atomic clocks aboard airplanes (p. \pageref{subsec:hafele-keating}), 
 we saw that both gravity and motion had effects on the rate of flow of time.
 On p.~\pageref{grav-redshift-by-ep} we found based on the equivalence principle that the gravitational
 redshift of an electromagnetic wave is $\Delta E/E=\Delta\Phi$ (where $c=1$ and $\Phi$ is the gravitational
@@ -974,7 +975,7 @@ of decay predicted with and without relativity. The relativistic line is the one
 <% end_marg %>
 
 \begin{eg}{Time dilation in the Pound-Rebka experiment}\label{eg:pound-rebka-time-dilation}
-In the description of the Pound-Rebka experiment on page \pageref{sec:pound-rebka}, I postponed
+In the description of the Pound-Rebka experiment on page \pageref{subsec:pound-rebka}, I postponed
 the quantitative estimation of the frequency shift due to temperature. Classically, one expects only
 a \emph{broadening} of the line, since the Doppler shift is proportional to $v_\parallel/c$, where
 $v_\parallel$, the component of the emitting atom's velocity along the line of sight, averages to zero.
@@ -1536,7 +1537,7 @@ If we transport the loop while always carefully adjusting its orientation so as 
 phase shifts, then its orientation has been preserved. 
 The atomic clocks used in the Hafele-Keating atomic-clock experiment\index{Hafele-Keating experiment}\index{atomic clocks}
 described
-on page \pageref{sec:hafele-keating} were subject to the Sagnac effect.
+on page \pageref{subsec:hafele-keating} were subject to the Sagnac effect.
 <% marg(100) %>
 <%
   fig(

@@ -294,8 +294,8 @@ field must lose or gain energy, and this should be observed as a redshift or blu
 We expect the change in gravitational potential energy to be $E\Delta \phi$, giving a corresponding opposite change in the photon's
 energy, so that $\Delta E/E=\Delta \phi$. In metric units, this becomes $\Delta E/E=\Delta \phi/c^2$, and in the
 field near the Earth's surface we have $\Delta E/E=gh/c^2$.
-This is the same result that was found in section \ref{sec:gravitational-redshifts} based only on the equivalence
-principle, and verified experimentally by Pound and Rebka as described in section \ref{sec:pound-rebka}.
+This is the same result that was found in section \ref{subsec:gravitational-redshifts} based only on the equivalence
+principle, and verified experimentally by Pound and Rebka as described in section \ref{subsec:pound-rebka}.
 \end{eg}
 
 
@@ -1111,7 +1111,8 @@ from a small system we're studying, then we can define a far-away boundary that 
 measure the flux through that boundary, and find the system's charge.
 For such \emph{asymptotic flatness}\index{asymptotic flatness} spacetimes, we
 can also get around the problems that crop up with conserved vectors, such as
-momentum. (Asymptotic flatness is discussed in more detail in section \ref{subsec:asymptotic-flatness}.)\label{asymptotic-flatness-idea}
+momentum. (Asymptotic flatness is discussed in more
+detail in section \ref{subsubsec:asymptotic-flatness}.)\label{asymptotic-flatness-idea}
 If the spacetime far away is nearly flat, then parallel transport loses its path-dependence,
 so we can unambiguously define a notion of parallel-transporting all the contributions to the
 flux to one arbitrarily chosen point P and then adding them. Asymptotic flatness also allows

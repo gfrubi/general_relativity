@@ -78,7 +78,7 @@ disconnected parts. This boundary is called an \emph{event horizon}. Its existen
 of a particular observer. An observer who is not accelerating along with the ship does consider an event horizon
 to exist. Although this particular example of the indefinitely accelerating spaceship has some physically
 implausible features (e.g., the ship would have to run out of fuel someday), event horizons are real things.
-In particular, we will see in section \ref{sec:black-hole-horizon} that black holes have event horizons.
+In particular, we will see in section \ref{subsec:black-hole-horizon} that black holes have event horizons.
 <% marg(63) %>
 <%
   fig(

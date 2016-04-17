@@ -238,8 +238,8 @@ were slower.\index{time dilation!kinematic}
 On the other hand, the asymmetry of the results, with $|\Delta t_E| \ne |\Delta t_W|$,
 implies that there was a second effect involved, simply due to the planes' being up in the air. Relativity predicts
 that time's rate of flow also changes with height in a gravitational field. The deeper reasons for such an
-effect are given in section \ref{sec:pound-rebka} on 
-page \pageref{sec:pound-rebka}.\index{time dilation!gravitational}\label{gravity-affects-time}
+effect are given in section \ref{subsec:pound-rebka} on 
+page \pageref{subsec:pound-rebka}.\index{time dilation!gravitational}\label{gravity-affects-time}
 
 Although Hafele and Keating's measurements were on the ragged edge of the state of the art in 1971, technology has
 now progressed to the point where such effects have everyday consequences. The satellites of the Global
@@ -925,7 +925,7 @@ argument based on Newtonian physics that the radius\footnote{Because relativity
 describes gravitational fields in terms of curvature of spacetime, the Euclidean relationship between
 the radius and circumference of a circle fails here. The $r$ coordinate should be understood here
 not as the radius measured from the center but as the circumference divided by $2\pi$.} of the event horizon should be something like
-$r_H=GM/c^2$, and section \ref{sec:black-hole-horizon} on page \pageref{sec:black-hole-horizon}
+$r_H=GM/c^2$, and section \ref{subsec:black-hole-horizon} on page \pageref{subsec:black-hole-horizon}
 derives the relativistically correct factor of 2 in front, so that $r_H=2GM/c^2$.
 It turns out that at $r=(3/2)R_H$, a ray of light can have a circular orbit around the black hole.
 Since this is greater than $R_H$, we can, at least in theory, hold the laser stationary at this value of $r$ using a powerful
@@ -956,7 +956,7 @@ changes with height in a gravitational field. We can now see that this is requir
 By the equivalence principle, there is no way to tell the difference between experimental results obtained in an
 accelerating laboratory and those found in a laboratory immersed in a gravitational field.\footnote{Problem
 \ref{hw:have-spacesuit} on p.~\pageref{hw:have-spacesuit} verifies, in one specific example, that this way of stating the equivalence principle
-is implied by the one on p.~\pageref{ep-mass}.} In a laboratory accelerating
+is implied by the one on p.~\pageref{subsec:ep-mass}.} In a laboratory accelerating
 upward, a photon emitted from the floor and would be Doppler-shifted toward lower frequencies when observed at the ceiling, because of the
 change in the receiver's velocity during the photon's time of flight. The effect is given by $\Delta E/E=\Delta f/f=ay/c^2$, where
 $a$ is the lab's acceleration, $y$ is the height from floor to ceiling, and $c$ is the speed of light.
@@ -1025,7 +1025,8 @@ Further interpretation:
            then the object can be considered to be a type of clock. We can therefore interpret the gravitational red-shift as
            a gravitational time dilation:\index{time dilation!gravitational}\label{grav-redshift-as-time-dil}
            a difference in the rate at which time itself flows, depending on the gravitational potential. This is
-           consistent with the empirical results presented in section \ref{sec:hafele-keating}, p.~\pageref{sec:hafele-keating}.
+           consistent with the empirical results presented in section \ref{subsec:hafele-keating}, 
+           p.~\pageref{subsec:hafele-keating}.
 \end{itemize}
 
 <% marg(200) %>
@@ -1260,9 +1261,9 @@ he finds himself in a locked cell with a young girl named Peewee. Peewee claims
 they're aboard an accelerating spaceship. ``If this was a spaceship,'' Kip thinks.
 ``The floor felt as solid as concrete and motionless.''
 
-The equivalence principle can be stated in a variety of ways. On p.~\pageref{ep-mass},
+The equivalence principle can be stated in a variety of ways. On p.~\pageref{subsec:ep-mass},
 I stated it as (1) gravitational and inertial mass are always proportional to one
-another. An alternative formulation (p.~\pageref{sec:gravitational-redshifts}) is (2) that Kip has no way, by experiments or observarions
+another. An alternative formulation (p.~\pageref{subsec:gravitational-redshifts}) is (2) that Kip has no way, by experiments or observarions
 inside his sealed prison cell, to determine whether he's in an accelerating spaceship
 or on the surface of a planet, experiencing its gravitational field.
 

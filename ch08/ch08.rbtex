@@ -281,7 +281,7 @@ in 1966.
 Before we can properly describe and interpret the Kreuzer experiment, we need to distinguish the several
 different types of mass that could in principle be different from one another in a theory of gravity.
 We've already encountered the distinction between inertial and gravitational mass,\index{mass!inertial}\index{inertial mass}\index{mass!gravitational}\index{gravitational mass}
-which  E\"{o}tv\"{o}s experiments (p.~\pageref{sec:eotvos}) show to be equivalent to about one part in $10^{12}$.
+which  E\"{o}tv\"{o}s experiments (p.~\pageref{subsec:eotvos}) show to be equivalent to about one part in $10^{12}$.
 But there is also a distinction between an object's \emph{active} gravitational
 mass $m_a$, which measures its ability to create gravitational fields, and its \emph{passive} gravitational mass $m_p$,
 which measures the force it feels when placed in an externally generated 
@@ -2710,7 +2710,8 @@ wrong,'' i.e., so ill-defined that it cannot even be falsified by experiment, an
 But in 1961, Robert Dicke and his student Carl Brans came up with a theory of gravity that made testable predictions, and
 that was specifically designed to be more Machian than general relativity.\index{Brans-Dicke theory} Their paper\footnote{C. Brans and R. H. Dicke, ``Mach's
 Principle and a Relativistic Theory of Gravitation,'' Physical Review 124 (1961) 925} is extremely readable, even for
-the non-specialist. In this theory, the seemingly foolproof operational definition of a Lorentz frame given on p.~\pageref{operational-lorentz}
+the non-specialist. In this theory, the seemingly foolproof operational definition
+of a Lorentz frame given on p.~\pageref{subsubsec:operational-lorentz}
 fails. On the first page, Brans and Dicke propose one of those seemingly foolish
 thought experiments about a nearly empty universe:
 
