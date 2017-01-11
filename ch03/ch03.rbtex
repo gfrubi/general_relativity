@@ -774,10 +774,10 @@ scales, a displacement $\der x^i$ along either axis, $i=1$ or 2, must give $\der
 elements we have $g_{11}=g_{22}=1$. The metric is always symmetric, so
 $g_{12}=g_{21}$. To fix these off-diagonal elements, consider a displacement by $\der s$ in the
 direction perpendicular to axis 1. This changes the coordinates by $\der x^1=-\der s \cot\phi$ and
-$\der x^2 = \der s \csc\phi$. We then have
+$\der x^2 = \der s \cos\phi$. We then have
 \begin{align*}
   \der s^2 &= g_{ij} \der x^i \der x^j \\
-           &= \der s^2 (\cot^2\phi+\csc^2\phi-2g_{12}\cos\phi\csc\phi) \\
+           &= \der s^2 (\cot^2\phi+\csc^2\phi-2g_{12}\cot\phi\csc\phi) \\
   g_{12}   &= \cos\phi\eqquad.
 \end{align*}
 \end{eg}

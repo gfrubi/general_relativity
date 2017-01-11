@@ -306,7 +306,7 @@ interpreted as the gravitational effect effect on time, matching the relativisti
 <% begin_sec("Non-simultaneity and the maximum speed of cause and effect",nil,'max-speed-of-cause-and-effect') %>
 We've seen that time flows at different rates for different observers.
 Suppose that Alice and Betty repeat their Hafele-Keating-style experiment, but this time they are allowed to
-communicate during the trip. Once Betty's ship completes its initial acceleration away from Betty,
+communicate during the trip. Once Betty's ship completes its initial acceleration away from Alice,
 she  cruises at constant speed, and each girl has her own equally valid
 inertial frame of reference. Each twin considers herself to be at rest, and says that the other is the one who
 is moving. Each one says that the other's clock is the one that is slow. If they could pull out their phones
@@ -927,8 +927,8 @@ the radius and circumference of a circle fails here. The $r$ coordinate should b
 not as the radius measured from the center but as the circumference divided by $2\pi$.} of the event horizon should be something like
 $r_H=GM/c^2$, and section \ref{subsec:black-hole-horizon} on page \pageref{subsec:black-hole-horizon}
 derives the relativistically correct factor of 2 in front, so that $r_H=2GM/c^2$.
-It turns out that at $r=(3/2)R_H$, a ray of light can have a circular orbit around the black hole.
-Since this is greater than $R_H$, we can, at least in theory, hold the laser stationary at this value of $r$ using a powerful
+It turns out that at $r=(3/2)r_H$, a ray of light can have a circular orbit around the black hole.
+Since this is greater than $r_H$, we can, at least in theory, hold the laser stationary at this value of $r$ using a powerful
 rocket engine. If we point the laser in the azimuthal direction, its own beam will come back and hit it.
 
 Since matter can experience a back-reaction from its own electromagnetic
