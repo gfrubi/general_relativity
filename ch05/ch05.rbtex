@@ -524,8 +524,12 @@ Similar reasoning shows why Benjamin Franklin used a sharp
 The example of the flea suggests that if we want to express curvature as a tensor, it should have
 even rank. Also, in a coordinate system in which the coordinates have units of distance (they are not
 angles, for instance, as in spherical coordinates), we expect that the units of curvature will always
-be inverse distance squared. More elegantly, we expect that under a uniform rescaling of coordinates
-by a factor of $\mu$, a curvature tensor should scale down by $\mu^{-2}$.
+be inverse distance squared. Another way of putting this is that if we start
+with normal coordinates and then rescale all the coordinates
+by a factor of $\mu$, a curvature tensor should scale down by $\mu^{-2}$. (If we don't start with
+normal coordinates, then it doesn't necessarily make sense to talk about rescaling. E.g., for
+polar coordinates in the Euclidean plane, the transformation $(r,\theta)\rightarrow(2r,2\theta)$
+doesn't have any interesting interpretation.)
 
 Combining these two facts, we find that a curvature tensor should have one
 of the forms $R_{ab}$, $R\indices{^a_{bcd}}$, \ldots, i.e., the number of lower indices should be two greater than
@@ -1817,7 +1821,7 @@ is locally Minkowski, we could also say  that it implies spacetime is Hausdorff.
 However, general relativity allows spacetime to behave badly in cases such as singularities, so it is imaginable
 that our universe contains points that violate the Hausdorff property. There are interesting
 and physically well-motivated
-spacetimes, such as some versions of the Taub-NUT space,\index{Taub-NUT spacetime}
+spacetimes, such as some versions of the Taub-NUT space,\index{Taub-NUT spacetimes}
 that are non-Hausdorff. Since we have no empirical data on the behavior of spacetime under the most
 extreme conditions, we cannot say whether spacetime is really Hausdorff. One should maintain
 some skepticism about whether such an idealized category is even meaningful in science, since
