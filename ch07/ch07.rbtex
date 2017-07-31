@@ -533,8 +533,10 @@ properly to lightlike geodesics in the submanifold.
 For step 2, we have already given a geometrical characterization of the type of transformation we have
 in mind, which is called a \emph{conformal transformation}.\index{conformal transformation}
 It turns out to be possible to encapsulate this idea in a simple analytic way.
-Given a spacetime with a metric $g$, we define a fictitious metric $\tilde{g}=\Omega^2 G$, where
-$\Omega$ is a nonzero real number that varies from point to point. The idea here is that $g$ and
+Given a spacetime with a metric $g$, we define a fictitious metric $\tilde{g}=\Omega^2 g$, where
+$\Omega$ is a nonzero real number that varies from point to point. 
+(Cf.~sec.~\ref{sec:units}, p.~\pageref{sec:units}, where $\Omega$ was constant.)
+The idea here is that $g$ and
 $\tilde{g}$ agree on where the light cone is, but they disagree on the measurement of distances and
 times. The same manifold equipped with
 the fictitious metric $\tilde{g}$ is the one being drawn on the page when we make a Penrose diagram.

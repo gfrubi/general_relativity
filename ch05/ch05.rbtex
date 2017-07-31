@@ -526,10 +526,8 @@ even rank. Also, in a coordinate system in which the coordinates have units of d
 angles, for instance, as in spherical coordinates), we expect that the units of curvature will always
 be inverse distance squared. Another way of putting this is that if we start
 with normal coordinates and then rescale all the coordinates
-by a factor of $\mu$, a curvature tensor should scale down by $\mu^{-2}$. (If we don't start with
-normal coordinates, then it doesn't necessarily make sense to talk about rescaling. E.g., for
-polar coordinates in the Euclidean plane, the transformation $(r,\theta)\rightarrow(2r,2\theta)$
-doesn't have any interesting interpretation.)
+by a factor of $\mu$, a curvature tensor should scale down by $\mu^{-2}$.
+(See section \ref{sec:units}, p.~\pageref{sec:units}, for more on this topic.) 
 
 Combining these two facts, we find that a curvature tensor should have one
 of the forms $R_{ab}$, $R\indices{^a_{bcd}}$, \ldots, i.e., the number of lower indices should be two greater than
@@ -1389,7 +1387,7 @@ source.\footnote{Carroll and Field, \url{http://arxiv.org/abs/gr-qc/9403058}}
 
 <% begin_sec("From metric to curvature",4) %>\label{sec:from-metric-to-curvature}
 
-<% begin_sec("Finding the Christoffel symbol from the metric") %>
+<% begin_sec("Finding the Christoffel symbol from the metric",nil,'g-to-gamma') %>
 We've already found the Christoffel symbol in terms of the metric in one dimension. Expressing it in
 tensor notation, we have
 \begin{align*}
@@ -2057,6 +2055,220 @@ section \ref{sec:killing-vectors}, p.~\pageref{sec:killing-vectors}.
 <% end_sec %>
 
 <% end_sec %> % Manifolds
+
+<% begin_sec("Units in general relativity",nil,'units') %>
+This section is optional.
+
+Analyzing units, also known as dimensional analysis, is one of the
+first things we learn in freshman physics.  It's a useful way of
+checking our math, and it seems as though it ought to be
+straightforward to extend the technique to relativity. It certainly
+can be done, but it isn't quite as trivial as might be imagined, and
+it leads to some surprising new physical ideas.
+
+One of our most common jobs is to change from one set of units to
+another, but in relativity it becomes nontrivial to define what we
+mean by the notion that our units of measurement change or don't
+change. We could, e.g., appeal to an
+atomic standard, but Dicke\footnote{``Mach's principle and invariance
+under transformation of units,'' Phys Rev 125 (1962) 2163} points out
+that this could be problematic. Imagine, he says, that
+%
+\begin{quote}
+you are told by a space traveller that a
+hydrogen atom on Sirius has the same diameter as one on the earth. A
+few moments' thought will convince you that the statement is either a
+definition or else meaningless. 
+\end{quote}
+%
+
+To start with, we note that abstract index notation is more convenient
+than concrete index notation for these purposes.  Concrete index
+notation assigns different units to different components of a tensor
+if we use coordinates, such as spherical coordinates
+$(t,r,\theta,\phi)$, that don't all have units of length.  In abstract
+index notation, a symbol like $v^i$ stands for the whole vector, not
+for one of its components.
+
+In concrete index notation, it also doesn't necessarily make sense to talk about rescaling. E.g., for
+polar coordinates in the Euclidean plane, the transformation $(r,\theta)\rightarrow(2r,2\theta)$
+doesn't have any interesting interpretation, and can't even be applied globally.
+In abstract index notation, we can say $v^i\rightarrow 2v^i$, and this simply
+means that the vector $v^i$ has been scaled up by a factor of 2.
+
+Since abstract index notation does not
+even offer us a notation for components, if we want to apply
+dimensional analysis we must define a system in which units are
+attributed to a tensor as a whole. Suppose we write down the
+abstract-index form of the equation for proper time:
+\begin{equation*}
+  \der s^2 = g_{ab} \der x^a \der x^a
+\end{equation*}
+In abstract index notation, $\der x^a$ doesn't mean an infinitesimal change in a particular coordinate, it
+means an infinitesimal displacement vector.\footnote{For a modern and rigorous development of differential
+geometry along these lines, see Nowik and Katz, 
+\url{arxiv.org/abs/1405.0984}.} This equation
+has one quantity on the left and three factors on the right. Suppose we assign these parts of the equation units
+$[ds]=L^\sigma$, $[g_{ab}]=L^{2 \gamma}$, and $[dx^a]=[dx^b]=L^\xi$, where square brackets mean
+``the units of'' and $L$ stands for units of length. We then have $\sigma=\gamma+\xi$.
+Due to the ambiguities referred to above, we can pick any values we like for these three constants,
+as long as they obey this rule. I find $(\sigma,\gamma,\xi)=(1,0,1)$ to be natural and convenient,
+but Dicke, in the above-referenced paper, likes $(1,1,0)$, while the mathematician
+Terry Tao advocates $(0,\mp 1,\pm 1)$.
+
+Suppose we raise and lower indices to form a tensor with $r$ upper indices and $s$ lower indices
+We refer to this as a tensor of rank $(r,s)$.\index{tensor!rank}
+(We don't count contracted indices, e.g., $u^av_a$ is a rank-$(0,0)$ scalar.)
+Since the metric is the tool we use for raising and
+lowering indices, and the units of the lower-index form of the metric are $L^{2 \gamma}$,
+it follows that the 
+units vary in proportion to $L^{\gamma(s-r)}$. In general, you can
+assign a physical quantity units $L^u$ that are a product of two
+factors, a ``kinematical'' or purely geometrical factor $L^k$, where
+$k=\gamma(s-r)$, and a dynamical factor $L^d\ldots$, which can
+depend on what kind of quantity it is, and where the \ldots indicates
+that if your system of units has more than just one base unit, those
+can be in there as well. Dicke uses units with $\hbar=c=1$, for
+example, so there is only one base unit, and mass has units of inverse
+length and $d_\text{mass}=-1$. In general relativity it would be more common to use units
+in which $G=c=1$, which instead give $d_\text{mass}=+1$.
+
+\begin{eg}{The units of momentum}\label{eg:units-of-momentum-fancy}
+Consider the equation
+\begin{equation*}
+  p^a = mv^a
+\end{equation*}
+for the momentum of a material particle. Suppose we use special-relativistic units
+in which $c=1$, but because gravity isn't incorporated into the theory, $G$ plays
+no special role, and it is natural to use a system of units in which there is a base
+unit of mass $M$.
+
+The kinematic units check out, because $k_p=k_m+k_v$:
+\begin{equation*}
+  \gamma(-1)=\gamma(0)+\gamma(-1)
+\end{equation*}
+This is merely a matter of counting indices, and was guaranteed to check out as long
+as the indices were written in a grammatical way on both sides of the equation.
+What this check is essentially telling us is that if we were to establish Minkowski
+coordinates in a neighborhood of some point, and do a change of coordinates
+$(t,x,y,z)\rightarrow(\alpha t,\alpha x,\alpha y,\alpha z)$, then the quantities on both sides of the equation
+would vary under the tensor transformation laws according to the same exponent of $\alpha$. For example,
+if we changed from meters to centimeters, the equation would still remain valid.
+
+For the dynamical units, suppose that we use $(\sigma,\gamma,\xi)=(1,0,1)$, so that
+an infinitesimal displacement $\der x^a$ has units of length $L$,
+as does proper time $\der s$. These two quantities are purely kinematic, so we don't
+assign them any dynamical units, and therefore
+the velocity vector $v^a=\der x^a/\der s$ also has no dynamical units.
+Our choice of a system of units gives $[m]=M$.
+We require that the equation $p^a = mv^a$ have dynamical units that check out, so:
+\begin{equation*}
+  M=1\cdot M
+\end{equation*}
+We must also assign units of mass to the momentum.
+\end{eg}
+
+A system almost identical to this one, but with different terminology, is given by
+Schouten.\footnote{Tensor Analysis for Physicists, ch.~VI}
+
+For practical purposes in checking the units of an equation, we can see from
+example \ref{eg:units-of-momentum-fancy} that worrying about the kinematic units is
+a waste of time as long as we have checked that the indices are grammatical. We can therefore
+give a simplified method that suffices for checking the units of any equation in abstract index
+notation.
+
+\begin{enumerate}\label{tensor-unit-rules}
+\item We assign a tensor the same units that one of its concrete
+    components \emph{would} have if we were to adopt (local) Minkowski coordinates,
+    in the system with $(\sigma,\gamma,\xi)=(1,0,1)$. These are the units
+    we would automatically have imputed to it after learning special relativity but before
+    learning about tensors or fancy coordinate transformations. Since $\gamma=0$, the positions
+    of the indices do not affect the result.
+\item The units of a sum are the same as the units of the terms.
+\item The units of a tensor product are the product of the units of the factors.
+\end{enumerate}
+
+Our splitting of units into kinematic and dynamical parts can be
+understood as arising naturally from the following geometrical and
+physical considerations. In section \ref{subsec:parallel-transport},
+p.~\pageref{subsec:parallel-transport}, we introduced the notion of a
+\emph{connection},\index{connection} which is a rule that relates
+tensors living in one local region of spacetime to those in another
+region, depending on the path used for parallel transport. The
+connection is embodied concretely in the Christoffel symbols, and we
+need it in order to define sensible derivatives of vectors, because
+otherwise we lack the information needed in order to tell whether a
+vector is in fact constant, and only changing its components due to
+the way the coordinate system is defined.  The connection and the
+metric embody a lot of the same geometrical information. If we know
+the metric, we can always find the connection (sec.~\ref{subsec:g-to-gamma},
+p.~\pageref{subsec:g-to-gamma}). 
+
+We might then naturally ask whether it is possible to go in the other
+direction. Given the connection, can we find the metric? But this is
+clearly not true, because the connection doesn't carry any information
+about units of measurement, while the metric does. In fact, if the
+metric $g$ results in a certain connection $\Gamma$, then so will the
+metric $\Omega^2 g$, where $\Omega$ is a real constant.\footnote{If we
+multiplied $g$ by a negative constant, then we would change the
+signature, e.g., from $+---$ to $-+++$. Changing the signature would
+be particularly goofy in the context of Riemannian geometry, where it
+is customary to have a positive-definite metric.} One way of thinking
+about the transformation $g\rightarrow\Omega^2 g$ is that in the
+expression $\der s^2 = g_{ab} \der x^a \der x^a$ for proper time, we
+scale up any clock reading $s$ by a factor of $\Omega$. This helps to
+explain Dicke's preference for the convention $(\sigma,\gamma,\xi)=(1,1,0)$, according
+to which the units are attributed to $\der s$ and $g$, while vectors are
+considered to be unitless. A further advantage of this system is that it
+can be adapted to concrete index notation, because we simply declare coordinates
+to be unitless names for points.
+
+To round out our discussion of this approach, we state more precisely
+the relationship between the metric and the connection. Given a
+metric, there is a unique torsion-free connection. Given a
+torsion-free connection, there may or may not exist a metric that
+gives rise to that connection. If such a metric does exist, then in
+then except in exceptional cases that metric is unique up to a nonzero
+multiplicative constant. The reason for the uniqueness of the metric
+up to a constant factor is as follows.  Suppose we fix the metric at
+one point on our manifold. Then by using the connection we can
+parallel-transport the metric tensor to other points on the manifold,
+so that defining it at one point has the effect of defining it
+everywhere.  But there may be a lack of consistency, because parallel
+transport is path-dependent.  In particular, if we transport the
+metric around a closed loop, we want to recover the original metric.
+This consistency requirement is usually enough to rule out any freedom
+in defining the metric beyond a global scaling factor.  A more
+complete treatment of this problem is given by
+Schmidt.\footnote{\url{projecteuclid.org/euclid.cmp/1103858479}}
+
+An interesting exceptional case is flat spacetime. Because there is no
+curvature, parallel transport around a closed loop never changes the
+metric, so the consistency requirement is automatically satisfied, and
+we our freedom in choosing a metric is greater than just the ability
+to scale by a constant. In particular, some authors choose not to use
+natural units, so that instead of $g=\operatorname{diag}(1,-1,-1,-1)$
+in Cartesian coordinates, one has
+$g=\operatorname{diag}(c^2,-1,-1,-1)$. In an approach where a change
+of units is represented by a change of coordinates, this change in the
+metric could be represented by $(t,x,y,z)\rightarrow(t/c,x,y,z)$. But
+in the convention followed by Dicke, we would take the coordinates to
+be immutable labels for points, and these would actually be physically
+different metrics, with different light cones. A similar example in a
+Riemannian context is the Euclidean plane, in which the (trivial)
+connection is consistent any metric of the form given in example
+\ref{eg:oblique-cartesian}, p.~\pageref{eg:oblique-cartesian}.
+
+Finally, we note that it can be of interest to generalize the
+transformation $g\rightarrow\Omega^2 g$ so that $\Omega$ can vary from
+point to point. This is called a conformal transformation.\index{conformal transformation}
+Conformal transformations can be used for a variety of purposes,
+including nontrivial physics (as in the Dicke paper) and techniques
+for visualization (sec.~\ref{subsec:general-penrose}, p.~\pageref{subsec:general-penrose}).
+
+\vfill
+<% end_sec %>
+
 <% begin_hw_sec %>
 
 <% begin_hw('gaussian-curvature-at-edge') %>

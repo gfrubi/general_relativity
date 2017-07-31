@@ -172,7 +172,7 @@ is, as usual, interpreted as the negligible discrepancy between the integral and
 
 <% end_sec %> % affine param
 
-<% begin_sec("Parallel transport") %>\index{parallel transport}
+<% begin_sec("Parallel transport",nil,'parallel-transport') %>\index{parallel transport}
 If you were alert, you may have realized that I cheated you at a crucial point in this construction.
 We were to make $1\zu{q}_1$ and $0\zu{q}_0$ ``initially parallel'' as they left 01.
 How should we even define this idea of ``initially parallel?'' We could try to do it by making
@@ -732,7 +732,9 @@ The metric has only a symmetric part: $g_{(ab)}=g_{ab}$, and $g_{[ab]}=0$. This 
 Self-check: Characterize an antisymmetric rank-2 tensor in two dimensions.
 
 \begin{eg}{A change of scale}\label{eg:change-of-scale}
-\egquestion How is the effect of a uniform rescaling of coordinates represented in $g$?
+\egquestion Suppose we start by describing the Euclidean plane with a certain set of Cartesian
+coordinates, but then want to change to a new set of coordinates that are rescaled compared
+to the original ones. How is the effect of this rescaling represented in $g$?
 
 \eganswer If we change our units of measurement so that $x^\mu \rightarrow \alpha x^\mu$,
 while demanding that $\der s^2$ come out the same, then we need $g_{\mu\nu} \rightarrow \alpha^{-2}g_{\mu\nu}$.
@@ -740,6 +742,9 @@ while demanding that $\der s^2$ come out the same, then we need $g_{\mu\nu} \rig
 Comparing with p.~\pageref{scaling-vectors-and-duals}, we deduce the general rule that a
 tensor of rank $(m,n)$ transforms under scaling by picking up a
 factor of $\alpha^{m-n}$.
+
+This whole notion of scaling and units in general relativity turns out to be nontrivial and interesting.
+See section \ref{sec:units}, p.~\pageref{sec:units}, for a more detailed discussion.
 \end{eg}
 
 \begin{eg}{Polar coordinates}\label{eg:metric-in-polar-coords}
