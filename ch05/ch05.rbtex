@@ -2254,10 +2254,7 @@ of units is represented by a change of coordinates, this change in the
 metric could be represented by $(t,x,y,z)\rightarrow(t/c,x,y,z)$. But
 in the convention followed by Dicke, we would take the coordinates to
 be immutable labels for points, and these would actually be physically
-different metrics, with different light cones. This is one of the few
-examples --- probably the only interesting one --- in which a change of units can be represented either by a change
-of coordinates or by a change in the metric, other than the case discussed above,
-in which everything is scaled uniformly.
+different metrics, with different light cones. 
 
 A similar example in a
 Riemannian context is the Euclidean plane, in which the (trivial)
