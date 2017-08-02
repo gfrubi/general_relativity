@@ -2227,7 +2227,7 @@ To round out our discussion of this approach, we state more precisely
 the relationship between the metric and the connection. Given a
 metric, there is a unique torsion-free connection. Given a
 torsion-free connection, there may or may not exist a metric that
-gives rise to that connection. If such a metric does exist, then in
+gives rise to that connection. If such a metric does exist,
 then except in exceptional cases that metric is unique up to a nonzero
 multiplicative constant. The reason for the uniqueness of the metric
 up to a constant factor is as follows.  Suppose we fix the metric at
