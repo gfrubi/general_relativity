@@ -1342,7 +1342,8 @@ universe as a whole is rotating. The general-relativistic notion of rotation is 
 Newtonian one, and in particular, it is possible to have a cosmology that is rotating without having any
 center of rotation (see problem \ref{hw:rotation-with-no-center}, p.~\pageref{hw:rotation-with-no-center}).
 In fact one of the first exact solutions discovered for the Einstein field equations was the
-G\"{o}del metric,\index{G\"{o}del metric} which described a bizarre rotating universe with closed timelike curves,
+G\"{o}del metric,\index{G\"{o}del metric}\label{godel-metric}
+which described a bizarre rotating universe with closed timelike curves,
 i.e., one in which causality was violated. In a rotating universe, one expects that radiation received from
 great cosmological distances will have a transverse Doppler shift, i.e., a shift originating from the time dilation
 due to the motion of the distant matter across the sky. This shift would be greatest for sources lying in

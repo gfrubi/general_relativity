@@ -1229,7 +1229,7 @@ area and volume. Is there, for example, an area tensor in a locally Euclidean pl
 there is such a thing, because on p.~\pageref{affine-area-and-volume} we saw that we could cook up a measure of
 area with no other ingredients than the axioms of affine geometry. What kind of tensor would it be? The notions of vector and scalar from freshman
 mechanics are distinguished from one another by the fact that one has a direction in space and the other does not. Therefore we expect that
-area would be a scalar, i.e., a rank-0 tensor. But this can't be right, for the following reason. Under a rescaling of coordinates by
+area would be a scalar, i.e., a rank-0 tensor. But this can't be right, for the following reason. Under a rescaling of Cartesian coordinates by
 a factor $k$, area should change by a factor of $k^2$. But by the tensor transformation laws, a rank-0 tensor is supposed to be
 invariant under a change of coordinates. We therefore conclude that quantities like area and volume are not tensors.
 

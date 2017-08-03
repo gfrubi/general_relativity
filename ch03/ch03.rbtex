@@ -967,7 +967,7 @@ space, because it amounts to a statement that space has the same properties ever
 
 The set of all transformations that can be built out of successive translations, rotations, and
 reflections is called the group of isometries.\index{isometry} It can also be defined as the
-group\footnote{In mathematics, a group is defined
+group\footnote{In mathematics, a group is defined\index{group!definition}
 as a binary operation that has an identity, inverses, and associativity. For example, addition of
 integers is a group. In the present context, the members of the group are not numbers but the
 transformations applied to the Euclidean plane. The group operation on transformations $T_1$ and

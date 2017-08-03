@@ -2204,6 +2204,8 @@ metric embody a lot of the same geometrical information. If we know
 the metric, we can always find the connection (sec.~\ref{subsec:g-to-gamma},
 p.~\pageref{subsec:g-to-gamma}). 
 
+\vspace{10mm}
+
 We might then naturally ask whether it is possible to go in the other
 direction. Given the connection, can we find the metric? But this is
 clearly not true, because the connection doesn't carry any information
@@ -2222,6 +2224,55 @@ to which the units are attributed to $\der s$ and $g$, while vectors are
 considered to be unitless. A further advantage of this system is that it
 can be adapted to concrete index notation, because we simply declare coordinates
 to be unitless names for points.
+
+\pagebreak[4]
+
+The following table summarizes the factors by which various quantities
+change under rescaling of the lower-index metric and rescaling of local Minkowski
+coordinates $x^\mu$. As above, $r$ is the number of upper indices and $s$ the number
+of lower indices. Entries in {\color{gray} lighter text} follow from the more
+general rule. A curvature monomial of order $p$ is an expression formed from the
+multiplication of $p$ curvature tensors, possibly with contracted indices. Verifying
+the entries in the table is a good exercise.
+
+\noindent\begin{tabular}{|p{60mm}||l|l|}
+\hline
+                    & $g_{ab}\rightarrow\Omega^2g_{ab}$  & $x^\mu\rightarrow\alpha x^\mu$   \\ \hhline{|=#=|=|}
+$g$                 & $\Omega^{s-r}$                     &  {\color{gray} $\alpha^{r-s}$ }  \\ \hline
+tensor density of 
+rank $(r,s)$ and
+weight $w$          &                                    & $\alpha^{2w+r-s}$                \\ \hline
+$\Gamma\indices{^a_{bc}}$ &  1                           & $\alpha^{-1}$     \\ \hline
+curvature monomial
+of order $p$        & $\Omega^{s-r-2p}$                  & {\color{gray} $\alpha^{r-s}$ }   \\ \hline
+\end{tabular}
+
+\begin{eg}{Curvature scalars for the G\"{o}del metric}\index{Kretschmann invariant}
+The Ricci scalar $R=R\indices{^a_a}$ is a curvature monomial of order 1. Because it is a
+relativistic scalar, its value is invariant under a change of coordinates. A scalar
+constructed in this way from a curvature tensor is called a curvature scalar. In the
+system described above, it is a curvature monomial of order 1, and
+it is a tensor of rank $(0,0)$.
+It is a pure tensor, i.e., it is a tensor density in only the trivial sense,
+having weight $w=0$.
+
+The Kretschmann invariant $K=R^{abcd}R_{abcd}$, discussed in more detail on p.~\pageref{kretschmann}, 
+is a curvature monomial of order 2, with properties that are otherwise similar to the ones
+listed above for the Ricci scalar.
+
+To have a specific example to talk about, let us consider the metric
+\begin{equation*}
+  \der s^2 = \der t^2 - \der x^2 - \der y^2 + \frac{1}{2}e^{2x}\der z^2 -2 e^x \der z \der t.
+\end{equation*}
+This is the historically and philosophically important G\"{o}del metric, discussed on
+p.~\pageref{godel-metric}. A calculation using Maxima gives $R=-1$
+and $K=3$. (The fact that both of these are constant shows that the spacetime is highly
+symmetric, although this is not manifest when the metric is expressed in these
+coordinates.) Suppose that we recalibrate our clocks to use different units,
+changing the metric above according to $\der s^2\rightarrow\Omega^2\der s^2$.
+Then application of the rules given in the table tells us that
+$R=-\Omega^{-2}$ and $K=3\Omega^{-4}$.
+\end{eg}
 
 To round out our discussion of this approach, we state more precisely
 the relationship between the metric and the connection. Given a
