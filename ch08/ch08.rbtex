@@ -1326,7 +1326,9 @@ Surveys of distant quasars show that the universe has very little structure at s
 (This can be seen on a remarkable logarithmic map  constructed by Gott et al., \url{astro.princeton.edu/universe}.)
 This suggests that we can, to a good approximation, model the universe as being 
 isotropic (the same in all spatial directions) and homogeneous (the same at all
-locations in space).
+locations in space). (Isotropy does not follow from homogeneity. Examples of homogeneous but
+anisotropic cosmologies include rotating cosmologies and the Kantowsky-Sachs metric, problem
+\ref{hw:kantowski-sachs}, p.~\pageref{hw:kantowski-sachs}.)\index{Kantowski-Sachs metric}
 
 Further evidence comes from the extreme uniformity of the cosmic microwave background radiation,\index{cosmic microwave background!isotropy of}
 once one subtracts out the dipole anisotropy due to the Doppler shift arising from our galaxy's motion relative to the CMB.
@@ -2030,7 +2032,7 @@ so as an approximation we can write the Friedmann equations as
   \frac{\ddot{a}}{a}   \quad          &= \frac{1}{3}\Lambda  \\
   \left(\frac{\dot{a}}{a}\right)^2    &= \frac{1}{3}\Lambda\eqquad.
 \end{align*}
-This is referred to as a vacuum-dominated universe.
+This is referred to as a vacuum-dominated universe or the de Sitter spacetime.\index{de Sitter spacetime}
 The solution is
 \begin{equation*}
   a = \exp\left[\sqrt{\frac{\Lambda}{3}} \: t\right]\eqquad,
@@ -2052,7 +2054,13 @@ local property of such a universe is the vacuum energy described by the cosmolog
 always the same, because it is built into the structure of the vacuum. Thus the vacuum-dominated cosmology is
 a special one that maximally symmetric, in the sense that it has not only the symmetries of homogeneity and
 isotropy that we've been assuming all along, but also a symmetry with respect to time: it is a cosmology without
-history, in which all times appear identical to a local observer. In the special case of this cosmology, the
+history, in which all times appear identical to a local observer. One way of checking this claim is by
+calculating curvature scalars, and we find, for example, that the Ricci scalar is a constant $R=-12\Lambda$ (with
+the sign depending on the
+$+---$ signature, example \ref{eg:flip-signature-curvature-scalars},
+p.~\pageref{eg:flip-signature-curvature-scalars}).
+
+In the special case of this cosmology, the
 time variation of the scaling factor $a(t)$ is unobservable, and may be thought of as the unfortunate result
 of choosing an inappropriate set of coordinates, which obscure the underlying symmetry. When I argued in section
 \ref{sec:observability-of-expansion} for the observability of the universe's expansion, note that all my
@@ -3185,6 +3193,29 @@ universe. What is the result in the case of the radiation-dominated universe?
 \hwsoln
 <% end_hw %>
 
+<% begin_hw('kantowski-sachs') %>\index{Kantowski-Sachs metric}
+The Kantowski-Sachs metric is
+\begin{equation*}
+  \der s^2 = \der t^2 - \Lambda^{-1}\left(\der\theta^2+\sin^2\theta\der\phi^2\right) - 
+      \exp(2\sqrt{\Lambda}t)\der z^2.
+\end{equation*}
+It describes a universe with the spatial topology of a 3-cylinder. Use a computer algebra
+system such as Maxima to verify the following facts.\\
+(a) Any world-line of the form $(t,\theta,\phi,z)=(\lambda,\text{constants})$
+is a geodesic parametrized by proper time. (If using Maxima, you will find that the
+function cgeodesic() saves time here.)\\
+(b) If two such geodesics are separated only in the $z$ direction, the distance between
+them along a surface of fixed $t$ increases exponentially with $t$, while geodesics separated
+only in $\theta$ and $\phi$ do not recede from one another.\\
+(c) There are no matter fields, only a cosmological constant $\Lambda$.\\
+(d) The Ricci scalar $R=-4\Lambda$ ($+---$ signature) equals 1/3 of the value for the 
+de Sitter vacuum-dominated cosmology (sec.~\ref{sec:vacuum-dominated},
+p.~\pageref{sec:vacuum-dominated}), the factor of 3 occurring because there is expansion
+along only one axis rather than three.\\
+(e) The vacuum-dominated cosmology found by de Sitter and presented in the text was supposed to be the unique
+cosmological solution of this type. Why is the Kantowski-Sachs metric not a counterexample?
+\hwsoln
+<% end_hw %>
 
 
 

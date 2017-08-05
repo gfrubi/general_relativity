@@ -2232,8 +2232,7 @@ change under rescaling of the lower-index metric and rescaling of local Minkowsk
 coordinates $x^\mu$. As above, $r$ is the number of upper indices and $s$ the number
 of lower indices. Entries in {\color{gray} lighter text} follow from the more
 general rule. A curvature monomial of order $p$ is an expression formed from the
-multiplication of $p$ curvature tensors, possibly with contracted indices. Verifying
-the entries in the table is a good exercise.
+multiplication of $p$ curvature tensors, possibly with contracted indices. 
 
 \noindent\begin{tabular}{|p{60mm}||l|l|}
 \hline
@@ -2247,7 +2246,23 @@ curvature monomial
 of order $p$        & $\Omega^{s-r-2p}$                  & {\color{gray} $\alpha^{r-s}$ }   \\ \hline
 \end{tabular}
 
-\begin{eg}{Curvature scalars for the G\"{o}del metric}\index{Kretschmann invariant}
+\noindent It makes sense that rescaling the metric doesn't change the Christoffel symbols,
+because it doesn't change the connection or the coordinates, and therefore shouldn't change the
+geodesic equation. Verifying the other entries in the table is a good exercise.
+
+\begin{eg}{A change of signature}\label{eg:flip-signature-curvature-scalars}
+Suppose that we change the signature of a metric from $+---$ to $-+++$ or vice versa.
+Although the notation $\Omega^2$ was intended to imply that the signature of the metric
+would \emph{not} be changed, nothing goes wrong in the logic if we take $\Omega^2=-1$.
+According to the table, the lower-index form of the metric, with $(r,s)=(0,2)$ changes by a
+factor of $-1$, which is what we set out to do. 
+A curvature polynomial of order $p$ changes by a factor of $(-1)^p$. As a specific example,
+a cosmological model dominated by the cosmological constant (sec.~\ref{sec:vacuum-dominated},
+p.~\pageref{sec:vacuum-dominated}) has Ricci scalar $R=-12\Lambda$ in the $+---$ signature used in this book, but
+$R=+12\Lambda$ in the $-+++$ signature.
+\end{eg}
+
+\begin{eg}{Curvature scalars for the G\"{o}del metric}\index{Kretschmann invariant}\index{curvature scalars}
 The Ricci scalar $R=R\indices{^a_a}$ is a curvature monomial of order 1. Because it is a
 relativistic scalar, its value is invariant under a change of coordinates. A scalar
 constructed in this way from a curvature tensor is called a curvature scalar. In the
@@ -2265,13 +2280,13 @@ To have a specific example to talk about, let us consider the metric
   \der s^2 = \der t^2 - \der x^2 - \der y^2 + \frac{1}{2}e^{2x}\der z^2 -2 e^x \der z \der t.
 \end{equation*}
 This is the historically and philosophically important G\"{o}del metric, discussed on
-p.~\pageref{godel-metric}. A calculation using Maxima gives $R=-1$
+p.~\pageref{godel-metric}. A calculation using Maxima gives $R=1$ ($+---$ signature)
 and $K=3$. (The fact that both of these are constant shows that the spacetime is highly
 symmetric, although this is not manifest when the metric is expressed in these
 coordinates.) Suppose that we recalibrate our clocks to use different units,
 changing the metric above according to $\der s^2\rightarrow\Omega^2\der s^2$.
 Then application of the rules given in the table tells us that
-$R=-\Omega^{-2}$ and $K=3\Omega^{-4}$.
+$R=\Omega^{-2}$ and $K=3\Omega^{-4}$.
 \end{eg}
 
 To round out our discussion of this approach, we state more precisely

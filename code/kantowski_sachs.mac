@@ -1,0 +1,15 @@
+/* Kantowski-Sachs spacetime */
+load(ctensor);
+ct_coords:[t,theta,phi,z];
+lg:matrix([1,0,0,0],
+          [0,-1/Lambda,0,0],
+          [0,0,-(1/Lambda)*sin(theta)^2,0],
+          [0,0,0,-exp(2*sqrt(Lambda)*t)])$
+cmetric();
+cgeodesic(true);
+leinstein(true);
+scurvature();
+
+
+
+
