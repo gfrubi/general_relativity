@@ -1145,7 +1145,7 @@ It seems very unlikely that a waveform with this time-scale and characteristic s
 produced unless general relativity's description of black holes is correct in detail.
 <% end_sec %> % observational
 
-<% begin_sec("Singularities and cosmic censorship") %>\index{singularity}\index{cosmic censorship}
+<% begin_sec("Singularities and cosmic censorship") %>\index{singularity}
 <% begin_sec("Informal ideas") %>
 Since we observe that black holes really do exist, maybe we should take the singularity at $r=0$ seriously.
 Physically, it says that the mass density and tidal forces blow up to infinity there.
@@ -1158,7 +1158,7 @@ radius around the charge. Physically, this can't be right, because we know it on
 electron out of nothing, e.g., in nuclear beta decay. The paradox is resolved by quantum electrodynamics, which modifies
 the description of the vacuum around the electron to include a sea of virtual particles popping into and out of existence.
 
-In the case of the singularity at the center of a black hole, it is possible that quantum mechanical effects at the
+In the case of a black hole singularity, it is possible that quantum mechanical effects at the
 Planck scale prevent the formation of a singularity. Unfortunately, we are unlikely to find any empirical evidence
 about this, since black holes always seem to come clothed in event horizons, so we outside observers
 cannot extract any data about the singularity inside. Even if we take a suicidal trip into a black hole,
@@ -1174,19 +1174,20 @@ able to make and test predictions or retrodictions that extend beyond the beginn
 
 What would be a crushing blow to the enterprise of physics would be a singularity that could sit on
 someone's desk. As John Earman of the University of Pittsburgh
-puts it, anything could pop out of such a singularity, including green
-slime or your lost socks. In more technical language, a singularity would constitute an extreme violation of
-unitarity and an acute instance of the
-information paradox (see page \pageref{information-paradox}).\index{unitarity}\index{information paradox}\label{slime-and-socks}
+puts it, anything could pop out of such a ``naked'' singularity (defined formally
+on p.~\pageref{naked-singularity-defined}), including green
+slime or your lost socks.\label{slime-and-socks}
 
-There is no obvious reason
-that general relativity should not allow naked singularities,
-but neither do we know of any real-world process by which one could be formed by gravitational collapse.
-Penrose's\index{Penrose, Roger} \emph{cosmic censorship}\index{cosmic censorship}
-hypothesis states that the laws of physics prevent the formation of naked singularities from nonsingular and generic
-initial conditions. ``Generic'' is a necessary addition to Penrose's original 1969 formulation, since
-Choptuik showed in 1993 that certain perfectly fine-tuned
-initial conditions allowed collapse to a naked singularity.\footnote{Phys. Rev. Lett. 70, p.~9}
+Penrose's\index{Penrose, Roger} \emph{cosmic censorship}\index{cosmic
+censorship} conjecture states that the laws of physics prevent the
+formation of naked singularities from nonsingular and generic initial
+conditions. ``Generic'' is a necessary addition to Penrose's original
+1969 formulation, since Choptuik showed in 1993 that certain perfectly
+fine-tuned initial conditions allowed collapse to a naked
+singularity.\footnote{Phys. Rev. Lett. 70, p.~9} As of 2017, evidence is
+accumulating that cosmic censorship is false. This is discussed at greater length
+in section \ref{subsec:evidence-against-cc}, p.~\pageref{subsec:evidence-against-cc}.
+
 <% end_sec %> % Informal ideas
 <% begin_sec("Formal definitions") %>
 The remainder of this subsection provides a more formal exposition of the definitions relating to
@@ -1436,7 +1437,8 @@ metrics we could imagine. At a singularity, it's even worse. There is
 Because a singularity isn't a point or a point-set,
 we can't define its timelike or spacelike character in quite the way
 we would with, say, a curve. 
-A timelike singularity is one such that an observer with a
+A timelike singularity, also referred to as a locally naked singularity,\label{naked-singularity-defined}
+is one such that an observer with a
 timelike world-line can have the singularity sometimes in his future
 light-cone and sometimes in his past light-cone.\footnote{Penrose,
 Gravitational radiation and gravitational collapse; Proceedings of the Symposium, Warsaw, 1973. Dordrecht, D. Reidel Publishing Co. pp. 82-91, free online 
@@ -1456,11 +1458,116 @@ A naked singularity is one from which timelike or lightlike world-lines can
 originate and then escape to infinity. The Schwarzschild metric's singularity is not naked.
 This notion is global.\index{singularity!naked}
 
-If either a timelike or a naked singularity can be formed by gravitational collapse from
-realistic initial conditions, then it would create severe difficulties for physicists wishing
-to make predictions using the laws of physics.
-
 <% end_sec %> % Formal definitions
+
+<% begin_sec("Evidence accumulating against cosmic censorship") %>\label{subsec:evidence-against-cc}\index{cosmic censorship!evidence against}
+As of 2017, evidence is accumulating that cosmic censorship is false.
+Back in 1969 when Roger Penrose first formulated the hypothesis,
+relativists had been strongly influenced by a 1939 calculation by
+Oppenheimer and Snyder for the gravitational collapse of a uniform,
+spherical cloud of ``dust,'' meaning material particles that act like
+a pressureless ideal fluid (see p.~\pageref{eg:dust-stress-energy}).
+(Cf.~p.~\pageref{tolman-oppenheimer-volkoff-limit} on the
+Tolman-Oppenheimer-Volkoff limit, derived earlier the same year.)
+Even though Oppenheimer and Snyder were too timid to continue the
+calculation past the formation of an event horizon, their
+result was not taken seriously for years, the notion of
+a runaway gravitational collapse being too distant from the state of
+the art in terms of observation. But later workers did complete the
+calculation. They found that a singularity developed, but that the
+horizon formed early enough to cloak it, so that no timelike or lightlike geodesic from the
+singularity could escape to a distant observer. This was consistent with a
+weak version of the cosmic censorship hypothesis, that a (globally) naked
+singularity cannot form from gravitational collapse.
+
+But to interpret the result as evidence for cosmic censorship was misleading.
+With hindsight, there are clear Newtonian reasons to suspect that a perfectly
+homogeneous cloud has properties that are a little too special. In the Newtonian
+version the internal gravitational field is proportional to $r$.
+Starting from rest at $r$, a particle has to travel a distance $r$ to reach the
+center, but since the acceleration is proportional to $r$, the time needed to
+reach the center is the same for all particles. There is a Newtonian singularity of
+infinite density, and this occurs at the \emph{same} time for all particles,
+which is after the formation of a surface from which the escape velocity has
+any fixed value, such as $c$. Therefore in Newtonian terms, cosmic censorship
+holds, but it holds \emph{only} because of the perfect homogeneity of the cloud.
+
+In fact, the general-relativistic version of inhomogeneous gravitational
+collapse had already been worked out around 1933 by Lema\^{i}tre, Tolman, and Bondi,
+again for the case of a spherical cloud, but now with a density profile $\rho(r)$. This family
+of metrics, called the Lema\^{i}tre-Tolman-Bondi metrics,\index{Lema\^{i}tre-Tolman-Bondi metrics}
+is general enough to include models of cosmological expansion as well as models of
+local gravitational collapse. Tolman applied the collapse model to the formation of
+``nebulae,'' i.e., galaxies, in the early universe, but did not follow the evolution of
+the collapse to its ultrarelativistic \emph{d\'enouement}, as Oppenheimer and Snyder had.
+When one does so, dealing with some technical obstacles and imposing some constraints
+for physical reasonableness, it turns out that in \emph{most} cases, the result is a
+locally naked singularity.\footnote{Joshi and Malafarina, \url{arxiv.org/abs/1405.1146}}
+That is, fine-tuning is required in order to produce something more like a standard black
+hole. It remains to be seen whether this holds true when the constraint of perfect spherical
+symmetry is relaxed.
+
+This does not necessarily mean on the face of it that cosmic
+censorship is dead, since spacetimes with spherical symmetry are
+themselves finely tuned in some sense, but it is rather a dramatic
+development, since people had imagined for 75 years, based on the
+Oppenheimer-Snyder calculations for homogeneous dust, that a black
+hole was the generic result of runaway gravitational collapse. Cosmic
+censorship is in a sense impossible to disprove, since part of the
+research program is to find the most appropriate definition of the
+conjecture, but these results suggest that if it is to be true, then
+it has to be weakened so much as to be of little interest.
+In general, a meaningful definition of what it means to violate
+weak cosmic censorship should probably include something
+like the following ingredients.
+
+\begin{enumerate}
+\item The initial conditions do not make available an infinite amount of energy within
+         a finite region.
+\item The initial conditions do not contain singularities.
+\item Incomplete lightlike geodesics can arrive at a distant observer.
+\item Such a violation still occurs if we impose small perturbations on the initial data.
+\item The forms of matter are physically realistic.
+\end{enumerate}
+
+If we do not impose something like condition 1, then we can set up initial conditions
+that are of no interest because they are unrealistic. For this reason, one usually
+studies spacetimes that are asymptotically flat.\footnote{Asymptotic flatness was introduced
+informally on p.~\pageref{asymptotic-flatness-idea} and is defined in detail
+in section \ref{subsubsec:asymptotic-flatness}. It may also be necessary to impose
+a requirement that the matter fields fall off at some rate as we go to infinity.}
+Condition 2 expresses the idea that
+any singularities that occur should be new ones formed by gravitational collapse.
+The censorship violation is expressed by condition 3. The notion of a distant observer can
+be further formalized by requiring that such a geodesic arrive at null infinity,
+$\mathscr{I}^+$; see p.~\pageref{null-infinity-intro}.
+If 4 is omitted, then clear counterexamples to censorship are known.
+However, it is not known whether there is an appropriately rigorous way to define ``small
+perturbations'' here.\footnote{In technical terms, we do not have any topology or measure
+defined on the set of all possible initial conditions. In actual work to date, people have
+selected some set of possible initial conditions, described by some small number of adjustable
+parameters, and have then tried to test condition 4 using a seemingly natural topology and
+measure defined on the space of those parameters.}
+Realistic matter fields, 5, are expected, for example, not to have 
+negative mass.\footnote{More rigorously, we expect them to satisfy suitable energy conditions, section
+\ref{subsec:energy-conditions}, p.~\pageref{subsec:energy-conditions}.}
+
+Because weak cosmic censorship seems to be violated if described by these five conditions,
+Wald\footnote{``Gravitational Collapse and Cosmic Censorship,'' \url{arxiv.org/abs/gr-qc/9710068}}
+suggests adding a sixth requirement.
+
+\begin{enumerate}
+\setcounter{enumi}{5}
+\item The types of matter are further restricted so that if the metric is fixed,
+       rather than dynamical as in general
+       relativity, then no singularities occur.
+\end{enumerate}
+
+\noindent This seems to me to be an admission of total defeat for cosmic censorship, since it
+rules out physically realistic forms of matter such as perfect fluids.
+
+<% end_sec %> % Evidence accumulating against cosmic censorship
+
 <% end_sec %> % singularities
 
 <% begin_sec("Hawking radiation") %>\label{sec:hawking-radiation}

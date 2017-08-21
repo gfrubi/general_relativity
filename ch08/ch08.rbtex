@@ -594,12 +594,15 @@ $f\approx 1-\Phi$, $f'/f\approx g$ (with $g>0$), and $\mu\gg T$, resulting in
 \end{equation*}
 which is the expected Newtonian relation.
 
-Returning to the full general-relativistic result, it can be shown that
-for a loaded rope with no mass of its own, we have a finite result for $\lim_{r\rightarrow\infty} S$,
-even when the bucket is brought arbitrarily close to the horizon. However, this is
-misleading without the caveat that for $\mu<T$, the speed of transverse waves in the rope
-is greater than $c$, which is not possible for any known form of matter --- it would violate the
-null energy condition, discussed in the following section.
+Returning to the full general-relativistic result, it can be shown
+that for a loaded rope with no mass of its own, we have a finite
+result for $\lim_{r\rightarrow\infty} T$, even when the bucket is
+brought arbitrarily close to the horizon.  (The solution in this case
+is just $T=T_\infty/f$, where $T_\infty$ is the tension at
+$r=\infty$.) However, this is misleading without the caveat that for
+$\mu<T$, the speed of transverse waves in the rope is greater than
+$c$, which is not possible for any known form of matter --- it would
+violate the null energy condition, discussed in the following section.
 \end{eg}
 
 \begin{eg}{The rope, using computer algebra}\label{eg:rope-in-sch-cas}
@@ -644,7 +647,7 @@ checkdiv(t);
 
 <% end_sec %> % The Einstein field equation
 
-<% begin_sec("Energy conditions") %>\index{energy conditions}
+<% begin_sec("Energy conditions") %>\index{energy conditions}\label{subsec:energy-conditions}
 Physical theories are supposed to answer questions. For example:\label{energy-condition-questions}
 \begin{enumerate}
 \item Does a small enough physical object always have a world-line that is approximately a geodesic?
@@ -2630,7 +2633,7 @@ ruler at which the peak in $\xi(s)$ occurs. In cosmological models, these result
 $\Omega_M$, while being relatively insensitive to $\Omega_\Lambda$, and they are therefore complementary
 to both the supernova data and the CMB results.
 <% end_sec %> % Density of matter from baryonic acoustic oscillations
-<% marg(300) %>
+<% marg() %>
 <%
   fig(
     'eisenstein-bao',

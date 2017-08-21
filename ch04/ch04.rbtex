@@ -995,7 +995,8 @@ we can infer an upper limit on the mass of a neutron star:
 \begin{equation*}
   1.4M_\odot\left(\frac{Km_e}{m_n}\right)^2 \approx 5M_\odot
 \end{equation*}
-The theoretical uncertainties in such an estimate are fairly large. Tolman, Oppenheimer, and Volkoff\index{Tolman-Oppenheimer-Volkoff limit}
+The theoretical uncertainties in such an estimate are fairly large.
+Tolman, Oppenheimer, and Volkoff\index{Tolman-Oppenheimer-Volkoff limit}\label{tolman-oppenheimer-volkoff-limit}
 originally estimated it in 1939 as $0.7M_\odot$, whereas modern estimates are more in the range of 1.5
 to $3M_\odot$. These are significantly lower than our crude estimate of $5M_\odot$,
 mainly because the attractive nature of the strong nuclear force tends to pull the star toward
