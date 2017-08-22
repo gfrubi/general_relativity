@@ -1552,19 +1552,16 @@ Realistic matter fields, 5, are expected, for example, not to have
 negative mass.\footnote{More rigorously, we expect them to satisfy suitable energy conditions, section
 \ref{subsec:energy-conditions}, p.~\pageref{subsec:energy-conditions}.}
 
-Because weak cosmic censorship seems to be violated if described by these five conditions,
-Wald\footnote{``Gravitational Collapse and Cosmic Censorship,'' \url{arxiv.org/abs/gr-qc/9710068}}
-suggests adding a sixth requirement.
-
-\begin{enumerate}
-\setcounter{enumi}{5}
-\item The types of matter are further restricted so that if the metric is fixed,
-       rather than dynamical as in general
-       relativity, then no singularities occur.
-\end{enumerate}
-
-\noindent This seems to me to be an admission of total defeat for cosmic censorship, since it
-rules out physically realistic forms of matter such as perfect fluids.
+Because weak cosmic censorship seems to be violated if described by
+these five conditions, Wald\footnote{``Gravitational Collapse and
+Cosmic Censorship,'' \url{arxiv.org/abs/gr-qc/9710068}} suggests
+adding a sixth requirement. He proposes that the types of matter be
+further restricted to ones having the property that if the metric is
+fixed, rather than dynamical as in general relativity, then no
+singularities occur. This condition holds for electromagnetic fields
+and for a scalar field, but not for fluids. This seems to me to be an admission of total
+defeat for cosmic censorship, since it gives up on physically realistic
+forms of matter.
 
 <% end_sec %> % Evidence accumulating against cosmic censorship
 
