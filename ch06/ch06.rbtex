@@ -1052,19 +1052,34 @@ diagram, as discussed in section \ref{subsec:penrose-black-hole}.
 <% end_sec('black-hole-infalling-matter') %>
 <% begin_sec("Expected formation") %>\label{sec:black-hole-formation}\index{black hole!formation}
 
-Einstein and Schwarzschild
-did not believe, however, that any of these features of the Schwarzschild metric were more than a mathematical curiosity, and the term ``black hole'' was
-not invented until the 1967, by John Wheeler.
-Although there is quite a bit of evidence these days that black holes do exist, there is also the related question
-of what sizes they come in.
+Einstein and Schwarzschild did not believe, however, that any of these
+features of the Schwarzschild metric were more than a mathematical
+curiosity, and the term ``black hole'' was not invented until the
+1967, by John Wheeler. 
+There is quite a bit of evidence
+these days that our universe does contain objects that have undergone
+complete gravitational collapse, in the sense that their mass $M$ is
+contained within a radius $r\lesssim M$ (in geometrized units). These objects
+are probably black holes, although doubts have been raised recently
+as to whether they are in fact other objects such as naked 
+singularities.\footnote{See sec.~\ref{subsec:evidence-against-cc}, p.~\pageref{subsec:evidence-against-cc}, and,
+e.g., Joshi et al., \url{arxiv.org/abs/1304.7331}.}
+Supposing that black holes do exist, there is also the 
+question of what sizes they come in. 
 
-We might expect naively that since gravity is an attractive force, there would be a tendency for any primordial cloud
-of gas or dust to spontaneously collapse into a black hole. But clouds of less than about $0.1M_\odot$ (0.1 solar masses)
-form planets, which achieve a permanent equilibrium between gravity and internal pressure. Heavier objects initiate
-nuclear fusion, but those with masses above about $100M_\odot$ are immediately torn apart by their own solar winds. In the range from
-0.1 to $100M_\odot$, stars form. As discussed in section \ref{sec:degenerate-matter}, those with masses greater than
-about a few  $M_\odot$ are expected to form black holes when they die. We therefore expect, on theoretical grounds, that the universe
-should contain black holes with masses ranging from a few solar masses to a few tens of solar masses.
+We might expect naively that since gravity is an attractive force,
+there would be a tendency for any primordial cloud of gas or dust to
+spontaneously collapse into a black hole. But clouds of less than
+about $0.1M_\odot$ (0.1 solar masses) form planets, which achieve a
+permanent equilibrium between gravity and internal pressure. Heavier
+objects initiate nuclear fusion, but those with masses above about
+$100M_\odot$ are immediately torn apart by their own solar winds. In
+the range from 0.1 to $100M_\odot$, stars form. As discussed in
+section \ref{sec:degenerate-matter}, those with masses greater than
+about a few $M_\odot$ are expected to form black holes when they die.
+We therefore expect, on theoretical grounds, that the universe should
+contain black holes with masses ranging from a few solar masses to a
+few tens of solar masses. 
 
 % http://en.wikipedia.org/wiki/Quasar
 % http://en.wikipedia.org/wiki/Supermassive_black_holes
@@ -1592,13 +1607,21 @@ information that goes into a black hole is eventually released via subtle correl
 black-body radiation it emits.
 <% end_sec %> % Radiation from black holes
 <% begin_sec("Particle physics") %>
-Hawking radiation has some intriguing properties from the point of view of particle physics.
-In a particle accelerator, the list of particles one can create in appreciable quantities is determined
-by coupling constants. In Hawking radiation, however, we expect to see a representative sampling of all
-types of particles, biased only by the fact that massless or low-mass particles are more likely to be produced
-than massive ones. For example, it has been speculated that some of the universe's dark matter exists in the
-form of ``sterile'' particles that do not couple to any force except for gravity. Such particles would
-never be produced in particle accelerators, but would be seen in radiation.
+Hawking radiation has some intriguing properties from the point of
+view of particle physics.  In a particle accelerator, the list of
+particles one can create in appreciable quantities is determined by
+coupling constants. In Hawking radiation, however, we expect to see a
+representative sampling of all types of particles, biased only by the
+fact that massless or low-mass particles are more likely to be
+produced than massive ones. For example, it has been speculated that
+some of the universe's dark matter exists in the form of ``sterile''
+particles that do not couple to any force except for gravity. Such
+particles would never be produced in particle accelerators, but would
+be seen in Hawking radiation. Based on present knowledge of particle physics,
+the main components of Hawking radiation, for all but the most microscopic
+black holes, are expected to be photons and gravitons, which would compete
+on roughly equal terms, depending on the angular momentum of the 
+black hole.\footnote{Dong, \url{arxiv.org/abs/1511.05642}}
 
 Hawking radiation would violate many cherished conservation laws of particle physics. Let a hydrogen atom
 fall into a black hole. We've lost a lepton and a baryon, but if we want to preserve conservation of lepton
