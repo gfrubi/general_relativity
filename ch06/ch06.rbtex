@@ -1579,17 +1579,21 @@ fixed, rather than dynamical as in general relativity, then no
 singularities occur. This seems to me to be much too strong a condition,
 and there are indications that it is not sufficient.
 
-Another proposal is along the following lines. When a naked singularity occurs,
-then we have a region of spacetime for which the singularity is inside the past
-lightcone. The lightlike surface constituting the
-boundary of this region is called a Cauchy horizon.\index{Cauchy horizon}
-An observer who passes beyond the Cauchy horizon can observe arbitrary information,
-i.e., phenomena not predicted by any laws of physics, and infinite fluxes of energy.
-Roger Penrose has, however, pointed out that in certain illustrative cases,
-there is a tendency for energy from the entire spacetime prior to the singularity
-to be focused onto the Cauchy horizon. The result could then be that such an observer
-is destroyed when passing through the Cauchy horizon. In other words, the Cauchy horizon
-actually turns into a singularity.
+Another proposal is along the following lines. When a naked
+singularity occurs, then we have a region of spacetime for which the
+singularity is inside the past lightcone. The lightlike surface
+constituting the boundary of this region is called a Cauchy
+horizon.\index{Cauchy horizon} An observer who passes beyond the
+Cauchy horizon can observe arbitrary information, i.e., phenomena not
+predicted by any laws of physics, and infinite fluxes of energy.
+Roger Penrose has, however, pointed out that in certain illustrative
+cases, there is a tendency for energy from the entire spacetime prior
+to the singularity to be focused onto the Cauchy horizon. The result
+could then be that such an observer is destroyed when passing through
+the Cauchy horizon. In other words, the Cauchy horizon actually turns
+into a singularity. Penrose's mechanism appears to fail, however, for
+a spacetime with a positive cosmological constant, which is what we
+actually have in our universe.
 
 <% end_sec %> % Evidence accumulating against cosmic censorship
 
