@@ -1568,15 +1568,28 @@ negative mass.\footnote{More rigorously, we expect them to satisfy suitable ener
 \ref{subsec:energy-conditions}, p.~\pageref{subsec:energy-conditions}.}
 
 Because weak cosmic censorship seems to be violated if described by
-these five conditions, Wald\footnote{``Gravitational Collapse and
+these five conditions, people have started looking for additional
+conditions that could salvage the conjecture.
+
+Wald\footnote{``Gravitational Collapse and
 Cosmic Censorship,'' \url{arxiv.org/abs/gr-qc/9710068}} suggests
 adding a sixth requirement. He proposes that the types of matter be
 further restricted to ones having the property that if the metric is
 fixed, rather than dynamical as in general relativity, then no
-singularities occur. This condition holds for electromagnetic fields
-and for a scalar field, but not for fluids. This seems to me to be an admission of total
-defeat for cosmic censorship, since it gives up on physically realistic
-forms of matter.
+singularities occur. This seems to me to be much too strong a condition,
+and there are indications that it is not sufficient.
+
+Another proposal is along the following lines. When a naked singularity occurs,
+then we have a region of spacetime for which the singularity is inside the past
+lightcone. The lightlike surface constituting the
+boundary of this region is called a Cauchy horizon.\index{Cauchy horizon}
+An observer who passes beyond the Cauchy horizon can observe arbitrary information,
+i.e., phenomena not predicted by any laws of physics, and infinite fluxes of energy.
+Roger Penrose has, however, pointed out that in certain illustrative cases,
+there is a tendency for energy from the entire spacetime prior to the singularity
+to be focused onto the Cauchy horizon. The result could then be that such an observer
+is destroyed when passing through the Cauchy horizon. In other words, the Cauchy horizon
+actually turns into a singularity.
 
 <% end_sec %> % Evidence accumulating against cosmic censorship
 
