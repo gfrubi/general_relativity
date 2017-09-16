@@ -2056,7 +2056,7 @@ section \ref{sec:killing-vectors}, p.~\pageref{sec:killing-vectors}.
 
 <% end_sec %> % Manifolds
 
-<% begin_sec("Units in general relativity",nil,'units') %>
+<% begin_sec("Units in general relativity",nil,'units') %>\index{units}
 This section is optional.
 
 Analyzing units, also known as dimensional analysis, is one of the
