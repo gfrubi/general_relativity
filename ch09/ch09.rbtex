@@ -37,12 +37,11 @@ curvature.\index{gravitational waves!propagation at less than $c$, for high ampl
 
 As shown by the following timeline, Einstein's prediction was surprisingly difficult to verify.
 
-\begin{tabular}{lp{90mm}}
+\begin{tabular}{lp{80mm}}
 1913 & Einstein predicts gravitational waves traveling at $c$. \\
 1982 & Hulse-Taylor pulsar (pp.~\pageref{hulse-taylor-pulsar}, \pageref{subsec:gw-empirical-evidence})
        seen to lose energy at the rate predicted by general relativity's prediction of gravitational radiation.\\
-2016 & Direct detection of gravitational waves from a collision of two black holes. The data suggest a velocity
-       on the same order of magnitude as $c$.
+2016-2017 & Direct detection of gravitational waves and verification that they propagate at $c$.
 \end{tabular}
 
 Why did this process take over a century? Naive arguments suggest that it should have been much easier.
@@ -126,6 +125,19 @@ The event is believed to have been the result of the collision of two black hole
   )
 %>
 
+In 2017, an event interpreted as
+the collision of two neutron stars was detected by both gravitational and electromagnetic
+radiation, verifying to high precision that gravitational waves propagate at $c$.
+
+Although the earlier 2016 collision of black holes did not directly compare the propagation of light and
+gravity, it provided a different kind of check on the propagation of gravitational waves at $c$.
+The
+waveform detected in this event was a ``chirp'' that glided up in frequency as the black holes spiraled
+toward one another and sped up. Since the wave was in transit
+for over a billion years, and the waveform lasted a fraction of a second, it follows that gravitational waves
+within this frequency range all travel at very nearly the same velocity, i.e., there is a very tight upper
+limit on the dispersion of gravitational waves.
+
 A complementary space-based system, LISA, has been proposed for launch in 2020, but its funding is uncertain.
 The two devices would operate in complementary frequency ranges (figure \figref{ligo-and-lisa-sensitivities}).
 A selling point of LISA is that if it is launched, there are a number of sources in the sky, with known properties, that
@@ -146,18 +158,6 @@ other known binary star.\footnote{Roelofs et al., ``Spectroscopic Evidence for a
     }
   )
 %>
-
-The initial detection of gravitational waves by Advanced LIGO provided two kinds of tests of
-general relativity's prediction that gravitational waves propagate at $c$. Advanced LIGO consists of
-two interferometers, separated by a distance of 3002 km, which corresponds to $T=10\ \zu{ms}$ at the speed of light.
-Let $\theta$ be the angle between the wave's direction of propagation and the line connecting the two interferometers.
-Then the difference in time between the arrival of the wave at the two instruments is
-$t=T(c/u)\cos\theta$, where $u$ is the velocity of the waves. The event detected in 2016 had $t=7\ \zu{ms}$,
-which is consistent with any value of $u$ less than about $1.4c$, and suggests $u\sim c$. Furthermore, the
-waveform detected in this event was a ``chirp'' that glided up in frequency. Since the wave was in transit
-for over a billion years, and the waveform lasted a fraction of a second, it follows that gravitational waves
-within this frequency range all travel at very nearly the same velocity, i.e., there is a very tight upper
-limit on the dispersion of gravitational waves.
 
 <% end_sec %> % Empirical evidence
 <% begin_sec("Energy content") %>\index{gravitational waves!energy content}
