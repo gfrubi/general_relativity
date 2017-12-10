@@ -567,6 +567,16 @@ The bottom panel shows a more realistic drawing of an experiment by Braginskii a
                       to calm down completely after being put in place; to stop these vibrations,
                       static electrical forces were applied through the two circular plates to provide
                       very gentle twists on the ellipsoidal mass between them.
+
+In the 45 years since Braginskii and Panov's work, improvements have been made in more direct
+experimental tests of the equivalence principle, in which the test masses simply free-fall.
+The best earthbound experiment of this type\footnote{Carusotto \emph{et al.}, ``Limits on the violation of $g$-universality with a
+Galileo-type experiment,'' Phys Lett A183 (1993) 355. Freely available online at
+researchgate.net.} has given a bound of $10^{-9}$, while a 
+new experiment in orbit\footnote{Touboul \emph{et al.},
+``The MICROSCOPE mission: first results of a space test of the
+Equivalence Principle,'' \url{arxiv.org/abs/1712.01176}}
+has tightened this to $10^{-14}$.
 <% begin_sec("Equivalence of gravitational fields and accelerations") %>
 One consequence of the E\"{o}tv\"{o}s experiments' null results is that it is not possible to tell the difference between an acceleration and
 a gravitational field. At certain times during Betty's field trip, she feels herself pressed against her seat,
@@ -800,21 +810,6 @@ severe distortions.
 The meanings of words evolve over time, and since relativity is now a century old, there has been
 some confusing semantic drift in its nomenclature. This applies both to ``inertial frame'' and
 to ``special relativity.''
-<% marg(25) %>
-<%
-  fig(
-    'machian-planets',
-    %q{One planet rotates about its axis and the other does not. As discussed in more detail on p.~\pageref{einstein-two-planets},
-       Einstein believed that general relativity was even more radically egalitarian about frames of reference than
-       it really is. He thought that if the planets were alone in an otherwise empty universe, there would be no way to tell
-       which planet was really rotating and which was not, so that B's equatorial bulge would have to disappear. There
-       would be no way to tell which planet's surface was a Lorentz frame.},
-    {
-      'suffix'=>'-1'
-    }
-  )
-%>
-<% end_marg %>
 
 Early formulations of general relativity never refer to ``inertial frames,'' ``Lorentz frames,'' or
 anything else of that flavor. The very first topic in Einstein's original systematic presentation of 
@@ -834,6 +829,22 @@ to be made between Lorentz frames and non-Lorentz frames, as described on p.~\pa
 Einstein's statement should have been weaker: the laws of physics (such as the Einstein field equation, p.~\pageref{einstein-field-equation})
 are the same in all frames (Lorentz or non-Lorentz). This is different from the situation in Newtonian mechanics
 and special relativity, where the laws of physics take on their simplest form only in Newton-inertial frames.
+
+<% marg(300) %>
+<%
+  fig(
+    'machian-planets',
+    %q{One planet rotates about its axis and the other does not. As discussed in more detail on p.~\pageref{einstein-two-planets},
+       Einstein believed that general relativity was even more radically egalitarian about frames of reference than
+       it really is. He thought that if the planets were alone in an otherwise empty universe, there would be no way to tell
+       which planet was really rotating and which was not, so that B's equatorial bulge would have to disappear. There
+       would be no way to tell which planet's surface was a Lorentz frame.},
+    {
+      'suffix'=>'-1'
+    }
+  )
+%>
+<% end_marg %>
 
 Because Einstein didn't want to make distinctions between frames, we ended up being saddled with inconvenient
 terminology for them. The least verbally awkward choice is to hijack the term ``inertial,'' redefining
