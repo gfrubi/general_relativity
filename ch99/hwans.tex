@@ -840,6 +840,21 @@ it is homogeneous.)
 
 \beginsolutions{9}
 
+\hwsolnhdr{school-bus}
+(a) The radiated power is on the order of $(G/c^5)(mr^2)^2\omega^6$.
+Taking the mass to be 10 tons, $r=10\ \munit$, we find that the frequency required
+is on the order of $10^6$ revolutions per minute.\\
+% calc -x -e "m=10^4 kg; r=10 m; omega=2pi(10^6)/(60 s); P=G/c^5(mr^2)^2omega^6; E=(mr^2)omega^2; E/P"
+(b) Using the same estimate for the radiated power as in part a, we get about
+$10^{-32}\ \zu{W}$. For the given excitation energy, this implies a rate of decay by
+gravitational wave emission of something like $10^{-21}\ \sunit^{-1}$. In competition
+with a gamma decay having a rate on the order of $1\ \zu{yr}^{-1}$, this gives
+a probability of about $10^{-14}$ for gravitational decay. This actually doesn't sound
+so low that its detection would be impossible, but we would have to have a
+case where the extremely severe selection rule for gamma decay was not matched
+by an equally strong hindrance of the gravitational decay.
+% calc -x -e "m=(100)(1.66 10^-27 kg); r=5 fm; E=(10^6 V)e; omega=E/hbar; P=G/c^5(mr^2)^2omega^6; E=(mr^2)omega^2; t=E/P; yr=((3600 s)(24)(365)); 1/(t/yr)"
+
 \hwsolnhdr{why-geodesics-for-test-particles}
 (a) The members of the Hulse-Taylor system are spiraling toward one another as they lose energy to
 gravitational radiation. If one of them were replaced with a low-mass test particle, there

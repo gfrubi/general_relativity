@@ -550,6 +550,22 @@ of the data.
 
 <% begin_hw_sec %>
 
+<% begin_hw('school-bus') %>
+(a) Suppose that a school bus is rotating end over end, and therefore emitting gravitational waves. Estimate
+the frequency at which it must rotate, in revolutions per minute, if the power emitted is to be 1 pW.\hwendpart
+(b) The power emitted by gravitational waves depends very strongly on the frequency, and atomic nuclei
+are the fastest-rotating objects in the universe. Let's estimate the probability, in a favorable case,
+that a nucleus in an excited rotational state will deexcite not by emitting a gamma ray but by emitting
+gravitational radiation. A typical nucleus has an atomic mass of 100, is about 5 fm in radius, and
+has excited states with excitation energies on the order of 1 MeV. For a rotational state, this energy
+can be equated semiclassically to $\hbar\omega$. Although most excited nuclear states decay with half-lives of
+picoseconds or less, excited states are known in which, due to various approximate selection rules,
+the half-life is on the order of a year. We assume that the nucleus is nonspherical, as is often the case ---
+quantum-mechanically, a sphere cannot rotate, and relativistically, a rotating sphere will not emit
+gravitational waves.
+\hwsoln
+<% end_hw %>
+
 <% begin_hw('why-geodesics-for-test-particles') %>\index{geodesic!as world-line of a test particle}
 (a) Starting on page \pageref{subsec:geometrical-gravity}, we have associated geodesics with the world-lines of low-mass
 objects (test particles). Use the Hulse-Taylor pulsar as an example to show that the assumption of low mass was a necessary one.

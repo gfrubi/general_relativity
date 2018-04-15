@@ -1529,7 +1529,7 @@ in a beat pattern, which can be observed by sampling the light at some point alo
 circumference. If the loop is rotated in its own plane, the interference pattern is altered,
 because the beam-sampling device is in a different place, and the path lengths traveled by the
 two beams has been altered. This phase shift is called the Sagnac effect,\index{Sagnac effect!defined}
-after M. Georges Sagnac, who observed the effect in 1913 and interpreted it, incorrectly, as evidence for the existence
+after M.~Georges Sagnac, who observed the effect in 1913 and interpreted it, incorrectly, as evidence for the existence
 of the aether.\footnote{Comptes rendus de l'Acad\'{e}mie des science 157 (1913) 708}
 % translation in Rizzi and Ruggiero anthology
 The loop senses its own angular velocity relative to an inertial reference frame.
