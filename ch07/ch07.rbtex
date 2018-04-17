@@ -734,7 +734,8 @@ The essential idea is that a spacetime is asymptotically flat if it is possible 
 way that the result has idealized regions at infinity $i^0$, $\mathscr{I}^+$, and $\mathscr{I}^-$ (but not $i^+$ and $i^-$)
 that look like those of Minkowski space.
 The reader who wants to see the full machinery presented can find presentations in various places, such as
-Hawking and Ellis, ch.~11 of Wald, or the online review article ``Conformal Infinity'' at \url{livingreviews.org}.
+Hawking and Ellis, ch.~11 of Wald, or the open-access review article ``Conformal Infinity'' at 
+\url{link.springer.com/article/10.12942/lrr-2004-1}.
 <% end_sec('asymptotic-flatness') %> % Asymptotic flatness
 
 <% begin_sec("Asymptotically stationary spacetimes") %>
