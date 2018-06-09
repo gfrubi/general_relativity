@@ -382,14 +382,20 @@ form, because if $\vc{B}=0$, we can have $\vc{E}''\ne\vc{E}$.
 
 \beginsolutions{5}
 
-\hwsolnhdr{gaussian-curvature-at-edge}
+\hwsolnhdr{christoffel-rescale-metric}
+The equation for the Christoffel symbols in terms of the metric was
+\begin{equation*}
+  \Gamma\indices{^c_{ab}} = \frac{1}{2}g^{cd}\left(\partial_a g_{bd}+\partial_b g_{ad}-\partial_d g_{ab}\right)\eqquad.
+\end{equation*}
+Because both the metric matrix and its inverse appear, we get factors of $\alpha$ and
+$1/\alpha$ that cancel out. Therefore there is no effect on the Christoffel symbols or
+on the geodesics. This certainly makes sense in the case of $\alpha=-1$, because this
+is just a change in the choice of signature, which is an arbitrary convention. It
+also makes sense that rescaling the metric by a nonzero positive factor has no effect
+on the geodesics --- we would expect this to change the measurement of geodesics, but we
+would not expect it to make different curves be geodesics.
 
-The answer to this is a little subtle, since it depends on how we take the limit.
-Suppose we join two planes with a section of a cylinder having radius $\rho$, and let $\rho$ go to zero.
-The Gaussian curvature of a cylinder is zero, so in this limit we fail to reproduce the correct result.
-On the other hand, suppose we take a discus of radius $\rho_1$ whose edge has a curve of radius $\rho_2$.
-in the limit $\rho_1\rightarrow+\infty$, $\rho_2\rightarrow0^+$, we can get either $K=1/(\rho_1\rho_2)\rightarrow 0$ or
-$K\rightarrow+\infty$, depending on how quickly $\rho_1$ and $\rho_2$ approach their limits.
+
 
 \hwsolnhdr{taub-christoffel}
 
@@ -459,6 +465,15 @@ possible to contract C continuously to a point. But this is impossible because C
 hand) $\Gamma^t_{xx}=(1/2)pt^{p-1}$ and $\Gamma^x_{xt}=\Gamma^x_{tx}=(1/2)pt^{-1}$.
 (b) After that, I resorted to a computer algebra system (Maxima), which told me that, for example,
 the Ricci tensor has $R_{tt}=(p/2-p^2/4)t^{-2}$.
+
+\hwsolnhdr{gaussian-curvature-at-edge}
+
+The answer to this is a little subtle, since it depends on how we take the limit.
+Suppose we join two planes with a section of a cylinder having radius $\rho$, and let $\rho$ go to zero.
+The Gaussian curvature of a cylinder is zero, so in this limit we fail to reproduce the correct result.
+On the other hand, suppose we take a discus of radius $\rho_1$ whose edge has a curve of radius $\rho_2$.
+in the limit $\rho_1\rightarrow+\infty$, $\rho_2\rightarrow0^+$, we can get either $K=1/(\rho_1\rho_2)\rightarrow 0$ or
+$K\rightarrow+\infty$, depending on how quickly $\rho_1$ and $\rho_2$ approach their limits.
 
 \beginsolutions{6}
 

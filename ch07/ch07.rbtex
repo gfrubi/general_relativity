@@ -399,10 +399,12 @@ p.~\pageref{no-hair-null-infinity}.}\label{null-infinity-intro}
 The point at $i^0$ is an infinitely distant endpoint for spacelike curves.
 Because of the spherical symmetry, the left and right halves of the diagram are redundant. 
 
-It is possible to make
-up explicit formulae that translate back and forth between Minkowski coordinates and points on the diamond, but in
-general this is not necessary. In fact, the utility of the diagrams is that they let us think about causal relationships
-in coordinate-independent ways. A light cone on the diagram looks exactly like a normal light cone.
+It is possible to make up explicit formulae that translate back and
+forth between Minkowski coordinates and points on the diamond, but in
+general this is not necessary. In fact, the utility of the diagrams is
+that they let us think about causal relationships in
+coordinate-independent ways. A light cone on the diagram looks exactly
+like a normal light cone.
 
 Since this particular spacetime is homogeneous, it makes no difference what spatial
 location on the diagram we pick as our axis of symmetry.

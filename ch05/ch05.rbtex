@@ -2339,13 +2339,11 @@ for visualization (sec.~\ref{subsec:general-penrose}, p.~\pageref{subsec:general
 
 <% begin_hw_sec %>
 
-<% begin_hw('gaussian-curvature-at-edge') %>
-Example \ref{eg:lightning-rod} on p.~\pageref{eg:lightning-rod} discussed some examples in electrostatics where the charge density on the surface of a conductor
-depends on the Gaussian curvature, when the curvature is positive. In the case of a knife-edge formed by two
-half-planes at an exterior angle $\beta>\pi$, there
-is a standard result\footnote{Jackson, \emph{Classical Electrodynamics}} that the charge density at the edge
-blows up to infinity as $R^{\pi/\beta-1}$. Does this match up with the hypothesis that Gaussian curvature
-determines the charge density?\hwsoln
+<% begin_hw('christoffel-rescale-metric') %>
+Suppose that we change the metric by a nonzero constant factor, $g\rightarrow \alpha g$.
+We do not rule out $\alpha<0$, in which case the signature of the metric changes.
+Determine the effect on the Christoffel symbols and on the geodesic equation, and
+explain why this makes sense.\hwsoln
 <% end_hw %>
 
 <% begin_hw('polar-christoffel') %>
@@ -2455,6 +2453,15 @@ This seems to require some simple explanation. Consider the metric $ds^2=dt^2-t^
 the $t$ coordinate. This can be interpreted as a situation in which our length scale is defined by a lattice
 of test particles that expands inertially. Since their motion is inertial, no gravitational fields are required
 in order to explain the observed change in the length scale; cf.~the Milne universe, p.~\pageref{milne}.}
+<% end_hw %>
+
+<% begin_hw('gaussian-curvature-at-edge') %>
+Example \ref{eg:lightning-rod} on p.~\pageref{eg:lightning-rod} discussed some examples in electrostatics where the charge density on the surface of a conductor
+depends on the Gaussian curvature, when the curvature is positive. In the case of a knife-edge formed by two
+half-planes at an exterior angle $\beta>\pi$, there
+is a standard result\footnote{Jackson, \emph{Classical Electrodynamics}} that the charge density at the edge
+blows up to infinity as $R^{\pi/\beta-1}$. Does this match up with the hypothesis that Gaussian curvature
+determines the charge density?\hwsoln
 <% end_hw %>
 
 
