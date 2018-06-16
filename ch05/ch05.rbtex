@@ -1003,6 +1003,35 @@ frames, which are the only legitimate ones in that theory). In general relativit
 and as we saw on page \pageref{g-frame-dependent}, the acceleration of gravity can be made to equal anything
 we like, based on our choice of a frame of reference.\label{christoffel-as-field}
 
+\begin{eg}{Not a tensor}
+Here are a couple of intuitive explanations of why the Christoffel symbol cannot be a tensor. Both of them
+employ the fact that if a tensor is zero in one set of coordinates, it is zero in others as well.
+
+In general relativity, $\Gamma$ is essentially the gravitational field. But we can always find
+a free-falling frame of reference, corresponding locally to some coordinate system,
+in which the gravitational field is zero. Therefore if $\Gamma$ were a tensor, it would have to
+vanish everywhere.
+
+For intuition in a broader mathematical context, consider the transformation in the Euclidean plane from
+Cartesian coordinates to polar coordinates. The Christoffel symbol is zero in Cartesian coordinates,
+but nonzero in polar coordinates (problem \ref{hw:polar-christoffel}, page \pageref{hw:polar-christoffel}).
+This would be impossible if $\Gamma$ transformed as a tensor.
+
+By direct calculation, it is possible to show that when we transform from coordinates $(a,b,\ldots)$
+to new coordinates $(x,y,\ldots)$, the change in $\Gamma$ consists of the sum of two terms. The
+first term is the change that we would expect for a tensor with one upper and two lower indices,
+as suggested by the notation. The second, nontensorial term modifies a component such as 
+$\Gamma\indices{^a_b_c}$ by
+\begin{equation*}
+  \frac{\partial a}{\partial x^\nu}\frac{\partial^2 x^\nu}{\partial b \partial c}.
+\end{equation*}
+The second derivative is a measure of ``acceleration,'' or, more generally, the rate at which
+the unit vectors change as we move from point to point.
+For example, in changing from a Newtonian inertial frame to a noninertial one,
+$x'=x+(1/2)at^2$, we would have a nonzero second derivative $\partial^2x'/\partial t^2$.
+\end{eg}
+
+We have started by discussing the covariant derivative of an upper-index vector.
 To compute the covariant derivative of a higher-rank tensor, we just add more correction terms, e.g.,
 \begin{align*}
   \nabla_a U_{bc} = \partial_a U_{bc} - \Gamma\indices{^d_{ba}}U_{dc}-\Gamma\indices{^d_{ca}}U_{bd} \\
@@ -1028,7 +1057,7 @@ do not have a way of expressing non-covariant derivatives. We no longer want to 
 as a notation for a non-covariant gradient as we did when we first introduced it on
 p.~\pageref{birdtracks-circle-not-covariant}.
 \index{birdtracks notation!covariant derivative}\label{nabla-birdtracks}
-<% marg(130) %>
+<% marg() %>
 <%
   fig(
     'nabla-birdtracks',
@@ -1041,9 +1070,15 @@ p.~\pageref{birdtracks-circle-not-covariant}.
 
 <% end_sec %> % covariant derivative
 
-<% begin_sec("The geodesic equation") %>\label{sec:geodesic-equation}
+<% begin_sec("The geodesic equation",4) %>\label{sec:geodesic-equation}
 In this section, which can be skipped at a first reading, we show how the Christoffel symbols can be used to
 find differential equations that describe geodesics.\index{geodesic!differential equation for}\label{geodesic-diffeq}\index{geodesic equation}
+
+<% begin_sec("Characterization of the geodesic") %>
+A geodesic can be defined as a world-line that preserves tangency under parallel transport, \figref{geodesic-parallel-transports-tangent}. This is
+essentially a mathematical way of expressing the notion that we have previously expressed more informally in terms of ``staying on course'' or
+moving ``inertially.''
+
 <% marg(0) %>
 <%
   fig(
@@ -1053,11 +1088,6 @@ find differential equations that describe geodesics.\index{geodesic!differential
   )
 %>
 <% end_marg %>
-
-<% begin_sec("Characterization of the geodesic") %>
-A geodesic can be defined as a world-line that preserves tangency under parallel transport, \figref{geodesic-parallel-transports-tangent}. This is
-essentially a mathematical way of expressing the notion that we have previously expressed more informally in terms of ``staying on course'' or
-moving ``inertially.''
 
 A curve can be specified by giving functions $x^\mu(\lambda)$ for its coordinates, where $\lambda$ is a real parameter. A vector lying tangent to the
 curve can then be calculated using partial derivatives, $T^\mu=\partial x^\mu/\partial\lambda$. There are three ways in which a vector
