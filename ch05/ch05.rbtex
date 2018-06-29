@@ -2496,7 +2496,7 @@ determines the charge density?\hwsoln
 
 <% begin_hw('affine-param-is-proper-time') %>
 Suppose that we have found a solution $x^\mu(\lambda)$ of the geodesic equation for a timelike geodesic,
-but $\lambda$ is not the proper time. How can we relate $\lambda$ to proper time?
+but $\lambda$ is not the proper time. How can we relate $\lambda$ to proper time?\hwsoln
 <% end_hw %>
 
 
