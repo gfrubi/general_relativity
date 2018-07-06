@@ -270,10 +270,18 @@ a linear combination of dual vectors $\partial_\mu$!
 <% end_sec %>
 
 <% begin_sec("Conservation laws") %>\label{sec:killing-conservation}\index{conservation laws!from Killing vectors}
-Whenever a spacetime has a Killing vector, geodesics have a constant value of $v^b \xi_b$, where $v^b$ is
-the velocity four-vector. For example, because the Schwarzschild metric has a Killing vector $\boldsymbol{\xi} = \partial_t$,
-test particles have a conserved value of $v^t$, and therefore we also have conservation of $p^t$, interpreted
-as the mass-energy.
+
+Whenever a spacetime has a Killing vector, geodesics have a constant
+value of $v^b \xi_b$, where $v^b$ is the velocity four-vector. For
+example, the Schwarzschild metric has a Killing vector
+$\boldsymbol{\xi} = \partial_t$, which, because of the notational clash described above,
+is an \emph{upper}-index (contravariant) vector: $\xi^t=1$. Test particles therefore have
+a conserved value of $v_t$, interpreted as the mass-energy per unit mass.
+Since we normally work with upper-index versions of velocities,
+we can also express this by saying that $\xi_t=(1-2m/r)$, and $\xi_t v^t$ is conserved,
+i.e., we have conservation of $(1-2m/r)\der t/\der\tau$. None of this depends on the choice
+of an affine parameter, so for a photon the conserved quantity would still exist, but would
+have to be expressed in terms of some other parameter.
 
 \begin{eg}{Energy-momentum in flat 1+1 spacetime}
 A flat 1+1-dimensional spacetime has Killing vectors $\partial_x$ and $\partial_t$.
