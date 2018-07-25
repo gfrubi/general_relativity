@@ -842,20 +842,60 @@ decaying due to the radiation of energy in the form of gravitational waves, whic
 
 <% begin_sec("Deflection of light") %>\label{sec:deflection-of-light}\index{light!deflection by sun}\index{deflection of light}
 
-As discussed on page \pageref{sec:eddington}, one of the first tests of general relativity was Eddington's measurement of the
-deflection of rays of light by the sun's gravitational field. The deflection measured by Eddington was 1.6 seconds of arc.
-For a light ray that grazes the sun's surface, the only physically relevant parameters are the sun's mass $m$ and radius
-$r$. Since the deflection is unitless, it can only depend on $m/r$, the unitless ratio of the
-sun's mass to its radius. Expressed in SI units, this is $Gm/c^2r$, which comes out to be about $10^{-6}$. 
-Roughly speaking, then, we expect the order of magnitude of the effect to be about this big, and indeed $10^{-6}$ radians
-comes out to be in the same ball-park as a second of arc. We get a similar estimate in Newtonian physics by treating
-a photon as a (massive) particle moving at speed $c$.
+As discussed on page \pageref{sec:eddington}, one of the first tests
+of general relativity was Eddington's measurement of the deflection of
+rays of light by the sun's gravitational field. The deflection
+measured by Eddington was 1.6 seconds of arc.  For a light ray that
+grazes the sun's surface, the only physically relevant parameters are
+the sun's mass $m$ and radius $r$. Since the deflection is unitless,
+it can only depend on $m/r$, the unitless ratio of the sun's mass to
+its radius. Expressed in SI units, this is $Gm/c^2r$, which comes out
+to be about $10^{-6}$.  Roughly speaking, then, we expect the order of
+magnitude of the effect to be about this big, and indeed $10^{-6}$
+radians comes out to be in the same ball-park as a second of arc. We
+get a similar estimate in Newtonian physics by treating a photon as a
+(massive) particle moving at speed $c$. 
 
-It is possible to calculate a precise value for the deflection using methods very much like those used to determine
-the perihelion advance in section \ref{sec:perihelion-advance}. However, some of the details would have to be changed.
-For example, it is no longer possible to parametrize the trajectory using the proper time $s$, since a light ray has
-$\der s=0$; we must use an affine parameter. Let us instead use this an an example of the numerical technique for
-solving the geodesic equation, first demonstrated in section \ref{sec:numerical-geodesic} on page \pageref{sec:numerical-geodesic}.
+We will go ahead and actually calculate this deflection below, but
+before diving into the details of this calculation, let us make some more general
+remarks about this classic test of general relativity.
+The precision of Eddington's original test was only about $\pm$
+30\%. This was not improved upon for a long time, but the Hipparcos
+satellite has refined the limit to a fraction of a percent.
+A better technique is radio astronomy, which allows
+measurements to be carried out without waiting for an eclipse. One
+merely has to wait for the sun to pass in front of a strong, compact
+radio source such as a quasar. These techniques have now verified the
+deflection of light predicted by general relativity to a relative
+precision of about $10^{-5}$.\footnote{For a review article on this
+topic, see Clifford Will, ``The Confrontation between General
+Relativity and Experiment,''
+\url{arxiv.org/abs/1403.7377}.}
+
+General relativity also makes an ironclad prediction that this deflection
+is independent of the wavelength of the light. The effect is predicted to
+be purely geometrical: the light rays follow lightlike geodesics.
+If, on the other hand, the deflection had been due to some optical
+effect, such as refraction in the sun's corona, we would expect the
+deflection to be very strongly dependent on wavelength. The agreement
+with general relativity for a great range of wavelengths from radio
+to visible light (about four orders of magnitude) makes such an explanation
+extremely implausible. General relativity has passed tests involving
+the deflection of radio waves by Jupiter and by gravitational lensing
+on galactic scales. We could imagine that other theories might also
+reproduce these results, but the predictions of some theories that
+were seriously considered turn out to be off by factors of 2.
+
+We now turn to the detailed calculation of the effect.
+It is possible to calculate a precise value for the deflection using
+aalytic approximations very much like those used to determine the perihelion advance
+in section \ref{sec:perihelion-advance}. However, some of the details
+would have to be changed.  For example, it is no longer possible to
+parametrize the trajectory using the proper time $s$, since a light
+ray has $\der s=0$; we must use an affine parameter. Let us instead
+use this an an example of the numerical technique for solving the
+geodesic equation, first demonstrated in section
+\ref{sec:numerical-geodesic} on page \pageref{sec:numerical-geodesic}.
 Modifying our earlier program, we have the following:
 
 \begin{listing}{1}
@@ -946,14 +986,6 @@ weak-field approximation $4Gm/c^2r$ gives only 69 degrees. What is happening her
 closer and closer to the event horizon of a black hole. Black holes are the topic of section
 \ref{sec:black-holes}, but it should be intuitively reasonable that something wildly nonlinear has to happen
 as we get close to the point where the light wouldn't even be able to escape.
-
-The precision of Eddington's original test was only about $\pm$ 30\%, and has never been improved on significantly
-with visible-light astronomy. A better technique is radio astronomy, which allows measurements to be carried
-out without waiting for an eclipse. One merely has to wait for the sun to pass in front of a strong, compact
-radio source such as a quasar. These techniques have now verified the deflection of light predicted by general relativity
-to a relative precision of about $10^{-5}$.\footnote{For a review article on this topic, see
-Clifford Will, ``The Confrontation between General Relativity
-and Experiment,'' \url{http://relativity.livingreviews.org/Articles/lrr-2006-3/}.}
 
 <% end_sec %> % Deflection of light
 <% end_sec %> %  Schwarzschild metric
