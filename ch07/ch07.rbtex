@@ -382,7 +382,7 @@ we find $\omega'/\omega=A'^{-1}(1-\sqrt{1-A'})$, or, more transparently,
 <% end_marg %>
 
 
-This result is graphed in figure \figref{fig:doppler-across-horizon}.
+This result is graphed in figure \figref{eg-doppler-across-horizon}.
 It is well behaved at the horizon $r=1$.  For large $r$, we have
 $\omega'/\omega\approx 1-r^{-1/2}$, which is a kind of Newtonian
 approximation, since our observer has $v\approx r^{-1/2}$, which is
