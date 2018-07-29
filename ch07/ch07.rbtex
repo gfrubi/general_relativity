@@ -13,6 +13,7 @@
 This chapter is not required in order to understand the later material.
 
 <% begin_sec("Killing vectors",nil,'killing-vectors') %>\index{Killing vector}%\label{sec:killing-vectors}
+<% begin_sec("Killing vectors") %>
 The Schwarzschild metric is an example of a highly symmetric spacetime. It has
 continuous symmetries in space (under rotation) and in time (under translation
 in time). In addition, it has discrete symmetries under spatial reflection and
@@ -237,6 +238,7 @@ this metric has a removable degeneracy of the same type as the one described in 
 As discussed in that section, the signature is invariant only under \emph{nonsingular} transformations, but the
 transformation that converts these coordinates to Cartesian ones is singular.
 \end{eg}
+<% end_sec %>
 
 <% begin_sec("Inappropriate mixing of notational systems") %>
 Confusingly, it is customary to express vectors and dual vectors by summing over basis vectors
@@ -283,13 +285,6 @@ i.e., we have conservation of $(1-2m/r)\der t/\der\tau$. None of this depends on
 of an affine parameter, so for a photon the conserved quantity would still exist, but would
 have to be expressed in terms of some other parameter.
 
-\begin{eg}{Energy-momentum in flat 1+1 spacetime}
-A flat 1+1-dimensional spacetime has Killing vectors $\partial_x$ and $\partial_t$.
-Corresponding to these are the conserved momentum and mass-energy, $p$ and $E$. If we do a Lorentz boost, these
-two Killing vectors get mixed together by a linear transformation, corresponding to
-a transformation of $p$ and $E$ into a new frame.
-\end{eg}
-
 In addition, one can define a globally conserved quantity found by integrating the flux density $P^a=T^{ab}\xi_b$ over the
 boundary of any compact orientable region.\footnote{Hawking and Ellis, \emph{The Large Scale Structure of Space-Time}, p.~62,
 give a succinct treatment that
@@ -297,6 +292,117 @@ describes the flux densities and proves that Gauss's theorem, which ordinarily f
 holds in the case where the appropriate Killing vectors exist. For an explicit description
 of how one can integrate to find a scalar mass-energy, see Winitzki, \emph{Topics in General Relativity}, section 3.1.5, available for free online.} In case
 of a flat spacetime, there are enough Killing vectors to give conservation of energy-momentum and angular momentum.
+
+\begin{eg}{Energy-momentum in flat 1+1 spacetime}
+A flat 1+1-dimensional spacetime has Killing vectors $\partial_x$ and $\partial_t$.
+Corresponding to these are the conserved momentum and mass-energy, $p$ and $E$. If we do a Lorentz boost, these
+two Killing vectors get mixed together by a linear transformation, corresponding to
+a transformation of $p$ and $E$ into a new frame.
+\end{eg}
+
+\begin{eg}{Gravitational Doppler shift for a spherical body}\label{eg:doppler-fancy}
+In section \ref{subsec:schwarzschild-doppler}, p.~\pageref{subsec:schwarzschild-doppler},
+we used relatively simple mathematical techniques to show that the Doppler shift or gravitational
+time dilation factor for the Schwarzschild spacetime is $\sqrt{1-1/r}$.
+(Here we choose units such that $m=1/2$, so that the
+Schwarzschild radius is 1.) We now redo the analysis using fancier techniques that can be generalized
+to applications such as example \ref{eg:doppler-across-horizon} below.
+For convenience of notation, let $A=1-1/r$.
+
+Let a ray of light travel from an emitter with four-velocity $u$ to an observer with four-velocity
+$u'$. Let the ray's lightlike geodesic have tangent vectors $v$ and $v'$ at emission and observation.
+We take the $u$ vectors to be normalized. Normalization is impossible for the $v$ vectors, but we assume that
+they are constructed using the same affine parameter, i.e., that $v$ and $v'$ are the same under
+parallel transport, so that any normalization factor will be an over-all constant. The resulting
+Doppler shift is
+\begin{equation*}
+  \frac{\omega'}{\omega} = \frac{u'_a v'^a}{u_bv^b},
+\end{equation*}
+which is coordinate-independent and also independent of the choice of affine parameter for $v$.
+This relation is a purely kinematical fact, but a quick and dirty way to see that
+it must be true is that the energy-momentum vector of a light ray is proportional to its four-velocity,
+and therefore the numerator and denominator of this expression each represent the respective observer's
+measurement of the ray's energy.
+
+Specializing now to the specific physical situation being analyzed, we know that
+the emitter and observer are both at rest relative to to the black hole, so that in Schwarzschild
+coordinates $u$ and $u'$ have only $t$ components. Because these vectors are normalized, and
+the metric has $g_{tt}=A$, we have $u^t=A^{-1/2}$ and $u'^t=A'^{-1/2}$.
+
+The ray has a conserved energy $Av^t$, so that $Av^t=A'v'^t$. There is also a nonzero $v^r$, but
+we don't need to calculate it for our present purposes.
+
+The Doppler shift comes out to be $(A'/A)^{-1/2}$, which is consistent with the result found
+previously by more elementary methods.
+\end{eg}
+
+\begin{eg}{Doppler shifts across the horizon}\label{eg:doppler-across-horizon}
+As remarked in section \ref{subsec:schwarzschild-doppler}, p.~\pageref{subsec:schwarzschild-doppler},
+we cannot extend the kind of analysis in example \ref{eg:doppler-fancy} to the case where
+a ray crosses the horizon, because inside the horizon, there can be no observers or emitters that are
+at rest (i.e., having constant $r$). We can, however, let an observer fall in through the horizon and
+continue observing the light from the stars, all the way up until she hits the singularity. To make
+the results tractable and easy to interpret, let us have the observer infall from rest at infinity,
+and take the ray to be purely radial as well, i.e., the observer is looking at light from a star that
+has always been directly overhead during her free-fall.
+
+Using the same notation as in example \ref{eg:doppler-fancy}, we find the following results in
+Schwarzschild coordinates $\kappa$. The emitting star has
+\begin{equation*}
+  u^\kappa = (1,0).
+\end{equation*}
+The observer has conserved energy per unit mass $Au^t$, which equals 1 because she was initially at rest
+at unfinity. At observation of the ray, she will have $u'^t=A'^{-1}$, and imposing normalization gives
+\begin{equation*}
+  u'^\kappa = (A'^{-1},-\sqrt{1-A'}),
+\end{equation*}
+with the minus sign because she is infalling. At emission, we fix the normalization of the ray's velocity
+such that
+\begin{equation*}
+  v^\kappa = (1,-1).
+\end{equation*}
+Applying conservation of energy and $u^au_a=0$, we find
+\begin{equation*}
+  v'^\kappa = (A'^{-1},-1),
+\end{equation*}
+where again the minus sign is because the ray is infalling.
+Plugging in to the relation $\omega'/\omega=u'_a v'^a/u_bv^b$ from example \ref{eg:doppler-fancy},
+we find $\omega'/\omega=A'^{-1}(1-\sqrt{1-A'})$, or, more transparently,
+\begin{equation*}
+  \frac{\omega'}{\omega} = \frac{1-r^{-1/2}}{1-r^{-1}}.
+\end{equation*}  
+
+<% marg() %>
+<%
+  fig(
+    'eg-doppler-across-horizon',
+    %q{The result of example \ref{eg:doppler-across-horizon}.}
+  )
+%>
+<% end_marg %>
+
+
+This result is graphed in figure \figref{fig:doppler-across-horizon}.
+It is well behaved at the horizon $r=1$.  For large $r$, we have
+$\omega'/\omega\approx 1-r^{-1/2}$, which is a kind of Newtonian
+approximation, since our observer has $v\approx r^{-1/2}$, which is
+the result of Newtonian conservation of energy $(1/2)v^2-m/r=0$, with
+$m=1/2$ in this system of units. The shift is a red-shift, which is
+our semi-Newtonian expectation for large $r$ but in fact holds for all
+$r$.
+
+The Doppler shift is always finite for $r>0$, contrary to various
+claims that can be found in the popular literature to the effect that
+such an observer ``freezes'' at the horizon, and therefore sees the entire eventual history of the universe
+played out in the infalling visible light. This claim is presumably based on
+a belief that the vanishing of the Schwarzschild coordinate velocity has
+some intrinsic physical meaning. Although it is possible to have such
+see-the-whole-future behavior in some spacetimes, it does not occur in
+the Schwarzschild spacetime. In a spacetime where such an effect did occur,
+the incoming radiation would probably have infinite intensity, not only annihilating
+the observer but also possibly violating the approximation of a vacuum solution.
+\end{eg}
+
 
 <% end_sec %> % Conservation laws for test particles
 <% end_sec %> % Killing vectors

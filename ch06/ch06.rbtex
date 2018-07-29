@@ -840,6 +840,46 @@ decaying due to the radiation of energy in the form of gravitational waves, whic
 
 <% end_sec %> % orbits
 
+<% begin_sec("Doppler shifts and time dilation",nil,'schwarzschild-doppler') %>
+
+The existence of gravitational Doppler shifts and time dilation are a
+direct consequence of the equivalence principle, as is the
+quantitative result for a uniform field. Therefore, observations such
+as the Pound-Rebka experiment are not specifically tests of general
+relativity. For this we need high-precision tests in strong fields.
+Such a test was achieved in 2018 with the observation of gravitational
+Doppler shifts from the star S2, which orbits the black hole
+Sagittarius A*.\footnote{arxiv.org/abs/1807.09409} We can
+conceptualize such an experiment in terms of the emission of two
+successive rays of light from radius $r$, the rays being observed by
+an observer at infinity. These rays are our abstract mathematical
+model.  In reality, they could, for example, represent the motion of
+two successive radio beeps, two photons, or two successive wavefronts
+of an electromagnetic wave. Both the emitter and the observer are at
+rest relative to the gravitating body. We wish to find the factor by
+which the time interval is increased at observation compared to emission.
+
+Because the Schwarzschild metric, expressed in Schwarzschild coordinates,
+is independent of the Schwarzschild time $t$, it follows that any trajectory
+of a test particle $r(t)$ remains valid if shifted to $r(t+\delta)$. Therefore
+the Schwarzschild time interval $\Delta t$ between emission of the two rays
+is the same as the interval $\Delta t'$ at absorption. The corresponding \emph{proper}
+times for the stationary emitter and observer are then in proportion to 
+$\sqrt{g_{tt}}=\sqrt{1-2m/r}$. A Doppler shift of this size was observed in
+the 2018 work.
+
+This result misbehaves for $r\le 2m$. In such cases we would be
+discussing a black hole, and the breakdown in the analysis can be
+traced back to the fact that we assumed the emitter to be at rest. For
+$r\le 2m$, we will see that this becomes impossible. It is possible in
+principle to observe Doppler shifts of rays that cross from emission
+at $r>2m$ to observation at $r<2m$, but the observer cannot be at
+rest.  This situation is analyzed in example
+\ref{eg:doppler-across-horizon},
+p.~\pageref{eg:doppler-across-horizon}. 
+
+<% end_sec('schwarzschild-doppler') %>
+
 <% begin_sec("Deflection of light") %>\label{sec:deflection-of-light}\index{light!deflection by sun}\index{deflection of light}
 
 As discussed on page \pageref{sec:eddington}, one of the first tests
