@@ -369,7 +369,7 @@ where again the minus sign is because the ray is infalling.
 Plugging in to the relation $\omega'/\omega=u'_a v'^a/u_bv^b$ from example \ref{eg:doppler-fancy},
 we find $\omega'/\omega=A'^{-1}(1-\sqrt{1-A'})$, or, more transparently,
 \begin{equation*}
-  \frac{\omega'}{\omega} = \frac{1-r^{-1/2}}{1-r^{-1}}.
+  \frac{\omega'}{\omega} = \frac{1}{1+r^{-1/2}}.
 \end{equation*}  
 
 <% marg() %>
