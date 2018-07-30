@@ -1282,6 +1282,18 @@ waves propagating at the speed of light, and (d) a cloud of matter undergoing gr
 show that it is possible for Alice to accomplish her mission.
 <% end_hw %>
 
+<% begin_hw('photon-sphere') %>
+In the Schwarzschild spacetime, test particles can have circular orbits only for $r\ge r_c$, where
+$r_c=3/2$ in units where the Schwarzschild radius is 1. These orbits are unstable for $r>3$ (the innermost
+stable circular orbit). The unstable orbit with $r=r_c$ exists only for massless particles, and $r=r_c$
+is called the photon sphere. Consider
+the conserved quantities $E$ and $L$ corresponding to the Schwarzschild spacetime's
+Killing vectors $\partial_t$ and $\partial_\theta$, interpreted as the energy and angular momentum per unit
+mass. As the mass of a particle approaches zero, both of these blow up to infinity if the affine parameter
+is taken to be the proper time, but $L/E$ is well behaved in this limit. Show that a photon on the photon
+sphere has $L/E=\pm(1/2)3^{3/2}$.
+<% end_hw %>
+
 <% begin_hw('constant-curvature-invariants') %>
 If a spacetime has a certain symmetry, then we expect that symmetry to be detectable in the behavior
 of curvature scalars such as the scalar curvature $R=R\indices{^a_a}$ and the Kretchmann invariant $k=R^{abcd}R_{abcd}$.\index{Kretchmann invariant}\\
