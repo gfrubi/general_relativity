@@ -2019,6 +2019,15 @@ spacelike surface that covers the whole universe, flipping the velocity of every
 surface, and evolving a new version of the spacetime backward and forward from that surface using the field equations?\hwsoln
 <% end_hw %>
 
+<% begin_hw('bounce-back-out-of-black-hole') %>
+In Newtonian gravity, a body in a hyperbolic orbit has a radius that decreases, reaches
+a minimum, and then goes back out to infinity. Show that if this is to happen in the Schwarzschild
+spacetime, for a particle with zero or nonzero mass,
+the distance of closest approach much be greater than or equal to the Schwarzschild radius
+$2m$. (Note that it \emph{is} possible to have trajectories that pass out through the horizon, although we
+don't expect to observe such trajectories in the case of an astrophysical black hole.)\hwsoln
+<% end_hw %>
+
 
 <% end_hw_sec %>
 
