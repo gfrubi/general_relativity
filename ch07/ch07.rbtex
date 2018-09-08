@@ -500,6 +500,22 @@ Spacelike and timelike geodesics, however, are distorted, as shown by the curves
     %q{Penrose diagram for flat spacetime.}
   )
 %>
+\spacebetweenfigs
+<%
+  fig(
+    'why-null-infinity-is-not-a-point',
+    %q{Given a finite region
+       of spacetime S, we can find a point like P that is spacelike with respect to the whole
+       region, and a point like Q that is timelike with respect to the whole region.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'penrose-schwarzschild',
+    %q{Penrose diagram for Schwarzschild spacetime: a black hole that didn't form by gravitational collapse.}
+  )
+%>
 <% end_marg %>
 
 The distortion becomes greater as we move away from the center of the diagram, and becomes infinite near the
@@ -525,16 +541,17 @@ location on the diagram we pick as our axis of symmetry.
 For example, we could arbitrarily pick the left-hand corner,
 the central timelike geodesic (drawn straight)
 or one of the other timelike geodesics (represented as if it were curved).
+
+It may seem awkward or inconsistent that on the diagram,
+$\mathscr{I}^+$ and $\mathscr{I}^-$ are shown as
+lines (representing 3-dimensional things), while $i^0$, $i^+$, and $i^-$ are
+points (representing 2-spheres). Figure \figref{why-null-infinity-is-not-a-point} shows
+why this actually makes sense. We can find points that are spacelike or lightlike
+in relation to an entire region, but it is not possible to find a point that is lightlike
+in relation to every point. This argument can be made more rigorous using Liouville's
+theorem from complex analysis.
 <% end_sec('penrose-minkowski') %>
 
-<% marg(-300) %>
-<%
-  fig(
-    'penrose-schwarzschild',
-    %q{Penrose diagram for Schwarzschild spacetime: a black hole that didn't form by gravitational collapse.}
-  )
-%>
-<% end_marg %>
 
 <% begin_sec("Schwarzschild spacetime",nil,'penrose-schwarzschild') %>
 Figure \figref{penrose-schwarzschild} is a Penrose diagram for the Schwarzschild spacetime, i.e., a 
