@@ -75,7 +75,7 @@ interpreted as the world-line of a photon that chases the ship but never quite c
 Any event to the left of this line can never have a causal relationship with any event on the ship's
 world-line. Spacetime, as seen by an observer on the ship, has been divided by a curtain into two causally
 disconnected parts. This boundary is called an \emph{event horizon}. Its existence is relative to the world-line
-of a particular observer. An observer who is not accelerating along with the ship does consider an event horizon
+of a particular observer. An observer who is not accelerating along with the ship does not consider an event horizon
 to exist. Although this particular example of the indefinitely accelerating spaceship has some physically
 implausible features (e.g., the ship would have to run out of fuel someday), event horizons are real things.
 In particular, we will see in section \ref{subsec:black-hole-horizon} that black holes have event horizons.
