@@ -363,6 +363,8 @@ def marg_print(delta_y)
 end
 
 # options is normally {}
+# Used in Fundamentals of Calulus, looks like a shaded box with >Box 2.2  Title.
+# Won't work in physics books, which don't have the necessary macros. For them, do a fig() with a 'text' option.
 def marginbox(delta_y,name,caption,options,text)
   options['text'] = text
   options['textbox'] = true
@@ -553,7 +555,8 @@ def fig(name,caption=nil,options={})
     'anonymous'=>'default',# true means figure has no figure number, but still gets labeled (which is, e.g., 
                            #      necessary for photo credits)
                            # default is false, except if caption is a null string, in which case it defaults to true
-    'width'=>'narrow',     # 'narrow'=52 mm, 'wide'=113 mm, 'fullpage'=171 mm
+    'width'=>'narrow',     # 'native'=whatever the figure says it is, 'narrow'=52 mm, 'column'=76.5 mm,
+                           #   'wide'=113 mm, 'fullpage'=171 mm
                            #   refers to graphic, not graphic plus caption (which is greater for sidecaption option)
     'sidecaption'=>false,
     'sidepos'=>'t',        # positioning of the side caption relative to the figure; can also be b, c
@@ -565,6 +568,8 @@ def fig(name,caption=nil,options={})
     'text'=>nil,           # if it exists, puts the text in the figure rather than a graphic (name is still required for labeling)
                            #      see macros \starttextfig and \finishtextfig
                            # For an example of how to do this, see SN ch. 3, "Gory details of the proof..."
+                           # Tables and align* don't work in text, nor does \\, but paragraph breaks work;
+                           # may be able to get around this with minipage.
     'title'=>nil,          # for use with 'text', goes above the text
     'raw'=>false,          # used for anonymous inline figures, e.g., check marks; generates a raw call to includegraphics
     'textbox'=>false       # marginbox(), as used in Fund.; won't work in other books, which don't have the macros in their cls files
@@ -616,7 +621,7 @@ def fig(name,caption=nil,options={})
     options['anonymous']=!has_caption
   end
   dir = find_directory_where_figure_is(name)
-  if dir.nil? && options['text'].nil? then fatal_error("figure #{name} not found in #{dir()}/figs or #{shared_figs()}") end
+  if dir.nil? && options['text'].nil? then fatal_error("figure #{name} not found in #{dir()}/figs or #{shared_figs()}, ch=#{$ch}") end
   #------------------------------------------------------------
   if is_print then fig_print(name,caption,options,dir) end
   #------------------------------------------------------------
@@ -705,6 +710,10 @@ def fig_print(name,caption,options,dir)
       spit("\\starttextfig{#{name}}#{text}\n\\#{m}{#{name}}{%\n#{caption}}\n")
     end
   end
+  #----------------------- native ----------------------
+  if width=='native' then
+    spit("\\fignocaptionnativewidth{#{name}}{#{dir}}\n")
+  end
   #----------------------- narrow ----------------------
   if width=='narrow' and options['text']==nil then
     if options['anonymous'] then
@@ -720,6 +729,35 @@ def fig_print(name,caption,options,dir)
         die(name,"no caption, but not anonymous")
       end
     end
+  end
+  #----------------------- column ------------------------
+  if width=='column' and options['text']==nil then
+    if options['sidecaption'] then
+      die(name,"width is column but sidecaption is true")
+    end
+    if options['narrowfigwidecaption'] then
+      die(name,"width is column but narrowfigwidecaption is true")
+    end
+    if !has_caption && !options['anonymous']
+      die(name,"no caption, but not anonymous")
+    end
+    if options['anonymous'] then
+      if options['float']  then
+        spit("\\columnfig[#{floatpos}]{#{name}}{%\n#{caption}}{#{suffix}}{anonymous}{#{dir}}\n")
+      else # not floating
+        if has_caption then
+          spit("\\columnfignofloatanon[#{dir}]{#{name}}{#{caption}}")
+        else
+          spit("\\columnfignocaptionnofloat[#{dir}]{#{name}}\n")
+        end
+      end
+    else # not anonymous
+      if options['float'] then
+        spit("\\columnfig[#{floatpos}]{#{name}}{%\n#{caption}}{#{suffix}}{labeled}{#{dir}}\n") # tested
+      else # not floating
+        spit("\\columnfignofloat{#{name}}{%\n#{caption}}\n") # tested
+      end # not floating
+    end # not anonymous
   end
   #----------------------- wide ------------------------
   if width=='wide' and options['text']==nil then
@@ -1132,7 +1170,8 @@ def end_ex
 end
 
 # The following are used in FAC:
-def begin_lab(title,columns=2,label='',type='mini',number='')
+def begin_lab(title,columns=2,suffix='',type='mini',number='')
+  # suffix is, e.g., B for ex. 3B in ch. 3
   title = alter_titlecase(title,1)
   if type=='mini' then
     typename = 'Minilab'
@@ -1142,8 +1181,18 @@ def begin_lab(title,columns=2,label='',type='mini',number='')
   if number==''
     number = "\\thechapter"    
   end
-  column_command = (columns==1 ? "\\onecolumn" : "\\twocolumn");
-  print "\\begin{activity}{#{label}}{#{title}}{#{column_command}}{#{typename} #{number}: }"
+  column_command = (columns==1 ? "\\onecolumn" : "\\twocolumn")
+  label = $ch+suffix
+  full_label = "activity-#{type}:"+label
+  t = "\\begin{activity}{#{suffix}}{#{title}}{#{column_command}}{#{typename} #{number}: }"
+  t = t+"\\normalcaptions\\zapcounters"
+  if is_prepress then
+    t = t + "\\addcontentsline{toc}{section}{#{title}}"
+  else
+    t = t + "\\addcontentsline{toc}{section}{\\protect\\link{#{full_label}}{#{typename} #{number}: #{title}}}"
+    t = t + "\\anchor{anchor-#{full_label}}"
+  end
+  print t
 end
 
 def end_lab
@@ -1153,7 +1202,15 @@ end
 def begin_notes(columns=2)
   title = "Notes for chapter \\thechapter"
   column_command = (columns==1 ? "\\onecolumn" : "\\twocolumn");
-  print "\\begin{activity}{}{#{title}}{#{column_command}}{}"
+  t = "\\begin{activity}{}{#{title}}{#{column_command}}{}"
+  full_label = "notes:#{$ch}"
+  if is_prepress then
+    t = t + "\\addcontentsline{toc}{section}{#{title}}"
+  else
+    t = t + "\\addcontentsline{toc}{section}{\\protect\\link{#{full_label}}{#{title}}}"
+    t = t + "\\anchor{anchor-#{full_label}}"
+  end
+  print t
 end
 
 def end_notes
@@ -1233,7 +1290,7 @@ def begin_sec(title,pagebreak=nil,label='',options={})
   end
   title = alter_titlecase(title,$section_level)
   cmd = "\\#{macro}#{pagebreak}{#{title}}"
-  t = sectioning_command_with_href(cmd,$section_level,label,label_level,title)
+  t = sectioning_command_with_href(cmd,$section_level,label,label_level,title,options['optional'])
   #$stderr.print t
   print t
   $section_most_recently_begun = title
@@ -1260,7 +1317,7 @@ def end_hw_sec
   print '\end{hwsection}'
 end
 
-def sectioning_command_with_href(cmd,section_level,label,label_level,title)
+def sectioning_command_with_href(cmd,section_level,label,label_level,title,optional)
   # http://tex.stackexchange.com/a/200940/6853
   name_level = {0=>'chapter',1=>'section',2=>'subsection',3=>'subsubsection',4=>'subsubsubsection'}[section_level]
   label_command = ''
@@ -1298,8 +1355,9 @@ def sectioning_command_with_href(cmd,section_level,label,label_level,title)
     \\let\\addcontentsline\\oldacl
     TEX
   if section_level<4 then
+    if optional then toc_title = "$\\star$"+title else toc_title=title  end
     t4 = <<-TEX
-      \\#{toc_macro}{#{name_level}}{#{complete_label}}{#{title}}{\\the#{name_level}}
+      \\#{toc_macro}{#{name_level}}{#{complete_label}}{#{toc_title}}{\\the#{name_level}}
       TEX
   else
     t4 = ''
@@ -1461,7 +1519,8 @@ def chapter(number,title,label,caption='',options={})
     'sidecaption'=>false,
     'special_width'=>nil,  # used in CL4, to let part of the figure hang out into the margin
     'short_title'=>nil,      # used in TOC; if omitted, taken from title
-    'very_short_title'=>nil  # used in running headers; if omitted, taken from short_title
+    'very_short_title'=>nil,  # used in running headers; if omitted, taken from short_title
+    'optional'=>false
   }
   $section_level += 1
   $ch = number
@@ -1495,14 +1554,16 @@ def chapter(number,title,label,caption='',options={})
   if is_web   then   chapter_web(number,title,label,caption,options) end
 end
 
-def chapter_web(number,title,label,caption,options)
+def chapter_web(number,raw_title,label,caption,options)
+  if options['optional'] then title="* "+raw_title else title=raw_title  end
   if options['opener']!='' then
     process_fig_web(options['opener'],caption,options)
   end
   print "\\mychapter{#{title}}\n"
 end
 
-def chapter_print(number,title,label,caption,options)
+def chapter_print(number,raw_title,label,caption,options)
+  if options['optional'] then title = "$\\star$"+raw_title else title=raw_title end
   opener = options['opener']
   has_opener = (opener!='')
   result = nil
@@ -1560,7 +1621,7 @@ def chapter_print(number,title,label,caption,options)
     $stderr.print "**************************************** Error, ch #{$ch}, processing chapter header. ****************************************\n"
     exit(-1)
   end
-  print sectioning_command_with_href(result,0,bare_label,'ch',title)
+  print sectioning_command_with_href(result,0,bare_label,'ch',raw_title,options['optional'])
   #print "#{result}\\label{#{label}}\n"
 end
 
