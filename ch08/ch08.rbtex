@@ -2474,6 +2474,9 @@ gives a scale factor $a(t)$ that blows up to infinity at some finite $t$. In suc
 known as a ``Big Rip,''
 $(d/dt)(\ddot{a}/a)$ diverges, and any system, no matter how tightly bound, is 
 ripped apart.\footnote{Caldwell et al., \url{arxiv.org/abs/astro-ph/0302506}}
+The vacuum energy responsible for such behavior is referred to as ``phantom
+energy,'' and as of 2019 there is some evidence (p.~\pageref{lcdm-discrepancies}) to support its existence due
+to discrepancies in the value of the Hubble constant.
 \end{eg}
 
 \enlargethispage{-\baselineskip}
@@ -2702,9 +2705,21 @@ exhibits supersymmetry, assuming that the energy scale is the electroweak scale,
 has strong motivation. It now appears more likely that dark matter consists of some other particle such
 as sterile neutrinos or axions.
 
+<% end_sec %> % Dark matter
+<% begin_sec("Discrepancies") %>\label{lcdm-discrepancies}
 Even with the inclusion of dark matter, there is a problem with the abundance of lithium-7 relative to
 hydrogen, which models greatly overpredict.\footnote{\url{arxiv.org/abs/0808.2818}, \url{arxiv.org/abs/1107.1117}}
-<% end_sec %> % Dark matter
+
+As of 2019, there is also tension between the values of the Hubble
+constant found from distance-ladder techniques and analysis of the
+CMB and BAO. The former give about $72\pm 2$, in units of km/s/Mpc, while
+the latter give about $67.5\pm  0.5$. This may simply be a case
+where people always underestimate their systematic errors, or
+it may be a sign of new physics causing the universe to accelerate
+its expansion more rapidly than predicted by $\Lambda CDM$ models.
+Proposed solutions involve physical ingredients such as sterile
+neutrinos, axions, and phantom energy (example \ref{eg:big-rip}, p.~\pageref{eg:big-rip}).
+<% end_sec %> % current status
 <% end_sec %> % observation
 
 <% end_sec %> % Cosmological solutions
