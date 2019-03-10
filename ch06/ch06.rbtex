@@ -236,14 +236,24 @@ $R_{ab}=0$ is highly nonlinear, so that the solution cannot simply be scaled up 
 <% end_marg %>
 
 The reason for this nonlinearity is fundamental to general relativity.
-For example, when the earth condensed out of the primordial solar nebula, large amounts of heat were
-produced, and this energy was then gradually radiated into outer space, decreasing the total mass of the earth.
-If we pretend, as in figure \figref{nonlinearity}, that this process involved the merging of only two bodies, each with mass $m$, then the
-net result was essentially to take separated masses $m$ and $m$ at rest, and bring them close together
-to form close-neighbor masses $m$ and $m$, again at rest.
-The amount of energy radiated away was proportional to $m^2$, so the gravitational mass of the
-combined system has been reduced from $2m$ to $2m-(\ldots)m^2$, where \ldots is roughly $G/c^2r$. There is a nonlinear dependence
-of the gravitational field on the masses.
+For example, when the earth condensed out of the primordial solar
+nebula, a large amount of heat was produced, and this energy was then
+gradually radiated into outer space, decreasing the total mass of the
+earth.  If we pretend, as in figure \figref{nonlinearity}, that this
+process involved the merging of only two bodies, each with mass $m$,
+then the net result was essentially to take separated masses $m$ and
+$m$ at rest, and bring them close together to form close-neighbor
+masses $m$ and $m$, again at rest.  The amount of energy radiated away
+was proportional to $m^2$, so the inertial mass of the combined system
+has been reduced from $2m$ to
+$2m+\delta$, where $\delta\sim -G/c^2r$.  The reduction in inertial
+mass due to radiation in this scenario is in fact almost exactly
+identical to the result of the thought experiment used by Einstein in his original
+paper on $E=mc^2$ (reproduced on p.~\pageref{einstein-paper-mc2}).
+Based on the equivalence principle, we expect that this reduction in
+inertial mass must be accompanied by an equal reduction in the
+gravitational mass. We therefore find that there is a nonlinear
+dependence of the gravitational field on the masses. 
 
 Self-check: The signature of a metric is defined as the list of positive and negative 
 signs that occur when it is diagonalized.\index{signature!defined as a list of signs}\footnote{See p.~\pageref{sec:degeneracy} for
