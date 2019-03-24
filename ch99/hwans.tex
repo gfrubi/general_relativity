@@ -677,6 +677,50 @@ the phase of clocks be adjusted linearly as a function of the azimuthal coordina
 in section \ref{sec:carousel}, this will cause a discontinuity once we wrap around by $2\pi$, and therefore
 clock synchronization fails, and this frame is not static.
 
+\hwsolnhdr{sch-circular-orbit-doppler}
+
+For an observer in a circular orbit at radius $r$, we can trivially
+tell that when $r$ is large, the result is Newtonian, so the Doppler
+shifts will be small and will be both redshifts and blueshifts. I
+don't know of any simple way to prove, without a calculation, that
+even at small radii there will be both redshifts and blueshifts.
+
+Let the units be such that the Schwarzschild radius is 1 (which means
+that the mass of the black hole is 1/2). Vectors are expressed in
+Schwarzschild coordinates $(t,r,\theta,\phi)$ The orbiting observer is
+in the plane $\theta=\pi/2$. The $\pm$ signs refer to the extreme
+cases of the orbiting observer detecting a ray of light from the
+forward direction and the backward direction. Solving the geodesic equation for a
+circular orbit, we find that the normalized velocity vector of
+the orbiting observer is
+\begin{equation*}
+  u'=\left(1-\frac{3}{2r}\right)^{-1/2}(1,0,0,2^{-1/2}r^{-3/2}).
+\end{equation*}
+This expression misbehaves for $r<3/2$; for radii that small, there are no circular orbits.
+(Circular orbits are also unstable for $r<3$.)
+Let the velocity vector of the ray at detection, with an arbitrary choice of affine parameter, be
+\begin{equation*}
+  v'=(1,0,0,\pm (1-1/r)^{1/2}r^{-1}).
+\end{equation*}
+The velocity vector of the distant observer emitting the ray is
+\begin{equation*}
+  u=(1,0,0,0).
+\end{equation*}
+We would also like to extrapolate backward in time to find $v$, the
+velocity vector of the ray upon emission by the distant source. The
+complete vector probably can't be found in closed form, but because
+there is a conserved energy, we can get the only component we need in
+closed form as
+\begin{equation*}
+  v=(1-1/r,\ldots).
+\end{equation*}
+The Doppler shift is
+\begin{equation*}
+  \frac{\omega'}{\omega} = \frac{u_av'^a}{u_bv^b}=\left(1-\frac{3}{2r}\right)^{-1/2}\left[1\mp\left[2r(1-1/r)\right]^{-1/2}\right].
+\end{equation*}
+Graphing shows that all the way down to $r=3/2$, one solution always has $\omega'/\omega>1$
+and one $\omega'/\omega<1$.
+
 \beginsolutions{8}
 
 \hwsolnhdr{big-bang-removable}

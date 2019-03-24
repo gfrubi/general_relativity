@@ -401,6 +401,10 @@ see-the-whole-future behavior in some spacetimes, it does not occur in
 the Schwarzschild spacetime. In a spacetime where such an effect did occur,
 the incoming radiation would probably have infinite intensity, not only annihilating
 the observer but also possibly violating the approximation of a vacuum solution.
+
+A similar calculation is carried out in problem \ref{hw:sch-circular-orbit-doppler}, p.~\pageref{sch-circular-orbit-doppler},
+for the case where the observer is in a circular orbit. The result is that such an observer will always see both blueshifts
+and redshifts.
 \end{eg}
 
 
@@ -1347,6 +1351,16 @@ that the frame is stationary but not static. Suppose someone says that any rotat
 Give a counterexample.
 \hwsoln
 <% end_hw %>
+
+<% begin_hw('sch-circular-orbit-doppler') %>
+In example \ref{eg:doppler-across-horizon}, p.~\pageref{eg:doppler-across-horizon}, we found the Doppler shifts observed
+by an observer infalling radially from rest at infinity into a Schwarzschild black hole. Carry out a
+similar analysis for the case where the observer is in a circular orbit, and show that such an observer will always see both blueshifts
+and redshifts. In order to find the motion of the observer in the circular orbit, you will need to either compute or
+look up online a couple of Christoffel symbols for the Schwarzschild spacetime, in Schwarzschild coordinates.
+\hwsoln
+<% end_hw %>
+
 
 <% end_hw_sec %>
 
