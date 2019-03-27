@@ -402,9 +402,9 @@ the Schwarzschild spacetime. In a spacetime where such an effect did occur,
 the incoming radiation would probably have infinite intensity, not only annihilating
 the observer but also possibly violating the approximation of a vacuum solution.
 
-A similar calculation is carried out in problem \ref{hw:sch-circular-orbit-doppler}, p.~\pageref{sch-circular-orbit-doppler},
+A similar calculation is carried out in problem \ref{hw:sch-circular-orbit-doppler}, p.~\pageref{hw:sch-circular-orbit-doppler},
 for the case where the observer is in a circular orbit. The result is that such an observer will always see both blueshifts
-and redshifts.
+and redshifts, depending on the direction from which the rays arrive.
 \end{eg}
 
 
