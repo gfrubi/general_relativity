@@ -1571,7 +1571,7 @@ part of the field equations, whose source term is the mass-energy component of t
 %>
 <% end_marg %>
 
-\begin{eg}{Scooping out a hole}\label{eg:cosmo-hole} 
+\begin{eg}{Scooping out a hole}\label{eg:cosmo-hole}\index{hole!scooped out of a cosmological spacetime}
 This example illustrates the connection between cosmological acceleration and local density of matter
 given by the Friedmann acceleration equation.
 Consider two cosmologies, each with $\Lambda=0$. Cosmology 1 is 
@@ -1580,7 +1580,12 @@ an FRW spacetime in which all matter is in the form of nonrelativistic particles
 a vacuum. (``Small'' means small compared to the Hubble scale $1/H_\zu{o}$.)
 Within S, we introduce test particles A and B. Because an FRW spacetime is homogeneous
 and isotropic, cosmology 2 retains spherical symmetry about the center of S.
-Since $\Lambda=0$, Birkhoff's theorem applies to 2, so 2 is flat inside S.
+Since $\Lambda=0$, Birkhoff's theorem applies to 2, so 2 is flat inside S.\footnote{People sometimes
+incorrectly overstate this conclusion about the gravity inside a hole according to general relativity.
+In the case of a spherical shell of mass in an otherwise empty universe, it is true that the spacetime
+inside is flat, but there is time dilation inside the shell compared to time at infinity, and the
+Schwarzschild \emph{coordinates} cannot be used inside the shell if they are to match up with
+Schwarzschild coordinates outside the shell. See Zhang and Yi, \url{arxiv.org/abs/1203.4428}.}
 Therefore in 2, the relative acceleration $\vc{a}$ of the test particles equals zero.
 
 Because S is small compared to cosmological distances, and because the dust is nonrelativistic,
