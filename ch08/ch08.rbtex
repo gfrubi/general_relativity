@@ -2618,6 +2618,16 @@ constant is definitely positive.
 %>
 <% end_marg %>
 
+<% marg() %>
+<%
+  fig(
+    'eisenstein-bao',
+    %q{The acoustic peak in the BAO correlation function. Redrawn from Eisenstein, New Astronomy Reviews. 49 (2005) 360,
+       as reproduced in Bassett and Hlozek, 2009, \url{arxiv.org/abs/0910.5224}.}
+  )
+%>
+<% end_marg %>
+
 <% begin_sec("Density of matter from baryonic acoustic oscillations") %>\index{baryon acoustic oscillations}
 Efforts such as the Sloan Digital Sky Survey have made three-dimensional maps of the density of luminous
 matter in the universe.\footnote{Sanchez et al., 2012, \url{arxiv.org/abs/1203.6616}} The distribution is
@@ -2641,15 +2651,6 @@ ruler at which the peak in $\xi(s)$ occurs. In cosmological models, these result
 $\Omega_M$, while being relatively insensitive to $\Omega_\Lambda$, and they are therefore complementary
 to both the supernova data and the CMB results.
 <% end_sec %> % Density of matter from baryonic acoustic oscillations
-<% marg() %>
-<%
-  fig(
-    'eisenstein-bao',
-    %q{The acoustic peak in the BAO correlation function. Redrawn from Eisenstein, New Astronomy Reviews. 49 (2005) 360,
-       as reproduced in Bassett and Hlozek, 2009, \url{arxiv.org/abs/0910.5224}.}
-  )
-%>
-<% end_marg %>
 
 <% begin_sec("Conclusions about cosmology") %>
 Figure \figref{cosmology-parameters} summarizes what we can conclude about our universe, parametrized in terms of a
@@ -2711,13 +2712,13 @@ has strong motivation. It now appears more likely that dark matter consists of s
 as sterile neutrinos or axions.
 
 <% end_sec %> % Dark matter
-<% begin_sec("Discrepancies") %>\label{lcdm-discrepancies}
+<% begin_sec("Current discrepancies") %>\label{lcdm-discrepancies}
 Even with the inclusion of dark matter, there is a problem with the abundance of lithium-7 relative to
 hydrogen, which models greatly overpredict.\footnote{\url{arxiv.org/abs/0808.2818}, \url{arxiv.org/abs/1107.1117}}
 
 As of 2019, there is also tension between the values of the Hubble
 constant found from distance-ladder techniques and analysis of the
-CMB and BAO. The former give about $72\pm 2$, in units of km/s/Mpc, while
+CMB and BAO. The former\footnote{https://arxiv.org/abs/1903.07603} give about $74.2\pm 1.8$, in units of km/s/Mpc, while
 the latter give about $67.5\pm  0.5$. This may simply be a case
 where people always underestimate their systematic errors, or
 it may be a sign of new physics causing the universe to accelerate
