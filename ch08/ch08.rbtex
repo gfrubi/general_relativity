@@ -1065,7 +1065,9 @@ The current status of the energy conditions is shaky.
 Although it is clear that all of them hold in a variety of situations, there are strong reasons to believe that
 they are violated at both microscopic and cosmological scales, for reasons both classical
 and quantum-mechanical.\footnote{Barcelo and Visser, ``Twilight for the energy conditions?,'' \url{http://arxiv.org/abs/gr-qc/0205066v1}.}
-We will see such a violation in the following section.
+We will see such a violation in the following section. However, there are general reasons to believe that such violations cannot
+be too extreme, or else they would result in instability of the form of matter in question.\footnote{Buniy and Hsu,
+``Instabilities and the null energy condition,'' \url{http://arxiv.org/abs/hep-th/0502203}.}
 <% end_sec %> % Current status
 <% end_sec %> % Energy conditions
 
@@ -2955,7 +2957,7 @@ idea in a pair of back-to-back papers, one by Bondi and
 Gold\footnote{``The Steady-State Theory of the Expanding Universe,'' MNRAS 108 (1948) 252;
 \url{adsabs.harvard.edu/cgi-bin/nph-bib_query?bibcode=1948MNRAS.108..252B}} and one by
 Hoyle,\footnote{``A New Model for the Expanding Universe,'' MNRAS 108 (1948) 372,
-\url{adsabs.harvard.edu/cgi-bin/nph-bib_query?bibcode=1948MNRAS.108..372H}
+\url{ui.adsabs.harvard.edu/abs/1948MNRAS.108..372H/abstract}
 } with comments
 appended to the former on the differences between the two approaches. The Bondi-Gold paper is
 especially fun to read, because it is written in nontechnical language and shows a type of
