@@ -540,6 +540,11 @@ $\omega\alpha$, giving $10^{25}$ W, which checks to within an order of magnitude
 A full general-relativistic calculation reproduces the observed value of $\alpha$ to within the 0.1\% error bars
 of the data.
 
+During the process of orbital decay for two black holes, the eccentricity of the orbit is reduced, and
+the orbit tends to become nearly circular by the time the holes 
+merge.\footnote{Hinder \emph{et al.}, \url{arxiv.org/abs/0710.5167}} When one or more of the
+objects is not a black hole, there can also be complicated coupling to the dynamics of the 
+body.\footnote{Ivanov and Papaloizou, \url{arxiv.org/abs/0709.0480}}
 
 <% end_sec %> % Rate of radiation
 

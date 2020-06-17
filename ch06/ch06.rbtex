@@ -75,7 +75,7 @@ interpreted as the world-line of a photon that chases the ship but never quite c
 Any event to the left of this line can never have a causal relationship with any event on the ship's
 world-line. Spacetime, as seen by an observer on the ship, has been divided by a curtain into two causally
 disconnected parts. This boundary is called an \emph{event horizon}. Its existence is relative to the world-line
-of a particular observer. An observer who is not accelerating along with the ship does consider an event horizon
+of a particular observer. An observer who is not accelerating along with the ship does not consider an event horizon
 to exist. Although this particular example of the indefinitely accelerating spaceship has some physically
 implausible features (e.g., the ship would have to run out of fuel someday), event horizons are real things.
 In particular, we will see in section \ref{subsec:black-hole-horizon} that black holes have event horizons.
@@ -236,14 +236,24 @@ $R_{ab}=0$ is highly nonlinear, so that the solution cannot simply be scaled up 
 <% end_marg %>
 
 The reason for this nonlinearity is fundamental to general relativity.
-For example, when the earth condensed out of the primordial solar nebula, large amounts of heat were
-produced, and this energy was then gradually radiated into outer space, decreasing the total mass of the earth.
-If we pretend, as in figure \figref{nonlinearity}, that this process involved the merging of only two bodies, each with mass $m$, then the
-net result was essentially to take separated masses $m$ and $m$ at rest, and bring them close together
-to form close-neighbor masses $m$ and $m$, again at rest.
-The amount of energy radiated away was proportional to $m^2$, so the gravitational mass of the
-combined system has been reduced from $2m$ to $2m-(\ldots)m^2$, where \ldots is roughly $G/c^2r$. There is a nonlinear dependence
-of the gravitational field on the masses.
+For example, when the earth condensed out of the primordial solar
+nebula, a large amount of heat was produced, and this energy was then
+gradually radiated into outer space, decreasing the total mass of the
+earth.  If we pretend, as in figure \figref{nonlinearity}, that this
+process involved the merging of only two bodies, each with mass $m$,
+then the net result was essentially to take separated masses $m$ and
+$m$ at rest, and bring them close together to form close-neighbor
+masses $m$ and $m$, again at rest.  The amount of energy radiated away
+was proportional to $m^2$, so the inertial mass of the combined system
+has been reduced from $2m$ to
+$2m+\delta$, where $\delta\sim -G/c^2r$.  The reduction in inertial
+mass due to radiation in this scenario is in fact almost exactly
+identical to the result of the thought experiment used by Einstein in his original
+paper on $E=mc^2$ (reproduced on p.~\pageref{einstein-paper-mc2}).
+Based on the equivalence principle, we expect that this reduction in
+inertial mass must be accompanied by an equal reduction in the
+gravitational mass. We therefore find that there is a nonlinear
+dependence of the gravitational field on the masses. 
 
 Self-check: The signature of a metric is defined as the list of positive and negative 
 signs that occur when it is diagonalized.\index{signature!defined as a list of signs}\footnote{See p.~\pageref{sec:degeneracy} for
@@ -840,22 +850,102 @@ decaying due to the radiation of energy in the form of gravitational waves, whic
 
 <% end_sec %> % orbits
 
+<% begin_sec("Doppler shifts and time dilation",nil,'schwarzschild-doppler') %>
+
+The existence of gravitational Doppler shifts and time dilation are a
+direct consequence of the equivalence principle, as is the
+quantitative result for a uniform field. Therefore, observations such
+as the Pound-Rebka experiment are not specifically tests of general
+relativity. For this we need high-precision tests in strong fields.
+Such a test was achieved in 2018 with the observation of gravitational
+Doppler shifts from the star S2, which orbits the black hole
+Sagittarius A*.\footnote{arxiv.org/abs/1807.09409} We can
+conceptualize such an experiment in terms of the emission of two
+successive rays of light from radius $r$, the rays being observed by
+an observer at infinity. These rays are our abstract mathematical
+model.  In reality, they could, for example, represent the motion of
+two successive radio beeps, two photons, or two successive wavefronts
+of an electromagnetic wave. Both the emitter and the observer are at
+rest relative to the gravitating body. We wish to find the factor by
+which the time interval is increased at observation compared to emission.
+
+Because the Schwarzschild metric, expressed in Schwarzschild coordinates,
+is independent of the Schwarzschild time $t$, it follows that any trajectory
+of a test particle $r(t)$ remains valid if shifted to $r(t+\delta)$. Therefore
+the Schwarzschild time interval $\Delta t$ between emission of the two rays
+is the same as the interval $\Delta t'$ at absorption. The corresponding \emph{proper}
+times for the stationary emitter and observer are then in proportion to 
+$\sqrt{g_{tt}}=\sqrt{1-2m/r}$. A Doppler shift of this size was observed in
+the 2018 work.
+
+This result misbehaves for $r\le 2m$. In such cases we would be
+discussing a black hole, and the breakdown in the analysis can be
+traced back to the fact that we assumed the emitter to be at rest. For
+$r\le 2m$, we will see that this becomes impossible. It is possible in
+principle to observe Doppler shifts of rays that cross from emission
+at $r>2m$ to observation at $r<2m$, but the observer cannot be at
+rest.  This situation is analyzed in example
+\ref{eg:doppler-across-horizon},
+p.~\pageref{eg:doppler-across-horizon}. 
+
+<% end_sec('schwarzschild-doppler') %>
+
 <% begin_sec("Deflection of light") %>\label{sec:deflection-of-light}\index{light!deflection by sun}\index{deflection of light}
 
-As discussed on page \pageref{sec:eddington}, one of the first tests of general relativity was Eddington's measurement of the
-deflection of rays of light by the sun's gravitational field. The deflection measured by Eddington was 1.6 seconds of arc.
-For a light ray that grazes the sun's surface, the only physically relevant parameters are the sun's mass $m$ and radius
-$r$. Since the deflection is unitless, it can only depend on $m/r$, the unitless ratio of the
-sun's mass to its radius. Expressed in SI units, this is $Gm/c^2r$, which comes out to be about $10^{-6}$. 
-Roughly speaking, then, we expect the order of magnitude of the effect to be about this big, and indeed $10^{-6}$ radians
-comes out to be in the same ball-park as a second of arc. We get a similar estimate in Newtonian physics by treating
-a photon as a (massive) particle moving at speed $c$.
+As discussed on page \pageref{sec:eddington}, one of the first tests
+of general relativity was Eddington's measurement of the deflection of
+rays of light by the sun's gravitational field. The deflection
+measured by Eddington was 1.6 seconds of arc.  For a light ray that
+grazes the sun's surface, the only physically relevant parameters are
+the sun's mass $m$ and radius $r$. Since the deflection is unitless,
+it can only depend on $m/r$, the unitless ratio of the sun's mass to
+its radius. Expressed in SI units, this is $Gm/c^2r$, which comes out
+to be about $10^{-6}$.  Roughly speaking, then, we expect the order of
+magnitude of the effect to be about this big, and indeed $10^{-6}$
+radians comes out to be in the same ball-park as a second of arc. We
+get a similar estimate in Newtonian physics by treating a photon as a
+(massive) particle moving at speed $c$. 
 
-It is possible to calculate a precise value for the deflection using methods very much like those used to determine
-the perihelion advance in section \ref{sec:perihelion-advance}. However, some of the details would have to be changed.
-For example, it is no longer possible to parametrize the trajectory using the proper time $s$, since a light ray has
-$\der s=0$; we must use an affine parameter. Let us instead use this an an example of the numerical technique for
-solving the geodesic equation, first demonstrated in section \ref{sec:numerical-geodesic} on page \pageref{sec:numerical-geodesic}.
+We will go ahead and actually calculate this deflection below, but
+before diving into the details of this calculation, let us make some more general
+remarks about this classic test of general relativity.
+The precision of Eddington's original test was only about $\pm$
+30\%. This was not improved upon for a long time, but the Hipparcos
+satellite has refined the limit to a fraction of a percent.
+A better technique is radio astronomy, which allows
+measurements to be carried out without waiting for an eclipse. One
+merely has to wait for the sun to pass in front of a strong, compact
+radio source such as a quasar. These techniques have now verified the
+deflection of light predicted by general relativity to a relative
+precision of about $10^{-5}$.\footnote{For a review article on this
+topic, see Clifford Will, ``The Confrontation between General
+Relativity and Experiment,''
+\url{arxiv.org/abs/1403.7377}.}
+
+General relativity also makes an ironclad prediction that this deflection
+is independent of the wavelength of the light. The effect is predicted to
+be purely geometrical: the light rays follow lightlike geodesics.
+If, on the other hand, the deflection had been due to some optical
+effect, such as refraction in the sun's corona, we would expect the
+deflection to be very strongly dependent on wavelength. The agreement
+with general relativity for a great range of wavelengths from radio
+to visible light (about four orders of magnitude) makes such an explanation
+extremely implausible. General relativity has passed tests involving
+the deflection of radio waves by Jupiter and by gravitational lensing
+on galactic scales. We could imagine that other theories might also
+reproduce these results, but the predictions of some theories that
+were seriously considered turn out to be off by factors of 2.
+
+We now turn to the detailed calculation of the effect.
+It is possible to calculate a precise value for the deflection using
+aalytic approximations very much like those used to determine the perihelion advance
+in section \ref{sec:perihelion-advance}. However, some of the details
+would have to be changed.  For example, it is no longer possible to
+parametrize the trajectory using the proper time $s$, since a light
+ray has $\der s=0$; we must use an affine parameter. Let us instead
+use this an an example of the numerical technique for solving the
+geodesic equation, first demonstrated in section
+\ref{sec:numerical-geodesic} on page \pageref{sec:numerical-geodesic}.
 Modifying our earlier program, we have the following:
 
 \begin{listing}{1}
@@ -946,14 +1036,6 @@ weak-field approximation $4Gm/c^2r$ gives only 69 degrees. What is happening her
 closer and closer to the event horizon of a black hole. Black holes are the topic of section
 \ref{sec:black-holes}, but it should be intuitively reasonable that something wildly nonlinear has to happen
 as we get close to the point where the light wouldn't even be able to escape.
-
-The precision of Eddington's original test was only about $\pm$ 30\%, and has never been improved on significantly
-with visible-light astronomy. A better technique is radio astronomy, which allows measurements to be carried
-out without waiting for an eclipse. One merely has to wait for the sun to pass in front of a strong, compact
-radio source such as a quasar. These techniques have now verified the deflection of light predicted by general relativity
-to a relative precision of about $10^{-5}$.\footnote{For a review article on this topic, see
-Clifford Will, ``The Confrontation between General Relativity
-and Experiment,'' \url{http://relativity.livingreviews.org/Articles/lrr-2006-3/}.}
 
 <% end_sec %> % Deflection of light
 <% end_sec %> %  Schwarzschild metric
@@ -1945,6 +2027,15 @@ On p.~\pageref{sec:sch-t-reversal} I argued that there is no way to define a tim
 general relativity so that it applies to all spacetimes. Why can't we define it by picking some arbitrary
 spacelike surface that covers the whole universe, flipping the velocity of every particle on that
 surface, and evolving a new version of the spacetime backward and forward from that surface using the field equations?\hwsoln
+<% end_hw %>
+
+<% begin_hw('bounce-back-out-of-black-hole') %>
+In Newtonian gravity, a body in a hyperbolic orbit has a radius that decreases, reaches
+a minimum, and then goes back out to infinity. Show that if this is to happen in the Schwarzschild
+spacetime, for a particle with zero or nonzero mass,
+the distance of closest approach much be greater than or equal to the Schwarzschild radius
+$2m$. (Note that it \emph{is} possible to have trajectories that pass out through the horizon, although we
+don't expect to observe such trajectories in the case of an astrophysical black hole.)\hwsoln
 <% end_hw %>
 
 

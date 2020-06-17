@@ -382,14 +382,20 @@ form, because if $\vc{B}=0$, we can have $\vc{E}''\ne\vc{E}$.
 
 \beginsolutions{5}
 
-\hwsolnhdr{gaussian-curvature-at-edge}
+\hwsolnhdr{christoffel-rescale-metric}
+The equation for the Christoffel symbols in terms of the metric was
+\begin{equation*}
+  \Gamma\indices{^c_{ab}} = \frac{1}{2}g^{cd}\left(\partial_a g_{bd}+\partial_b g_{ad}-\partial_d g_{ab}\right)\eqquad.
+\end{equation*}
+Because both the metric matrix and its inverse appear, we get factors of $\alpha$ and
+$1/\alpha$ that cancel out. Therefore there is no effect on the Christoffel symbols or
+on the geodesics. This certainly makes sense in the case of $\alpha=-1$, because this
+is just a change in the choice of signature, which is an arbitrary convention. It
+also makes sense that rescaling the metric by a nonzero positive factor has no effect
+on the geodesics --- we would expect this to change the measurement of geodesics, but we
+would not expect it to make different curves be geodesics.
 
-The answer to this is a little subtle, since it depends on how we take the limit.
-Suppose we join two planes with a section of a cylinder having radius $\rho$, and let $\rho$ go to zero.
-The Gaussian curvature of a cylinder is zero, so in this limit we fail to reproduce the correct result.
-On the other hand, suppose we take a discus of radius $\rho_1$ whose edge has a curve of radius $\rho_2$.
-in the limit $\rho_1\rightarrow+\infty$, $\rho_2\rightarrow0^+$, we can get either $K=1/(\rho_1\rho_2)\rightarrow 0$ or
-$K\rightarrow+\infty$, depending on how quickly $\rho_1$ and $\rho_2$ approach their limits.
+
 
 \hwsolnhdr{taub-christoffel}
 
@@ -459,6 +465,26 @@ possible to contract C continuously to a point. But this is impossible because C
 hand) $\Gamma^t_{xx}=(1/2)pt^{p-1}$ and $\Gamma^x_{xt}=\Gamma^x_{tx}=(1/2)pt^{-1}$.
 (b) After that, I resorted to a computer algebra system (Maxima), which told me that, for example,
 the Ricci tensor has $R_{tt}=(p/2-p^2/4)t^{-2}$.
+
+\hwsolnhdr{gaussian-curvature-at-edge}
+
+The answer to this is a little subtle, since it depends on how we take the limit.
+Suppose we join two planes with a section of a cylinder having radius $\rho$, and let $\rho$ go to zero.
+The Gaussian curvature of a cylinder is zero, so in this limit we fail to reproduce the correct result.
+On the other hand, suppose we take a discus of radius $\rho_1$ whose edge has a curve of radius $\rho_2$.
+in the limit $\rho_1\rightarrow+\infty$, $\rho_2\rightarrow0^+$, we can get either $K=1/(\rho_1\rho_2)\rightarrow 0$ or
+$K\rightarrow+\infty$, depending on how quickly $\rho_1$ and $\rho_2$ approach their limits.
+
+\hwsolnhdr{affine-param-is-proper-time}
+
+The definition of the proper time is $\der\tau^2=\der x^\mu \der x_\mu$. Dividing by $\der\lambda^2$ on
+both sides and using dots for differentiation with respect to $\lambda$, we have
+\begin{equation*}
+  \left(\frac{\der\tau}{\der\lambda}\right)^2 = \dot{x}^\mu \dot{x}_\mu .
+\end{equation*}
+This allows us to determine $\der\tau/\der\lambda$ up to a sign, and the sign can be easily determined
+by inspection of the solution. This determines the relation between $\tau$ and $\lambda$ up to an additive
+constant. Alternatively, one could just normalize the velocity vector when setting the initial conditions.
 
 \beginsolutions{6}
 
@@ -602,6 +628,17 @@ curves, there is also the issue that we don't have complete freedom to choose in
 conditions on a spacelike surface, because these conditions might end up not being
 consistent with themselves when evolved around a CTC.)
 
+\hwsolnhdr{bounce-back-out-of-black-hole}
+For a particle with zero or nonzero mass (i.e., a particle that is not a tachyon), the velocity
+vector must be either timelike or null. In the $+---$ signature, this means that its norm must
+be greater than or equal to zero. Use units such that the mass of the black hole is 1/2, so that
+the Schwarzschild radius is 1, and let $A=1-1/r$ be the factor appearing in the Schwarzschild
+metric. Let the motion be in the plane $\theta=\pi/2$, so that we can ignore $\theta$ as a
+coordinate. The norm of a velocity vector is then $A\dot{t}^2-A^{-1}\dot{r}^2-r^2\dot{\phi}^2$,
+where the dots represent derivatives with respect to an affine parameter such as proper time.
+If the particle is to turn around at some point, then at that point we have $\dot{r}=0$.
+Then the only way to get a positive norm is if $A>0$, which requires $r>1$.
+
 \beginsolutions{7}
 
 \hwsolnhdr{alice-stationary}
@@ -639,6 +676,63 @@ In a frame that is moving azimuthally relative to this state of rest, the Lorent
 the phase of clocks be adjusted linearly as a function of the azimuthal coordinate $\phi$. As described
 in section \ref{sec:carousel}, this will cause a discontinuity once we wrap around by $2\pi$, and therefore
 clock synchronization fails, and this frame is not static.
+
+\hwsolnhdr{sch-circular-orbit-doppler}
+
+For an observer in a circular orbit at radius $r$, we can trivially
+tell that when $r$ is large, the result is Newtonian, so the Doppler
+shifts will be small and will be both redshifts and blueshifts. I
+don't know of any simple way to prove, without a calculation, that
+even at small radii there will be both redshifts and blueshifts.
+
+Let the units be such that the Schwarzschild radius is 1 (which means
+that the mass of the black hole is 1/2). Vectors are expressed in
+Schwarzschild coordinates $(t,r,\theta,\phi)$ The orbiting observer is
+in the plane $\theta=\pi/2$. The $\pm$ signs refer to the extreme
+cases of the orbiting observer detecting a ray of light from the
+forward direction and the backward direction. Solving the geodesic equation for a
+circular orbit, we find that the normalized velocity vector of
+the orbiting observer is
+\begin{equation*}
+  u'=\left(1-\frac{3}{2r}\right)^{-1/2}(1,0,0,2^{-1/2}r^{-3/2}).
+\end{equation*}
+This expression misbehaves for $r<3/2$; for radii that small, there are no circular orbits.
+(Circular orbits are also unstable for $r<3$.)
+Let the velocity vector of the ray at detection, with an arbitrary choice of affine parameter, be
+\begin{equation*}
+  v'=(1,0,0,\pm (1-1/r)^{1/2}r^{-1}).
+\end{equation*}
+The velocity vector of the distant observer emitting the ray is
+\begin{equation*}
+  u=(1,0,0,0).
+\end{equation*}
+We would also like to extrapolate backward in time to find $v$, the
+velocity vector of the ray upon emission by the distant source. The
+complete vector probably can't be found in closed form, but because
+there is a conserved energy, we can get the only component we need in
+closed form as
+\begin{equation*}
+  v=(1-1/r,\ldots).
+\end{equation*}
+The Doppler shift is
+\begin{equation*}
+  \frac{\omega'}{\omega} = \frac{u_av'^a}{u_bv^b}=\left(1-\frac{3}{2r}\right)^{-1/2}\left[1\mp\left[2r(1-1/r)\right]^{-1/2}\right].
+\end{equation*}
+Graphing shows that all the way down to $r=3/2$, one solution always has $\omega'/\omega>1$
+and one $\omega'/\omega<1$.
+
+For large values of $r$, we can understand the leading-order behavior of this result in semi-Newtonian terms.
+The Newtonian orbital velocity is $v=(2r)^{-1/2}$, which gives
+a special-relativistic longitudinal Doppler shift $1\mp (2r)^{-1/2}+\frac{1}{4r}+\ldots$, the gravitational time
+dilation is $1+\frac{1}{2r}+\ldots$, and the product of these is $1\mp (2r)^{-1/2}+\frac{3}{4r}+\ldots$,
+in agreement with the exact expression up to order $1/r$.
+
+It is also interesting to compare the maximum redshift $D_c$ for our observer in a circular orbit
+with the result of example \ref{eg:doppler-across-horizon}, p.~\pageref{eg:doppler-across-horizon} for an observer infalling
+radially from rest at infinity, which is a maximum redshift for that observer. Call the latter $D_r$.
+At large radii, $D_r$ is a bigger redshift, because the effect is semi-Newtonian, and the radially infalling
+observer has velocity that is higher by a factor of $\sqrt{2}$. But $D_c$ blows up at $r=3/2$, while
+$D_r$ blows up only at $r=0$. Therefore there is a point where the two curves cross, which turns out to be at $r=2$.
 
 \beginsolutions{8}
 

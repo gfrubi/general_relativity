@@ -362,7 +362,7 @@ Kreuzer intended this exeriment only as a test of $m_p\propto m_a$, but it was r
 by Will\footnote{Will, ``Active mass in relativistic gravity: Theoretical interpretation of the Kreuzer experiment,'' Ap. J. 204 (1976) 234,
 available online at \url{adsabs.harvard.edu}. A broader review of experimental tests of general relativity is given in
 Will, ``The Confrontation between General Relativity
-and Experiment,'' \url{relativity.livingreviews.org/Articles/lrr-2006-3/}. The Kreuzer experiment is discussed in  section 3.7.3.}
+and Experiment,'' \url{https://arxiv.org/abs/1403.7377}. The Kreuzer experiment is discussed in  section 4.4.3.}
 as a test of the coupling of sources to gravitational fields as predicted by general relativity and other theories of gravity.
 Crudely, we've already argued that $m_p\propto m_a$ would be substance-dependent if pressure did not couple to gravitational
 fields. Will actually carried out a more careful calculation, of which I present a simplified summary.
@@ -1065,7 +1065,9 @@ The current status of the energy conditions is shaky.
 Although it is clear that all of them hold in a variety of situations, there are strong reasons to believe that
 they are violated at both microscopic and cosmological scales, for reasons both classical
 and quantum-mechanical.\footnote{Barcelo and Visser, ``Twilight for the energy conditions?,'' \url{http://arxiv.org/abs/gr-qc/0205066v1}.}
-We will see such a violation in the following section.
+We will see such a violation in the following section. However, there are general reasons to believe that such violations cannot
+be too extreme, or else they would result in instability of the form of matter in question.\footnote{Buniy and Hsu,
+``Instabilities and the null energy condition,'' \url{http://arxiv.org/abs/hep-th/0502203}.}
 <% end_sec %> % Current status
 <% end_sec %> % Energy conditions
 
@@ -1571,7 +1573,7 @@ part of the field equations, whose source term is the mass-energy component of t
 %>
 <% end_marg %>
 
-\begin{eg}{Scooping out a hole}\label{eg:cosmo-hole} 
+\begin{eg}{Scooping out a hole}\label{eg:cosmo-hole}\index{hole!scooped out of a cosmological spacetime}
 This example illustrates the connection between cosmological acceleration and local density of matter
 given by the Friedmann acceleration equation.
 Consider two cosmologies, each with $\Lambda=0$. Cosmology 1 is 
@@ -1580,7 +1582,12 @@ an FRW spacetime in which all matter is in the form of nonrelativistic particles
 a vacuum. (``Small'' means small compared to the Hubble scale $1/H_\zu{o}$.)
 Within S, we introduce test particles A and B. Because an FRW spacetime is homogeneous
 and isotropic, cosmology 2 retains spherical symmetry about the center of S.
-Since $\Lambda=0$, Birkhoff's theorem applies to 2, so 2 is flat inside S.
+Since $\Lambda=0$, Birkhoff's theorem applies to 2, so 2 is flat inside S.\footnote{People sometimes
+incorrectly overstate this conclusion about the gravity inside a hole according to general relativity.
+In the case of a spherical shell of mass in an otherwise empty universe, it is true that the spacetime
+inside is flat, but there is time dilation inside the shell compared to time at infinity, and the
+Schwarzschild \emph{coordinates} cannot be used inside the shell if they are to match up with
+Schwarzschild coordinates outside the shell. See Zhang and Yi, \url{arxiv.org/abs/1203.4428}.}
 Therefore in 2, the relative acceleration $\vc{a}$ of the test particles equals zero.
 
 Because S is small compared to cosmological distances, and because the dust is nonrelativistic,
@@ -2474,6 +2481,9 @@ gives a scale factor $a(t)$ that blows up to infinity at some finite $t$. In suc
 known as a ``Big Rip,''
 $(d/dt)(\ddot{a}/a)$ diverges, and any system, no matter how tightly bound, is 
 ripped apart.\footnote{Caldwell et al., \url{arxiv.org/abs/astro-ph/0302506}}
+The vacuum energy responsible for such behavior is referred to as ``phantom
+energy,'' and as of 2019 there is some evidence (p.~\pageref{lcdm-discrepancies}) to support its existence due
+to discrepancies in the value of the Hubble constant.
 \end{eg}
 
 \enlargethispage{-\baselineskip}
@@ -2610,6 +2620,16 @@ constant is definitely positive.
 %>
 <% end_marg %>
 
+<% marg() %>
+<%
+  fig(
+    'eisenstein-bao',
+    %q{The acoustic peak in the BAO correlation function. Redrawn from Eisenstein, New Astronomy Reviews. 49 (2005) 360,
+       as reproduced in Bassett and Hlozek, 2009, \url{arxiv.org/abs/0910.5224}.}
+  )
+%>
+<% end_marg %>
+
 <% begin_sec("Density of matter from baryonic acoustic oscillations") %>\index{baryon acoustic oscillations}
 Efforts such as the Sloan Digital Sky Survey have made three-dimensional maps of the density of luminous
 matter in the universe.\footnote{Sanchez et al., 2012, \url{arxiv.org/abs/1203.6616}} The distribution is
@@ -2633,15 +2653,6 @@ ruler at which the peak in $\xi(s)$ occurs. In cosmological models, these result
 $\Omega_M$, while being relatively insensitive to $\Omega_\Lambda$, and they are therefore complementary
 to both the supernova data and the CMB results.
 <% end_sec %> % Density of matter from baryonic acoustic oscillations
-<% marg() %>
-<%
-  fig(
-    'eisenstein-bao',
-    %q{The acoustic peak in the BAO correlation function. Redrawn from Eisenstein, New Astronomy Reviews. 49 (2005) 360,
-       as reproduced in Bassett and Hlozek, 2009, \url{arxiv.org/abs/0910.5224}.}
-  )
-%>
-<% end_marg %>
 
 <% begin_sec("Conclusions about cosmology") %>
 Figure \figref{cosmology-parameters} summarizes what we can conclude about our universe, parametrized in terms of a
@@ -2702,9 +2713,21 @@ exhibits supersymmetry, assuming that the energy scale is the electroweak scale,
 has strong motivation. It now appears more likely that dark matter consists of some other particle such
 as sterile neutrinos or axions.
 
+<% end_sec %> % Dark matter
+<% begin_sec("Current discrepancies") %>\label{lcdm-discrepancies}
 Even with the inclusion of dark matter, there is a problem with the abundance of lithium-7 relative to
 hydrogen, which models greatly overpredict.\footnote{\url{arxiv.org/abs/0808.2818}, \url{arxiv.org/abs/1107.1117}}
-<% end_sec %> % Dark matter
+
+As of 2019, there is also tension between the values of the Hubble
+constant found from distance-ladder techniques and analysis of the
+CMB and BAO. The former\footnote{https://arxiv.org/abs/1903.07603} give about $74.2\pm 1.8$, in units of km/s/Mpc, while
+the latter give about $67.5\pm  0.5$. This may simply be a case
+where people always underestimate their systematic errors, or
+it may be a sign of new physics causing the universe to accelerate
+its expansion more rapidly than predicted by $\Lambda\text{CDM}$ models.
+Proposed solutions involve physical ingredients such as sterile
+neutrinos, axions, and phantom energy (example \ref{eg:big-rip}, p.~\pageref{eg:big-rip}).
+<% end_sec %> % current status
 <% end_sec %> % observation
 
 <% end_sec %> % Cosmological solutions
@@ -2934,7 +2957,7 @@ idea in a pair of back-to-back papers, one by Bondi and
 Gold\footnote{``The Steady-State Theory of the Expanding Universe,'' MNRAS 108 (1948) 252;
 \url{adsabs.harvard.edu/cgi-bin/nph-bib_query?bibcode=1948MNRAS.108..252B}} and one by
 Hoyle,\footnote{``A New Model for the Expanding Universe,'' MNRAS 108 (1948) 372,
-\url{adsabs.harvard.edu/cgi-bin/nph-bib_query?bibcode=1948MNRAS.108..372H}
+\url{ui.adsabs.harvard.edu/abs/1948MNRAS.108..372H/abstract}
 } with comments
 appended to the former on the differences between the two approaches. The Bondi-Gold paper is
 especially fun to read, because it is written in nontechnical language and shows a type of

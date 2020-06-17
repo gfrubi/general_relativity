@@ -13,6 +13,7 @@
 This chapter is not required in order to understand the later material.
 
 <% begin_sec("Killing vectors",nil,'killing-vectors') %>\index{Killing vector}%\label{sec:killing-vectors}
+<% begin_sec("Killing vectors") %>
 The Schwarzschild metric is an example of a highly symmetric spacetime. It has
 continuous symmetries in space (under rotation) and in time (under translation
 in time). In addition, it has discrete symmetries under spatial reflection and
@@ -109,7 +110,7 @@ only by parallel transport. Furthermore, we really have \emph{two} such spaces a
 a space of contravariant vectors and a space of covariant ones. These are referred to as the
 tangent and cotangent spaces.\index{tangent vector}\label{tangent-space}% index entry for tangent space is a cross ref
 The infinitesimal displacements
-we've been discussing belong to the contravariant (upper-index) space, but by lowering and index
+we've been discussing belong to the contravariant (upper-index) space, but by lowering an index
 we can just as well discuss them as covariant vectors. The customary way of notating Killing vectors
 makes use of the fact, mentioned in passing on p.~\pageref{partials-as-basis-of-tangent-space},
 that the partial derivative operators
@@ -237,6 +238,7 @@ this metric has a removable degeneracy of the same type as the one described in 
 As discussed in that section, the signature is invariant only under \emph{nonsingular} transformations, but the
 transformation that converts these coordinates to Cartesian ones is singular.
 \end{eg}
+<% end_sec %>
 
 <% begin_sec("Inappropriate mixing of notational systems") %>
 Confusingly, it is customary to express vectors and dual vectors by summing over basis vectors
@@ -270,17 +272,18 @@ a linear combination of dual vectors $\partial_\mu$!
 <% end_sec %>
 
 <% begin_sec("Conservation laws") %>\label{sec:killing-conservation}\index{conservation laws!from Killing vectors}
-Whenever a spacetime has a Killing vector, geodesics have a constant value of $v^b \xi_b$, where $v^b$ is
-the velocity four-vector. For example, because the Schwarzschild metric has a Killing vector $\boldsymbol{\xi} = \partial_t$,
-test particles have a conserved value of $v^t$, and therefore we also have conservation of $p^t$, interpreted
-as the mass-energy.
 
-\begin{eg}{Energy-momentum in flat 1+1 spacetime}
-A flat 1+1-dimensional spacetime has Killing vectors $\partial_x$ and $\partial_t$.
-Corresponding to these are the conserved momentum and mass-energy, $p$ and $E$. If we do a Lorentz boost, these
-two Killing vectors get mixed together by a linear transformation, corresponding to
-a transformation of $p$ and $E$ into a new frame.
-\end{eg}
+Whenever a spacetime has a Killing vector, geodesics have a constant
+value of $v^b \xi_b$, where $v^b$ is the velocity four-vector. For
+example, the Schwarzschild metric has a Killing vector
+$\boldsymbol{\xi} = \partial_t$, which, because of the notational clash described above,
+is an \emph{upper}-index (contravariant) vector: $\xi^t=1$. Test particles therefore have
+a conserved value of $v_t$, interpreted as the mass-energy per unit mass.
+Since we normally work with upper-index versions of velocities,
+we can also express this by saying that $\xi_t=(1-2m/r)$, and $\xi_t v^t$ is conserved,
+i.e., we have conservation of $(1-2m/r)\der t/\der\tau$. None of this depends on the choice
+of an affine parameter, so for a photon the conserved quantity would still exist, but would
+have to be expressed in terms of some other parameter.
 
 In addition, one can define a globally conserved quantity found by integrating the flux density $P^a=T^{ab}\xi_b$ over the
 boundary of any compact orientable region.\footnote{Hawking and Ellis, \emph{The Large Scale Structure of Space-Time}, p.~62,
@@ -289,6 +292,121 @@ describes the flux densities and proves that Gauss's theorem, which ordinarily f
 holds in the case where the appropriate Killing vectors exist. For an explicit description
 of how one can integrate to find a scalar mass-energy, see Winitzki, \emph{Topics in General Relativity}, section 3.1.5, available for free online.} In case
 of a flat spacetime, there are enough Killing vectors to give conservation of energy-momentum and angular momentum.
+
+\begin{eg}{Energy-momentum in flat 1+1 spacetime}
+A flat 1+1-dimensional spacetime has Killing vectors $\partial_x$ and $\partial_t$.
+Corresponding to these are the conserved momentum and mass-energy, $p$ and $E$. If we do a Lorentz boost, these
+two Killing vectors get mixed together by a linear transformation, corresponding to
+a transformation of $p$ and $E$ into a new frame.
+\end{eg}
+
+\begin{eg}{Gravitational Doppler shift for a spherical body}\label{eg:doppler-fancy}
+In section \ref{subsec:schwarzschild-doppler}, p.~\pageref{subsec:schwarzschild-doppler},
+we used relatively simple mathematical techniques to show that the Doppler shift or gravitational
+time dilation factor for the Schwarzschild spacetime is $\sqrt{1-1/r}$.
+(Here we choose units such that $m=1/2$, so that the
+Schwarzschild radius is 1.) We now redo the analysis using fancier techniques that can be generalized
+to applications such as example \ref{eg:doppler-across-horizon} below.
+For convenience of notation, let $A=1-1/r$.
+
+Let a ray of light travel from an emitter with four-velocity $u$ to an observer with four-velocity
+$u'$. Let the ray's lightlike geodesic have tangent vectors $v$ and $v'$ at emission and observation.
+We take the $u$ vectors to be normalized. Normalization is impossible for the $v$ vectors, but we assume that
+they are constructed using the same affine parameter, i.e., that $v$ and $v'$ are the same under
+parallel transport, so that any normalization factor will be an over-all constant. The resulting
+Doppler shift is
+\begin{equation*}
+  \frac{\omega'}{\omega} = \frac{u'_a v'^a}{u_bv^b},
+\end{equation*}
+which is coordinate-independent and also independent of the choice of affine parameter for $v$.
+This relation is a purely kinematical fact, but a quick and dirty way to see that
+it must be true is that the energy-momentum vector of a light ray is proportional to its four-velocity,
+and therefore the numerator and denominator of this expression each represent the respective observer's
+measurement of the ray's energy.
+
+Specializing now to the specific physical situation being analyzed, we know that
+the emitter and observer are both at rest relative to to the black hole, so that in Schwarzschild
+coordinates $u$ and $u'$ have only $t$ components. Because these vectors are normalized, and
+the metric has $g_{tt}=A$, we have $u^t=A^{-1/2}$ and $u'^t=A'^{-1/2}$.
+
+The ray has a conserved energy $Av^t$, so that $Av^t=A'v'^t$. There is also a nonzero $v^r$, but
+we don't need to calculate it for our present purposes.
+
+The Doppler shift comes out to be $(A'/A)^{-1/2}$, which is consistent with the result found
+previously by more elementary methods.
+\end{eg}
+
+\begin{eg}{Doppler shifts across the horizon}\label{eg:doppler-across-horizon}
+As remarked in section \ref{subsec:schwarzschild-doppler}, p.~\pageref{subsec:schwarzschild-doppler},
+we cannot extend the kind of analysis in example \ref{eg:doppler-fancy} to the case where
+a ray crosses the horizon, because inside the horizon, there can be no observers or emitters that are
+at rest (i.e., having constant $r$). We can, however, let an observer fall in through the horizon and
+continue observing the light from the stars, all the way up until she hits the singularity. To make
+the results tractable and easy to interpret, let us have the observer infall from rest at infinity,
+and take the ray to be purely radial as well, i.e., the observer is looking at light from a star that
+has always been directly overhead during her free-fall.
+
+Using the same notation as in example \ref{eg:doppler-fancy}, we find the following results in
+Schwarzschild coordinates $\kappa$. The emitting star has
+\begin{equation*}
+  u^\kappa = (1,0).
+\end{equation*}
+The observer has conserved energy per unit mass $Au^t$, which equals 1 because she was initially at rest
+at unfinity. At observation of the ray, she will have $u'^t=A'^{-1}$, and imposing normalization gives
+\begin{equation*}
+  u'^\kappa = (A'^{-1},-\sqrt{1-A'}),
+\end{equation*}
+with the minus sign because she is infalling. At emission, we fix the normalization of the ray's velocity
+such that
+\begin{equation*}
+  v^\kappa = (1,-1).
+\end{equation*}
+Applying conservation of energy and $u^au_a=0$, we find
+\begin{equation*}
+  v'^\kappa = (A'^{-1},-1),
+\end{equation*}
+where again the minus sign is because the ray is infalling.
+Plugging in to the relation $\omega'/\omega=u'_a v'^a/u_bv^b$ from example \ref{eg:doppler-fancy},
+we find $\omega'/\omega=A'^{-1}(1-\sqrt{1-A'})$, or, more transparently,
+\begin{equation*}
+  \frac{\omega'}{\omega} = \frac{1}{1+r^{-1/2}}.
+\end{equation*}  
+
+<% marg() %>
+<%
+  fig(
+    'eg-doppler-across-horizon',
+    %q{The result of example \ref{eg:doppler-across-horizon}.}
+  )
+%>
+<% end_marg %>
+
+
+This result is graphed in figure \figref{eg-doppler-across-horizon}.
+It is well behaved at the horizon $r=1$.  For large $r$, we have
+$\omega'/\omega\approx 1-r^{-1/2}$, which is a kind of Newtonian
+approximation, since our observer has $v\approx r^{-1/2}$, which is
+the result of Newtonian conservation of energy $(1/2)v^2-m/r=0$, with
+$m=1/2$ in this system of units. The shift is a red-shift, which is
+our semi-Newtonian expectation for large $r$ but in fact holds for all
+$r$.
+
+The Doppler shift is always finite for $r>0$, contrary to various
+claims that can be found in the popular literature to the effect that
+such an observer ``freezes'' at the horizon, and therefore sees the entire eventual history of the universe
+played out in the infalling visible light. This claim is presumably based on
+a belief that the vanishing of the Schwarzschild coordinate velocity has
+some intrinsic physical meaning. Although it is possible to have such
+see-the-whole-future behavior in some spacetimes, it does not occur in
+the Schwarzschild spacetime. In a spacetime where such an effect did occur,
+the incoming radiation would probably have infinite intensity, not only annihilating
+the observer but also possibly violating the approximation of a vacuum solution.
+
+A similar calculation is carried out in problem \ref{hw:sch-circular-orbit-doppler}, p.~\pageref{hw:sch-circular-orbit-doppler},
+for the case where the observer is in a circular orbit. The result is that such an observer will always see both blueshifts
+and redshifts, depending on the direction from which the rays arrive.
+\end{eg}
+
 
 <% end_sec %> % Conservation laws for test particles
 <% end_sec %> % Killing vectors
@@ -386,6 +504,22 @@ Spacelike and timelike geodesics, however, are distorted, as shown by the curves
     %q{Penrose diagram for flat spacetime.}
   )
 %>
+\spacebetweenfigs
+<%
+  fig(
+    'why-null-infinity-is-not-a-point',
+    %q{Given a finite region
+       of spacetime S, we can find a point like P that is spacelike with respect to the whole
+       region, and a point like Q that is timelike with respect to the whole region.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'penrose-schwarzschild',
+    %q{Penrose diagram for Schwarzschild spacetime: a black hole that didn't form by gravitational collapse.}
+  )
+%>
 <% end_marg %>
 
 The distortion becomes greater as we move away from the center of the diagram, and becomes infinite near the
@@ -399,26 +533,29 @@ p.~\pageref{no-hair-null-infinity}.}\label{null-infinity-intro}
 The point at $i^0$ is an infinitely distant endpoint for spacelike curves.
 Because of the spherical symmetry, the left and right halves of the diagram are redundant. 
 
-It is possible to make
-up explicit formulae that translate back and forth between Minkowski coordinates and points on the diamond, but in
-general this is not necessary. In fact, the utility of the diagrams is that they let us think about causal relationships
-in coordinate-independent ways. A light cone on the diagram looks exactly like a normal light cone.
+It is possible to make up explicit formulae that translate back and
+forth between Minkowski coordinates and points on the diamond, but in
+general this is not necessary. In fact, the utility of the diagrams is
+that they let us think about causal relationships in
+coordinate-independent ways. A light cone on the diagram looks exactly
+like a normal light cone.
 
 Since this particular spacetime is homogeneous, it makes no difference what spatial
 location on the diagram we pick as our axis of symmetry.
 For example, we could arbitrarily pick the left-hand corner,
 the central timelike geodesic (drawn straight)
 or one of the other timelike geodesics (represented as if it were curved).
+
+It may seem awkward or inconsistent that on the diagram,
+$\mathscr{I}^+$ and $\mathscr{I}^-$ are shown as
+lines (representing 3-dimensional things), while $i^0$, $i^+$, and $i^-$ are
+points (representing 2-spheres). Figure \figref{why-null-infinity-is-not-a-point} shows
+why this actually makes sense. We can find points that are spacelike or lightlike
+in relation to an entire region, but it is not possible to find a point that is lightlike
+in relation to every point. This argument can be made more rigorous using Liouville's
+theorem from complex analysis.
 <% end_sec('penrose-minkowski') %>
 
-<% marg(-300) %>
-<%
-  fig(
-    'penrose-schwarzschild',
-    %q{Penrose diagram for Schwarzschild spacetime: a black hole that didn't form by gravitational collapse.}
-  )
-%>
-<% end_marg %>
 
 <% begin_sec("Schwarzschild spacetime",nil,'penrose-schwarzschild') %>
 Figure \figref{penrose-schwarzschild} is a Penrose diagram for the Schwarzschild spacetime, i.e., a 
@@ -1166,6 +1303,18 @@ waves propagating at the speed of light, and (d) a cloud of matter undergoing gr
 show that it is possible for Alice to accomplish her mission.
 <% end_hw %>
 
+<% begin_hw('photon-sphere') %>
+In the Schwarzschild spacetime, test particles can have circular orbits only for $r\ge r_c$, where
+$r_c=3/2$ in units where the Schwarzschild radius is 1. These orbits are unstable for $r>3$ (the innermost
+stable circular orbit). The unstable orbit with $r=r_c$ exists only for massless particles, and $r=r_c$
+is called the photon sphere. Consider
+the conserved quantities $E$ and $L$ corresponding to the Schwarzschild spacetime's
+Killing vectors $\partial_t$ and $\partial_\theta$, interpreted as the energy and angular momentum per unit
+mass. As the mass of a particle approaches zero, both of these blow up to infinity if the affine parameter
+is taken to be the proper time, but $L/E$ is well behaved in this limit. Show that a photon on the photon
+sphere has $L/E=\pm(1/2)3^{3/2}$.
+<% end_hw %>
+
 <% begin_hw('constant-curvature-invariants') %>
 If a spacetime has a certain symmetry, then we expect that symmetry to be detectable in the behavior
 of curvature scalars such as the scalar curvature $R=R\indices{^a_a}$ and the Kretchmann invariant $k=R^{abcd}R_{abcd}$.\index{Kretchmann invariant}\\
@@ -1202,6 +1351,16 @@ that the frame is stationary but not static. Suppose someone says that any rotat
 Give a counterexample.
 \hwsoln
 <% end_hw %>
+
+<% begin_hw('sch-circular-orbit-doppler') %>
+In example \ref{eg:doppler-across-horizon}, p.~\pageref{eg:doppler-across-horizon}, we found the Doppler shifts observed
+by an observer infalling radially from rest at infinity into a Schwarzschild black hole. Carry out a
+similar analysis for the case where the observer is in a circular orbit, and show that such an observer will always see both blueshifts
+and redshifts. In order to find the motion of the observer in the circular orbit, you will need to either compute or
+look up online a couple of Christoffel symbols for the Schwarzschild spacetime, in Schwarzschild coordinates.
+\hwsoln
+<% end_hw %>
+
 
 <% end_hw_sec %>
 

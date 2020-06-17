@@ -14,8 +14,8 @@
    height="1052.3622047"
    id="svg2"
    version="1.1"
-   inkscape:version="0.47 r22583"
-   sodipodi:docname="killing-vector.svg">
+   sodipodi:docname="killing-vector.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
   <defs
      id="defs4">
     <marker
@@ -68,7 +68,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="3.2068979"
-     inkscape:cx="172.59171"
+     inkscape:cx="118.02184"
      inkscape:cy="849.64432"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -95,12 +95,13 @@
      inkscape:groupmode="layer"
      id="layer1">
     <image
-       y="76.704933"
-       x="57.07143"
-       id="image2886"
-       height="235.30014"
+       sodipodi:absref="/home/bcrowell/Documents/writing/books/genrel/ch07/figs/killing-vector-bitmap.jpg"
+       xlink:href="killing-vector-bitmap.jpg"
        width="184.25197"
-       xlink:href="killing-vector-bitmap.jpg" />
+       height="235.30014"
+       id="image2886"
+       x="57.07143"
+       y="76.704933" />
     <path
        sodipodi:type="arc"
        style="fill:#000000;fill-opacity:1;stroke:none"
@@ -171,23 +172,21 @@
        sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
-       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Symbol;-inkscape-font-specification:Symbol"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;line-height:100%;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;"
        x="166.15315"
        y="199.43021"
-       id="text4092"
-       sodipodi:linespacing="100%"><tspan
+       id="text4092"><tspan
          sodipodi:role="line"
          id="tspan4094"
          x="166.15315"
          y="199.43021"
-         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;font-family:Symbol;-inkscape-font-specification:Symbol">x</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;line-height:100%;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';text-align:start;writing-mode:lr-tb;text-anchor:start;">ξ</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
        x="171.50529"
        y="199.51308"
-       id="text2828"
-       sodipodi:linespacing="100%"><tspan
+       id="text2828"><tspan
          sodipodi:role="line"
          id="tspan2830"
          x="171.50529"
